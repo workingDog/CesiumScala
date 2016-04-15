@@ -16,6 +16,11 @@ import scala.scalajs.js.{JSON, JSApp}
   * launch Cesium, e.g. using node server.js, then point your browser to
   * http://localhost:8080/Apps/CesiumScala.html
   *
+  * P.S
+  * you should get a key for Bing Map, see: https://www.bingmapsportal.com/
+  * and put it in the CesiumScala.html.
+  * Also you could run a CZML server (see: https://github.com/workingDog/czmlServer) to
+  * send something to this app.
   */
 object CesiumApp extends JSApp {
   def main(): Unit = {
