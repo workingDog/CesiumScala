@@ -63,8 +63,7 @@ object CesiumApp extends JSApp {
     }
 
     // schedule sending a request to the CZML server for more data every 2 secs
-  //  dom.window.setInterval(() => ws.onopen, 2000)
-
+  //  window.setInterval(() => ws.send("client ready"), 2000)
   }
 }
 

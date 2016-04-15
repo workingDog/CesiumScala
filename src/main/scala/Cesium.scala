@@ -35,6 +35,8 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation._
 import scala.scalajs.js.|
 
+import org.querki.jsext.{JSOptionBuilder, OptMap, noOpts}
+
 
 /**
   * A Scala.js facade for Cesium.js "An open-source JavaScript library for world-class 3D globes and maps"
@@ -267,31 +269,22 @@ package cesium {
 
   @JSName("Cesium.Options")
   @js.native
-  trait AppearenceOptions extends js.Object {
-    var translucent: Boolean = js.native
-    var closed: Boolean = js.native
-    var material: Material = js.native
-    var vertexShaderSource: String = js.native
-    var fragmentShaderSource: String = js.native
-    var renderState: RenderState = js.native
-  }
+  trait AppearenceOptions extends js.Object
 
-  object AppearenceOptions {
-    def apply(translucent: js.UndefOr[Boolean] = js.undefined,
-              closed: js.UndefOr[Boolean] = js.undefined,
-              material: js.UndefOr[Material] = Material.ColorType,
-              vertexShaderSource: js.UndefOr[String] = js.undefined,
-              fragmentShaderSource: js.UndefOr[String] = js.undefined,
-              renderState: js.UndefOr[RenderState] = js.undefined
-             ): AppearenceOptions = {
-      js.Dynamic.literal(translucent = translucent,
-        closed = closed,
-        material = material,
-        vertexShaderSource = vertexShaderSource,
-        fragmentShaderSource = fragmentShaderSource,
-        renderState = renderState
-      ).asInstanceOf[AppearenceOptions]
-    }
+  object AppearenceOptions extends AppearenceOptionsBuilder(noOpts)
+
+  class AppearenceOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[AppearenceOptions, AppearenceOptionsBuilder](new AppearenceOptionsBuilder(_)) {
+    def translucent(v: Boolean) = jsOpt("translucent", v)
+
+    def closed(v: Boolean) = jsOpt("closed", v)
+
+    def material(v: Material) = jsOpt("material", v)
+
+    def vertexShaderSource(v: String) = jsOpt("vertexShaderSource", v)
+
+    def fragmentShaderSource(v: String) = jsOpt("fragmentShaderSource", v)
+
+    def renderState(v: RenderState) = jsOpt("renderState", v)
   }
 
   @JSName("Cesium.Appearance")
@@ -318,31 +311,22 @@ package cesium {
 
   @JSName("Cesium.Options")
   @js.native
-  trait ArcGisImageServerTerrainProviderOptions extends js.Object {
-    var url: String = js.native
-    var token: String = js.native
-    var proxy: Object = js.native
-    var tilingScheme: TilingScheme = js.native
-    var ellipsoid: Ellipsoid = js.native
-    var credit: Credit | String = js.native
-  }
+  trait ArcGisImageServerTerrainProviderOptions extends js.Object
 
-  object ArcGisImageServerTerrainProviderOptions {
-    def apply(url: String = null,
-              token: js.UndefOr[String] = js.undefined,
-              proxy: js.UndefOr[js.Any] = js.undefined,
-              tilingScheme: js.UndefOr[TilingScheme] = js.undefined,
-              ellipsoid: js.UndefOr[Ellipsoid] = js.undefined,
-              credit: js.UndefOr[js.Any] = js.undefined
-             ): ArcGisImageServerTerrainProviderOptions = {
-      js.Dynamic.literal(url = url,
-        token = token,
-        proxy = proxy,
-        tilingScheme = tilingScheme,
-        ellipsoid = ellipsoid,
-        credit = credit
-      ).asInstanceOf[ArcGisImageServerTerrainProviderOptions]
-    }
+  object ArcGisImageServerTerrainProviderOptions extends ArcGisImageServerTerrainProviderOptionsBuilder(noOpts)
+
+  class ArcGisImageServerTerrainProviderOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ArcGisImageServerTerrainProviderOptions, ArcGisImageServerTerrainProviderOptionsBuilder](new ArcGisImageServerTerrainProviderOptionsBuilder(_)) {
+    def url(v: String) = jsOpt("url", v)
+
+    def token(v: String) = jsOpt("token", v)
+
+    def proxy(v: Object) = jsOpt("proxy", v)
+
+    def tilingScheme(v: TilingScheme) = jsOpt("tilingScheme", v)
+
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+
+    def credit(v: Credit | String) = jsOpt("credit", v)
   }
 
   @JSName("Cesium.ArcGisImageServerTerrainProvider")
@@ -373,52 +357,36 @@ package cesium {
 
   @JSName("Cesium.Options")
   @js.native
-  trait ArcGisMapServerImageryProviderOptions extends js.Object {
-    var url: String = js.native
-    var token: String = js.native
-    var tileDiscardPolicy: TileDiscardPolicy = js.native
-    var proxy: Object = js.native
-    var usePreCachedTilesIfAvailable: Boolean = js.native
-    var layers: String = js.native
-    var enablePickFeatures: Boolean = js.native
-    var rectangle: Rectangle = js.native
-    var tilingScheme: TilingScheme = js.native
-    var ellipsoid: Ellipsoid = js.native
-    var tileWidth: Int = js.native
-    var tileHeight: Int = js.native
-    var maximumLevel: Int = js.native
-  }
+  trait ArcGisMapServerImageryProviderOptions extends js.Object
 
-  object ArcGisMapServerImageryProviderOptions {
-    def apply(url: String = null,
-              token: js.UndefOr[String] = js.undefined,
-              tileDiscardPolicy: js.UndefOr[TileDiscardPolicy] = js.undefined,
-              proxy: js.UndefOr[js.Any] = js.undefined,
-              usePreCachedTilesIfAvailable: js.UndefOr[Boolean] = js.undefined,
-              layers: js.UndefOr[String] = js.undefined,
-              enablePickFeatures: js.UndefOr[Boolean] = js.undefined,
-              rectangle: js.UndefOr[Rectangle] = js.undefined,
-              tilingScheme: js.UndefOr[TilingScheme] = js.undefined,
-              ellipsoid: js.UndefOr[Ellipsoid] = js.undefined,
-              tileWidth: js.UndefOr[Int] = js.undefined,
-              tileHeight: js.UndefOr[Int] = js.undefined,
-              maximumLevel: js.UndefOr[Int] = js.undefined
-             ): ArcGisMapServerImageryProviderOptions = {
-      js.Dynamic.literal(url = url,
-        token = token,
-        tileDiscardPolicy = tileDiscardPolicy,
-        proxy = proxy,
-        usePreCachedTilesIfAvailable = usePreCachedTilesIfAvailable,
-        layers = layers,
-        enablePickFeatures = enablePickFeatures,
-        rectangle = rectangle,
-        tilingScheme = tilingScheme,
-        ellipsoid = ellipsoid,
-        tileWidth = tileWidth,
-        tileHeight = tileHeight,
-        maximumLevel = maximumLevel
-      ).asInstanceOf[ArcGisMapServerImageryProviderOptions]
-    }
+  object ArcGisMapServerImageryProviderOptions extends ArcGisMapServerImageryProviderOptionsBuilder(noOpts)
+
+  class ArcGisMapServerImageryProviderOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ArcGisMapServerImageryProviderOptions, ArcGisMapServerImageryProviderOptionsBuilder](new ArcGisMapServerImageryProviderOptionsBuilder(_)) {
+    def url(v: String) = jsOpt("url", v)
+
+    def token(v: String) = jsOpt("token", v)
+
+    def proxy(v: Object) = jsOpt("proxy", v)
+
+    def tileDiscardPolicy(v: TileDiscardPolicy) = jsOpt("tileDiscardPolicy", v)
+
+    def tilingScheme(v: TilingScheme) = jsOpt("tilingScheme", v)
+
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+
+    def usePreCachedTilesIfAvailable(v: Boolean) = jsOpt("usePreCachedTilesIfAvailable", v)
+
+    def layers(v: String) = jsOpt("layers", v)
+
+    def enablePickFeatures(v: Boolean) = jsOpt("enablePickFeatures", v)
+
+    def rectangle(v: Rectangle) = jsOpt("rectangle", v)
+
+    def tileWidth(v: Int) = jsOpt("tileWidth", v)
+
+    def tileHeight(v: Int) = jsOpt("tileHeight", v)
+
+    def maximumLevel(v: Int) = jsOpt("maximumLevel", v)
   }
 
   @JSName("Cesium.ArcGisMapServerImageryProvider")
@@ -553,14 +521,12 @@ package cesium {
 
   @JSName("Cesium.Options")
   @js.native
-  trait CzmlDSOptions extends js.Object {
-    var sourceUri: String = js.native
-  }
+  trait CzmlDSOptions extends js.Object
 
-  object CzmlDSOptions {
-    def apply(sourceUri: String): CzmlDSOptions = {
-      js.Dynamic.literal(sourceUri = sourceUri).asInstanceOf[CzmlDSOptions]
-    }
+  object CzmlDSOptions extends CzmlDSOptionsBuilder(noOpts)
+
+  class CzmlDSOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[CzmlDSOptions, CzmlDSOptionsBuilder](new CzmlDSOptionsBuilder(_)) {
+    def sourceUri(v: String) = jsOpt("sourceUri", v)
   }
 
   @JSName("Cesium.DataSourceCollection")
@@ -686,118 +652,62 @@ package cesium {
 
   @JSName("Cesium.Options")
   @js.native
-  trait ViewerOptions extends js.Object {
-    var animation: Boolean = js.native
-    var baseLayerPicker: Boolean = js.native
-    var fullscreenButton: Boolean = js.native
-    var geocoder: Boolean = js.native
-    var homeButton: Boolean = js.native
-    var infoBox: Boolean = js.native
-    var sceneModePicker: Boolean = js.native
-    var selectionIndicator: Boolean = js.native
-    var timeline: Boolean = js.native
-    var navigationHelpButton: Boolean = js.native
-    var navigationInstructionsInitiallyVisible: Boolean = js.native
-    var scene3DOnly: Boolean = js.native
-    //    var clock: Clock = js.native
-    //    var selectedImageryProviderViewModel: ProviderViewModel = js.native
-    //    var imageryProviderViewModels: Array[ProviderViewModel] = js.native
-    //    var selectedTerrainProviderViewModel: ProviderViewModel = js.native
-    //    var terrainProviderViewModels: Array[ProviderViewModel] = js.native
-    //    var imageryProvider: ImageryProvider = js.native
-    //    var terrainProvider: TerrainProvider = js.native
-    //    var skyBox: SkyBox = js.native
-    //    var skyAtmosphere: SkyAtmosphere = js.native
-    //    var fullscreenElement: Element | String = js.native
-    //    var useDefaultRenderLoop: Boolean = js.native
-    //    var targetFrameRate: Number = js.native
-    //    var showRenderLoopErrors: Boolean = js.native
-    //    var automaticallyTrackDataSourceClocks: Boolean = js.native
-    //    var contextOptions: ContextOptions = js.native
-    //    var sceneMode: SceneMode = js.native
-    //    var mapProjection: MapProjection = js.native
-    //    var globe: Globe = js.native
-    var orderIndependentTranslucency: Boolean = js.native
-    var creditContainer: Element | String = js.native
-    var dataSources: DataSourceCollection = js.native
-    var terrainExaggeration: Double = js.native
-  }
+  trait ViewerOptions extends js.Object
 
-  object ViewerOptions {
-    def apply(
-               animation: Boolean = true,
-               baseLayerPicker: Boolean = true,
-               fullscreenButton: Boolean = true,
-               geocoder: Boolean = true,
-               homeButton: Boolean = true,
-               infoBox: Boolean = true,
-               sceneModePicker: Boolean = true,
-               selectionIndicator: Boolean = true,
-               timeline: Boolean = true,
-               navigationHelpButton: Boolean = true,
-               navigationInstructionsInitiallyVisible: Boolean = true,
-               scene3DOnly: Boolean = false,
-               //               clock: Clock = new Clock(),
-               //               selectedImageryProviderViewModel: ProviderViewModel = null,
-               //               imageryProviderViewModels: Array[ProviderViewModel] = createDefaultImageryProviderViewModels(),
-               //               selectedTerrainProviderViewModel: ProviderViewModel = null,
-               //               terrainProviderViewModels: Array[ProviderViewModel] = createDefaultTerrainProviderViewModels(),
-               //               imageryProvider: ImageryProvider = new BingMapsImageryProvider(),
-               //               terrainProvider: TerrainProvider = new EllipsoidTerrainProvider(),
-               //               skyBox: SkyBox = null,
-               //               skyAtmosphere: SkyAtmosphere = null,
-               //               fullscreenElement: Element | String = document.body,
-               //               useDefaultRenderLoop: Boolean = true,
-               //               targetFrameRate: Number = null,
-               //               showRenderLoopErrors: Boolean = true,
-               //               automaticallyTrackDataSourceClocks: Boolean = true,
-               //               contextOptions: ContextOptions = null,
-               //               sceneMode: SceneMode = SceneMode.SCENE3D,
-               //               mapProjection: MapProjection = new GeographicProjection(),
-               //               globe: Globe = new Globe(mapProjection.ellipsoid),
-               orderIndependentTranslucency: Boolean = true,
-               // creditContainer: Element | String = null,
-               creditContainer: String = null,
-               dataSources: DataSourceCollection = new DataSourceCollection(),
-               terrainExaggeration: Double = 1.0
-             ): ViewerOptions = {
-      js.Dynamic.literal(
-        animation = animation,
-        baseLayerPicker = baseLayerPicker,
-        fullscreenButton = fullscreenButton,
-        geocoder = geocoder,
-        homeButton = homeButton,
-        infoBox = infoBox,
-        sceneModePicker = sceneModePicker,
-        selectionIndicator = selectionIndicator,
-        timeline = timeline,
-        navigationHelpButton = navigationHelpButton,
-        navigationInstructionsInitiallyVisible = navigationInstructionsInitiallyVisible,
-        scene3DOnly = scene3DOnly,
-        //        clock = clock,
-        //        selectedImageryProviderViewModel = selectedImageryProviderViewModel,
-        //        imageryProviderViewModels = imageryProviderViewModels,
-        //        selectedTerrainProviderViewModel = selectedTerrainProviderViewModel,
-        //        terrainProviderViewModels = terrainProviderViewModels,
-        //        imageryProvider = imageryProvider,
-        //        terrainProvider = terrainProvider,
-        //        skyBox = skyBox,
-        //        skyAtmosphere = skyAtmosphere,
-        //        fullscreenElement = fullscreenElement,
-        //        useDefaultRenderLoop = useDefaultRenderLoop,
-        //        targetFrameRate = targetFrameRate,
-        //        showRenderLoopErrors = showRenderLoopErrors,
-        //        automaticallyTrackDataSourceClocks = automaticallyTrackDataSourceClocks,
-        //        contextOptions = contextOptions,
-        //        sceneMode = sceneMode,
-        //        mapProjection = mapProjection,
-        //        globe = globe,
-        orderIndependentTranslucency = orderIndependentTranslucency,
-        creditContainer = creditContainer,
-        dataSources = dataSources,
-        terrainExaggeration = terrainExaggeration
-      ).asInstanceOf[ViewerOptions]
-    }
+  object ViewerOptions extends ViewerOptionsBuilder(noOpts)
+
+  class ViewerOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ViewerOptions, ViewerOptionsBuilder](new ViewerOptionsBuilder(_)) {
+
+    def animation(v: Boolean) = jsOpt("animation", v)
+
+    def baseLayerPicker(v: Boolean) = jsOpt("baseLayerPicker", v)
+
+    def fullscreenButton(v: Boolean) = jsOpt("fullscreenButton", v)
+
+    def geocoder(v: Boolean) = jsOpt("geocoder", v)
+
+    def homeButton(v: Boolean) = jsOpt("homeButton", v)
+
+    def infoBox(v: Boolean) = jsOpt("infoBox", v)
+
+    def sceneModePicker(v: Boolean) = jsOpt("sceneModePicker", v)
+
+    def selectionIndicator(v: Boolean) = jsOpt("selectionIndicator", v)
+
+    def timeline(v: Boolean) = jsOpt("timeline", v)
+
+    def navigationHelpButton(v: Boolean) = jsOpt("navigationHelpButton", v)
+
+    def navigationInstructionsInitiallyVisible(v: Boolean) = jsOpt("navigationInstructionsInitiallyVisible", v)
+
+    def scene3DOnly(v: Boolean) = jsOpt("scene3DOnly", v)
+
+    def orderIndependentTranslucency(v: Boolean) = jsOpt("orderIndependentTranslucency", v)
+
+    def creditContainer(v: Element | String) = jsOpt("creditContainer", v)
+
+    def dataSources(v: DataSourceCollection) = jsOpt("dataSources", v)
+
+    def terrainExaggeration(v: Double) = jsOpt("terrainExaggeration", v)
+
+    //    def clock(v: Clock) = jsOpt("dataSources", v)
+    //    def selectedImageryProviderViewModel(v: ProviderViewModel) = jsOpt("dataSources", v)
+    //    def imageryProviderViewModels(v: Array[ProviderViewModel] ) = jsOpt("dataSources", v)
+    //    def selectedTerrainProviderViewModel(v: ProviderViewModel) = jsOpt("dataSources", v)
+    //    def terrainProviderViewModels(v: Array[ProviderViewModel]) = jsOpt("dataSources", v)
+    //    def imageryProvider(v: ImageryProvider) = jsOpt("dataSources", v)
+    //    def terrainProvider(v: TerrainProvider) = jsOpt("dataSources", v)
+    //    def skyBox(v: SkyBox) = jsOpt("dataSources", v)
+    //    def skyAtmosphere(v: SkyAtmosphere) = jsOpt("dataSources", v)
+    //    def fullscreenElement(v: Element | String) = jsOpt("dataSources", v)
+    //    def useDefaultRenderLoop(v: Boolean) = jsOpt("dataSources", v)
+    //    def targetFrameRate(v: Int) = jsOpt("dataSources", v)
+    //    def showRenderLoopErrors(v: Boolean) = jsOpt("dataSources", v)
+    //    def automaticallyTrackDataSourceClocks(v: Boolean) = jsOpt("dataSources", v)
+    //    def contextOptions(v: ContextOptions) = jsOpt("dataSources", v)
+    //    def sceneMode(v: SceneMode) = jsOpt("dataSources", v)
+    //    def mapProjection(v: MapProjection) = jsOpt("dataSources", v)
+    //    def globe(v: Globe) = jsOpt("dataSources", v)
   }
 
   @JSName("Cesium.HeadingPitchRange")
@@ -811,24 +721,16 @@ package cesium {
 
   @JSName("Cesium.Options")
   @js.native
-  trait FlyOptions extends js.Object {
-    var duration: Double = js.native
-    var maximumHeight: Double = js.native
-    var offset: HeadingPitchRange = js.native
-  }
+  trait FlyOptions extends js.Object
 
-  object FlyOptions {
-    def apply(
-               duration: Double = 3.0,
-               maximumHeight: Double = 1.0,
-               offset: HeadingPitchRange = null
-             ): FlyOptions = {
-      js.Dynamic.literal(
-        duration = duration,
-        maximumHeight = maximumHeight,
-        offset = offset
-      ).asInstanceOf[FlyOptions]
-    }
+  object FlyOptions extends FlyOptionsBuilder(noOpts)
+
+  class FlyOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[FlyOptions, FlyOptionsBuilder](new FlyOptionsBuilder(_)) {
+    def duration(v: Double) = jsOpt("duration", v)
+
+    def maximumHeight(v: Double) = jsOpt("maximumHeight", v)
+
+    def offset(v: HeadingPitchRange) = jsOpt("offset", v)
   }
 
 }

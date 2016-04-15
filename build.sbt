@@ -9,7 +9,8 @@ scalaJSStage in Global := FastOptStage
 
 libraryDependencies ++= Seq(
   "be.doeraene" %%% "scalajs-jquery" % "0.9.0",
-  "org.scala-js" %%% "scalajs-dom" % "0.9.0"
+  "org.scala-js" %%% "scalajs-dom" % "0.9.0",
+  "org.querki" %%% "querki-jsext" % "0.6"
 )
 
 jsDependencies += RuntimeDOM

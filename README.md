@@ -13,10 +13,11 @@ written in scala can easily call Cesium functions.
 
 2) [Cesium doc](https://cesiumjs.org/refdoc.html)
 
+3) [jsext](https://github.com/jducoeur/jsext)
+
 ## Compiling and packaging
 
     sbt fastOptJS
-
 
 ## Status
 
