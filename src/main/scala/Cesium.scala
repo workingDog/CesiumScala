@@ -42,8 +42,8 @@ import scala.scalajs.js.|
   * Reference:  http://cesiumjs.org/
   *
   * @author Ringo Wathelet
-  * Date: 14/04/16
-  * Version: 1
+  *         Date: 14/04/16
+  *         Version: 1
   */
 
 package cesium {
@@ -75,9 +75,40 @@ package cesium {
     def shaders: String = js.native
   }
 
+  //-------------------------------------------------------------------------------
+
+  // todo
+  @js.native
+  sealed trait TimeStandard extends js.Object
+
+  @JSName("Cesium.TimeStandard")
+  @js.native
+  object TimeStandard extends js.Object {
+    var TAI: String = js.native
+    var UTC: String = js.native
+
+    @JSBracketAccess
+    def apply(value: TimeStandard): String = js.native
+  }
+
   @JSName("JulianDate")
   @js.native
-  trait JulianDate extends js.Object {
+  class JulianDate(julianDayNumber: Int | Double, secondsOfDay: Int | Double, timeStandard: Option[TimeStandard]) extends js.Object {
+
+    def clone(result: JulianDate): JulianDate = js.native
+
+    def equals(right: JulianDate): Boolean = js.native
+
+    def equalsEpsilon(right: JulianDate, epsilon: Double): Boolean = js.native
+  }
+
+  @js.native
+  object JulianDate extends js.Object {
+    // todo
+    // def leapSeconds : Array[LeapSecond] = js.native
+
+    def addDays(julianDate: JulianDate, days: Int | Double, result: JulianDate): JulianDate = js.native
+
     // todo
   }
 
@@ -146,8 +177,39 @@ package cesium {
   class TerrainData extends js.Object {
     // todo
   }
-  //-------------------------------------------------------------------------------
 
+  @JSName("Cesium.Rectangle")
+  @js.native
+  class Rectangle extends js.Object {
+    // todo
+  }
+
+  @JSName("Cesium.TileDiscardPolicy")
+  @js.native
+  class TileDiscardPolicy extends js.Object {
+    // todo
+  }
+
+  @JSName("Cesium.Image")
+  @js.native
+  class Image extends js.Object {
+    // todo
+  }
+
+  @JSName("Cesium.Canvas")
+  @js.native
+  class Canvas extends js.Object {
+    // todo
+  }
+
+  @JSName("Cesium.ImageryLayerFeatureInfo")
+  @js.native
+  class ImageryLayerFeatureInfo extends js.Object {
+    // todo
+  }
+
+
+  //-------------------------------------------------------------------------------
 
   @JSName("Cesium.AnimationViewModel")
   @js.native
@@ -309,6 +371,103 @@ package cesium {
     def requestTileGeometry(x: Double, y: Double, level: Int): Option[Future[TerrainData]] = js.native
   }
 
+  @JSName("Cesium.Options")
+  @js.native
+  trait ArcGisMapServerImageryProviderOptions extends js.Object {
+    var url: String = js.native
+    var token: String = js.native
+    var tileDiscardPolicy: TileDiscardPolicy = js.native
+    var proxy: Object = js.native
+    var usePreCachedTilesIfAvailable: Boolean = js.native
+    var layers: String = js.native
+    var enablePickFeatures: Boolean = js.native
+    var rectangle: Rectangle = js.native
+    var tilingScheme: TilingScheme = js.native
+    var ellipsoid: Ellipsoid = js.native
+    var tileWidth: Int = js.native
+    var tileHeight: Int = js.native
+    var maximumLevel: Int = js.native
+  }
+
+  object ArcGisMapServerImageryProviderOptions {
+    def apply(url: String = null,
+              token: js.UndefOr[String] = js.undefined,
+              tileDiscardPolicy: js.UndefOr[TileDiscardPolicy] = js.undefined,
+              proxy: js.UndefOr[js.Any] = js.undefined,
+              usePreCachedTilesIfAvailable: js.UndefOr[Boolean] = js.undefined,
+              layers: js.UndefOr[String] = js.undefined,
+              enablePickFeatures: js.UndefOr[Boolean] = js.undefined,
+              rectangle: js.UndefOr[Rectangle] = js.undefined,
+              tilingScheme: js.UndefOr[TilingScheme] = js.undefined,
+              ellipsoid: js.UndefOr[Ellipsoid] = js.undefined,
+              tileWidth: js.UndefOr[Int] = js.undefined,
+              tileHeight: js.UndefOr[Int] = js.undefined,
+              maximumLevel: js.UndefOr[Int] = js.undefined
+             ): ArcGisMapServerImageryProviderOptions = {
+      js.Dynamic.literal(url = url,
+        token = token,
+        tileDiscardPolicy = tileDiscardPolicy,
+        proxy = proxy,
+        usePreCachedTilesIfAvailable = usePreCachedTilesIfAvailable,
+        layers = layers,
+        enablePickFeatures = enablePickFeatures,
+        rectangle = rectangle,
+        tilingScheme = tilingScheme,
+        ellipsoid = ellipsoid,
+        tileWidth = tileWidth,
+        tileHeight = tileHeight,
+        maximumLevel = maximumLevel
+      ).asInstanceOf[ArcGisMapServerImageryProviderOptions]
+    }
+  }
+
+  @JSName("Cesium.ArcGisMapServerImageryProvider")
+  @js.native
+  class ArcGisMapServerImageryProvider(options: ArcGisMapServerImageryProviderOptions) extends js.Object {
+    var enablePickFeatures: Boolean = js.native
+
+    // read only
+    def credit: Credit = js.native
+
+    def errorEvent: Event = js.native
+
+    def hasAlphaChannel: Boolean = js.native
+
+    def maximumLevel: Int = js.native
+
+    def minimumLevel: Int = js.native
+
+    def proxy: Proxy = js.native
+
+    def ready: Boolean = js.native
+
+    def readyPromise: Future[Boolean] = js.native
+
+    def rectangle: Rectangle = js.native
+
+    def tileDiscardPolicy: TileDiscardPolicy = js.native
+
+    def tileHeight: Int = js.native
+
+    def tileWidth: Int = js.native
+
+    def tilingScheme: TilingScheme = js.native
+
+    def token: String = js.native
+
+    def url: String = js.native
+
+    def usingPrecachedTiles: Boolean = js.native
+
+    // methods
+    def getTileCredits(x: Double, y: Double, level: Int): Array[Credit] = js.native
+
+    def pickFeatures(x: Double, y: Double, level: Int, longitude: Double, latitude: Double): Option[Future[ImageryLayerFeatureInfo]] = js.native
+
+    def requestImage(x: Double, y: Double, level: Int): Option[Future[Image | Canvas]] = js.native
+
+  }
+
 
   //-------------------------------------------------------------------------------
 
@@ -436,18 +595,18 @@ package cesium {
   @js.native
   class CzmlDataSource(name: String = null) extends DataSource {
 
-    def load(data: String | Object, options: CzmlDSOptions = null): Promise[DataSource] = js.native
+    def load(data: String | Object, options: CzmlDSOptions = ???): Promise[DataSource] = js.native
 
-    def process(czml: String | Object, options: CzmlDSOptions = null): Promise[DataSource] = js.native
+    def process(czml: String | Object, options: CzmlDSOptions = ???): Promise[DataSource] = js.native
   }
 
   @js.native
   object CzmlDataSource extends js.Object {
     var updaters: Array[js.Function] = js.native
 
-    def load(data: String | Object, options: CzmlDSOptions = null): Promise[DataSource] = js.native
+    def load(data: String | Object, options: CzmlDSOptions = ???): Promise[DataSource] = js.native
 
-    def process(czml: String | Object, options: CzmlDSOptions = null): Promise[DataSource] = js.native
+    def process(czml: String | Object, options: CzmlDSOptions = ???): Promise[DataSource] = js.native
 
     def processMaterialPacketData(`object`: Object, propertyName: String, packetData: Object,
                                   interval: TimeInterval, sourceUri: String,
@@ -464,7 +623,7 @@ package cesium {
 
   @JSName("Cesium.Viewer")
   @js.native
-  class Viewer(container: Element | String, opts: ViewerOptions = null) extends js.Object {
+  class Viewer(container: Element | String, opts: ViewerOptions = ???) extends js.Object {
 
     def destroy(): Unit = js.native
 
@@ -671,7 +830,5 @@ package cesium {
       ).asInstanceOf[FlyOptions]
     }
   }
-
-
 
 }
