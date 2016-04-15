@@ -84,8 +84,8 @@ package cesium {
   @JSName("Cesium.TimeStandard")
   @js.native
   object TimeStandard extends js.Object {
-    var TAI: String = js.native
-    var UTC: String = js.native
+    var TAI: TimeStandard = js.native
+    var UTC: TimeStandard = js.native
 
     @JSBracketAccess
     def apply(value: TimeStandard): String = js.native
