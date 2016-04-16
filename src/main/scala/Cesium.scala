@@ -33,7 +33,7 @@ import org.scalajs.dom._
 import scala.concurrent._
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.|
+import scala.scalajs.js.{|, UndefOr, undefined}
 
 import org.querki.jsext.{JSOptionBuilder, OptMap, noOpts}
 
@@ -49,6 +49,8 @@ import org.querki.jsext.{JSOptionBuilder, OptMap, noOpts}
   */
 
 package cesium {
+
+  import scala.scalajs.js.UndefOr
 
   @js.native
   trait Promise[+A] extends js.Object {
@@ -79,29 +81,28 @@ package cesium {
 
   //-------------------------------------------------------------------------------
 
-  // todo
   @js.native
   sealed trait TimeStandard extends js.Object
 
   @JSName("Cesium.TimeStandard")
   @js.native
   object TimeStandard extends js.Object {
-    var TAI: TimeStandard = js.native
-    var UTC: TimeStandard = js.native
+    val UTC: Int = js.native  // 0
+    val TAI: Int = js.native  // 1
 
     @JSBracketAccess
-    def apply(value: TimeStandard): String = js.native
+    def apply(value: TimeStandard): Int = js.native
   }
 
   @JSName("JulianDate")
   @js.native
-  class JulianDate(julianDayNumber: Int | Double, secondsOfDay: Int | Double, timeStandard: Option[TimeStandard]) extends js.Object {
+  class JulianDate(julianDayNumber: Int | Double, secondsOfDay: Int | Double, timeStandard: UndefOr[TimeStandard] = undefined) extends js.Object {
 
-    def clone(result: JulianDate): JulianDate = js.native
+    def clone(result: UndefOr[JulianDate] = undefined): JulianDate = js.native
 
-    def equals(right: JulianDate): Boolean = js.native
+    def equals(right: UndefOr[JulianDate] = undefined): Boolean = js.native
 
-    def equalsEpsilon(right: JulianDate, epsilon: Double): Boolean = js.native
+    def equalsEpsilon(right: UndefOr[JulianDate] = undefined, epsilon: Double): Boolean = js.native
   }
 
   @js.native
@@ -112,6 +113,59 @@ package cesium {
     def addDays(julianDate: JulianDate, days: Int | Double, result: JulianDate): JulianDate = js.native
 
     // todo
+  }
+
+  @js.native
+  sealed trait ReferenceFrame extends js.Object
+
+  @JSName("Cesium.ReferenceFrame")
+  @js.native
+  object ReferenceFrame extends js.Object {
+    val FIXED: Int = js.native       // 0
+    val INERTIAL: Int = js.native    // 1
+
+    @JSBracketAccess
+    def apply(value: ReferenceFrame): Int = js.native
+  }
+
+  @JSName("Cesium.Cartesian3")
+  @js.native
+  class Cartesian3(x: Double, y: Double, z: Double) extends js.Object {
+    // todo
+    def clone(result: UndefOr[Cartesian3] = undefined): Cartesian3 = js.native
+
+    def equals(right: UndefOr[Cartesian3] = undefined): Boolean = js.native
+
+    def equalsEpsilon(right: UndefOr[Cartesian3] = undefined, relativeEpsilon: Double, absoluteEpsilon: UndefOr[Double] = undefined): Boolean = js.native
+  }
+
+  @js.native
+  object Cartesian3 extends js.Object {
+    // todo
+    def packedLength: Int = js.native
+
+    val UNIT_X: Cartesian3 = js.native
+    val UNIT_Y: Cartesian3 = js.native
+    val UNIT_Z: Cartesian3 = js.native
+    val ZERO: Cartesian3 = js.native
+  }
+
+  @JSName("Cesium.PositionProperty")
+  @js.native
+  trait PositionProperty extends js.Object {
+
+    val referenceFrame: ReferenceFrame = js.native
+
+    def definitionChanged: Event = js.native
+
+    def isConstant: Boolean = js.native
+
+    def equals(other: PositionProperty): Boolean = js.native
+
+    def getValue(time: JulianDate, result: Cartesian3): Cartesian3 = js.native
+
+    def getValueInReferenceFrame(time: JulianDate, referenceFrame: ReferenceFrame, result: Cartesian3): Cartesian3 = js.native
+
   }
 
   @JSName("Cesium.Command")
@@ -290,6 +344,7 @@ package cesium {
   @JSName("Cesium.Appearance")
   @js.native
   class Appearance(options: AppearenceOptions) extends js.Object {
+
     def closed: Boolean = js.native
 
     def fragmentShaderSource: String = js.native
@@ -307,6 +362,10 @@ package cesium {
     def getRenderState(): Object = js.native
 
     def isTranslucent(): Boolean = js.native
+  }
+
+  object Appearance {
+    def apply(options: AppearenceOptions) = new Appearance(options)
   }
 
   @JSName("Cesium.Options")
@@ -352,7 +411,12 @@ package cesium {
 
     def getTileDataAvailable(x: Double, y: Double, level: Int): Boolean = js.native
 
+    // todo check this
     def requestTileGeometry(x: Double, y: Double, level: Int): Option[Future[TerrainData]] = js.native
+  }
+
+  object ArcGisImageServerTerrainProvider {
+    def apply(options: ArcGisImageServerTerrainProviderOptions) = new ArcGisImageServerTerrainProvider(options)
   }
 
   @JSName("Cesium.Options")
@@ -434,6 +498,10 @@ package cesium {
 
     def requestImage(x: Double, y: Double, level: Int): Option[Future[Image | Canvas]] = js.native
 
+  }
+
+  object ArcGisMapServerImageryProvider {
+    def apply(options: ArcGisMapServerImageryProviderOptions) = new ArcGisMapServerImageryProvider(options)
   }
 
 
@@ -559,7 +627,7 @@ package cesium {
 
   @JSName("Cesium.CzmlDataSource")
   @js.native
-  class CzmlDataSource(name: String = null) extends DataSource {
+  class CzmlDataSource(name: UndefOr[String] = undefined) extends DataSource {
 
     def load(data: String | Object, options: CzmlDSOptions = ???): Promise[DataSource] = js.native
 
@@ -568,6 +636,7 @@ package cesium {
 
   @js.native
   object CzmlDataSource extends js.Object {
+
     var updaters: Array[js.Function] = js.native
 
     def load(data: String | Object, options: CzmlDSOptions = ???): Promise[DataSource] = js.native
@@ -648,6 +717,10 @@ package cesium {
     //    val screenSpaceEventHandler: ScreenSpaceEventHandler = js.native
     //    val selectionIndicator: SelectionIndicator = js.native
     //    val timeline: Timeline = js.native
+  }
+
+  object Viewer {
+    def apply(container: Element | String, options: ViewerOptions) = new Viewer(container, options)
   }
 
   @JSName("Cesium.Options")
