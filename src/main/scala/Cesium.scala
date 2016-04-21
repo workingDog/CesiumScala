@@ -50,8 +50,6 @@ import org.querki.jsext.{JSOptionBuilder, OptMap, noOpts}
 
 package cesium {
 
-  import scala.scalajs.js.UndefOr
-
   @js.native
   trait Promise[+A] extends js.Object {
 
@@ -510,12 +508,6 @@ package cesium {
   @JSName("Cesium.TimeInterval")
   @js.native
   class TimeInterval() extends js.Object {
-    // todo
-  }
-
-  @JSName("Cesium.Entity")
-  @js.native
-  class Entity() extends js.Object {
     // todo
   }
 
