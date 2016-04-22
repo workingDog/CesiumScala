@@ -45,6 +45,7 @@ package cesium {
   @JSName("Cesium.Property")
   @js.native
   trait Property extends js.Object {
+
     def definitionChanged: Event = js.native
 
     def isConstant: Boolean = js.native
@@ -66,35 +67,16 @@ package cesium {
     def addInterval(interval: TimeInterval, dataComparer: UndefOr[DataComparer] = undefined): Unit = js.native
 
     // todo
-
   }
 
   @JSName("Cesium.ConstantProperty")
   @js.native
-  class ConstantProperty(value: UndefOr[js.Object]) extends Property {
-
-    override def definitionChanged: Event = js.native
-
-    override def isConstant: Boolean = js.native
-
-    override def equals(other: UndefOr[Property] = undefined): Boolean = js.native
-
-    override def getValue(time: JulianDate, result: UndefOr[Object] = undefined): Object = js.native
-  }
+  class ConstantProperty(value: UndefOr[js.Object]) extends Property
 
   @JSName("Cesium.CompositeProperty")
   @js.native
   class CompositeProperty() extends Property {
-
     def intervals: TimeIntervalCollection = js.native
-
-    override def definitionChanged: Event = js.native
-
-    override def isConstant: Boolean = js.native
-
-    override def equals(other: UndefOr[Property] = undefined): Boolean = js.native
-
-    override def getValue(time: JulianDate, result: UndefOr[Object] = undefined): Object = js.native
   }
 
   @js.native
@@ -105,78 +87,102 @@ package cesium {
   @JSName("Cesium.SampledProperty")
   @js.native
   class SampledProperty(`type`: Number | Packable, derivativeTypes: UndefOr[Array[Packable]]) extends Property {
-
-    override def definitionChanged: Event = js.native
-
-    override def isConstant: Boolean = js.native
-
-    override def equals(other: UndefOr[Property] = undefined): Boolean = js.native
-
-    override def getValue(time: JulianDate, result: UndefOr[Object] = undefined): Object = js.native
-
     // todo
   }
 
   @JSName("Cesium.TimeIntervalCollectionProperty")
   @js.native
   class TimeIntervalCollectionProperty() extends Property {
-
     def intervals: TimeIntervalCollection = js.native
-
-    override def definitionChanged: Event = js.native
-
-    override def isConstant: Boolean = js.native
-
-    override def equals(other: UndefOr[Property] = undefined): Boolean = js.native
-
-    override def getValue(time: JulianDate, result: UndefOr[Object] = undefined): Object = js.native
   }
 
   @JSName("Cesium.MaterialProperty")
   @js.native
   trait MaterialProperty extends Property {
-
     def getType(time: JulianDate): String = js.native
-
-    override def definitionChanged: Event = js.native
-
-    override def isConstant: Boolean = js.native
-
-    override def equals(other: UndefOr[Property] = undefined): Boolean = js.native
-
-    override def getValue(time: JulianDate, result: UndefOr[Object] = undefined): Object = js.native
   }
 
   @JSName("Cesium.PositionProperty")
   @js.native
   trait PositionProperty extends Property {
 
-    def referenceFrame: ReferenceFrame = js.native
+    val referenceFrame: ReferenceFrame = js.native
 
     def getValueInReferenceFrame(time: JulianDate, referenceFrame: ReferenceFrame, result: UndefOr[Object] = undefined): Cartesian3 = js.native
+  }
 
-    override def definitionChanged: Event = js.native
+  @JSName("Cesium.CompositePositionProperty")
+  @js.native
+  class CompositePositionProperty(referenceFrame: ReferenceFrame) extends PositionProperty {
+    def intervals: TimeIntervalCollection = js.native
+  }
 
-    override def isConstant: Boolean = js.native
+  @JSName("Cesium.ConstantPositionProperty")
+  @js.native
+  class ConstantPositionProperty(value: Cartesian3, referenceFrame: ReferenceFrame) extends PositionProperty {
+    def setValue(value: Cartesian3, referenceFrame: ReferenceFrame) = js.native
+  }
 
-    override def equals(other: UndefOr[Property] = undefined): Boolean = js.native
+  @js.native
+  trait InterpolationAlgorithm extends js.Object {
+    // todo
+  }
 
-    override def getValue(time: JulianDate, result: UndefOr[Object] = undefined): Object = js.native
+  @js.native
+  trait ExtrapolationType extends js.Object {
+    // todo
+  }
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait SampledPositionOptions extends js.Object
+
+  object SampledPositionOptions extends SampledPositionOptionsBuilder(noOpts)
+
+  class SampledPositionOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[SampledPositionOptions, SampledPositionOptionsBuilder](new SampledPositionOptionsBuilder(_)) {
+
+    def interpolationAlgorithm(v: InterpolationAlgorithm) = jsOpt("interpolationAlgorithm", v)
+
+    def interpolationDegree(v: Int) = jsOpt("interpolationDegree", v)
+
+  }
+
+  @JSName("Cesium.SampledPositionProperty")
+  @js.native
+  class SampledPositionProperty(referenceFrame: ReferenceFrame, numberOfDerivatives: Int) extends PositionProperty {
+
+    def backwardExtrapolationDuration(referenceFrame: ReferenceFrame, numberOfDerivatives: Int) = js.native
+
+    def backwardExtrapolationType: ExtrapolationType = js.native
+
+    def forwardExtrapolationDuration(referenceFrame: ReferenceFrame, numberOfDerivatives: Int) = js.native
+
+    def forwardExtrapolationType: ExtrapolationType = js.native
+
+    def interpolationAlgorithm: InterpolationAlgorithm = js.native
+
+    def interpolationDegree: Int = js.native
+
+    def addSamplesPackedArray(packedSamples: Array[Int], epoch: JulianDate) = js.native
+
+    def addSample(time: JulianDate, position: Cartesian3, derivatives: Array[Cartesian3]) = js.native
+
+    def addSamples(time: Array[JulianDate], position: Array[Cartesian3], derivatives: Array[Array[Cartesian3]]) = js.native
+
+    def setInterpolationOptions(options: SampledPositionOptions): Unit = js.native
+
+  }
+
+  @JSName("Cesium.TimeIntervalCollectionPositionProperty")
+  @js.native
+  class TimeIntervalCollectionPositionProperty(referenceFrame: ReferenceFrame) extends PositionProperty {
+    def intervals: TimeIntervalCollection = js.native
   }
 
   @JSName("Cesium.TimeIntervalCollectionProperty")
   @js.native
   class ReferenceProperty(targetCollection: EntityCollection, targetId: String, targetPropertyNames: Array[String]) extends Property {
-
     // todo
-
-    override def definitionChanged: Event = js.native
-
-    override def isConstant: Boolean = js.native
-
-    override def equals(other: UndefOr[Property] = undefined): Boolean = js.native
-
-    override def getValue(time: JulianDate, result: UndefOr[Object] = undefined): Object = js.native
   }
 
   @JSName("Cesium.Options")
@@ -186,6 +192,7 @@ package cesium {
   object BillboardOptions extends BillboardOptionsBuilder(noOpts)
 
   class BillboardOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[BillboardOptions, BillboardOptionsBuilder](new BillboardOptionsBuilder(_)) {
+
     def image(v: Property) = jsOpt("image", v)
 
     def show(v: Property) = jsOpt("show", v)
