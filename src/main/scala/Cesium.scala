@@ -63,7 +63,6 @@ package cesium {
     def andThen[B](onFulfilled: js.Function1[A, B], onRejected: js.Function1[Any, B]): Promise[Any] = js.native
   }
 
-  @JSName("Cesium")
   @js.native
   object Cesium extends js.GlobalScope {
     def Cesium: CesiumStatic = js.native
@@ -146,24 +145,6 @@ package cesium {
     val UNIT_Y: Cartesian3 = js.native
     val UNIT_Z: Cartesian3 = js.native
     val ZERO: Cartesian3 = js.native
-  }
-
-  @JSName("Cesium.PositionProperty")
-  @js.native
-  trait PositionProperty extends js.Object {
-
-    val referenceFrame: ReferenceFrame = js.native
-
-    def definitionChanged: Event = js.native
-
-    def isConstant: Boolean = js.native
-
-    def equals(other: PositionProperty): Boolean = js.native
-
-    def getValue(time: JulianDate, result: Cartesian3): Cartesian3 = js.native
-
-    def getValueInReferenceFrame(time: JulianDate, referenceFrame: ReferenceFrame, result: Cartesian3): Cartesian3 = js.native
-
   }
 
   @JSName("Cesium.Command")

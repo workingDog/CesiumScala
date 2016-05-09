@@ -42,6 +42,7 @@ import org.querki.jsext.{JSOptionBuilder, OptMap, noOpts}
 
 package cesium {
 
+
   @JSName("Cesium.Property")
   @js.native
   trait Property extends js.Object {
@@ -120,7 +121,7 @@ package cesium {
   @JSName("Cesium.ConstantPositionProperty")
   @js.native
   class ConstantPositionProperty(value: Cartesian3, referenceFrame: ReferenceFrame) extends PositionProperty {
-    def setValue(value: Cartesian3, referenceFrame: ReferenceFrame) = js.native
+    def setValue(value: Cartesian3, referenceFrame: ReferenceFrame): Unit = js.native
   }
 
   @js.native
@@ -151,11 +152,11 @@ package cesium {
   @js.native
   class SampledPositionProperty(referenceFrame: ReferenceFrame, numberOfDerivatives: Int) extends PositionProperty {
 
-    def backwardExtrapolationDuration(referenceFrame: ReferenceFrame, numberOfDerivatives: Int) = js.native
+    def backwardExtrapolationDuration(referenceFrame: ReferenceFrame, numberOfDerivatives: Int): Unit = js.native
 
     def backwardExtrapolationType: ExtrapolationType = js.native
 
-    def forwardExtrapolationDuration(referenceFrame: ReferenceFrame, numberOfDerivatives: Int) = js.native
+    def forwardExtrapolationDuration(referenceFrame: ReferenceFrame, numberOfDerivatives: Int): Unit = js.native
 
     def forwardExtrapolationType: ExtrapolationType = js.native
 
@@ -163,11 +164,11 @@ package cesium {
 
     def interpolationDegree: Int = js.native
 
-    def addSamplesPackedArray(packedSamples: Array[Int], epoch: JulianDate) = js.native
+    def addSamplesPackedArray(packedSamples: Array[Int], epoch: JulianDate): Unit = js.native
 
-    def addSample(time: JulianDate, position: Cartesian3, derivatives: Array[Cartesian3]) = js.native
+    def addSample(time: JulianDate, position: Cartesian3, derivatives: Array[Cartesian3]): Unit = js.native
 
-    def addSamples(time: Array[JulianDate], position: Array[Cartesian3], derivatives: Array[Array[Cartesian3]]) = js.native
+    def addSamples(time: Array[JulianDate], position: Array[Cartesian3], derivatives: Array[Array[Cartesian3]]): Unit = js.native
 
     def setInterpolationOptions(options: SampledPositionOptions): Unit = js.native
 
@@ -533,7 +534,7 @@ package cesium {
     var polyline: PolylineGraphics = js.native
     var polylineVolume: PolylineVolumeGraphics = js.native
     var position: PositionProperty = js.native
-    var propertyNames: Array = js.native
+    var propertyNames: Array[Int] = js.native  // check type of array todo
     var rectangle: RectangleGraphics = js.native
     var show: Boolean = js.native
     var viewFrom: Property = js.native
