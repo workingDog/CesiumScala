@@ -4,24 +4,25 @@
 It uses WebGL for hardware-accelerated graphics, and is cross-platform, cross-browser, 
 and tuned for dynamic-data visualization. 
 
-This library **CesiumScala**, is a Scala.js interface to Cesium.js Javascript library, 
-so that client applications written in scala and compiled by Scala.js into javascript, can easily call Cesium functions.
+This library **CesiumScala**, is a Scala.js interface to Cesium.js Javascript library.
+Cesium client applications can now be written in [Scala](http://www.scala-lang.org/) and compiled into javascript
+using [Scala.js](https://www.scala-js.org/).
 
 ## References
  
 1) [Scala.js](https://www.scala-js.org/)
 
-2) [Cesium doc](https://cesiumjs.org/refdoc.html)
+2) [Cesium](https://cesiumjs.org/)
 
-3) [jsext](https://github.com/jducoeur/jsext)
 
 ## Compiling and packaging
 
     sbt fastOptJS
+    sbt package
 
 ## Status
 
-work in progress, a long way to go yet, not yet functional
+work in progress
 
 
 
