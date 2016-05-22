@@ -1,11 +1,12 @@
 /**
   * A Scala.js facade for Cesium.js "An open-source JavaScript library for world-class 3D globes and maps"
   *
-  * Reference:  http://cesiumjs.org/
+  * Reference:  http://cesiumjs.org/ and https://cesiumjs.org/refdoc.html
   *
   * @author Ringo Wathelet
   *         Date: 22/05/16
   *         Version: 1
+  *
   */
 
 package cesium {
@@ -37,8 +38,8 @@ package cesium {
   @JSName("Cesium.Intersect")
   @js.native
   object Intersect extends js.Object {
-    val INSIDE: Int = js.native  // 1
-    val INTERSECTING: Int = js.native  // 0
+    val INSIDE: Int = js.native // 1
+    val INTERSECTING: Int = js.native // 0
     val OUTSIDE: Int = js.native // -1
 
     @JSBracketAccess
@@ -51,8 +52,8 @@ package cesium {
   @JSName("Cesium.ClockStep")
   @js.native
   object ClockStep extends js.Object {
-    val SYSTEM_CLOCK: Int = js.native  // 2
-    val SYSTEM_CLOCK_MULTIPLIER: Int = js.native  // 1
+    val SYSTEM_CLOCK: Int = js.native // 2
+    val SYSTEM_CLOCK_MULTIPLIER: Int = js.native // 1
     val TICK_DEPENDENT: Int = js.native // 0
 
     @JSBracketAccess
@@ -65,8 +66,8 @@ package cesium {
   @JSName("Cesium.ClockRange")
   @js.native
   object ClockRange extends js.Object {
-    val CLAMPED: Int = js.native  // 1
-    val LOOP_STOP: Int = js.native  // 2
+    val CLAMPED: Int = js.native // 1
+    val LOOP_STOP: Int = js.native // 2
     val UNBOUNDED: Int = js.native // 0
 
     @JSBracketAccess
@@ -76,7 +77,6 @@ package cesium {
   @js.native
   sealed trait ComponentDatatype extends js.Object
 
-  // todo
   @JSName("Cesium.ComponentDatatype")
   @js.native
   object ComponentDatatype extends js.Object {
@@ -89,12 +89,25 @@ package cesium {
 
     @JSBracketAccess
     def apply(value: ComponentDatatype): Int = js.native
+
+    def createArrayBufferView(componentDatatype: ComponentDatatype,
+                              buffer: ArrayBuffer, byteOffset: Int,
+                              length: Int): Int8Array | Uint8Array | Int16Array | Uint16Array | Float32Array | Float64Array = js.native
+
+    def createTypedArray(componentDatatype: ComponentDatatype,
+                         valuesOrLength: Int | Array[Int8Array | Uint8Array | Int16Array | Uint16Array | Float32Array | Float64Array]): Int8Array | Uint8Array | Int16Array | Uint16Array | Float32Array | Float64Array = js.native
+
+    def fromTypedArray(array: Cesium.TypedArray): ComponentDatatype = js.native
+
+    def getSizeInBytes(componentDatatype: ComponentDatatype): Int = js.native
+
+    def validate(componentDatatype: ComponentDatatype): Boolean = js.native
+
   }
 
   @js.native
   sealed trait PrimitiveType extends js.Object
 
-  // todo
   @JSName("Cesium.PrimitiveType")
   @js.native
   object PrimitiveType extends js.Object {
@@ -116,7 +129,7 @@ package cesium {
   @JSName("Cesium.TimeStandard")
   @js.native
   object TimeStandard extends js.Object {
-    val UTC: Int = js.native  // 0
+    val UTC: Int = js.native // 0
     val TAI: Int = js.native // 1
 
     @JSBracketAccess
@@ -137,19 +150,42 @@ package cesium {
   }
 
   @js.native
-  sealed trait ExtrapolationType extends js.Object {
-    // todo
+  sealed trait ExtrapolationType extends js.Object
+
+  @JSName("Cesium.ExtrapolationType")
+  @js.native
+  object ExtrapolationType extends js.Object {
+    val EXTRAPOLATE: Int = js.native
+    val HOLD: Int = js.native
+    val NONE: Int = js.native
+
+    @JSBracketAccess
+    def apply(value: ExtrapolationType): Int = js.native
   }
 
+  // todo verify
   @js.native
-  sealed trait InterpolationAlgorithm extends js.Object {
-    // todo
+  sealed trait InterpolationAlgorithm extends js.Object
+  @JSName("Cesium.InterpolationAlgorithm")
+  @js.native
+  object InterpolationAlgorithm extends js.Object {
+    val `type`: String = js.native
+    val HOLD: Int = js.native
+    val NONE: Int = js.native
+
+    def apply(value: InterpolationAlgorithm): Int = js.native
+
+    def getRequiredDataPoints(degree: Int): Int = js.native
+
+    def interpolate(x: Double, xTable: Array[Double], yTable: Array[Double], yStride: Array[Int], inputOrder: Int, outputOrder: Int, result: Array[Double]): Array[Double] = js.native
+
+    def interpolateOrderZero(x: Double, xTable: Array[Double], yTable: Array[Double], yStride: Array[Int], result: Array[Double]): Array[Double] = js.native
   }
 
+
   @js.native
-  sealed trait Frustum extends js.Object {
-    // todo
-  }
+  sealed trait Frustum extends js.Object
+
 
   @js.native
   sealed trait Packable extends js.Object
@@ -218,7 +254,6 @@ package cesium {
     val ORDNANCE_SURVEY: String = js.native
     val ROAD: String = js.native
 
-    @JSBracketAccess
     def apply(value: BingMapsStyle): String = js.native
   }
 
@@ -277,7 +312,6 @@ package cesium {
     val TEXTURED: js.Object = js.native
     val ALL: js.Object = js.native
 
-    @JSBracketAccess
     def apply(value: MaterialAppearanceMaterialSupport): js.Object = js.native
   }
 
@@ -7060,7 +7094,7 @@ package cesium {
 
     def loadWithXhr(options: js.Any): Promise[js.Any] = js.native
 
-    def loadXML(url: String | Promise[String], headers: js.Any = ???): Promise[String] = js.native
+    def loadXML(url: String | Promise[String], headers: js.Any = ???): Promise[js.Any] = js.native
 
     def mergeSort(array: js.Array[js.Any], comparator: MergeSort.Comparator, userDefinedObject: js.Any = ???): js.Dynamic = js.native
 
