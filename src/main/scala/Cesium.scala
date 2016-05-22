@@ -2,11 +2,12 @@
   * A Scala.js facade for Cesium.js "An open-source JavaScript library for world-class 3D globes and maps"
   *
   * Reference:  http://cesiumjs.org/ and https://cesiumjs.org/refdoc.html
+  * Specifically Cesium-1.21 documentation/code (May 2016)
+  *
   *
   * @author Ringo Wathelet
   *         Date: 22/05/16
   *         Version: 1
-  *
   */
 
 package cesium {
@@ -24,14 +25,10 @@ package cesium {
   import scala.scalajs.js.typedarray.{ArrayBuffer, Float32Array, Float64Array, Int16Array, Int8Array, TypedArray, Uint16Array, Uint8Array}
 
 
-  @js.native
-  trait Proxy extends js.Object {
-    def getURL(resource: String): String = js.native
-  }
+  // -------------------------------------------------------------------------------------
+  // -------------------------------------------------------------------------------------
+  // -------------------------------------------------------------------------------------
 
-  // -------------------------------------------------------------------------------------
-  // -------------------------------------------------------------------------------------
-  // -------------------------------------------------------------------------------------
   @js.native
   sealed trait Intersect extends js.Object
 
@@ -182,8 +179,9 @@ package cesium {
     def interpolateOrderZero(x: Double, xTable: Array[Double], yTable: Array[Double], yStride: Array[Int], result: Array[Double]): Array[Double] = js.native
   }
 
-
-  @js.native
+  // todo not yet implemented in Cesium.js
+  //@js.native
+  @ScalaJSDefined
   sealed trait Frustum extends js.Object
 
 
@@ -349,6 +347,11 @@ package cesium {
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
+
+  @js.native
+  trait Proxy extends js.Object {
+    def getURL(resource: String): String = js.native
+  }
 
   @js.native
   @JSName("Cesium.ArcGisImageServerTerrainProvider")
