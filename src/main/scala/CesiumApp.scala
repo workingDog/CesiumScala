@@ -1,5 +1,5 @@
 
-import cesium.{CzmlDataSource, Viewer}
+import cesium.Viewer
 import org.scalajs.dom._
 import org.scalajs.dom
 import dom.document
@@ -8,13 +8,13 @@ import scala.scalajs.js.{JSON, JSApp}
 
 
 /**
-  * a basic Scala.js app using CesiumScala.
+  * a basic test app for using CesiumScala.
   *
-  * to compile and generate the CesiumApp, type sbt fastOptJS.
-  * This will generate a cesiumscala-fastopt.js in the ./js directory.
-  * Put the CesiumScala.html and the cesiumscala-fastopt.js files in the Cesium/Apps directory and
-  * launch Cesium, e.g. using node server.js, then point your browser to
-  * http://localhost:8080/Apps/CesiumScala.html
+  * to compile and generate CesiumScala, type "sbt fastOptJS".
+  * This will generate "cesiumscala-fastopt.js" in the "./js directory".
+  * Put "CesiumScala.html" and "cesiumscala-fastopt.js" files in the "Cesium/Apps" directory and
+  * launch Cesium (node server.js).
+  * Then point your browser to http://localhost:8080/Apps/CesiumScala.html
   *
   * P.S
   * you should get a key for Bing Map, see: https://www.bingmapsportal.com/
@@ -24,7 +24,7 @@ import scala.scalajs.js.{JSON, JSApp}
   */
 object CesiumApp extends JSApp {
   def main(): Unit = {
-    println("---> hello from scala CesiumApp")
+    println("---> hello from the Cesium Scala.js facade in CesiumApp")
 
     // launch the Cesium viewer
     val viewer = new Viewer("cesiumContainer")
