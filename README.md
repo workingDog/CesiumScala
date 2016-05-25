@@ -14,6 +14,7 @@ using [Scala.js](https://www.scala-js.org/).
 
 2) [Cesium](https://cesiumjs.org/)
 
+3) [jsext](https://github.com/jducoeur/jsext)
 
 ## Compiling and packaging
 

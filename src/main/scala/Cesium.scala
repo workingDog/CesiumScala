@@ -12,22 +12,39 @@
 
 package cesium {
 
+  import cesium.Cesium.RenderState
+  import org.querki.jsext.{JSOptionBuilder, OptMap, noOpts}
+  import org.scalajs.dom.html.Canvas
+
   import scala.concurrent._
   import scala.scalajs.js
   import scala.scalajs.js.annotation._
-  import scala.scalajs.js.{|, UndefOr, undefined}
-
+  import scala.scalajs.js.{UndefOr, undefined, |}
   import org.scalajs.dom.{Blob, Document, Element}
   import org.scalajs.dom.raw.{HTMLCanvasElement, HTMLImageElement, HTMLVideoElement}
   import org.w3c.dom.html.{HTMLElement, HTMLIFrameElement}
 
   import scala.scalajs.js.Date
-  import scala.scalajs.js.typedarray.{ArrayBuffer, Float32Array, Float64Array, Int16Array, Int8Array, TypedArray, Uint16Array, Uint8Array}
+  import scala.scalajs.js.typedarray.{ArrayBuffer, Float32Array, Float64Array, Int16Array, Int8Array, TypedArray, Uint16Array, Uint32Array, Uint8Array}
 
 
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
+
+  @js.native
+  sealed trait CornerType extends js.Object
+
+  @JSName("Cesium.CornerType")
+  @js.native
+  object CornerType extends js.Object {
+    val BEVELED: Int = js.native
+    val MITERED: Int = js.native
+    val ROUNDED: Int = js.native
+
+    @JSBracketAccess
+    def apply(value: CornerType): Int = js.native
+  }
 
   @js.native
   sealed trait Intersect extends js.Object
@@ -89,10 +106,10 @@ package cesium {
 
     def createArrayBufferView(componentDatatype: ComponentDatatype,
                               buffer: ArrayBuffer, byteOffset: Int,
-                              length: Int): Int8Array | Uint8Array | Int16Array | Uint16Array | Float32Array | Float64Array = js.native
+                              length: Int): Cesium.TypedArray = js.native
 
     def createTypedArray(componentDatatype: ComponentDatatype,
-                         valuesOrLength: Int | Array[Int8Array | Uint8Array | Int16Array | Uint16Array | Float32Array | Float64Array]): Int8Array | Uint8Array | Int16Array | Uint16Array | Float32Array | Float64Array = js.native
+                         valuesOrLength: Int | Cesium.TypedArray): Cesium.TypedArray = js.native
 
     def fromTypedArray(array: Cesium.TypedArray): ComponentDatatype = js.native
 
@@ -353,10 +370,25 @@ package cesium {
     def getURL(resource: String): String = js.native
   }
 
+  @JSName("Cesium.Options")
+  @js.native
+  trait ArcGisImageServerTerrainProviderOptions extends js.Object
+
+  object ArcGisImageServerTerrainProviderOptions extends ArcGisImageServerTerrainProviderOptionsBuilder(noOpts)
+
+  class ArcGisImageServerTerrainProviderOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ArcGisImageServerTerrainProviderOptions, ArcGisImageServerTerrainProviderOptionsBuilder](new ArcGisImageServerTerrainProviderOptionsBuilder(_)) {
+    def url(v: String) = jsOpt("url", v)
+    def token(v: String) = jsOpt("token", v)
+    def proxy(v: Object) = jsOpt("proxy", v)
+    def tilingScheme(v: TilingScheme) = jsOpt("tilingScheme", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+    def credit(v: Credit | String) = jsOpt("credit", v)
+  }
+
   @js.native
   @JSName("Cesium.ArcGisImageServerTerrainProvider")
   class ArcGisImageServerTerrainProvider protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: ArcGisImageServerTerrainProviderOptions) = this()
 
     var errorEvent: Event = js.native
     var credit: Credit = js.native
@@ -526,10 +558,22 @@ package cesium {
     def equals(left: BoundingSphere = ???, right: BoundingSphere = ???): Boolean = js.native
   }
 
+  @JSName("Cesium.Options")
+  @js.native
+  trait BoxGeometryOptions extends js.Object
+
+  object BoxGeometryOptions extends BoxGeometryOptionsBuilder(noOpts)
+
+  class BoxGeometryOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[BoxGeometryOptions, BoxGeometryOptionsBuilder](new BoxGeometryOptionsBuilder(_)) {
+    def minimum(v: Cartesian3) = jsOpt("minimum", v)
+    def maximum(v: Cartesian3) = jsOpt("maximum", v)
+    def vertexFormat(v: VertexFormat) = jsOpt("vertexFormat", v)
+  }
+
   @js.native
   @JSName("Cesium.BoxGeometry")
   class BoxGeometry protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: BoxGeometryOptions) = this()
   }
 
   @js.native
@@ -547,11 +591,22 @@ package cesium {
 
     def createGeometry(boxGeometry: BoxGeometry): Geometry | Unit = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait BoxOutlineGeometryOptions extends js.Object
 
+  object BoxOutlineGeometryOptions extends BoxOutlineGeometryOptionsBuilder(noOpts)
+
+  class BoxOutlineGeometryOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[BoxOutlineGeometryOptions, BoxOutlineGeometryOptionsBuilder](new BoxOutlineGeometryOptionsBuilder(_)) {
+
+    def minimum(v: Cartesian3) = jsOpt("minimum", v)
+    def maximum(v: Cartesian3) = jsOpt("maximum", v)
+
+  }
   @js.native
   @JSName("Cesium.BoxOutlineGeometry")
   class BoxOutlineGeometry protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: BoxOutlineGeometryOptions) = this()
   }
 
   @js.native
@@ -559,7 +614,7 @@ package cesium {
   object BoxOutlineGeometry extends js.Object {
     var packedLength: Double = js.native
 
-    def fromDimensions(options: js.Any): BoxOutlineGeometry = js.native
+    def fromDimensions(dimensions: Option[Cartesian3]): BoxOutlineGeometry = js.native
 
     def fromAxisAlignedBoundingBox(boundingBox: AxisAlignedBoundingBox): BoxOutlineGeometry = js.native
 
@@ -873,11 +928,24 @@ package cesium {
 
     def equalsEpsilon(left: Cartographic, right: Cartographic, epsilon: Double): Boolean = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait CatmullRomSplineOptions extends js.Object
 
+  object CatmullRomSplineOptions extends CatmullRomSplineOptionsBuilder(noOpts)
+
+  class CatmullRomSplineOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[CatmullRomSplineOptions, CatmullRomSplineOptionsBuilder](new CatmullRomSplineOptionsBuilder(_)) {
+
+    def times(v: Array[Double]) = jsOpt("times", v)
+    def points(v: Array[Cartesian3]) = jsOpt("points", v)
+    def firstTangent(v: Cartesian3) = jsOpt("firstTangent", v)
+    def lastTangent(v: Cartesian3) = jsOpt("lastTangent", v)
+
+  }
   @js.native
   @JSName("Cesium.CatmullRomSpline")
   class CatmullRomSpline protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: CatmullRomSplineOptions) = this()
 
     var times: js.Array[Double] = js.native
     var points: js.Array[Cartesian3] = js.native
@@ -888,11 +956,26 @@ package cesium {
 
     def evaluate(time: Double, result: Cartesian3 = ???): Cartesian3 = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait CesiumTerrainProviderOptions extends js.Object
 
+  object CesiumTerrainProviderOptions extends CesiumTerrainProviderOptionsBuilder(noOpts)
+
+  class CesiumTerrainProviderOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[CesiumTerrainProviderOptions, CesiumTerrainProviderOptionsBuilder](new CesiumTerrainProviderOptionsBuilder(_)) {
+
+    def url(v: String) = jsOpt("url", v)
+    def proxy(v: Proxy) = jsOpt("proxy", v)
+    def requestVertexNormals(v: Boolean) = jsOpt("requestVertexNormals", v)
+    def requestWaterMask(v: Boolean) = jsOpt("requestWaterMask", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+    def credit(v: Credit | String) = jsOpt("credit", v)
+
+  }
   @js.native
   @JSName("Cesium.CesiumTerrainProvider")
   class CesiumTerrainProvider protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: CesiumTerrainProviderOptions) = this()
 
     var errorEvent: Event = js.native
     var credit: Credit = js.native
@@ -910,11 +993,28 @@ package cesium {
 
     def getTileDataAvailable(x: Double, y: Double, level: Double): Boolean = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait CircleGeometryOptions extends js.Object
 
+  object CircleGeometryOptions extends CircleGeometryOptionsBuilder(noOpts)
+
+  class CircleGeometryOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[CircleGeometryOptions, CircleGeometryOptionsBuilder](new CircleGeometryOptionsBuilder(_)) {
+
+    def center(v: Cartesian3) = jsOpt("center", v)
+    def radius(v: Double) = jsOpt("radius", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+    def height(v: Double) = jsOpt("height", v)
+    def granularity(v: Double) = jsOpt("granularity", v)
+    def vertexFormat(v: VertexFormat) = jsOpt("vertexFormat", v)
+    def extrudedHeight(v: Double) = jsOpt("extrudedHeight", v)
+    def stRotation(v: Double) = jsOpt("stRotation", v)
+
+  }
   @js.native
   @JSName("Cesium.CircleGeometry")
   class CircleGeometry protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: CircleGeometryOptions) = this()
   }
 
   @js.native
@@ -928,11 +1028,28 @@ package cesium {
 
     def createGeometry(circleGeometry: CircleGeometry): Geometry | Unit = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait CircleOutlineGeometryOptions extends js.Object
 
+  object CircleOutlineGeometryOptions extends CircleOutlineGeometryOptionsBuilder(noOpts)
+
+  class CircleOutlineGeometryOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[CircleOutlineGeometryOptions, CircleOutlineGeometryOptionsBuilder](new CircleOutlineGeometryOptionsBuilder(_)) {
+
+    def center(v: Cartesian3) = jsOpt("center", v)
+    def radius(v: Double) = jsOpt("radius", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+    def height(v: Double) = jsOpt("height", v)
+    def granularity(v: Double) = jsOpt("granularity", v)
+    def vertexFormat(v: VertexFormat) = jsOpt("vertexFormat", v)
+    def extrudedHeight(v: Double) = jsOpt("extrudedHeight", v)
+    def numberOfVerticalLines(v: Double) = jsOpt("numberOfVerticalLines", v)
+
+  }
   @js.native
   @JSName("Cesium.CircleOutlineGeometry")
   class CircleOutlineGeometry protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: CircleOutlineGeometryOptions) = this()
   }
 
   @js.native
@@ -946,11 +1063,28 @@ package cesium {
 
     def createGeometry(circleGeometry: CircleOutlineGeometry): Geometry | Unit = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait ClockOptions extends js.Object
 
+  object ClockOptions extends ClockOptionsBuilder(noOpts)
+
+  class ClockOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ClockOptions, ClockOptionsBuilder](new ClockOptionsBuilder(_)) {
+
+    def startTime(v: JulianDate) = jsOpt("startTime", v)
+    def stopTime(v: JulianDate) = jsOpt("stopTime", v)
+    def currentTime(v: JulianDate) = jsOpt("currentTime", v)
+    def multiplier(v: Double) = jsOpt("multiplier", v)
+    def clockStep(v: ClockStep) = jsOpt("clockStep", v)
+    def clockRange(v: ClockRange) = jsOpt("clockRange", v)
+    def canAnimate(v: Boolean) = jsOpt("canAnimate", v)
+    def shouldAnimate(v: Boolean) = jsOpt("shouldAnimate", v)
+
+  }
   @js.native
   @JSName("Cesium.Clock")
   class Clock protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: ClockOptions) = this()
 
     var startTime: JulianDate = js.native
     var stopTime: JulianDate = js.native
@@ -995,7 +1129,28 @@ package cesium {
 
     def withAlpha(alpha: Double, result: Color = ???): Color = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait RandomColorOptions extends js.Object
 
+  object RandomColorOptions extends RandomColorOptionsBuilder(noOpts)
+
+  class RandomColorOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[RandomColorOptions, RandomColorOptionsBuilder](new RandomColorOptionsBuilder(_)) {
+
+    def red(v: Double) = jsOpt("red", v)
+    def minimumRed(v: Double) = jsOpt("minimumRed", v)
+    def maximumRed(v: Double) = jsOpt("maximumRed", v)
+    def green(v: Double) = jsOpt("green", v)
+    def minimumGreen(v: Double) = jsOpt("minimumGreen", v)
+    def maximumGreen(v: Double) = jsOpt("maximumGreen", v)
+    def blue(v: Double) = jsOpt("blue", v)
+    def minimumBlue(v: Double) = jsOpt("minimumBlue", v)
+    def maximumBlue(v: Double) = jsOpt("maximumBlue", v)
+    def alpha(v: Double) = jsOpt("alpha", v)
+    def minimumAlpha(v: Double) = jsOpt("minimumAlpha", v)
+    def maximumAlpha(v: Double) = jsOpt("maximumAlpha", v)
+
+  }
   @js.native
   @JSName("Cesium.Color")
   object Color extends js.Object {
@@ -1158,7 +1313,7 @@ package cesium {
 
     def fromHsl(hue: Double = ???, saturation: Double = ???, lightness: Double = ???, alpha: Double = ???, result: Color = ???): Color = js.native
 
-    def fromRandom(options: js.Any = ???, result: Color = ???): Color = js.native
+    def fromRandom(options: RandomColorOptions = ???, result: Color = ???): Color = js.native
 
     def fromCssColorString(color: String, result: Color = ???): Color = js.native
 
@@ -1209,11 +1364,29 @@ package cesium {
 
     def equals(left: ColorGeometryInstanceAttribute = ???, right: ColorGeometryInstanceAttribute = ???): Boolean = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait CorridorGeometryOptions extends js.Object
 
+  object CorridorGeometryOptions extends CorridorGeometryOptionsBuilder(noOpts)
+
+  class CorridorGeometryOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[CorridorGeometryOptions, CorridorGeometryOptionsBuilder](new CorridorGeometryOptionsBuilder(_)) {
+
+    def positions(v: Array[Cartesian3]) = jsOpt("positions", v)
+
+    def width(v: Double) = jsOpt("width", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+    def granularity(v: Double) = jsOpt("granularity", v)
+    def height(v: Double) = jsOpt("height", v)
+    def extrudedHeight(v: Double) = jsOpt("extrudedHeight", v)
+    def vertexFormat(v: VertexFormat) = jsOpt("vertexFormat", v)
+    def cornerType(v: CornerType) = jsOpt("cornerType", v)
+
+  }
   @js.native
   @JSName("Cesium.CorridorGeometry")
   class CorridorGeometry protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: CorridorGeometryOptions) = this()
 
     var packedLength: Double = js.native
   }
@@ -1227,11 +1400,27 @@ package cesium {
 
     def createGeometry(corridorGeometry: CorridorGeometry): Geometry | Unit = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait CorridorOutlineGeometryOptions extends js.Object
 
+  object CorridorOutlineGeometryOptions extends CorridorOutlineGeometryOptionsBuilder(noOpts)
+
+  class CorridorOutlineGeometryOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[CorridorOutlineGeometryOptions, CorridorOutlineGeometryOptionsBuilder](new CorridorOutlineGeometryOptionsBuilder(_)) {
+    def positions(v: Array[Cartesian3]) = jsOpt("positions", v)
+
+    def width(v: Double) = jsOpt("width", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+    def granularity(v: Double) = jsOpt("granularity", v)
+    def height(v: Double) = jsOpt("height", v)
+    def extrudedHeight(v: Double) = jsOpt("extrudedHeight", v)
+    def cornerType(v: CornerType) = jsOpt("cornerType", v)
+
+  }
   @js.native
   @JSName("Cesium.CorridorOutlineGeometry")
   class CorridorOutlineGeometry protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: CorridorOutlineGeometryOptions) = this()
 
     var packedLength: Double = js.native
   }
@@ -1285,11 +1474,25 @@ package cesium {
 
     def createGeometry(cylinderGeometry: CylinderGeometry): Geometry | Unit = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait CylinderOutlineGeometryOptions extends js.Object
 
+  object CylinderOutlineGeometryOptions extends CylinderOutlineGeometryOptionsBuilder(noOpts)
+
+  class CylinderOutlineGeometryOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[CylinderOutlineGeometryOptions, CylinderOutlineGeometryOptionsBuilder](new CylinderOutlineGeometryOptionsBuilder(_)) {
+
+    def length(v: Double) = jsOpt("length", v)
+    def topRadius(v: Double) = jsOpt("topRadius", v)
+    def bottomRadius(v: Double) = jsOpt("bottomRadius", v)
+    def slices(v: Int) = jsOpt("slices", v)
+    def numberOfVerticalLines(v: Int) = jsOpt("numberOfVerticalLines", v)
+
+  }
   @js.native
   @JSName("Cesium.CylinderOutlineGeometry")
   class CylinderOutlineGeometry protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: CylinderOutlineGeometryOptions) = this()
   }
 
   @js.native
@@ -1321,11 +1524,24 @@ package cesium {
     var message: String = js.native
     var stack: String = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait EllipseGeometryOptions extends js.Object
 
+  object EllipseGeometryOptions extends EllipseGeometryOptionsBuilder(noOpts)
+
+  class EllipseGeometryOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[EllipseGeometryOptions, EllipseGeometryOptionsBuilder](new EllipseGeometryOptionsBuilder(_)) {
+
+    def radii(v: Cartesian3) = jsOpt("radii", v)
+    def stackPartitions(v: Int) = jsOpt("stackPartitions", v)
+    def slicePartitions(v: Int) = jsOpt("slicePartitions", v)
+    def vertexFormat(v: VertexFormat) = jsOpt("vertexFormat", v)
+
+  }
   @js.native
   @JSName("Cesium.EllipseGeometry")
   class EllipseGeometry protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: EllipseGeometryOptions) = this()
   }
 
   @js.native
@@ -1339,11 +1555,23 @@ package cesium {
 
     def createGeometry(ellipseGeometry: EllipseGeometry): Geometry | Unit = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait EllipseOutlineGeometryOptions extends js.Object
 
+  object EllipseOutlineGeometryOptions extends EllipseOutlineGeometryOptionsBuilder(noOpts)
+
+  class EllipseOutlineGeometryOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[EllipseOutlineGeometryOptions, EllipseOutlineGeometryOptionsBuilder](new EllipseOutlineGeometryOptionsBuilder(_)) {
+    def radii(v: Cartesian3) = jsOpt("radii", v)
+    def stackPartitions(v: Int) = jsOpt("stackPartitions", v)
+    def slicePartitions(v: Int) = jsOpt("slicePartitions", v)
+    def subdivisions(v: Int) = jsOpt("subdivisions", v)
+
+  }
   @js.native
   @JSName("Cesium.EllipseOutlineGeometry")
   class EllipseOutlineGeometry protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: EllipseOutlineGeometryOptions) = this()
   }
 
   @js.native
@@ -1435,11 +1663,25 @@ package cesium {
 
     def interpolateUsingSurfaceDistance(distance: Double): Cartographic = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait EllipsoidGeometryOptions extends js.Object
 
+  object EllipsoidGeometryOptions extends EllipsoidGeometryOptionsBuilder(noOpts)
+
+  class EllipsoidGeometryOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[EllipsoidGeometryOptions, EllipsoidGeometryOptionsBuilder](new EllipsoidGeometryOptionsBuilder(_)) {
+
+    def radii(v: Cartesian3) = jsOpt("radii", v)
+    def stackPartitions(v: Int) = jsOpt("stackPartitions", v)
+    def slicePartitions(v: Int) = jsOpt("slicePartitions", v)
+    def vertexFormat(v: VertexFormat) = jsOpt("vertexFormat", v)
+
+
+  }
   @js.native
   @JSName("Cesium.EllipsoidGeometry")
   class EllipsoidGeometry protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: EllipsoidGeometryOptions) = this()
   }
 
   @js.native
@@ -1454,10 +1696,23 @@ package cesium {
     def createGeometry(ellipsoidGeometry: EllipsoidGeometry): Geometry | Unit = js.native
   }
 
+  @JSName("Cesium.Options")
+  @js.native
+  trait EllipsoidOutlineGeometryOptions extends js.Object
+
+  object EllipsoidOutlineGeometryOptions extends EllipsoidOutlineGeometryOptionsBuilder(noOpts)
+
+  class EllipsoidOutlineGeometryOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[EllipsoidOutlineGeometryOptions, EllipsoidOutlineGeometryOptionsBuilder](new EllipsoidOutlineGeometryOptionsBuilder(_)) {
+    def radii(v: Cartesian3) = jsOpt("radii", v)
+    def stackPartitions(v: Int) = jsOpt("stackPartitions", v)
+    def slicePartitions(v: Int) = jsOpt("slicePartitions", v)
+    def subdivisions(v: Int) = jsOpt("subdivisions", v)
+
+  }
   @js.native
   @JSName("Cesium.EllipsoidOutlineGeometry")
   class EllipsoidOutlineGeometry protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: EllipsoidOutlineGeometryOptions) = this()
   }
 
   @js.native
@@ -1499,11 +1754,22 @@ package cesium {
   object EllipsoidTangentPlane extends js.Object {
     def fromPoints(ellipsoid: Ellipsoid, cartesians: Cartesian3): js.Dynamic = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait EllipsoidTerrainProviderOptions extends js.Object
 
+  object EllipsoidTerrainProviderOptions extends EllipsoidTerrainProviderOptionsBuilder(noOpts)
+
+  class EllipsoidTerrainProviderOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[EllipsoidTerrainProviderOptions, EllipsoidTerrainProviderOptionsBuilder](new EllipsoidTerrainProviderOptionsBuilder(_)) {
+
+    def tilingScheme(v: TilingScheme) = jsOpt("tilingScheme", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+
+  }
   @js.native
   @JSName("Cesium.EllipsoidTerrainProvider")
   class EllipsoidTerrainProvider protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: EllipsoidTerrainProviderOptions) = this()
 
     var errorEvent: Event = js.native
     var credit: Credit = js.native
@@ -1563,11 +1829,23 @@ package cesium {
 
     def unproject(cartesian: Cartesian3, result: Cartographic = ???): Cartographic = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait GeographicTilingSchemeOptions extends js.Object
 
+  object GeographicTilingSchemeOptions extends GeographicTilingSchemeOptionsBuilder(noOpts)
+
+  class GeographicTilingSchemeOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[GeographicTilingSchemeOptions, GeographicTilingSchemeOptionsBuilder](new GeographicTilingSchemeOptionsBuilder(_)) {
+
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+    def rectangle(v: Rectangle) = jsOpt("rectangle", v)
+    def numberOfLevelZeroTilesX(v: Int) = jsOpt("numberOfLevelZeroTilesX", v)
+    def numberOfLevelZeroTilesY(v: Int) = jsOpt("numberOfLevelZeroTilesY", v)
+  }
   @js.native
   @JSName("Cesium.GeographicTilingScheme")
   class GeographicTilingScheme protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: GeographicTilingSchemeOptions) = this()
 
     var ellipsoid: Ellipsoid = js.native
     var rectangle: Rectangle = js.native
@@ -1585,11 +1863,23 @@ package cesium {
 
     def positionToTileXY(position: Cartographic, level: Double, result: Cartesian2 = ???): Cartesian2 = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait GeometryOptions extends js.Object
 
+  object GeometryOptions extends GeometryOptionsBuilder(noOpts)
+
+  class GeometryOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[GeometryOptions, GeometryOptionsBuilder](new GeometryOptionsBuilder(_)) {
+
+    def attributes(v: GeometryAttributes) = jsOpt("attributes", v)
+    def primitiveType(v: PrimitiveType) = jsOpt("primitiveType", v)
+    def indices(v: Uint16Array | Uint32Array) = jsOpt("indices", v)
+    def boundingSphere(v: BoundingSphere) = jsOpt("boundingSphere", v)
+  }
   @js.native
   @JSName("Cesium.Geometry")
   class Geometry protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: GeometryOptions) = this()
 
     var attributes: GeometryAttributes = js.native
     var indices: js.Array[js.Any] = js.native
@@ -1602,11 +1892,23 @@ package cesium {
   object Geometry extends js.Object {
     def computeNumberOfVertices(geometry: Geometry): Double = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait GeometryAttributeOptions extends js.Object
 
+  object GeometryAttributeOptions extends GeometryAttributeOptionsBuilder(noOpts)
+
+  class GeometryAttributeOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[GeometryAttributeOptions, GeometryAttributeOptionsBuilder](new GeometryAttributeOptionsBuilder(_)) {
+
+    def componentDatatype(v: ComponentDatatype) = jsOpt("componentDatatype", v)
+    def componentsPerAttribute(v: Int) = jsOpt("componentsPerAttribute", v)
+    def normalize(v: Boolean) = jsOpt("normalize", v)
+    def values(v: Cesium.TypedArray) = jsOpt("values", v)
+  }
   @js.native
   @JSName("Cesium.GeometryAttribute")
   class GeometryAttribute protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: GeometryAttributeOptions) = this()
 
     var componentDatatype: ComponentDatatype = js.native
     var componentsPerAttribute: Double = js.native
@@ -1624,22 +1926,48 @@ package cesium {
     var tangent: GeometryAttribute = js.native
     var color: GeometryAttribute = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait GeometryInstanceOptions extends js.Object
 
+  object GeometryInstanceOptions extends GeometryInstanceOptionsBuilder(noOpts)
+
+  class GeometryInstanceOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[GeometryInstanceOptions, GeometryInstanceOptionsBuilder](new GeometryInstanceOptionsBuilder(_)) {
+
+    def geometry(v: Geometry) = jsOpt("geometry", v)
+    def modelMatrix(v: Matrix4) = jsOpt("modelMatrix", v)
+    def id(v: Object) = jsOpt("id", v)
+    def attributes(v: Object) = jsOpt("attributes", v)
+
+  }
   @js.native
   @JSName("Cesium.GeometryInstance")
   class GeometryInstance protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: GeometryInstanceOptions) = this()
 
     var geometry: Geometry = js.native
     var modelMatrix: Matrix4 = js.native
     var id: js.Any = js.native
     var attributes: js.Any = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait GeometryInstanceAttributeOptions extends js.Object
 
+  object GeometryInstanceAttributeOptions extends GeometryInstanceAttributeOptionsBuilder(noOpts)
+
+  class GeometryInstanceAttributeOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[GeometryInstanceAttributeOptions, GeometryInstanceAttributeOptionsBuilder](new GeometryInstanceAttributeOptionsBuilder(_)) {
+
+    def componentDatatype(v: ComponentDatatype) = jsOpt("componentDatatype", v)
+    def componentsPerAttribute(v: Int) = jsOpt("componentsPerAttribute", v)
+    def normalize(v: Boolean) = jsOpt("normalize", v)
+    def value(v: Array[Double]) = jsOpt("value", v)
+
+  }
   @js.native
   @JSName("Cesium.GeometryInstanceAttribute")
   class GeometryInstanceAttribute protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: GeometryInstanceAttributeOptions) = this()
 
     var componentDatatype: ComponentDatatype = js.native
     var componentsPerAttribute: Double = js.native
@@ -1675,11 +2003,29 @@ package cesium {
   object HeadingPitchRange extends js.Object {
     def clone(hpr: HeadingPitchRange, result: HeadingPitchRange = ???): HeadingPitchRange = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait HeightmapTerrainDataOptions extends js.Object
 
+  object HeightmapTerrainDataOptions extends HeightmapTerrainDataOptionsBuilder(noOpts)
+
+  class HeightmapTerrainDataOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[HeightmapTerrainDataOptions, HeightmapTerrainDataOptionsBuilder](new HeightmapTerrainDataOptionsBuilder(_)) {
+
+    def buffer(v: Boolean) = jsOpt("buffer", v)
+    def vertexShaderSource(v: Cesium.TypedArray) = jsOpt("vertexShaderSource", v)
+    def width(v: Double) = jsOpt("width", v)
+    def height(v: Double) = jsOpt("height", v)
+    // todo
+    def childTileMask(v: Int) = jsOpt("childTileMask", v)
+    // todo
+    def structure(v: Object) = jsOpt("structure", v)
+    def createdByUpsampling(v: Boolean) = jsOpt("createdByUpsampling", v)
+
+  }
   @js.native
   @JSName("Cesium.HeightmapTerrainData")
   class HeightmapTerrainData protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: HeightmapTerrainDataOptions) = this()
 
     var waterMask: Uint8Array | HTMLImageElement | HTMLCanvasElement = js.native
 
@@ -1691,11 +2037,24 @@ package cesium {
 
     def wasCreatedByUpsampling(): Boolean = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait HermiteSplineOptions extends js.Object
 
+  object HermiteSplineOptions extends HermiteSplineOptionsBuilder(noOpts)
+
+  class HermiteSplineOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[HermiteSplineOptions, HermiteSplineOptionsBuilder](new HermiteSplineOptionsBuilder(_)) {
+
+    def times(v: Array[Double]) = jsOpt("times", v)
+    def points(v: Array[Cartesian3]) = jsOpt("points", v)
+    def inTangents(v: Array[Cartesian3]) = jsOpt("inTangents", v)
+    def outTangents(v: Array[Cartesian3]) = jsOpt("outTangents", v)
+
+  }
   @js.native
   @JSName("Cesium.HermiteSpline")
   class HermiteSpline protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: HermiteSplineOptions) = this()
 
     var times: js.Array[Double] = js.native
     var points: js.Array[Cartesian3] = js.native
@@ -1710,11 +2069,11 @@ package cesium {
   @js.native
   @JSName("Cesium.HermiteSpline")
   object HermiteSpline extends js.Object {
-    def createC1(options: js.Any): HermiteSpline = js.native
+    def createC1(options: HermiteSplineOptions): HermiteSpline = js.native
 
-    def createNaturalCubic(options: js.Any): HermiteSpline | LinearSpline = js.native
+    def createNaturalCubic(options: HermiteSplineOptions): HermiteSpline | LinearSpline = js.native
 
-    def createClampedCubic(options: js.Any): HermiteSpline | LinearSpline = js.native
+    def createClampedCubic(options: HermiteSplineOptions): HermiteSpline | LinearSpline = js.native
   }
 
   @js.native
@@ -1801,11 +2160,21 @@ package cesium {
     var julianDate: JulianDate = js.native
     var offset: Double = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait LinearSplineOptions extends js.Object
 
+  object LinearSplineOptions extends LinearSplineOptionsBuilder(noOpts)
+
+  class LinearSplineOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[LinearSplineOptions, LinearSplineOptionsBuilder](new LinearSplineOptionsBuilder(_)) {
+
+    def times(v: Array[Double]) = jsOpt("times", v)
+    def points(v: Array[Cartesian3]) = jsOpt("points", v)
+  }
   @js.native
   @JSName("Cesium.LinearSpline")
   class LinearSpline protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: LinearSplineOptions) = this()
 
     var times: js.Array[Double] = js.native
     var points: js.Array[Cartesian3] = js.native
@@ -2278,11 +2647,29 @@ package cesium {
 
     def getPointDistance(plane: Plane, point: Cartesian3): Double = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait PolygonGeometryOptions extends js.Object
 
+  object PolygonGeometryOptions extends PolygonGeometryOptionsBuilder(noOpts)
+
+  class PolygonGeometryOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PolygonGeometryOptions, PolygonGeometryOptionsBuilder](new PolygonGeometryOptionsBuilder(_)) {
+
+    def polygonHierarchy(v: PolygonHierarchy) = jsOpt("polygonHierarchy", v)
+    def height(v: Double) = jsOpt("height", v)
+    def extrudedHeight(v: Double) = jsOpt("extrudedHeight", v)
+    def vertexFormat(v: VertexFormat) = jsOpt("vertexFormat", v)
+    def stRotation(v: Double) = jsOpt("stRotation", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+    def granularity(v: Double) = jsOpt("granularity", v)
+    def perPositionHeight(v: Boolean) = jsOpt("perPositionHeight", v)
+    def closeTop(v: Boolean) = jsOpt("closeTop", v)
+    def closeBottom(v: Boolean) = jsOpt("closeBottom", v)
+  }
   @js.native
   @JSName("Cesium.PolygonGeometry")
   class PolygonGeometry protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: PolygonGeometryOptions) = this()
 
     var packedLength: Double = js.native
   }
@@ -2290,7 +2677,7 @@ package cesium {
   @js.native
   @JSName("Cesium.PolygonGeometry")
   object PolygonGeometry extends js.Object {
-    def fromPositions(options: js.Any): PolygonGeometry = js.native
+    def fromPositions(options: PolygonGeometryOptions): PolygonGeometry = js.native
 
     def pack(value: PolygonGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
 
@@ -2307,11 +2694,27 @@ package cesium {
     var positions: js.Array[Cartesian3] = js.native
     var holes: js.Array[PolygonHierarchy] = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait PolygonOutlineGeometryOptions extends js.Object
 
+  object PolygonOutlineGeometryOptions extends PolygonOutlineGeometryOptionsBuilder(noOpts)
+
+  class PolygonOutlineGeometryOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PolygonOutlineGeometryOptions, PolygonOutlineGeometryOptionsBuilder](new PolygonOutlineGeometryOptionsBuilder(_)) {
+
+    def polygonHierarchy(v: PolygonHierarchy) = jsOpt("polygonHierarchy", v)
+    def height(v: Double) = jsOpt("height", v)
+    def extrudedHeight(v: Double) = jsOpt("extrudedHeight", v)
+    def vertexFormat(v: VertexFormat) = jsOpt("vertexFormat", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+    def granularity(v: Double) = jsOpt("granularity", v)
+    def perPositionHeight(v: Boolean) = jsOpt("perPositionHeight", v)
+
+  }
   @js.native
   @JSName("Cesium.PolygonOutlineGeometry")
   class PolygonOutlineGeometry protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: PolygonOutlineGeometryOptions) = this()
 
     var packedLength: Double = js.native
   }
@@ -2327,11 +2730,27 @@ package cesium {
 
     def createGeometry(polygonGeometry: PolygonOutlineGeometry): Geometry | Unit = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait PolylineGeometryOptions extends js.Object
 
+  object PolylineGeometryOptions extends PolylineGeometryOptionsBuilder(noOpts)
+
+  class PolylineGeometryOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PolylineGeometryOptions, PolylineGeometryOptionsBuilder](new PolylineGeometryOptionsBuilder(_)) {
+
+    def positions(v: Array[Cartesian3]) = jsOpt("positions", v)
+    def width(v: Double) = jsOpt("width", v)
+    def colors(v: Array[Color]) = jsOpt("colors", v)
+    def colorsPerVertex(v: Boolean) = jsOpt("colorsPerVertex", v)
+    def followSurface(v: Boolean) = jsOpt("followSurface", v)
+    def granularity(v: Double) = jsOpt("granularity", v)
+    def vertexFormat(v: VertexFormat) = jsOpt("vertexFormat", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+  }
   @js.native
   @JSName("Cesium.PolylineGeometry")
   class PolylineGeometry protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: PolylineGeometryOptions) = this()
 
     var packedLength: Double = js.native
   }
@@ -2345,11 +2764,25 @@ package cesium {
 
     def createGeometry(polylineGeometry: PolylineGeometry): Geometry | Unit = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait PolylineVolumeGeometryOptions extends js.Object
 
+  object PolylineVolumeGeometryOptions extends PolylineVolumeGeometryOptionsBuilder(noOpts)
+
+  class PolylineVolumeGeometryOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PolylineVolumeGeometryOptions, PolylineVolumeGeometryOptionsBuilder](new PolylineVolumeGeometryOptionsBuilder(_)) {
+
+    def polylinePositions(v: Array[Cartesian3]) = jsOpt("polylinePositions", v)
+    def shapePositions(v: Array[Cartesian3]) = jsOpt("shapePositions", v)
+    def cornerType(v: CornerType) = jsOpt("cornerType", v)
+    def granularity(v: Double) = jsOpt("granularity", v)
+    def vertexFormat(v: VertexFormat) = jsOpt("vertexFormat", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+  }
   @js.native
   @JSName("Cesium.PolylineVolumeGeometry")
   class PolylineVolumeGeometry protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: PolylineVolumeGeometryOptions) = this()
 
     var packedLength: Double = js.native
   }
@@ -2363,11 +2796,24 @@ package cesium {
 
     def createGeometry(polylineVolumeGeometry: PolylineVolumeGeometry): Geometry | Unit = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait PolylineVolumeOutlineGeometryOptions extends js.Object
 
+  object PolylineVolumeOutlineGeometryOptions extends PolylineVolumeOutlineGeometryOptionsBuilder(noOpts)
+
+  class PolylineVolumeOutlineGeometryOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PolylineVolumeOutlineGeometryOptions, PolylineVolumeOutlineGeometryOptionsBuilder](new PolylineVolumeOutlineGeometryOptionsBuilder(_)) {
+
+    def polylinePositions(v: Array[Cartesian3]) = jsOpt("polylinePositions", v)
+    def shapePositions(v: Array[Cartesian3]) = jsOpt("shapePositions", v)
+    def cornerType(v: CornerType) = jsOpt("cornerType", v)
+    def granularity(v: Double) = jsOpt("granularity", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+  }
   @js.native
   @JSName("Cesium.PolylineVolumeOutlineGeometry")
   class PolylineVolumeOutlineGeometry protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: PolylineVolumeOutlineGeometryOptions) = this()
 
     var packedLength: Double = js.native
   }
@@ -2381,11 +2827,40 @@ package cesium {
 
     def createGeometry(polylineVolumeOutlineGeometry: PolylineVolumeOutlineGeometry): Geometry | Unit = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait QuantizedMeshTerrainDataOptions extends js.Object
 
+  object QuantizedMeshTerrainDataOptions extends QuantizedMeshTerrainDataOptionsBuilder(noOpts)
+
+  class QuantizedMeshTerrainDataOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[QuantizedMeshTerrainDataOptions, QuantizedMeshTerrainDataOptionsBuilder](new QuantizedMeshTerrainDataOptionsBuilder(_)) {
+
+    def quantizedVertices(v: Uint16Array) = jsOpt("quantizedVertices", v)
+    def indices(v: Uint16Array | Uint32Array) = jsOpt("indices", v)
+    def minimumHeight(v: Double) = jsOpt("minimumHeight", v)
+    def maximumHeight(v: Double) = jsOpt("maximumHeight", v)
+    def boundingSphere(v: BoundingSphere) = jsOpt("boundingSphere", v)
+    def orientedBoundingBox(v: OrientedBoundingBox) = jsOpt("orientedBoundingBox", v)
+    def horizonOcclusionPoint(v: Cartesian3) = jsOpt("horizonOcclusionPoint", v)
+    def westIndices(v: Array[Int]) = jsOpt("westIndices", v)
+    def southIndices(v: Array[Int]) = jsOpt("southIndices", v)
+    def eastIndices(v: Array[Int]) = jsOpt("eastIndices", v)
+    def northIndices(v: Array[Int]) = jsOpt("northIndices", v)
+    def westSkirtHeight(v: Int) = jsOpt("westSkirtHeight", v)
+    def southSkirtHeight(v: Int) = jsOpt("southSkirtHeight", v)
+
+    def eastSkirtHeight(v: Int) = jsOpt("eastSkirtHeight", v)
+    def northSkirtHeight(v: Int) = jsOpt("northSkirtHeight", v)
+    // todo
+    def childTileMask(v: Int) = jsOpt("childTileMask", v)
+    def createdByUpsampling(v: Boolean) = jsOpt("createdByUpsampling", v)
+    def encodedNormals(v: Uint8Array) = jsOpt("encodedNormals", v)
+    def waterMask(v: Uint8Array) = jsOpt("waterMask", v)
+  }
   @js.native
   @JSName("Cesium.QuantizedMeshTerrainData")
   class QuantizedMeshTerrainData protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: QuantizedMeshTerrainDataOptions) = this()
 
     var waterMask: Uint8Array | HTMLImageElement | HTMLCanvasElement = js.native
 
@@ -2489,11 +2964,24 @@ package cesium {
 
     def equalsEpsilon(left: Quaternion, right: Quaternion, epsilon: Double): Boolean = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait QuaternionSplineOptions extends js.Object
 
+  object QuaternionSplineOptions extends QuaternionSplineOptionsBuilder(noOpts)
+
+  class QuaternionSplineOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[QuaternionSplineOptions, QuaternionSplineOptionsBuilder](new QuaternionSplineOptionsBuilder(_)) {
+
+    def times(v: Array[Double]) = jsOpt("times", v)
+    def points(v: Array[Quaternion]) = jsOpt("points", v)
+    def firstInnerQuadrangle(v: Quaternion) = jsOpt("firstInnerQuadrangle", v)
+    def lastInnerQuadrangle(v: Quaternion) = jsOpt("lastInnerQuadrangle", v)
+
+  }
   @js.native
   @JSName("Cesium.QuaternionSpline")
   class QuaternionSpline protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: QuaternionSplineOptions) = this()
 
     var times: js.Array[Double] = js.native
     var points: js.Array[Quaternion] = js.native
@@ -2606,11 +3094,29 @@ package cesium {
 
     def subsample(rectangle: Rectangle, ellipsoid: Ellipsoid = ???, surfaceHeight: Double = ???, result: js.Array[Cartesian3] = ???): js.Array[Cartesian3] = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait RectangleGeometryOptions extends js.Object
 
+  object RectangleGeometryOptions extends RectangleGeometryOptionsBuilder(noOpts)
+
+  class RectangleGeometryOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[RectangleGeometryOptions, RectangleGeometryOptionsBuilder](new RectangleGeometryOptionsBuilder(_)) {
+
+    def rectangle(v: Rectangle) = jsOpt("rectangle", v)
+   def height(v: Double) = jsOpt("height", v)
+    def extrudedHeight(v: Double) = jsOpt("extrudedHeight", v)
+    def vertexFormat(v: VertexFormat) = jsOpt("vertexFormat", v)
+    def rotation(v: Double) = jsOpt("rotation", v)
+    def stRotation(v: Double) = jsOpt("stRotation", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+    def granularity(v: Double) = jsOpt("granularity", v)
+    def closeTop(v: Boolean) = jsOpt("closeTop", v)
+    def closeBottom(v: Boolean) = jsOpt("closeBottom", v)
+  }
   @js.native
   @JSName("Cesium.RectangleGeometry")
   class RectangleGeometry protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: RectangleGeometryOptions) = this()
   }
 
   @js.native
@@ -2624,11 +3130,26 @@ package cesium {
 
     def createGeometry(rectangleGeometry: RectangleGeometry): Geometry | Unit = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait RectangleOutlineGeometryOptions extends js.Object
 
+  object RectangleOutlineGeometryOptions extends RectangleOutlineGeometryOptionsBuilder(noOpts)
+
+  class RectangleOutlineGeometryOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[RectangleOutlineGeometryOptions, RectangleOutlineGeometryOptionsBuilder](new RectangleOutlineGeometryOptionsBuilder(_)) {
+
+    def rectangle(v: Rectangle) = jsOpt("rectangle", v)
+    def height(v: Double) = jsOpt("height", v)
+    def extrudedHeight(v: Double) = jsOpt("extrudedHeight", v)
+    def vertexFormat(v: VertexFormat) = jsOpt("vertexFormat", v)
+    def rotation(v: Double) = jsOpt("rotation", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+    def granularity(v: Double) = jsOpt("granularity", v)
+  }
   @js.native
   @JSName("Cesium.RectangleOutlineGeometry")
   class RectangleOutlineGeometry protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: RectangleOutlineGeometryOptions) = this()
   }
 
   @js.native
@@ -2697,11 +3218,26 @@ package cesium {
   object ShowGeometryInstanceAttribute extends js.Object {
     def toValue(show: Boolean, result: Uint8Array = ???): Uint8Array = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait SimplePolylineGeometryOptions extends js.Object
 
+  object SimplePolylineGeometryOptions extends SimplePolylineGeometryOptionsBuilder(noOpts)
+
+  class SimplePolylineGeometryOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[SimplePolylineGeometryOptions, SimplePolylineGeometryOptionsBuilder](new SimplePolylineGeometryOptionsBuilder(_)) {
+
+    def positions(v: Array[Cartesian3]) = jsOpt("positions", v)
+    def colors(v: Array[Color]) = jsOpt("colors", v)
+    def colorsPerVertex(v: Boolean) = jsOpt("colorsPerVertex", v)
+    def followSurface(v: Boolean) = jsOpt("followSurface", v)
+    def granularity(v: Double) = jsOpt("granularity", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+
+  }
   @js.native
   @JSName("Cesium.SimplePolylineGeometry")
   class SimplePolylineGeometry protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: SimplePolylineGeometryOptions) = this()
 
     var packedLength: Double = js.native
   }
@@ -2715,11 +3251,23 @@ package cesium {
 
     def createGeometry(simplePolylineGeometry: SimplePolylineGeometry): Geometry = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait SphereGeometryOptions extends js.Object
 
+  object SphereGeometryOptions extends SphereGeometryOptionsBuilder(noOpts)
+
+  class SphereGeometryOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[SphereGeometryOptions, SphereGeometryOptionsBuilder](new SphereGeometryOptionsBuilder(_)) {
+
+    def radius(v: Double) = jsOpt("radius", v)
+    def stackPartitions(v: Int) = jsOpt("stackPartitions", v)
+    def slicePartitions(v: Int) = jsOpt("slicePartitions", v)
+    def vertexFormat(v: VertexFormat) = jsOpt("vertexFormat", v)
+  }
   @js.native
   @JSName("Cesium.SphereGeometry")
   class SphereGeometry protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: SphereGeometryOptions) = this()
   }
 
   @js.native
@@ -2733,11 +3281,23 @@ package cesium {
 
     def createGeometry(sphereGeometry: SphereGeometry): Geometry = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait SphereOutlineGeometryOptions extends js.Object
 
+  object SphereOutlineGeometryOptions extends SphereOutlineGeometryOptionsBuilder(noOpts)
+
+  class SphereOutlineGeometryOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[SphereOutlineGeometryOptions, SphereOutlineGeometryOptionsBuilder](new SphereOutlineGeometryOptionsBuilder(_)) {
+    def radius(v: Double) = jsOpt("radius", v)
+    def stackPartitions(v: Int) = jsOpt("stackPartitions", v)
+    def slicePartitions(v: Int) = jsOpt("slicePartitions", v)
+    def subdivisions(v: Int) = jsOpt("subdivisions", v)
+
+  }
   @js.native
   @JSName("Cesium.SphereOutlineGeometry")
   class SphereOutlineGeometry protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: SphereOutlineGeometryOptions) = this()
   }
 
   @js.native
@@ -2890,11 +3450,26 @@ package cesium {
 
     def positionToTileXY(position: Cartographic, level: Double, result: Cartesian2 = ???): Cartesian2 = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait TimeIntervalOptions extends js.Object
 
+  object TimeIntervalOptions extends TimeIntervalOptionsBuilder(noOpts)
+
+  class TimeIntervalOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[TimeIntervalOptions, TimeIntervalOptionsBuilder](new TimeIntervalOptionsBuilder(_)) {
+
+    def start(v: JulianDate) = jsOpt("start", v)
+    def stop(v: JulianDate) = jsOpt("stop", v)
+    def isStartIncluded(v: Boolean) = jsOpt("isStartIncluded", v)
+    def isStopIncluded(v: Boolean) = jsOpt("isStopIncluded", v)
+    // todo
+    def data(v: Object) = jsOpt("data", v)
+
+  }
   @js.native
   @JSName("Cesium.TimeInterval")
   class TimeInterval protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: TimeIntervalOptions) = this()
 
     var start: JulianDate = js.native
     var stop: JulianDate = js.native
@@ -2912,6 +3487,20 @@ package cesium {
     override def toString(): String = js.native
   }
 
+  @JSName("Cesium.Options")
+  @js.native
+  trait Iso8601Options extends js.Object
+
+  object Iso8601Options extends Iso8601OptionsBuilder(noOpts)
+
+  class Iso8601OptionsBuilder(val dict: OptMap) extends JSOptionBuilder[Iso8601Options, Iso8601OptionsBuilder](new Iso8601OptionsBuilder(_)) {
+
+    def iso8601(v: String) = jsOpt("iso8601", v)
+    def isStartIncluded(v: Boolean) = jsOpt("isStartIncluded", v)
+    def isStopIncluded(v: Boolean) = jsOpt("isStopIncluded", v)
+    def data(v: Object) = jsOpt("data", v)
+  }
+
   @js.native
   @JSName("Cesium.TimeInterval")
   object TimeInterval extends js.Object {
@@ -2919,7 +3508,7 @@ package cesium {
     type DataComparer = js.Function2[js.Any, js.Any, Boolean]
     var EMPTY: TimeInterval = js.native
 
-    def fromIso8601(options: js.Any, result: TimeInterval = ???): TimeInterval = js.native
+    def fromIso8601(options: Iso8601Options, result: TimeInterval = ???): TimeInterval = js.native
 
     def toIso8601(timeInterval: TimeInterval, precision: Double = ???): String = js.native
 
@@ -2932,6 +3521,21 @@ package cesium {
     def intersect(left: TimeInterval, right: TimeInterval, result: TimeInterval, mergeCallback: TimeInterval.MergeCallback = ???): TimeInterval = js.native
 
     def contains(timeInterval: TimeInterval, julianDate: JulianDate): Boolean = js.native
+  }
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait FindIntervalOptions extends js.Object
+
+  object FindIntervalOptions extends TimeIntervalOptionsBuilder(noOpts)
+
+  class FindIntervalOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[FindIntervalOptions, FindIntervalOptionsBuilder](new FindIntervalOptionsBuilder(_)) {
+
+    def start(v: JulianDate) = jsOpt("start", v)
+    def stop(v: JulianDate) = jsOpt("stop", v)
+    def isStartIncluded(v: Boolean) = jsOpt("isStartIncluded", v)
+    def isStopIncluded(v: Boolean) = jsOpt("isStopIncluded", v)
+
   }
 
   @js.native
@@ -2961,7 +3565,7 @@ package cesium {
 
     def indexOf(date: JulianDate): Double = js.native
 
-    def findInterval(options: js.Any = ???): TimeInterval = js.native
+    def findInterval(options: FindIntervalOptions): TimeInterval = js.native
 
     def addInterval(interval: TimeInterval, dataComparer: TimeInterval.DataComparer = ???): js.Dynamic = js.native
 
@@ -2981,11 +3585,24 @@ package cesium {
 
     def equals(right: TranslationRotationScale = ???): Boolean = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait VRTheWorldTerrainProviderOptions extends js.Object
 
+  object VRTheWorldTerrainProviderOptions extends VRTheWorldTerrainProviderOptionsBuilder(noOpts)
+
+  class VRTheWorldTerrainProviderOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[VRTheWorldTerrainProviderOptions, VRTheWorldTerrainProviderOptionsBuilder](new VRTheWorldTerrainProviderOptionsBuilder(_)) {
+
+    def url(v: String) = jsOpt("url", v)
+    def proxy(v: Object) = jsOpt("proxy", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+    def credit(v: Credit | String) = jsOpt("credit", v)
+
+  }
   @js.native
   @JSName("Cesium.VRTheWorldTerrainProvider")
   class VRTheWorldTerrainProvider protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: VRTheWorldTerrainProviderOptions) = this()
 
     var errorEvent: Event = js.native
     var credit: Credit = js.native
@@ -3005,7 +3622,7 @@ package cesium {
   @js.native
   @JSName("Cesium.VertexFormat")
   class VertexFormat protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: js.Any = ???) = this()    //  todo options object
 
     var position: Boolean = js.native
     var normal: Boolean = js.native
@@ -3033,11 +3650,24 @@ package cesium {
 
     def clone(cartesian: VertexFormat, result: VertexFormat = ???): VertexFormat = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait VideoSynchronizerOptions extends js.Object
 
+  object VideoSynchronizerOptions extends VideoSynchronizerOptionsBuilder(noOpts)
+
+  class VideoSynchronizerOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[VideoSynchronizerOptions, VideoSynchronizerOptionsBuilder](new VideoSynchronizerOptionsBuilder(_)) {
+
+    def clock(v: Clock) = jsOpt("clock", v)
+    def element(v: HTMLVideoElement) = jsOpt("element", v)
+    def epoch(v: JulianDate) = jsOpt("epoch", v)
+    def tolerance(v: Double) = jsOpt("tolerance", v)
+
+  }
   @js.native
   @JSName("Cesium.VideoSynchronizer")
   class VideoSynchronizer protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: VideoSynchronizerOptions) = this()
 
     var epoch: JulianDate = js.native
     var tolerance: Double = js.native
@@ -3049,10 +3679,39 @@ package cesium {
     def isDestroyed(): Boolean = js.native
   }
 
+  @JSName("Cesium.Options")
+  @js.native
+  trait WallGeometryOptions extends js.Object
+
+  object WallGeometryOptions extends WallGeometryOptionsBuilder(noOpts)
+
+  class WallGeometryOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[WallGeometryOptions, WallGeometryOptionsBuilder](new WallGeometryOptionsBuilder(_)) {
+
+    def positions(v: Array[Cartesian3]) = jsOpt("positions", v)
+    def maximumHeights(v: Array[Double]) = jsOpt("maximumHeights", v)
+    def minimumHeights(v: Array[Double]) = jsOpt("minimumHeights", v)
+    def vertexFormat(v: VertexFormat) = jsOpt("vertexFormat", v)
+    def granularity(v: Double) = jsOpt("granularity", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+
+  }
+  @JSName("Cesium.Options")
+  @js.native
+  trait ConstantHeightsOptions extends js.Object
+
+  object ConstantHeightsOptions extends ConstantHeightsOptionsBuilder(noOpts)
+
+  class ConstantHeightsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ConstantHeightsOptions, ConstantHeightsOptionsBuilder](new ConstantHeightsOptionsBuilder(_)) {
+    def positions(v: Array[Cartesian3]) = jsOpt("positions", v)
+    def maximumHeights(v: Array[Double]) = jsOpt("maximumHeights", v)
+    def minimumHeights(v: Array[Double]) = jsOpt("minimumHeights", v)
+    def vertexFormat(v: VertexFormat) = jsOpt("vertexFormat", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+  }
   @js.native
   @JSName("Cesium.WallGeometry")
   class WallGeometry protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: WallGeometryOptions) = this()
 
     var packedLength: Double = js.native
   }
@@ -3064,15 +3723,30 @@ package cesium {
 
     def unpack(array: js.Array[Double], startingIndex: Double = ???, result: WallGeometry = ???): WallGeometry = js.native
 
-    def fromConstantHeights(options: js.Any): WallGeometry = js.native
+    def fromConstantHeights(options: ConstantHeightsOptions): WallGeometry = js.native
 
     def createGeometry(wallGeometry: WallGeometry): Geometry | Unit = js.native
+  }
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait WallOutlineGeometryOptions extends js.Object
+
+  object WallOutlineGeometryOptions extends WallOutlineGeometryOptionsBuilder(noOpts)
+
+  class WallOutlineGeometryOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[WallOutlineGeometryOptions, WallOutlineGeometryOptionsBuilder](new WallOutlineGeometryOptionsBuilder(_)) {
+    def positions(v: Array[Cartesian3]) = jsOpt("positions", v)
+    def maximumHeights(v: Array[Double]) = jsOpt("maximumHeights", v)
+    def minimumHeights(v: Array[Double]) = jsOpt("minimumHeights", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+
+    def granularity(v: Double) = jsOpt("granularity", v)
   }
 
   @js.native
   @JSName("Cesium.WallOutlineGeometry")
   class WallOutlineGeometry protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: WallOutlineGeometryOptions) = this()
 
     var packedLength: Double = js.native
   }
@@ -3084,7 +3758,7 @@ package cesium {
 
     def unpack(array: js.Array[Double], startingIndex: Double = ???, result: WallOutlineGeometry = ???): WallOutlineGeometry = js.native
 
-    def fromConstantHeights(options: js.Any): WallOutlineGeometry = js.native
+    def fromConstantHeights(options: WallOutlineGeometryOptions): WallOutlineGeometry = js.native
 
     def createGeometry(wallGeometry: WallOutlineGeometry): Geometry | Unit = js.native
   }
@@ -3110,11 +3784,24 @@ package cesium {
 
     def geodeticLatitudeToMercatorAngle(latitude: Double): Double = js.native
   }
+  @JSName("Cesium.Options")
+  @js.native
+  trait WebMercatorTilingSchemeOptions extends js.Object
 
+  object WebMercatorTilingSchemeOptions extends WebMercatorTilingSchemeOptionsBuilder(noOpts)
+
+  class WebMercatorTilingSchemeOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[WebMercatorTilingSchemeOptions, WebMercatorTilingSchemeOptionsBuilder](new WebMercatorTilingSchemeOptionsBuilder(_)) {
+
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+    def numberOfLevelZeroTilesX(v: Int) = jsOpt("numberOfLevelZeroTilesX", v)
+    def numberOfLevelZeroTilesY(v: Int) = jsOpt("numberOfLevelZeroTilesY", v)
+    def rectangleSouthwestInMeters(v: Cartesian2) = jsOpt("rectangleSouthwestInMeters", v)
+    def rectangleNortheastInMeters(v: Cartesian2) = jsOpt("rectangleNortheastInMeters", v)
+  }
   @js.native
   @JSName("Cesium.WebMercatorTilingScheme")
   class WebMercatorTilingScheme protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: WebMercatorTilingSchemeOptions) = this()
 
     var ellipsoid: Ellipsoid = js.native
     var rectangle: Rectangle = js.native
@@ -3132,11 +3819,42 @@ package cesium {
 
     def positionToTileXY(position: Cartographic, level: Double, result: Cartesian2 = ???): Cartesian2 = js.native
   }
+  //------------------------------------------------------------------------------------
+  //------------------------------------------------------------------------------------
+  //------------------------------------------------------------------------------------
+
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait BillboardGraphicsOptions extends js.Object
+
+  object BillboardGraphicsOptions extends BillboardGraphicsOptionsBuilder(noOpts)
+
+  class BillboardGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[BillboardGraphicsOptions, BillboardGraphicsOptionsBuilder](new BillboardGraphicsOptionsBuilder(_)) {
+
+    def image(v: Property) = jsOpt("image", v)
+    def show(v: Property) = jsOpt("show", v)
+    def scale(v: Property) = jsOpt("scale", v)
+    def horizontalOrigin(v: Property) = jsOpt("horizontalOrigin", v)
+    def verticalOrigin(v: Property) = jsOpt("verticalOrigin", v)
+    def eyeOffset(v: Property) = jsOpt("eyeOffset", v)
+    def pixelOffset(v: Property) = jsOpt("pixelOffset", v)
+    def rotation(v: Property) = jsOpt("rotation", v)
+    def alignedAxis(v: Property) = jsOpt("alignedAxis", v)
+    def width(v: Property) = jsOpt("width", v)
+    def height(v: Property) = jsOpt("height", v)
+    def color(v: Property) = jsOpt("color", v)
+    def scaleByDistance(v: Property) = jsOpt("scaleByDistance", v)
+    def translucencyByDistance(v: Property) = jsOpt("translucencyByDistance", v)
+    def pixelOffsetScaleByDistance(v: Property) = jsOpt("pixelOffsetScaleByDistance", v)
+    def imageSubRegion(v: Property) = jsOpt("imageSubRegion", v)
+    def sizeInMeters(v: Property) = jsOpt("sizeInMeters", v)
+  }
 
   @js.native
   @JSName("Cesium.BillboardGraphics")
   class BillboardGraphics protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: BillboardGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
     var image: Property = js.native
@@ -3213,10 +3931,27 @@ package cesium {
     var materialAppearanceType: Appearance = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait BoxGraphicsOptions extends js.Object
+
+  object BoxGraphicsOptions extends BoxGraphicsOptionsBuilder(noOpts)
+
+  class BoxGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[BoxGraphicsOptions, BoxGraphicsOptionsBuilder](new BoxGraphicsOptionsBuilder(_)) {
+
+    def dimensions(v: Property) = jsOpt("dimensions", v)
+    def show(v: Property) = jsOpt("show", v)
+    def fill(v: Property) = jsOpt("fill", v)
+    def material(v: MaterialProperty) = jsOpt("material", v)
+    def outline(v: Property) = jsOpt("outline", v)
+    def outlineColor(v: Property) = jsOpt("outlineColor", v)
+    def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
+  }
   @js.native
   @JSName("Cesium.BoxGraphics")
   class BoxGraphics protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: BoxGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
     var show: Property = js.native
@@ -3253,10 +3988,23 @@ package cesium {
     def equals(other: Property = ???): Boolean = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait CheckerboardMaterialPropertyOptions extends js.Object
+
+  object CheckerboardMaterialPropertyOptions extends CheckerboardMaterialPropertyOptionsBuilder(noOpts)
+
+  class CheckerboardMaterialPropertyOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[CheckerboardMaterialPropertyOptions, CheckerboardMaterialPropertyOptionsBuilder](new CheckerboardMaterialPropertyOptionsBuilder(_)) {
+
+    def evenColor(v: Property) = jsOpt("evenColor", v)
+    def oddColor(v: Property) = jsOpt("oddColor", v)
+    def repeat(v: Property) = jsOpt("repeat", v)
+  }
   @js.native
   @JSName("Cesium.CheckerboardMaterialProperty")
   class CheckerboardMaterialProperty protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: CheckerboardMaterialPropertyOptions) = this()
 
     var isConstant: Boolean = js.native
     var definitionChanged: Event = js.native
@@ -3445,10 +4193,32 @@ package cesium {
     var materialAppearanceType: Appearance = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait CorridorGraphicsOptions extends js.Object
+
+  object CorridorGraphicsOptions extends CorridorGraphicsOptionsBuilder(noOpts)
+
+  class CorridorGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[CorridorGraphicsOptions, CorridorGraphicsOptionsBuilder](new CorridorGraphicsOptionsBuilder(_)) {
+
+    def positions(v: Property) = jsOpt("positions", v)
+    def width(v: Property) = jsOpt("width", v)
+    def cornerType(v: Property) = jsOpt("cornerType", v)
+    def height(v: Property) = jsOpt("height", v)
+    def extrudedHeight(v: Property) = jsOpt("extrudedHeight", v)
+    def show(v: Property) = jsOpt("show", v)
+    def fill(v: Property) = jsOpt("fill", v)
+    def material(v: MaterialProperty) = jsOpt("material", v)
+    def outline(v: Property) = jsOpt("outline", v)
+    def outlineColor(v: Property) = jsOpt("outlineColor", v)
+    def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
+    def granularity(v: Property) = jsOpt("granularity", v)
+  }
   @js.native
   @JSName("Cesium.CorridorGraphics")
   class CorridorGraphics protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: CorridorGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
     var show: Property = js.native
@@ -3523,10 +4293,31 @@ package cesium {
     var materialAppearanceType: Appearance = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait CylinderGraphicsOptions extends js.Object
+
+  object CylinderGraphicsOptions extends CylinderGraphicsOptionsBuilder(noOpts)
+
+  class CylinderGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[CylinderGraphicsOptions, CylinderGraphicsOptionsBuilder](new CylinderGraphicsOptionsBuilder(_)) {
+
+    def length(v: Property) = jsOpt("length", v)
+    def topRadius(v: Property) = jsOpt("topRadius", v)
+    def bottomRadius(v: Property) = jsOpt("bottomRadius", v)
+    def show(v: Property) = jsOpt("show", v)
+    def fill(v: Property) = jsOpt("fill", v)
+    def material(v: MaterialProperty) = jsOpt("material", v)
+    def outline(v: Property) = jsOpt("outline", v)
+    def outlineColor(v: Property) = jsOpt("outlineColor", v)
+    def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
+    def numberOfVerticalLines(v: Property) = jsOpt("numberOfVerticalLines", v)
+    def slices(v: Property) = jsOpt("slices", v)
+  }
   @js.native
   @JSName("Cesium.CylinderGraphics")
   class CylinderGraphics protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: CylinderGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
     var length: Property = js.native
@@ -3638,10 +4429,31 @@ package cesium {
     def destroy(): Unit = js.native
   }
 
+
+  @js.native
+  @JSName("Cesium.DataSourceDisplay")
+  object DataSourceDisplay extends js.Object {
+    type VisualizersCallback = js.Function2[Scene, DataSource, js.Array[Visualizer]]
+    var defaultVisualizersCallback: DataSourceDisplay.VisualizersCallback = js.native
+  }
+
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait DataSourceDisplayOptions extends js.Object
+
+  object DataSourceDisplayOptions extends DataSourceDisplayOptionsBuilder(noOpts)
+
+  class DataSourceDisplayOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[DataSourceDisplayOptions, DataSourceDisplayOptionsBuilder](new DataSourceDisplayOptionsBuilder(_)) {
+
+    def scene(v: Scene) = jsOpt("scene", v)
+    def dataSourceCollection(v: DataSourceCollection) = jsOpt("dataSourceCollection", v)
+    def visualizersCallback(v: DataSourceDisplay | DataSourceDisplay.VisualizersCallback) = jsOpt("visualizersCallback", v)
+  }
   @js.native
   @JSName("Cesium.DataSourceDisplay")
   class DataSourceDisplay protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: DataSourceDisplayOptions) = this()
 
     var scene: Scene = js.native
     var dataSources: DataSourceCollection = js.native
@@ -3653,13 +4465,6 @@ package cesium {
     def destroy(): Unit = js.native
 
     def update(time: JulianDate): Boolean = js.native
-  }
-
-  @js.native
-  @JSName("Cesium.DataSourceDisplay")
-  object DataSourceDisplay extends js.Object {
-    type VisualizersCallback = js.Function2[Scene, DataSource, js.Array[Visualizer]]
-    var defaultVisualizersCallback: DataSourceDisplay.VisualizersCallback = js.native
   }
 
   @js.native
@@ -3711,10 +4516,31 @@ package cesium {
     var materialAppearanceType: Appearance = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait EllipseGraphicsOptions extends js.Object
+
+  object EllipseGraphicsOptions extends EllipseGraphicsOptionsBuilder(noOpts)
+
+  class EllipseGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[EllipseGraphicsOptions, EllipseGraphicsOptionsBuilder](new EllipseGraphicsOptionsBuilder(_)) {
+
+    def radii(v: Property) = jsOpt("radii", v)
+    def subdivisions(v: Property) = jsOpt("subdivisions", v)
+    def stackPartitions(v: Property) = jsOpt("stackPartitions", v)
+    def show(v: Property) = jsOpt("show", v)
+    def fill(v: Property) = jsOpt("fill", v)
+    def material(v: MaterialProperty) = jsOpt("material", v)
+    def outline(v: Property) = jsOpt("outline", v)
+    def outlineColor(v: Property) = jsOpt("outlineColor", v)
+    def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
+    def slicePartitions(v: Property) = jsOpt("slicePartitions", v)
+
+  }
   @js.native
   @JSName("Cesium.EllipseGraphics")
   class EllipseGraphics protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: EllipseGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
     var semiMajorAxis: Property = js.native
@@ -3776,10 +4602,31 @@ package cesium {
     var materialAppearanceType: Appearance = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait EllipsoidGraphicsOptions extends js.Object
+
+  object EllipsoidGraphicsOptions extends EllipsoidGraphicsOptionsBuilder(noOpts)
+
+  class EllipsoidGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[EllipsoidGraphicsOptions, EllipsoidGraphicsOptionsBuilder](new EllipsoidGraphicsOptionsBuilder(_)) {
+
+    def radii(v: Property) = jsOpt("radii", v)
+    def subdivisions(v: Property) = jsOpt("subdivisions", v)
+    def stackPartitions(v: Property) = jsOpt("stackPartitions", v)
+    def show(v: Property) = jsOpt("show", v)
+    def fill(v: Property) = jsOpt("fill", v)
+    def material(v: MaterialProperty) = jsOpt("material", v)
+    def outline(v: Property) = jsOpt("outline", v)
+    def outlineColor(v: Property) = jsOpt("outlineColor", v)
+    def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
+    def slicePartitions(v: Property) = jsOpt("slicePartitions", v)
+
+  }
   @js.native
   @JSName("Cesium.EllipsoidGraphics")
   class EllipsoidGraphics protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: EllipsoidGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
     var show: Property = js.native
@@ -3798,10 +4645,44 @@ package cesium {
     def merge(source: EllipsoidGraphics): js.Dynamic = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait EntityOptions extends js.Object
+
+  object EntityOptions extends EntityOptionsBuilder(noOpts)
+
+  class EntityOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[EntityOptions, EntityOptionsBuilder](new EntityOptionsBuilder(_)) {
+
+    def id(v: String) = jsOpt("id", v)
+    def name(v: String) = jsOpt("name", v)
+    def availability(v: TimeIntervalCollection) = jsOpt("availability", v)
+    def show(v: Boolean) = jsOpt("show", v)
+    def description(v: Property) = jsOpt("description", v)
+    def position(v: PositionProperty) = jsOpt("position", v)
+    def orientation(v: Property) = jsOpt("orientation", v)
+    def viewFrom(v: Property) = jsOpt("viewFrom", v)
+    def parent(v: Entity) = jsOpt("parent", v)
+    def billboard(v: BillboardGraphics) = jsOpt("billboard", v)
+    def box(v: BoxGraphics) = jsOpt("box", v)
+    def corridor(v: CorridorGraphics) = jsOpt("corridor", v)
+    def cylinder(v: CylinderGraphics) = jsOpt("cylinder", v)
+    def ellipse(v: EllipseGraphics) = jsOpt("ellipse", v)
+    def ellipsoid(v: EllipsoidGraphics) = jsOpt("ellipsoid", v)
+    def label(v: LabelGraphics) = jsOpt("label", v)
+    def model(v: 	ModelGraphics) = jsOpt("model", v)
+    def path(v: PathGraphics) = jsOpt("path", v)
+    def point(v: 	PointGraphics) = jsOpt("point", v)
+    def polygon(v: PolygonGraphics) = jsOpt("polygon", v)
+    def polyline(v: 	PolylineGraphics) = jsOpt("polyline", v)
+    def polylineVolume(v: PolylineVolumeGraphics) = jsOpt("polylineVolume", v)
+    def rectangle(v: RectangleGraphics) = jsOpt("rectangle", v)
+    def wall(v: WallGraphics) = jsOpt("wall", v)
+  }
   @js.native
   @JSName("Cesium.Entity")
   class Entity protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: EntityOptions) = this()
 
     var entityCollection: EntityCollection = js.native
     var availability: TimeIntervalCollection = js.native
@@ -3983,10 +4864,26 @@ package cesium {
     def destroy(): js.Dynamic = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait GridMaterialPropertyOptions extends js.Object
+
+  object GridMaterialPropertyOptions extends GridMaterialPropertyOptionsBuilder(noOpts)
+
+  class GridMaterialPropertyOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[GridMaterialPropertyOptions, GridMaterialPropertyOptionsBuilder](new GridMaterialPropertyOptionsBuilder(_)) {
+
+    def color(v: Property) = jsOpt("color", v)
+    def cellAlpha(v: Property) = jsOpt("cellAlpha", v)
+    def lineCount(v: Property) = jsOpt("lineCount", v)
+    def lineThickness(v: Property) = jsOpt("lineThickness", v)
+    def lineOffset(v: Property) = jsOpt("lineOffset", v)
+
+  }
   @js.native
   @JSName("Cesium.GridMaterialProperty")
   class GridMaterialProperty protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: GridMaterialPropertyOptions) = this()
 
     var isConstant: Boolean = js.native
     var definitionChanged: Event = js.native
@@ -4003,10 +4900,24 @@ package cesium {
     def equals(other: Property = ???): Boolean = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait ImageMaterialPropertyOptions extends js.Object
+
+  object ImageMaterialPropertyOptions extends ImageMaterialPropertyOptionsBuilder(noOpts)
+
+  class ImageMaterialPropertyOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ImageMaterialPropertyOptions, ImageMaterialPropertyOptionsBuilder](new ImageMaterialPropertyOptionsBuilder(_)) {
+
+    def image(v: Property) = jsOpt("image", v)
+    def repeat(v: Property) = jsOpt("repeat", v)
+    def color(v: Property) = jsOpt("color", v)
+    def transparent(v: Property) = jsOpt("transparent", v)
+  }
   @js.native
   @JSName("Cesium.ImageMaterialProperty")
   class ImageMaterialProperty protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: ImageMaterialPropertyOptions) = this()
 
     var isConstant: Boolean = js.native
     var definitionChanged: Event = js.native
@@ -4057,10 +4968,33 @@ package cesium {
     var extendedData: String = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait LabelGraphicsOptions extends js.Object
+
+  object LabelGraphicsOptions extends LabelGraphicsOptionsBuilder(noOpts)
+
+  class LabelGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[LabelGraphicsOptions, LabelGraphicsOptionsBuilder](new LabelGraphicsOptionsBuilder(_)) {
+
+    def text(v: Property) = jsOpt("text", v)
+    def font(v: Property) = jsOpt("font", v)
+    def style(v: Property) = jsOpt("style", v)
+    def fillColor(v: Property) = jsOpt("fillColor", v)
+    def outlineColor(v: Property) = jsOpt("outlineColor", v)
+    def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
+    def show(v: Property) = jsOpt("show", v)
+    def horizontalOrigin(v: Property) = jsOpt("horizontalOrigin", v)
+    def verticalOrigin(v: Property) = jsOpt("verticalOrigin", v)
+    def eyeOffset(v: Property) = jsOpt("eyeOffset", v)
+    def pixelOffset(v: Property) = jsOpt("pixelOffset", v)
+    def translucencyByDistance(v: Property) = jsOpt("translucencyByDistance", v)
+    def pixelOffsetScaleByDistance(v: Property) = jsOpt("pixelOffsetScaleByDistance", v)
+  }
   @js.native
   @JSName("Cesium.LabelGraphics")
   class LabelGraphics protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: LabelGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
     var text: Property = js.native
@@ -4108,10 +5042,29 @@ package cesium {
     def equals(other: Property = ???): Boolean = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait ModelGraphicsOptions extends js.Object
+
+  object ModelGraphicsOptions extends ModelGraphicsOptionsBuilder(noOpts)
+
+  class ModelGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ModelGraphicsOptions, ModelGraphicsOptionsBuilder](new ModelGraphicsOptionsBuilder(_)) {
+
+    def uri(v: Property) = jsOpt("uri", v)
+    def show(v: Property) = jsOpt("show", v)
+    def scale(v: Property) = jsOpt("scale", v)
+    def minimumPixelSize(v: Property) = jsOpt("minimumPixelSize", v)
+    def maximumScale(v: Property) = jsOpt("maximumScale", v)
+    def incrementallyLoadTextures(v: Property) = jsOpt("incrementallyLoadTextures", v)
+    def runAnimations(v: Property) = jsOpt("runAnimations", v)
+    def nodeTransformations(v: Property) = jsOpt("nodeTransformations", v)
+
+  }
   @js.native
   @JSName("Cesium.ModelGraphics")
   class ModelGraphics protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: ModelGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
     var show: Property = js.native
@@ -4140,10 +5093,23 @@ package cesium {
     def destroy(): js.Dynamic = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait NodeTransformationPropertyOptions extends js.Object
+
+  object NodeTransformationPropertyOptions extends NodeTransformationPropertyOptionsBuilder(noOpts)
+
+  class NodeTransformationPropertyOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[NodeTransformationPropertyOptions, NodeTransformationPropertyOptionsBuilder](new NodeTransformationPropertyOptionsBuilder(_)) {
+
+    def translation(v: Property) = jsOpt("translation", v)
+    def rotation(v: Property) = jsOpt("rotation", v)
+    def scale(v: Property) = jsOpt("scale", v)
+  }
   @js.native
   @JSName("Cesium.NodeTransformationProperty")
   class NodeTransformationProperty protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: NodeTransformationPropertyOptions) = this()
 
     var isConstant: Boolean = js.native
     var definitionChanged: Event = js.native
@@ -4156,10 +5122,27 @@ package cesium {
     def equals(other: Property = ???): Boolean = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait PathGraphicsOptions extends js.Object
+
+  object PathGraphicsOptions extends PathGraphicsOptionsBuilder(noOpts)
+
+  class PathGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PathGraphicsOptions, PathGraphicsOptionsBuilder](new PathGraphicsOptionsBuilder(_)) {
+
+    def leadTime(v: Property) = jsOpt("leadTime", v)
+    def trailTime(v: Property) = jsOpt("trailTime", v)
+    def show(v: Property) = jsOpt("show", v)
+    def width(v: Property) = jsOpt("width", v)
+    def material(v: MaterialProperty) = jsOpt("material", v)
+    def resolution(v: Property) = jsOpt("resolution", v)
+
+  }
   @js.native
   @JSName("Cesium.PathGraphics")
   class PathGraphics protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: PathGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
     var show: Property = js.native
@@ -4186,10 +5169,27 @@ package cesium {
     def destroy(): js.Dynamic = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait PointGraphicsOptions extends js.Object
+
+  object PointGraphicsOptions extends PointGraphicsOptionsBuilder(noOpts)
+
+  class PointGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PointGraphicsOptions, PointGraphicsOptionsBuilder](new PointGraphicsOptionsBuilder(_)) {
+
+    def color(v: Property) = jsOpt("color", v)
+    def pixelSize(v: Property) = jsOpt("pixelSize", v)
+    def outlineColor(v: Property) = jsOpt("outlineColor", v)
+    def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
+    def show(v: Property) = jsOpt("show", v)
+    def scaleByDistance(v: Property) = jsOpt("scaleByDistance", v)
+    def translucencyByDistance(v: Property) = jsOpt("translucencyByDistance", v)
+  }
   @js.native
   @JSName("Cesium.PointGraphics")
   class PointGraphics protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: PointGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
     var color: Property = js.native
@@ -4256,10 +5256,34 @@ package cesium {
     var materialAppearanceType: Appearance = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait PolygonGraphicsOptions extends js.Object
+
+  object PolygonGraphicsOptions extends PolygonGraphicsOptionsBuilder(noOpts)
+
+  class PolygonGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PolygonGraphicsOptions, PolygonGraphicsOptionsBuilder](new PolygonGraphicsOptionsBuilder(_)) {
+
+    def hierarchy(v: Property) = jsOpt("hierarchy", v)
+    def height(v: Property) = jsOpt("height", v)
+    def extrudedHeight(v: Property) = jsOpt("extrudedHeight", v)
+    def show(v: Property) = jsOpt("show", v)
+    def fill(v: Property) = jsOpt("fill", v)
+    def material(v: MaterialProperty) = jsOpt("material", v)
+    def outline(v: Property) = jsOpt("outline", v)
+    def outlineColor(v: Property) = jsOpt("outlineColor", v)
+    def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
+    def granularity(v: Property) = jsOpt("granularity", v)
+    def stRotation(v: Property) = jsOpt("stRotation", v)
+    def perPositionHeight(v: Property) = jsOpt("perPositionHeight", v)
+    def closeTop(v: Boolean) = jsOpt("closeTop", v)
+    def closeBottom(v: Boolean) = jsOpt("closeBottom", v)
+  }
   @js.native
   @JSName("Cesium.PolygonGraphics")
   class PolygonGraphics protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: PolygonGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
     var show: Property = js.native
@@ -4336,10 +5360,23 @@ package cesium {
     var materialAppearanceType: Appearance = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait PolylineGlowMaterialPropertyOptions extends js.Object
+
+  object PolylineGlowMaterialPropertyOptions extends PolylineGlowMaterialPropertyOptionsBuilder(noOpts)
+
+  class PolylineGlowMaterialPropertyOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PolylineGlowMaterialPropertyOptions, PolylineGlowMaterialPropertyOptionsBuilder](new PolylineGlowMaterialPropertyOptionsBuilder(_)) {
+
+    def color(v: Property) = jsOpt("color", v)
+    def glowPower(v: Property) = jsOpt("glowPower", v)
+
+  }
   @js.native
   @JSName("Cesium.PolylineGlowMaterialProperty")
   class PolylineGlowMaterialProperty protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: PolylineGlowMaterialPropertyOptions) = this()
 
     var isConstant: Boolean = js.native
     var definitionChanged: Event = js.native
@@ -4353,10 +5390,28 @@ package cesium {
     def equals(other: Property = ???): Boolean = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait PolylineGraphicsOptions extends js.Object
+
+  object PolylineGraphicsOptions extends PolylineGraphicsOptionsBuilder(noOpts)
+
+  class PolylineGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PolylineGraphicsOptions, PolylineGraphicsOptionsBuilder](new PolylineGraphicsOptionsBuilder(_)) {
+
+    def positions(v: Property) = jsOpt("positions", v)
+    def width(v: Property) = jsOpt("width", v)
+    def followSurface(v: Property) = jsOpt("followSurface", v)
+    def show(v: Property) = jsOpt("show", v)
+    def material(v: MaterialProperty) = jsOpt("material", v)
+    def granularity(v: Property) = jsOpt("granularity", v)
+
+
+  }
   @js.native
   @JSName("Cesium.PolylineGraphics")
   class PolylineGraphics protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: PolylineGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
     var show: Property = js.native
@@ -4371,10 +5426,24 @@ package cesium {
     def merge(source: PolylineGraphics): js.Dynamic = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait PolylineOutlineMaterialPropertyOptions extends js.Object
+
+  object PolylineOutlineMaterialPropertyOptions extends PolylineOutlineMaterialPropertyOptionsBuilder(noOpts)
+
+  class PolylineOutlineMaterialPropertyOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PolylineOutlineMaterialPropertyOptions, PolylineOutlineMaterialPropertyOptionsBuilder](new PolylineOutlineMaterialPropertyOptionsBuilder(_)) {
+
+    def color(v: Property) = jsOpt("color", v)
+    def outlineColor(v: Property) = jsOpt("outlineColor", v)
+    def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
+
+  }
   @js.native
   @JSName("Cesium.PolylineOutlineMaterialProperty")
   class PolylineOutlineMaterialProperty protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: PolylineOutlineMaterialPropertyOptions) = this()
 
     var isConstant: Boolean = js.native
     var definitionChanged: Event = js.native
@@ -4428,10 +5497,31 @@ package cesium {
     var materialAppearanceType: Appearance = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait PolylineVolumeGraphicsOptions extends js.Object
+
+  object PolylineVolumeGraphicsOptions extends PolylineVolumeGraphicsOptionsBuilder(noOpts)
+
+  class PolylineVolumeGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PolylineVolumeGraphicsOptions, PolylineVolumeGraphicsOptionsBuilder](new PolylineVolumeGraphicsOptionsBuilder(_)) {
+
+    def positions(v: Property) = jsOpt("positions", v)
+    def cornerType(v: Property) = jsOpt("cornerType", v)
+    def shape(v: Property) = jsOpt("shape", v)
+    def show(v: Property) = jsOpt("show", v)
+    def fill(v: Property) = jsOpt("fill", v)
+    def material(v: MaterialProperty) = jsOpt("material", v)
+    def outline(v: Property) = jsOpt("outline", v)
+    def outlineColor(v: Property) = jsOpt("outlineColor", v)
+    def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
+    def granularity(v: Property) = jsOpt("granularity", v)
+
+  }
   @js.native
   @JSName("Cesium.PolylineVolumeGraphics")
   class PolylineVolumeGraphics protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: PolylineVolumeGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
     var show: Property = js.native
@@ -4569,10 +5659,33 @@ package cesium {
     var materialAppearanceType: Appearance = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait RectangleGraphicsOptions extends js.Object
+
+  object RectangleGraphicsOptions extends RectangleGraphicsOptionsBuilder(noOpts)
+
+  class RectangleGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[RectangleGraphicsOptions, RectangleGraphicsOptionsBuilder](new RectangleGraphicsOptionsBuilder(_)) {
+    def coordinates(v: Property) = jsOpt("coordinates", v)
+    def height(v: Property) = jsOpt("height", v)
+    def extrudedHeight(v: Property) = jsOpt("extrudedHeight", v)
+    def show(v: Property) = jsOpt("show", v)
+    def fill(v: Property) = jsOpt("fill", v)
+    def material(v: MaterialProperty) = jsOpt("material", v)
+    def outline(v: Property) = jsOpt("outline", v)
+    def outlineColor(v: Property) = jsOpt("outlineColor", v)
+    def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
+    def granularity(v: Property) = jsOpt("granularity", v)
+    def closeTop(v: Property) = jsOpt("closeTop", v)
+    def closeBottom(v: Property) = jsOpt("closeBottom", v)
+    def rotation(v: Property) = jsOpt("rotation", v)
+    def stRotation(v: Property) = jsOpt("stRotation", v)
+  }
   @js.native
   @JSName("Cesium.RectangleGraphics")
   class RectangleGraphics protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: RectangleGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
     var show: Property = js.native
@@ -4683,10 +5796,26 @@ package cesium {
     def equals(other: Property = ???): Boolean = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait StripeMaterialPropertyOptions extends js.Object
+
+  object StripeMaterialPropertyOptions extends StripeMaterialPropertyOptionsBuilder(noOpts)
+
+  class StripeMaterialPropertyOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[StripeMaterialPropertyOptions, StripeMaterialPropertyOptionsBuilder](new StripeMaterialPropertyOptionsBuilder(_)) {
+
+    def evenColor(v: Property) = jsOpt("evenColor", v)
+    def oddColor(v: Property) = jsOpt("oddColor", v)
+    def repeat(v: Property) = jsOpt("repeat", v)
+    def offset(v: Property) = jsOpt("offset", v)
+    def orientation(v: Property) = jsOpt("orientation", v)
+
+  }
   @js.native
   @JSName("Cesium.StripeMaterialProperty")
   class StripeMaterialProperty protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: StripeMaterialPropertyOptions) = this()
 
     var isConstant: Boolean = js.native
     var definitionChanged: Event = js.native
@@ -4810,10 +5939,31 @@ package cesium {
     var materialAppearanceType: Appearance = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait WallGraphicsOptions extends js.Object
+
+  object WallGraphicsOptions extends WallGraphicsOptionsBuilder(noOpts)
+
+  class WallGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[WallGraphicsOptions, WallGraphicsOptionsBuilder](new WallGraphicsOptionsBuilder(_)) {
+
+    def positions(v: Property) = jsOpt("positions", v)
+    def maximumHeights(v: Property) = jsOpt("maximumHeights", v)
+    def minimumHeights(v: Property) = jsOpt("minimumHeights", v)
+    def show(v: Property) = jsOpt("show", v)
+    def fill(v: Property) = jsOpt("fill", v)
+    def material(v: MaterialProperty) = jsOpt("material", v)
+    def outline(v: Property) = jsOpt("outline", v)
+    def outlineColor(v: Property) = jsOpt("outlineColor", v)
+    def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
+    def granularity(v: Property) = jsOpt("granularity", v)
+
+  }
   @js.native
   @JSName("Cesium.WallGraphics")
   class WallGraphics protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: WallGraphicsOptions) = this()
 
     var definitionChanged: Event = js.native
     var show: Property = js.native
@@ -4832,10 +5982,27 @@ package cesium {
     def merge(source: WallGraphics): js.Dynamic = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait AppearanceOptions extends js.Object
+
+  object AppearanceOptions extends AppearanceOptionsBuilder(noOpts)
+
+  class AppearanceOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[AppearanceOptions, AppearanceOptionsBuilder](new AppearanceOptionsBuilder(_)) {
+
+    def translucent(v: Boolean) = jsOpt("translucent", v)
+    def closed(v: Boolean) = jsOpt("closed", v)
+    def material(v: Material) = jsOpt("material", v)
+    def vertexShaderSource(v: String) = jsOpt("vertexShaderSource", v)
+    def fragmentShaderSource(v: String) = jsOpt("fragmentShaderSource", v)
+    def renderState(v: RenderState) = jsOpt("renderState", v)
+
+  }
   @js.native
   @JSName("Cesium.Appearance")
   class Appearance protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: AppearanceOptions) = this()
 
     var material: Material = js.native
     var translucent: Boolean = js.native
@@ -4851,10 +6018,33 @@ package cesium {
     def getRenderState(): js.Dynamic = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait ArcGisMapServerImageryProviderOptions extends js.Object
+
+  object ArcGisMapServerImageryProviderOptions extends ArcGisMapServerImageryProviderOptionsBuilder(noOpts)
+
+  class ArcGisMapServerImageryProviderOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ArcGisMapServerImageryProviderOptions, ArcGisMapServerImageryProviderOptionsBuilder](new ArcGisMapServerImageryProviderOptionsBuilder(_)) {
+
+    def url(v: String) = jsOpt("url", v)
+    def token(v: String) = jsOpt("token", v)
+    def tileDiscardPolicy(v: TileDiscardPolicy) = jsOpt("tileDiscardPolicy", v)
+    def proxy(v: Proxy) = jsOpt("proxy", v)
+    def usePreCachedTilesIfAvailable(v: Boolean) = jsOpt("usePreCachedTilesIfAvailable", v)
+    def layers(v: String) = jsOpt("layers", v)
+    def enablePickFeatures(v: Boolean) = jsOpt("enablePickFeatures", v)
+    def rectangle(v: Rectangle) = jsOpt("rectangle", v)
+    def tilingScheme(v: TilingScheme) = jsOpt("tilingScheme", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+    def tileWidth(v: Int) = jsOpt("tileWidth", v)
+    def tileHeight(v: Int) = jsOpt("tileHeight", v)
+    def maximumLevel(v: Int) = jsOpt("maximumLevel", v)
+  }
   @js.native
   @JSName("Cesium.ArcGisMapServerImageryProvider")
   class ArcGisMapServerImageryProvider protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: ArcGisMapServerImageryProviderOptions) = this()
 
     var enablePickFeatures: Boolean = js.native
     var url: String = js.native
@@ -4920,10 +6110,23 @@ package cesium {
     def equals(other: Billboard): Boolean = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait BillboardCollectionOptions extends js.Object
+
+  object BillboardCollectionOptions extends BillboardCollectionOptionsBuilder(noOpts)
+
+  class BillboardCollectionOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[BillboardCollectionOptions, BillboardCollectionOptionsBuilder](new BillboardCollectionOptionsBuilder(_)) {
+
+    def modelMatrix(v: Matrix4) = jsOpt("modelMatrix", v)
+    def debugShowBoundingVolume(v: Boolean) = jsOpt("debugShowBoundingVolume", v)
+    def scene(v: Scene) = jsOpt("scene", v)
+  }
   @js.native
   @JSName("Cesium.BillboardCollection")
   class BillboardCollection protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: BillboardCollectionOptions) = this()
 
     var modelMatrix: Matrix4 = js.native
     var debugShowBoundingVolume: Boolean = js.native
@@ -4946,10 +6149,28 @@ package cesium {
     def destroy(): Unit = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait BingMapsImageryProviderOptions extends js.Object
+
+  object BingMapsImageryProviderOptions extends BingMapsImageryProviderOptionsBuilder(noOpts)
+
+  class BingMapsImageryProviderOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[BingMapsImageryProviderOptions, BingMapsImageryProviderOptionsBuilder](new BingMapsImageryProviderOptionsBuilder(_)) {
+
+    def url(v: String) = jsOpt("url", v)
+    def key(v: String) = jsOpt("key", v)
+    def tileProtocol(v: String) = jsOpt("tileProtocol", v)
+    def mapStyle(v: String) = jsOpt("mapStyle", v)
+    def culture(v: String) = jsOpt("culture", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+    def tileDiscardPolicy(v: TileDiscardPolicy) = jsOpt("tileDiscardPolicy", v)
+    def proxy(v: Proxy) = jsOpt("proxy", v)
+  }
   @js.native
   @JSName("Cesium.BingMapsImageryProvider")
   class BingMapsImageryProvider protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: BingMapsImageryProviderOptions) = this()
 
     var defaultGamma: Double = js.native
     var url: String = js.native
@@ -5176,10 +6397,25 @@ package cesium {
     def fromBoundingSphere(boundingSphere: BoundingSphere, result: CullingVolume = ???): CullingVolume = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait DebugAppearanceOptions extends js.Object
+
+  object DebugAppearanceOptions extends DebugAppearanceOptionsBuilder(noOpts)
+
+  class DebugAppearanceOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[DebugAppearanceOptions, DebugAppearanceOptionsBuilder](new DebugAppearanceOptionsBuilder(_)) {
+
+    def attributeName(v: String) = jsOpt("attributeName", v)
+    def glslDatatype(v: String) = jsOpt("glslDatatype", v)
+    def vertexShaderSource(v: String) = jsOpt("vertexShaderSource", v)
+    def fragmentShaderSource(v: String) = jsOpt("fragmentShaderSource", v)
+    def renderState(v: RenderState) = jsOpt("renderState", v)
+  }
   @js.native
   @JSName("Cesium.DebugAppearance")
   class DebugAppearance protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: DebugAppearanceOptions) = this()
 
     var material: Material = js.native
     var translucent: Boolean = js.native
@@ -5197,10 +6433,25 @@ package cesium {
     def getRenderState(): js.Dynamic = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait DebugModelMatrixPrimitiveOptions extends js.Object
+
+  object DebugModelMatrixPrimitiveOptions extends DebugModelMatrixPrimitiveOptionsBuilder(noOpts)
+
+  class DebugModelMatrixPrimitiveOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[DebugModelMatrixPrimitiveOptions, DebugModelMatrixPrimitiveOptionsBuilder](new DebugModelMatrixPrimitiveOptionsBuilder(_)) {
+
+    def length(v: Double) = jsOpt("length", v)
+    def width(v: Double) = jsOpt("width", v)
+    def modelMatrix(v: Matrix4) = jsOpt("modelMatrix", v)
+    def show(v: Boolean) = jsOpt("show", v)
+    def id(v: Object) = jsOpt("id", v)
+  }
   @js.native
   @JSName("Cesium.DebugModelMatrixPrimitive")
   class DebugModelMatrixPrimitive protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: DebugModelMatrixPrimitiveOptions) = this()
 
     var length: Double = js.native
     var width: Double = js.native
@@ -5213,20 +6464,52 @@ package cesium {
     def destroy(): Unit = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait DiscardMissingTileImagePolicyOptions extends js.Object
+
+  object DiscardMissingTileImagePolicyOptions extends DiscardMissingTileImagePolicyOptionsBuilder(noOpts)
+
+  class DiscardMissingTileImagePolicyOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[DiscardMissingTileImagePolicyOptions, DiscardMissingTileImagePolicyOptionsBuilder](new DiscardMissingTileImagePolicyOptionsBuilder(_)) {
+
+    def missingImageUrl(v: String) = jsOpt("missingImageUrl", v)
+    def pixelsToCheck(v: Array[Cartesian2]) = jsOpt("pixelsToCheck", v)
+    def disableCheckIfAllPixelsAreTransparent(v: Boolean) = jsOpt("disableCheckIfAllPixelsAreTransparent", v)
+
+  }
   @js.native
   @JSName("Cesium.DiscardMissingTileImagePolicy")
   class DiscardMissingTileImagePolicy protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: DiscardMissingTileImagePolicyOptions) = this()
 
     def isReady(): Boolean = js.native
 
     def shouldDiscardImage(image: HTMLImageElement): Boolean = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait EllipsoidSurfaceAppearanceOptions extends js.Object
+
+  object EllipsoidSurfaceAppearanceOptions extends EllipsoidSurfaceAppearanceOptionsBuilder(noOpts)
+
+  class EllipsoidSurfaceAppearanceOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[EllipsoidSurfaceAppearanceOptions, EllipsoidSurfaceAppearanceOptionsBuilder](new EllipsoidSurfaceAppearanceOptionsBuilder(_)) {
+
+    def flat(v: Boolean) = jsOpt("flat", v)
+    def faceForward(v: Boolean) = jsOpt("faceForward", v)
+    def translucent(v: Boolean) = jsOpt("translucent", v)
+    def aboveGround(v: Boolean) = jsOpt("aboveGround", v)
+    def material(v: Material) = jsOpt("material", v)
+    def vertexShaderSource(v: String) = jsOpt("vertexShaderSource", v)
+    def fragmentShaderSource(v: String) = jsOpt("fragmentShaderSource", v)
+    def renderState(v: RenderState) = jsOpt("renderState", v)
+  }
   @js.native
   @JSName("Cesium.EllipsoidSurfaceAppearance")
   class EllipsoidSurfaceAppearance protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: EllipsoidSurfaceAppearanceOptions) = this()
 
     var material: Material = js.native
     var translucent: Boolean = js.native
@@ -5260,10 +6543,26 @@ package cesium {
     var screenSpaceErrorFactor: Double = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait FrameRateMonitorOptions extends js.Object
+
+  object FrameRateMonitorOptions extends FrameRateMonitorOptionsBuilder(noOpts)
+
+  class FrameRateMonitorOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[FrameRateMonitorOptions, FrameRateMonitorOptionsBuilder](new FrameRateMonitorOptionsBuilder(_)) {
+
+    def scene(v: Scene) = jsOpt("scene", v)
+    def samplingWindow(v: Double) = jsOpt("samplingWindow", v)
+    def quietPeriod(v: Double) = jsOpt("quietPeriod", v)
+    def warmupPeriod(v: Double) = jsOpt("warmupPeriod", v)
+    def minimumFrameRateDuringWarmup(v: Int) = jsOpt("minimumFrameRateDuringWarmup", v)
+    def minimumFrameRateAfterWarmup(v: Int) = jsOpt("minimumFrameRateAfterWarmup", v)
+  }
   @js.native
   @JSName("Cesium.FrameRateMonitor")
   class FrameRateMonitor protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: FrameRateMonitorOptions) = this()
 
     var samplingWindow: Double = js.native
     var quietPeriod: Double = js.native
@@ -5327,10 +6626,27 @@ package cesium {
     def destroy(): Unit = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait GoogleEarthImageryProviderOptions extends js.Object
+
+  object GoogleEarthImageryProviderOptions extends GoogleEarthImageryProviderOptionsBuilder(noOpts)
+
+  class GoogleEarthImageryProviderOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[GoogleEarthImageryProviderOptions, GoogleEarthImageryProviderOptionsBuilder](new GoogleEarthImageryProviderOptionsBuilder(_)) {
+
+    def url(v: String) = jsOpt("url", v)
+    def channel(v: Int) = jsOpt("channel", v)
+    def path(v: String) = jsOpt("path", v)
+    def maximumLevel(v: Int) = jsOpt("maximumLevel", v)
+    def tileDiscardPolicy(v: TileDiscardPolicy) = jsOpt("tileDiscardPolicy", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+    def proxy(v: Proxy) = jsOpt("proxy", v)
+  }
   @js.native
   @JSName("Cesium.GoogleEarthImageryProvider")
   class GoogleEarthImageryProvider protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: GoogleEarthImageryProviderOptions) = this()
 
     var defaultGamma: Double = js.native
     var url: String = js.native
@@ -5359,10 +6675,27 @@ package cesium {
     def pickFeatures(x: Double, y: Double, level: Double, longitude: Double, latitude: Double): Promise[js.Array[ImageryLayerFeatureInfo]] | Unit = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait GridImageryProviderOptions extends js.Object
+
+  object GridImageryProviderOptions extends GridImageryProviderOptionsBuilder(noOpts)
+
+  class GridImageryProviderOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[GridImageryProviderOptions, GridImageryProviderOptionsBuilder](new GridImageryProviderOptionsBuilder(_)) {
+
+    def tilingScheme(v: TilingScheme) = jsOpt("tilingScheme", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+    def cells(v: Int) = jsOpt("cells", v)
+    def color(v: Color) = jsOpt("color", v)
+    def glowColor(v: Color) = jsOpt("glowColor", v)
+    def glowWidth(v: Int) = jsOpt("glowWidth", v)
+
+  }
   @js.native
   @JSName("Cesium.GridImageryProvider")
   class GridImageryProvider protected() extends js.Object {
-    def this(options: js.Any = ???, backgroundColor: Color = ???) = this()
+    def this(options: GridImageryProviderOptions) = this()
 
     var proxy: Proxy = js.native
     var tileWidth: Double = js.native
@@ -5385,10 +6718,29 @@ package cesium {
     def pickFeatures(x: Double, y: Double, level: Double, longitude: Double, latitude: Double): Promise[js.Array[ImageryLayerFeatureInfo]] | Unit = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait GroundPrimitiveOptions extends js.Object
+
+  object GroundPrimitiveOptions extends GroundPrimitiveOptionsBuilder(noOpts)
+
+  class GroundPrimitiveOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[GroundPrimitiveOptions, GroundPrimitiveOptionsBuilder](new GroundPrimitiveOptionsBuilder(_)) {
+
+    def geometryInstances(v: Array[GeometryInstance] | GeometryInstance) = jsOpt("geometryInstances", v)
+    def show(v: Boolean) = jsOpt("show", v)
+    def vertexCacheOptimize(v: Boolean) = jsOpt("vertexCacheOptimize", v)
+    def interleave(v: Boolean) = jsOpt("interleave", v)
+    def compressVertices(v: Boolean) = jsOpt("compressVertices", v)
+    def releaseGeometryInstances(v: Boolean) = jsOpt("releaseGeometryInstances", v)
+    def allowPicking(v: Boolean) = jsOpt("allowPicking", v)
+    def asynchronous(v: Boolean) = jsOpt("asynchronous", v)
+    def debugShowBoundingVolume(v: Boolean) = jsOpt("debugShowBoundingVolume", v)
+  }
   @js.native
   @JSName("Cesium.GroundPrimitive")
   class GroundPrimitive protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: GroundPrimitiveOptions) = this()
 
     var geometryInstances: js.Array[js.Any] | GeometryInstance = js.native
     var show: Boolean = js.native
@@ -5568,10 +6920,23 @@ package cesium {
     def isDestroyed(): Boolean = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait LabelCollectionOptions extends js.Object
+
+  object LabelCollectionOptions extends LabelCollectionOptionsBuilder(noOpts)
+
+  class LabelCollectionOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[LabelCollectionOptions, LabelCollectionOptionsBuilder](new LabelCollectionOptionsBuilder(_)) {
+
+    def modelMatrix(v: Matrix4) = jsOpt("modelMatrix", v)
+    def debugShowBoundingVolume(v: Boolean) = jsOpt("debugShowBoundingVolume", v)
+    def scene(v: Scene) = jsOpt("scene", v)
+  }
   @js.native
   @JSName("Cesium.LabelCollection")
   class LabelCollection protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: LabelCollectionOptions) = this()
 
     var modelMatrix: Matrix4 = js.native
     var debugShowBoundingVolume: Boolean = js.native
@@ -5592,10 +6957,31 @@ package cesium {
     def destroy(): Unit = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait MapboxImageryProviderOptions extends js.Object
+
+  object MapboxImageryProviderOptions extends MapboxImageryProviderOptionsBuilder(noOpts)
+
+  class MapboxImageryProviderOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[MapboxImageryProviderOptions, MapboxImageryProviderOptionsBuilder](new MapboxImageryProviderOptionsBuilder(_)) {
+
+    def url(v: String) = jsOpt("url", v)
+    def mapId(v: String) = jsOpt("mapId", v)
+    def accessToken(v: String) = jsOpt("accessToken", v)
+    def format(v: String) = jsOpt("format", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+    def proxy(v: Object) = jsOpt("proxy", v)
+    def minimumLevel(v: Int) = jsOpt("minimumLevel", v)
+    def maximumLevel(v: Int) = jsOpt("maximumLevel", v)
+    def rectangle(v: Rectangle) = jsOpt("rectangle", v)
+    def proxy(v: Credit | String) = jsOpt("credit", v)
+
+  }
   @js.native
   @JSName("Cesium.MapboxImageryProvider")
   class MapboxImageryProvider protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: MapboxImageryProviderOptions) = this()
 
     var url: String = js.native
     var ready: Boolean = js.native
@@ -5619,10 +7005,22 @@ package cesium {
     def pickFeatures(x: Double, y: Double, level: Double, longitude: Double, latitude: Double): Promise[js.Array[ImageryLayerFeatureInfo]] | Unit = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait MaterialOptions extends js.Object
+
+  object MaterialOptions extends MaterialOptionsBuilder(noOpts)
+
+  class MaterialOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[MaterialOptions, MaterialOptionsBuilder](new MaterialOptionsBuilder(_)) {
+
+    // todo
+
+  }
   @js.native
   @JSName("Cesium.Material")
   class Material protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: MaterialOptions) = this()
 
     var `type`: String = js.native
     var shaderSource: String = js.native
@@ -5664,10 +7062,30 @@ package cesium {
     def fromType(`type`: String, uniforms: js.Any = ???): Material = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait MaterialAppearanceOptions extends js.Object
+
+  object MaterialAppearanceOptions extends MaterialAppearanceOptionsBuilder(noOpts)
+
+  class MaterialAppearanceOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[MaterialAppearanceOptions, MaterialAppearanceOptionsBuilder](new MaterialAppearanceOptionsBuilder(_)) {
+
+    def flat(v: Boolean) = jsOpt("flat", v)
+    def faceForward(v: Boolean) = jsOpt("faceForward", v)
+    def translucent(v: Boolean) = jsOpt("translucent", v)
+    def closed(v: Boolean) = jsOpt("closed", v)
+    // todo
+  //  def materialSupport(v: 	MaterialAppearance.MaterialSupport) = jsOpt("materialSupport", v)
+    def material(v: Material) = jsOpt("material", v)
+    def vertexShaderSource(v: String) = jsOpt("vertexShaderSource", v)
+    def fragmentShaderSource(v: String) = jsOpt("fragmentShaderSource", v)
+    def renderState(v: RenderState) = jsOpt("renderState", v)
+  }
   @js.native
   @JSName("Cesium.MaterialAppearance")
   class MaterialAppearance protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: MaterialAppearanceOptions) = this()
 
     var material: Material = js.native
     var translucent: Boolean = js.native
@@ -5693,10 +7111,33 @@ package cesium {
     var MaterialSupport: MaterialAppearanceMaterialSupport = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait ModelOptions extends js.Object
+
+  object ModelOptions extends ModelOptionsBuilder(noOpts)
+
+  class ModelOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ModelOptions, ModelOptionsBuilder](new ModelOptionsBuilder(_)) {
+
+    def gltf(v: Object | ArrayBuffer | Uint8Array) = jsOpt("gltf", v)
+    def basePath(v: String) = jsOpt("basePath", v)
+    def show(v: Boolean) = jsOpt("show", v)
+    def modelMatrix(v: Matrix4) = jsOpt("modelMatrix", v)
+    def scale(v: Double) = jsOpt("scale", v)
+    def minimumPixelSize(v: Double) = jsOpt("minimumPixelSize", v)
+    def maximumScale(v: Double) = jsOpt("maximumScale", v)
+    def id(v: Object) = jsOpt("id", v)
+    def allowPicking(v: Boolean) = jsOpt("allowPicking", v)
+    def incrementallyLoadTextures(v: Boolean) = jsOpt("incrementallyLoadTextures", v)
+    def asynchronous(v: Boolean) = jsOpt("asynchronous", v)
+    def debugShowBoundingVolume(v: Boolean) = jsOpt("debugShowBoundingVolume", v)
+    def debugWireframe(v: Boolean) = jsOpt("debugWireframe", v)
+  }
   @js.native
   @JSName("Cesium.Model")
   class Model protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: ModelOptions) = this()
 
     var show: Boolean = js.native
     var modelMatrix: Matrix4 = js.native
@@ -5800,10 +7241,25 @@ package cesium {
     var matrix: Matrix4 = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait MoonOptions extends js.Object
+
+  object MoonOptions extends MoonOptionsBuilder(noOpts)
+
+  class MoonOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[MoonOptions, MoonOptionsBuilder](new MoonOptionsBuilder(_)) {
+
+    def show(v: Boolean) = jsOpt("show", v)
+    def textureUrl(v: String) = jsOpt("textureUrl", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+    def onlySunLighting(v: Boolean) = jsOpt("onlySunLighting", v)
+
+  }
   @js.native
   @JSName("Cesium.Moon")
   class Moon protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: MoonOptions) = this()
 
     var show: Boolean = js.native
     var textureUrl: String = js.native
@@ -5843,10 +7299,27 @@ package cesium {
     def equals(other: OrthographicFrustum = ???): Boolean = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait PerInstanceColorAppearanceOptions extends js.Object
+
+  object PerInstanceColorAppearanceOptions extends PerInstanceColorAppearanceOptionsBuilder(noOpts)
+
+  class PerInstanceColorAppearanceOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PerInstanceColorAppearanceOptions, PerInstanceColorAppearanceOptionsBuilder](new PerInstanceColorAppearanceOptionsBuilder(_)) {
+
+    def flat(v: Boolean) = jsOpt("flat", v)
+    def faceForward(v: Boolean) = jsOpt("faceForward", v)
+    def translucent(v: Boolean) = jsOpt("translucent", v)
+    def closed(v: Boolean) = jsOpt("closed", v)
+    def vertexShaderSource(v: String) = jsOpt("vertexShaderSource", v)
+    def fragmentShaderSource(v: String) = jsOpt("fragmentShaderSource", v)
+    def renderState(v: RenderState) = jsOpt("renderState", v)
+  }
   @js.native
   @JSName("Cesium.PerInstanceColorAppearance")
   class PerInstanceColorAppearance protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: PerInstanceColorAppearanceOptions) = this()
 
     var material: Material = js.native
     var translucent: Boolean = js.native
@@ -5933,10 +7406,22 @@ package cesium {
     def equals(other: PointPrimitive): Boolean = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait PointPrimitiveCollectionOptions extends js.Object
+
+  object PointPrimitiveCollectionOptions extends PointPrimitiveCollectionOptionsBuilder(noOpts)
+
+  class PointPrimitiveCollectionOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PointPrimitiveCollectionOptions, PointPrimitiveCollectionOptionsBuilder](new PointPrimitiveCollectionOptionsBuilder(_)) {
+
+    def modelMatrix(v: Matrix4) = jsOpt("modelMatrix", v)
+    def debugShowBoundingVolume(v: Boolean) = jsOpt("debugShowBoundingVolume", v)
+  }
   @js.native
   @JSName("Cesium.PointPrimitiveCollection")
   class PointPrimitiveCollection protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: PointPrimitiveCollectionOptions) = this()
 
     var modelMatrix: Matrix4 = js.native
     var debugShowBoundingVolume: Boolean = js.native
@@ -5957,10 +7442,27 @@ package cesium {
     def destroy(): Unit = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait PolylineOptions extends js.Object
+
+  object PolylineOptions extends PolylineOptionsBuilder(noOpts)
+
+  class PolylineOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PolylineOptions, PolylineOptionsBuilder](new PolylineOptionsBuilder(_)) {
+
+    def show(v: Boolean) = jsOpt("show", v)
+    def width(v: Double) = jsOpt("width", v)
+    def loop(v: Boolean) = jsOpt("loop", v)
+    def material(v: Material) = jsOpt("material", v)
+    def positions(v: Array[Cartesian3]) = jsOpt("positions", v)
+    def id(v: Object) = jsOpt("id", v)
+
+  }
   @js.native
   @JSName("Cesium.Polyline")
   class Polyline protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: PolylineOptions) = this()
 
     var show: Boolean = js.native
     var positions: js.Array[Cartesian3] = js.native
@@ -5970,10 +7472,22 @@ package cesium {
     var id: js.Any = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait PolylineCollectionOptions extends js.Object
+
+  object PolylineCollectionOptions extends PolylineCollectionOptionsBuilder(noOpts)
+
+  class PolylineCollectionOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PolylineCollectionOptions, PolylineCollectionOptionsBuilder](new PolylineCollectionOptionsBuilder(_)) {
+
+    def modelMatrix(v: Matrix4) = jsOpt("modelMatrix", v)
+    def debugShowBoundingVolume(v: Boolean) = jsOpt("debugShowBoundingVolume", v)
+  }
   @js.native
   @JSName("Cesium.PolylineCollection")
   class PolylineCollection protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: PolylineCollectionOptions) = this()
 
     var modelMatrix: Matrix4 = js.native
     var debugShowBoundingVolume: Boolean = js.native
@@ -5994,10 +7508,24 @@ package cesium {
     def destroy(): Unit = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait PolylineColorAppearanceOptions extends js.Object
+
+  object PolylineColorAppearanceOptions extends PolylineColorAppearanceOptionsBuilder(noOpts)
+
+  class PolylineColorAppearanceOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PolylineColorAppearanceOptions, PolylineColorAppearanceOptionsBuilder](new PolylineColorAppearanceOptionsBuilder(_)) {
+
+    def translucent(v: Boolean) = jsOpt("translucent", v)
+    def vertexShaderSource(v: String) = jsOpt("vertexShaderSource", v)
+    def fragmentShaderSource(v: String) = jsOpt("fragmentShaderSource", v)
+    def renderState(v: RenderState) = jsOpt("renderState", v)
+  }
   @js.native
   @JSName("Cesium.PolylineColorAppearance")
   class PolylineColorAppearance protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: PolylineColorAppearanceOptions) = this()
 
     var material: Material = js.native
     var translucent: Boolean = js.native
@@ -6020,10 +7548,25 @@ package cesium {
     var VERTEX_FORMAT: VertexFormat = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait PolylineMaterialAppearanceOptions extends js.Object
+
+  object PolylineMaterialAppearanceOptions extends PolylineMaterialAppearanceOptionsBuilder(noOpts)
+
+  class PolylineMaterialAppearanceOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PolylineMaterialAppearanceOptions, PolylineMaterialAppearanceOptionsBuilder](new PolylineMaterialAppearanceOptionsBuilder(_)) {
+
+    def translucent(v: Boolean) = jsOpt("translucent", v)
+    def vertexShaderSource(v: String) = jsOpt("vertexShaderSource", v)
+    def fragmentShaderSource(v: String) = jsOpt("fragmentShaderSource", v)
+    def renderState(v: RenderState) = jsOpt("renderState", v)
+    def material(v: Material) = jsOpt("material", v)
+  }
   @js.native
   @JSName("Cesium.PolylineMaterialAppearance")
   class PolylineMaterialAppearance protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: PolylineMaterialAppearanceOptions) = this()
 
     var material: Material = js.native
     var translucent: Boolean = js.native
@@ -6046,10 +7589,32 @@ package cesium {
     var VERTEX_FORMAT: VertexFormat = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait PrimitiveOptions extends js.Object
+
+  object PrimitiveOptions extends PrimitiveOptionsBuilder(noOpts)
+
+  class PrimitiveOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PrimitiveOptions, PrimitiveOptionsBuilder](new PrimitiveOptionsBuilder(_)) {
+
+    def geometryInstances(v: Array[GeometryInstance] | GeometryInstance) = jsOpt("geometryInstances", v)
+    def appearance(v: Appearance) = jsOpt("appearance", v)
+    def show(v: Boolean) = jsOpt("show", v)
+    def modelMatrix(v: Matrix4) = jsOpt("modelMatrix", v)
+    def vertexCacheOptimize(v: Boolean) = jsOpt("vertexCacheOptimize", v)
+    def interleave(v: Boolean) = jsOpt("interleave", v)
+    def compressVertices(v: Boolean) = jsOpt("compressVertices", v)
+    def releaseGeometryInstances(v: Boolean) = jsOpt("releaseGeometryInstances", v)
+    def allowPicking(v: Boolean) = jsOpt("allowPicking", v)
+    def cull(v: Boolean) = jsOpt("cull", v)
+    def asynchronous(v: Boolean) = jsOpt("asynchronous", v)
+    def debugShowBoundingVolume(v: Boolean) = jsOpt("debugShowBoundingVolume", v)
+  }
   @js.native
   @JSName("Cesium.Primitive")
   class Primitive protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: PrimitiveOptions) = this()
 
     var geometryInstances: js.Array[GeometryInstance] | GeometryInstance = js.native
     var appearance: Appearance = js.native
@@ -6075,10 +7640,24 @@ package cesium {
     def destroy(): Unit = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait PrimitiveCollectionOptions extends js.Object
+
+  object PrimitiveCollectionOptions extends PrimitiveCollectionOptionsBuilder(noOpts)
+
+  class PrimitiveCollectionOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PrimitiveCollectionOptions, PrimitiveCollectionOptionsBuilder](new PrimitiveCollectionOptionsBuilder(_)) {
+
+    def show(v: Boolean) = jsOpt("show", v)
+    def destroyPrimitives(v: Boolean) = jsOpt("destroyPrimitives", v)
+
+
+  }
   @js.native
   @JSName("Cesium.PrimitiveCollection")
   class PrimitiveCollection protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: PrimitiveCollectionOptions) = this()
 
     var show: Boolean = js.native
     var destroyPrimitives: Boolean = js.native
@@ -6107,10 +7686,27 @@ package cesium {
     def destroy(): Unit = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait SceneOptions extends js.Object
+
+  object SceneOptions extends SceneOptionsBuilder(noOpts)
+
+  class SceneOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[SceneOptions, SceneOptionsBuilder](new SceneOptionsBuilder(_)) {
+
+    def canvas(v: Canvas) = jsOpt("canvas", v)
+    def contextOptions(v: Object) = jsOpt("contextOptions", v)
+    def creditContainer(v: Element) = jsOpt("creditContainer", v)
+    def mapProjection(v: MapProjection) = jsOpt("mapProjection", v)
+    def orderIndependentTranslucency(v: Boolean) = jsOpt("orderIndependentTranslucency", v)
+    def scene3DOnly(v: Boolean) = jsOpt("scene3DOnly", v)
+    def terrainExaggeration(v: Double) = jsOpt("terrainExaggeration", v)
+  }
   @js.native
   @JSName("Cesium.Scene")
   class Scene protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: SceneOptions) = this()
 
     var rethrowRenderErrors: Boolean = js.native
     var completeMorphOnUserInput: Boolean = js.native
@@ -6210,10 +7806,27 @@ package cesium {
     def destroy(): Unit = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait SingleTileImageryProviderOptions extends js.Object
+
+  object SingleTileImageryProviderOptions extends SingleTileImageryProviderOptionsBuilder(noOpts)
+
+  class SingleTileImageryProviderOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[SingleTileImageryProviderOptions, SingleTileImageryProviderOptionsBuilder](new SingleTileImageryProviderOptionsBuilder(_)) {
+
+    def url(v: String) = jsOpt("url", v)
+    def rectangle(v: Rectangle) = jsOpt("rectangle", v)
+    def credit(v: Credit | String) = jsOpt("credit", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+    def proxy(v: Object) = jsOpt("proxy", v)
+
+
+  }
   @js.native
   @JSName("Cesium.SingleTileImageryProvider")
   class SingleTileImageryProvider protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: SingleTileImageryProviderOptions) = this()
 
     var url: String = js.native
     var proxy: Proxy = js.native
@@ -6250,10 +7863,23 @@ package cesium {
     def destroy(): Unit = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait SkyBoxOptions extends js.Object
+
+  object SkyBoxOptions extends SkyBoxOptionsBuilder(noOpts)
+
+  class SkyBoxOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[SkyBoxOptions, SkyBoxOptionsBuilder](new SkyBoxOptionsBuilder(_)) {
+
+    def sources(v: Object) = jsOpt("sources", v)
+    def show(v: Boolean) = jsOpt("show", v)
+
+  }
   @js.native
   @JSName("Cesium.SkyBox")
   class SkyBox protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: SkyBoxOptions) = this()
 
     var sources: js.Any = js.native
     var show: Boolean = js.native
@@ -6276,10 +7902,27 @@ package cesium {
     def destroy(): Unit = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait TileCoordinatesImageryProviderOptions extends js.Object
+
+  object TileCoordinatesImageryProviderOptions extends TileCoordinatesImageryProviderOptionsBuilder(noOpts)
+
+  class TileCoordinatesImageryProviderOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[TileCoordinatesImageryProviderOptions, TileCoordinatesImageryProviderOptionsBuilder](new TileCoordinatesImageryProviderOptionsBuilder(_)) {
+
+    def tilingScheme(v: TilingScheme) = jsOpt("tilingScheme", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+    def color(v: Color) = jsOpt("color", v)
+    def tileWidth(v: Int) = jsOpt("tileWidth", v)
+    def tileHeight(v: Int) = jsOpt("tileHeight", v)
+
+
+  }
   @js.native
   @JSName("Cesium.TileCoordinatesImageryProvider")
   class TileCoordinatesImageryProvider protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: TileCoordinatesImageryProviderOptions) = this()
 
     var proxy: Proxy = js.native
     var tileWidth: Double = js.native
@@ -6310,10 +7953,36 @@ package cesium {
     def shouldDiscardImage(image: HTMLImageElement): Boolean = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait UrlTemplateImageryProviderOptions extends js.Object
+
+  object UrlTemplateImageryProviderOptions extends UrlTemplateImageryProviderOptionsBuilder(noOpts)
+
+  class UrlTemplateImageryProviderOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[UrlTemplateImageryProviderOptions, UrlTemplateImageryProviderOptionsBuilder](new UrlTemplateImageryProviderOptionsBuilder(_)) {
+
+    def url(v: String) = jsOpt("url", v)
+    def pickFeaturesUrl(v: String) = jsOpt("pickFeaturesUrl", v)
+    def subdomains(v: String | Array[String]) = jsOpt("subdomains", v)
+    def proxy(v: Object) = jsOpt("proxy", v)
+    def credit(v: Credit | String) = jsOpt("credit", v)
+    def minimumLevel(v: Int) = jsOpt("minimumLevel", v)
+    def maximumLevel(v: Int) = jsOpt("maximumLevel", v)
+    def rectangle(v: Rectangle) = jsOpt("rectangle", v)
+    def tilingScheme(v: TilingScheme) = jsOpt("tilingScheme", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+    def tileWidth(v: Int) = jsOpt("tileWidth", v)
+    def tileHeight(v: Int) = jsOpt("tileHeight", v)
+    def hasAlphaChannel(v: Boolean) = jsOpt("hasAlphaChannel", v)
+    def getFeatureInfoFormats(v: Array[GetFeatureInfoFormat]) = jsOpt("getFeatureInfoFormats", v)
+    def enablePickFeatures(v: Boolean) = jsOpt("enablePickFeatures", v)
+
+  }
   @js.native
   @JSName("Cesium.UrlTemplateImageryProvider")
   class UrlTemplateImageryProvider protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: UrlTemplateImageryProviderOptions) = this()
 
     var enablePickFeatures: Boolean = js.native
     var url: String = js.native
@@ -6356,10 +8025,36 @@ package cesium {
     def destroy(): Unit = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait WebMapServiceImageryProviderOptions extends js.Object
+
+  object WebMapServiceImageryProviderOptions extends WebMapServiceImageryProviderOptionsBuilder(noOpts)
+
+  class WebMapServiceImageryProviderOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[WebMapServiceImageryProviderOptions, WebMapServiceImageryProviderOptionsBuilder](new WebMapServiceImageryProviderOptionsBuilder(_)) {
+
+    def url(v: String) = jsOpt("url", v)
+    def layers(v: String) = jsOpt("layers", v)
+    def parameters(v: Object) = jsOpt("parameters", v)
+    def getFeatureInfoParameters(v: Object) = jsOpt("getFeatureInfoParameters", v)
+    def enablePickFeatures(v: Boolean) = jsOpt("enablePickFeatures", v)
+    def getFeatureInfoFormats(v: Array[GetFeatureInfoFormat]) = jsOpt("getFeatureInfoFormats", v)
+    def rectangle(v: Rectangle) = jsOpt("rectangle", v)
+    def tilingScheme(v: TilingScheme) = jsOpt("tilingScheme", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+    def tileWidth(v: Int) = jsOpt("tileWidth", v)
+    def tileHeight(v: Int) = jsOpt("tileHeight", v)
+    def minimumLevel(v: Int) = jsOpt("minimumLevel", v)
+    def maximumLevel(v: Int) = jsOpt("maximumLevel", v)
+    def credit(v: Credit | String) = jsOpt("credit", v)
+    def proxy(v: Object) = jsOpt("proxy", v)
+    def subdomains(v: String | Array[String]) = jsOpt("subdomains", v)
+  }
   @js.native
   @JSName("Cesium.WebMapServiceImageryProvider")
   class WebMapServiceImageryProvider protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: WebMapServiceImageryProviderOptions) = this()
 
     var url: String = js.native
     var proxy: Proxy = js.native
@@ -6391,10 +8086,37 @@ package cesium {
     var GetFeatureInfoDefaultParameters: js.Any = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait WebMapTileServiceImageryProviderOptions extends js.Object
+
+  object WebMapTileServiceImageryProviderOptions extends WebMapTileServiceImageryProviderOptionsBuilder(noOpts)
+
+  class WebMapTileServiceImageryProviderOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[WebMapTileServiceImageryProviderOptions, WebMapTileServiceImageryProviderOptionsBuilder](new WebMapTileServiceImageryProviderOptionsBuilder(_)) {
+
+    def url(v: String) = jsOpt("url", v)
+    def format(v: String) = jsOpt("format", v)
+    def layer(v: String) = jsOpt("layer", v)
+    def style(v: String) = jsOpt("style", v)
+    def rectangle(v: Rectangle) = jsOpt("rectangle", v)
+    def tilingScheme(v: TilingScheme) = jsOpt("tilingScheme", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+    def tileWidth(v: Int) = jsOpt("tileWidth", v)
+    def tileHeight(v: Int) = jsOpt("tileHeight", v)
+    def minimumLevel(v: Int) = jsOpt("minimumLevel", v)
+    def maximumLevel(v: Int) = jsOpt("maximumLevel", v)
+    def credit(v: Credit | String) = jsOpt("credit", v)
+    def proxy(v: Object) = jsOpt("proxy", v)
+    def tileMatrixLabels(v: Array[String]) = jsOpt("tileMatrixLabels", v)
+    def tileMatrixSetID(v: String ) = jsOpt("tileMatrixSetID", v)
+    def subdomains(v: String | Array[String]) = jsOpt("subdomains", v)
+
+  }
   @js.native
   @JSName("Cesium.WebMapTileServiceImageryProvider")
   class WebMapTileServiceImageryProvider protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: WebMapTileServiceImageryProviderOptions) = this()
 
     var url: String = js.native
     var proxy: Proxy = js.native
@@ -6485,10 +8207,26 @@ package cesium {
     def destroy(): js.Dynamic = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait BaseLayerPickerViewModelOptions extends js.Object
+
+  object BaseLayerPickerViewModelOptions extends BaseLayerPickerViewModelOptionsBuilder(noOpts)
+
+  class BaseLayerPickerViewModelOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[BaseLayerPickerViewModelOptions, BaseLayerPickerViewModelOptionsBuilder](new BaseLayerPickerViewModelOptionsBuilder(_)) {
+
+    def globe(v: Globe) = jsOpt("globe", v)
+    def imageryProviderViewModels(v: Array[ProviderViewModel]) = jsOpt("imageryProviderViewModels", v)
+    def selectedImageryProviderViewModel(v: ProviderViewModel) = jsOpt("selectedImageryProviderViewModel", v)
+    def terrainProviderViewModels(v: Array[ProviderViewModel]) = jsOpt("terrainProviderViewModels", v)
+    def selectedTerrainProviderViewModel(v: ProviderViewModel) = jsOpt("selectedTerrainProviderViewModel", v)
+
+  }
   @js.native
   @JSName("Cesium.BaseLayerPickerViewModel")
   class BaseLayerPickerViewModel protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: BaseLayerPickerViewModelOptions) = this()
 
     var imageryProviderViewModels: js.Array[ProviderViewModel] = js.native
     var terrainProviderViewModels: js.Array[ProviderViewModel] = js.native
@@ -6507,10 +8245,24 @@ package cesium {
     type CreationFunction = js.Function0[ImageryProvider | TerrainProvider | js.Array[ImageryProvider] | js.Array[TerrainProvider]]
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait ProviderViewModelOptions extends js.Object
+
+  object ProviderViewModelOptions extends ProviderViewModelOptionsBuilder(noOpts)
+
+  class ProviderViewModelOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ProviderViewModelOptions, ProviderViewModelOptionsBuilder](new ProviderViewModelOptionsBuilder(_)) {
+
+    def name(v: String) = jsOpt("name", v)
+    def tooltip(v: String) = jsOpt("tooltip", v)
+    def iconUrl(v: String) = jsOpt("iconUrl", v)
+    def creationFunction(v: ProviderViewModel.CreationFunction | Command) = jsOpt("creationFunction", v)
+  }
   @js.native
   @JSName("Cesium.ProviderViewModel")
   class ProviderViewModel protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: ProviderViewModelOptions) = this()
 
     var name: String = js.native
     var tooltip: String = js.native
@@ -6688,10 +8440,27 @@ package cesium {
     def destroy(): js.Dynamic = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait GeocoderOptions extends js.Object
+
+  object GeocoderOptions extends GeocoderOptionsBuilder(noOpts)
+
+  class GeocoderOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[GeocoderOptions, GeocoderOptionsBuilder](new GeocoderOptionsBuilder(_)) {
+
+    def container(v: Element | String) = jsOpt("container", v)
+    def scene(v: Scene) = jsOpt("scene", v)
+    def url(v: String) = jsOpt("url", v)
+    def key(v: String) = jsOpt("key", v)
+    def flightDuration(v: Double) = jsOpt("flightDuration", v)
+
+
+  }
   @js.native
   @JSName("Cesium.Geocoder")
   class Geocoder protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: GeocoderOptions) = this()
 
     var container: Element = js.native
     var viewModel: GeocoderViewModel = js.native
@@ -6701,10 +8470,25 @@ package cesium {
     def destroy(): js.Dynamic = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait GeocoderViewModelOptions extends js.Object
+
+  object GeocoderViewModelOptions extends GeocoderViewModelOptionsBuilder(noOpts)
+
+  class GeocoderViewModelOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[GeocoderViewModelOptions, GeocoderViewModelOptionsBuilder](new GeocoderViewModelOptionsBuilder(_)) {
+
+    def flightDuration(v: Double) = jsOpt("flightDuration", v)
+    def scene(v: Scene) = jsOpt("scene", v)
+    def url(v: String) = jsOpt("url", v)
+    def key(v: String) = jsOpt("key", v)
+
+  }
   @js.native
   @JSName("Cesium.GeocoderViewModel")
   class GeocoderViewModel protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: GeocoderViewModelOptions) = this()
 
     var isSearchInProgress: Boolean = js.native
     var searchText: String = js.native
@@ -6770,10 +8554,24 @@ package cesium {
     def maxHeightOffset(offset: Double): String = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait NavigationHelpButtonOptions extends js.Object
+
+  object NavigationHelpButtonOptions extends NavigationHelpButtonOptionsBuilder(noOpts)
+
+  class NavigationHelpButtonOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[NavigationHelpButtonOptions, NavigationHelpButtonOptionsBuilder](new NavigationHelpButtonOptionsBuilder(_)) {
+
+    def container(v: 	Element | String	) = jsOpt("container", v)
+    def instructionsInitiallyVisible(v: Boolean) = jsOpt("instructionsInitiallyVisible", v)
+
+
+  }
   @js.native
   @JSName("Cesium.NavigationHelpButton")
   class NavigationHelpButton protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: NavigationHelpButtonOptions) = this()
 
     var container: Element = js.native
     var viewModel: NavigationHelpButtonViewModel = js.native
@@ -6793,10 +8591,25 @@ package cesium {
     var showTouch: Command = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait PerformanceWatchdogOptions extends js.Object
+
+  object PerformanceWatchdogOptions extends PerformanceWatchdogOptionsBuilder(noOpts)
+
+  class PerformanceWatchdogOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PerformanceWatchdogOptions, PerformanceWatchdogOptionsBuilder](new PerformanceWatchdogOptionsBuilder(_)) {
+
+    def container(v: Element | String) = jsOpt("container", v)
+    def scene(v: Scene) = jsOpt("scene", v)
+    def lowFrameRateMessage(v: String) = jsOpt("lowFrameRateMessage", v)
+
+
+  }
   @js.native
   @JSName("Cesium.PerformanceWatchdog")
   class PerformanceWatchdog protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: PerformanceWatchdogOptions) = this()
 
     var container: Element = js.native
     var viewModel: PerformanceWatchdogViewModel = js.native
@@ -6806,10 +8619,24 @@ package cesium {
     def destroy(): js.Dynamic = js.native
   }
 
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait PerformanceWatchdogViewModelOptions extends js.Object
+
+  object PerformanceWatchdogViewModelOptions extends PerformanceWatchdogViewModelOptionsBuilder(noOpts)
+
+  class PerformanceWatchdogViewModelOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PerformanceWatchdogViewModelOptions, PerformanceWatchdogViewModelOptionsBuilder](new PerformanceWatchdogViewModelOptionsBuilder(_)) {
+
+    def scene(v: Scene) = jsOpt("scene", v)
+    def lowFrameRateMessage(v: String) = jsOpt("lowFrameRateMessage", v)
+
+
+  }
   @js.native
   @JSName("Cesium.PerformanceWatchdogViewModel")
   class PerformanceWatchdogViewModel protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: PerformanceWatchdogViewModelOptions) = this()
 
     var lowFrameRateMessage: String = js.native
     var lowFrameRateMessageDismissed: Boolean = js.native
@@ -7133,4 +8960,5 @@ package cesium {
   }
 
 }
+
 
