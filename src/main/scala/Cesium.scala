@@ -32,6 +32,30 @@ package cesium {
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
 
+
+@JSName("Cesium.Transforms")
+@js.native
+object Transforms extends js.Object {
+
+  // todo
+
+  def eastNorthUpToFixedFrame(origin: Cartesian3, ellipsoid: Ellipsoid, result: Matrix4): Matrix4 = js.native
+
+  def eastNorthUpToFixedFrame(origin: Cartesian3, ellipsoid: Ellipsoid): Matrix4 = js.native
+
+  def eastNorthUpToFixedFrame(origin: Cartesian3): Matrix4 = js.native
+
+
+  def headingPitchRollQuaternion(origin: Cartesian3, heading: Double, pitch: Double,
+                                 roll: Double, ellipsoid: Ellipsoid,
+                                 result: Quaternion): Quaternion = js.native
+
+  def headingPitchRollQuaternion(origin: Cartesian3, heading: Double, pitch: Double, roll: Double): Quaternion = js.native
+
+}
+
+
+
   @js.native
   sealed trait CornerType extends js.Object
 
@@ -1907,6 +1931,22 @@ class Credit protected() extends js.Object {
     def equals(left: Credit, right: Credit): Boolean = js.native
   }
 
+  @JSName("Cesium.Options")
+  @js.native
+  trait CylinderGeometryOptions extends js.Object
+
+  object CylinderGeometryOptions extends CylinderGeometryOptionsBuilder(noOpts)
+
+  class CylinderGeometryOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[CylinderGeometryOptions, CylinderGeometryOptionsBuilder](new CylinderGeometryOptionsBuilder(_)) {
+
+    def length(v: Double) = jsOpt("length", v)
+    def topRadius(v: Double) = jsOpt("topRadius", v)
+    def bottomRadius(v: Double) = jsOpt("bottomRadius", v)
+    def slices(v: Int) = jsOpt("slices", v)
+    def vertexFormat(v: VertexFormat) = jsOpt("vertexFormat", v)
+
+  }
+
 /**
 * A description of a cylinder.
 *
@@ -1940,7 +1980,7 @@ class Credit protected() extends js.Object {
 @js.native
 @JSName("Cesium.CylinderGeometry")
 class CylinderGeometry protected() extends js.Object {
-    def this(options: js.Any) = this()
+    def this(options: CylinderGeometryOptions) = this()
   }
 
   @js.native
@@ -6430,18 +6470,11 @@ class CheckerboardMaterialProperty protected() extends js.Object {
 */
 @js.native
 @JSName("Cesium.ColorMaterialProperty")
-class ColorMaterialProperty protected() extends js.Object {
+class ColorMaterialProperty protected() extends MaterialProperty{
     def this(color: Property = ???) = this()
 
-    var isConstant: Boolean = js.native
-    var definitionChanged: Event = js.native
     var color: Property = js.native
 
-    def getType(time: JulianDate): String = js.native
-
-    def getValue(time: JulianDate, result: js.Any = ???): js.Dynamic = js.native
-
-    def equals(other: Property = ???): Boolean = js.native
   }
 
 /**
@@ -6509,16 +6542,9 @@ class CompositeEntityCollection protected() extends js.Object {
 */
 @js.native
 @JSName("Cesium.CompositeMaterialProperty")
-class CompositeMaterialProperty extends js.Object {
-    var isConstant: Boolean = js.native
-    var definitionChanged: Event = js.native
+class CompositeMaterialProperty extends MaterialProperty {
     var intervals: TimeIntervalCollection = js.native
 
-    def getType(time: JulianDate): String = js.native
-
-    def getValue(time: JulianDate, result: js.Any = ???): js.Dynamic = js.native
-
-    def equals(other: Property = ???): Boolean = js.native
   }
 
 /**
@@ -6531,20 +6557,10 @@ class CompositeMaterialProperty extends js.Object {
 */
 @js.native
 @JSName("Cesium.CompositePositionProperty")
-class CompositePositionProperty protected() extends js.Object {
+class CompositePositionProperty protected() extends PositionProperty {
     def this(referenceFrame: ReferenceFrame = ???) = this()
-
-    var isConstant: Boolean = js.native
-    var definitionChanged: Event = js.native
     var intervals: TimeIntervalCollection = js.native
-    var referenceFrame: ReferenceFrame = js.native
-
-    def getValue(time: JulianDate, result: js.Any = ???): js.Dynamic = js.native
-
-    def getValueInReferenceFrame(time: JulianDate, referenceFrame: ReferenceFrame, result: Cartesian3 = ???): Cartesian3 = js.native
-
-    def equals(other: Property = ???): Boolean = js.native
-  }
+ }
 
 /**
 * A [[Property]] which is defined by a [[TimeIntervalCollection]], where the
@@ -6580,14 +6596,8 @@ class CompositePositionProperty protected() extends js.Object {
 */
 @js.native
 @JSName("Cesium.CompositeProperty")
-class CompositeProperty extends js.Object {
-    var isConstant: Boolean = js.native
-    var definitionChanged: Event = js.native
+class CompositeProperty extends Property {
     var intervals: TimeIntervalCollection = js.native
-
-    def getValue(time: JulianDate, result: js.Any = ???): js.Dynamic = js.native
-
-    def equals(other: Property = ???): Boolean = js.native
   }
 
 /**
@@ -6602,20 +6612,11 @@ class CompositeProperty extends js.Object {
 */
 @js.native
 @JSName("Cesium.ConstantPositionProperty")
-class ConstantPositionProperty protected() extends js.Object {
+class ConstantPositionProperty protected() extends PositionProperty {
     def this(value: Cartesian3 = ???, referenceFrame: ReferenceFrame = ???) = this()
-
-    var isConstant: Boolean = js.native
-    var definitionChanged: Event = js.native
-    var referenceFrame: ReferenceFrame = js.native
-
-    def getValue(time: JulianDate, result: js.Any = ???): js.Dynamic = js.native
 
     def setValue(value: Cartesian3, referenceFrame: ReferenceFrame = ???): js.Dynamic = js.native
 
-    def getValueInReferenceFrame(time: JulianDate, referenceFrame: ReferenceFrame, result: Cartesian3 = ???): Cartesian3 = js.native
-
-    def equals(other: Property = ???): Boolean = js.native
   }
 
 /**
@@ -6633,17 +6634,9 @@ class ConstantPositionProperty protected() extends js.Object {
 */
 @js.native
 @JSName("Cesium.ConstantProperty")
-class ConstantProperty protected() extends js.Object {
+class ConstantProperty protected() extends Property {
     def this(value: js.Any = ???) = this()
-
-    var isConstant: Boolean = js.native
-    var definitionChanged: Event = js.native
-
-    def getValue(time: JulianDate = ???, result: js.Any = ???): js.Dynamic = js.native
-
     def setValue(value: js.Any): js.Dynamic = js.native
-
-    def equals(other: Property = ???): Boolean = js.native
   }
 
 /**
@@ -7407,7 +7400,7 @@ class EllipsoidGraphics protected() extends js.Object {
 *   - {RectangleGraphics} [options.rectangle] A rectangle to associate with this entity.
 *   - {WallGraphics} [options.wall] A wall to associate with this entity.
 *
-* @see [[http://cesiumjs.org/2015/02/02/Visualizing-Spatial-Data/|Visualizing Spatial Data}
+* @see [[http://cesiumjs.org/2015/02/02/Visualizing-Spatial-Data/|Visualizing Spatial Data]]
 */
 @js.native
 @JSName("Cesium.Entity")
@@ -7695,22 +7688,15 @@ class GeometryVisualizer protected() extends js.Object {
 */
 @js.native
 @JSName("Cesium.GridMaterialProperty")
-class GridMaterialProperty protected() extends js.Object {
+class GridMaterialProperty protected() extends MaterialProperty {
     def this(options: GridMaterialPropertyOptions) = this()
 
-    var isConstant: Boolean = js.native
-    var definitionChanged: Event = js.native
     var color: Property = js.native
     var cellAlpha: Property = js.native
     var lineCount: Property = js.native
     var lineThickness: Property = js.native
     var lineOffset: Property = js.native
 
-    def getType(time: JulianDate): String = js.native
-
-    def getValue(time: JulianDate, result: js.Any = ???): js.Dynamic = js.native
-
-    def equals(other: Property = ???): Boolean = js.native
   }
 
 
@@ -7740,21 +7726,14 @@ class GridMaterialProperty protected() extends js.Object {
 */
 @js.native
 @JSName("Cesium.ImageMaterialProperty")
-class ImageMaterialProperty protected() extends js.Object {
+class ImageMaterialProperty protected() extends MaterialProperty {
     def this(options: ImageMaterialPropertyOptions) = this()
 
-    var isConstant: Boolean = js.native
-    var definitionChanged: Event = js.native
     var image: Property = js.native
     var repeat: Property = js.native
     var color: Property = js.native
     var transparent: Property = js.native
 
-    def getType(time: JulianDate): String = js.native
-
-    def getValue(time: JulianDate, result: js.Any = ???): js.Dynamic = js.native
-
-    def equals(other: Property = ???): Boolean = js.native
   }
 
 /**
@@ -7913,7 +7892,7 @@ class LabelGraphics protected() extends js.Object {
 
 /**
 * A [[Visualizer]] which maps the [[LabelGraphics]] instance
-* in [[Entity#label} to a [[Label]] 
+* in [[Entity#label]] to a [[Label]] 
 * alias LabelVisualizer
 * constructor
 *
@@ -8000,7 +7979,7 @@ class MaterialProperty extends js.Object {
 *   - {Property} [options.runAnimations=true] A boolean Property specifying if glTF animations specified in the model should be started.
 *   - {Property} [options.nodeTransformations] An object, where keys are names of nodes, and values are [[TranslationRotationScale]] Properties describing the transformation to apply to that node.
 *
-* @see [[http://cesiumjs.org/2014/03/03/Cesium-3D-Models-Tutorial/|3D Models Tutorial}
+* @see [[http://cesiumjs.org/2014/03/03/Cesium-3D-Models-Tutorial/|3D Models Tutorial]]
 * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=3D%20Models.html|Cesium Sandcastle 3D Models Demo]]
 */
 @js.native
@@ -8442,19 +8421,12 @@ class PolylineGeometryUpdater protected() extends js.Object {
 */
 @js.native
 @JSName("Cesium.PolylineGlowMaterialProperty")
-class PolylineGlowMaterialProperty protected() extends js.Object {
+class PolylineGlowMaterialProperty protected() extends MaterialProperty {
     def this(options: PolylineGlowMaterialPropertyOptions) = this()
 
-    var isConstant: Boolean = js.native
-    var definitionChanged: Event = js.native
     var color: Property = js.native
     var glowPower: Property = js.native
 
-    def getType(time: JulianDate): String = js.native
-
-    def getValue(time: JulianDate, result: js.Any = ???): js.Dynamic = js.native
-
-    def equals(other: Property = ???): Boolean = js.native
   }
 
 
@@ -8538,20 +8510,13 @@ class PolylineGraphics protected() extends js.Object {
 */
 @js.native
 @JSName("Cesium.PolylineOutlineMaterialProperty")
-class PolylineOutlineMaterialProperty protected() extends js.Object {
+class PolylineOutlineMaterialProperty protected() extends MaterialProperty {
     def this(options: PolylineOutlineMaterialPropertyOptions) = this()
 
-    var isConstant: Boolean = js.native
-    var definitionChanged: Event = js.native
     var color: Property = js.native
     var outlineColor: Property = js.native
     var outlineWidth: Property = js.native
 
-    def getType(time: JulianDate): String = js.native
-
-    def getValue(time: JulianDate, result: js.Any = ???): js.Dynamic = js.native
-
-    def equals(other: Property = ???): Boolean = js.native
   }
 
 /**
@@ -8739,7 +8704,7 @@ class PositionPropertyArray protected() extends js.Object {
 */
 @js.native
 @JSName("Cesium.Property")
-class Property extends js.Object {
+trait Property extends js.Object {
     var isConstant: Boolean = js.native
     var definitionChanged: Event = js.native
 
@@ -8971,24 +8936,21 @@ class RectangleGraphics protected() extends js.Object {
 */
 @js.native
 @JSName("Cesium.ReferenceProperty")
-class ReferenceProperty protected() extends js.Object {
+class ReferenceProperty protected() extends Property {
     def this(targetCollection: EntityCollection, targetId: String, targetPropertyNames: js.Array[String]) = this()
 
-    var isConstant: Boolean = js.native
-    var definitionChanged: Event = js.native
+
     var referenceFrame: ReferenceFrame = js.native
     var targetId: String = js.native
     var targetCollection: EntityCollection = js.native
     var targetPropertyNames: js.Array[String] = js.native
     var resolvedProperty: Property = js.native
 
-    def getValue(time: JulianDate, result: js.Any = ???): js.Dynamic = js.native
 
     def getValueInReferenceFrame(time: JulianDate, referenceFrame: ReferenceFrame, result: Cartesian3 = ???): Cartesian3 = js.native
 
     def getType(time: JulianDate): String = js.native
 
-    def equals(other: Property = ???): Boolean = js.native
   }
 
   @js.native
@@ -9008,12 +8970,9 @@ class ReferenceProperty protected() extends js.Object {
 */
 @js.native
 @JSName("Cesium.SampledPositionProperty")
-class SampledPositionProperty protected() extends js.Object {
+class SampledPositionProperty protected() extends PositionProperty {
     def this(referenceFrame: ReferenceFrame = ???, numberOfDerivatives: Double = ???) = this()
 
-    var isConstant: Boolean = js.native
-    var definitionChanged: Event = js.native
-    var referenceFrame: ReferenceFrame = js.native
     var interpolationDegree: Double = js.native
     var interpolationAlgorithm: InterpolationAlgorithm = js.native
     var numberOfDerivatives: Boolean = js.native
@@ -9021,10 +8980,6 @@ class SampledPositionProperty protected() extends js.Object {
     var forwardExtrapolationDuration: Double = js.native
     var backwardExtrapolationType: ExtrapolationType = js.native
     var backwardExtrapolationDuration: Double = js.native
-
-    def getValue(time: JulianDate, result: Cartesian3 = ???): Cartesian3 = js.native
-
-    def getValueInReferenceFrame(time: JulianDate, referenceFrame: ReferenceFrame, result: Cartesian3 = ???): Cartesian3 = js.native
 
     def setInterpolationOptions(options: js.Any = ???): js.Dynamic = js.native
 
@@ -9034,7 +8989,6 @@ class SampledPositionProperty protected() extends js.Object {
 
     def addSamplesPackedArray(packedSamples: js.Array[Double], epoch: JulianDate = ???): js.Dynamic = js.native
 
-    def equals(other: Property = ???): Boolean = js.native
   }
 
 /**
@@ -9083,11 +9037,9 @@ class SampledPositionProperty protected() extends js.Object {
 */
 @js.native
 @JSName("Cesium.SampledProperty")
-class SampledProperty protected() extends js.Object {
+class SampledProperty protected() extends Property {
     def this(`type`: Double | Packable, derivativeTypes: js.Array[Packable] = ???) = this()
 
-    var isConstant: Boolean = js.native
-    var definitionChanged: Event = js.native
     var `type`: js.Any = js.native
     var derivativeTypes: js.Array[Packable] = js.native
     var interpolationDegree: Double = js.native
@@ -9097,8 +9049,6 @@ class SampledProperty protected() extends js.Object {
     var backwardExtrapolationType: ExtrapolationType = js.native
     var backwardExtrapolationDuration: Double = js.native
 
-    def getValue(time: JulianDate, result: js.Any = ???): js.Dynamic = js.native
-
     def setInterpolationOptions(options: js.Any = ???): js.Dynamic = js.native
 
     def addSample(time: JulianDate, value: Packable, derivatives: js.Array[Packable] = ???): js.Dynamic = js.native
@@ -9107,7 +9057,6 @@ class SampledProperty protected() extends js.Object {
 
     def addSamplesPackedArray(packedSamples: js.Array[Double], epoch: JulianDate = ???): js.Dynamic = js.native
 
-    def equals(other: Property = ???): Boolean = js.native
   }
 
 
@@ -9140,22 +9089,15 @@ class SampledProperty protected() extends js.Object {
 */
 @js.native
 @JSName("Cesium.StripeMaterialProperty")
-class StripeMaterialProperty protected() extends js.Object {
+class StripeMaterialProperty protected() extends MaterialProperty {
     def this(options: StripeMaterialPropertyOptions) = this()
 
-    var isConstant: Boolean = js.native
-    var definitionChanged: Event = js.native
     var orientation: Property = js.native
     var evenColor: Property = js.native
     var oddColor: Property = js.native
     var offset: Property = js.native
     var repeat: Property = js.native
 
-    def getType(time: JulianDate): String = js.native
-
-    def getValue(time: JulianDate, result: js.Any = ???): js.Dynamic = js.native
-
-    def equals(other: Property = ???): Boolean = js.native
   }
 
 /**
@@ -9168,19 +9110,11 @@ class StripeMaterialProperty protected() extends js.Object {
 */
 @js.native
 @JSName("Cesium.TimeIntervalCollectionPositionProperty")
-class TimeIntervalCollectionPositionProperty protected() extends js.Object {
+class TimeIntervalCollectionPositionProperty protected() extends PositionProperty {
     def this(referenceFrame: ReferenceFrame = ???) = this()
 
-    var isConstant: Boolean = js.native
-    var definitionChanged: Event = js.native
     var intervals: TimeIntervalCollection = js.native
-    var referenceFrame: ReferenceFrame = js.native
 
-    def getValue(time: JulianDate, result: js.Any = ???): js.Dynamic = js.native
-
-    def getValueInReferenceFrame(time: JulianDate, referenceFrame: ReferenceFrame, result: Cartesian3 = ???): Cartesian3 = js.native
-
-    def equals(other: Property = ???): Boolean = js.native
   }
 
 /**
@@ -9221,14 +9155,10 @@ class TimeIntervalCollectionPositionProperty protected() extends js.Object {
 */
 @js.native
 @JSName("Cesium.TimeIntervalCollectionProperty")
-class TimeIntervalCollectionProperty extends js.Object {
-    var isConstant: Boolean = js.native
-    var definitionChanged: Event = js.native
+class TimeIntervalCollectionProperty extends Property {
+
     var intervals: TimeIntervalCollection = js.native
 
-    def getValue(time: JulianDate, result: js.Any = ???): js.Dynamic = js.native
-
-    def equals(other: Property = ???): Boolean = js.native
   }
 
 /**
@@ -9582,8 +9512,8 @@ class Appearance protected() extends js.Object {
 *     url : 'https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer'
 * });
 *
-* @see [[http://resources.esri.com/help/9.3/arcgisserver/apis/rest/|ArcGIS Server REST API}
-* @see [[http://www.w3.org/TR/cors/|Cross-Origin Resource Sharing}
+* @see [[http://resources.esri.com/help/9.3/arcgisserver/apis/rest/|ArcGIS Server REST API]]
+* @see [[http://www.w3.org/TR/cors/|Cross-Origin Resource Sharing]]
 */
 @js.native
 @JSName("Cesium.ArcGisMapServerImageryProvider")
@@ -9842,7 +9772,7 @@ class BillboardCollection protected() extends js.Object {
 * });
 *
 * @see [[http://msdn.microsoft.com/en-us/library/ff701713.aspx|Bing Maps REST Services]]
-* @see [[http://www.w3.org/TR/cors/|Cross-Origin Resource Sharing}
+* @see [[http://www.w3.org/TR/cors/|Cross-Origin Resource Sharing]]
 */
 @js.native
 @JSName("Cesium.BingMapsImageryProvider")
@@ -10234,7 +10164,7 @@ class DebugAppearance protected() extends js.Object {
 *   - {Number} [options.width=2.0] The width of the axes in pixels.
 *   - {Matrix4} [options.modelMatrix=Matrix4.IDENTITY] The 4x4 matrix that defines the reference frame, i.e., origin plus axes, to visualize.
 *   - {Boolean} [options.show=true] Determines if this primitive will be shown.
-*   - {Object} [options.id] A user-defined object to return when the instance is picked with [[Scene#pick}
+*   - {Object} [options.id] A user-defined object to return when the instance is picked with [[Scene#pick]]
 *
 * @example
 * primitives.add(new Cesium.DebugModelMatrixPrimitive({
@@ -10488,8 +10418,8 @@ class GetFeatureInfoFormat protected() extends js.Object {
   }
 
 /**
-* The globe rendered in the scene, including its terrain ([[Globe#terrainProvider})
-* and imagery layers ([[Globe#imageryLayers}).  Access the globe using [[Scene#globe]] 
+* The globe rendered in the scene, including its terrain ([[Globe#terrainProvider]])
+* and imagery layers ([[Globe#imageryLayers]]).  Access the globe using [[Scene#globe]] 
 *
 * alias Globe
 * constructor
@@ -10608,7 +10538,7 @@ class Globe protected() extends js.Object {
 *     channel : 1008
 * });
 *
-* @see [[http://www.w3.org/TR/cors/|Cross-Origin Resource Sharing}
+* @see [[http://www.w3.org/TR/cors/|Cross-Origin Resource Sharing]]
 */
 @js.native
 @JSName("Cesium.GoogleEarthImageryProvider")
@@ -10742,7 +10672,7 @@ class GridImageryProvider protected() extends js.Object {
 * available via the Entity API.
 * </p>
 * <p>
-* Valid geometries are [[CircleGeometry}, [[CorridorGeometry}, [[EllipseGeometry}, [[PolygonGeometry]], and [[RectangleGeometry]] 
+* Valid geometries are [[CircleGeometry]], [[CorridorGeometry]], [[EllipseGeometry}, [[PolygonGeometry]], and [[RectangleGeometry]] 
 * </p>
 *
 * alias GroundPrimitive
@@ -11125,7 +11055,7 @@ class Label extends js.Object {
 * Example labels
 * </div>
 * <br /><br />
-* Labels are added and removed from the collection using [[LabelCollection#add}
+* Labels are added and removed from the collection using [[LabelCollection#add]]
 * and [[LabelCollection#remove]] 
 *
 * alias LabelCollection
@@ -11233,8 +11163,8 @@ class LabelCollection protected() extends js.Object {
 *     accessToken: 'thisIsMyAccessToken'
 * });
 *
-* @see [[https://www.mapbox.com/developers/api/maps/#tiles}
-* @see [[https://www.mapbox.com/developers/api/#access-tokens}
+* @see [[https://www.mapbox.com/developers/api/maps/#tiles]]
+* @see [[https://www.mapbox.com/developers/api/#access-tokens]]
 */
 @js.native
 @JSName("Cesium.MapboxImageryProvider")
@@ -11627,13 +11557,13 @@ class MaterialAppearance protected() extends js.Object {
 * A 3D model based on glTF, the runtime asset format for WebGL, OpenGL ES, and OpenGL.
 * <p>
 * Cesium includes support for geometry and materials, glTF animations, and glTF skinning.
-* In addition, individual glTF nodes are pickable with [[Scene#pick} and animatable
+* In addition, individual glTF nodes are pickable with [[Scene#pick]] and animatable
 * with [[Model#getNode]]   glTF cameras and lights are not currently supported.
 * </p>
 * <p>
 * An external glTF asset is created with [[Model.fromGltf]]   glTF JSON can also be
 * created at runtime and passed to this constructor function.  In either case, the
-* [[Model#readyPromise} is resolved when the model is ready to render, i.e.,
+* [[Model#readyPromise]] is resolved when the model is ready to render, i.e.,
 * when the external binary, image, and shader files are downloaded and the WebGL
 * resources are created.
 * </p>
@@ -11776,7 +11706,7 @@ class ModelAnimationCollection extends js.Object {
 * defined by the technique and potentially overridden by the material.
 * This class allows changing these values at runtime.
 * <p>
-* Use [[Model#getMaterial} to create an instance.
+* Use [[Model#getMaterial]] to create an instance.
 * </p>
 *
 * alias ModelMaterial
@@ -11798,7 +11728,7 @@ class ModelMaterial extends js.Object {
 /**
 * A model's mesh and its materials.
 * <p>
-* Use [[Model#getMesh} to create an instance.
+* Use [[Model#getMesh]] to create an instance.
 * </p>
 *
 * alias ModelMesh
@@ -11820,7 +11750,7 @@ class ModelMesh extends js.Object {
 * changing a node's transform externally so animation can be driven by another
 * source, not just an animation in the glTF asset.
 * <p>
-* Use [[Model#getNode} to create an instance.
+* Use [[Model#getNode]] to create an instance.
 * </p>
 *
 * alias ModelNode
@@ -12144,7 +12074,7 @@ class PerspectiveOffCenterFrustum extends Frustum {
 *
 * performance Reading a property, e.g., [[PointPrimitive#show]], is constant time.
 * Assigning to a property is constant time but results in
-* CPU to GPU traffic when [[PointPrimitiveCollection#update} is called.  The per-pointPrimitive traffic is
+* CPU to GPU traffic when [[PointPrimitiveCollection#update]] is called.  The per-pointPrimitive traffic is
 * the same regardless of how many properties were updated.  If most pointPrimitives in a collection need to be
 * updated, it may be more efficient to clear the collection with [[PointPrimitiveCollection#removeAll}
 * and add new pointPrimitives instead of modifying each one.
@@ -12485,7 +12415,7 @@ class PolylineColorAppearance protected() extends js.Object {
 *   - {String} [options.fragmentShaderSource] Optional GLSL fragment shader source to override the default fragment shader.
 *   - {RenderState} [options.renderState] Optional render state to override the default render state.
 *
-* @see [[https://github.com/AnalyticalGraphicsInc/cesium/wiki/Fabric|Fabric}
+* @see [[https://github.com/AnalyticalGraphicsInc/cesium/wiki/Fabric|Fabric]]
 *
 * @example
 * var primitive = new Cesium.Primitive({
@@ -13307,7 +13237,7 @@ class TileDiscardPolicy extends js.Object {
 *        [[UrlTemplateImageryProvider#pickFeatures]] will immediately return undefined (indicating no pickable
 *        features) without communicating with the server.  Set this property to false if you know your data
 *        source does not support picking features or if you don't want this provider's features to be pickable. Note
-*        that this can be dynamically overridden by modifying the [[UriTemplateImageryProvider#enablePickFeatures}
+*        that this can be dynamically overridden by modifying the [[UriTemplateImageryProvider#enablePickFeatures]]
 *        property.
 *
 *
@@ -13478,8 +13408,8 @@ class ViewportQuad protected() extends js.Object {
 * @see WebMapTileServiceImageryProvider
 * @see UrlTemplateImageryProvider
 *
-* @see [[http://resources.esri.com/help/9.3/arcgisserver/apis/rest/|ArcGIS Server REST API}
-* @see [[http://www.w3.org/TR/cors/|Cross-Origin Resource Sharing}
+* @see [[http://resources.esri.com/help/9.3/arcgisserver/apis/rest/|ArcGIS Server REST API]]
+* @see [[http://www.w3.org/TR/cors/|Cross-Origin Resource Sharing]]
 *
 * @example
 * var provider = new Cesium.WebMapServiceImageryProvider({

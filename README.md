@@ -14,12 +14,16 @@ using [Scala.js](https://www.scala-js.org/).
 
 2) [Cesium](https://cesiumjs.org/)
 
-3) [jsext](https://github.com/jducoeur/jsext)
+## Dependencies code inclusions
 
-## Compiling and packaging
+The code from [jsext](https://github.com/jducoeur/jsext) relating to JSOptionBuilder is used in **cesiumscala** and
+is included here rather than as an external dependency.
+
+## Compiling, packaging and documenting
 
     sbt fastOptJS
     sbt package
+    sbt doc
 
 ## Status
 
