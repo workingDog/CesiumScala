@@ -19,14 +19,12 @@ package cesium {
   import scala.concurrent._
   import scala.scalajs.js
   import scala.scalajs.js.annotation._
-  import scala.scalajs.js.{UndefOr, undefined, |}
+  import scala.scalajs.js.{Promise => _, _}
   import org.scalajs.dom.{Blob, Document, Element}
   import org.scalajs.dom.raw.{HTMLCanvasElement, HTMLImageElement, HTMLVideoElement}
   import org.w3c.dom.html.{HTMLElement, HTMLIFrameElement}
 
-  import scala.scalajs.js.Date
   import scala.scalajs.js.typedarray.{ArrayBuffer, Float32Array, Float64Array, Int16Array, Int8Array, TypedArray, Uint16Array, Uint32Array, Uint8Array}
-
 
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
@@ -37,20 +35,36 @@ package cesium {
 @js.native
 object Transforms extends js.Object {
 
-  // todo
+  def computeFixedToIcrfMatrix(date: JulianDate, result: Option[Matrix3] = None): Matrix3= js.native
 
-  def eastNorthUpToFixedFrame(origin: Cartesian3, ellipsoid: Ellipsoid, result: Matrix4): Matrix4 = js.native
+  def computeIcrfToFixedMatrix(date: JulianDate, result: Option[Matrix3] = None): Matrix3= js.native
 
-  def eastNorthUpToFixedFrame(origin: Cartesian3, ellipsoid: Ellipsoid): Matrix4 = js.native
+  def computeTemeToPseudoFixedMatrix(date: JulianDate, result: Option[Matrix3] = None): Matrix3= js.native
 
-  def eastNorthUpToFixedFrame(origin: Cartesian3): Matrix4 = js.native
+  def northUpEastToFixedFrame(origin: Cartesian3,
+                                ellipsoid: Option[Ellipsoid] = None,
+                                result: Option[Matrix4] = None): Matrix4 = js.native
 
+  def northEastDownToFixedFrame(origin: Cartesian3, ellipsoid: Option[Ellipsoid] = None, result: Option[Matrix4] = None): Matrix4 = js.native
+
+
+  def eastNorthUpToFixedFrame(origin: Cartesian3,
+                              ellipsoid: Option[Ellipsoid] = None,
+                              result: Option[Matrix4] = None): Matrix4 = js.native
 
   def headingPitchRollQuaternion(origin: Cartesian3, heading: Double, pitch: Double,
-                                 roll: Double, ellipsoid: Ellipsoid,
-                                 result: Quaternion): Quaternion = js.native
+                                 roll: Double, ellipsoid: Option[Ellipsoid] = None,
+                                 result: Option[Quaternion] = None): Quaternion = js.native
 
-  def headingPitchRollQuaternion(origin: Cartesian3, heading: Double, pitch: Double, roll: Double): Quaternion = js.native
+  def headingPitchRollMatrix4(origin: Cartesian3, heading: Double, pitch: Double,
+                                 roll: Double, ellipsoid: Option[Ellipsoid] = None,
+                                 result: Option[Matrix4] = None): Matrix4 = js.native
+
+  def pointToWindowCoordinates(modelViewProjectionMatrix:	Matrix4,
+                               viewportTransformation:	Matrix4,
+                               point: Cartesian3, result: Option[Cartesian2] = None): Cartesian2 = js.native
+
+  def preloadIcrfFixed(timeInterval: TimeInterval): Promise[Unit] = js.native
 
 }
 
