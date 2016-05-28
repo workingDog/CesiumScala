@@ -6630,7 +6630,7 @@ package cesium {
 
   /**
     * A [[DataSource]] which processes both
-    * [[http://www.geojson.org/|GeoJSON} and [[https://github.com/mbostock/topojson|TopoJSON]] data.
+    * [[http://www.geojson.org/|GeoJSON]] and [[https://github.com/mbostock/topojson|TopoJSON]] data.
     * [[https://github.com/mapbox/simplestyle-spec|simplestyle-spec]] properties will also be used if they
     * are present.
     *
@@ -6835,8 +6835,8 @@ package cesium {
     * - {Canvas} options.canvas The canvas that is used for sending viewer properties to network links.
     * - {DefaultProxy} [options.proxy] A proxy to be used for loading external data.
     *
-    * @see [[http://www.opengeospatial.org/standards/kml/|Open Geospatial Consortium KML Standard}
-    * @see [[https://developers.google.com/kml/|Google KML Documentation}
+    * @see [[http://www.opengeospatial.org/standards/kml/|Open Geospatial Consortium KML Standard]]
+    * @see [[https://developers.google.com/kml/|Google KML Documentation]]
     *
     *      demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=KML.html|Cesium Sandcastle KML Demo]]
     * @example
@@ -6993,7 +6993,7 @@ package cesium {
   }
 
   /**
-    * A 3D model based on [[https://github.com/KhronosGroup/glTF|glTF}, the runtime asset format for WebGL, OpenGL ES, and OpenGL.
+    * A 3D model based on [[https://github.com/KhronosGroup/glTF|glTF]], the runtime asset format for WebGL, OpenGL ES, and OpenGL.
     * The position and orientation of the model is determined by the containing [[Entity]]
     * <p>
     * Cesium includes support for glTF geometry, materials, animations, and skinning.
@@ -8576,7 +8576,7 @@ package cesium {
     * - {Scene} scene The scene.
     *
     * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Camera.html|Cesium Sandcastle Camera Demo]]
-    * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Camera%20Tutorial.html">Sandcastle Example</a> from the <a href="http://cesiumjs.org/2013/02/13/Cesium-Camera-Tutorial/|Camera Tutorial}
+    * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Camera%20Tutorial.html">Sandcastle Example</a> from the <a href="http://cesiumjs.org/2013/02/13/Cesium-Camera-Tutorial/|Camera Tutorial]]
     *
     *
     * @example
@@ -9013,7 +9013,7 @@ package cesium {
   /**
     * Monitors the frame rate (frames per second) in a [[Scene]] and raises an event if the frame rate is
     * lower than a threshold.  Later, if the frame rate returns to the required level, a separate event is raised.
-    * To avoid creating multiple FrameRateMonitors for a single [[Scene]], use [[FrameRateMonitor.fromScene]]
+    * To avoid creating multiple FrameRateMonitors for a single [[Scene]], use [[FrameRateMonitor]]
     * instead of constructing an instance explicitly.
     *
     * alias FrameRateMonitor
@@ -9132,7 +9132,7 @@ package cesium {
     * Google Earth Enterprise Server.
     *
     * By default the Google Earth Enterprise server does not set the
-    * [[http://www.w3.org/TR/cors/|Cross-Origin Resource Sharing} headers. You can either
+    * [[http://www.w3.org/TR/cors/|Cross-Origin Resource Sharing]] headers. You can either
     * use a proxy server which adds these headers, or in the /opt/google/gehttpd/conf/gehttpd.conf
     * and add the 'Header set Access-Control-Allow-Origin "*"' option to the '&lt;Directory /&gt;' and
     * '&lt;Directory "/opt/google/gehttpd/htdocs"&gt;' directives.
@@ -9772,7 +9772,7 @@ package cesium {
     * A Material defines surface appearance through a combination of diffuse, specular,
     * normal, emission, and alpha components. These values are specified using a
     * JSON schema called Fabric which gets parsed and assembled into glsl shader code
-    * behind-the-scenes. Check out the [[https://github.com/AnalyticalGraphicsInc/cesium/wiki/Fabric|wiki page}
+    * behind-the-scenes. Check out the [[https://github.com/AnalyticalGraphicsInc/cesium/wiki/Fabric|wiki page]]
     * for more details on Fabric.
     * <br /><br />
     * <style type="text/css">
@@ -9941,7 +9941,7 @@ package cesium {
     * exception {DeveloperError} strict: shader source does not use uniform.
     * exception {DeveloperError} strict: shader source does not use material.
     *
-    * @see [[https://github.com/AnalyticalGraphicsInc/cesium/wiki/Fabric|Fabric wiki page} for a more detailed options of Fabric.
+    * @see [[https://github.com/AnalyticalGraphicsInc/cesium/wiki/Fabric|Fabric wiki page]] for a more detailed options of Fabric.
     *
     *      demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Materials.html|Cesium Sandcastle Materials Demo]]
     * @example
@@ -10025,7 +10025,7 @@ package cesium {
     * - {String} [options.fragmentShaderSource] Optional GLSL fragment shader source to override the default fragment shader.
     * - {RenderState} [options.renderState] Optional render state to override the default render state.
     *
-    * @see [[https://github.com/AnalyticalGraphicsInc/cesium/wiki/Fabric|Fabric}
+    * @see [[https://github.com/AnalyticalGraphicsInc/cesium/wiki/Fabric|Fabric]]
     *      demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Materials.html|Cesium Sandcastle Material Appearance Demo]]
     *
     * @example
@@ -10080,7 +10080,7 @@ package cesium {
     * with [[Model#getNode]]   glTF cameras and lights are not currently supported.
     * </p>
     * <p>
-    * An external glTF asset is created with [[Model.fromGltf]]   glTF JSON can also be
+    * An external glTF asset is created with [[Model]]   glTF JSON can also be
     * created at runtime and passed to this constructor function.  In either case, the
     * [[Model#readyPromise]] is resolved when the model is ready to render, i.e.,
     * when the external binary, image, and shader files are downloaded and the WebGL
@@ -11071,7 +11071,7 @@ package cesium {
     * </code>
     * </p>
     * <p>
-    * The <code>webgl</code> property corresponds to the [[http://www.khronos.org/registry/webgl/specs/latest/#5.2|WebGLContextAttributes}
+    * The <code>webgl</code> property corresponds to the [[http://www.khronos.org/registry/webgl/specs/latest/#5.2|WebGLContextAttributes]]
     * object used to create the WebGL context.
     * </p>
     * <p>
@@ -11100,7 +11100,7 @@ package cesium {
     * - {Number} [options.terrainExaggeration=1.0] A scalar used to exaggerate the terrain. Note that terrain exaggeration will not modify any other primitive as they are positioned relative to the ellipsoid.
     *
     * @see CesiumWidget
-    * @see [[http://www.khronos.org/registry/webgl/specs/latest/#5.2|WebGLContextAttributes}
+    * @see [[http://www.khronos.org/registry/webgl/specs/latest/#5.2|WebGLContextAttributes]]
     *
     *      exception {DeveloperError} options and options.canvas are required.
     * @example
@@ -11274,7 +11274,7 @@ package cesium {
 
   /**
     * An atmosphere drawn around the limb of the provided ellipsoid.  Based on
-    * [[http://http.developer.nvidia.com/GPUGems2/gpugems2_chapter16.html|Accurate Atmospheric Scattering}
+    * [[http://http.developer.nvidia.com/GPUGems2/gpugems2_chapter16.html|Accurate Atmospheric Scattering]]
     * in GPU Gems 2.
     * <p>
     * This is only supported in 3D.  atmosphere is faded out when morphing to 2D or Columbus view.
@@ -11692,7 +11692,7 @@ package cesium {
   }
 
   /**
-    * Provides tiled imagery served by [[http://www.opengeospatial.org/standards/wmts|WMTS 1.0.0} compliant servers.
+    * Provides tiled imagery served by [[http://www.opengeospatial.org/standards/wmts|WMTS 1.0.0]] compliant servers.
     * This provider supports HTTP KVP-encoded and RESTful GetTile requests, but does not yet support the SOAP encoding.
     *
     * alias WebMapTileServiceImageryProvider
@@ -11734,7 +11734,7 @@ package cesium {
     * @example
     * // Example 2. USGS shaded relief tiles (RESTful)
     * var shadedRelief2 = new Cesium.WebMapTileServiceImageryProvider({
-    * url : 'http://basemap.nationalmap.gov/arcgis/rest/services/USGSShadedReliefOnly/MapServer/WMTS/tile/1.0.0/USGSShadedReliefOnly/{Style}/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol]] jpg',
+    * url : 'http://basemap.nationalmap.gov/arcgis/rest/services/USGSShadedReliefOnly/MapServer/WMTS/tile/1.0.0/USGSShadedReliefOnly/{Style}/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol} jpg',
     * layer : 'USGSShadedReliefOnly',
     * style : 'default',
     * format : 'image/jpeg',
