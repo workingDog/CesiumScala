@@ -30,15 +30,6 @@ package cesium {
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
 
-  /**
-    * Object for setting and retrieving the default BingMaps API key
-    */
-  @js.native
-  @JSName("Cesium.BingMapsApi")
-  object BingMapsApi extends js.Object {
-    val defaultKey : String = js.native
-  }
-
   @JSName("Cesium.Transforms")
   @js.native
   object Transforms extends js.Object {
@@ -431,6 +422,17 @@ package cesium {
   @js.native
   object GeometryPipeline extends js.Object {
     // todo
+  }
+
+  /**
+    * Object for setting and retrieving the default BingMaps API key
+    */
+  @js.native
+  @JSName("Cesium.BingMapsApi")
+  object BingMapsApi extends js.Object {
+    var defaultKey : String = js.native
+    def getKey(): String = js.native
+    def setKey(key: String): Unit = defaultKey = key
   }
 
   // -------------------------------------------------------------------------------------
