@@ -29,6 +29,16 @@ package cesium {
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
+
+  /**
+    * Object for setting and retrieving the default BingMaps API key
+    */
+  @js.native
+  @JSName("Cesium.BingMapsApi")
+  object BingMapsApi extends js.Object {
+    val defaultKey : String = js.native
+  }
+
   @JSName("Cesium.Transforms")
   @js.native
   object Transforms extends js.Object {
@@ -61,6 +71,19 @@ package cesium {
                                  point: Cartesian3, result: Option[Cartesian2] = None): Cartesian2 = js.native
 
     def preloadIcrfFixed(timeInterval: TimeInterval): Promise[Unit] = js.native
+  }
+
+  @js.native
+  sealed trait WindingOrder extends js.Object
+
+  @JSName("Cesium.WindingOrder")
+  @js.native
+  object WindingOrder extends js.Object {
+    val CLOCKWISE: Int = js.native
+    val COUNTER_CLOCKWISE: Int = js.native
+
+    @JSBracketAccess
+    def apply(value: WindingOrder): Int = js.native
   }
 
   @js.native
@@ -402,6 +425,12 @@ package cesium {
     def apply(value: SceneMode): Int = js.native
 
     def getMorphTime(value: SceneMode): Int = js.native
+  }
+
+  @JSName("Cesium.GeometryPipeline")
+  @js.native
+  object GeometryPipeline extends js.Object {
+    // todo
   }
 
   // -------------------------------------------------------------------------------------
@@ -6449,8 +6478,8 @@ package cesium {
 
   /**
     * Entity instances aggregate multiple forms of visualization into a single high-level object.
-    * They can be created manually and added to [[Viewer#entities} or be produced by
-    * data sources, such as [[CzmlDataSource} and [[GeoJsonDataSource]]
+    * They can be created manually and added to [[Viewer#entities]] or be produced by
+    * data sources, such as [[CzmlDataSource]] and [[GeoJsonDataSource]]
     * alias Entity
     * constructor
     *
@@ -6601,8 +6630,8 @@ package cesium {
 
   /**
     * A [[DataSource]] which processes both
-    * [[http://www.geojson.org/|GeoJSON} and [[https://github.com/mbostock/topojson|TopoJSON} data.
-    * [[https://github.com/mapbox/simplestyle-spec|simplestyle-spec} properties will also be used if they
+    * [[http://www.geojson.org/|GeoJSON} and [[https://github.com/mbostock/topojson|TopoJSON]] data.
+    * [[https://github.com/mapbox/simplestyle-spec|simplestyle-spec]] properties will also be used if they
     * are present.
     *
     * alias GeoJsonDataSource
@@ -8219,7 +8248,7 @@ package cesium {
     * - {String} [options.token] The ArcGIS token used to authenticate with the ArcGIS MapServer service.
     * - {TileDiscardPolicy} [options.tileDiscardPolicy] The policy that determines if a tile
     * is invalid and should be discarded.  If this value is not specified, a default
-    * [[DiscardMissingTileImagePolicy} is used for tiled map servers, and a
+    * [[DiscardMissingTileImagePolicy]] is used for tiled map servers, and a
     * [[NeverTileDiscardPolicy]] is used for non-tiled map servers.  In the former case,
     * we request tile 0,0 at the maximum tile level and check pixels (0,0), (200,20), (20,200),
     * (80,110), and (160, 130).  If all of these pixels are transparent, the discard check is
@@ -8234,11 +8263,11 @@ package cesium {
     * tiles are used if they are available.  If false, any pre-cached tiles are ignored and the
     * 'export' service is used.
     * - {String} [options.layers] A comma-separated list of the layers to show, or undefined if all layers should be shown.
-    * - {Boolean} [options.enablePickFeatures=true] If true, [[ArcGisMapServerImageryProvider#pickFeatures} will invoke
+    * - {Boolean} [options.enablePickFeatures=true] If true, [[ArcGisMapServerImageryProvider#pickFeatures]] will invoke
     * the Identify service on the MapServer and return the features included in the response.  If false,
-    * [[ArcGisMapServerImageryProvider#pickFeatures} will immediately return undefined (indicating no pickable features)
+    * [[ArcGisMapServerImageryProvider#pickFeatures]] will immediately return undefined (indicating no pickable features)
     * without communicating with the server.  Set this property to false if you don't want this provider's features to
-    * be pickable. Can be overridden by setting the [[ArcGisMapServerImageryProvider#enablePickFeatures} property on the object.
+    * be pickable. Can be overridden by setting the [[ArcGisMapServerImageryProvider#enablePickFeatures]] property on the object.
     * - {Rectangle} [options.rectangle=Rectangle.MAX_VALUE] The rectangle of the layer.  This parameter is ignored when accessing
     * a tiled layer.
     * - {TilingScheme} [options.tilingScheme=new GeographicTilingScheme()] The tiling scheme to use to divide the world into tiles.
@@ -8375,7 +8404,7 @@ package cesium {
     * Example billboards
     * </div>
     * <br /><br />
-    * Billboards are added and removed from the collection using [[BillboardCollection#add}
+    * Billboards are added and removed from the collection using [[BillboardCollection#add]]
     * and [[BillboardCollection#remove]]   Billboards in a collection automatically share textures
     * for images with the same identifier.
     *
@@ -8456,13 +8485,13 @@ package cesium {
     * By default, tiles are loaded using the same protocol as the page.
     * - {String} [options.mapStyle=BingMapsStyle.AERIAL] The type of Bing Maps
     * imagery to load.
-    * - {String} [options.culture=''] The culture to use when requesting Bing Maps imagery. Not
+    * - {String} [options.culture= ] The culture to use when requesting Bing Maps imagery. Not
     * all cultures are supported. See [[http://msdn.microsoft.com/en-us/library/hh441729.aspx}
     * for information on the supported cultures.
     * - {Ellipsoid} [options.ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
     * - {TileDiscardPolicy} [options.tileDiscardPolicy] The policy that determines if a tile
     * is invalid and should be discarded.  If this value is not specified, a default
-    * [[DiscardMissingTileImagePolicy} is used which requests
+    * [[DiscardMissingTileImagePolicy]] is used which requests
     * tile 0,0 at the maximum tile level and checks pixels (0,0), (120,140), (130,160),
     * (200,50), and (200,200).  If all of these pixels are transparent, the discard check is
     * disabled and no tiles are discarded.  If any of them have a non-transparent color, any
@@ -8905,7 +8934,7 @@ package cesium {
   /**
     * An appearance for geometry on the surface of the ellipsoid like [[PolygonGeometry]]
     * and [[RectangleGeometry]], which supports all materials like [[MaterialAppearance]]
-    * with [[MaterialAppearance.MaterialSupport.ALL]]   However, this appearance requires
+    * with [[MaterialAppearance.MaterialSupport]]   However, this appearance requires
     * fewer vertex attributes since the fragment shader can procedurally compute <code>normal</code>,
     * <code>binormal</code>, and <code>tangent</code>.
     *
@@ -8922,7 +8951,7 @@ package cesium {
     * - {String} [options.fragmentShaderSource] Optional GLSL fragment shader source to override the default fragment shader.
     * - {RenderState} [options.renderState] Optional render state to override the default render state.
     *
-    * @see [[https://github.com/AnalyticalGraphicsInc/cesium/wiki/Fabric|Fabric}
+    * @see [[https://github.com/AnalyticalGraphicsInc/cesium/wiki/Fabric|Fabric]]
     *
     * @example
     * var primitive = new Cesium.Primitive({
@@ -8984,7 +9013,7 @@ package cesium {
   /**
     * Monitors the frame rate (frames per second) in a [[Scene]] and raises an event if the frame rate is
     * lower than a threshold.  Later, if the frame rate returns to the required level, a separate event is raised.
-    * To avoid creating multiple FrameRateMonitors for a single [[Scene]], use [[FrameRateMonitor.fromScene}
+    * To avoid creating multiple FrameRateMonitors for a single [[Scene]], use [[FrameRateMonitor.fromScene]]
     * instead of constructing an instance explicitly.
     *
     * alias FrameRateMonitor
@@ -9256,7 +9285,7 @@ package cesium {
     * available via the Entity API.
     * </p>
     * <p>
-    * Valid geometries are [[CircleGeometry]], [[CorridorGeometry]], [[EllipseGeometry}, [[PolygonGeometry]], and [[RectangleGeometry]]
+    * Valid geometries are [[CircleGeometry]], [[CorridorGeometry]], [[EllipseGeometry]], [[PolygonGeometry]], and [[RectangleGeometry]]
     * </p>
     *
     * alias GroundPrimitive
@@ -10068,7 +10097,7 @@ package cesium {
     *
     * - {Object} [options] Object with the following properties:
     * - {Object|ArrayBuffer|Uint8Array} [options.gltf] The object for the glTF JSON or an arraybuffer of Binary glTF defined by the KHR_binary_glTF extension.
-    * - {String} [options.basePath=''] The base path that paths in the glTF JSON are relative to.
+    * - {String} [options.basePath= ] The base path that paths in the glTF JSON are relative to.
     * - {Boolean} [options.show=true] Determines if the model primitive will be shown.
     * - {Matrix4} [options.modelMatrix=Matrix4.IDENTITY] The 4x4 transformation matrix that transforms the model from model to world coordinates.
     * - {Number} [options.scale=1.0] A uniform scale applied to this model.
@@ -10519,9 +10548,9 @@ package cesium {
     *
     * performance Reading a property, e.g., [[PointPrimitive#show]], is constant time.
     * Assigning to a property is constant time but results in
-    * CPU to GPU traffic when [[PointPrimitiveCollection#update]] is called.  The per-pointPrimitive traffic is
+    * CPU to GPU traffic when [[PointPrimitiveCollection]] is called.  The per-pointPrimitive traffic is
     * the same regardless of how many properties were updated.  If most pointPrimitives in a collection need to be
-    * updated, it may be more efficient to clear the collection with [[PointPrimitiveCollection#removeAll}
+    * updated, it may be more efficient to clear the collection with [[PointPrimitiveCollection#removeAll]]
     * and add new pointPrimitives instead of modifying each one.
     *
     * exception {DeveloperError} scaleByDistance.far must be greater than scaleByDistance.near
@@ -11445,7 +11474,7 @@ package cesium {
     * If this parameter is a single string, each character in the string is a subdomain.  If it is
     * an array, each element in the array is a subdomain.
     * - {Object} [options.proxy] A proxy to use for requests. This object is expected to have a getURL function which returns the proxied URL.
-    * - {Credit|String} [options.credit=''] A credit for the data source, which is displayed on the canvas.
+    * - {Credit|String} [options.credit= ] A credit for the data source, which is displayed on the canvas.
     * - {Number} [options.minimumLevel=0] The minimum level-of-detail supported by the imagery provider.  Take care when specifying
     * this that the number of tiles at the minimum level is small, such as four or less.  A larger number is likely
     * to result in rendering problems.
@@ -11472,21 +11501,21 @@ package cesium {
     * [[UrlTemplateImageryProvider#pickFeatures]] will immediately return undefined (indicating no pickable
     * features) without communicating with the server.  Set this property to false if you know your data
     * source does not support picking features or if you don't want this provider's features to be pickable. Note
-    * that this can be dynamically overridden by modifying the [[UriTemplateImageryProvider#enablePickFeatures]]
+    * that this can be dynamically overridden by modifying the [[UrlTemplateImageryProvider]]
     * property.
     *
     *
     * @example
     * // Access Natural Earth II imagery, which uses a TMS tiling scheme and Geographic (EPSG:4326) project
     * var tms = new Cesium.UrlTemplateImageryProvider({
-    * url : 'https://cesiumjs.org/tilesets/imagery/naturalearthii/{z}/{x}/{reverseY]] jpg',
+    * url : 'https://cesiumjs.org/tilesets/imagery/naturalearthii/{z}/{x}/{reverse} jpg',
     * credit : '© Analytical Graphics, Inc.',
     * tilingScheme : new Cesium.GeographicTilingScheme(),
     * maximumLevel : 5
     * });
     * // Access the CartoDB Positron basemap, which uses an OpenStreetMap-like tiling scheme.
     * var positron = new Cesium.UrlTemplateImageryProvider({
-    * url : 'http://{s]] basemaps.cartocdn.com/light_all/{z}/{x}/{y]] png',
+    * url : 'http://{s basemaps.cartocdn.com/light_all/{z}/{x}/{y png',
     * credit : 'Map tiles by CartoDB, under CC BY 3.0. Data by OpenStreetMap, under ODbL.'
     * });
     * // Access a Web Map Service (WMS) server.
@@ -12216,7 +12245,7 @@ package cesium {
   }
 
   /**
-    * A view model which exposes a [[createCommand]Clock for user interfaces.
+    * A view model which exposes a  Clock for user interfaces.
     * alias ClockViewModel
     * constructor
     *
@@ -12253,7 +12282,7 @@ package cesium {
     * value of <code>canExecute</code> and throw if false.
     *
     * This type describes an interface and is not intended to be instantiated directly.
-    * See [[createCommand]] to create a command from a function.
+    * See createCommand to create a command from a function.
     *
     * alias Command
     * constructor
@@ -12724,7 +12753,7 @@ package cesium {
     * - {Command} command The command which will be executed when the button is toggled.
     * - {Object} [options] Object with the following properties:
     * - {Boolean} [options.toggled=false] A boolean indicating whether the button should be initially toggled.
-    * - {String} [options.tooltip=''] A string containing the button's tooltip.
+    * - {String} [options.tooltip= ] A string containing the button's tooltip.
     **/
   @js.native
   @JSName("Cesium.ToggleButtonViewModel")
