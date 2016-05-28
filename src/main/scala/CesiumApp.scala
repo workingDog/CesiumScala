@@ -1,6 +1,7 @@
 
 import cesium.Viewer._
-import cesium.{Matrix4, ModelGraphics, Primitive, PrimitiveOptions, _}
+import cesium.{Matrix4, ModelGraphics, Primitive, _}
+import cesiumOptions._
 import org.scalajs.dom._
 import org.scalajs.dom
 import dom.document
@@ -41,6 +42,24 @@ object CesiumApp extends JSApp {
       )
       viewer.trackedEntity = entity
     }
+
+    //    def createModel(url: String, height: Double) = {
+    //      val position = Cartesian3.fromDegrees(-123.0744619, 44.0503706, height)
+    //      val orientation = Transforms.headingPitchRollQuaternion(position, Math.toRadians(135), 0, 0)
+    //
+    //      val opts = EntityOptions(name = url,
+    //        position = new ConstantPositionProperty(position),
+    //        orientation = new ConstantProperty(orientation),
+    //        model = new ModelGraphics(
+    //          ModelGraphicsOptions(
+    //            uri = new ConstantProperty(url),
+    //            minimumPixelSize = new ConstantProperty(128),
+    //            maximumScale = new ConstantProperty(20000)))
+    //      )
+    //
+    //      val entity = viewer.entities.add(new Entity(opts))
+    //      viewer.trackedEntity = entity
+    //    }
 
     createModel("./SampleData/models/CesiumAir/Cesium_Air.glb", 5000.0)
   }
