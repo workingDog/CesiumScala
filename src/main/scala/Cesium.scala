@@ -14,9 +14,6 @@ package cesium {
 
   import cesiumOptions._
 
-  import cesium.Cesium.RenderState
-  import org.querki.jsext.{JSOptionBuilder, OptMap, noOpts}
-  import org.scalajs.dom.html.Canvas
   import scala.concurrent._
   import scala.scalajs.js
   import scala.scalajs.js.annotation._
@@ -717,7 +714,7 @@ package cesium {
   object BoxGeometry extends js.Object {
     var packedLength: Double = js.native
 
-    def fromDimensions(options: js.Any): BoxGeometry = js.native
+    def fromDimensions(options: DimensionsOptions): BoxGeometry = js.native
 
     def fromAxisAlignedBoundingBox(boundingBox: AxisAlignedBoundingBox): BoxGeometry = js.native
 
@@ -3892,7 +3889,7 @@ package cesium {
 
     def unpack(array: js.Array[Double], startingIndex: Double = ???, result: PolygonOutlineGeometry = ???): PolygonOutlineGeometry = js.native
 
-    def fromPositions(options: js.Any): PolygonOutlineGeometry = js.native
+    def fromPositions(options: PositionsOptions): PolygonOutlineGeometry = js.native
 
     def createGeometry(polygonGeometry: PolygonOutlineGeometry): Geometry | Unit = js.native
   }
@@ -6126,9 +6123,9 @@ package cesium {
     var loadingEvent: Event = js.native
     var show: Boolean = js.native
 
-    def process(czml: String | js.Any, options: js.Any = ???): Promise[CzmlDataSource] = js.native
+    def process(czml: String | js.Any, options: String = ???): Promise[CzmlDataSource] = js.native
 
-    def load(czml: String | js.Any, options: js.Any = ???): Promise[CzmlDataSource] = js.native
+    def load(czml: String | js.Any, options: String = ???): Promise[CzmlDataSource] = js.native
   }
 
   @js.native
@@ -6136,7 +6133,7 @@ package cesium {
   object CzmlDataSource extends js.Object {
     var updaters: js.Array[js.Any] = js.native
 
-    def load(data: String | js.Any, options: js.Any = ???): Promise[CzmlDataSource] = js.native
+    def load(data: String | js.Any, options: String = ???): Promise[CzmlDataSource] = js.native
 
     def processPacketData(`type`: js.Function, `object`: js.Any, propertyName: String, packetData: js.Any, interval: TimeInterval, sourceUri: String, entityCollection: EntityCollection): js.Dynamic = js.native
 
@@ -6664,7 +6661,8 @@ package cesium {
     var loadingEvent: Event = js.native
     var show: Boolean = js.native
 
-    def load(data: String | js.Any, options: js.Any = ???): Promise[GeoJsonDataSource] = js.native
+    // todo
+    def load(data: String | js.Any, options: GeoJsonDataSourceOptions = ???): Promise[GeoJsonDataSource] = js.native
   }
 
   @js.native
@@ -6681,7 +6679,7 @@ package cesium {
     var crsLinkHrefs: js.Any = js.native
     var crsLinkTypes: js.Any = js.native
 
-    def load(data: String | js.Any, options: js.Any = ???): Promise[GeoJsonDataSource] = js.native
+    def load(data: String | js.Any, options: GeoJsonDataSourceOptions = ???): Promise[GeoJsonDataSource] = js.native
   }
 
   /**
@@ -6858,7 +6856,7 @@ package cesium {
     var refreshEvent: Event = js.native
     var show: Boolean = js.native
 
-    def load(data: String | Document | Blob, options: js.Any = ???): Promise[KmlDataSource] = js.native
+    def load(data: String | Document | Blob, options: KmlDataSourceOptions = ???): Promise[KmlDataSource] = js.native
 
     def update(time: JulianDate): Boolean = js.native
   }
@@ -6866,7 +6864,7 @@ package cesium {
   @js.native
   @JSName("Cesium.KmlDataSource")
   object KmlDataSource extends js.Object {
-    def load(data: String | Document | Blob, options: js.Any = ???): Promise[KmlDataSource] = js.native
+    def load(data: String | Document | Blob, options: KmlDataSourceOptions = ???): Promise[KmlDataSource] = js.native
   }
 
   /**
@@ -7848,6 +7846,7 @@ package cesium {
     var backwardExtrapolationType: ExtrapolationType = js.native
     var backwardExtrapolationDuration: Double = js.native
 
+    // todo
     def setInterpolationOptions(options: js.Any = ???): js.Dynamic = js.native
 
     def addSample(time: JulianDate, position: Cartesian3, derivatives: js.Array[Cartesian3] = ???): js.Dynamic = js.native
@@ -8620,7 +8619,7 @@ package cesium {
     var moveStart: Event = js.native
     var moveEnd: Event = js.native
 
-    def setView(options: js.Any): js.Dynamic = js.native
+    def setView(options: CameraSetViewOptions): js.Dynamic = js.native
 
     def flyHome(duration: Double = ???): js.Dynamic = js.native
 
@@ -8694,11 +8693,11 @@ package cesium {
 
     def getPixelSize(boundingSphere: BoundingSphere, drawingBufferWidth: Double, drawingBufferHeight: Double): Double = js.native
 
-    def flyTo(options: js.Any): js.Dynamic = js.native
+    def flyTo(options: CameraFlyToOptions): js.Dynamic = js.native
 
     def viewBoundingSphere(boundingSphere: BoundingSphere, offset: HeadingPitchRange = ???): js.Dynamic = js.native
 
-    def flyToBoundingSphere(boundingSphere: BoundingSphere, options: js.Any = ???): js.Dynamic = js.native
+    def flyToBoundingSphere(boundingSphere: BoundingSphere, options: CameraFlyToBoundingSphereOptions = ???): js.Dynamic = js.native
 
     def computeViewRectangle(ellipsoid: Ellipsoid = ???, result: Rectangle = ???): Rectangle | Unit = js.native
   }
@@ -13053,11 +13052,11 @@ package cesium {
 
     def loadJson(url: String | Promise[String], headers: js.Any = ???): Promise[js.Any] = js.native
 
-    def loadJsonp(url: String, options: js.Any = ???): Promise[js.Any] = js.native
+    def loadJsonp(url: String, options: JsonpOptions = ???): Promise[js.Any] = js.native
 
     def loadText(url: String | Promise[String], headers: js.Any = ???): Promise[String] = js.native
 
-    def loadWithXhr(options: js.Any): Promise[js.Any] = js.native
+    def loadWithXhr(options: WithXhrOptions): Promise[js.Any] = js.native
 
     def loadXML(url: String | Promise[String], headers: js.Any = ???): Promise[js.Any] = js.native
 
@@ -13077,15 +13076,15 @@ package cesium {
 
     def throttleRequestByServer(url: String, requestFunction: ThrottleRequestByServer.RequestFunction): Promise[js.Any] | Unit = js.native
 
-    def createOpenStreetMapImageryProvider(options: js.Any = ???): UrlTemplateImageryProvider = js.native
+    def createOpenStreetMapImageryProvider(options: OpenStreetMapImageryProviderOptions = ???): UrlTemplateImageryProvider = js.native
 
-    def createTangentSpaceDebugPrimitive(options: js.Any): Primitive = js.native
+    def createTangentSpaceDebugPrimitive(options: TangentSpaceDebugPrimitiveOptions): Primitive = js.native
 
-    def createTileMapServiceImageryProvider(options: js.Any = ???): UrlTemplateImageryProvider = js.native
+    def createTileMapServiceImageryProvider(options: TileMapServiceImageryProviderOptions = ???): UrlTemplateImageryProvider = js.native
 
     def viewerCesiumInspectorMixin(viewer: Viewer): js.Dynamic = js.native
 
-    def viewerDragDropMixin(viewer: Viewer, options: js.Any = ???): js.Dynamic = js.native
+    def viewerDragDropMixin(viewer: Viewer, options: DragDropMixinOptions = ???): js.Dynamic = js.native
 
     def viewerPerformanceWatchdogMixin(viewer: Viewer): js.Dynamic = js.native
 

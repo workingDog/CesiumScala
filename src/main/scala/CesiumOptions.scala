@@ -18,13 +18,11 @@ package cesiumOptions {
   import cesium.Cesium.RenderState
   import org.querki.jsext.{JSOptionBuilder, OptMap, noOpts}
   import org.scalajs.dom.html.Canvas
-  import scala.concurrent._
   import scala.scalajs.js
   import scala.scalajs.js.annotation._
   import scala.scalajs.js.{Promise => _, _}
   import org.scalajs.dom.{Blob, Document, Element}
   import org.scalajs.dom.raw.{HTMLCanvasElement, HTMLImageElement, HTMLVideoElement}
-  import org.w3c.dom.html.{HTMLElement, HTMLIFrameElement}
   import scala.scalajs.js.typedarray.{ArrayBuffer, Float32Array, Float64Array, Int16Array, Int8Array, TypedArray, Uint16Array, Uint32Array, Uint8Array}
 
 
@@ -2473,5 +2471,270 @@ package cesiumOptions {
 
     def lowFrameRateMessage(v: String) = jsOpt("lowFrameRateMessage", v)
   }
+
+//------------------------------------------------------------------------
+//------------------------------------------------------------------------
+//------------------------------------------------------------------------
+
+  /**
+    * {String|Promise.<String>} options.url The URL of the data, or a promise for the URL.
+    * {String} [options.responseType] The type of response.  This controls the type of item returned.
+    * {String} [options.method='GET'] The HTTP method to use.
+    * {String} [options.data] The data to send with the request, if any.
+    * {Object} [options.headers] HTTP headers to send with the request, if any.
+    * {String} [options.overrideMimeType] Overrides the MIME type returned by the server.
+    */
+  @JSName("Cesium.Options")
+  @js.native
+  trait WithXhrOptions extends js.Object
+
+  object WithXhrOptions extends WithXhrOptionsBuilder(noOpts)
+
+  class WithXhrOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[WithXhrOptions, WithXhrOptionsBuilder](new WithXhrOptionsBuilder(_)) {
+    def url(v: String) = jsOpt("url", v)
+
+    def responseType(v: String) = jsOpt("responseType", v)
+
+    def method(v: String) = jsOpt("method", v)
+
+    def data(v: String) = jsOpt("data", v)
+
+    def headers(v: Object) = jsOpt("headers", v)
+
+    def overrideMimeType(v: String) = jsOpt("overrideMimeType", v)
+  }
+
+  /**
+    * {Object} [options.parameters] Any extra query parameters to append to the URL.
+    * {String} [options.callbackParameterName='callback'] The callback parameter name that the server expects.
+    * {Proxy} [options.proxy] A proxy to use for the request. This object is expected to have a getURL function which returns the proxied URL, if needed.
+    */
+  @JSName("Cesium.Options")
+  @js.native
+  trait JsonpOptions extends js.Object
+
+  object JsonpOptions extends JsonpOptionsBuilder(noOpts)
+
+  class JsonpOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[JsonpOptions, JsonpOptionsBuilder](new JsonpOptionsBuilder(_)) {
+    def parameters(v: Object) = jsOpt("parameters", v)
+
+    def callbackParameterName(v: String) = jsOpt("callbackParameterName", v)
+
+    def proxy(v: Proxy) = jsOpt("proxy", v)
+
+  }
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait OpenStreetMapImageryProviderOptions extends js.Object
+
+  object OpenStreetMapImageryProviderOptions extends OpenStreetMapImageryProviderOptionsBuilder(noOpts)
+
+  class OpenStreetMapImageryProviderOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[OpenStreetMapImageryProviderOptions, OpenStreetMapImageryProviderOptionsBuilder](new OpenStreetMapImageryProviderOptionsBuilder(_)) {
+    def url(v: String) = jsOpt("url", v)
+
+    def fileExtension(v: String) = jsOpt("fileExtension", v)
+
+    def proxy(v: Proxy) = jsOpt("proxy", v)
+
+    def rectangle(v: Rectangle) = jsOpt("rectangle", v)
+
+    def minimumLevel(v: Int) = jsOpt("minimumLevel", v)
+
+    def maximumLevel(v: Int) = jsOpt("maximumLevel", v)
+
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+
+    def credit(v: Credit | String) = jsOpt("credit", v)
+  }
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait TangentSpaceDebugPrimitiveOptions extends js.Object
+
+  object TangentSpaceDebugPrimitiveOptions extends TangentSpaceDebugPrimitiveOptionsBuilder(noOpts)
+
+  class TangentSpaceDebugPrimitiveOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[TangentSpaceDebugPrimitiveOptions, TangentSpaceDebugPrimitiveOptionsBuilder](new TangentSpaceDebugPrimitiveOptionsBuilder(_)) {
+    def geometry(v: Geometry) = jsOpt("geometry", v)
+
+    def length(v: Double) = jsOpt("length", v)
+
+    def modelMatrix(v: Matrix4) = jsOpt("modelMatrix", v)
+
+  }
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait TileMapServiceImageryProviderOptions extends js.Object
+
+  object TileMapServiceImageryProviderOptions extends TileMapServiceImageryProviderOptionsBuilder(noOpts)
+
+  class TileMapServiceImageryProviderOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[TileMapServiceImageryProviderOptions, TileMapServiceImageryProviderOptionsBuilder](new TileMapServiceImageryProviderOptionsBuilder(_)) {
+
+    def url(v: String) = jsOpt("url", v)
+
+    def fileExtension(v: String) = jsOpt("fileExtension", v)
+
+    def proxy(v: Proxy) = jsOpt("proxy", v)
+
+    def rectangle(v: Rectangle) = jsOpt("rectangle", v)
+
+    def minimumLevel(v: Int) = jsOpt("minimumLevel", v)
+
+    def maximumLevel(v: Int) = jsOpt("maximumLevel", v)
+
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+
+    def credit(v: Credit | String) = jsOpt("credit", v)
+
+    def tilingScheme(v: TilingScheme) = jsOpt("tilingScheme", v)
+
+    def tileWidth(v: Int) = jsOpt("tileWidth", v)
+
+    def tileHeight(v: Int) = jsOpt("tileHeight", v)
+
+    def flipXY(v: Boolean) = jsOpt("flipXY", v)
+
+  }
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait DragDropMixinOptions extends js.Object
+
+  object DragDropMixinOptions extends DragDropMixinOptionsBuilder(noOpts)
+
+  class DragDropMixinOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[DragDropMixinOptions, DragDropMixinOptionsBuilder](new DragDropMixinOptionsBuilder(_)) {
+    def dropTarget(v: Element | String) = jsOpt("dropTarget", v)
+
+    def clearOnDrop(v: Boolean) = jsOpt("clearOnDrop", v)
+
+    def flyToOnDrop(v: Boolean) = jsOpt("flyToOnDrop", v)
+
+    def proxy(v: Proxy) = jsOpt("proxy", v)
+  }
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait DimensionsOptions extends js.Object
+
+  object DimensionsOptions extends DimensionsOptionsBuilder(noOpts)
+
+  class DimensionsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[DimensionsOptions, DimensionsOptionsBuilder](new DimensionsOptionsBuilder(_)) {
+    def dimensions(v: Cartesian3) = jsOpt("dimensions", v)
+
+    def vertexFormat(v: VertexFormat) = jsOpt("vertexFormat", v)
+
+  }
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait PositionsOptions extends js.Object
+
+  object PositionsOptions extends PositionsOptionsBuilder(noOpts)
+
+  class PositionsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[PositionsOptions, PositionsOptionsBuilder](new PositionsOptionsBuilder(_)) {
+    def positions(v: Array[Cartesian3]) = jsOpt("positions", v)
+
+    def height(v: Double) = jsOpt("height", v)
+    def extrudedHeight(v: Double) = jsOpt("extrudedHeight", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+    def granularity(v: Double) = jsOpt("granularity", v)
+    def perPositionHeight(v: Boolean) = jsOpt("perPositionHeight", v)
+
+  }
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait GeoJsonDataSourceOptions extends js.Object
+
+  object GeoJsonDataSourceOptions extends GeoJsonDataSourceOptionsBuilder(noOpts)
+
+  class GeoJsonDataSourceOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[GeoJsonDataSourceOptions, GeoJsonDataSourceOptionsBuilder](new GeoJsonDataSourceOptionsBuilder(_)) {
+    def sourceUri(v: String) = jsOpt("sourceUri", v)
+
+    def markerSize(v: Int) = jsOpt("markerSize", v)
+    def markerSymbol(v: String) = jsOpt("markerSymbol", v)
+    def markerColor(v: Color) = jsOpt("markerColor", v)
+    def stroke(v: Color) = jsOpt("stroke", v)
+    def strokeWidth(v: Double) = jsOpt("strokeWidth", v)
+    def fill(v: Color) = jsOpt("fill", v)
+  }
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait KmlDataSourceOptions extends js.Object
+
+  object KmlDataSourceOptions extends KmlDataSourceOptionsBuilder(noOpts)
+
+  class KmlDataSourceOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[KmlDataSourceOptions, KmlDataSourceOptionsBuilder](new KmlDataSourceOptionsBuilder(_)) {
+    def camera(v: Camera) = jsOpt("camera", v)
+
+    def canvas(v: Canvas) = jsOpt("canvas", v)
+    def proxy(v: Proxy) = jsOpt("proxy", v)
+    def sourceUri(v: String) = jsOpt("sourceUri", v)
+  }
+
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait CameraFlyToOptions extends js.Object
+
+  object CameraFlyToOptions extends CameraFlyToOptionsBuilder(noOpts)
+
+  class CameraFlyToOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[CameraFlyToOptions, CameraFlyToOptionsBuilder](new CameraFlyToOptionsBuilder(_)) {
+    def destination(v: Cartesian3 | Rectangle) = jsOpt("destination", v)
+
+    def orientation(v: Object) = jsOpt("orientation", v)
+    def duration(v: Double) = jsOpt("duration", v)
+    def complete(v: Camera.FlightCompleteCallback) = jsOpt("complete", v)
+    def cancel(v: 	Camera.FlightCancelledCallback) = jsOpt("cancel", v)
+    def endTransform(v: Matrix4) = jsOpt("endTransform", v)
+    def maximumHeight(v: Double) = jsOpt("maximumHeight", v)
+    // todo
+  //  def easingFunction(v:	EasingFunction | EasingFunction.Callback) = jsOpt("easingFunction", v)
+  }
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait CameraSetViewOptions extends js.Object
+
+  object CameraSetViewOptions extends CameraSetViewOptionsBuilder(noOpts)
+
+  class CameraSetViewOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[CameraSetViewOptions, CameraSetViewOptionsBuilder](new CameraSetViewOptionsBuilder(_)) {
+    def destination(v: Cartesian3 | Rectangle) = jsOpt("destination", v)
+    def orientation(v: Object) = jsOpt("orientation", v)
+    def duration(v: Double) = jsOpt("duration", v)
+    def endTransform(v: Matrix4) = jsOpt("endTransform", v)
+  }
+  //  flyToBoundingSphere
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait CameraFlyToBoundingSphereOptions extends js.Object
+
+  object CameraFlyToBoundingSphereOptions extends CameraFlyToBoundingSphereOptionsBuilder(noOpts)
+
+  class CameraFlyToBoundingSphereOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[CameraFlyToBoundingSphereOptions, CameraFlyToBoundingSphereOptionsBuilder](new CameraFlyToBoundingSphereOptionsBuilder(_)) {
+    def duration(v: Double) = jsOpt("duration", v)
+    def offset(v: HeadingPitchRange) = jsOpt("offset", v)
+    def complete(v: Camera.FlightCompleteCallback) = jsOpt("complete", v)
+    def cancel(v: 	Camera.FlightCancelledCallback) = jsOpt("cancel", v)
+    def endTransform(v: Matrix4) = jsOpt("endTransform", v)
+    def maximumHeight(v: Double) = jsOpt("maximumHeight", v)
+    // todo
+    //  def easingFunction(v:	EasingFunction | EasingFunction.Callback) = jsOpt("easingFunction", v)
+  }
+
+  // todo
+  // ImageryLayer
+  // LabelCollection
+  // Model
+  // ModelAnimationCollection
+  // BaseLayerPicker
+  // CesiumWidget
+  // ToggleButtonViewModel
+  // Viewer
+  // VertexFormat
+  //
 
 }
