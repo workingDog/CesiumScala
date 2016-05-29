@@ -444,7 +444,7 @@ package cesium {
     * retrieved from an ArcGIS ImageServer.
     *
     * alias ArcGisImageServerTerrainProvider
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {String} options.url The URL of the ArcGIS ImageServer service.
@@ -491,7 +491,7 @@ package cesium {
     * A collection of key-value pairs that is stored as a hash for easy
     * lookup but also provides an array for fast iteration.
     * alias AssociativeArray
-    * constructor
+    * 
     */
   @js.native
   @JSName("Cesium.AssociativeArray")
@@ -513,7 +513,7 @@ package cesium {
   /**
     * Creates an instance of an AxisAlignedBoundingBox from the minimum and maximum points along the x, y, and z axes.
     * alias AxisAlignedBoundingBox
-    * constructor
+    * 
     *
     *  - {Cartesian3} [minimum=Cartesian3.ZERO] The minimum point along the x, y, and z axes.
     *  - {Cartesian3} [maximum=Cartesian3.ZERO] The maximum point along the x, y, and z axes.
@@ -553,7 +553,7 @@ package cesium {
   /**
     * A bounding rectangle given by a corner, width and height.
     * alias BoundingRectangle
-    * constructor
+    * 
     *
     *  - {Number} [x=0.0] The x coordinate of the rectangle.
     *  - {Number} [y=0.0] The y coordinate of the rectangle.
@@ -600,7 +600,7 @@ package cesium {
   /**
     * A bounding sphere with a center and a radius.
     * alias BoundingSphere
-    * constructor
+    * 
     *
     *  - {Cartesian3} [center=Cartesian3.ZERO] The center of the bounding sphere.
     *  - {Number} [radius=0.0] The radius of the bounding sphere.
@@ -686,7 +686,7 @@ package cesium {
     * Describes a cube centered at the origin.
     *
     * alias BoxGeometry
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Cartesian3} options.minimum The minimum x, y, and z coordinates of the box.
@@ -732,7 +732,7 @@ package cesium {
     * A description of the outline of a cube centered at the origin.
     *
     * alias BoxOutlineGeometry
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Cartesian3} options.minimum The minimum x, y, and z coordinates of the box.
@@ -773,7 +773,7 @@ package cesium {
   /**
     * A 2D Cartesian point.
     * alias Cartesian2
-    * constructor
+    * 
     *
     *  - {Number} [x=0.0] The X component.
     *  - {Number} [y=0.0] The Y component.
@@ -869,7 +869,7 @@ package cesium {
   /**
     * A 3D Cartesian point.
     * alias Cartesian3
-    * constructor
+    * 
     *
     *  - {Number} [x=0.0] The X component.
     *  - {Number} [y=0.0] The Y component.
@@ -982,7 +982,7 @@ package cesium {
   /**
     * A 4D Cartesian point.
     * alias Cartesian4
-    * constructor
+    * 
     *
     *  - {Number} [x=0.0] The X component.
     *  - {Number} [y=0.0] The Y component.
@@ -1080,7 +1080,7 @@ package cesium {
   /**
     * A position defined by longitude, latitude, and height.
     * alias Cartographic
-    * constructor
+    * 
     *
     *  - {Number} [longitude=0.0] The longitude, in radians.
     *  - {Number} [latitude=0.0] The latitude, in radians.
@@ -1130,7 +1130,7 @@ package cesium {
     * Catmull-Rom splines are in the class C<sup>1</sup>.
     *
     * alias CatmullRomSpline
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Number[]} options.times An array of strictly increasing, unit-less, floating-point times at each point.
@@ -1184,7 +1184,7 @@ package cesium {
     * [[https://github.com/AnalyticalGraphicsInc/cesium/wiki/Cesium-Terrain-Server|Cesium wiki]].
     *
     * alias CesiumTerrainProvider
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {String} options.url The URL of the Cesium terrain server.
@@ -1245,7 +1245,7 @@ package cesium {
     * A description of a circle on the ellipsoid. Circle geometry can be rendered with both [[Primitive]] and [[GroundPrimitive]].
     *
     * alias CircleGeometry
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Cartesian3} options.center The circle's center point in the fixed frame.
@@ -1292,7 +1292,7 @@ package cesium {
     * A description of the outline of a circle on the ellipsoid.
     *
     * alias CircleOutlineGeometry
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Cartesian3} options.center The circle's center point in the fixed frame.
@@ -1338,7 +1338,7 @@ package cesium {
     * A simple clock for keeping track of simulated time.
     *
     * alias Clock
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {JulianDate} [options.startTime] The start time of the clock.
@@ -1391,7 +1391,7 @@ package cesium {
     *  - {Number} [blue=1.0] The blue component.
     *  - {Number} [alpha=1.0] The alpha component.
     *
-    * constructor
+    * 
     * alias Color
     *
     * @see Packable
@@ -1624,7 +1624,7 @@ package cesium {
     * Value and type information for per-instance geometry color.
     *
     * alias ColorGeometryInstanceAttribute
-    * constructor
+    * 
     *
     *  - {Number} [red=1.0] The red component.
     *  - {Number} [green=1.0] The green component.
@@ -1671,7 +1671,7 @@ package cesium {
     * A description of a corridor. Corridor geometry can be rendered with both [[Primitive]] and [[GroundPrimitive]].
     *
     * alias CorridorGeometry
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Cartesian3[]} options.positions An array of positions that define the center of the corridor.
@@ -1716,7 +1716,7 @@ package cesium {
     * A description of a corridor outline.
     *
     * alias CorridorOutlineGeometry
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Cartesian3[]} options.positions An array of positions that define the center of the corridor outline.
@@ -1760,7 +1760,7 @@ package cesium {
     *  - {String} [link] A URL location for which the credit will be hyperlinked
     *
     * alias Credit
-    * constructor
+    * 
     *
     * @example
     * //Create a credit with a tooltip, image and link
@@ -1792,7 +1792,7 @@ package cesium {
     * A description of a cylinder.
     *
     * alias CylinderGeometry
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Number} options.length The length of the cylinder.
@@ -1839,7 +1839,7 @@ package cesium {
     * A description of the outline of a cylinder.
     *
     * alias CylinderOutlineGeometry
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Number} options.length The length of the cylinder.
@@ -1887,7 +1887,7 @@ package cesium {
     * to the given proxy URL.
     *
     * alias DefaultProxy
-    * constructor
+    * 
     *
     *  - {String} proxy The proxy URL that will be used to requests all resources.
     */
@@ -1904,13 +1904,13 @@ package cesium {
     * argument out of range, etc.  This exception should only be thrown during development;
     * it usually indicates a bug in the calling code.  This exception should never be
     * caught; instead the calling code should strive not to generate it.
-    * <br /><br />
+    *  
     * On the other hand, a [[RuntimeError]] indicates an exception that may
     * be thrown at runtime, e.g., out of memory, that the calling code should be prepared
     * to catch.
     *
     * alias DeveloperError
-    * constructor
+    * 
     * extends Error
     *
     *  - {String} [message] The error message for this exception.
@@ -1931,7 +1931,7 @@ package cesium {
     * A description of an ellipse on an ellipsoid. Ellipse geometry can be rendered with both [[Primitive]] and [[GroundPrimitive]].
     *
     * alias EllipseGeometry
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Cartesian3} options.center The ellipse's center point in the fixed frame.
@@ -1982,7 +1982,7 @@ package cesium {
     * A description of the outline of an ellipse on an ellipsoid.
     *
     * alias EllipseOutlineGeometry
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Cartesian3} options.center The ellipse's center point in the fixed frame.
@@ -2035,7 +2035,7 @@ package cesium {
     * Rather than constructing this object directly, one of the provided
     * constants is normally used.
     * alias Ellipsoid
-    * constructor
+    * 
     *
     *  - {Number} [x=0] The radius in the x direction.
     *  - {Number} [y=0] The radius in the y direction.
@@ -2110,7 +2110,7 @@ package cesium {
     * Initializes a geodesic on the ellipsoid connecting the two provided planetodetic points.
     *
     * alias EllipsoidGeodesic
-    * constructor
+    * 
     *
     *  - {Cartographic} [start] The initial planetodetic point on the path.
     *  - {Cartographic} [end] The final planetodetic point on the path.
@@ -2139,7 +2139,7 @@ package cesium {
     * A description of an ellipsoid centered at the origin.
     *
     * alias EllipsoidGeometry
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Cartesian3} [options.radii=Cartesian3(1.0, 1.0, 1.0)] The radii of the ellipsoid in the x, y, and z directions.
@@ -2180,7 +2180,7 @@ package cesium {
     * A description of the outline of an ellipsoid centered at the origin.
     *
     * alias EllipsoidOutlineGeometry
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Cartesian3} [options.radii=Cartesian3(1.0, 1.0, 1.0)] The radii of the ellipsoid in the x, y, and z directions.
@@ -2223,7 +2223,7 @@ package cesium {
     * If origin is not on the surface of the ellipsoid, it's surface projection will be used.
     * If origin is at the center of the ellipsoid, an exception will be thrown.
     * alias EllipsoidTangentPlane
-    * constructor
+    * 
     *
     *  - {Cartesian3} origin The point on the surface of the ellipsoid where the tangent plane touches.
     *  - {Ellipsoid} [ellipsoid=Ellipsoid.WGS84] The ellipsoid to use.
@@ -2263,7 +2263,7 @@ package cesium {
     * surface.
     *
     * alias EllipsoidTerrainProvider
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {TilingScheme} [options.tilingScheme] The tiling scheme specifying how the ellipsoidal
@@ -2307,7 +2307,7 @@ package cesium {
     * exposed as a property for others to subscribe to.
     *
     * alias Event
-    * constructor
+    * 
     *
     * @example
     * MyObject.prototype.myListener = function(arg1, arg2) {
@@ -2345,7 +2345,7 @@ package cesium {
     * a destroy method.
     *
     * alias EventHelper
-    * constructor
+    * 
     *
     * @example
     * var helper = new Cesium.EventHelper();
@@ -2372,7 +2372,7 @@ package cesium {
     * is also known as EPSG:4326.
     *
     * alias GeographicProjection
-    * constructor
+    * 
     *
     *  - {Ellipsoid} [ellipsoid=Ellipsoid.WGS84] The ellipsoid.
     *
@@ -2396,7 +2396,7 @@ package cesium {
     * known as geographic, equirectangular, equidistant cylindrical, or plate carrée.
     *
     * alias GeographicTilingScheme
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid whose surface is being tiled. Defaults to
@@ -2439,7 +2439,7 @@ package cesium {
     * </p>
     *
     * alias Geometry
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {GeometryAttributes} options.attributes Attributes, which make up the geometry's vertices.
@@ -2501,7 +2501,7 @@ package cesium {
     * the geometry's vertices.
     *
     * alias GeometryAttribute
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {ComponentDatatype} [options.componentDatatype] The datatype of each component in the attribute, e.g., individual elements in values.
@@ -2547,7 +2547,7 @@ package cesium {
     * </p>
     *
     * alias GeometryAttributes
-    * constructor
+    * 
     */
   @js.native
   @JSName("Cesium.GeometryAttributes")
@@ -2567,7 +2567,7 @@ package cesium {
     * its position, rotation, and scale.
     *
     * alias GeometryInstance
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Geometry} options.geometry The geometry to instance.
@@ -2618,7 +2618,7 @@ package cesium {
     * Values and type information for per-instance geometry attributes.
     *
     * alias GeometryInstanceAttribute
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {ComponentDatatype} [options.componentDatatype] The datatype of each component in the attribute, e.g., individual elements in values.
@@ -2663,7 +2663,7 @@ package cesium {
     * Represents a Gregorian date in a more precise format than the JavaScript Date object.
     * In addition to submillisecond precision, this object can also represent leap seconds.
     * alias GregorianDate
-    * constructor
+    * 
     *
     * @see JulianDate#toGregorianDate
     */
@@ -2686,7 +2686,7 @@ package cesium {
     * Pitch is the rotation from the local xy-plane. Positive pitch angles are above the plane. Negative pitch
     * angles are below the plane. Range is the distance from the center of the frame.
     * alias HeadingPitchRange
-    * constructor
+    * 
     *
     *  - {Number} [heading=0.0] The heading angle in radians.
     *  - {Number} [pitch=0.0] The pitch angle in radians.
@@ -2713,7 +2713,7 @@ package cesium {
     * is a rectangular array of heights in row-major order from south to north and west to east.
     *
     * alias HeightmapTerrainData
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {TypedArray} options.buffer The buffer containing height data.
@@ -2794,7 +2794,7 @@ package cesium {
     * respectively.
     *
     * alias HermiteSpline
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Number[]} options.times An array of strictly increasing, unit-less, floating-point times at each point.
@@ -2866,7 +2866,7 @@ package cesium {
   /**
     * Represents the closed interval [start, stop].
     * alias Interval
-    * constructor
+    * 
     *
     *  - {Number} [start=0.0] The beginning of the interval.
     *  - {Number} [stop=0.0] The end of the interval.
@@ -2887,7 +2887,7 @@ package cesium {
     * leap seconds, the date is always stored in the International Atomic Time standard
     * [[TimeStandard.TAI]].
     * alias JulianDate
-    * constructor
+    * 
     *
     *  - {Number} julianDayNumber The Julian Day Number representing the number of whole days.  Fractional days will also be handled correctly.
     *  - {Number} secondsOfDay The number of seconds into the current Julian Day Number.  Fractional seconds, negative seconds and seconds greater than a day will be handled correctly.
@@ -2964,7 +2964,7 @@ package cesium {
     * Describes a single leap second, which is constructed from a [[JulianDate]] and a
     * numerical offset representing the number of seconds TAI is ahead of the UTC time standard.
     * alias LeapSecond
-    * constructor
+    * 
     *
     *  - {JulianDate} [date] A Julian date representing the time of the leap second.
     *  - {Number} [offset] The cumulative number of seconds that TAI is ahead of UTC at the provided date.
@@ -2982,7 +2982,7 @@ package cesium {
     * A spline that uses piecewise linear interpolation to create a curve.
     *
     * alias LinearSpline
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Number[]} options.times An array of strictly increasing, unit-less, floating-point times at each point.
@@ -3028,7 +3028,7 @@ package cesium {
     * flat map like Cesium's 2D and Columbus View modes.
     *
     * alias MapProjection
-    * constructor
+    * 
     *
     * @see GeographicProjection
     * @see WebMercatorProjection
@@ -3047,7 +3047,7 @@ package cesium {
     * A 2x2 matrix, indexable as a column-major order array.
     * Constructor parameters are in row-major order for code readability.
     * alias Matrix2
-    * constructor
+    * 
     *
     *  - {Number} [column0Row0=0.0] The value for column 0, row 0.
     *  - {Number} [column1Row0=0.0] The value for column 1, row 0.
@@ -3149,7 +3149,7 @@ package cesium {
     * A 3x3 matrix, indexable as a column-major order array.
     * Constructor parameters are in row-major order for code readability.
     * alias Matrix3
-    * constructor
+    * 
     *
     *  - {Number} [column0Row0=0.0] The value for column 0, row 0.
     *  - {Number} [column1Row0=0.0] The value for column 1, row 0.
@@ -3276,7 +3276,7 @@ package cesium {
     * A 4x4 matrix, indexable as a column-major order array.
     * Constructor parameters are in row-major order for code readability.
     * alias Matrix4
-    * constructor
+    * 
     *
     *  - {Number} [column0Row0=0.0] The value for column 0, row 0.
     *  - {Number} [column1Row0=0.0] The value for column 1, row 0.
@@ -3452,7 +3452,7 @@ package cesium {
   /**
     * Represents a scalar value's lower and upper bound at a near distance and far distance in eye space.
     * alias NearFarScalar
-    * constructor
+    * 
     *
     *  - {Number} [near=0.0] The lower bound of the camera range.
     *  - {Number} [nearValue=0.0] The value at the lower bound of the camera range.
@@ -3500,7 +3500,7 @@ package cesium {
     *  - {BoundingSphere} occluderBoundingSphere The bounding sphere surrounding the occluder.
     *  - {Cartesian3} cameraPosition The coordinate of the viewer/camera.
     *
-    * constructor
+    * 
     *
     * @example
     * // Construct an occluder one unit away from the origin with a radius of one.
@@ -3538,7 +3538,7 @@ package cesium {
     * Creates an instance of an OrientedBoundingBox.
     * An OrientedBoundingBox of some object is a closed and convex cuboid. It can provide a tighter bounding volume than [[BoundingSphere]] or [[AxisAlignedBoundingBox]] in many cases.
     * alias OrientedBoundingBox
-    * constructor
+    * 
     *
     *  - {Cartesian3} [center=Cartesian3.ZERO] The center of the box.
     *  - {Matrix3} [halfAxes=Matrix3.ZERO] The three orthogonal half-axes of the bounding box.
@@ -3597,14 +3597,14 @@ package cesium {
 
   /**
     * A utility class for generating custom map pins as canvas elements.
-    * <br /><br />
+    *  
     * <div align='center'>
     * <img src='images/PinBuilder.png' width='500'/><br />
     * Example pins generated using both the maki icon set, which ships with Cesium, and single character text.
     * </div>
     *
     * alias PinBuilder
-    * constructor
+    * 
     *
     * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Map%20Pins.html|Cesium Sandcastle PinBuilder Demo]]
     */
@@ -3630,7 +3630,7 @@ package cesium {
     * the plane.
     *
     * alias Plane
-    * constructor
+    * 
     *
     *  - {Cartesian3} normal The plane's normal (normalized).
     *  - {Number} distance The shortest distance from the origin to the plane.  The sign of
@@ -3670,7 +3670,7 @@ package cesium {
     * A description of a polygon on the ellipsoid. The polygon is defined by a polygon hierarchy. Polygon geometry can be rendered with both [[Primitive]] and [[GroundPrimitive]].
     *
     * alias PolygonGeometry
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {PolygonHierarchy} options.polygonHierarchy A polygon hierarchy that can include holes.
@@ -3779,7 +3779,7 @@ package cesium {
     * An hierarchy of linear rings which define a polygon and its holes.
     * The holes themselves may also have holes which nest inner polygons.
     * alias PolygonHierarchy
-    * constructor
+    * 
     *
     *  - {Cartesian3[]} [positions] A linear ring defining the outer boundary of the polygon or hole.
     *  - {PolygonHierarchy[]} [holes] An array of polygon hierarchies defining holes in the polygon.
@@ -3797,7 +3797,7 @@ package cesium {
     * A description of the outline of a polygon on the ellipsoid. The polygon is defined by a polygon hierarchy.
     *
     * alias PolygonOutlineGeometry
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {PolygonHierarchy} options.polygonHierarchy A polygon hierarchy that can include holes.
@@ -3903,7 +3903,7 @@ package cesium {
     * displaying with a material.
     *
     * alias PolylineGeometry
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Cartesian3[]} options.positions An array of [[Cartesian3]] defining the positions in the polyline as a line strip.
@@ -3956,7 +3956,7 @@ package cesium {
     * A description of a polyline with a volume (a 2D shape extruded along a polyline).
     *
     * alias PolylineVolumeGeometry
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Cartesian3[]} options.polylinePositions An array of [[Cartesian3]] positions that define the center of the polyline volume.
@@ -4010,7 +4010,7 @@ package cesium {
     * A description of a polyline with a volume (a 2D shape extruded along a polyline).
     *
     * alias PolylineVolumeOutlineGeometry
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Cartesian3[]} options.polylinePositions An array of positions that define the center of the polyline volume.
@@ -4064,7 +4064,7 @@ package cesium {
     * and 32767 at the maximum height in the tile.
     *
     * alias QuantizedMeshTerrainData
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Uint16Array} options.quantizedVertices The buffer containing the quantized mesh.
@@ -4148,7 +4148,7 @@ package cesium {
   /**
     * A set of 4-dimensional coordinates used to represent rotation in 3-dimensional space.
     * alias Quaternion
-    * constructor
+    * 
     *
     *  - {Number} [x=0.0] The X component.
     *  - {Number} [y=0.0] The Y component.
@@ -4254,7 +4254,7 @@ package cesium {
     * The generated curve is in the class C<sup>1</sup>.
     *
     * alias QuaternionSpline
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Number[]} options.times An array of strictly increasing, unit-less, floating-point times at each point.
@@ -4296,7 +4296,7 @@ package cesium {
     * A queue that can enqueue items at the end, and dequeue items from the front.
     *
     * alias Queue
-    * constructor
+    * 
     */
   @js.native
   @JSName("Cesium.Queue")
@@ -4319,7 +4319,7 @@ package cesium {
   /**
     * Represents a ray that extends infinitely from the provided origin in the provided direction.
     * alias Ray
-    * constructor
+    * 
     *
     *  - {Cartesian3} [origin=Cartesian3.ZERO] The origin of the ray.
     *  - {Cartesian3} [direction=Cartesian3.ZERO] The direction of the ray.
@@ -4343,7 +4343,7 @@ package cesium {
     * A two dimensional region specified as longitude and latitude coordinates.
     *
     * alias Rectangle
-    * constructor
+    * 
     *
     *  - {Number} [west=0.0] The westernmost longitude, in radians, in the range [-Pi, Pi].
     *  - {Number} [south=0.0] The southernmost latitude, in radians, in the range [-Pi/2, Pi/2].
@@ -4420,7 +4420,7 @@ package cesium {
     * A description of a cartographic rectangle on an ellipsoid centered at the origin. Rectangle geometry can be rendered with both [[Primitive]] and [[GroundPrimitive]].
     *
     * alias RectangleGeometry
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Rectangle} options.rectangle A cartographic rectangle with north, south, east and west properties in radians.
@@ -4484,7 +4484,7 @@ package cesium {
     * A description of the outline of a a cartographic rectangle on an ellipsoid centered at the origin.
     *
     * alias RectangleOutlineGeometry
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Rectangle} options.rectangle A cartographic rectangle with north, south, east and west properties in radians.
@@ -4530,7 +4530,7 @@ package cesium {
   /**
     * An event that is raised when a request encounters an error.
     *
-    * constructor
+    * 
     * alias RequestErrorEvent
     *
     *  - {Number} [statusCode] The HTTP error status code, such as 404.
@@ -4554,13 +4554,13 @@ package cesium {
     * Constructs an exception object that is thrown due to an error that can occur at runtime, e.g.,
     * out of memory, could not compile shader, etc.  If a function may throw this
     * exception, the calling code should be prepared to catch it.
-    * <br /><br />
+    *  
     * On the other hand, a [[DeveloperError]] indicates an exception due
     * to a developer error, e.g., invalid argument, that usually indicates a bug in the
     * calling code.
     *
     * alias RuntimeError
-    * constructor
+    * 
     * extends Error
     *
     *  - {String} [message] The error message for this exception.
@@ -4585,7 +4585,7 @@ package cesium {
     *
     *  - {Canvas} [element=document] The element to add events to.
     *
-    * constructor
+    * 
     */
   @js.native
   @JSName("Cesium.ScreenSpaceEventHandler")
@@ -4607,7 +4607,7 @@ package cesium {
     * Value and type information for per-instance geometry attribute that determines if the geometry instance will be shown.
     *
     * alias ShowGeometryInstanceAttribute
-    * constructor
+    * 
     *
     *  - {Boolean} [show=true] Determines if the geometry instance will be shown.
     *
@@ -4650,7 +4650,7 @@ package cesium {
     * and each additional position defines a line segment from the previous position.
     *
     * alias SimplePolylineGeometry
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Cartesian3[]} options.positions An array of [[Cartesian3]] defining the positions in the polyline as a line strip.
@@ -4697,7 +4697,7 @@ package cesium {
     * A description of a sphere centered at the origin.
     *
     * alias SphereGeometry
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Number} [options.radius=1.0] The radius of the sphere.
@@ -4738,7 +4738,7 @@ package cesium {
     * A description of the outline of a sphere.
     *
     * alias SphereOutlineGeometry
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Number} [options.radius=1.0] The radius of the sphere.
@@ -4780,7 +4780,7 @@ package cesium {
     * A set of curvilinear 3-dimensional coordinates.
     *
     * alias Spherical
-    * constructor
+    * 
     *
     *  - {Number} [clock=0.0] The angular coordinate lying in the xy-plane measured from the positive x-axis and toward the positive y-axis.
     *  - {Number} [cone=0.0] The angular coordinate measured from the positive z-axis and toward the negative z-axis.
@@ -4819,7 +4819,7 @@ package cesium {
     * and is not intended to be instantiated directly.
     *
     * alias Spline
-    * constructor
+    * 
     *
     * @see CatmullRomSpline
     * @see HermiteSpline
@@ -4844,7 +4844,7 @@ package cesium {
     * The Worker is not constructed until a task is scheduled.
     *
     * alias TaskProcessor
-    * constructor
+    * 
     *
     *  - {String} workerName The name of the worker.  This is expected to be a script
     * in the Workers folder.
@@ -4869,7 +4869,7 @@ package cesium {
     * interface and is not intended to be instantiated directly.
     *
     * alias TerrainData
-    * constructor
+    * 
     *
     * @see HeightmapTerrainData
     * @see QuantizedMeshTerrainData
@@ -4894,7 +4894,7 @@ package cesium {
     * interface and is not intended to be instantiated directly.
     *
     * alias TerrainProvider
-    * constructor
+    * 
     *
     * @see EllipsoidTerrainProvider
     * @see CesiumTerrainProvider
@@ -4932,7 +4932,7 @@ package cesium {
     * Provides details about an error that occurred in an [[ImageryProvider]] or a [[TerrainProvider]].
     *
     * alias TileProviderError
-    * constructor
+    * 
     *
     *  - {ImageryProvider|TerrainProvider} provider The imagery or terrain provider that experienced the error.
     *  - {String} message A message describing the error.
@@ -4979,7 +4979,7 @@ package cesium {
     * This continues for as many levels as are present in the geometry or imagery source.
     *
     * alias TilingScheme
-    * constructor
+    * 
     *
     * @see WebMercatorTilingScheme
     * @see GeographicTilingScheme
@@ -5009,7 +5009,7 @@ package cesium {
     * Arbitrary data can optionally be associated with each instance for used with [[TimeIntervalCollection]].
     *
     * alias TimeInterval
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {JulianDate} [options.start=new JulianDate()] The start time of the interval.
@@ -5101,7 +5101,7 @@ package cesium {
   /**
     * A non-overlapping collection of [[TimeInterval]] instances sorted by start time.
     * alias TimeIntervalCollection
-    * constructor
+    * 
     *
     *  - {TimeInterval[]} [intervals] An array of intervals to add to the collection.
     */
@@ -5144,7 +5144,7 @@ package cesium {
   /**
     * An affine transformation defined by a translation, rotation, and scale.
     * alias TranslationRotationScale
-    * constructor
+    * 
     *
     *  - {Cartesian3} [translation=Cartesian3.ZERO] A [[Cartesian3]] specifying the (x, y, z) translation to apply to the node.
     *  - {Quaternion} [rotation=Quaternion.IDENTITY] A [[Quaternion]] specifying the (x, y, z, w) rotation to apply to the node.
@@ -5167,7 +5167,7 @@ package cesium {
     * retrieved from a [[http://vr-theworld.com/|VT MÄK VR-TheWorld server]].
     *
     * alias VRTheWorldTerrainProvider
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {String} options.url The URL of the VR-TheWorld TileMap.
@@ -5211,7 +5211,7 @@ package cesium {
     *  - {Object} [options] An object with boolean properties corresponding to VertexFormat properties as shown in the code example.
     *
     * alias VertexFormat
-    * constructor
+    * 
     *
     * @example
     * // Create a vertex format with position and 2D texture coordinate attributes.
@@ -5259,7 +5259,7 @@ package cesium {
     * Synchronizes a video element with a simulation clock.
     *
     * alias VideoSynchronizer
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Clock} [options.clock] The clock instance used to drive the video.
@@ -5289,7 +5289,7 @@ package cesium {
     * which extrude down to the ground. Optionally, they can extrude downwards to a specified height.
     *
     * alias WallGeometry
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Cartesian3[]} options.positions An array of Cartesian objects, which are the points of the wall.
@@ -5347,7 +5347,7 @@ package cesium {
     * which extrude down to the ground. Optionally, they can extrude downwards to a specified height.
     *
     * alias WallOutlineGeometry
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Cartesian3[]} options.positions An array of Cartesian objects, which are the points of the wall.
@@ -5403,7 +5403,7 @@ package cesium {
     * the spherical (rather than ellipsoidal) equations.
     *
     * alias WebMercatorProjection
-    * constructor
+    * 
     *
     *  - {Ellipsoid} [ellipsoid=Ellipsoid.WGS84] The ellipsoid.
     *
@@ -5436,7 +5436,7 @@ package cesium {
     * the tiling scheme used by Google Maps, Microsoft Bing Maps, and most of ESRI ArcGIS Online.
     *
     * alias WebMercatorTilingScheme
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid whose surface is being tiled. Defaults to
@@ -5489,7 +5489,7 @@ package cesium {
     * </p>
     *
     * alias BillboardGraphics
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Property} [options.image] A Property specifying the Image, URI, or Canvas to use for the billboard.
@@ -5544,7 +5544,7 @@ package cesium {
   /**
     * A [[Visualizer]] which maps [[Entity#billboard]] to a [[Billboard]]
     * alias BillboardVisualizer
-    * constructor
+    * 
     *
     *  - {Scene} scene The scene the primitives will be rendered in.
     *  - {EntityCollection} entityCollection The entityCollection to visualize.
@@ -5565,7 +5565,7 @@ package cesium {
     * A [[GeometryUpdater]] for boxes.
     * Clients do not normally create this class directly, but instead rely on [[DataSourceDisplay]]
     * alias BoxGeometryUpdater
-    * constructor
+    * 
     *
     *  - {Entity} entity The entity containing the geometry to be visualized.
     *  - {Scene} scene The scene where visualization is taking place.
@@ -5613,7 +5613,7 @@ package cesium {
     * Describes a box. The center position and orientation are determined by the containing [[Entity]]
     *
     * alias BoxGraphics
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Property} [options.dimensions] A [[Cartesian3]] Property specifying the length, width, and height of the box.
@@ -5655,7 +5655,7 @@ package cesium {
     * A [[Property]] whose value is lazily evaluated by a callback function.
     *
     * alias CallbackProperty
-    * constructor
+    * 
     *
     *  - {CallbackProperty~Callback]] callback The function to be called when the property is evaluated.
     *  - {Boolean]] isConstant <code>true</code> when the callback function returns the same value every time, <code>false</code> if the value will change.
@@ -5678,7 +5678,7 @@ package cesium {
   /**
     * A [[MaterialProperty]] that maps to checkerboard [[Material]] uniforms.
     * alias CheckerboardMaterialProperty
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Property} [options.evenColor=Color.WHITE] A Property specifying the first [[Color]]
@@ -5709,7 +5709,7 @@ package cesium {
     *  - {Property} [color=Color.WHITE] The [[Color]] Property to be used.
     *
     * alias ColorMaterialProperty
-    * constructor
+    * 
     */
   @js.native
   @JSName("Cesium.ColorMaterialProperty")
@@ -5728,7 +5728,7 @@ package cesium {
     * EntityCollection is used.
     *
     * alias CompositeEntityCollection
-    * constructor
+    * 
     *
     *  - {EntityCollection[]} [collections] The initial list of EntityCollection instances to merge.
     *  - {DataSource|CompositeEntityCollection} [owner] The data source (or composite entity collection) which created this collection.
@@ -5780,7 +5780,7 @@ package cesium {
     * A [[CompositeProperty]] which is also a [[MaterialProperty]]
     *
     * alias CompositeMaterialProperty
-    * constructor
+    * 
     */
   @js.native
   @JSName("Cesium.CompositeMaterialProperty")
@@ -5792,7 +5792,7 @@ package cesium {
     * A [[CompositeProperty]] which is also a [[PositionProperty]]
     *
     * alias CompositePositionProperty
-    * constructor
+    * 
     *
     *  - {ReferenceFrame} [referenceFrame=ReferenceFrame.FIXED] The reference frame in which the position is defined.
     */
@@ -5810,7 +5810,7 @@ package cesium {
     * evaluated at the provided time.
     *
     * alias CompositeProperty
-    * constructor
+    * 
     *
     * @example
     * var constantProperty = ...;
@@ -5845,7 +5845,7 @@ package cesium {
     * [[ReferenceFrame]] in which is it defined.
     *
     * alias ConstantPositionProperty
-    * constructor
+    * 
     *
     *  - {Cartesian3} [value] The property value.
     *  - {ReferenceFrame} [referenceFrame=ReferenceFrame.FIXED] The reference frame in which the position is defined.
@@ -5862,7 +5862,7 @@ package cesium {
     * A [[Property]] whose value does not change with respect to simulation time.
     *
     * alias ConstantProperty
-    * constructor
+    * 
     *
     *  - {Object} [value] The property value.
     *
@@ -5883,7 +5883,7 @@ package cesium {
     * A [[GeometryUpdater]] for corridors.
     * Clients do not normally create this class directly, but instead rely on [[DataSourceDisplay]]
     * alias CorridorGeometryUpdater
-    * constructor
+    * 
     *
     *  - {Entity} entity The entity containing the geometry to be visualized.
     *  - {Scene} scene The scene where visualization is taking place.
@@ -5933,7 +5933,7 @@ package cesium {
     * and can optionally be extruded into a volume.
     *
     * alias CorridorGraphics
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Property} [options.positions] A Property specifying the array of [[Cartesian3]] positions that define the centerline of the corridor.
@@ -5980,7 +5980,7 @@ package cesium {
     * A [[DataSource]] implementation which can be used to manually manage a group of entities.
     *
     * alias CustomDataSource
-    * constructor
+    * 
     *
     *  - {String} [name] A human-readable name for this instance.
     *
@@ -6015,7 +6015,7 @@ package cesium {
     * A [[GeometryUpdater]] for cylinders.
     * Clients do not normally create this class directly, but instead rely on [[DataSourceDisplay]]
     * alias CylinderGeometryUpdater
-    * constructor
+    * 
     *
     *  - {Entity} entity The entity containing the geometry to be visualized.
     *  - {Scene} scene The scene where visualization is taking place.
@@ -6064,7 +6064,7 @@ package cesium {
     * The center position and orientation are determined by the containing [[Entity]]
     *
     * alias CylinderGraphics
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Property} [options.length] A numeric Property specifying the length of the cylinder.
@@ -6106,7 +6106,7 @@ package cesium {
   /**
     * A [[DataSource]] which processes [[https://github.com/AnalyticalGraphicsInc/cesium/wiki/CZML-Guide|CZML]]
     * alias CzmlDataSource
-    * constructor
+    * 
     *
     *  - {String} [name] An optional name for the data source.  This value will be overwritten if a loaded document contains a name.
     *
@@ -6150,7 +6150,7 @@ package cesium {
     * [[EntityCollection]] for generic consumption. This object is an interface
     * for documentation purposes and is not intended to be instantiated directly.
     * alias DataSource
-    * constructor
+    * 
     *
     * @see Entity
     * @see DataSourceDisplay
@@ -6174,7 +6174,7 @@ package cesium {
     * Represents CZML document-level clock settings.
     *
     * alias DataSourceClock
-    * constructor
+    * 
     */
   @js.native
   @JSName("Cesium.DataSourceClock")
@@ -6199,7 +6199,7 @@ package cesium {
   /**
     * A collection of [[DataSource]] instances.
     * alias DataSourceCollection
-    * constructor
+    * 
     */
   @js.native
   @JSName("Cesium.DataSourceCollection")
@@ -6235,7 +6235,7 @@ package cesium {
   /**
     * Visualizes a collection of [[DataSource]] instances.
     * alias DataSourceDisplay
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Scene} options.scene The scene in which to display the data.
@@ -6271,7 +6271,7 @@ package cesium {
     * This type defines an interface and cannot be instantiated directly.
     *
     * alias DynamicGeometryUpdater
-    * constructor
+    * 
     */
   @js.native
   @JSName("Cesium.DynamicGeometryUpdater")
@@ -6287,7 +6287,7 @@ package cesium {
     * A [[GeometryUpdater]] for ellipses.
     * Clients do not normally create this class directly, but instead rely on [[DataSourceDisplay]]
     * alias EllipseGeometryUpdater
-    * constructor
+    * 
     *
     *  - {Entity} entity The entity containing the geometry to be visualized.
     *  - {Scene} scene The scene where visualization is taking place.
@@ -6338,7 +6338,7 @@ package cesium {
     * The center point is determined by the containing [[Entity]]
     *
     * alias EllipseGraphics
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Property} [options.semiMajorAxis] The numeric Property specifying the semi-major axis.
@@ -6388,7 +6388,7 @@ package cesium {
     * A [[GeometryUpdater]] for ellipsoids.
     * Clients do not normally create this class directly, but instead rely on [[DataSourceDisplay]]
     * alias EllipsoidGeometryUpdater
-    * constructor
+    * 
     *
     *  - {Entity} entity The entity containing the geometry to be visualized.
     *  - {Scene} scene The scene where visualization is taking place.
@@ -6436,7 +6436,7 @@ package cesium {
     * Describe an ellipsoid or sphere.  The center position and orientation are determined by the containing [[Entity]]
     *
     * alias EllipsoidGraphics
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Property} [options.radii] A [[Cartesian3]] Property specifying the radii of the ellipsoid.
@@ -6479,7 +6479,7 @@ package cesium {
     * They can be created manually and added to [[Viewer#entities]] or be produced by
     * data sources, such as [[CzmlDataSource]] and [[GeoJsonDataSource]]
     * alias Entity
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {String} [options.id] A unique identifier for this object. If none is provided, a GUID is generated.
@@ -6555,7 +6555,7 @@ package cesium {
   /**
     * An observable collection of [[Entity]] instances where each entity has a unique id.
     * alias EntityCollection
-    * constructor
+    * 
     *
     *  - {DataSource|CompositeEntityCollection} [owner] The data source (or composite entity collection) which created this collection.
     */
@@ -6600,7 +6600,7 @@ package cesium {
   /**
     * A utility object for tracking an entity with the camera.
     * alias EntityView
-    * constructor
+    * 
     *
     *  - {Entity} entity The entity to track with the camera.
     *  - {Scene} scene The scene to use.
@@ -6633,7 +6633,7 @@ package cesium {
     * are present.
     *
     * alias GeoJsonDataSource
-    * constructor
+    * 
     *
     *  - {String} [name] The name of this data source.  If undefined, a name will be taken from
     * the name of the GeoJSON file.
@@ -6692,7 +6692,7 @@ package cesium {
     * This type defines an interface and cannot be instantiated directly.
     *
     * alias GeometryUpdater
-    * constructor
+    * 
     *
     *  - {Entity} entity The entity containing the geometry to be visualized.
     *  - {Scene} scene The scene where visualization is taking place.
@@ -6746,7 +6746,7 @@ package cesium {
   /**
     * A general purpose visualizer for geometry represented by [[Primitive]] instances.
     * alias GeometryVisualizer
-    * constructor
+    * 
     *
     *  - {GeometryUpdater} type The updater to be used for creating the geometry.
     *  - {Scene} scene The scene the primitives will be rendered in.
@@ -6775,7 +6775,7 @@ package cesium {
     *  - {Property} [options.lineThickness=new Cartesian2(1.0, 1.0)] A [[Cartesian2]] Property specifying the thickness of grid lines along each axis.
     *  - {Property} [options.lineOffset=new Cartesian2(0.0, 0.0)] A [[Cartesian2]] Property specifying starting offset of grid lines along each axis.
     *
-    * constructor
+    * 
     */
   @js.native
   @JSName("Cesium.GridMaterialProperty")
@@ -6792,7 +6792,7 @@ package cesium {
   /**
     * A [[MaterialProperty]] that maps to image [[Material]] uniforms.
     * alias ImageMaterialProperty
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Property} [options.image] A Property specifying the Image, URL, Canvas, or Video.
@@ -6827,7 +6827,7 @@ package cesium {
     * </p>
     *
     * alias KmlDataSource
-    * constructor
+    * 
     *
     *  - {Camera} options.camera The camera that is used for viewRefreshModes and sending camera properties to network links.
     *  - {Canvas} options.canvas The canvas that is used for sending viewer properties to network links.
@@ -6872,7 +6872,7 @@ package cesium {
   /**
     * Contains KML Feature data loaded into the <code>Entity.kml</code> property by [[KmlDataSource]]
     * alias KmlFeatureData
-    * constructor
+    * 
     */
   @js.native
   @JSName("Cesium.KmlFeatureData")
@@ -6895,7 +6895,7 @@ package cesium {
     * </p>
     *
     * alias LabelGraphics
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Property} [options.text] A Property specifying the text.
@@ -6945,7 +6945,7 @@ package cesium {
     * A [[Visualizer]] which maps the [[LabelGraphics]] instance
     * in [[Entity#label]] to a [[Label]]
     * alias LabelVisualizer
-    * constructor
+    * 
     *
     *  - {Scene} scene The scene the primitives will be rendered in.
     *  - {EntityCollection} entityCollection The entityCollection to visualize.
@@ -6967,7 +6967,7 @@ package cesium {
     * This type defines an interface and cannot be instantiated directly.
     *
     * alias MaterialProperty
-    * constructor
+    * 
     *
     * @see ColorMaterialProperty
     * @see CompositeMaterialProperty
@@ -6999,7 +6999,7 @@ package cesium {
     * </p>
     *
     * alias ModelGraphics
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Property} [options.uri] A string Property specifying the URI of the glTF asset.
@@ -7037,7 +7037,7 @@ package cesium {
   /**
     * A [[Visualizer]] which maps [[Entity#model]] to a [[Model]]
     * alias ModelVisualizer
-    * constructor
+    * 
     *
     *  - {Scene} scene The scene the primitives will be rendered in.
     *  - {EntityCollection} entityCollection The entityCollection to visualize.
@@ -7057,7 +7057,7 @@ package cesium {
   /**
     * A [[Property]] that produces [[TranslationRotationScale]] data.
     * alias NodeTransformationProperty
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Property} [options.translation=Cartesian3.ZERO] A [[Cartesian3]] Property specifying the (x, y, z) translation to apply to the node.
@@ -7084,7 +7084,7 @@ package cesium {
     * Describes a polyline defined as the path made by an [[Entity]] as it moves over time.
     *
     * alias PathGraphics
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Property} [options.leadTime] A Property specifying the number of seconds behind the object to show.
@@ -7115,7 +7115,7 @@ package cesium {
   /**
     * A [[Visualizer]] which maps [[Entity#path]] to a [[Polyline]]
     * alias PathVisualizer
-    * constructor
+    * 
     *
     *  - {Scene} scene The scene the primitives will be rendered in.
     *  - {EntityCollection} entityCollection The entityCollection to visualize.
@@ -7136,7 +7136,7 @@ package cesium {
     * Describes a graphical point located at the position of the containing [[Entity]]
     *
     * alias PointGraphics
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Property} [options.color=Color.WHITE] A Property specifying the [[Color]] of the point.
@@ -7169,7 +7169,7 @@ package cesium {
   /**
     * A [[Visualizer]] which maps [[Entity#point]] to a [[PointPrimitive]]
     * alias PointVisualizer
-    * constructor
+    * 
     *
     *  - {Scene} scene The scene the primitives will be rendered in.
     *  - {EntityCollection} entityCollection The entityCollection to visualize.
@@ -7190,7 +7190,7 @@ package cesium {
     * A [[GeometryUpdater]] for polygons.
     * Clients do not normally create this class directly, but instead rely on [[DataSourceDisplay]]
     * alias PolygonGeometryUpdater
-    * constructor
+    * 
     *
     *  - {Entity} entity The entity containing the geometry to be visualized.
     *  - {Scene} scene The scene where visualization is taking place.
@@ -7240,7 +7240,7 @@ package cesium {
     * at altitude and can optionally be extruded into a volume.
     *
     * alias PolygonGraphics
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Property} [options.hierarchy] A Property specifying the [[PolygonHierarchy]]
@@ -7293,7 +7293,7 @@ package cesium {
     *  - {Property} [color=Color.WHITE] The [[Color]] Property to be used.
     *
     * alias PolylineArrowMaterialProperty
-    * constructor
+    * 
     */
   @js.native
   @JSName("Cesium.PolylineArrowMaterialProperty")
@@ -7315,7 +7315,7 @@ package cesium {
     * A [[GeometryUpdater]] for polylines.
     * Clients do not normally create this class directly, but instead rely on [[DataSourceDisplay]]
     * alias PolylineGeometryUpdater
-    * constructor
+    * 
     *
     *  - {Entity} entity The entity containing the geometry to be visualized.
     *  - {Scene} scene The scene where visualization is taking place.
@@ -7361,7 +7361,7 @@ package cesium {
   /**
     * A [[MaterialProperty]] that maps to polyline glow [[Material]] uniforms.
     * alias PolylineGlowMaterialProperty
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Property} [options.color=Color.WHITE] A Property specifying the [[Color]] of the line.
@@ -7382,7 +7382,7 @@ package cesium {
     * can be linear connected points or great arcs.
     *
     * alias PolylineGraphics
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Property} [options.positions] A Property specifying the array of [[Cartesian3]] positions that define the line strip.
@@ -7416,7 +7416,7 @@ package cesium {
   /**
     * A [[MaterialProperty]] that maps to polyline outline [[Material]] uniforms.
     * alias PolylineOutlineMaterialProperty
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Property} [options.color=Color.WHITE] A Property specifying the [[Color]] of the line.
@@ -7437,7 +7437,7 @@ package cesium {
     * A [[GeometryUpdater]] for polyline volumes.
     * Clients do not normally create this class directly, but instead rely on [[DataSourceDisplay]]
     * alias PolylineVolumeGeometryUpdater
-    * constructor
+    * 
     *
     *  - {Entity} entity The entity containing the geometry to be visualized.
     *  - {Scene} scene The scene where visualization is taking place.
@@ -7486,7 +7486,7 @@ package cesium {
     * The resulting volume conforms to the curvature of the globe.
     *
     * alias PolylineVolumeGraphics
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Property} [options.positions] A Property specifying the array of [[Cartesian3]] positions which define the line strip.
@@ -7531,7 +7531,7 @@ package cesium {
     * This type defines an interface and cannot be instantiated directly.
     *
     * alias PositionProperty
-    * constructor
+    * 
     *
     * @see CompositePositionProperty
     * @see ConstantPositionProperty
@@ -7557,7 +7557,7 @@ package cesium {
     * of other PositionProperty instances.
     *
     * alias PositionPropertyArray
-    * constructor
+    * 
     *
     *  - {Property[]} [value] An array of Property instances.
     *  - {ReferenceFrame} [referenceFrame=ReferenceFrame.FIXED] The reference frame in which the position is defined.
@@ -7585,7 +7585,7 @@ package cesium {
     * This type defines an interface and cannot be instantiated directly.
     *
     * alias Property
-    * constructor
+    * 
     *
     * @see CompositeProperty
     * @see ConstantProperty
@@ -7611,7 +7611,7 @@ package cesium {
     * of other property instances.
     *
     * alias PropertyArray
-    * constructor
+    * 
     *
     *  - {Property[]} [value] An array of Property instances.
     */
@@ -7634,7 +7634,7 @@ package cesium {
     * A [[Property]] whose value is a key-value mapping of property names to the computed value of other properties.
     *
     * alias PropertyBag
-    * constructor
+    * 
     *
     *  - {Object} [value] An object, containing key-value mapping of property names to properties.
     *  - {Function} [createPropertyCallback] A function that will be called when the value of any of the properties in value are not a Property.
@@ -7665,7 +7665,7 @@ package cesium {
     * A [[GeometryUpdater]] for rectangles.
     * Clients do not normally create this class directly, but instead rely on [[DataSourceDisplay]]
     * alias RectangleGeometryUpdater
-    * constructor
+    * 
     *
     *  - {Entity} entity The entity containing the geometry to be visualized.
     *  - {Scene} scene The scene where visualization is taking place.
@@ -7715,7 +7715,7 @@ package cesium {
     * at altitude and can optionally be extruded into a volume.
     *
     * alias RectangleGraphics
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Property} [options.coordinates] The Property specifying the [[Rectangle]]
@@ -7766,7 +7766,7 @@ package cesium {
     * A [[Property]] which transparently links to another property on a provided object.
     *
     * alias ReferenceProperty
-    * constructor
+    * 
     *
     *  - {EntityCollection} targetCollection The entity collection which will be used to resolve the reference.
     *  - {String} targetId The id of the entity which is being referenced.
@@ -7830,7 +7830,7 @@ package cesium {
     * A [[SampledProperty]] which is also a [[PositionProperty]]
     *
     * alias SampledPositionProperty
-    * constructor
+    * 
     *
     *  - {ReferenceFrame} [referenceFrame=ReferenceFrame.FIXED] The reference frame in which the position is defined.
     *  - {Number} [numberOfDerivatives=0] The number of derivatives that accompany each position; i.e. velocity, acceleration, etc...
@@ -7861,7 +7861,7 @@ package cesium {
     * A [[Property]] whose value is interpolated for a given time from the
     * provided set of samples and specified interpolation algorithm and degree.
     * alias SampledProperty
-    * constructor
+    * 
     *
     *  - {Number|Packable} type The type of property.
     *  - {Packable[]} [derivativeTypes] When supplied, indicates that samples will contain derivative information of the specified types.
@@ -7924,7 +7924,7 @@ package cesium {
   /**
     * A [[MaterialProperty]] that maps to stripe [[Material]] uniforms.
     * alias StripeMaterialProperty
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Property} [options.evenColor=Color.WHITE] A Property specifying the first [[Color]]
@@ -7949,7 +7949,7 @@ package cesium {
     * A [[TimeIntervalCollectionProperty]] which is also a [[PositionProperty]]
     *
     * alias TimeIntervalCollectionPositionProperty
-    * constructor
+    * 
     *
     *  - {ReferenceFrame} [referenceFrame=ReferenceFrame.FIXED] The reference frame in which the position is defined.
     */
@@ -7966,7 +7966,7 @@ package cesium {
     * data property of each [[TimeInterval]] represents the value at time.
     *
     * alias TimeIntervalCollectionProperty
-    * constructor
+    * 
     *
     * @example
     * //Create a Cartesian2 interval property which contains data on August 1st, 2012
@@ -8008,7 +8008,7 @@ package cesium {
     * based on the velocity of the provided [[PositionProperty]]
     *
     * alias VelocityOrientationProperty
-    * constructor
+    * 
     *
     *  - {Property} [position] The position property used to compute the orientation.
     *  - {Ellipsoid} [ellipsoid=Ellipsoid.WGS84] The ellipsoid used to determine which way is up.
@@ -8042,7 +8042,7 @@ package cesium {
     * based on the velocity of the provided [[PositionProperty]]
     *
     * alias VelocityVectorProperty
-    * constructor
+    * 
     *
     *  - {Property} [position] The position property used to compute the velocity.
     *
@@ -8079,7 +8079,7 @@ package cesium {
     * This object is an interface for documentation purposes and is not intended
     * to be instantiated directly.
     * alias Visualizer
-    * constructor
+    * 
     *
     * @see BillboardVisualizer
     * @see LabelVisualizer
@@ -8102,7 +8102,7 @@ package cesium {
     * A [[GeometryUpdater]] for walls.
     * Clients do not normally create this class directly, but instead rely on [[DataSourceDisplay]]
     * alias WallGeometryUpdater
-    * constructor
+    * 
     *
     *  - {Entity} entity The entity containing the geometry to be visualized.
     *  - {Scene} scene The scene where visualization is taking place.
@@ -8151,7 +8151,7 @@ package cesium {
     * The wall conforms to the curvature of the globe and can be placed along the surface or at altitude.
     *
     * alias WallGraphics
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Property} [options.positions] A Property specifying the array of [[Cartesian3]] positions which define the top of the wall.
@@ -8196,7 +8196,7 @@ package cesium {
     * this base <code>Appearance</code> interface.
     *
     * alias Appearance
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Boolean} [options.translucent=true] When <code>true</code>, the geometry is expected to appear translucent so [[Appearance#renderState]] has alpha blending enabled.
@@ -8239,7 +8239,7 @@ package cesium {
     * used, if available.
     *
     * alias ArcGisMapServerImageryProvider
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {String} options.url The URL of the ArcGIS MapServer service.
@@ -8333,7 +8333,7 @@ package cesium {
     * A viewport-aligned image positioned in the 3D scene, that is created
     * and rendered using a [[BillboardCollection]]   A billboard is created and its initial
     * properties are set by calling [[BillboardCollection#add]]
-    * <br /><br />
+    *  
     * <div align='center'>
     * <img src='images/Billboard.png' width='400' height='300' /><br />
     * Example billboards
@@ -8396,18 +8396,18 @@ package cesium {
   /**
     * A renderable collection of billboards.  Billboards are viewport-aligned
     * images positioned in the 3D scene.
-    * <br /><br />
+    *  
     * <div align='center'>
     * <img src='images/Billboard.png' width='400' height='300' /><br />
     * Example billboards
     * </div>
-    * <br /><br />
+    *  
     * Billboards are added and removed from the collection using [[BillboardCollection#add]]
     * and [[BillboardCollection#remove]]   Billboards in a collection automatically share textures
     * for images with the same identifier.
     *
     * alias BillboardCollection
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Matrix4} [options.modelMatrix=Matrix4.IDENTITY] The 4x4 transformation matrix that transforms each billboard from model to world coordinates.
@@ -8468,7 +8468,7 @@ package cesium {
     * Provides tiled imagery using the Bing Maps Imagery REST API.
     *
     * alias BingMapsImageryProvider
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {String} options.url The url of the Bing Maps server hosting the imagery.
@@ -8559,9 +8559,9 @@ package cesium {
 
   /**
     * The camera is defined by a position, orientation, and view frustum.
-    * <br /><br />
+    *  
     * The orientation forms an orthonormal basis with a view, up and right = view x up unit vectors.
-    * <br /><br />
+    *  
     * The viewing frustum is defined by 6 planes.
     * Each plane is represented by a [[Cartesian4]] object, where the x, y, and z components
     * define the unit vector normal to the plane, and the w component is the distance of the
@@ -8569,7 +8569,7 @@ package cesium {
     *
     * alias Camera
     *
-    * constructor
+    * 
     *
     *  - {Scene} scene The scene.
     *
@@ -8718,7 +8718,7 @@ package cesium {
     * one event with a start and end position of the mouse.
     *
     * alias CameraEventAggregator
-    * constructor
+    * 
     *
     *  - {Canvas} [element=document] The element to handle events for.
     *
@@ -8760,7 +8760,7 @@ package cesium {
     *  - {String} [delimiter= ' • '] The string to separate text credits
     *
     * alias CreditDisplay
-    * constructor
+    * 
     *
     * @example
     * var creditDisplay = new Cesium.CreditDisplay(creditContainer);
@@ -8791,7 +8791,7 @@ package cesium {
     * The culling volume defined by planes.
     *
     * alias CullingVolume
-    * constructor
+    * 
     *
     *  - {Cartesian4[]} [planes] An array of clipping planes.
     */
@@ -8820,7 +8820,7 @@ package cesium {
     * </p>
     *
     * alias DebugAppearance
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {String} options.attributeName The name of the attribute to visualize.
@@ -8872,7 +8872,7 @@ package cesium {
     * </p>
     *
     * alias DebugModelMatrixPrimitive
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Number} [options.length=10000000.0] The length of the axes in meters.
@@ -8909,7 +8909,7 @@ package cesium {
     * "missing" image.
     *
     * alias DiscardMissingTileImagePolicy
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {String} options.missingImageUrl The URL of the known missing image.
@@ -8937,7 +8937,7 @@ package cesium {
     * <code>binormal</code>, and <code>tangent</code>.
     *
     * alias EllipsoidSurfaceAppearance
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Boolean} [options.flat=false] When <code>true</code>, flat shading is used in the fragment shader, which means lighting is not taking into account.
@@ -8998,7 +8998,7 @@ package cesium {
     * performance improvements by rendering less geometry and dispatching less terrain requests.
     *
     * alias Fog
-    * constructor
+    * 
     */
   @js.native
   @JSName("Cesium.Fog")
@@ -9015,7 +9015,7 @@ package cesium {
     * instead of constructing an instance explicitly.
     *
     * alias FrameRateMonitor
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Scene} options.scene The Scene instance for which to monitor performance.
@@ -9067,7 +9067,7 @@ package cesium {
     * Describes the format in which to request GetFeatureInfo from a Web Map Service (WMS) server.
     *
     * alias GetFeatureInfoFormat
-    * constructor
+    * 
     *
     *  - {String} type The type of response to expect from a GetFeatureInfo request.  Valid
     * values are 'json', 'xml', 'html', or 'text'.
@@ -9089,7 +9089,7 @@ package cesium {
     * and imagery layers ([[Globe#imageryLayers]]).  Access the globe using [[Scene#globe]]
     *
     * alias Globe
-    * constructor
+    * 
     *
     *  - {Ellipsoid} [ellipsoid=Ellipsoid.WGS84] Determines the size and shape of the
     * globe.
@@ -9136,7 +9136,7 @@ package cesium {
     * '&lt;Directory "/opt/google/gehttpd/htdocs"&gt;' directives.
     *
     * alias GoogleEarthImageryProvider
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {String} options.url The url of the Google Earth server hosting the imagery.
@@ -9224,7 +9224,7 @@ package cesium {
     * May be useful for custom rendering effects or debugging terrain.
     *
     * alias GridImageryProvider
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {TilingScheme} [options.tilingScheme=new GeographicTilingScheme()] The tiling scheme for which to draw tiles.
@@ -9287,7 +9287,7 @@ package cesium {
     * </p>
     *
     * alias GroundPrimitive
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Array|GeometryInstance} [options.geometryInstances] The geometry instances to render.
@@ -9384,7 +9384,7 @@ package cesium {
     * on a [[Globe]]
     *
     * alias ImageryLayer
-    * constructor
+    * 
     *
     *  - {ImageryProvider} imageryProvider The imagery provider to use.
     *  - {Object} [options] Object with the following properties:
@@ -9482,7 +9482,7 @@ package cesium {
     * An ordered collection of imagery layers.
     *
     * alias ImageryLayerCollection
-    * constructor
+    * 
     *
     * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Imagery%20Adjustment.html|Cesium Sandcastle Imagery Adjustment Demo]]
     * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Imagery%20Layers%20Manipulation.html|Cesium Sandcastle Imagery Manipulation Demo]]
@@ -9529,7 +9529,7 @@ package cesium {
     * Describes a rasterized feature, such as a point, polygon, polyline, etc., in an imagery layer.
     *
     * alias ImageryLayerFeatureInfo
-    * constructor
+    * 
     */
   @js.native
   @JSName("Cesium.ImageryLayerFeatureInfo")
@@ -9550,7 +9550,7 @@ package cesium {
     * interface and is not intended to be instantiated directly.
     *
     * alias ImageryProvider
-    * constructor
+    * 
     *
     * @see ArcGisMapServerImageryProvider
     * @see SingleTileImageryProvider
@@ -9646,17 +9646,17 @@ package cesium {
   /**
     * A renderable collection of labels.  Labels are viewport-aligned text positioned in the 3D scene.
     * Each label can have a different font, color, scale, etc.
-    * <br /><br />
+    *  
     * <div align='center'>
     * <img src='images/Label.png' width='400' height='300' /><br />
     * Example labels
     * </div>
-    * <br /><br />
+    *  
     * Labels are added and removed from the collection using [[LabelCollection#add]]
     * and [[LabelCollection#remove]]
     *
     * alias LabelCollection
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Matrix4} [options.modelMatrix=Matrix4.IDENTITY] The 4x4 transformation matrix that transforms each label from model to world coordinates.
@@ -9714,7 +9714,7 @@ package cesium {
     * Provides tiled imagery hosted by Mapbox.
     *
     * alias MapboxImageryProvider
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {String} [options.url='https://api.mapbox.com/v4/'] The Mapbox server url.
@@ -9772,7 +9772,7 @@ package cesium {
     * JSON schema called Fabric which gets parsed and assembled into glsl shader code
     * behind-the-scenes. Check out the [[https://github.com/AnalyticalGraphicsInc/cesium/wiki/Fabric|wiki page]]
     * for more details on Fabric.
-    * <br /><br />
+    *  
     * <style type="text/css">
     * #materialDescriptions code {
     * font-weight: normal;
@@ -9928,7 +9928,7 @@ package cesium {
     * with this material is expected to appear translucent.
     *  - {Object} options.fabric The fabric JSON used to generate the material.
     *
-    * constructor
+    * 
     *
     * exception {DeveloperError} fabric: uniform has invalid type.
     * exception {DeveloperError} fabric: uniforms and materials cannot share the same property.
@@ -10010,7 +10010,7 @@ package cesium {
     * that supports shading with materials.
     *
     * alias MaterialAppearance
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Boolean} [options.flat=false] When <code>true</code>, flat shading is used in the fragment shader, which means lighting is not taking into account.
@@ -10091,7 +10091,7 @@ package cesium {
     * </p>
     *
     * alias Model
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Object|ArrayBuffer|Uint8Array} [options.gltf] The object for the glTF JSON or an arraybuffer of Binary glTF defined by the KHR_binary_glTF extension.
@@ -10285,7 +10285,7 @@ package cesium {
   /**
     * Draws the Moon in 3D.
     * alias Moon
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Boolean} [options.show=true] Determines whether the moon will be rendered.
@@ -10316,7 +10316,7 @@ package cesium {
     * A [[TileDiscardPolicy]] specifying that tile images should never be discard.
     *
     * alias NeverTileDiscardPolicy
-    * constructor
+    * 
     *
     * @see DiscardMissingTileImagePolicy
     */
@@ -10335,7 +10335,7 @@ package cesium {
     * plane from the origin/camera position.
     *
     * alias OrthographicFrustum
-    * constructor
+    * 
     *
     * @example
     * var maxRadii = ellipsoid.maximumRadius;
@@ -10374,7 +10374,7 @@ package cesium {
     * be drawn with the same [[Primitive]] as shown in the second example below.
     *
     * alias PerInstanceColorAppearance
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Boolean} [options.flat=false] When <code>true</code>, flat shading is used in the fragment shader, which means lighting is not taking into account.
@@ -10465,7 +10465,7 @@ package cesium {
     * plane from the origin/camera position.
     *
     * alias PerspectiveFrustum
-    * constructor
+    * 
     *
     * @example
     * var frustum = new Cesium.PerspectiveFrustum();
@@ -10504,7 +10504,7 @@ package cesium {
     * plane from the origin/camera position.
     *
     * alias PerspectiveOffCenterFrustum
-    * constructor
+    * 
     *
     * @example
     * var frustum = new Cesium.PerspectiveOffCenterFrustum();
@@ -10581,12 +10581,12 @@ package cesium {
 
   /**
     * A renderable collection of points.
-    * <br /><br />
+    *  
     * Points are added and removed from the collection using [[PointPrimitiveCollection#add]]
     * and [[PointPrimitiveCollection#remove]]
     *
     * alias PointPrimitiveCollection
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Matrix4} [options.modelMatrix=Matrix4.IDENTITY] The 4x4 transformation matrix that transforms each point from model to world coordinates.
@@ -10669,17 +10669,17 @@ package cesium {
 
   /**
     * A renderable collection of polylines.
-    * <br /><br />
+    *  
     * <div align="center">
     * <img src="images/Polyline.png" width="400" height="300" /><br />
     * Example polylines
     * </div>
-    * <br /><br />
+    *  
     * Polylines are added and removed from the collection using [[PolylineCollection#add]]
     * and [[PolylineCollection#remove]]
     *
     * alias PolylineCollection
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Matrix4} [options.modelMatrix=Matrix4.IDENTITY] The 4x4 transformation matrix that transforms each polyline from model to world coordinates.
@@ -10746,7 +10746,7 @@ package cesium {
     * be drawn with the same [[Primitive]]
     *
     * alias PolylineColorAppearance
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Boolean} [options.translucent=true] When <code>true</code>, the geometry is expected to appear translucent so [[PolylineColorAppearance#renderState]] has alpha blending enabled.
@@ -10805,7 +10805,7 @@ package cesium {
     * An appearance for [[PolylineGeometry]] that supports shading with materials.
     *
     * alias PolylineMaterialAppearance
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Boolean} [options.translucent=true] When <code>true</code>, the geometry is expected to appear translucent so [[PolylineMaterialAppearance#renderState]] has alpha blending enabled.
@@ -10880,7 +10880,7 @@ package cesium {
     * </p>
     *
     * alias Primitive
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {GeometryInstance[]|GeometryInstance} [options.geometryInstances] The geometry instances - or a single geometry instance - to render.
@@ -10997,7 +10997,7 @@ package cesium {
     * be added to collections forming a hierarchy.
     *
     * alias PrimitiveCollection
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Boolean} [options.show=true] Determines if the primitives in the collection will be shown.
@@ -11086,7 +11086,7 @@ package cesium {
     * </p>
     *
     * alias Scene
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Canvas} options.canvas The HTML canvas element to create the scene for.
@@ -11183,7 +11183,7 @@ package cesium {
   /**
     * Modifies the camera position and orientation based on mouse input to a canvas.
     * alias ScreenSpaceCameraController
-    * constructor
+    * 
     *
     *  - {Scene} scene The scene.
     */
@@ -11225,7 +11225,7 @@ package cesium {
     * [[GeographicTilingScheme]]
     *
     * alias SingleTileImageryProvider
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {String} options.url The url for the tile.
@@ -11279,7 +11279,7 @@ package cesium {
     * </p>
     *
     * alias SkyAtmosphere
-    * constructor
+    * 
     *
     *  - {Ellipsoid} [ellipsoid=Ellipsoid.WGS84] The ellipsoid that the atmosphere is drawn around.
     *
@@ -11308,7 +11308,7 @@ package cesium {
     * </p>
     *
     * alias SkyBox
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Object} [options.sources] The source URL or <code>Image</code> object for each of the six cube map faces.  See the example below.
@@ -11348,7 +11348,7 @@ package cesium {
     * <p>This is only supported in 3D and Columbus view.</p>
     *
     * alias Sun
-    * constructor
+    * 
     *
     * @example
     * scene.sun = new Cesium.Sun();
@@ -11371,7 +11371,7 @@ package cesium {
     * debugging terrain and imagery rendering problems.
     *
     * alias TileCoordinatesImageryProvider
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {TilingScheme} [options.tilingScheme=new GeographicTilingScheme()] The tiling scheme for which to draw tiles.
@@ -11413,7 +11413,7 @@ package cesium {
     * interface and is not intended to be instantiated directly.
     *
     * alias TileDiscardPolicy
-    * constructor
+    * 
     *
     * @see DiscardMissingTileImagePolicy
     * @see NeverTileDiscardPolicy
@@ -11430,7 +11430,7 @@ package cesium {
     * Provides imagery by requesting tiles using a specified URL template.
     *
     * alias UrlTemplateImageryProvider
-    * constructor
+    * 
     *
     *  - {Promise.<Object>|Object} [options] Object with the following properties:
     *  - {String} options.url  The URL template to use to request tiles.  It has the following keywords:
@@ -11570,7 +11570,7 @@ package cesium {
     * A viewport aligned quad.
     *
     * alias ViewportQuad
-    * constructor
+    * 
     *
     *  - {BoundingRectangle} [rectangle] The [[BoundingRectangle]] defining the quad's position within the viewport.
     *  - {Material} [material] The [[Material]] defining the surface appearance of the viewport quad.
@@ -11599,7 +11599,7 @@ package cesium {
     * Provides tiled imagery hosted by a Web Map Service (WMS) server.
     *
     * alias WebMapServiceImageryProvider
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {String} options.url The URL of the WMS service. The URL supports the same keywords as the [[UrlTemplateImageryProvider]]
@@ -11694,7 +11694,7 @@ package cesium {
     * This provider supports HTTP KVP-encoded and RESTful GetTile requests, but does not yet support the SOAP encoding.
     *
     * alias WebMapTileServiceImageryProvider
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {String} options.url The base URL for the WMTS GetTile operation (for KVP-encoded requests) or the tile-URL template (for RESTful requests). The tile-URL template should contain the following variables: &#123;style&#125;, &#123;TileMatrixSet&#125;, &#123;TileMatrix&#125;, &#123;TileRow&#125;, &#123;TileCol&#125;. The first two are optional if actual values are hardcoded or not required by the server. The &#123;s&#125; keyword may be used to specify subdomains.
@@ -11784,10 +11784,10 @@ package cesium {
     * <img src="images/AnimationWidget.png" width="211" height="142" alt="" />
     * <br />Animation widget
     *
-    * <br /><br />
+    *  
     * The Animation widget provides buttons for play, pause, and reverse, along with the
     * current time and date, surrounded by a "shuttle ring" for controlling the speed of animation.
-    * <br /><br />
+    *  
     * The "shuttle ring" concept is borrowed from video editing, where typically a
     * "jog wheel" can be rotated to move past individual animation frames very slowly, and
     * a surrounding shuttle ring can be twisted to control direction and speed of fast playback.
@@ -11795,14 +11795,14 @@ package cesium {
     * so this widget offers no jog wheel.  Instead, the shuttle ring is capable of both fast and
     * very slow playback.  Click and drag the shuttle ring pointer itself (shown above in green),
     * or click in the rest of the ring area to nudge the pointer to the next preset speed in that direction.
-    * <br /><br />
+    *  
     * The Animation widget also provides a "realtime" button (in the upper-left) that keeps
     * animation time in sync with the end user's system clock, typically displaying
     * "today" or "right now."  This mode is not available in [[ClockRange.CLAMPED]] or
     * [[ClockRange.LOOP_STOP]] mode if the current time is outside of createCommand Clock's startTime and endTime.
     *
     * alias Animation
-    * constructor
+    * 
     *
     *  - {Element|String} container The DOM element or ID that will contain the widget.
     *  - {AnimationViewModel} viewModel The view model used by this widget.
@@ -11846,7 +11846,7 @@ package cesium {
   /**
     * The view model for the [[Animation]] widget.
     * alias AnimationViewModel
-    * constructor
+    * 
     *
     *  - {ClockViewModel} clockViewModel The ClockViewModel instance to use.
     *
@@ -11987,7 +11987,7 @@ package cesium {
   /**
     * The view model for [[BaseLayerPicker]]
     * alias BaseLayerPickerViewModel
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Globe} options.globe The Globe to use.
@@ -12025,7 +12025,7 @@ package cesium {
     * A view model that represents each item in the [[BaseLayerPicker]]
     *
     * alias ProviderViewModel
-    * constructor
+    * 
     *
     *  - {Object} options The object containing all parameters.
     *  - {String} options.name The name of the layer.
@@ -12053,7 +12053,7 @@ package cesium {
     * Inspector widget to aid in debugging
     *
     * alias CesiumInspector
-    * constructor
+    * 
     *
     *  - {Element|String} container The DOM element or ID that will contain the widget.
     *  - {Scene} scene The Scene instance to use.
@@ -12079,7 +12079,7 @@ package cesium {
   /**
     * The view model for [[CesiumInspector]]
     * alias CesiumInspectorViewModel
-    * constructor
+    * 
     *
     *  - {Scene} scene The scene instance to use.
     *
@@ -12157,7 +12157,7 @@ package cesium {
     * A widget containing a Cesium scene.
     *
     * alias CesiumWidget
-    * constructor
+    * 
     *
     *  - {Element|String} container The DOM element or ID that will contain the widget.
     *  - {Object} [options] Object with the following properties:
@@ -12244,7 +12244,7 @@ package cesium {
   /**
     * A view model which exposes a  Clock for user interfaces.
     * alias ClockViewModel
-    * constructor
+    * 
     *
     *  - {Clock} [clock] The clock object wrapped by this view model, if undefined a new instance will be created.
     *
@@ -12282,7 +12282,7 @@ package cesium {
     * See createCommand to create a command from a function.
     *
     * alias Command
-    * constructor
+    * 
     */
   @js.native
   @JSName("Cesium.Command")
@@ -12296,7 +12296,7 @@ package cesium {
     * A single button widget for toggling fullscreen mode.
     *
     * alias FullscreenButton
-    * constructor
+    * 
     *
     *  - {Element|String} container The DOM element or ID that will contain the widget.
     *  - {Element|String} [fullscreenElement=document.body] The element or id to be placed into fullscreen mode.
@@ -12321,7 +12321,7 @@ package cesium {
   /**
     * The view model for [[FullscreenButton]]
     * alias FullscreenButtonViewModel
-    * constructor
+    * 
     *
     *  - {Element|String} [fullscreenElement=document.body] The element or id to be placed into fullscreen mode.
     */
@@ -12346,7 +12346,7 @@ package cesium {
     * performed using the [[http://msdn.microsoft.com/en-us/library/ff701715.aspx|Bing Maps Locations API]]
     *
     * alias Geocoder
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Element|String} options.container The DOM element or ID that will contain the widget.
@@ -12377,7 +12377,7 @@ package cesium {
   /**
     * The view model for the [[Geocoder]] widget.
     * alias GeocoderViewModel
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Scene} options.scene The Scene instance to use.
@@ -12410,7 +12410,7 @@ package cesium {
     * A single button widget for returning to the default camera view of the current scene.
     *
     * alias HomeButton
-    * constructor
+    * 
     *
     *  - {Element|String} container The DOM element or ID that will contain the widget.
     *  - {Scene} scene The Scene instance to use.
@@ -12432,7 +12432,7 @@ package cesium {
   /**
     * The view model for [[HomeButton]]
     * alias HomeButtonViewModel
-    * constructor
+    * 
     *
     *  - {Scene} scene The scene instance to use.
     *  - {Number} [duration] The duration of the camera flight in seconds.
@@ -12452,7 +12452,7 @@ package cesium {
     * A widget for displaying information or a description.
     *
     * alias InfoBox
-    * constructor
+    * 
     *
     *  - {Element|String} container The DOM element or ID that will contain the widget.
     *
@@ -12475,7 +12475,7 @@ package cesium {
   /**
     * The view model for [[InfoBox]]
     * alias InfoBoxViewModel
-    * constructor
+    * 
     */
   @js.native
   @JSName("Cesium.InfoBoxViewModel")
@@ -12498,7 +12498,7 @@ package cesium {
     * navigating the globe with the mouse.</p><p style="clear: both;"></p><br/>
     *
     * alias NavigationHelpButton
-    * constructor
+    * 
     *
     *  - {Object} options Object with the following properties:
     *  - {Element|String} options.container The DOM element or ID that will contain the widget.
@@ -12530,7 +12530,7 @@ package cesium {
   /**
     * The view model for [[NavigationHelpButton]]
     * alias NavigationHelpButtonViewModel
-    * constructor
+    * 
     */
   @js.native
   @JSName("Cesium.NavigationHelpButtonViewModel")
@@ -12546,7 +12546,7 @@ package cesium {
     * Monitors performance of the application and displays a message if poor performance is detected.
     *
     * alias PerformanceWatchdog
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Element|String} options.container The DOM element or ID that will contain the widget.
@@ -12572,7 +12572,7 @@ package cesium {
     * The view model for [[PerformanceWatchdog]]
     *
     * alias PerformanceWatchdogViewModel
-    * constructor
+    * 
     *
     *  - {Object} [options] Object with the following properties:
     *  - {Scene} options.scene The Scene instance for which to monitor performance.
@@ -12600,7 +12600,7 @@ package cesium {
     * is used to perform the change.</p><p style="clear: both;"></p><br/>
     *
     * alias SceneModePicker
-    * constructor
+    * 
     *
     *  - {Element|String} container The DOM element or ID that will contain the widget.
     *  - {Scene} scene The Scene instance to use.
@@ -12631,7 +12631,7 @@ package cesium {
   /**
     * The view model for [[SceneModePicker]]
     * alias SceneModePickerViewModel
-    * constructor
+    * 
     *
     *  - {Scene} scene The Scene to morph
     *  - {Number} [duration=2.0] The duration of scene morph animations, in seconds
@@ -12663,7 +12663,7 @@ package cesium {
     * A widget for displaying an indicator on a selected object.
     *
     * alias SelectionIndicator
-    * constructor
+    * 
     *
     *  - {Element|String} container The DOM element or ID that will contain the widget.
     *  - {Scene} scene The Scene instance to use.
@@ -12692,7 +12692,7 @@ package cesium {
   /**
     * The view model for [[SelectionIndicator]]
     * alias SelectionIndicatorViewModel
-    * constructor
+    * 
     *
     *  - {Scene} scene The scene instance to use for screen-space coordinate conversion.
     *  - {Element} selectionIndicatorElement The element containing all elements that make up the selection indicator.
@@ -12721,7 +12721,7 @@ package cesium {
   /**
     * The Timeline is a widget for displaying and controlling the current scene time.
     * alias Timeline
-    * constructor
+    * 
     *
     *  - {Element} container The parent HTML container node for this widget.
     *  - {Clock} clock The clock to use.
@@ -12745,7 +12745,7 @@ package cesium {
   /**
     * A view model which exposes the properties of a toggle button.
     * alias ToggleButtonViewModel
-    * constructor
+    * 
     *
     *  - {Command} command The command which will be executed when the button is toggled.
     *  - {Object} [options] Object with the following properties:
@@ -12766,7 +12766,7 @@ package cesium {
     * A single button widget for toggling vr mode.
     *
     * alias VRButton
-    * constructor
+    * 
     *
     *  - {Element|String} container The DOM element or ID that will contain the widget.
     *  - {Scene} scene The scene.
@@ -12790,7 +12790,7 @@ package cesium {
   /**
     * The view model for [[VRButton]]
     * alias VRButtonViewModel
-    * constructor
+    * 
     *
     *  - {Scene} scene The scene.
     *  - {Element|String} [vrElement=document.body] The element or id to be placed into VR mode.
@@ -12822,7 +12822,7 @@ package cesium {
     * The widget can always be extended by using mixins, which add functionality useful for a variety of applications.
     *
     * alias Viewer
-    * constructor
+    * 
     *
     *  - {Element|String} container The DOM element or ID that will contain the widget.
     *  - {Object} [options] Object with the following properties:
