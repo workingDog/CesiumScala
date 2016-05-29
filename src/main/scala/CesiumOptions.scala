@@ -1995,6 +1995,40 @@ package cesiumOptions {
     def debugWireframe(v: Boolean) = jsOpt("debugWireframe", v)
   }
 
+  @JSName("Cesium.Options")
+  @js.native
+  trait ModelFromGltfOptions extends js.Object
+
+  object ModelFromGltfOptions extends ModelFromGltfOptionsBuilder(noOpts)
+
+  class ModelFromGltfOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ModelFromGltfOptions, ModelFromGltfOptionsBuilder](new ModelFromGltfOptionsBuilder(_)) {
+    def url(v: String) = jsOpt("url", v)
+
+    def headers(v: Object) = jsOpt("headers", v)
+
+    def show(v: Boolean) = jsOpt("show", v)
+
+    def modelMatrix(v: Matrix4) = jsOpt("modelMatrix", v)
+
+    def scale(v: Double) = jsOpt("scale", v)
+
+    def minimumPixelSize(v: Double) = jsOpt("minimumPixelSize", v)
+
+    def maximumScale(v: Double) = jsOpt("maximumScale", v)
+
+    def id(v: Object) = jsOpt("id", v)
+
+    def allowPicking(v: Boolean) = jsOpt("allowPicking", v)
+
+    def incrementallyLoadTextures(v: Boolean) = jsOpt("incrementallyLoadTextures", v)
+
+    def asynchronous(v: Boolean) = jsOpt("asynchronous", v)
+
+    def debugShowBoundingVolume(v: Boolean) = jsOpt("debugShowBoundingVolume", v)
+
+    def debugWireframe(v: Boolean) = jsOpt("debugWireframe", v)
+  }
+
 
   @JSName("Cesium.Options")
   @js.native
@@ -2780,15 +2814,32 @@ package cesiumOptions {
     def offset(v: HeadingPitchRange) = jsOpt("offset", v)
   }
 
+  @JSName("Cesium.Options")
+  @js.native
+  trait ImageryLayerOptions extends js.Object
+
+  object ImageryLayerOptions extends ImageryLayerOptionsBuilder(noOpts)
+
+  class ImageryLayerOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ImageryLayerOptions, ImageryLayerOptionsBuilder](new ImageryLayerOptionsBuilder(_)) {
+    def rectangle(v: Rectangle) = jsOpt("rectangle", v)
+    def alpha(v: Double | Function) = jsOpt("alpha", v)
+    def brightness(v: Double | Function) = jsOpt("brightness", v)
+    def contrast(v: Double | Function) = jsOpt("contrast", v)
+    def hue(v: Double | Function) = jsOpt("hue", v)
+    def saturation(v: Double | Function) = jsOpt("saturation", v)
+    def gamma(v: Double | Function) = jsOpt("gamma", v)
+    def show(v: Boolean) = jsOpt("show", v)
+    def maximumAnisotropy(v: Double) = jsOpt("maximumAnisotropy", v)
+    def minimumTerrainLevel(v: Double) = jsOpt("minimumTerrainLevel", v)
+    def maximumTerrainLevel(v: Double) = jsOpt("maximumTerrainLevel", v)
+  }
+
   // todo
-  // ImageryLayer
   // LabelCollection
-  // Model
   // ModelAnimationCollection
   // BaseLayerPicker
   // CesiumWidget
   // ToggleButtonViewModel
   // VertexFormat
-  //
 
 }

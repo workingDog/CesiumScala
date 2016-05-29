@@ -9446,7 +9446,7 @@ package cesium {
   @js.native
   @JSName("Cesium.ImageryLayer")
   class ImageryLayer protected() extends js.Object {
-    def this(imageryProvider: ImageryProvider, options: js.Any = ???) = this()
+    def this(imageryProvider: ImageryProvider, options: ImageryLayerOptions = ???) = this()
 
     var alpha: Double = js.native
     var brightness: Double = js.native
@@ -10154,7 +10154,7 @@ package cesium {
   @js.native
   @JSName("Cesium.Model")
   object Model extends js.Object {
-    def fromGltf(options: js.Any): Model = js.native
+    def fromGltf(options: ModelFromGltfOptions): Model = js.native
   }
 
   /**
