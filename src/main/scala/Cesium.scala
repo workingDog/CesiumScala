@@ -12920,7 +12920,7 @@ package cesium {
   @js.native
   @JSName("Cesium.Viewer")
   class Viewer protected() extends js.Object {
-    def this(container: Element | String, options: js.Any = ???) = this()
+    def this(container: Element | String, options: ViewerOptions = ???) = this()
 
     var container: Element = js.native
     var bottomContainer: Element = js.native
@@ -12968,7 +12968,7 @@ package cesium {
 
     def zoomTo(target: Entity | js.Array[Entity] | EntityCollection | DataSource | ImageryLayer | Promise[Entity | js.Array[Entity] | EntityCollection | DataSource | ImageryLayer], offset: HeadingPitchRange = ???): Promise[Boolean] = js.native
 
-    def flyTo(target: Entity | js.Array[Entity] | EntityCollection | DataSource | ImageryLayer | Promise[Entity | js.Array[Entity] | EntityCollection | DataSource | ImageryLayer], options: js.Any = ???): Promise[Boolean] = js.native
+    def flyTo(target: Entity | js.Array[Entity] | EntityCollection | DataSource | ImageryLayer | Promise[Entity | js.Array[Entity] | EntityCollection | DataSource | ImageryLayer], options: ViewerFlyToOptions = ???): Promise[Boolean] = js.native
   }
 
   @JSName("Cesium.binarySearch")

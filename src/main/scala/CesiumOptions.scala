@@ -2706,7 +2706,6 @@ package cesiumOptions {
     def duration(v: Double) = jsOpt("duration", v)
     def endTransform(v: Matrix4) = jsOpt("endTransform", v)
   }
-  //  flyToBoundingSphere
 
   @JSName("Cesium.Options")
   @js.native
@@ -2725,6 +2724,62 @@ package cesiumOptions {
     //  def easingFunction(v:	EasingFunction | EasingFunction.Callback) = jsOpt("easingFunction", v)
   }
 
+  @JSName("Cesium.Options")
+  @js.native
+  trait ViewerOptions extends js.Object
+
+  object ViewerOptions extends ViewerOptionsBuilder(noOpts)
+
+  class ViewerOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ViewerOptions, ViewerOptionsBuilder](new ViewerOptionsBuilder(_)) {
+    def animation(v: Boolean) = jsOpt("animation", v)
+    def baseLayerPicker(v: Boolean) = jsOpt("baseLayerPicker", v)
+    def fullscreenButton(v: Boolean) = jsOpt("fullscreenButton", v)
+    def vrButton(v: Boolean) = jsOpt("vrButton", v)
+    def geocoder(v: Boolean) = jsOpt("geocoder", v)
+    def homeButton(v: Boolean) = jsOpt("homeButton", v)
+    def infoBox(v: Boolean) = jsOpt("infoBox", v)
+    def sceneModePicker(v: Boolean) = jsOpt("sceneModePicker", v)
+    def selectionIndicator(v: Boolean) = jsOpt("selectionIndicator", v)
+    def timeline(v: Boolean) = jsOpt("timeline", v)
+    def navigationHelpButton(v: Boolean) = jsOpt("navigationHelpButton", v)
+    def navigationInstructionsInitiallyVisible(v: Boolean) = jsOpt("navigationInstructionsInitiallyVisible", v)
+    def scene3DOnly(v: Boolean) = jsOpt("scene3DOnly", v)
+    def clock(v: Clock) = jsOpt("clock", v)
+    def selectedImageryProviderViewModel(v: ProviderViewModel) = jsOpt("selectedImageryProviderViewModel", v)
+    def imageryProviderViewModels(v: Array[ProviderViewModel]) = jsOpt("imageryProviderViewModels", v)
+    def selectedTerrainProviderViewModel(v: ProviderViewModel) = jsOpt("selectedTerrainProviderViewModel", v)
+    def terrainProviderViewModels(v: Array[ProviderViewModel]) = jsOpt("terrainProviderViewModels", v)
+    def imageryProvider(v: ImageryProvider) = jsOpt("imageryProvider", v)
+    def terrainProvider(v: TerrainProvider) = jsOpt("terrainProvider", v)
+    def skyBox(v: SkyBox) = jsOpt("skyBox", v)
+    def skyAtmosphere(v: SkyAtmosphere) = jsOpt("skyAtmosphere", v)
+    def fullscreenElement(v: Element | String) = jsOpt("fullscreenElement", v)
+    def useDefaultRenderLoop(v: Boolean) = jsOpt("useDefaultRenderLoop", v)
+    def targetFrameRate(v: Int) = jsOpt("targetFrameRate", v)
+    def showRenderLoopErrors(v: Boolean) = jsOpt("showRenderLoopErrors", v)
+    def automaticallyTrackDataSourceClocks(v: Boolean) = jsOpt("automaticallyTrackDataSourceClocks", v)
+    def contextOptions(v: Object) = jsOpt("contextOptions", v)
+    def sceneMode(v: SceneMode) = jsOpt("sceneMode", v)
+    def mapProjection(v: MapProjection) = jsOpt("mapProjection", v)
+    def globe(v: Globe) = jsOpt("globe", v)
+    def orderIndependentTranslucency(v: Boolean) = jsOpt("orderIndependentTranslucency", v)
+    def creditContainer(v: 	Element | String) = jsOpt("creditContainer", v)
+    def dataSources(v: 	DataSourceCollection) = jsOpt("dataSources", v)
+    def terrainExaggeration(v: Double) = jsOpt("terrainExaggeration", v)
+  }
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait ViewerFlyToOptions extends js.Object
+
+  object ViewerFlyToOptions extends ViewerFlyToOptionsBuilder(noOpts)
+
+  class ViewerFlyToOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ViewerFlyToOptions, ViewerFlyToOptionsBuilder](new ViewerFlyToOptionsBuilder(_)) {
+    def duration(v: Double) = jsOpt("duration", v)
+    def maximumHeight(v: Double) = jsOpt("maximumHeight", v)
+    def offset(v: HeadingPitchRange) = jsOpt("offset", v)
+  }
+
   // todo
   // ImageryLayer
   // LabelCollection
@@ -2733,7 +2788,6 @@ package cesiumOptions {
   // BaseLayerPicker
   // CesiumWidget
   // ToggleButtonViewModel
-  // Viewer
   // VertexFormat
   //
 
