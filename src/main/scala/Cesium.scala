@@ -97,13 +97,12 @@ package cesium {
   @JSName("Cesium.Intersect")
   @js.native
   object Intersect extends js.Object {
-    val INSIDE: Int = js.native
     // 1
-    val INTERSECTING: Int = js.native
+    val INSIDE: Int = js.native
     // 0
-    val OUTSIDE: Int = js.native
-
+    val INTERSECTING: Int = js.native
     // -1
+    val OUTSIDE: Int = js.native
     @JSBracketAccess
     def apply(value: Intersect): Int = js.native
   }
@@ -114,13 +113,13 @@ package cesium {
   @JSName("Cesium.ClockStep")
   @js.native
   object ClockStep extends js.Object {
-    val SYSTEM_CLOCK: Int = js.native
     // 2
-    val SYSTEM_CLOCK_MULTIPLIER: Int = js.native
+    val SYSTEM_CLOCK: Int = js.native
     // 1
+    val SYSTEM_CLOCK_MULTIPLIER: Int = js.native
+    // 0
     val TICK_DEPENDENT: Int = js.native
 
-    // 0
     @JSBracketAccess
     def apply(value: ClockStep): Int = js.native
   }
@@ -131,13 +130,13 @@ package cesium {
   @JSName("Cesium.ClockRange")
   @js.native
   object ClockRange extends js.Object {
-    val CLAMPED: Int = js.native
     // 1
-    val LOOP_STOP: Int = js.native
+    val CLAMPED: Int = js.native
     // 2
+    val LOOP_STOP: Int = js.native
+    // 0
     val UNBOUNDED: Int = js.native
 
-    // 0
     @JSBracketAccess
     def apply(value: ClockRange): Int = js.native
   }
@@ -196,11 +195,11 @@ package cesium {
   @JSName("Cesium.TimeStandard")
   @js.native
   object TimeStandard extends js.Object {
-    val UTC: Int = js.native
     // 0
+    val UTC: Int = js.native
+    // 1
     val TAI: Int = js.native
 
-    // 1
     @JSBracketAccess
     def apply(value: TimeStandard): Int = js.native
   }
@@ -211,11 +210,11 @@ package cesium {
   @JSName("Cesium.ReferenceFrame")
   @js.native
   object ReferenceFrame extends js.Object {
-    val FIXED: Int = js.native
     // 0
+    val FIXED: Int = js.native
+    // 1
     val INERTIAL: Int = js.native
 
-    // 1
     @JSBracketAccess
     def apply(value: ReferenceFrame): Int = js.native
   }
@@ -241,9 +240,7 @@ package cesium {
   @JSName("Cesium.InterpolationAlgorithm")
   @js.native
   object InterpolationAlgorithm extends js.Object {
-    val `type`: String = js.native
-    val HOLD: Int = js.native
-    val NONE: Int = js.native
+    var `type`: String = js.native
 
     def apply(value: InterpolationAlgorithm): Int = js.native
 
@@ -265,7 +262,7 @@ package cesium {
   @JSName("Cesium.Packable")
   @js.native
   object Packable extends js.Object {
-    val packedLength: Int = js.native
+    var packedLength: Int = js.native
 
     def pack(value: js.Object, array: Array[Int], startingIndex: Int): Unit = js.native
 
@@ -432,7 +429,6 @@ package cesium {
   object BingMapsApi extends js.Object {
     var defaultKey : String = js.native
     def getKey(): String = js.native
-    def setKey(key: String): Unit = defaultKey = key
   }
 
   // -------------------------------------------------------------------------------------
