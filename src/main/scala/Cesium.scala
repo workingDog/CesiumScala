@@ -446,17 +446,17 @@ package cesium {
     * alias ArcGisImageServerTerrainProvider
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {String} options.url The URL of the ArcGIS ImageServer service.
-    * - {String} [options.token] The authorization token to use to connect to the service.
-    * - {Object} [options.proxy] A proxy to use for requests. This object is expected to have a getURL function which returns the proxied URL, if needed.
-    * - {TilingScheme} [options.tilingScheme] The tiling scheme specifying how the terrain
+    *   - {Object} options Object with the following properties:
+    *   - {String} options.url The URL of the ArcGIS ImageServer service.
+    *   - {String} [options.token] The authorization token to use to connect to the service.
+    *   - {Object} [options.proxy] A proxy to use for requests. This object is expected to have a getURL function which returns the proxied URL, if needed.
+    *   - {TilingScheme} [options.tilingScheme] The tiling scheme specifying how the terrain
     * is broken into tiles.  If this parameter is not provided, a [[GeographicTilingScheme]]
     * is used.
-    * - {Ellipsoid} [options.ellipsoid] The ellipsoid.  If the tilingScheme is specified,
+    *   - {Ellipsoid} [options.ellipsoid] The ellipsoid.  If the tilingScheme is specified,
     * this parameter is ignored and the tiling scheme's ellipsoid is used instead.
     * If neither parameter is specified, the WGS84 ellipsoid is used.
-    * - {Credit|String} [options.credit] The credit, which will is displayed on the canvas.
+    *   - {Credit|String} [options.credit] The credit, which will is displayed on the canvas.
     *
     * @example
     * var terrainProvider = new Cesium.ArcGisImageServerTerrainProvider({
@@ -515,9 +515,9 @@ package cesium {
     * alias AxisAlignedBoundingBox
     * constructor
     *
-    * - {Cartesian3} [minimum=Cartesian3.ZERO] The minimum point along the x, y, and z axes.
-    * - {Cartesian3} [maximum=Cartesian3.ZERO] The maximum point along the x, y, and z axes.
-    * - {Cartesian3} [center] The center of the box; automatically computed if not supplied.
+    *   - {Cartesian3} [minimum=Cartesian3.ZERO] The minimum point along the x, y, and z axes.
+    *   - {Cartesian3} [maximum=Cartesian3.ZERO] The maximum point along the x, y, and z axes.
+    *   - {Cartesian3} [center] The center of the box; automatically computed if not supplied.
     *
     * @see BoundingSphere
     * @see BoundingRectangle
@@ -555,10 +555,10 @@ package cesium {
     * alias BoundingRectangle
     * constructor
     *
-    * - {Number} [x=0.0] The x coordinate of the rectangle.
-    * - {Number} [y=0.0] The y coordinate of the rectangle.
-    * - {Number} [width=0.0] The width of the rectangle.
-    * - {Number} [height=0.0] The height of the rectangle.
+    *   - {Number} [x=0.0] The x coordinate of the rectangle.
+    *   - {Number} [y=0.0] The y coordinate of the rectangle.
+    *   - {Number} [width=0.0] The width of the rectangle.
+    *   - {Number} [height=0.0] The height of the rectangle.
     *
     * @see BoundingSphere
     */
@@ -602,8 +602,8 @@ package cesium {
     * alias BoundingSphere
     * constructor
     *
-    * - {Cartesian3} [center=Cartesian3.ZERO] The center of the bounding sphere.
-    * - {Number} [radius=0.0] The radius of the bounding sphere.
+    *   - {Cartesian3} [center=Cartesian3.ZERO] The center of the bounding sphere.
+    *   - {Number} [radius=0.0] The radius of the bounding sphere.
     *
     * @see AxisAlignedBoundingBox
     * @see BoundingRectangle
@@ -688,10 +688,10 @@ package cesium {
     * alias BoxGeometry
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Cartesian3} options.minimum The minimum x, y, and z coordinates of the box.
-    * - {Cartesian3} options.maximum The maximum x, y, and z coordinates of the box.
-    * - {VertexFormat} [options.vertexFormat=VertexFormat.DEFAULT] The vertex attributes to be computed.
+    *   - {Object} options Object with the following properties:
+    *   - {Cartesian3} options.minimum The minimum x, y, and z coordinates of the box.
+    *   - {Cartesian3} options.maximum The maximum x, y, and z coordinates of the box.
+    *   - {VertexFormat} [options.vertexFormat=VertexFormat.DEFAULT] The vertex attributes to be computed.
     *
     * @see BoxGeometry.fromDimensions
     * @see BoxGeometry.createGeometry
@@ -734,9 +734,9 @@ package cesium {
     * alias BoxOutlineGeometry
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Cartesian3} options.minimum The minimum x, y, and z coordinates of the box.
-    * - {Cartesian3} options.maximum The maximum x, y, and z coordinates of the box.
+    *   - {Object} options Object with the following properties:
+    *   - {Cartesian3} options.minimum The minimum x, y, and z coordinates of the box.
+    *   - {Cartesian3} options.maximum The maximum x, y, and z coordinates of the box.
     *
     * @see BoxOutlineGeometry.fromDimensions
     * @see BoxOutlineGeometry.createGeometry
@@ -775,8 +775,8 @@ package cesium {
     * alias Cartesian2
     * constructor
     *
-    * - {Number} [x=0.0] The X component.
-    * - {Number} [y=0.0] The Y component.
+    *   - {Number} [x=0.0] The X component.
+    *   - {Number} [y=0.0] The Y component.
     *
     * @see Cartesian3
     * @see Cartesian4
@@ -871,9 +871,9 @@ package cesium {
     * alias Cartesian3
     * constructor
     *
-    * - {Number} [x=0.0] The X component.
-    * - {Number} [y=0.0] The Y component.
-    * - {Number} [z=0.0] The Z component.
+    *   - {Number} [x=0.0] The X component.
+    *   - {Number} [y=0.0] The Y component.
+    *   - {Number} [z=0.0] The Z component.
     *
     * @see Cartesian2
     * @see Cartesian4
@@ -984,10 +984,10 @@ package cesium {
     * alias Cartesian4
     * constructor
     *
-    * - {Number} [x=0.0] The X component.
-    * - {Number} [y=0.0] The Y component.
-    * - {Number} [z=0.0] The Z component.
-    * - {Number} [w=0.0] The W component.
+    *   - {Number} [x=0.0] The X component.
+    *   - {Number} [y=0.0] The Y component.
+    *   - {Number} [z=0.0] The Z component.
+    *   - {Number} [w=0.0] The W component.
     *
     * @see Cartesian2
     * @see Cartesian3
@@ -1082,9 +1082,9 @@ package cesium {
     * alias Cartographic
     * constructor
     *
-    * - {Number} [longitude=0.0] The longitude, in radians.
-    * - {Number} [latitude=0.0] The latitude, in radians.
-    * - {Number} [height=0.0] The height, in meters, above the ellipsoid.
+    *   - {Number} [longitude=0.0] The longitude, in radians.
+    *   - {Number} [latitude=0.0] The latitude, in radians.
+    *   - {Number} [height=0.0] The height, in meters, above the ellipsoid.
     *
     * @see Ellipsoid
     */
@@ -1132,13 +1132,13 @@ package cesium {
     * alias CatmullRomSpline
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Number[]} options.times An array of strictly increasing, unit-less, floating-point times at each point.
+    *   - {Object} options Object with the following properties:
+    *   - {Number[]} options.times An array of strictly increasing, unit-less, floating-point times at each point.
     * The values are in no way connected to the clock time. They are the parameterization for the curve.
-    * - {Cartesian3[]} options.points The array of [[Cartesian3]] control points.
-    * - {Cartesian3} [options.firstTangent] The tangent of the curve at the first control point.
+    *   - {Cartesian3[]} options.points The array of [[Cartesian3]] control points.
+    *   - {Cartesian3} [options.firstTangent] The tangent of the curve at the first control point.
     * If the tangent is not given, it will be estimated.
-    * - {Cartesian3} [options.lastTangent] The tangent of the curve at the last control point.
+    *   - {Cartesian3} [options.lastTangent] The tangent of the curve at the last control point.
     * If the tangent is not given, it will be estimated.
     *
     * exception {DeveloperError} points.length must be greater than or equal to 2.
@@ -1186,13 +1186,13 @@ package cesium {
     * alias CesiumTerrainProvider
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {String} options.url The URL of the Cesium terrain server.
-    * - {Proxy} [options.proxy] A proxy to use for requests. This object is expected to have a getURL function which returns the proxied URL, if needed.
-    * - {Boolean} [options.requestVertexNormals=false] Flag that indicates if the client should request additional lighting information from the server, in the form of per vertex normals if available.
-    * - {Boolean} [options.requestWaterMask=false] Flag that indicates if the client should request per tile water masks from the server,  if available.
-    * - {Ellipsoid} [options.ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
-    * - {Credit|String} [options.credit] A credit for the data source, which is displayed on the canvas.
+    *   - {Object} options Object with the following properties:
+    *   - {String} options.url The URL of the Cesium terrain server.
+    *   - {Proxy} [options.proxy] A proxy to use for requests. This object is expected to have a getURL function which returns the proxied URL, if needed.
+    *   - {Boolean} [options.requestVertexNormals=false] Flag that indicates if the client should request additional lighting information from the server, in the form of per vertex normals if available.
+    *   - {Boolean} [options.requestWaterMask=false] Flag that indicates if the client should request per tile water masks from the server,  if available.
+    *   - {Ellipsoid} [options.ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
+    *   - {Credit|String} [options.credit] A credit for the data source, which is displayed on the canvas.
     *
     * @example
     * // Construct a terrain provider that uses per vertex normals for lighting
@@ -1247,15 +1247,15 @@ package cesium {
     * alias CircleGeometry
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Cartesian3} options.center The circle's center point in the fixed frame.
-    * - {Number} options.radius The radius in meters.
-    * - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid the circle will be on.
-    * - {Number} [options.height=0.0] The distance in meters between the circle and the ellipsoid surface.
-    * - {Number} [options.granularity=0.02] The angular distance between points on the circle in radians.
-    * - {VertexFormat} [options.vertexFormat=VertexFormat.DEFAULT] The vertex attributes to be computed.
-    * - {Number} [options.extrudedHeight=0.0] The distance in meters between the circle's extruded face and the ellipsoid surface.
-    * - {Number} [options.stRotation=0.0] The rotation of the texture coordinates, in radians. A positive rotation is counter-clockwise.
+    *   - {Object} options Object with the following properties:
+    *   - {Cartesian3} options.center The circle's center point in the fixed frame.
+    *   - {Number} options.radius The radius in meters.
+    *   - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid the circle will be on.
+    *   - {Number} [options.height=0.0] The distance in meters between the circle and the ellipsoid surface.
+    *   - {Number} [options.granularity=0.02] The angular distance between points on the circle in radians.
+    *   - {VertexFormat} [options.vertexFormat=VertexFormat.DEFAULT] The vertex attributes to be computed.
+    *   - {Number} [options.extrudedHeight=0.0] The distance in meters between the circle's extruded face and the ellipsoid surface.
+    *   - {Number} [options.stRotation=0.0] The rotation of the texture coordinates, in radians. A positive rotation is counter-clockwise.
     *
     * exception {DeveloperError} radius must be greater than zero.
     * exception {DeveloperError} granularity must be greater than zero.
@@ -1294,14 +1294,14 @@ package cesium {
     * alias CircleOutlineGeometry
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Cartesian3} options.center The circle's center point in the fixed frame.
-    * - {Number} options.radius The radius in meters.
-    * - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid the circle will be on.
-    * - {Number} [options.height=0.0] The distance in meters between the circle and the ellipsoid surface.
-    * - {Number} [options.granularity=0.02] The angular distance between points on the circle in radians.
-    * - {Number} [options.extrudedHeight=0.0] The distance in meters between the circle's extruded face and the ellipsoid surface.
-    * - {Number} [options.numberOfVerticalLines=16] Number of lines to draw between the top and bottom of an extruded circle.
+    *   - {Object} options Object with the following properties:
+    *   - {Cartesian3} options.center The circle's center point in the fixed frame.
+    *   - {Number} options.radius The radius in meters.
+    *   - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid the circle will be on.
+    *   - {Number} [options.height=0.0] The distance in meters between the circle and the ellipsoid surface.
+    *   - {Number} [options.granularity=0.02] The angular distance between points on the circle in radians.
+    *   - {Number} [options.extrudedHeight=0.0] The distance in meters between the circle's extruded face and the ellipsoid surface.
+    *   - {Number} [options.numberOfVerticalLines=16] Number of lines to draw between the top and bottom of an extruded circle.
     *
     * exception {DeveloperError} radius must be greater than zero.
     * exception {DeveloperError} granularity must be greater than zero.
@@ -1340,15 +1340,15 @@ package cesium {
     * alias Clock
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {JulianDate} [options.startTime] The start time of the clock.
-    * - {JulianDate} [options.stopTime] The stop time of the clock.
-    * - {JulianDate} [options.currentTime] The current time.
-    * - {Number} [options.multiplier=1.0] Determines how much time advances when tick is called, negative values allow for advancing backwards.
-    * - {ClockStep} [options.clockStep=ClockStep.SYSTEM_CLOCK_MULTIPLIER] Determines if calls to <code>tick</code> are frame dependent or system clock dependent.
-    * - {ClockRange} [options.clockRange=ClockRange.UNBOUNDED] Determines how the clock should behave when <code>startTime</code> or <code>stopTime</code> is reached.
-    * - {Boolean} [options.canAnimate=true] Indicates whether tick can advance time.  This could be false if data is being buffered, for example.  The clock will only tick when both <code>canAnimate</code> and <code>shouldAnimate</code> are true.
-    * - {Boolean} [options.shouldAnimate=true] Indicates whether tick should attempt to advance time.  The clock will only tick when both <code>canAnimate</code> and <code>shouldAnimate</code> are true.
+    *   - {Object} [options] Object with the following properties:
+    *   - {JulianDate} [options.startTime] The start time of the clock.
+    *   - {JulianDate} [options.stopTime] The stop time of the clock.
+    *   - {JulianDate} [options.currentTime] The current time.
+    *   - {Number} [options.multiplier=1.0] Determines how much time advances when tick is called, negative values allow for advancing backwards.
+    *   - {ClockStep} [options.clockStep=ClockStep.SYSTEM_CLOCK_MULTIPLIER] Determines if calls to <code>tick</code> are frame dependent or system clock dependent.
+    *   - {ClockRange} [options.clockRange=ClockRange.UNBOUNDED] Determines how the clock should behave when <code>startTime</code> or <code>stopTime</code> is reached.
+    *   - {Boolean} [options.canAnimate=true] Indicates whether tick can advance time.  This could be false if data is being buffered, for example.  The clock will only tick when both <code>canAnimate</code> and <code>shouldAnimate</code> are true.
+    *   - {Boolean} [options.shouldAnimate=true] Indicates whether tick should attempt to advance time.  The clock will only tick when both <code>canAnimate</code> and <code>shouldAnimate</code> are true.
     *
     * exception {DeveloperError} startTime must come before stopTime.
     *
@@ -1386,10 +1386,10 @@ package cesium {
   /**
     * A color, specified using red, green, blue, and alpha values,
     * which range from <code>0</code> (no intensity) to <code>1.0</code> (full intensity).
-    * - {Number} [red=1.0] The red component.
-    * - {Number} [green=1.0] The green component.
-    * - {Number} [blue=1.0] The blue component.
-    * - {Number} [alpha=1.0] The alpha component.
+    *   - {Number} [red=1.0] The red component.
+    *   - {Number} [green=1.0] The green component.
+    *   - {Number} [blue=1.0] The blue component.
+    *   - {Number} [alpha=1.0] The alpha component.
     *
     * constructor
     * alias Color
@@ -1626,10 +1626,10 @@ package cesium {
     * alias ColorGeometryInstanceAttribute
     * constructor
     *
-    * - {Number} [red=1.0] The red component.
-    * - {Number} [green=1.0] The green component.
-    * - {Number} [blue=1.0] The blue component.
-    * - {Number} [alpha=1.0] The alpha component.
+    *   - {Number} [red=1.0] The red component.
+    *   - {Number} [green=1.0] The green component.
+    *   - {Number} [blue=1.0] The blue component.
+    *   - {Number} [alpha=1.0] The alpha component.
     *
     * @example
     * var instance = new Cesium.GeometryInstance({
@@ -1673,15 +1673,15 @@ package cesium {
     * alias CorridorGeometry
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Cartesian3[]} options.positions An array of positions that define the center of the corridor.
-    * - {Number} options.width The distance between the edges of the corridor in meters.
-    * - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid to be used as a reference.
-    * - {Number} [options.granularity=CesiumMath.RADIANS_PER_DEGREE] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
-    * - {Number} [options.height=0] The distance in meters between the ellipsoid surface and the positions.
-    * - {Number} [options.extrudedHeight] The distance in meters between the ellipsoid surface and the extruded face.
-    * - {VertexFormat} [options.vertexFormat=VertexFormat.DEFAULT] The vertex attributes to be computed.
-    * - {CornerType} [options.cornerType=CornerType.ROUNDED] Determines the style of the corners.
+    *   - {Object} options Object with the following properties:
+    *   - {Cartesian3[]} options.positions An array of positions that define the center of the corridor.
+    *   - {Number} options.width The distance between the edges of the corridor in meters.
+    *   - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid to be used as a reference.
+    *   - {Number} [options.granularity=CesiumMath.RADIANS_PER_DEGREE] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
+    *   - {Number} [options.height=0] The distance in meters between the ellipsoid surface and the positions.
+    *   - {Number} [options.extrudedHeight] The distance in meters between the ellipsoid surface and the extruded face.
+    *   - {VertexFormat} [options.vertexFormat=VertexFormat.DEFAULT] The vertex attributes to be computed.
+    *   - {CornerType} [options.cornerType=CornerType.ROUNDED] Determines the style of the corners.
     *
     * @see CorridorGeometry.createGeometry
     * @see Packable
@@ -1718,14 +1718,14 @@ package cesium {
     * alias CorridorOutlineGeometry
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Cartesian3[]} options.positions An array of positions that define the center of the corridor outline.
-    * - {Number} options.width The distance between the edges of the corridor outline.
-    * - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid to be used as a reference.
-    * - {Number} [options.granularity=CesiumMath.RADIANS_PER_DEGREE] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
-    * - {Number} [options.height=0] The distance in meters between the positions and the ellipsoid surface.
-    * - {Number} [options.extrudedHeight] The distance in meters between the extruded face and the ellipsoid surface.
-    * - {CornerType} [options.cornerType=CornerType.ROUNDED] Determines the style of the corners.
+    *   - {Object} options Object with the following properties:
+    *   - {Cartesian3[]} options.positions An array of positions that define the center of the corridor outline.
+    *   - {Number} options.width The distance between the edges of the corridor outline.
+    *   - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid to be used as a reference.
+    *   - {Number} [options.granularity=CesiumMath.RADIANS_PER_DEGREE] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
+    *   - {Number} [options.height=0] The distance in meters between the positions and the ellipsoid surface.
+    *   - {Number} [options.extrudedHeight] The distance in meters between the extruded face and the ellipsoid surface.
+    *   - {CornerType} [options.cornerType=CornerType.ROUNDED] Determines the style of the corners.
     *
     * @see CorridorOutlineGeometry.createGeometry
     * @example
@@ -1755,9 +1755,9 @@ package cesium {
   /**
     * A credit contains data pertaining to how to display attributions/credits for certain content on the screen.
     *
-    * - {String} [text] The text to be displayed on the screen if no imageUrl is specified.
-    * - {String} [imageUrl] The source location for an image
-    * - {String} [link] A URL location for which the credit will be hyperlinked
+    *   - {String} [text] The text to be displayed on the screen if no imageUrl is specified.
+    *   - {String} [imageUrl] The source location for an image
+    *   - {String} [link] A URL location for which the credit will be hyperlinked
     *
     * alias Credit
     * constructor
@@ -1794,12 +1794,12 @@ package cesium {
     * alias CylinderGeometry
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Number} options.length The length of the cylinder.
-    * - {Number} options.topRadius The radius of the top of the cylinder.
-    * - {Number} options.bottomRadius The radius of the bottom of the cylinder.
-    * - {Number} [options.slices=128] The number of edges around perimeter of the cylinder.
-    * - {VertexFormat} [options.vertexFormat=VertexFormat.DEFAULT] The vertex attributes to be computed.
+    *   - {Object} options Object with the following properties:
+    *   - {Number} options.length The length of the cylinder.
+    *   - {Number} options.topRadius The radius of the top of the cylinder.
+    *   - {Number} options.bottomRadius The radius of the bottom of the cylinder.
+    *   - {Number} [options.slices=128] The number of edges around perimeter of the cylinder.
+    *   - {VertexFormat} [options.vertexFormat=VertexFormat.DEFAULT] The vertex attributes to be computed.
     *
     * exception {DeveloperError} options.length must be greater than 0.
     * exception {DeveloperError} options.topRadius must be greater than 0.
@@ -1841,12 +1841,12 @@ package cesium {
     * alias CylinderOutlineGeometry
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Number} options.length The length of the cylinder.
-    * - {Number} options.topRadius The radius of the top of the cylinder.
-    * - {Number} options.bottomRadius The radius of the bottom of the cylinder.
-    * - {Number} [options.slices=128] The number of edges around perimeter of the cylinder.
-    * - {Number} [options.numberOfVerticalLines=16] Number of lines to draw between the top and bottom surfaces of the cylinder.
+    *   - {Object} options Object with the following properties:
+    *   - {Number} options.length The length of the cylinder.
+    *   - {Number} options.topRadius The radius of the top of the cylinder.
+    *   - {Number} options.bottomRadius The radius of the bottom of the cylinder.
+    *   - {Number} [options.slices=128] The number of edges around perimeter of the cylinder.
+    *   - {Number} [options.numberOfVerticalLines=16] Number of lines to draw between the top and bottom surfaces of the cylinder.
     *
     * exception {DeveloperError} options.length must be greater than 0.
     * exception {DeveloperError} options.topRadius must be greater than 0.
@@ -1889,7 +1889,7 @@ package cesium {
     * alias DefaultProxy
     * constructor
     *
-    * - {String} proxy The proxy URL that will be used to requests all resources.
+    *   - {String} proxy The proxy URL that will be used to requests all resources.
     */
   @js.native
   @JSName("Cesium.DefaultProxy")
@@ -1913,7 +1913,7 @@ package cesium {
     * constructor
     * extends Error
     *
-    * - {String} [message] The error message for this exception.
+    *   - {String} [message] The error message for this exception.
     *
     * @see RuntimeError
     */
@@ -1933,17 +1933,17 @@ package cesium {
     * alias EllipseGeometry
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Cartesian3} options.center The ellipse's center point in the fixed frame.
-    * - {Number} options.semiMajorAxis The length of the ellipse's semi-major axis in meters.
-    * - {Number} options.semiMinorAxis The length of the ellipse's semi-minor axis in meters.
-    * - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid the ellipse will be on.
-    * - {Number} [options.height=0.0] The distance in meters between the ellipse and the ellipsoid surface.
-    * - {Number} [options.extrudedHeight] The distance in meters between the ellipse's extruded face and the ellipsoid surface.
-    * - {Number} [options.rotation=0.0] The angle of rotation counter-clockwise from north.
-    * - {Number} [options.stRotation=0.0] The rotation of the texture coordinates counter-clockwise from north.
-    * - {Number} [options.granularity=CesiumMath.RADIANS_PER_DEGREE] The angular distance between points on the ellipse in radians.
-    * - {VertexFormat} [options.vertexFormat=VertexFormat.DEFAULT] The vertex attributes to be computed.
+    *   - {Object} options Object with the following properties:
+    *   - {Cartesian3} options.center The ellipse's center point in the fixed frame.
+    *   - {Number} options.semiMajorAxis The length of the ellipse's semi-major axis in meters.
+    *   - {Number} options.semiMinorAxis The length of the ellipse's semi-minor axis in meters.
+    *   - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid the ellipse will be on.
+    *   - {Number} [options.height=0.0] The distance in meters between the ellipse and the ellipsoid surface.
+    *   - {Number} [options.extrudedHeight] The distance in meters between the ellipse's extruded face and the ellipsoid surface.
+    *   - {Number} [options.rotation=0.0] The angle of rotation counter-clockwise from north.
+    *   - {Number} [options.stRotation=0.0] The rotation of the texture coordinates counter-clockwise from north.
+    *   - {Number} [options.granularity=CesiumMath.RADIANS_PER_DEGREE] The angular distance between points on the ellipse in radians.
+    *   - {VertexFormat} [options.vertexFormat=VertexFormat.DEFAULT] The vertex attributes to be computed.
     *
     * exception {DeveloperError} semiMajorAxis and semiMinorAxis must be greater than zero.
     * exception {DeveloperError} semiMajorAxis must be greater than or equal to the semiMinorAxis.
@@ -1984,16 +1984,16 @@ package cesium {
     * alias EllipseOutlineGeometry
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Cartesian3} options.center The ellipse's center point in the fixed frame.
-    * - {Number} options.semiMajorAxis The length of the ellipse's semi-major axis in meters.
-    * - {Number} options.semiMinorAxis The length of the ellipse's semi-minor axis in meters.
-    * - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid the ellipse will be on.
-    * - {Number} [options.height=0.0] The distance in meters between the ellipse and the ellipsoid surface.
-    * - {Number} [options.extrudedHeight] The distance in meters between the ellipse's extruded face and the ellipsoid surface.
-    * - {Number} [options.rotation=0.0] The angle from north (counter-clockwise) in radians.
-    * - {Number} [options.granularity=0.02] The angular distance between points on the ellipse in radians.
-    * - {Number} [options.numberOfVerticalLines=16] Number of lines to draw between the top and bottom surface of an extruded ellipse.
+    *   - {Object} options Object with the following properties:
+    *   - {Cartesian3} options.center The ellipse's center point in the fixed frame.
+    *   - {Number} options.semiMajorAxis The length of the ellipse's semi-major axis in meters.
+    *   - {Number} options.semiMinorAxis The length of the ellipse's semi-minor axis in meters.
+    *   - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid the ellipse will be on.
+    *   - {Number} [options.height=0.0] The distance in meters between the ellipse and the ellipsoid surface.
+    *   - {Number} [options.extrudedHeight] The distance in meters between the ellipse's extruded face and the ellipsoid surface.
+    *   - {Number} [options.rotation=0.0] The angle from north (counter-clockwise) in radians.
+    *   - {Number} [options.granularity=0.02] The angular distance between points on the ellipse in radians.
+    *   - {Number} [options.numberOfVerticalLines=16] Number of lines to draw between the top and bottom surface of an extruded ellipse.
     *
     * exception {DeveloperError} semiMajorAxis and semiMinorAxis must be greater than zero.
     * exception {DeveloperError} semiMajorAxis must be greater than or equal to the semiMinorAxis.
@@ -2037,9 +2037,9 @@ package cesium {
     * alias Ellipsoid
     * constructor
     *
-    * - {Number} [x=0] The radius in the x direction.
-    * - {Number} [y=0] The radius in the y direction.
-    * - {Number} [z=0] The radius in the z direction.
+    *   - {Number} [x=0] The radius in the x direction.
+    *   - {Number} [y=0] The radius in the y direction.
+    *   - {Number} [z=0] The radius in the z direction.
     *
     * exception {DeveloperError} All radii components must be greater than or equal to zero.
     *
@@ -2112,9 +2112,9 @@ package cesium {
     * alias EllipsoidGeodesic
     * constructor
     *
-    * - {Cartographic} [start] The initial planetodetic point on the path.
-    * - {Cartographic} [end] The final planetodetic point on the path.
-    * - {Ellipsoid} [ellipsoid=Ellipsoid.WGS84] The ellipsoid on which the geodesic lies.
+    *   - {Cartographic} [start] The initial planetodetic point on the path.
+    *   - {Cartographic} [end] The final planetodetic point on the path.
+    *   - {Ellipsoid} [ellipsoid=Ellipsoid.WGS84] The ellipsoid on which the geodesic lies.
     */
   @js.native
   @JSName("Cesium.EllipsoidGeodesic")
@@ -2141,11 +2141,11 @@ package cesium {
     * alias EllipsoidGeometry
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Cartesian3} [options.radii=Cartesian3(1.0, 1.0, 1.0)] The radii of the ellipsoid in the x, y, and z directions.
-    * - {Number} [options.stackPartitions=64] The number of times to partition the ellipsoid into stacks.
-    * - {Number} [options.slicePartitions=64] The number of times to partition the ellipsoid into radial slices.
-    * - {VertexFormat} [options.vertexFormat=VertexFormat.DEFAULT] The vertex attributes to be computed.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Cartesian3} [options.radii=Cartesian3(1.0, 1.0, 1.0)] The radii of the ellipsoid in the x, y, and z directions.
+    *   - {Number} [options.stackPartitions=64] The number of times to partition the ellipsoid into stacks.
+    *   - {Number} [options.slicePartitions=64] The number of times to partition the ellipsoid into radial slices.
+    *   - {VertexFormat} [options.vertexFormat=VertexFormat.DEFAULT] The vertex attributes to be computed.
     *
     * exception {DeveloperError} options.slicePartitions cannot be less than three.
     * exception {DeveloperError} options.stackPartitions cannot be less than three.
@@ -2182,11 +2182,11 @@ package cesium {
     * alias EllipsoidOutlineGeometry
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Cartesian3} [options.radii=Cartesian3(1.0, 1.0, 1.0)] The radii of the ellipsoid in the x, y, and z directions.
-    * - {Number} [options.stackPartitions=10] The count of stacks for the ellipsoid (1 greater than the number of parallel lines).
-    * - {Number} [options.slicePartitions=8] The count of slices for the ellipsoid (Equal to the number of radial lines).
-    * - {Number} [options.subdivisions=128] The number of points per line, determining the granularity of the curvature .
+    *   - {Object} [options] Object with the following properties:
+    *   - {Cartesian3} [options.radii=Cartesian3(1.0, 1.0, 1.0)] The radii of the ellipsoid in the x, y, and z directions.
+    *   - {Number} [options.stackPartitions=10] The count of stacks for the ellipsoid (1 greater than the number of parallel lines).
+    *   - {Number} [options.slicePartitions=8] The count of slices for the ellipsoid (Equal to the number of radial lines).
+    *   - {Number} [options.subdivisions=128] The number of points per line, determining the granularity of the curvature .
     *
     * exception {DeveloperError} options.stackPartitions must be greater than or equal to one.
     * exception {DeveloperError} options.slicePartitions must be greater than or equal to zero.
@@ -2225,8 +2225,8 @@ package cesium {
     * alias EllipsoidTangentPlane
     * constructor
     *
-    * - {Cartesian3} origin The point on the surface of the ellipsoid where the tangent plane touches.
-    * - {Ellipsoid} [ellipsoid=Ellipsoid.WGS84] The ellipsoid to use.
+    *   - {Cartesian3} origin The point on the surface of the ellipsoid where the tangent plane touches.
+    *   - {Ellipsoid} [ellipsoid=Ellipsoid.WGS84] The ellipsoid to use.
     *
     * exception {DeveloperError} origin must not be at the center of the ellipsoid.
     */
@@ -2265,11 +2265,11 @@ package cesium {
     * alias EllipsoidTerrainProvider
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {TilingScheme} [options.tilingScheme] The tiling scheme specifying how the ellipsoidal
+    *   - {Object} [options] Object with the following properties:
+    *   - {TilingScheme} [options.tilingScheme] The tiling scheme specifying how the ellipsoidal
     * surface is broken into tiles.  If this parameter is not provided, a [[GeographicTilingScheme]]
     * is used.
-    * - {Ellipsoid} [options.ellipsoid] The ellipsoid.  If the tilingScheme is specified,
+    *   - {Ellipsoid} [options.ellipsoid] The ellipsoid.  If the tilingScheme is specified,
     * this parameter is ignored and the tiling scheme's ellipsoid is used instead. If neither
     * parameter is specified, the WGS84 ellipsoid is used.
     *
@@ -2374,7 +2374,7 @@ package cesium {
     * alias GeographicProjection
     * constructor
     *
-    * - {Ellipsoid} [ellipsoid=Ellipsoid.WGS84] The ellipsoid.
+    *   - {Ellipsoid} [ellipsoid=Ellipsoid.WGS84] The ellipsoid.
     *
     * @see WebMercatorProjection
     */
@@ -2398,13 +2398,13 @@ package cesium {
     * alias GeographicTilingScheme
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid whose surface is being tiled. Defaults to
+    *   - {Object} [options] Object with the following properties:
+    *   - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid whose surface is being tiled. Defaults to
     * the WGS84 ellipsoid.
-    * - {Rectangle} [options.rectangle=Rectangle.MAX_VALUE] The rectangle, in radians, covered by the tiling scheme.
-    * - {Number} [options.numberOfLevelZeroTilesX=2] The number of tiles in the X direction at level zero of
+    *   - {Rectangle} [options.rectangle=Rectangle.MAX_VALUE] The rectangle, in radians, covered by the tiling scheme.
+    *   - {Number} [options.numberOfLevelZeroTilesX=2] The number of tiles in the X direction at level zero of
     * the tile tree.
-    * - {Number} [options.numberOfLevelZeroTilesY=1] The number of tiles in the Y direction at level zero of
+    *   - {Number} [options.numberOfLevelZeroTilesY=1] The number of tiles in the Y direction at level zero of
     * the tile tree.
     */
   @js.native
@@ -2441,11 +2441,11 @@ package cesium {
     * alias Geometry
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {GeometryAttributes} options.attributes Attributes, which make up the geometry's vertices.
-    * - {PrimitiveType} [options.primitiveType=PrimitiveType.TRIANGLES] The type of primitives in the geometry.
-    * - {Uint16Array|Uint32Array} [options.indices] Optional index data that determines the primitives in the geometry.
-    * - {BoundingSphere} [options.boundingSphere] An optional bounding sphere that fully enclosed the geometry.
+    *   - {Object} options Object with the following properties:
+    *   - {GeometryAttributes} options.attributes Attributes, which make up the geometry's vertices.
+    *   - {PrimitiveType} [options.primitiveType=PrimitiveType.TRIANGLES] The type of primitives in the geometry.
+    *   - {Uint16Array|Uint32Array} [options.indices] Optional index data that determines the primitives in the geometry.
+    *   - {BoundingSphere} [options.boundingSphere] An optional bounding sphere that fully enclosed the geometry.
     *
     * @see PolygonGeometry
     * @see RectangleGeometry
@@ -2503,11 +2503,11 @@ package cesium {
     * alias GeometryAttribute
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {ComponentDatatype} [options.componentDatatype] The datatype of each component in the attribute, e.g., individual elements in values.
-    * - {Number} [options.componentsPerAttribute] A number between 1 and 4 that defines the number of components in an attributes.
-    * - {Boolean} [options.normalize=false] When <code>true</code> and <code>componentDatatype</code> is an integer format, indicate that the components should be mapped to the range [0, 1] (unsigned) or [-1, 1] (signed) when they are accessed as floating-point for rendering.
-    * - {TypedArray} [options.values] The values for the attributes stored in a typed array.
+    *   - {Object} [options] Object with the following properties:
+    *   - {ComponentDatatype} [options.componentDatatype] The datatype of each component in the attribute, e.g., individual elements in values.
+    *   - {Number} [options.componentsPerAttribute] A number between 1 and 4 that defines the number of components in an attributes.
+    *   - {Boolean} [options.normalize=false] When <code>true</code> and <code>componentDatatype</code> is an integer format, indicate that the components should be mapped to the range [0, 1] (unsigned) or [-1, 1] (signed) when they are accessed as floating-point for rendering.
+    *   - {TypedArray} [options.values] The values for the attributes stored in a typed array.
     *
     * exception {DeveloperError} options.componentsPerAttribute must be between 1 and 4.
     *
@@ -2569,11 +2569,11 @@ package cesium {
     * alias GeometryInstance
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Geometry} options.geometry The geometry to instance.
-    * - {Matrix4} [options.modelMatrix=Matrix4.IDENTITY] The model matrix that transforms to transform the geometry from model to world coordinates.
-    * - {Object} [options.id] A user-defined object to return when the instance is picked with [[Scene#pick]] or get/set per-instance attributes with [[Primitive#getGeometryInstanceAttributes]]
-    * - {Object} [options.attributes] Per-instance attributes like a show or color attribute shown in the example below.
+    *   - {Object} options Object with the following properties:
+    *   - {Geometry} options.geometry The geometry to instance.
+    *   - {Matrix4} [options.modelMatrix=Matrix4.IDENTITY] The model matrix that transforms to transform the geometry from model to world coordinates.
+    *   - {Object} [options.id] A user-defined object to return when the instance is picked with [[Scene#pick]] or get/set per-instance attributes with [[Primitive#getGeometryInstanceAttributes]]
+    *   - {Object} [options.attributes] Per-instance attributes like a show or color attribute shown in the example below.
     *
     * @example
     * // Create geometry for a box, and two instances that refer to it.
@@ -2620,11 +2620,11 @@ package cesium {
     * alias GeometryInstanceAttribute
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {ComponentDatatype} [options.componentDatatype] The datatype of each component in the attribute, e.g., individual elements in values.
-    * - {Number} [options.componentsPerAttribute] A number between 1 and 4 that defines the number of components in an attributes.
-    * - {Boolean} [options.normalize=false] When <code>true</code> and <code>componentDatatype</code> is an integer format, indicate that the components should be mapped to the range [0, 1] (unsigned) or [-1, 1] (signed) when they are accessed as floating-point for rendering.
-    * - {Number[]} [options.value] The value for the attribute.
+    *   - {Object} options Object with the following properties:
+    *   - {ComponentDatatype} [options.componentDatatype] The datatype of each component in the attribute, e.g., individual elements in values.
+    *   - {Number} [options.componentsPerAttribute] A number between 1 and 4 that defines the number of components in an attributes.
+    *   - {Boolean} [options.normalize=false] When <code>true</code> and <code>componentDatatype</code> is an integer format, indicate that the components should be mapped to the range [0, 1] (unsigned) or [-1, 1] (signed) when they are accessed as floating-point for rendering.
+    *   - {Number[]} [options.value] The value for the attribute.
     *
     * exception {DeveloperError} options.componentsPerAttribute must be between 1 and 4.
     *
@@ -2688,9 +2688,9 @@ package cesium {
     * alias HeadingPitchRange
     * constructor
     *
-    * - {Number} [heading=0.0] The heading angle in radians.
-    * - {Number} [pitch=0.0] The pitch angle in radians.
-    * - {Number} [range=0.0] The distance from the center in meters.
+    *   - {Number} [heading=0.0] The heading angle in radians.
+    *   - {Number} [pitch=0.0] The pitch angle in radians.
+    *   - {Number} [range=0.0] The distance from the center in meters.
     */
   @js.native
   @JSName("Cesium.HeadingPitchRange")
@@ -2715,11 +2715,11 @@ package cesium {
     * alias HeightmapTerrainData
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {TypedArray} options.buffer The buffer containing height data.
-    * - {Number} options.width The width (longitude direction) of the heightmap, in samples.
-    * - {Number} options.height The height (latitude direction) of the heightmap, in samples.
-    * - {Number} [options.childTileMask=15] A bit mask indicating which of this tile's four children exist.
+    *   - {Object} options Object with the following properties:
+    *   - {TypedArray} options.buffer The buffer containing height data.
+    *   - {Number} options.width The width (longitude direction) of the heightmap, in samples.
+    *   - {Number} options.height The height (latitude direction) of the heightmap, in samples.
+    *   - {Number} [options.childTileMask=15] A bit mask indicating which of this tile's four children exist.
     * If a child's bit is set, geometry will be requested for that tile as well when it
     * is needed.  If the bit is cleared, the child tile is not requested and geometry is
     * instead upsampled from the parent.  The bit values are as follows:
@@ -2730,29 +2730,29 @@ package cesium {
     * <tr><td>2</td><td>4</td><td>Northwest</td></tr>
     * <tr><td>3</td><td>8</td><td>Northeast</td></tr>
     * </table>
-    * - {Object} [options.structure] An object describing the structure of the height data.
-    * - {Number} [options.structure.heightScale=1.0] The factor by which to multiply height samples in order to obtain
+    *   - {Object} [options.structure] An object describing the structure of the height data.
+    *   - {Number} [options.structure.heightScale=1.0] The factor by which to multiply height samples in order to obtain
     * the height above the heightOffset, in meters.  The heightOffset is added to the resulting
     * height after multiplying by the scale.
-    * - {Number} [options.structure.heightOffset=0.0] The offset to add to the scaled height to obtain the final
+    *   - {Number} [options.structure.heightOffset=0.0] The offset to add to the scaled height to obtain the final
     * height in meters.  The offset is added after the height sample is multiplied by the
     * heightScale.
-    * - {Number} [options.structure.elementsPerHeight=1] The number of elements in the buffer that make up a single height
+    *   - {Number} [options.structure.elementsPerHeight=1] The number of elements in the buffer that make up a single height
     * sample.  This is usually 1, indicating that each element is a separate height sample.  If
     * it is greater than 1, that number of elements together form the height sample, which is
     * computed according to the structure.elementMultiplier and structure.isBigEndian properties.
-    * - {Number} [options.structure.stride=1] The number of elements to skip to get from the first element of
+    *   - {Number} [options.structure.stride=1] The number of elements to skip to get from the first element of
     * one height to the first element of the next height.
-    * - {Number} [options.structure.elementMultiplier=256.0] The multiplier used to compute the height value when the
+    *   - {Number} [options.structure.elementMultiplier=256.0] The multiplier used to compute the height value when the
     * stride property is greater than 1.  For example, if the stride is 4 and the strideMultiplier
     * is 256, the height is computed as follows:
     * `height = buffer[index] + buffer[index + 1] * 256 + buffer[index + 2] * 256 * 256 + buffer[index + 3] * 256 * 256 * 256`
     * This is assuming that the isBigEndian property is false.  If it is true, the order of the
     * elements is reversed.
-    * - {Boolean} [options.structure.isBigEndian=false] Indicates endianness of the elements in the buffer when the
+    *   - {Boolean} [options.structure.isBigEndian=false] Indicates endianness of the elements in the buffer when the
     * stride property is greater than 1.  If this property is false, the first element is the
     * low-order element.  If it is true, the first element is the high-order element.
-    * - {Boolean} [options.createdByUpsampling=false] True if this instance was created by upsampling another instance;
+    *   - {Boolean} [options.createdByUpsampling=false] True if this instance was created by upsampling another instance;
     * otherwise, false.
     *
     * @example
@@ -2796,12 +2796,12 @@ package cesium {
     * alias HermiteSpline
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Number[]} options.times An array of strictly increasing, unit-less, floating-point times at each point.
+    *   - {Object} options Object with the following properties:
+    *   - {Number[]} options.times An array of strictly increasing, unit-less, floating-point times at each point.
     * The values are in no way connected to the clock time. They are the parameterization for the curve.
-    * - {Cartesian3[]} options.points The array of [[Cartesian3]] control points.
-    * - {Cartesian3[]} options.inTangents The array of [[Cartesian3]] incoming tangents at each control point.
-    * - {Cartesian3[]} options.outTangents The array of [[Cartesian3]] outgoing tangents at each control point.
+    *   - {Cartesian3[]} options.points The array of [[Cartesian3]] control points.
+    *   - {Cartesian3[]} options.inTangents The array of [[Cartesian3]] incoming tangents at each control point.
+    *   - {Cartesian3[]} options.outTangents The array of [[Cartesian3]] outgoing tangents at each control point.
     *
     * exception {DeveloperError} points.length must be greater than or equal to 2.
     * exception {DeveloperError} times.length must be equal to points.length.
@@ -2868,8 +2868,8 @@ package cesium {
     * alias Interval
     * constructor
     *
-    * - {Number} [start=0.0] The beginning of the interval.
-    * - {Number} [stop=0.0] The end of the interval.
+    *   - {Number} [start=0.0] The beginning of the interval.
+    *   - {Number} [stop=0.0] The end of the interval.
     */
   @js.native
   @JSName("Cesium.Interval")
@@ -2889,9 +2889,9 @@ package cesium {
     * alias JulianDate
     * constructor
     *
-    * - {Number} julianDayNumber The Julian Day Number representing the number of whole days.  Fractional days will also be handled correctly.
-    * - {Number} secondsOfDay The number of seconds into the current Julian Day Number.  Fractional seconds, negative seconds and seconds greater than a day will be handled correctly.
-    * - {TimeStandard} [timeStandard=TimeStandard.UTC] The time standard in which the first two parameters are defined.
+    *   - {Number} julianDayNumber The Julian Day Number representing the number of whole days.  Fractional days will also be handled correctly.
+    *   - {Number} secondsOfDay The number of seconds into the current Julian Day Number.  Fractional seconds, negative seconds and seconds greater than a day will be handled correctly.
+    *   - {TimeStandard} [timeStandard=TimeStandard.UTC] The time standard in which the first two parameters are defined.
     */
   @js.native
   @JSName("Cesium.JulianDate")
@@ -2966,8 +2966,8 @@ package cesium {
     * alias LeapSecond
     * constructor
     *
-    * - {JulianDate} [date] A Julian date representing the time of the leap second.
-    * - {Number} [offset] The cumulative number of seconds that TAI is ahead of UTC at the provided date.
+    *   - {JulianDate} [date] A Julian date representing the time of the leap second.
+    *   - {Number} [offset] The cumulative number of seconds that TAI is ahead of UTC at the provided date.
     */
   @js.native
   @JSName("Cesium.LeapSecond")
@@ -2984,10 +2984,10 @@ package cesium {
     * alias LinearSpline
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Number[]} options.times An array of strictly increasing, unit-less, floating-point times at each point.
+    *   - {Object} options Object with the following properties:
+    *   - {Number[]} options.times An array of strictly increasing, unit-less, floating-point times at each point.
     * The values are in no way connected to the clock time. They are the parameterization for the curve.
-    * - {Cartesian3[]} options.points The array of [[Cartesian3]] control points.
+    *   - {Cartesian3[]} options.points The array of [[Cartesian3]] control points.
     *
     * exception {DeveloperError} points.length must be greater than or equal to 2.
     * exception {DeveloperError} times.length must be equal to points.length.
@@ -3049,10 +3049,10 @@ package cesium {
     * alias Matrix2
     * constructor
     *
-    * - {Number} [column0Row0=0.0] The value for column 0, row 0.
-    * - {Number} [column1Row0=0.0] The value for column 1, row 0.
-    * - {Number} [column0Row1=0.0] The value for column 0, row 1.
-    * - {Number} [column1Row1=0.0] The value for column 1, row 1.
+    *   - {Number} [column0Row0=0.0] The value for column 0, row 0.
+    *   - {Number} [column1Row0=0.0] The value for column 1, row 0.
+    *   - {Number} [column0Row1=0.0] The value for column 0, row 1.
+    *   - {Number} [column1Row1=0.0] The value for column 1, row 1.
     *
     * @see Matrix2.fromColumnMajorArray
     * @see Matrix2.fromRowMajorArray
@@ -3151,15 +3151,15 @@ package cesium {
     * alias Matrix3
     * constructor
     *
-    * - {Number} [column0Row0=0.0] The value for column 0, row 0.
-    * - {Number} [column1Row0=0.0] The value for column 1, row 0.
-    * - {Number} [column2Row0=0.0] The value for column 2, row 0.
-    * - {Number} [column0Row1=0.0] The value for column 0, row 1.
-    * - {Number} [column1Row1=0.0] The value for column 1, row 1.
-    * - {Number} [column2Row1=0.0] The value for column 2, row 1.
-    * - {Number} [column0Row2=0.0] The value for column 0, row 2.
-    * - {Number} [column1Row2=0.0] The value for column 1, row 2.
-    * - {Number} [column2Row2=0.0] The value for column 2, row 2.
+    *   - {Number} [column0Row0=0.0] The value for column 0, row 0.
+    *   - {Number} [column1Row0=0.0] The value for column 1, row 0.
+    *   - {Number} [column2Row0=0.0] The value for column 2, row 0.
+    *   - {Number} [column0Row1=0.0] The value for column 0, row 1.
+    *   - {Number} [column1Row1=0.0] The value for column 1, row 1.
+    *   - {Number} [column2Row1=0.0] The value for column 2, row 1.
+    *   - {Number} [column0Row2=0.0] The value for column 0, row 2.
+    *   - {Number} [column1Row2=0.0] The value for column 1, row 2.
+    *   - {Number} [column2Row2=0.0] The value for column 2, row 2.
     *
     * @see Matrix3.fromColumnMajorArray
     * @see Matrix3.fromRowMajorArray
@@ -3278,22 +3278,22 @@ package cesium {
     * alias Matrix4
     * constructor
     *
-    * - {Number} [column0Row0=0.0] The value for column 0, row 0.
-    * - {Number} [column1Row0=0.0] The value for column 1, row 0.
-    * - {Number} [column2Row0=0.0] The value for column 2, row 0.
-    * - {Number} [column3Row0=0.0] The value for column 3, row 0.
-    * - {Number} [column0Row1=0.0] The value for column 0, row 1.
-    * - {Number} [column1Row1=0.0] The value for column 1, row 1.
-    * - {Number} [column2Row1=0.0] The value for column 2, row 1.
-    * - {Number} [column3Row1=0.0] The value for column 3, row 1.
-    * - {Number} [column0Row2=0.0] The value for column 0, row 2.
-    * - {Number} [column1Row2=0.0] The value for column 1, row 2.
-    * - {Number} [column2Row2=0.0] The value for column 2, row 2.
-    * - {Number} [column3Row2=0.0] The value for column 3, row 2.
-    * - {Number} [column0Row3=0.0] The value for column 0, row 3.
-    * - {Number} [column1Row3=0.0] The value for column 1, row 3.
-    * - {Number} [column2Row3=0.0] The value for column 2, row 3.
-    * - {Number} [column3Row3=0.0] The value for column 3, row 3.
+    *   - {Number} [column0Row0=0.0] The value for column 0, row 0.
+    *   - {Number} [column1Row0=0.0] The value for column 1, row 0.
+    *   - {Number} [column2Row0=0.0] The value for column 2, row 0.
+    *   - {Number} [column3Row0=0.0] The value for column 3, row 0.
+    *   - {Number} [column0Row1=0.0] The value for column 0, row 1.
+    *   - {Number} [column1Row1=0.0] The value for column 1, row 1.
+    *   - {Number} [column2Row1=0.0] The value for column 2, row 1.
+    *   - {Number} [column3Row1=0.0] The value for column 3, row 1.
+    *   - {Number} [column0Row2=0.0] The value for column 0, row 2.
+    *   - {Number} [column1Row2=0.0] The value for column 1, row 2.
+    *   - {Number} [column2Row2=0.0] The value for column 2, row 2.
+    *   - {Number} [column3Row2=0.0] The value for column 3, row 2.
+    *   - {Number} [column0Row3=0.0] The value for column 0, row 3.
+    *   - {Number} [column1Row3=0.0] The value for column 1, row 3.
+    *   - {Number} [column2Row3=0.0] The value for column 2, row 3.
+    *   - {Number} [column3Row3=0.0] The value for column 3, row 3.
     *
     * @see Matrix4.fromColumnMajorArray
     * @see Matrix4.fromRowMajorArray
@@ -3454,10 +3454,10 @@ package cesium {
     * alias NearFarScalar
     * constructor
     *
-    * - {Number} [near=0.0] The lower bound of the camera range.
-    * - {Number} [nearValue=0.0] The value at the lower bound of the camera range.
-    * - {Number} [far=1.0] The upper bound of the camera range.
-    * - {Number} [farValue=0.0] The value at the upper bound of the camera range.
+    *   - {Number} [near=0.0] The lower bound of the camera range.
+    *   - {Number} [nearValue=0.0] The value at the lower bound of the camera range.
+    *   - {Number} [far=1.0] The upper bound of the camera range.
+    *   - {Number} [farValue=0.0] The value at the upper bound of the camera range.
     *
     * @see Packable
     */
@@ -3497,8 +3497,8 @@ package cesium {
     *
     * alias Occluder
     *
-    * - {BoundingSphere} occluderBoundingSphere The bounding sphere surrounding the occluder.
-    * - {Cartesian3} cameraPosition The coordinate of the viewer/camera.
+    *   - {BoundingSphere} occluderBoundingSphere The bounding sphere surrounding the occluder.
+    *   - {Cartesian3} cameraPosition The coordinate of the viewer/camera.
     *
     * constructor
     *
@@ -3540,8 +3540,8 @@ package cesium {
     * alias OrientedBoundingBox
     * constructor
     *
-    * - {Cartesian3} [center=Cartesian3.ZERO] The center of the box.
-    * - {Matrix3} [halfAxes=Matrix3.ZERO] The three orthogonal half-axes of the bounding box.
+    *   - {Cartesian3} [center=Cartesian3.ZERO] The center of the box.
+    *   - {Matrix3} [halfAxes=Matrix3.ZERO] The three orthogonal half-axes of the bounding box.
     * Equivalently, the transformation matrix, to rotate and scale a 2x2x2
     * cube centered at the origin.
     *
@@ -3632,8 +3632,8 @@ package cesium {
     * alias Plane
     * constructor
     *
-    * - {Cartesian3} normal The plane's normal (normalized).
-    * - {Number} distance The shortest distance from the origin to the plane.  The sign of
+    *   - {Cartesian3} normal The plane's normal (normalized).
+    *   - {Number} distance The shortest distance from the origin to the plane.  The sign of
     * <code>distance</code> determines which side of the plane the origin
     * is on.  If <code>distance</code> is positive, the origin is in the half-space
     * in the direction of the normal; if negative, the origin is in the half-space
@@ -3672,17 +3672,17 @@ package cesium {
     * alias PolygonGeometry
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {PolygonHierarchy} options.polygonHierarchy A polygon hierarchy that can include holes.
-    * - {Number} [options.height=0.0] The distance in meters between the polygon and the ellipsoid surface.
-    * - {Number} [options.extrudedHeight] The distance in meters between the polygon's extruded face and the ellipsoid surface.
-    * - {VertexFormat} [options.vertexFormat=VertexFormat.DEFAULT] The vertex attributes to be computed.
-    * - {Number} [options.stRotation=0.0] The rotation of the texture coordinates, in radians. A positive rotation is counter-clockwise.
-    * - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid to be used as a reference.
-    * - {Number} [options.granularity=CesiumMath.RADIANS_PER_DEGREE] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
-    * - {Boolean} [options.perPositionHeight=false] Use the height of options.positions for each position instead of using options.height to determine the height.
-    * - {Boolean} [options.closeTop=true] When false, leaves off the top of an extruded polygon open.
-    * - {Boolean} [options.closeBottom=true] When false, leaves off the bottom of an extruded polygon open.
+    *   - {Object} options Object with the following properties:
+    *   - {PolygonHierarchy} options.polygonHierarchy A polygon hierarchy that can include holes.
+    *   - {Number} [options.height=0.0] The distance in meters between the polygon and the ellipsoid surface.
+    *   - {Number} [options.extrudedHeight] The distance in meters between the polygon's extruded face and the ellipsoid surface.
+    *   - {VertexFormat} [options.vertexFormat=VertexFormat.DEFAULT] The vertex attributes to be computed.
+    *   - {Number} [options.stRotation=0.0] The rotation of the texture coordinates, in radians. A positive rotation is counter-clockwise.
+    *   - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid to be used as a reference.
+    *   - {Number} [options.granularity=CesiumMath.RADIANS_PER_DEGREE] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
+    *   - {Boolean} [options.perPositionHeight=false] Use the height of options.positions for each position instead of using options.height to determine the height.
+    *   - {Boolean} [options.closeTop=true] When false, leaves off the top of an extruded polygon open.
+    *   - {Boolean} [options.closeBottom=true] When false, leaves off the bottom of an extruded polygon open.
     *
     * @see PolygonGeometry#createGeometry
     * @see PolygonGeometry#fromPositions
@@ -3781,8 +3781,8 @@ package cesium {
     * alias PolygonHierarchy
     * constructor
     *
-    * - {Cartesian3[]} [positions] A linear ring defining the outer boundary of the polygon or hole.
-    * - {PolygonHierarchy[]} [holes] An array of polygon hierarchies defining holes in the polygon.
+    *   - {Cartesian3[]} [positions] A linear ring defining the outer boundary of the polygon or hole.
+    *   - {PolygonHierarchy[]} [holes] An array of polygon hierarchies defining holes in the polygon.
     */
   @js.native
   @JSName("Cesium.PolygonHierarchy")
@@ -3799,14 +3799,14 @@ package cesium {
     * alias PolygonOutlineGeometry
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {PolygonHierarchy} options.polygonHierarchy A polygon hierarchy that can include holes.
-    * - {Number} [options.height=0.0] The distance in meters between the polygon and the ellipsoid surface.
-    * - {Number} [options.extrudedHeight] The distance in meters between the polygon's extruded face and the ellipsoid surface.
-    * - {VertexFormat} [options.vertexFormat=VertexFormat.DEFAULT] The vertex attributes to be computed.
-    * - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid to be used as a reference.
-    * - {Number} [options.granularity=CesiumMath.RADIANS_PER_DEGREE] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
-    * - {Boolean} [options.perPositionHeight=false] Use the height of options.positions for each position instead of using options.height to determine the height.
+    *   - {Object} options Object with the following properties:
+    *   - {PolygonHierarchy} options.polygonHierarchy A polygon hierarchy that can include holes.
+    *   - {Number} [options.height=0.0] The distance in meters between the polygon and the ellipsoid surface.
+    *   - {Number} [options.extrudedHeight] The distance in meters between the polygon's extruded face and the ellipsoid surface.
+    *   - {VertexFormat} [options.vertexFormat=VertexFormat.DEFAULT] The vertex attributes to be computed.
+    *   - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid to be used as a reference.
+    *   - {Number} [options.granularity=CesiumMath.RADIANS_PER_DEGREE] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
+    *   - {Boolean} [options.perPositionHeight=false] Use the height of options.positions for each position instead of using options.height to determine the height.
     *
     * @see PolygonOutlineGeometry#createGeometry
     * @see PolygonOutlineGeometry#fromPositions
@@ -3905,15 +3905,15 @@ package cesium {
     * alias PolylineGeometry
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Cartesian3[]} options.positions An array of [[Cartesian3]] defining the positions in the polyline as a line strip.
-    * - {Number} [options.width=1.0] The width in pixels.
-    * - {Color[]} [options.colors] An Array of [[Color]] defining the per vertex or per segment colors.
-    * - {Boolean} [options.colorsPerVertex=false] A boolean that determines whether the colors will be flat across each segment of the line or interpolated across the vertices.
-    * - {Boolean} [options.followSurface=true] A boolean that determines whether positions will be adjusted to the surface of the ellipsoid via a great arc.
-    * - {Number} [options.granularity=CesiumMath.RADIANS_PER_DEGREE] The distance, in radians, between each latitude and longitude if options.followSurface=true. Determines the number of positions in the buffer.
-    * - {VertexFormat} [options.vertexFormat=VertexFormat.DEFAULT] The vertex attributes to be computed.
-    * - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid to be used as a reference.
+    *   - {Object} options Object with the following properties:
+    *   - {Cartesian3[]} options.positions An array of [[Cartesian3]] defining the positions in the polyline as a line strip.
+    *   - {Number} [options.width=1.0] The width in pixels.
+    *   - {Color[]} [options.colors] An Array of [[Color]] defining the per vertex or per segment colors.
+    *   - {Boolean} [options.colorsPerVertex=false] A boolean that determines whether the colors will be flat across each segment of the line or interpolated across the vertices.
+    *   - {Boolean} [options.followSurface=true] A boolean that determines whether positions will be adjusted to the surface of the ellipsoid via a great arc.
+    *   - {Number} [options.granularity=CesiumMath.RADIANS_PER_DEGREE] The distance, in radians, between each latitude and longitude if options.followSurface=true. Determines the number of positions in the buffer.
+    *   - {VertexFormat} [options.vertexFormat=VertexFormat.DEFAULT] The vertex attributes to be computed.
+    *   - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid to be used as a reference.
     *
     * exception {DeveloperError} At least two positions are required.
     * exception {DeveloperError} width must be greater than or equal to one.
@@ -3958,13 +3958,13 @@ package cesium {
     * alias PolylineVolumeGeometry
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Cartesian3[]} options.polylinePositions An array of [[Cartesian3]] positions that define the center of the polyline volume.
-    * - {Cartesian2[]} options.shapePositions An array of [[Cartesian2]] positions that define the shape to be extruded along the polyline
-    * - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid to be used as a reference.
-    * - {Number} [options.granularity=CesiumMath.RADIANS_PER_DEGREE] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
-    * - {VertexFormat} [options.vertexFormat=VertexFormat.DEFAULT] The vertex attributes to be computed.
-    * - {CornerType} [options.cornerType=CornerType.ROUNDED] Determines the style of the corners.
+    *   - {Object} options Object with the following properties:
+    *   - {Cartesian3[]} options.polylinePositions An array of [[Cartesian3]] positions that define the center of the polyline volume.
+    *   - {Cartesian2[]} options.shapePositions An array of [[Cartesian2]] positions that define the shape to be extruded along the polyline
+    *   - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid to be used as a reference.
+    *   - {Number} [options.granularity=CesiumMath.RADIANS_PER_DEGREE] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
+    *   - {VertexFormat} [options.vertexFormat=VertexFormat.DEFAULT] The vertex attributes to be computed.
+    *   - {CornerType} [options.cornerType=CornerType.ROUNDED] Determines the style of the corners.
     *
     * @see PolylineVolumeGeometry#createGeometry
     *
@@ -4012,12 +4012,12 @@ package cesium {
     * alias PolylineVolumeOutlineGeometry
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Cartesian3[]} options.polylinePositions An array of positions that define the center of the polyline volume.
-    * - {Cartesian2[]} options.shapePositions An array of positions that define the shape to be extruded along the polyline
-    * - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid to be used as a reference.
-    * - {Number} [options.granularity=CesiumMath.RADIANS_PER_DEGREE] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
-    * - {CornerType} [options.cornerType=CornerType.ROUNDED] Determines the style of the corners.
+    *   - {Object} options Object with the following properties:
+    *   - {Cartesian3[]} options.polylinePositions An array of positions that define the center of the polyline volume.
+    *   - {Cartesian2[]} options.shapePositions An array of positions that define the shape to be extruded along the polyline
+    *   - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid to be used as a reference.
+    *   - {Number} [options.granularity=CesiumMath.RADIANS_PER_DEGREE] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
+    *   - {CornerType} [options.cornerType=CornerType.ROUNDED] Determines the style of the corners.
     *
     * @see PolylineVolumeOutlineGeometry#createGeometry
     * @example
@@ -4066,26 +4066,26 @@ package cesium {
     * alias QuantizedMeshTerrainData
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Uint16Array} options.quantizedVertices The buffer containing the quantized mesh.
-    * - {Uint16Array|Uint32Array} options.indices The indices specifying how the quantized vertices are linked
+    *   - {Object} options Object with the following properties:
+    *   - {Uint16Array} options.quantizedVertices The buffer containing the quantized mesh.
+    *   - {Uint16Array|Uint32Array} options.indices The indices specifying how the quantized vertices are linked
     * together into triangles.  Each three indices specifies one triangle.
-    * - {Number} options.minimumHeight The minimum terrain height within the tile, in meters above the ellipsoid.
-    * - {Number} options.maximumHeight The maximum terrain height within the tile, in meters above the ellipsoid.
-    * - {BoundingSphere} options.boundingSphere A sphere bounding all of the vertices in the mesh.
-    * - {OrientedBoundingBox} [options.orientedBoundingBox] An OrientedBoundingBox bounding all of the vertices in the mesh.
-    * - {Cartesian3} options.horizonOcclusionPoint The horizon occlusion point of the mesh.  If this point
+    *   - {Number} options.minimumHeight The minimum terrain height within the tile, in meters above the ellipsoid.
+    *   - {Number} options.maximumHeight The maximum terrain height within the tile, in meters above the ellipsoid.
+    *   - {BoundingSphere} options.boundingSphere A sphere bounding all of the vertices in the mesh.
+    *   - {OrientedBoundingBox} [options.orientedBoundingBox] An OrientedBoundingBox bounding all of the vertices in the mesh.
+    *   - {Cartesian3} options.horizonOcclusionPoint The horizon occlusion point of the mesh.  If this point
     * is below the horizon, the entire tile is assumed to be below the horizon as well.
     * The point is expressed in ellipsoid-scaled coordinates.
-    * - {Number[]} options.westIndices The indices of the vertices on the western edge of the tile.
-    * - {Number[]} options.southIndices The indices of the vertices on the southern edge of the tile.
-    * - {Number[]} options.eastIndices The indices of the vertices on the eastern edge of the tile.
-    * - {Number[]} options.northIndices The indices of the vertices on the northern edge of the tile.
-    * - {Number} options.westSkirtHeight The height of the skirt to add on the western edge of the tile.
-    * - {Number} options.southSkirtHeight The height of the skirt to add on the southern edge of the tile.
-    * - {Number} options.eastSkirtHeight The height of the skirt to add on the eastern edge of the tile.
-    * - {Number} options.northSkirtHeight The height of the skirt to add on the northern edge of the tile.
-    * - {Number} [options.childTileMask=15] A bit mask indicating which of this tile's four children exist.
+    *   - {Number[]} options.westIndices The indices of the vertices on the western edge of the tile.
+    *   - {Number[]} options.southIndices The indices of the vertices on the southern edge of the tile.
+    *   - {Number[]} options.eastIndices The indices of the vertices on the eastern edge of the tile.
+    *   - {Number[]} options.northIndices The indices of the vertices on the northern edge of the tile.
+    *   - {Number} options.westSkirtHeight The height of the skirt to add on the western edge of the tile.
+    *   - {Number} options.southSkirtHeight The height of the skirt to add on the southern edge of the tile.
+    *   - {Number} options.eastSkirtHeight The height of the skirt to add on the eastern edge of the tile.
+    *   - {Number} options.northSkirtHeight The height of the skirt to add on the northern edge of the tile.
+    *   - {Number} [options.childTileMask=15] A bit mask indicating which of this tile's four children exist.
     * If a child's bit is set, geometry will be requested for that tile as well when it
     * is needed.  If the bit is cleared, the child tile is not requested and geometry is
     * instead upsampled from the parent.  The bit values are as follows:
@@ -4096,10 +4096,10 @@ package cesium {
     * <tr><td>2</td><td>4</td><td>Northwest</td></tr>
     * <tr><td>3</td><td>8</td><td>Northeast</td></tr>
     * </table>
-    * - {Boolean} [options.createdByUpsampling=false] True if this instance was created by upsampling another instance;
+    *   - {Boolean} [options.createdByUpsampling=false] True if this instance was created by upsampling another instance;
     * otherwise, false.
-    * - {Uint8Array} [options.encodedNormals] The buffer containing per vertex normals, encoded using 'oct' encoding
-    * - {Uint8Array} [options.waterMask] The buffer containing the watermask.
+    *   - {Uint8Array} [options.encodedNormals] The buffer containing per vertex normals, encoded using 'oct' encoding
+    *   - {Uint8Array} [options.waterMask] The buffer containing the watermask.
     *
     * @example
     * var data = new Cesium.QuantizedMeshTerrainData({
@@ -4150,10 +4150,10 @@ package cesium {
     * alias Quaternion
     * constructor
     *
-    * - {Number} [x=0.0] The X component.
-    * - {Number} [y=0.0] The Y component.
-    * - {Number} [z=0.0] The Z component.
-    * - {Number} [w=0.0] The W component.
+    *   - {Number} [x=0.0] The X component.
+    *   - {Number} [y=0.0] The Y component.
+    *   - {Number} [z=0.0] The Z component.
+    *   - {Number} [w=0.0] The W component.
     *
     * @see PackableForInterpolation
     */
@@ -4256,13 +4256,13 @@ package cesium {
     * alias QuaternionSpline
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Number[]} options.times An array of strictly increasing, unit-less, floating-point times at each point.
+    *   - {Object} options Object with the following properties:
+    *   - {Number[]} options.times An array of strictly increasing, unit-less, floating-point times at each point.
     * The values are in no way connected to the clock time. They are the parameterization for the curve.
-    * - {Quaternion[]} options.points The array of [[Quaternion]] control points.
-    * - {Quaternion} [options.firstInnerQuadrangle] The inner quadrangle of the curve at the first control point.
+    *   - {Quaternion[]} options.points The array of [[Quaternion]] control points.
+    *   - {Quaternion} [options.firstInnerQuadrangle] The inner quadrangle of the curve at the first control point.
     * If the inner quadrangle is not given, it will be estimated.
-    * - {Quaternion} [options.lastInnerQuadrangle] The inner quadrangle of the curve at the last control point.
+    *   - {Quaternion} [options.lastInnerQuadrangle] The inner quadrangle of the curve at the last control point.
     * If the inner quadrangle is not given, it will be estimated.
     *
     * exception {DeveloperError} points.length must be greater than or equal to 2.
@@ -4321,8 +4321,8 @@ package cesium {
     * alias Ray
     * constructor
     *
-    * - {Cartesian3} [origin=Cartesian3.ZERO] The origin of the ray.
-    * - {Cartesian3} [direction=Cartesian3.ZERO] The direction of the ray.
+    *   - {Cartesian3} [origin=Cartesian3.ZERO] The origin of the ray.
+    *   - {Cartesian3} [direction=Cartesian3.ZERO] The direction of the ray.
     */
   @js.native
   @JSName("Cesium.Ray")
@@ -4345,10 +4345,10 @@ package cesium {
     * alias Rectangle
     * constructor
     *
-    * - {Number} [west=0.0] The westernmost longitude, in radians, in the range [-Pi, Pi].
-    * - {Number} [south=0.0] The southernmost latitude, in radians, in the range [-Pi/2, Pi/2].
-    * - {Number} [east=0.0] The easternmost longitude, in radians, in the range [-Pi, Pi].
-    * - {Number} [north=0.0] The northernmost latitude, in radians, in the range [-Pi/2, Pi/2].
+    *   - {Number} [west=0.0] The westernmost longitude, in radians, in the range [-Pi, Pi].
+    *   - {Number} [south=0.0] The southernmost latitude, in radians, in the range [-Pi/2, Pi/2].
+    *   - {Number} [east=0.0] The easternmost longitude, in radians, in the range [-Pi, Pi].
+    *   - {Number} [north=0.0] The northernmost latitude, in radians, in the range [-Pi/2, Pi/2].
     *
     * @see Packable
     */
@@ -4422,17 +4422,17 @@ package cesium {
     * alias RectangleGeometry
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Rectangle} options.rectangle A cartographic rectangle with north, south, east and west properties in radians.
-    * - {VertexFormat} [options.vertexFormat=VertexFormat.DEFAULT] The vertex attributes to be computed.
-    * - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid on which the rectangle lies.
-    * - {Number} [options.granularity=CesiumMath.RADIANS_PER_DEGREE] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
-    * - {Number} [options.height=0.0] The distance in meters between the rectangle and the ellipsoid surface.
-    * - {Number} [options.rotation=0.0] The rotation of the rectangle, in radians. A positive rotation is counter-clockwise.
-    * - {Number} [options.stRotation=0.0] The rotation of the texture coordinates, in radians. A positive rotation is counter-clockwise.
-    * - {Number} [options.extrudedHeight] The distance in meters between the rectangle's extruded face and the ellipsoid surface.
-    * - {Boolean} [options.closeTop=true] Specifies whether the rectangle has a top cover when extruded.
-    * - {Boolean} [options.closeBottom=true] Specifies whether the rectangle has a bottom cover when extruded.
+    *   - {Object} options Object with the following properties:
+    *   - {Rectangle} options.rectangle A cartographic rectangle with north, south, east and west properties in radians.
+    *   - {VertexFormat} [options.vertexFormat=VertexFormat.DEFAULT] The vertex attributes to be computed.
+    *   - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid on which the rectangle lies.
+    *   - {Number} [options.granularity=CesiumMath.RADIANS_PER_DEGREE] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
+    *   - {Number} [options.height=0.0] The distance in meters between the rectangle and the ellipsoid surface.
+    *   - {Number} [options.rotation=0.0] The rotation of the rectangle, in radians. A positive rotation is counter-clockwise.
+    *   - {Number} [options.stRotation=0.0] The rotation of the texture coordinates, in radians. A positive rotation is counter-clockwise.
+    *   - {Number} [options.extrudedHeight] The distance in meters between the rectangle's extruded face and the ellipsoid surface.
+    *   - {Boolean} [options.closeTop=true] Specifies whether the rectangle has a top cover when extruded.
+    *   - {Boolean} [options.closeBottom=true] Specifies whether the rectangle has a bottom cover when extruded.
     *
     * exception {DeveloperError} <code>options.rectangle.north</code> must be in the interval [<code>-Pi/2</code>, <code>Pi/2</code>].
     * exception {DeveloperError} <code>options.rectangle.south</code> must be in the interval [<code>-Pi/2</code>, <code>Pi/2</code>].
@@ -4486,13 +4486,13 @@ package cesium {
     * alias RectangleOutlineGeometry
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Rectangle} options.rectangle A cartographic rectangle with north, south, east and west properties in radians.
-    * - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid on which the rectangle lies.
-    * - {Number} [options.granularity=CesiumMath.RADIANS_PER_DEGREE] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
-    * - {Number} [options.height=0.0] The distance in meters between the rectangle and the ellipsoid surface.
-    * - {Number} [options.rotation=0.0] The rotation of the rectangle, in radians. A positive rotation is counter-clockwise.
-    * - {Number} [options.extrudedHeight] The distance in meters between the rectangle's extruded face and the ellipsoid surface.
+    *   - {Object} options Object with the following properties:
+    *   - {Rectangle} options.rectangle A cartographic rectangle with north, south, east and west properties in radians.
+    *   - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid on which the rectangle lies.
+    *   - {Number} [options.granularity=CesiumMath.RADIANS_PER_DEGREE] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
+    *   - {Number} [options.height=0.0] The distance in meters between the rectangle and the ellipsoid surface.
+    *   - {Number} [options.rotation=0.0] The rotation of the rectangle, in radians. A positive rotation is counter-clockwise.
+    *   - {Number} [options.extrudedHeight] The distance in meters between the rectangle's extruded face and the ellipsoid surface.
     *
     * exception {DeveloperError} <code>options.rectangle.north</code> must be in the interval [<code>-Pi/2</code>, <code>Pi/2</code>].
     * exception {DeveloperError} <code>options.rectangle.south</code> must be in the interval [<code>-Pi/2</code>, <code>Pi/2</code>].
@@ -4533,9 +4533,9 @@ package cesium {
     * constructor
     * alias RequestErrorEvent
     *
-    * - {Number} [statusCode] The HTTP error status code, such as 404.
-    * - {Object} [response] The response included along with the error.
-    * - {String|Object} [responseHeaders] The response headers, represented either as an object literal or as a
+    *   - {Number} [statusCode] The HTTP error status code, such as 404.
+    *   - {Object} [response] The response included along with the error.
+    *   - {String|Object} [responseHeaders] The response headers, represented either as an object literal or as a
     * string in the format returned by XMLHttpRequest's getAllResponseHeaders() function.
     */
   @js.native
@@ -4563,7 +4563,7 @@ package cesium {
     * constructor
     * extends Error
     *
-    * - {String} [message] The error message for this exception.
+    *   - {String} [message] The error message for this exception.
     *
     * @see DeveloperError
     */
@@ -4583,7 +4583,7 @@ package cesium {
     *
     * alias ScreenSpaceEventHandler
     *
-    * - {Canvas} [element=document] The element to add events to.
+    *   - {Canvas} [element=document] The element to add events to.
     *
     * constructor
     */
@@ -4609,7 +4609,7 @@ package cesium {
     * alias ShowGeometryInstanceAttribute
     * constructor
     *
-    * - {Boolean} [show=true] Determines if the geometry instance will be shown.
+    *   - {Boolean} [show=true] Determines if the geometry instance will be shown.
     *
     * @example
     * var instance = new Cesium.GeometryInstance({
@@ -4652,13 +4652,13 @@ package cesium {
     * alias SimplePolylineGeometry
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Cartesian3[]} options.positions An array of [[Cartesian3]] defining the positions in the polyline as a line strip.
-    * - {Color[]} [options.colors] An Array of [[Color]] defining the per vertex or per segment colors.
-    * - {Boolean} [options.colorsPerVertex=false] A boolean that determines whether the colors will be flat across each segment of the line or interpolated across the vertices.
-    * - {Boolean} [options.followSurface=true] A boolean that determines whether positions will be adjusted to the surface of the ellipsoid via a great arc.
-    * - {Number} [options.granularity=CesiumMath.RADIANS_PER_DEGREE] The distance, in radians, between each latitude and longitude if options.followSurface=true. Determines the number of positions in the buffer.
-    * - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid to be used as a reference.
+    *   - {Object} options Object with the following properties:
+    *   - {Cartesian3[]} options.positions An array of [[Cartesian3]] defining the positions in the polyline as a line strip.
+    *   - {Color[]} [options.colors] An Array of [[Color]] defining the per vertex or per segment colors.
+    *   - {Boolean} [options.colorsPerVertex=false] A boolean that determines whether the colors will be flat across each segment of the line or interpolated across the vertices.
+    *   - {Boolean} [options.followSurface=true] A boolean that determines whether positions will be adjusted to the surface of the ellipsoid via a great arc.
+    *   - {Number} [options.granularity=CesiumMath.RADIANS_PER_DEGREE] The distance, in radians, between each latitude and longitude if options.followSurface=true. Determines the number of positions in the buffer.
+    *   - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid to be used as a reference.
     *
     * exception {DeveloperError} At least two positions are required.
     * exception {DeveloperError} colors has an invalid length.
@@ -4699,11 +4699,11 @@ package cesium {
     * alias SphereGeometry
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Number} [options.radius=1.0] The radius of the sphere.
-    * - {Number} [options.stackPartitions=64] The number of times to partition the ellipsoid into stacks.
-    * - {Number} [options.slicePartitions=64] The number of times to partition the ellipsoid into radial slices.
-    * - {VertexFormat} [options.vertexFormat=VertexFormat.DEFAULT] The vertex attributes to be computed.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Number} [options.radius=1.0] The radius of the sphere.
+    *   - {Number} [options.stackPartitions=64] The number of times to partition the ellipsoid into stacks.
+    *   - {Number} [options.slicePartitions=64] The number of times to partition the ellipsoid into radial slices.
+    *   - {VertexFormat} [options.vertexFormat=VertexFormat.DEFAULT] The vertex attributes to be computed.
     *
     * exception {DeveloperError} options.slicePartitions cannot be less than three.
     * exception {DeveloperError} options.stackPartitions cannot be less than three.
@@ -4740,11 +4740,11 @@ package cesium {
     * alias SphereOutlineGeometry
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Number} [options.radius=1.0] The radius of the sphere.
-    * - {Number} [options.stackPartitions=10] The count of stacks for the sphere (1 greater than the number of parallel lines).
-    * - {Number} [options.slicePartitions=8] The count of slices for the sphere (Equal to the number of radial lines).
-    * - {Number} [options.subdivisions=200] The number of points per line, determining the granularity of the curvature .
+    *   - {Object} [options] Object with the following properties:
+    *   - {Number} [options.radius=1.0] The radius of the sphere.
+    *   - {Number} [options.stackPartitions=10] The count of stacks for the sphere (1 greater than the number of parallel lines).
+    *   - {Number} [options.slicePartitions=8] The count of slices for the sphere (Equal to the number of radial lines).
+    *   - {Number} [options.subdivisions=200] The number of points per line, determining the granularity of the curvature .
     *
     * exception {DeveloperError} options.stackPartitions must be greater than or equal to one.
     * exception {DeveloperError} options.slicePartitions must be greater than or equal to zero.
@@ -4782,9 +4782,9 @@ package cesium {
     * alias Spherical
     * constructor
     *
-    * - {Number} [clock=0.0] The angular coordinate lying in the xy-plane measured from the positive x-axis and toward the positive y-axis.
-    * - {Number} [cone=0.0] The angular coordinate measured from the positive z-axis and toward the negative z-axis.
-    * - {Number} [magnitude=1.0] The linear coordinate measured from the origin.
+    *   - {Number} [clock=0.0] The angular coordinate lying in the xy-plane measured from the positive x-axis and toward the positive y-axis.
+    *   - {Number} [cone=0.0] The angular coordinate measured from the positive z-axis and toward the negative z-axis.
+    *   - {Number} [magnitude=1.0] The linear coordinate measured from the origin.
     */
   @js.native
   @JSName("Cesium.Spherical")
@@ -4846,9 +4846,9 @@ package cesium {
     * alias TaskProcessor
     * constructor
     *
-    * - {String} workerName The name of the worker.  This is expected to be a script
+    *   - {String} workerName The name of the worker.  This is expected to be a script
     * in the Workers folder.
-    * - {Number} [maximumActiveTasks=5] The maximum number of active tasks.  Once exceeded,
+    *   - {Number} [maximumActiveTasks=5] The maximum number of active tasks.  Once exceeded,
     * scheduleTask will not queue any more tasks, allowing
     * work to be rescheduled in future frames.
     */
@@ -4934,16 +4934,16 @@ package cesium {
     * alias TileProviderError
     * constructor
     *
-    * - {ImageryProvider|TerrainProvider} provider The imagery or terrain provider that experienced the error.
-    * - {String} message A message describing the error.
-    * - {Number} [x] The X coordinate of the tile that experienced the error, or undefined if the error
+    *   - {ImageryProvider|TerrainProvider} provider The imagery or terrain provider that experienced the error.
+    *   - {String} message A message describing the error.
+    *   - {Number} [x] The X coordinate of the tile that experienced the error, or undefined if the error
     * is not specific to a particular tile.
-    * - {Number} [y] The Y coordinate of the tile that experienced the error, or undefined if the error
+    *   - {Number} [y] The Y coordinate of the tile that experienced the error, or undefined if the error
     * is not specific to a particular tile.
-    * - {Number} [level] The level of the tile that experienced the error, or undefined if the error
+    *   - {Number} [level] The level of the tile that experienced the error, or undefined if the error
     * is not specific to a particular tile.
-    * - {Number} [timesRetried=0] The number of times this operation has been retried.
-    * - {Error} [error] The error or exception that occurred, if any.
+    *   - {Number} [timesRetried=0] The number of times this operation has been retried.
+    *   - {Error} [error] The error or exception that occurred, if any.
     */
   @js.native
   @JSName("Cesium.TileProviderError")
@@ -5011,12 +5011,12 @@ package cesium {
     * alias TimeInterval
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {JulianDate} [options.start=new JulianDate()] The start time of the interval.
-    * - {JulianDate} [options.stop=new JulianDate()] The stop time of the interval.
-    * - {Boolean} [options.isStartIncluded=true] <code>true</code> if <code>options.start</code> is included in the interval, <code>false</code> otherwise.
-    * - {Boolean} [options.isStopIncluded=true] <code>true</code> if <code>options.stop</code> is included in the interval, <code>false</code> otherwise.
-    * - {Object} [options.data] Arbitrary data associated with this interval.
+    *   - {Object} [options] Object with the following properties:
+    *   - {JulianDate} [options.start=new JulianDate()] The start time of the interval.
+    *   - {JulianDate} [options.stop=new JulianDate()] The stop time of the interval.
+    *   - {Boolean} [options.isStartIncluded=true] <code>true</code> if <code>options.start</code> is included in the interval, <code>false</code> otherwise.
+    *   - {Boolean} [options.isStopIncluded=true] <code>true</code> if <code>options.stop</code> is included in the interval, <code>false</code> otherwise.
+    *   - {Object} [options.data] Arbitrary data associated with this interval.
     *
     * @example
     * // Create an instance that spans August 1st, 1980 and is associated
@@ -5103,7 +5103,7 @@ package cesium {
     * alias TimeIntervalCollection
     * constructor
     *
-    * - {TimeInterval[]} [intervals] An array of intervals to add to the collection.
+    *   - {TimeInterval[]} [intervals] An array of intervals to add to the collection.
     */
   @js.native
   @JSName("Cesium.TimeIntervalCollection")
@@ -5146,9 +5146,9 @@ package cesium {
     * alias TranslationRotationScale
     * constructor
     *
-    * - {Cartesian3} [translation=Cartesian3.ZERO] A [[Cartesian3]] specifying the (x, y, z) translation to apply to the node.
-    * - {Quaternion} [rotation=Quaternion.IDENTITY] A [[Quaternion]] specifying the (x, y, z, w) rotation to apply to the node.
-    * - {Cartesian3} [scale=new Cartesian3(1.0, 1.0, 1.0)] A [[Cartesian3]] specifying the (x, y, z) scaling to apply to the node.
+    *   - {Cartesian3} [translation=Cartesian3.ZERO] A [[Cartesian3]] specifying the (x, y, z) translation to apply to the node.
+    *   - {Quaternion} [rotation=Quaternion.IDENTITY] A [[Quaternion]] specifying the (x, y, z, w) rotation to apply to the node.
+    *   - {Cartesian3} [scale=new Cartesian3(1.0, 1.0, 1.0)] A [[Cartesian3]] specifying the (x, y, z) scaling to apply to the node.
     */
   @js.native
   @JSName("Cesium.TranslationRotationScale")
@@ -5169,12 +5169,12 @@ package cesium {
     * alias VRTheWorldTerrainProvider
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {String} options.url The URL of the VR-TheWorld TileMap.
-    * - {Object} [options.proxy] A proxy to use for requests. This object is expected to have a getURL function which returns the proxied URL, if needed.
-    * - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid.  If this parameter is not
+    *   - {Object} options Object with the following properties:
+    *   - {String} options.url The URL of the VR-TheWorld TileMap.
+    *   - {Object} [options.proxy] A proxy to use for requests. This object is expected to have a getURL function which returns the proxied URL, if needed.
+    *   - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid.  If this parameter is not
     * specified, the WGS84 ellipsoid is used.
-    * - {Credit|String} [options.credit] A credit for the data source, which is displayed on the canvas.
+    *   - {Credit|String} [options.credit] A credit for the data source, which is displayed on the canvas.
     *
     * @example
     * var terrainProvider = new Cesium.VRTheWorldTerrainProvider({
@@ -5208,7 +5208,7 @@ package cesium {
     * to a [[Geometry]] to request that certain properties be computed, e.g., just position,
     * position and normal, etc.
     *
-    * - {Object} [options] An object with boolean properties corresponding to VertexFormat properties as shown in the code example.
+    *   - {Object} [options] An object with boolean properties corresponding to VertexFormat properties as shown in the code example.
     *
     * alias VertexFormat
     * constructor
@@ -5261,11 +5261,11 @@ package cesium {
     * alias VideoSynchronizer
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Clock} [options.clock] The clock instance used to drive the video.
-    * - {HTMLVideoElement} [options.element] The video element to be synchronized.
-    * - {JulianDate} [options.epoch=Iso8601.MINIMUM_VALUE] The simulation time that marks the start of the video.
-    * - {Number} [options.tolerance=1.0] The maximum amount of time, in seconds, that the clock and video can diverge.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Clock} [options.clock] The clock instance used to drive the video.
+    *   - {HTMLVideoElement} [options.element] The video element to be synchronized.
+    *   - {JulianDate} [options.epoch=Iso8601.MINIMUM_VALUE] The simulation time that marks the start of the video.
+    *   - {Number} [options.tolerance=1.0] The maximum amount of time, in seconds, that the clock and video can diverge.
     *
     * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Video.html|Video Material Demo]]
     */
@@ -5291,15 +5291,15 @@ package cesium {
     * alias WallGeometry
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Cartesian3[]} options.positions An array of Cartesian objects, which are the points of the wall.
-    * - {Number} [options.granularity=CesiumMath.RADIANS_PER_DEGREE] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
-    * - {Number[]} [options.maximumHeights] An array parallel to <code>positions</code> that give the maximum height of the
+    *   - {Object} options Object with the following properties:
+    *   - {Cartesian3[]} options.positions An array of Cartesian objects, which are the points of the wall.
+    *   - {Number} [options.granularity=CesiumMath.RADIANS_PER_DEGREE] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
+    *   - {Number[]} [options.maximumHeights] An array parallel to <code>positions</code> that give the maximum height of the
     * wall at <code>positions</code>. If undefined, the height of each position in used.
-    * - {Number[]} [options.minimumHeights] An array parallel to <code>positions</code> that give the minimum height of the
+    *   - {Number[]} [options.minimumHeights] An array parallel to <code>positions</code> that give the minimum height of the
     * wall at <code>positions</code>. If undefined, the height at each position is 0.0.
-    * - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid for coordinate manipulation
-    * - {VertexFormat} [options.vertexFormat=VertexFormat.DEFAULT] The vertex attributes to be computed.
+    *   - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid for coordinate manipulation
+    *   - {VertexFormat} [options.vertexFormat=VertexFormat.DEFAULT] The vertex attributes to be computed.
     *
     * exception {DeveloperError} positions length must be greater than or equal to 2.
     * exception {DeveloperError} positions and maximumHeights must have the same length.
@@ -5349,14 +5349,14 @@ package cesium {
     * alias WallOutlineGeometry
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Cartesian3[]} options.positions An array of Cartesian objects, which are the points of the wall.
-    * - {Number} [options.granularity=CesiumMath.RADIANS_PER_DEGREE] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
-    * - {Number[]} [options.maximumHeights] An array parallel to <code>positions</code> that give the maximum height of the
+    *   - {Object} options Object with the following properties:
+    *   - {Cartesian3[]} options.positions An array of Cartesian objects, which are the points of the wall.
+    *   - {Number} [options.granularity=CesiumMath.RADIANS_PER_DEGREE] The distance, in radians, between each latitude and longitude. Determines the number of positions in the buffer.
+    *   - {Number[]} [options.maximumHeights] An array parallel to <code>positions</code> that give the maximum height of the
     * wall at <code>positions</code>. If undefined, the height of each position in used.
-    * - {Number[]} [options.minimumHeights] An array parallel to <code>positions</code> that give the minimum height of the
+    *   - {Number[]} [options.minimumHeights] An array parallel to <code>positions</code> that give the minimum height of the
     * wall at <code>positions</code>. If undefined, the height at each position is 0.0.
-    * - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid for coordinate manipulation
+    *   - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid for coordinate manipulation
     *
     * exception {DeveloperError} positions length must be greater than or equal to 2.
     * exception {DeveloperError} positions and maximumHeights must have the same length.
@@ -5405,7 +5405,7 @@ package cesium {
     * alias WebMercatorProjection
     * constructor
     *
-    * - {Ellipsoid} [ellipsoid=Ellipsoid.WGS84] The ellipsoid.
+    *   - {Ellipsoid} [ellipsoid=Ellipsoid.WGS84] The ellipsoid.
     *
     * @see GeographicProjection
     */
@@ -5438,18 +5438,18 @@ package cesium {
     * alias WebMercatorTilingScheme
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid whose surface is being tiled. Defaults to
+    *   - {Object} [options] Object with the following properties:
+    *   - {Ellipsoid} [options.ellipsoid=Ellipsoid.WGS84] The ellipsoid whose surface is being tiled. Defaults to
     * the WGS84 ellipsoid.
-    * - {Number} [options.numberOfLevelZeroTilesX=1] The number of tiles in the X direction at level zero of
+    *   - {Number} [options.numberOfLevelZeroTilesX=1] The number of tiles in the X direction at level zero of
     * the tile tree.
-    * - {Number} [options.numberOfLevelZeroTilesY=1] The number of tiles in the Y direction at level zero of
+    *   - {Number} [options.numberOfLevelZeroTilesY=1] The number of tiles in the Y direction at level zero of
     * the tile tree.
-    * - {Cartesian2} [options.rectangleSouthwestInMeters] The southwest corner of the rectangle covered by the
+    *   - {Cartesian2} [options.rectangleSouthwestInMeters] The southwest corner of the rectangle covered by the
     * tiling scheme, in meters.  If this parameter or rectangleNortheastInMeters is not specified, the entire
     * globe is covered in the longitude direction and an equal distance is covered in the latitude
     * direction, resulting in a square projection.
-    * - {Cartesian2} [options.rectangleNortheastInMeters] The northeast corner of the rectangle covered by the
+    *   - {Cartesian2} [options.rectangleNortheastInMeters] The northeast corner of the rectangle covered by the
     * tiling scheme, in meters.  If this parameter or rectangleSouthwestInMeters is not specified, the entire
     * globe is covered in the longitude direction and an equal distance is covered in the latitude
     * direction, resulting in a square projection.
@@ -5491,24 +5491,24 @@ package cesium {
     * alias BillboardGraphics
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Property} [options.image] A Property specifying the Image, URI, or Canvas to use for the billboard.
-    * - {Property} [options.show=true] A boolean Property specifying the visibility of the billboard.
-    * - {Property} [options.scale=1.0] A numeric Property specifying the scale to apply to the image size.
-    * - {Property} [options.horizontalOrigin=HorizontalOrigin.CENTER] A Property specifying the [[HorizontalOrigin]].
-    * - {Property} [options.verticalOrigin=VerticalOrigin.CENTER] A Property specifying the [[VerticalOrigin]].
-    * - {Property} [options.eyeOffset=Cartesian3.ZERO] A [[Cartesian3]] Property specifying the eye offset.
-    * - {Property} [options.pixelOffset=Cartesian2.ZERO] A [[Cartesian2]] Property specifying the pixel offset.
-    * - {Property} [options.rotation=0] A numeric Property specifying the rotation about the alignedAxis.
-    * - {Property} [options.alignedAxis=Cartesian3.ZERO] A [[Cartesian3]] Property specifying the axis of rotation.
-    * - {Property} [options.width] A numeric Property specifying the width of the billboard in pixels, overriding the native size.
-    * - {Property} [options.height] A numeric Property specifying the height of the billboard in pixels, overriding the native size.
-    * - {Property} [options.color=Color.WHITE] A Property specifying the tint [[Color]] of the image.
-    * - {Property} [options.scaleByDistance] A [[NearFarScalar]] Property used to scale the point based on distance from the camera.
-    * - {Property} [options.translucencyByDistance] A [[NearFarScalar]] Property used to set translucency based on distance from the camera.
-    * - {Property} [options.pixelOffsetScaleByDistance] A [[NearFarScalar]] Property used to set pixelOffset based on distance from the camera.
-    * - {Property} [options.imageSubRegion] A Property specifying a [[BoundingRectangle]] that defines a sub-region of the image to use for the billboard, rather than the entire image.
-    * - {Property} [options.sizeInMeters] A boolean Property specifying whether this billboard's size should be measured in meters.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Property} [options.image] A Property specifying the Image, URI, or Canvas to use for the billboard.
+    *   - {Property} [options.show=true] A boolean Property specifying the visibility of the billboard.
+    *   - {Property} [options.scale=1.0] A numeric Property specifying the scale to apply to the image size.
+    *   - {Property} [options.horizontalOrigin=HorizontalOrigin.CENTER] A Property specifying the [[HorizontalOrigin]].
+    *   - {Property} [options.verticalOrigin=VerticalOrigin.CENTER] A Property specifying the [[VerticalOrigin]].
+    *   - {Property} [options.eyeOffset=Cartesian3.ZERO] A [[Cartesian3]] Property specifying the eye offset.
+    *   - {Property} [options.pixelOffset=Cartesian2.ZERO] A [[Cartesian2]] Property specifying the pixel offset.
+    *   - {Property} [options.rotation=0] A numeric Property specifying the rotation about the alignedAxis.
+    *   - {Property} [options.alignedAxis=Cartesian3.ZERO] A [[Cartesian3]] Property specifying the axis of rotation.
+    *   - {Property} [options.width] A numeric Property specifying the width of the billboard in pixels, overriding the native size.
+    *   - {Property} [options.height] A numeric Property specifying the height of the billboard in pixels, overriding the native size.
+    *   - {Property} [options.color=Color.WHITE] A Property specifying the tint [[Color]] of the image.
+    *   - {Property} [options.scaleByDistance] A [[NearFarScalar]] Property used to scale the point based on distance from the camera.
+    *   - {Property} [options.translucencyByDistance] A [[NearFarScalar]] Property used to set translucency based on distance from the camera.
+    *   - {Property} [options.pixelOffsetScaleByDistance] A [[NearFarScalar]] Property used to set pixelOffset based on distance from the camera.
+    *   - {Property} [options.imageSubRegion] A Property specifying a [[BoundingRectangle]] that defines a sub-region of the image to use for the billboard, rather than the entire image.
+    *   - {Property} [options.sizeInMeters] A boolean Property specifying whether this billboard's size should be measured in meters.
     *
     * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Billboards.html|Cesium Sandcastle Billboard Demo]]
     */
@@ -5546,8 +5546,8 @@ package cesium {
     * alias BillboardVisualizer
     * constructor
     *
-    * - {Scene} scene The scene the primitives will be rendered in.
-    * - {EntityCollection} entityCollection The entityCollection to visualize.
+    *   - {Scene} scene The scene the primitives will be rendered in.
+    *   - {EntityCollection} entityCollection The entityCollection to visualize.
     */
   @js.native
   @JSName("Cesium.BillboardVisualizer")
@@ -5567,8 +5567,8 @@ package cesium {
     * alias BoxGeometryUpdater
     * constructor
     *
-    * - {Entity} entity The entity containing the geometry to be visualized.
-    * - {Scene} scene The scene where visualization is taking place.
+    *   - {Entity} entity The entity containing the geometry to be visualized.
+    *   - {Scene} scene The scene where visualization is taking place.
     */
   @js.native
   @JSName("Cesium.BoxGeometryUpdater")
@@ -5615,14 +5615,14 @@ package cesium {
     * alias BoxGraphics
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Property} [options.dimensions] A [[Cartesian3]] Property specifying the length, width, and height of the box.
-    * - {Property} [options.show=true] A boolean Property specifying the visibility of the box.
-    * - {Property} [options.fill=true] A boolean Property specifying whether the box is filled with the provided material.
-    * - {MaterialProperty} [options.material=Color.WHITE] A Property specifying the material used to fill the box.
-    * - {Property} [options.outline=false] A boolean Property specifying whether the box is outlined.
-    * - {Property} [options.outlineColor=Color.BLACK] A Property specifying the [[Color]] of the outline.
-    * - {Property} [options.outlineWidth=1.0] A numeric Property specifying the width of the outline.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Property} [options.dimensions] A [[Cartesian3]] Property specifying the length, width, and height of the box.
+    *   - {Property} [options.show=true] A boolean Property specifying the visibility of the box.
+    *   - {Property} [options.fill=true] A boolean Property specifying whether the box is filled with the provided material.
+    *   - {MaterialProperty} [options.material=Color.WHITE] A Property specifying the material used to fill the box.
+    *   - {Property} [options.outline=false] A boolean Property specifying whether the box is outlined.
+    *   - {Property} [options.outlineColor=Color.BLACK] A Property specifying the [[Color]] of the outline.
+    *   - {Property} [options.outlineWidth=1.0] A numeric Property specifying the width of the outline.
     *
     * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Box.html|Cesium Sandcastle Box Demo]]
     */
@@ -5657,8 +5657,8 @@ package cesium {
     * alias CallbackProperty
     * constructor
     *
-    * - {CallbackProperty~Callback]] callback The function to be called when the property is evaluated.
-    * - {Boolean]] isConstant <code>true</code> when the callback function returns the same value every time, <code>false</code> if the value will change.
+    *   - {CallbackProperty~Callback]] callback The function to be called when the property is evaluated.
+    *   - {Boolean]] isConstant <code>true</code> when the callback function returns the same value every time, <code>false</code> if the value will change.
     */
   @js.native
   @JSName("Cesium.CallbackProperty")
@@ -5680,10 +5680,10 @@ package cesium {
     * alias CheckerboardMaterialProperty
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Property} [options.evenColor=Color.WHITE] A Property specifying the first [[Color]]
-    * - {Property} [options.oddColor=Color.BLACK] A Property specifying the second [[Color]]
-    * - {Property} [options.repeat=new Cartesian2(2.0, 2.0)] A [[Cartesian2]] Property specifying how many times the tiles repeat in each direction.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Property} [options.evenColor=Color.WHITE] A Property specifying the first [[Color]]
+    *   - {Property} [options.oddColor=Color.BLACK] A Property specifying the second [[Color]]
+    *   - {Property} [options.repeat=new Cartesian2(2.0, 2.0)] A [[Cartesian2]] Property specifying how many times the tiles repeat in each direction.
     */
   @js.native
   @JSName("Cesium.CheckerboardMaterialProperty")
@@ -5706,7 +5706,7 @@ package cesium {
   /**
     * A [[MaterialProperty]] that maps to solid color [[Material]] uniforms.
     *
-    * - {Property} [color=Color.WHITE] The [[Color]] Property to be used.
+    *   - {Property} [color=Color.WHITE] The [[Color]] Property to be used.
     *
     * alias ColorMaterialProperty
     * constructor
@@ -5730,8 +5730,8 @@ package cesium {
     * alias CompositeEntityCollection
     * constructor
     *
-    * - {EntityCollection[]} [collections] The initial list of EntityCollection instances to merge.
-    * - {DataSource|CompositeEntityCollection} [owner] The data source (or composite entity collection) which created this collection.
+    *   - {EntityCollection[]} [collections] The initial list of EntityCollection instances to merge.
+    *   - {DataSource|CompositeEntityCollection} [owner] The data source (or composite entity collection) which created this collection.
     */
   @js.native
   @JSName("Cesium.CompositeEntityCollection")
@@ -5794,7 +5794,7 @@ package cesium {
     * alias CompositePositionProperty
     * constructor
     *
-    * - {ReferenceFrame} [referenceFrame=ReferenceFrame.FIXED] The reference frame in which the position is defined.
+    *   - {ReferenceFrame} [referenceFrame=ReferenceFrame.FIXED] The reference frame in which the position is defined.
     */
   @js.native
   @JSName("Cesium.CompositePositionProperty")
@@ -5847,8 +5847,8 @@ package cesium {
     * alias ConstantPositionProperty
     * constructor
     *
-    * - {Cartesian3} [value] The property value.
-    * - {ReferenceFrame} [referenceFrame=ReferenceFrame.FIXED] The reference frame in which the position is defined.
+    *   - {Cartesian3} [value] The property value.
+    *   - {ReferenceFrame} [referenceFrame=ReferenceFrame.FIXED] The reference frame in which the position is defined.
     */
   @js.native
   @JSName("Cesium.ConstantPositionProperty")
@@ -5864,7 +5864,7 @@ package cesium {
     * alias ConstantProperty
     * constructor
     *
-    * - {Object} [value] The property value.
+    *   - {Object} [value] The property value.
     *
     * @see ConstantPositionProperty
     *
@@ -5885,8 +5885,8 @@ package cesium {
     * alias CorridorGeometryUpdater
     * constructor
     *
-    * - {Entity} entity The entity containing the geometry to be visualized.
-    * - {Scene} scene The scene where visualization is taking place.
+    *   - {Entity} entity The entity containing the geometry to be visualized.
+    *   - {Scene} scene The scene where visualization is taking place.
     */
   @js.native
   @JSName("Cesium.CorridorGeometryUpdater")
@@ -5935,19 +5935,19 @@ package cesium {
     * alias CorridorGraphics
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Property} [options.positions] A Property specifying the array of [[Cartesian3]] positions that define the centerline of the corridor.
-    * - {Property} [options.width] A numeric Property specifying the distance between the edges of the corridor.
-    * - {Property} [options.cornerType=CornerType.ROUNDED] A [[CornerType]] Property specifying the style of the corners.
-    * - {Property} [options.height=0] A numeric Property specifying the altitude of the corridor relative to the ellipsoid surface.
-    * - {Property} [options.extrudedHeight] A numeric Property specifying the altitude of the corridor's extruded face relative to the ellipsoid surface.
-    * - {Property} [options.show=true] A boolean Property specifying the visibility of the corridor.
-    * - {Property} [options.fill=true] A boolean Property specifying whether the corridor is filled with the provided material.
-    * - {MaterialProperty} [options.material=Color.WHITE] A Property specifying the material used to fill the corridor.
-    * - {Property} [options.outline=false] A boolean Property specifying whether the corridor is outlined.
-    * - {Property} [options.outlineColor=Color.BLACK] A Property specifying the [[Color]] of the outline.
-    * - {Property} [options.outlineWidth=1.0] A numeric Property specifying the width of the outline.
-    * - {Property} [options.granularity=Cesium.Math.RADIANS_PER_DEGREE] A numeric Property specifying the distance between each latitude and longitude.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Property} [options.positions] A Property specifying the array of [[Cartesian3]] positions that define the centerline of the corridor.
+    *   - {Property} [options.width] A numeric Property specifying the distance between the edges of the corridor.
+    *   - {Property} [options.cornerType=CornerType.ROUNDED] A [[CornerType]] Property specifying the style of the corners.
+    *   - {Property} [options.height=0] A numeric Property specifying the altitude of the corridor relative to the ellipsoid surface.
+    *   - {Property} [options.extrudedHeight] A numeric Property specifying the altitude of the corridor's extruded face relative to the ellipsoid surface.
+    *   - {Property} [options.show=true] A boolean Property specifying the visibility of the corridor.
+    *   - {Property} [options.fill=true] A boolean Property specifying whether the corridor is filled with the provided material.
+    *   - {MaterialProperty} [options.material=Color.WHITE] A Property specifying the material used to fill the corridor.
+    *   - {Property} [options.outline=false] A boolean Property specifying whether the corridor is outlined.
+    *   - {Property} [options.outlineColor=Color.BLACK] A Property specifying the [[Color]] of the outline.
+    *   - {Property} [options.outlineWidth=1.0] A numeric Property specifying the width of the outline.
+    *   - {Property} [options.granularity=Cesium.Math.RADIANS_PER_DEGREE] A numeric Property specifying the distance between each latitude and longitude.
     *
     * @see Entity
     *      demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Corridor.html|Cesium Sandcastle Corridor Demo]]
@@ -5982,7 +5982,7 @@ package cesium {
     * alias CustomDataSource
     * constructor
     *
-    * - {String} [name] A human-readable name for this instance.
+    *   - {String} [name] A human-readable name for this instance.
     *
     * @example
     * var dataSource = new Cesium.CustomDataSource('myData');
@@ -6017,8 +6017,8 @@ package cesium {
     * alias CylinderGeometryUpdater
     * constructor
     *
-    * - {Entity} entity The entity containing the geometry to be visualized.
-    * - {Scene} scene The scene where visualization is taking place.
+    *   - {Entity} entity The entity containing the geometry to be visualized.
+    *   - {Scene} scene The scene where visualization is taking place.
     */
   @js.native
   @JSName("Cesium.CylinderGeometryUpdater")
@@ -6066,18 +6066,18 @@ package cesium {
     * alias CylinderGraphics
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Property} [options.length] A numeric Property specifying the length of the cylinder.
-    * - {Property} [options.topRadius] A numeric Property specifying the radius of the top of the cylinder.
-    * - {Property} [options.bottomRadius] A numeric Property specifying the radius of the bottom of the cylinder.
-    * - {Property} [options.show=true] A boolean Property specifying the visibility of the cylinder.
-    * - {Property} [options.fill=true] A boolean Property specifying whether the cylinder is filled with the provided material.
-    * - {MaterialProperty} [options.material=Color.WHITE] A Property specifying the material used to fill the cylinder.
-    * - {Property} [options.outline=false] A boolean Property specifying whether the cylinder is outlined.
-    * - {Property} [options.outlineColor=Color.BLACK] A Property specifying the [[Color]] of the outline.
-    * - {Property} [options.outlineWidth=1.0] A numeric Property specifying the width of the outline.
-    * - {Property} [options.numberOfVerticalLines=16] A numeric Property specifying the number of vertical lines to draw along the perimeter for the outline.
-    * - {Property} [options.slices=128] The number of edges around perimeter of the cylinder.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Property} [options.length] A numeric Property specifying the length of the cylinder.
+    *   - {Property} [options.topRadius] A numeric Property specifying the radius of the top of the cylinder.
+    *   - {Property} [options.bottomRadius] A numeric Property specifying the radius of the bottom of the cylinder.
+    *   - {Property} [options.show=true] A boolean Property specifying the visibility of the cylinder.
+    *   - {Property} [options.fill=true] A boolean Property specifying whether the cylinder is filled with the provided material.
+    *   - {MaterialProperty} [options.material=Color.WHITE] A Property specifying the material used to fill the cylinder.
+    *   - {Property} [options.outline=false] A boolean Property specifying whether the cylinder is outlined.
+    *   - {Property} [options.outlineColor=Color.BLACK] A Property specifying the [[Color]] of the outline.
+    *   - {Property} [options.outlineWidth=1.0] A numeric Property specifying the width of the outline.
+    *   - {Property} [options.numberOfVerticalLines=16] A numeric Property specifying the number of vertical lines to draw along the perimeter for the outline.
+    *   - {Property} [options.slices=128] The number of edges around perimeter of the cylinder.
     *
     */
   @js.native
@@ -6108,7 +6108,7 @@ package cesium {
     * alias CzmlDataSource
     * constructor
     *
-    * - {String} [name] An optional name for the data source.  This value will be overwritten if a loaded document contains a name.
+    *   - {String} [name] An optional name for the data source.  This value will be overwritten if a loaded document contains a name.
     *
     * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=CZML.html|Cesium Sandcastle CZML Demo]]
     */
@@ -6237,10 +6237,10 @@ package cesium {
     * alias DataSourceDisplay
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Scene} options.scene The scene in which to display the data.
-    * - {DataSourceCollection} options.dataSourceCollection The data sources to display.
-    * - {DataSourceDisplay~VisualizersCallback} [options.visualizersCallback=DataSourceDisplay.defaultVisualizersCallback]
+    *   - {Object} options Object with the following properties:
+    *   - {Scene} options.scene The scene in which to display the data.
+    *   - {DataSourceCollection} options.dataSourceCollection The data sources to display.
+    *   - {DataSourceDisplay~VisualizersCallback} [options.visualizersCallback=DataSourceDisplay.defaultVisualizersCallback]
     * A function which creates an array of visualizers used for visualization.
     * If undefined, all standard visualizers are used.
     */
@@ -6289,8 +6289,8 @@ package cesium {
     * alias EllipseGeometryUpdater
     * constructor
     *
-    * - {Entity} entity The entity containing the geometry to be visualized.
-    * - {Scene} scene The scene where visualization is taking place.
+    *   - {Entity} entity The entity containing the geometry to be visualized.
+    *   - {Scene} scene The scene where visualization is taking place.
     */
   @js.native
   @JSName("Cesium.EllipseGeometryUpdater")
@@ -6340,21 +6340,21 @@ package cesium {
     * alias EllipseGraphics
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Property} [options.semiMajorAxis] The numeric Property specifying the semi-major axis.
-    * - {Property} [options.semiMinorAxis] The numeric Property specifying the semi-minor axis.
-    * - {Property} [options.height=0] A numeric Property specifying the altitude of the ellipse relative to the ellipsoid surface.
-    * - {Property} [options.extrudedHeight] A numeric Property specifying the altitude of the ellipse's extruded face relative to the ellipsoid surface.
-    * - {Property} [options.show=true] A boolean Property specifying the visibility of the ellipse.
-    * - {Property} [options.fill=true] A boolean Property specifying whether the ellipse is filled with the provided material.
-    * - {MaterialProperty} [options.material=Color.WHITE] A Property specifying the material used to fill the ellipse.
-    * - {Property} [options.outline=false] A boolean Property specifying whether the ellipse is outlined.
-    * - {Property} [options.outlineColor=Color.BLACK] A Property specifying the [[Color]] of the outline.
-    * - {Property} [options.outlineWidth=1.0] A numeric Property specifying the width of the outline.
-    * - {Property} [options.numberOfVerticalLines=16] A numeric Property specifying the number of vertical lines to draw along the perimeter for the outline.
-    * - {Property} [options.rotation=0.0] A numeric property specifying the rotation of the ellipse counter-clockwise from north.
-    * - {Property} [options.stRotation=0.0] A numeric property specifying the rotation of the ellipse texture counter-clockwise from north.
-    * - {Property} [options.granularity=Cesium.Math.RADIANS_PER_DEGREE] A numeric Property specifying the angular distance between points on the ellipse.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Property} [options.semiMajorAxis] The numeric Property specifying the semi-major axis.
+    *   - {Property} [options.semiMinorAxis] The numeric Property specifying the semi-minor axis.
+    *   - {Property} [options.height=0] A numeric Property specifying the altitude of the ellipse relative to the ellipsoid surface.
+    *   - {Property} [options.extrudedHeight] A numeric Property specifying the altitude of the ellipse's extruded face relative to the ellipsoid surface.
+    *   - {Property} [options.show=true] A boolean Property specifying the visibility of the ellipse.
+    *   - {Property} [options.fill=true] A boolean Property specifying whether the ellipse is filled with the provided material.
+    *   - {MaterialProperty} [options.material=Color.WHITE] A Property specifying the material used to fill the ellipse.
+    *   - {Property} [options.outline=false] A boolean Property specifying whether the ellipse is outlined.
+    *   - {Property} [options.outlineColor=Color.BLACK] A Property specifying the [[Color]] of the outline.
+    *   - {Property} [options.outlineWidth=1.0] A numeric Property specifying the width of the outline.
+    *   - {Property} [options.numberOfVerticalLines=16] A numeric Property specifying the number of vertical lines to draw along the perimeter for the outline.
+    *   - {Property} [options.rotation=0.0] A numeric property specifying the rotation of the ellipse counter-clockwise from north.
+    *   - {Property} [options.stRotation=0.0] A numeric property specifying the rotation of the ellipse texture counter-clockwise from north.
+    *   - {Property} [options.granularity=Cesium.Math.RADIANS_PER_DEGREE] A numeric Property specifying the angular distance between points on the ellipse.
     *
     * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Circles and Ellipses.html|Cesium Sandcastle Circles and Ellipses Demo]]
     */
@@ -6390,8 +6390,8 @@ package cesium {
     * alias EllipsoidGeometryUpdater
     * constructor
     *
-    * - {Entity} entity The entity containing the geometry to be visualized.
-    * - {Scene} scene The scene where visualization is taking place.
+    *   - {Entity} entity The entity containing the geometry to be visualized.
+    *   - {Scene} scene The scene where visualization is taking place.
     */
   @js.native
   @JSName("Cesium.EllipsoidGeometryUpdater")
@@ -6438,17 +6438,17 @@ package cesium {
     * alias EllipsoidGraphics
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Property} [options.radii] A [[Cartesian3]] Property specifying the radii of the ellipsoid.
-    * - {Property} [options.show=true] A boolean Property specifying the visibility of the ellipsoid.
-    * - {Property} [options.fill=true] A boolean Property specifying whether the ellipsoid is filled with the provided material.
-    * - {MaterialProperty} [options.material=Color.WHITE] A Property specifying the material used to fill the ellipsoid.
-    * - {Property} [options.outline=false] A boolean Property specifying whether the ellipsoid is outlined.
-    * - {Property} [options.outlineColor=Color.BLACK] A Property specifying the [[Color]] of the outline.
-    * - {Property} [options.outlineWidth=1.0] A numeric Property specifying the width of the outline.
-    * - {Property} [options.subdivisions=128] A Property specifying the number of samples per outline ring, determining the granularity of the curvature.
-    * - {Property} [options.stackPartitions=64] A Property specifying the number of stacks.
-    * - {Property} [options.slicePartitions=64] A Property specifying the number of radial slices.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Property} [options.radii] A [[Cartesian3]] Property specifying the radii of the ellipsoid.
+    *   - {Property} [options.show=true] A boolean Property specifying the visibility of the ellipsoid.
+    *   - {Property} [options.fill=true] A boolean Property specifying whether the ellipsoid is filled with the provided material.
+    *   - {MaterialProperty} [options.material=Color.WHITE] A Property specifying the material used to fill the ellipsoid.
+    *   - {Property} [options.outline=false] A boolean Property specifying whether the ellipsoid is outlined.
+    *   - {Property} [options.outlineColor=Color.BLACK] A Property specifying the [[Color]] of the outline.
+    *   - {Property} [options.outlineWidth=1.0] A numeric Property specifying the width of the outline.
+    *   - {Property} [options.subdivisions=128] A Property specifying the number of samples per outline ring, determining the granularity of the curvature.
+    *   - {Property} [options.stackPartitions=64] A Property specifying the number of stacks.
+    *   - {Property} [options.slicePartitions=64] A Property specifying the number of radial slices.
     *
     * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Spheres%20and%20Ellipsoids.html|Cesium Sandcastle Spheres and Ellipsoids Demo]]
     */
@@ -6481,31 +6481,31 @@ package cesium {
     * alias Entity
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {String} [options.id] A unique identifier for this object. If none is provided, a GUID is generated.
-    * - {String} [options.name] A human readable name to display to users. It does not have to be unique.
-    * - {TimeIntervalCollection} [options.availability] The availability, if any, associated with this object.
-    * - {Boolean} [options.show] A boolean value indicating if the entity and its children are displayed.
-    * - {Property} [options.description] A string Property specifying an HTML description for this entity.
-    * - {PositionProperty} [options.position] A Property specifying the entity position.
-    * - {Property} [options.orientation] A Property specifying the entity orientation.
-    * - {Property} [options.viewFrom] A suggested initial offset for viewing this object.
-    * - {Entity} [options.parent] A parent entity to associate with this entity.
-    * - {BillboardGraphics} [options.billboard] A billboard to associate with this entity.
-    * - {BoxGraphics} [options.box] A box to associate with this entity.
-    * - {CorridorGraphics} [options.corridor] A corridor to associate with this entity.
-    * - {CylinderGraphics} [options.cylinder] A cylinder to associate with this entity.
-    * - {EllipseGraphics} [options.ellipse] A ellipse to associate with this entity.
-    * - {EllipsoidGraphics} [options.ellipsoid] A ellipsoid to associate with this entity.
-    * - {LabelGraphics} [options.label] A options.label to associate with this entity.
-    * - {ModelGraphics} [options.model] A model to associate with this entity.
-    * - {PathGraphics} [options.path] A path to associate with this entity.
-    * - {PointGraphics} [options.point] A point to associate with this entity.
-    * - {PolygonGraphics} [options.polygon] A polygon to associate with this entity.
-    * - {PolylineGraphics} [options.polyline] A polyline to associate with this entity.
-    * - {PolylineVolumeGraphics} [options.polylineVolume] A polylineVolume to associate with this entity.
-    * - {RectangleGraphics} [options.rectangle] A rectangle to associate with this entity.
-    * - {WallGraphics} [options.wall] A wall to associate with this entity.
+    *   - {Object} [options] Object with the following properties:
+    *   - {String} [options.id] A unique identifier for this object. If none is provided, a GUID is generated.
+    *   - {String} [options.name] A human readable name to display to users. It does not have to be unique.
+    *   - {TimeIntervalCollection} [options.availability] The availability, if any, associated with this object.
+    *   - {Boolean} [options.show] A boolean value indicating if the entity and its children are displayed.
+    *   - {Property} [options.description] A string Property specifying an HTML description for this entity.
+    *   - {PositionProperty} [options.position] A Property specifying the entity position.
+    *   - {Property} [options.orientation] A Property specifying the entity orientation.
+    *   - {Property} [options.viewFrom] A suggested initial offset for viewing this object.
+    *   - {Entity} [options.parent] A parent entity to associate with this entity.
+    *   - {BillboardGraphics} [options.billboard] A billboard to associate with this entity.
+    *   - {BoxGraphics} [options.box] A box to associate with this entity.
+    *   - {CorridorGraphics} [options.corridor] A corridor to associate with this entity.
+    *   - {CylinderGraphics} [options.cylinder] A cylinder to associate with this entity.
+    *   - {EllipseGraphics} [options.ellipse] A ellipse to associate with this entity.
+    *   - {EllipsoidGraphics} [options.ellipsoid] A ellipsoid to associate with this entity.
+    *   - {LabelGraphics} [options.label] A options.label to associate with this entity.
+    *   - {ModelGraphics} [options.model] A model to associate with this entity.
+    *   - {PathGraphics} [options.path] A path to associate with this entity.
+    *   - {PointGraphics} [options.point] A point to associate with this entity.
+    *   - {PolygonGraphics} [options.polygon] A polygon to associate with this entity.
+    *   - {PolylineGraphics} [options.polyline] A polyline to associate with this entity.
+    *   - {PolylineVolumeGraphics} [options.polylineVolume] A polylineVolume to associate with this entity.
+    *   - {RectangleGraphics} [options.rectangle] A rectangle to associate with this entity.
+    *   - {WallGraphics} [options.wall] A wall to associate with this entity.
     *
     * @see [[http://cesiumjs.org/2015/02/02/Visualizing-Spatial-Data/|Visualizing Spatial Data]]
     */
@@ -6557,7 +6557,7 @@ package cesium {
     * alias EntityCollection
     * constructor
     *
-    * - {DataSource|CompositeEntityCollection} [owner] The data source (or composite entity collection) which created this collection.
+    *   - {DataSource|CompositeEntityCollection} [owner] The data source (or composite entity collection) which created this collection.
     */
   @js.native
   @JSName("Cesium.EntityCollection")
@@ -6602,10 +6602,10 @@ package cesium {
     * alias EntityView
     * constructor
     *
-    * - {Entity} entity The entity to track with the camera.
-    * - {Scene} scene The scene to use.
-    * - {Ellipsoid} [ellipsoid=Ellipsoid.WGS84] The ellipsoid to use for orienting the camera.
-    * - {BoundingSphere} [boundingSphere] An initial bounding sphere for setting the default view.
+    *   - {Entity} entity The entity to track with the camera.
+    *   - {Scene} scene The scene to use.
+    *   - {Ellipsoid} [ellipsoid=Ellipsoid.WGS84] The ellipsoid to use for orienting the camera.
+    *   - {BoundingSphere} [boundingSphere] An initial bounding sphere for setting the default view.
     */
   @js.native
   @JSName("Cesium.EntityView")
@@ -6635,7 +6635,7 @@ package cesium {
     * alias GeoJsonDataSource
     * constructor
     *
-    * - {String} [name] The name of this data source.  If undefined, a name will be taken from
+    *   - {String} [name] The name of this data source.  If undefined, a name will be taken from
     * the name of the GeoJSON file.
     *
     * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=GeoJSON%20and%20TopoJSON.html|Cesium Sandcastle GeoJSON and TopoJSON Demo]]
@@ -6694,8 +6694,8 @@ package cesium {
     * alias GeometryUpdater
     * constructor
     *
-    * - {Entity} entity The entity containing the geometry to be visualized.
-    * - {Scene} scene The scene where visualization is taking place.
+    *   - {Entity} entity The entity containing the geometry to be visualized.
+    *   - {Scene} scene The scene where visualization is taking place.
     *
     * @see EllipseGeometryUpdater
     * @see EllipsoidGeometryUpdater
@@ -6748,9 +6748,9 @@ package cesium {
     * alias GeometryVisualizer
     * constructor
     *
-    * - {GeometryUpdater} type The updater to be used for creating the geometry.
-    * - {Scene} scene The scene the primitives will be rendered in.
-    * - {EntityCollection} entityCollection The entityCollection to visualize.
+    *   - {GeometryUpdater} type The updater to be used for creating the geometry.
+    *   - {Scene} scene The scene the primitives will be rendered in.
+    *   - {EntityCollection} entityCollection The entityCollection to visualize.
     */
   @js.native
   @JSName("Cesium.GeometryVisualizer")
@@ -6768,12 +6768,12 @@ package cesium {
     * A [[MaterialProperty]] that maps to grid [[Material]] uniforms.
     * alias GridMaterialProperty
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Property} [options.color=Color.WHITE] A Property specifying the grid [[Color]]
-    * - {Property} [options.cellAlpha=0.1] A numeric Property specifying cell alpha values.
-    * - {Property} [options.lineCount=new Cartesian2(8, 8)] A [[Cartesian2]] Property specifying the number of grid lines along each axis.
-    * - {Property} [options.lineThickness=new Cartesian2(1.0, 1.0)] A [[Cartesian2]] Property specifying the thickness of grid lines along each axis.
-    * - {Property} [options.lineOffset=new Cartesian2(0.0, 0.0)] A [[Cartesian2]] Property specifying starting offset of grid lines along each axis.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Property} [options.color=Color.WHITE] A Property specifying the grid [[Color]]
+    *   - {Property} [options.cellAlpha=0.1] A numeric Property specifying cell alpha values.
+    *   - {Property} [options.lineCount=new Cartesian2(8, 8)] A [[Cartesian2]] Property specifying the number of grid lines along each axis.
+    *   - {Property} [options.lineThickness=new Cartesian2(1.0, 1.0)] A [[Cartesian2]] Property specifying the thickness of grid lines along each axis.
+    *   - {Property} [options.lineOffset=new Cartesian2(0.0, 0.0)] A [[Cartesian2]] Property specifying starting offset of grid lines along each axis.
     *
     * constructor
     */
@@ -6794,11 +6794,11 @@ package cesium {
     * alias ImageMaterialProperty
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Property} [options.image] A Property specifying the Image, URL, Canvas, or Video.
-    * - {Property} [options.repeat=new Cartesian2(1.0, 1.0)] A [[Cartesian2]] Property specifying the number of times the image repeats in each direction.
-    * - {Property} [options.color=Color.WHITE] The color applied to the image
-    * - {Property} [options.transparent=false] Set to true when the image has transparency (for example, when a png has transparent sections)
+    *   - {Object} [options] Object with the following properties:
+    *   - {Property} [options.image] A Property specifying the Image, URL, Canvas, or Video.
+    *   - {Property} [options.repeat=new Cartesian2(1.0, 1.0)] A [[Cartesian2]] Property specifying the number of times the image repeats in each direction.
+    *   - {Property} [options.color=Color.WHITE] The color applied to the image
+    *   - {Property} [options.transparent=false] Set to true when the image has transparency (for example, when a png has transparent sections)
     */
   @js.native
   @JSName("Cesium.ImageMaterialProperty")
@@ -6829,9 +6829,9 @@ package cesium {
     * alias KmlDataSource
     * constructor
     *
-    * - {Camera} options.camera The camera that is used for viewRefreshModes and sending camera properties to network links.
-    * - {Canvas} options.canvas The canvas that is used for sending viewer properties to network links.
-    * - {DefaultProxy} [options.proxy] A proxy to be used for loading external data.
+    *   - {Camera} options.camera The camera that is used for viewRefreshModes and sending camera properties to network links.
+    *   - {Canvas} options.canvas The canvas that is used for sending viewer properties to network links.
+    *   - {DefaultProxy} [options.proxy] A proxy to be used for loading external data.
     *
     * @see [[http://www.opengeospatial.org/standards/kml/|Open Geospatial Consortium KML Standard]]
     * @see [[https://developers.google.com/kml/|Google KML Documentation]]
@@ -6897,21 +6897,21 @@ package cesium {
     * alias LabelGraphics
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Property} [options.text] A Property specifying the text.
-    * - {Property} [options.font='10px sans-serif'] A Property specifying the CSS font.
-    * - {Property} [options.style=LabelStyle.FILL] A Property specifying the [[LabelStyle]]
-    * - {Property} [options.fillColor=Color.WHITE] A Property specifying the fill [[Color]]
-    * - {Property} [options.outlineColor=Color.BLACK] A Property specifying the outline [[Color]]
-    * - {Property} [options.outlineWidth=1.0] A numeric Property specifying the outline width.
-    * - {Property} [options.show=true] A boolean Property specifying the visibility of the label.
-    * - {Property} [options.scale=1.0] A numeric Property specifying the scale to apply to the text.
-    * - {Property} [options.horizontalOrigin=HorizontalOrigin.CENTER] A Property specifying the [[HorizontalOrigin]]
-    * - {Property} [options.verticalOrigin=VerticalOrigin.CENTER] A Property specifying the [[VerticalOrigin]]
-    * - {Property} [options.eyeOffset=Cartesian3.ZERO] A [[Cartesian3]] Property specifying the eye offset.
-    * - {Property} [options.pixelOffset=Cartesian2.ZERO] A [[Cartesian2]] Property specifying the pixel offset.
-    * - {Property} [options.translucencyByDistance] A [[NearFarScalar]] Property used to set translucency based on distance from the camera.
-    * - {Property} [options.pixelOffsetScaleByDistance] A [[NearFarScalar]] Property used to set pixelOffset based on distance from the camera.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Property} [options.text] A Property specifying the text.
+    *   - {Property} [options.font='10px sans-serif'] A Property specifying the CSS font.
+    *   - {Property} [options.style=LabelStyle.FILL] A Property specifying the [[LabelStyle]]
+    *   - {Property} [options.fillColor=Color.WHITE] A Property specifying the fill [[Color]]
+    *   - {Property} [options.outlineColor=Color.BLACK] A Property specifying the outline [[Color]]
+    *   - {Property} [options.outlineWidth=1.0] A numeric Property specifying the outline width.
+    *   - {Property} [options.show=true] A boolean Property specifying the visibility of the label.
+    *   - {Property} [options.scale=1.0] A numeric Property specifying the scale to apply to the text.
+    *   - {Property} [options.horizontalOrigin=HorizontalOrigin.CENTER] A Property specifying the [[HorizontalOrigin]]
+    *   - {Property} [options.verticalOrigin=VerticalOrigin.CENTER] A Property specifying the [[VerticalOrigin]]
+    *   - {Property} [options.eyeOffset=Cartesian3.ZERO] A [[Cartesian3]] Property specifying the eye offset.
+    *   - {Property} [options.pixelOffset=Cartesian2.ZERO] A [[Cartesian2]] Property specifying the pixel offset.
+    *   - {Property} [options.translucencyByDistance] A [[NearFarScalar]] Property used to set translucency based on distance from the camera.
+    *   - {Property} [options.pixelOffsetScaleByDistance] A [[NearFarScalar]] Property used to set pixelOffset based on distance from the camera.
     *
     * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Labels.html|Cesium Sandcastle Labels Demo]]
     */
@@ -6947,8 +6947,8 @@ package cesium {
     * alias LabelVisualizer
     * constructor
     *
-    * - {Scene} scene The scene the primitives will be rendered in.
-    * - {EntityCollection} entityCollection The entityCollection to visualize.
+    *   - {Scene} scene The scene the primitives will be rendered in.
+    *   - {EntityCollection} entityCollection The entityCollection to visualize.
     */
   @js.native
   @JSName("Cesium.LabelVisualizer")
@@ -7001,15 +7001,15 @@ package cesium {
     * alias ModelGraphics
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Property} [options.uri] A string Property specifying the URI of the glTF asset.
-    * - {Property} [options.show=true] A boolean Property specifying the visibility of the model.
-    * - {Property} [options.scale=1.0] A numeric Property specifying a uniform linear scale.
-    * - {Property} [options.minimumPixelSize=0.0] A numeric Property specifying the approximate minimum pixel size of the model regardless of zoom.
-    * - {Property} [options.maximumScale] The maximum scale size of a model. An upper limit for minimumPixelSize.
-    * - {Property} [options.incrementallyLoadTextures=true] Determine if textures may continue to stream in after the model is loaded.
-    * - {Property} [options.runAnimations=true] A boolean Property specifying if glTF animations specified in the model should be started.
-    * - {Property} [options.nodeTransformations] An object, where keys are names of nodes, and values are [[TranslationRotationScale]] Properties describing the transformation to apply to that node.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Property} [options.uri] A string Property specifying the URI of the glTF asset.
+    *   - {Property} [options.show=true] A boolean Property specifying the visibility of the model.
+    *   - {Property} [options.scale=1.0] A numeric Property specifying a uniform linear scale.
+    *   - {Property} [options.minimumPixelSize=0.0] A numeric Property specifying the approximate minimum pixel size of the model regardless of zoom.
+    *   - {Property} [options.maximumScale] The maximum scale size of a model. An upper limit for minimumPixelSize.
+    *   - {Property} [options.incrementallyLoadTextures=true] Determine if textures may continue to stream in after the model is loaded.
+    *   - {Property} [options.runAnimations=true] A boolean Property specifying if glTF animations specified in the model should be started.
+    *   - {Property} [options.nodeTransformations] An object, where keys are names of nodes, and values are [[TranslationRotationScale]] Properties describing the transformation to apply to that node.
     *
     * @see [[http://cesiumjs.org/2014/03/03/Cesium-3D-Models-Tutorial/|3D Models Tutorial]]
     *      demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=3D%20Models.html|Cesium Sandcastle 3D Models Demo]]
@@ -7039,8 +7039,8 @@ package cesium {
     * alias ModelVisualizer
     * constructor
     *
-    * - {Scene} scene The scene the primitives will be rendered in.
-    * - {EntityCollection} entityCollection The entityCollection to visualize.
+    *   - {Scene} scene The scene the primitives will be rendered in.
+    *   - {EntityCollection} entityCollection The entityCollection to visualize.
     */
   @js.native
   @JSName("Cesium.ModelVisualizer")
@@ -7059,10 +7059,10 @@ package cesium {
     * alias NodeTransformationProperty
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Property} [options.translation=Cartesian3.ZERO] A [[Cartesian3]] Property specifying the (x, y, z) translation to apply to the node.
-    * - {Property} [options.rotation=Quaternion.IDENTITY] A [[Quaternion]] Property specifying the (x, y, z, w) rotation to apply to the node.
-    * - {Property} [options.scale=new Cartesian3(1.0, 1.0, 1.0)] A [[Cartesian3]] Property specifying the (x, y, z) scaling to apply to the node.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Property} [options.translation=Cartesian3.ZERO] A [[Cartesian3]] Property specifying the (x, y, z) translation to apply to the node.
+    *   - {Property} [options.rotation=Quaternion.IDENTITY] A [[Quaternion]] Property specifying the (x, y, z, w) rotation to apply to the node.
+    *   - {Property} [options.scale=new Cartesian3(1.0, 1.0, 1.0)] A [[Cartesian3]] Property specifying the (x, y, z) scaling to apply to the node.
     */
   @js.native
   @JSName("Cesium.NodeTransformationProperty")
@@ -7086,13 +7086,13 @@ package cesium {
     * alias PathGraphics
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Property} [options.leadTime] A Property specifying the number of seconds behind the object to show.
-    * - {Property} [options.trailTime] A Property specifying the number of seconds in front of the object to show.
-    * - {Property} [options.show=true] A boolean Property specifying the visibility of the path.
-    * - {Property} [options.width=1.0] A numeric Property specifying the width in pixels.
-    * - {MaterialProperty} [options.material=Color.WHITE] A Property specifying the material used to draw the path.
-    * - {Property} [options.resolution=60] A numeric Property specifying the width in pixels.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Property} [options.leadTime] A Property specifying the number of seconds behind the object to show.
+    *   - {Property} [options.trailTime] A Property specifying the number of seconds in front of the object to show.
+    *   - {Property} [options.show=true] A boolean Property specifying the visibility of the path.
+    *   - {Property} [options.width=1.0] A numeric Property specifying the width in pixels.
+    *   - {MaterialProperty} [options.material=Color.WHITE] A Property specifying the material used to draw the path.
+    *   - {Property} [options.resolution=60] A numeric Property specifying the width in pixels.
     */
   @js.native
   @JSName("Cesium.PathGraphics")
@@ -7117,8 +7117,8 @@ package cesium {
     * alias PathVisualizer
     * constructor
     *
-    * - {Scene} scene The scene the primitives will be rendered in.
-    * - {EntityCollection} entityCollection The entityCollection to visualize.
+    *   - {Scene} scene The scene the primitives will be rendered in.
+    *   - {EntityCollection} entityCollection The entityCollection to visualize.
     */
   @js.native
   @JSName("Cesium.PathVisualizer")
@@ -7138,14 +7138,14 @@ package cesium {
     * alias PointGraphics
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Property} [options.color=Color.WHITE] A Property specifying the [[Color]] of the point.
-    * - {Property} [options.pixelSize=1] A numeric Property specifying the size in pixels.
-    * - {Property} [options.outlineColor=Color.BLACK] A Property specifying the [[Color]] of the outline.
-    * - {Property} [options.outlineWidth=0] A numeric Property specifying the the outline width in pixels.
-    * - {Property} [options.show=true] A boolean Property specifying the visibility of the point.
-    * - {Property} [options.scaleByDistance] A [[NearFarScalar]] Property used to scale the point based on distance.
-    * - {Property} [options.translucencyByDistance] A [[NearFarScalar]] Property used to set translucency based on distance from the camera.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Property} [options.color=Color.WHITE] A Property specifying the [[Color]] of the point.
+    *   - {Property} [options.pixelSize=1] A numeric Property specifying the size in pixels.
+    *   - {Property} [options.outlineColor=Color.BLACK] A Property specifying the [[Color]] of the outline.
+    *   - {Property} [options.outlineWidth=0] A numeric Property specifying the the outline width in pixels.
+    *   - {Property} [options.show=true] A boolean Property specifying the visibility of the point.
+    *   - {Property} [options.scaleByDistance] A [[NearFarScalar]] Property used to scale the point based on distance.
+    *   - {Property} [options.translucencyByDistance] A [[NearFarScalar]] Property used to set translucency based on distance from the camera.
     */
   @js.native
   @JSName("Cesium.PointGraphics")
@@ -7171,8 +7171,8 @@ package cesium {
     * alias PointVisualizer
     * constructor
     *
-    * - {Scene} scene The scene the primitives will be rendered in.
-    * - {EntityCollection} entityCollection The entityCollection to visualize.
+    *   - {Scene} scene The scene the primitives will be rendered in.
+    *   - {EntityCollection} entityCollection The entityCollection to visualize.
     */
   @js.native
   @JSName("Cesium.PointVisualizer")
@@ -7192,8 +7192,8 @@ package cesium {
     * alias PolygonGeometryUpdater
     * constructor
     *
-    * - {Entity} entity The entity containing the geometry to be visualized.
-    * - {Scene} scene The scene where visualization is taking place.
+    *   - {Entity} entity The entity containing the geometry to be visualized.
+    *   - {Scene} scene The scene where visualization is taking place.
     */
   @js.native
   @JSName("Cesium.PolygonGeometryUpdater")
@@ -7242,21 +7242,21 @@ package cesium {
     * alias PolygonGraphics
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Property} [options.hierarchy] A Property specifying the [[PolygonHierarchy]]
-    * - {Property} [options.height=0] A numeric Property specifying the altitude of the polygon relative to the ellipsoid surface.
-    * - {Property} [options.extrudedHeight] A numeric Property specifying the altitude of the polygon's extruded face relative to the ellipsoid surface.
-    * - {Property} [options.show=true] A boolean Property specifying the visibility of the polygon.
-    * - {Property} [options.fill=true] A boolean Property specifying whether the polygon is filled with the provided material.
-    * - {MaterialProperty} [options.material=Color.WHITE] A Property specifying the material used to fill the polygon.
-    * - {Property} [options.outline=false] A boolean Property specifying whether the polygon is outlined.
-    * - {Property} [options.outlineColor=Color.BLACK] A Property specifying the [[Color]] of the outline.
-    * - {Property} [options.outlineWidth=1.0] A numeric Property specifying the width of the outline.
-    * - {Property} [options.stRotation=0.0] A numeric property specifying the rotation of the polygon texture counter-clockwise from north.
-    * - {Property} [options.granularity=Cesium.Math.RADIANS_PER_DEGREE] A numeric Property specifying the angular distance between each latitude and longitude point.
-    * - {Property} [options.perPositionHeight=false] A boolean specifying whether or not the the height of each position is used.
-    * - {Boolean} [options.closeTop=true] When false, leaves off the top of an extruded polygon open.
-    * - {Boolean} [options.closeBottom=true] When false, leaves off the bottom of an extruded polygon open.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Property} [options.hierarchy] A Property specifying the [[PolygonHierarchy]]
+    *   - {Property} [options.height=0] A numeric Property specifying the altitude of the polygon relative to the ellipsoid surface.
+    *   - {Property} [options.extrudedHeight] A numeric Property specifying the altitude of the polygon's extruded face relative to the ellipsoid surface.
+    *   - {Property} [options.show=true] A boolean Property specifying the visibility of the polygon.
+    *   - {Property} [options.fill=true] A boolean Property specifying whether the polygon is filled with the provided material.
+    *   - {MaterialProperty} [options.material=Color.WHITE] A Property specifying the material used to fill the polygon.
+    *   - {Property} [options.outline=false] A boolean Property specifying whether the polygon is outlined.
+    *   - {Property} [options.outlineColor=Color.BLACK] A Property specifying the [[Color]] of the outline.
+    *   - {Property} [options.outlineWidth=1.0] A numeric Property specifying the width of the outline.
+    *   - {Property} [options.stRotation=0.0] A numeric property specifying the rotation of the polygon texture counter-clockwise from north.
+    *   - {Property} [options.granularity=Cesium.Math.RADIANS_PER_DEGREE] A numeric Property specifying the angular distance between each latitude and longitude point.
+    *   - {Property} [options.perPositionHeight=false] A boolean specifying whether or not the the height of each position is used.
+    *   - {Boolean} [options.closeTop=true] When false, leaves off the top of an extruded polygon open.
+    *   - {Boolean} [options.closeBottom=true] When false, leaves off the bottom of an extruded polygon open.
     *
     * @see Entity
     *      demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Polygon.html|Cesium Sandcastle Polygon Demo]]
@@ -7290,7 +7290,7 @@ package cesium {
   /**
     * A [[MaterialProperty]] that maps to PolylineArrow [[Material]] uniforms.
     *
-    * - {Property} [color=Color.WHITE] The [[Color]] Property to be used.
+    *   - {Property} [color=Color.WHITE] The [[Color]] Property to be used.
     *
     * alias PolylineArrowMaterialProperty
     * constructor
@@ -7317,8 +7317,8 @@ package cesium {
     * alias PolylineGeometryUpdater
     * constructor
     *
-    * - {Entity} entity The entity containing the geometry to be visualized.
-    * - {Scene} scene The scene where visualization is taking place.
+    *   - {Entity} entity The entity containing the geometry to be visualized.
+    *   - {Scene} scene The scene where visualization is taking place.
     */
   @js.native
   @JSName("Cesium.PolylineGeometryUpdater")
@@ -7363,9 +7363,9 @@ package cesium {
     * alias PolylineGlowMaterialProperty
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Property} [options.color=Color.WHITE] A Property specifying the [[Color]] of the line.
-    * - {Property} [options.glowPower=0.25] A numeric Property specifying the strength of the glow, as a percentage of the total line width.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Property} [options.color=Color.WHITE] A Property specifying the [[Color]] of the line.
+    *   - {Property} [options.glowPower=0.25] A numeric Property specifying the strength of the glow, as a percentage of the total line width.
     */
   @js.native
   @JSName("Cesium.PolylineGlowMaterialProperty")
@@ -7384,13 +7384,13 @@ package cesium {
     * alias PolylineGraphics
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Property} [options.positions] A Property specifying the array of [[Cartesian3]] positions that define the line strip.
-    * - {Property} [options.followSurface=true] A boolean Property specifying whether the line segments should be great arcs or linearly connected.
-    * - {Property} [options.width=1.0] A numeric Property specifying the width in pixels.
-    * - {Property} [options.show=true] A boolean Property specifying the visibility of the polyline.
-    * - {MaterialProperty} [options.material=Color.WHITE] A Property specifying the material used to draw the polyline.
-    * - {Property} [options.granularity=Cesium.Math.RADIANS_PER_DEGREE] A numeric Property specifying the angular distance between each latitude and longitude if followSurface is true.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Property} [options.positions] A Property specifying the array of [[Cartesian3]] positions that define the line strip.
+    *   - {Property} [options.followSurface=true] A boolean Property specifying whether the line segments should be great arcs or linearly connected.
+    *   - {Property} [options.width=1.0] A numeric Property specifying the width in pixels.
+    *   - {Property} [options.show=true] A boolean Property specifying the visibility of the polyline.
+    *   - {MaterialProperty} [options.material=Color.WHITE] A Property specifying the material used to draw the polyline.
+    *   - {Property} [options.granularity=Cesium.Math.RADIANS_PER_DEGREE] A numeric Property specifying the angular distance between each latitude and longitude if followSurface is true.
     *
     * @see Entity
     *      demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Polyline.html|Cesium Sandcastle Polyline Demo]]
@@ -7418,10 +7418,10 @@ package cesium {
     * alias PolylineOutlineMaterialProperty
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Property} [options.color=Color.WHITE] A Property specifying the [[Color]] of the line.
-    * - {Property} [options.outlineColor=Color.BLACK] A Property specifying the [[Color]] of the outline.
-    * - {Property} [options.outlineWidth=1.0] A numeric Property specifying the width of the outline, in pixels.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Property} [options.color=Color.WHITE] A Property specifying the [[Color]] of the line.
+    *   - {Property} [options.outlineColor=Color.BLACK] A Property specifying the [[Color]] of the outline.
+    *   - {Property} [options.outlineWidth=1.0] A numeric Property specifying the width of the outline, in pixels.
     */
   @js.native
   @JSName("Cesium.PolylineOutlineMaterialProperty")
@@ -7439,8 +7439,8 @@ package cesium {
     * alias PolylineVolumeGeometryUpdater
     * constructor
     *
-    * - {Entity} entity The entity containing the geometry to be visualized.
-    * - {Scene} scene The scene where visualization is taking place.
+    *   - {Entity} entity The entity containing the geometry to be visualized.
+    *   - {Scene} scene The scene where visualization is taking place.
     */
   @js.native
   @JSName("Cesium.PolylineVolumeGeometryUpdater")
@@ -7488,17 +7488,17 @@ package cesium {
     * alias PolylineVolumeGraphics
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Property} [options.positions] A Property specifying the array of [[Cartesian3]] positions which define the line strip.
-    * - {Property} [options.shape] A Property specifying the array of [[Cartesian2]] positions which define the shape to be extruded.
-    * - {Property} [options.cornerType=CornerType.ROUNDED] A [[CornerType]] Property specifying the style of the corners.
-    * - {Property} [options.show=true] A boolean Property specifying the visibility of the volume.
-    * - {Property} [options.fill=true] A boolean Property specifying whether the volume is filled with the provided material.
-    * - {MaterialProperty} [options.material=Color.WHITE] A Property specifying the material used to fill the volume.
-    * - {Property} [options.outline=false] A boolean Property specifying whether the volume is outlined.
-    * - {Property} [options.outlineColor=Color.BLACK] A Property specifying the [[Color]] of the outline.
-    * - {Property} [options.outlineWidth=1.0] A numeric Property specifying the width of the outline.
-    * - {Property} [options.granularity=Cesium.Math.RADIANS_PER_DEGREE] A numeric Property specifying the angular distance between each latitude and longitude point.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Property} [options.positions] A Property specifying the array of [[Cartesian3]] positions which define the line strip.
+    *   - {Property} [options.shape] A Property specifying the array of [[Cartesian2]] positions which define the shape to be extruded.
+    *   - {Property} [options.cornerType=CornerType.ROUNDED] A [[CornerType]] Property specifying the style of the corners.
+    *   - {Property} [options.show=true] A boolean Property specifying the visibility of the volume.
+    *   - {Property} [options.fill=true] A boolean Property specifying whether the volume is filled with the provided material.
+    *   - {MaterialProperty} [options.material=Color.WHITE] A Property specifying the material used to fill the volume.
+    *   - {Property} [options.outline=false] A boolean Property specifying whether the volume is outlined.
+    *   - {Property} [options.outlineColor=Color.BLACK] A Property specifying the [[Color]] of the outline.
+    *   - {Property} [options.outlineWidth=1.0] A numeric Property specifying the width of the outline.
+    *   - {Property} [options.granularity=Cesium.Math.RADIANS_PER_DEGREE] A numeric Property specifying the angular distance between each latitude and longitude point.
     *
     * @see Entity
     *      demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Polyline%20Volume.html|Cesium Sandcastle Polyline Volume Demo]]
@@ -7559,8 +7559,8 @@ package cesium {
     * alias PositionPropertyArray
     * constructor
     *
-    * - {Property[]} [value] An array of Property instances.
-    * - {ReferenceFrame} [referenceFrame=ReferenceFrame.FIXED] The reference frame in which the position is defined.
+    *   - {Property[]} [value] An array of Property instances.
+    *   - {ReferenceFrame} [referenceFrame=ReferenceFrame.FIXED] The reference frame in which the position is defined.
     */
   @js.native
   @JSName("Cesium.PositionPropertyArray")
@@ -7613,7 +7613,7 @@ package cesium {
     * alias PropertyArray
     * constructor
     *
-    * - {Property[]} [value] An array of Property instances.
+    *   - {Property[]} [value] An array of Property instances.
     */
   @js.native
   @JSName("Cesium.PropertyArray")
@@ -7636,8 +7636,8 @@ package cesium {
     * alias PropertyBag
     * constructor
     *
-    * - {Object} [value] An object, containing key-value mapping of property names to properties.
-    * - {Function} [createPropertyCallback] A function that will be called when the value of any of the properties in value are not a Property.
+    *   - {Object} [value] An object, containing key-value mapping of property names to properties.
+    *   - {Function} [createPropertyCallback] A function that will be called when the value of any of the properties in value are not a Property.
     */
   @js.native
   @JSName("Cesium.PropertyBag")
@@ -7667,8 +7667,8 @@ package cesium {
     * alias RectangleGeometryUpdater
     * constructor
     *
-    * - {Entity} entity The entity containing the geometry to be visualized.
-    * - {Scene} scene The scene where visualization is taking place.
+    *   - {Entity} entity The entity containing the geometry to be visualized.
+    *   - {Scene} scene The scene where visualization is taking place.
     */
   @js.native
   @JSName("Cesium.RectangleGeometryUpdater")
@@ -7717,21 +7717,21 @@ package cesium {
     * alias RectangleGraphics
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Property} [options.coordinates] The Property specifying the [[Rectangle]]
-    * - {Property} [options.height=0] A numeric Property specifying the altitude of the rectangle relative to the ellipsoid surface.
-    * - {Property} [options.extrudedHeight] A numeric Property specifying the altitude of the rectangle's extruded face relative to the ellipsoid surface.
-    * - {Property} [options.closeTop=true] A boolean Property specifying whether the rectangle has a top cover when extruded
-    * - {Property} [options.closeBottom=true] A boolean Property specifying whether the rectangle has a bottom cover when extruded.
-    * - {Property} [options.show=true] A boolean Property specifying the visibility of the rectangle.
-    * - {Property} [options.fill=true] A boolean Property specifying whether the rectangle is filled with the provided material.
-    * - {MaterialProperty} [options.material=Color.WHITE] A Property specifying the material used to fill the rectangle.
-    * - {Property} [options.outline=false] A boolean Property specifying whether the rectangle is outlined.
-    * - {Property} [options.outlineColor=Color.BLACK] A Property specifying the [[Color]] of the outline.
-    * - {Property} [options.outlineWidth=1.0] A numeric Property specifying the width of the outline.
-    * - {Property} [options.rotation=0.0] A numeric property specifying the rotation of the rectangle clockwise from north.
-    * - {Property} [options.stRotation=0.0] A numeric property specifying the rotation of the rectangle texture counter-clockwise from north.
-    * - {Property} [options.granularity=Cesium.Math.RADIANS_PER_DEGREE] A numeric Property specifying the angular distance between points on the rectangle.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Property} [options.coordinates] The Property specifying the [[Rectangle]]
+    *   - {Property} [options.height=0] A numeric Property specifying the altitude of the rectangle relative to the ellipsoid surface.
+    *   - {Property} [options.extrudedHeight] A numeric Property specifying the altitude of the rectangle's extruded face relative to the ellipsoid surface.
+    *   - {Property} [options.closeTop=true] A boolean Property specifying whether the rectangle has a top cover when extruded
+    *   - {Property} [options.closeBottom=true] A boolean Property specifying whether the rectangle has a bottom cover when extruded.
+    *   - {Property} [options.show=true] A boolean Property specifying the visibility of the rectangle.
+    *   - {Property} [options.fill=true] A boolean Property specifying whether the rectangle is filled with the provided material.
+    *   - {MaterialProperty} [options.material=Color.WHITE] A Property specifying the material used to fill the rectangle.
+    *   - {Property} [options.outline=false] A boolean Property specifying whether the rectangle is outlined.
+    *   - {Property} [options.outlineColor=Color.BLACK] A Property specifying the [[Color]] of the outline.
+    *   - {Property} [options.outlineWidth=1.0] A numeric Property specifying the width of the outline.
+    *   - {Property} [options.rotation=0.0] A numeric property specifying the rotation of the rectangle clockwise from north.
+    *   - {Property} [options.stRotation=0.0] A numeric property specifying the rotation of the rectangle texture counter-clockwise from north.
+    *   - {Property} [options.granularity=Cesium.Math.RADIANS_PER_DEGREE] A numeric Property specifying the angular distance between points on the rectangle.
     *
     * @see Entity
     *      demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Rectangle.html|Cesium Sandcastle Rectangle Demo]]
@@ -7768,9 +7768,9 @@ package cesium {
     * alias ReferenceProperty
     * constructor
     *
-    * - {EntityCollection} targetCollection The entity collection which will be used to resolve the reference.
-    * - {String} targetId The id of the entity which is being referenced.
-    * - {String[]} targetPropertyNames The names of the property on the target entity which we will use.
+    *   - {EntityCollection} targetCollection The entity collection which will be used to resolve the reference.
+    *   - {String} targetId The id of the entity which is being referenced.
+    *   - {String[]} targetPropertyNames The names of the property on the target entity which we will use.
     *
     * @example
     * var collection = new Cesium.EntityCollection();
@@ -7832,8 +7832,8 @@ package cesium {
     * alias SampledPositionProperty
     * constructor
     *
-    * - {ReferenceFrame} [referenceFrame=ReferenceFrame.FIXED] The reference frame in which the position is defined.
-    * - {Number} [numberOfDerivatives=0] The number of derivatives that accompany each position; i.e. velocity, acceleration, etc...
+    *   - {ReferenceFrame} [referenceFrame=ReferenceFrame.FIXED] The reference frame in which the position is defined.
+    *   - {Number} [numberOfDerivatives=0] The number of derivatives that accompany each position; i.e. velocity, acceleration, etc...
     */
   @js.native
   @JSName("Cesium.SampledPositionProperty")
@@ -7863,8 +7863,8 @@ package cesium {
     * alias SampledProperty
     * constructor
     *
-    * - {Number|Packable} type The type of property.
-    * - {Packable[]} [derivativeTypes] When supplied, indicates that samples will contain derivative information of the specified types.
+    *   - {Number|Packable} type The type of property.
+    *   - {Packable[]} [derivativeTypes] When supplied, indicates that samples will contain derivative information of the specified types.
     *
     * @example
     * //Create a linearly interpolated Cartesian2
@@ -7926,12 +7926,12 @@ package cesium {
     * alias StripeMaterialProperty
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Property} [options.evenColor=Color.WHITE] A Property specifying the first [[Color]]
-    * - {Property} [options.oddColor=Color.BLACK] A Property specifying the second [[Color]]
-    * - {Property} [options.repeat=1] A numeric Property specifying how many times the stripes repeat.
-    * - {Property} [options.offset=0] A numeric Property specifying how far into the pattern to start the material.
-    * - {Property} [options.orientation=StripeOrientation.HORIZONTAL] A Property specifying the StripeOrientation
+    *   - {Object} [options] Object with the following properties:
+    *   - {Property} [options.evenColor=Color.WHITE] A Property specifying the first [[Color]]
+    *   - {Property} [options.oddColor=Color.BLACK] A Property specifying the second [[Color]]
+    *   - {Property} [options.repeat=1] A numeric Property specifying how many times the stripes repeat.
+    *   - {Property} [options.offset=0] A numeric Property specifying how far into the pattern to start the material.
+    *   - {Property} [options.orientation=StripeOrientation.HORIZONTAL] A Property specifying the StripeOrientation
     */
   @js.native
   @JSName("Cesium.StripeMaterialProperty")
@@ -7951,7 +7951,7 @@ package cesium {
     * alias TimeIntervalCollectionPositionProperty
     * constructor
     *
-    * - {ReferenceFrame} [referenceFrame=ReferenceFrame.FIXED] The reference frame in which the position is defined.
+    *   - {ReferenceFrame} [referenceFrame=ReferenceFrame.FIXED] The reference frame in which the position is defined.
     */
   @js.native
   @JSName("Cesium.TimeIntervalCollectionPositionProperty")
@@ -8010,8 +8010,8 @@ package cesium {
     * alias VelocityOrientationProperty
     * constructor
     *
-    * - {Property} [position] The position property used to compute the orientation.
-    * - {Ellipsoid} [ellipsoid=Ellipsoid.WGS84] The ellipsoid used to determine which way is up.
+    *   - {Property} [position] The position property used to compute the orientation.
+    *   - {Ellipsoid} [ellipsoid=Ellipsoid.WGS84] The ellipsoid used to determine which way is up.
     *
     * @example
     * //Create an entity with position and orientation.
@@ -8044,7 +8044,7 @@ package cesium {
     * alias VelocityVectorProperty
     * constructor
     *
-    * - {Property} [position] The position property used to compute the velocity.
+    *   - {Property} [position] The position property used to compute the velocity.
     *
     * @example
     * //Create an entity with a billboard rotated to match its velocity.
@@ -8104,8 +8104,8 @@ package cesium {
     * alias WallGeometryUpdater
     * constructor
     *
-    * - {Entity} entity The entity containing the geometry to be visualized.
-    * - {Scene} scene The scene where visualization is taking place.
+    *   - {Entity} entity The entity containing the geometry to be visualized.
+    *   - {Scene} scene The scene where visualization is taking place.
     */
   @js.native
   @JSName("Cesium.WallGeometryUpdater")
@@ -8153,17 +8153,17 @@ package cesium {
     * alias WallGraphics
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Property} [options.positions] A Property specifying the array of [[Cartesian3]] positions which define the top of the wall.
-    * - {Property} [options.maximumHeights] A Property specifying an array of heights to be used for the top of the wall instead of the height of each position.
-    * - {Property} [options.minimumHeights] A Property specifying an array of heights to be used for the bottom of the wall instead of the globe surface.
-    * - {Property} [options.show=true] A boolean Property specifying the visibility of the wall.
-    * - {Property} [options.fill=true] A boolean Property specifying whether the wall is filled with the provided material.
-    * - {MaterialProperty} [options.material=Color.WHITE] A Property specifying the material used to fill the wall.
-    * - {Property} [options.outline=false] A boolean Property specifying whether the wall is outlined.
-    * - {Property} [options.outlineColor=Color.BLACK] A Property specifying the [[Color]] of the outline.
-    * - {Property} [options.outlineWidth=1.0] A numeric Property specifying the width of the outline.
-    * - {Property} [options.granularity=Cesium.Math.RADIANS_PER_DEGREE] A numeric Property specifying the angular distance between each latitude and longitude point.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Property} [options.positions] A Property specifying the array of [[Cartesian3]] positions which define the top of the wall.
+    *   - {Property} [options.maximumHeights] A Property specifying an array of heights to be used for the top of the wall instead of the height of each position.
+    *   - {Property} [options.minimumHeights] A Property specifying an array of heights to be used for the bottom of the wall instead of the globe surface.
+    *   - {Property} [options.show=true] A boolean Property specifying the visibility of the wall.
+    *   - {Property} [options.fill=true] A boolean Property specifying whether the wall is filled with the provided material.
+    *   - {MaterialProperty} [options.material=Color.WHITE] A Property specifying the material used to fill the wall.
+    *   - {Property} [options.outline=false] A boolean Property specifying whether the wall is outlined.
+    *   - {Property} [options.outlineColor=Color.BLACK] A Property specifying the [[Color]] of the outline.
+    *   - {Property} [options.outlineWidth=1.0] A numeric Property specifying the width of the outline.
+    *   - {Property} [options.granularity=Cesium.Math.RADIANS_PER_DEGREE] A numeric Property specifying the angular distance between each latitude and longitude point.
     *
     * @see Entity
     *      demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Wall.html|Cesium Sandcastle Wall Demo]]
@@ -8198,13 +8198,13 @@ package cesium {
     * alias Appearance
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Boolean} [options.translucent=true] When <code>true</code>, the geometry is expected to appear translucent so [[Appearance#renderState]] has alpha blending enabled.
-    * - {Boolean} [options.closed=false] When <code>true</code>, the geometry is expected to be closed so [[Appearance#renderState]] has backface culling enabled.
-    * - {Material} [options.material=Material.ColorType] The material used to determine the fragment color.
-    * - {String} [options.vertexShaderSource] Optional GLSL vertex shader source to override the default vertex shader.
-    * - {String} [options.fragmentShaderSource] Optional GLSL fragment shader source to override the default fragment shader.
-    * - {RenderState} [options.renderState] Optional render state to override the default render state.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Boolean} [options.translucent=true] When <code>true</code>, the geometry is expected to appear translucent so [[Appearance#renderState]] has alpha blending enabled.
+    *   - {Boolean} [options.closed=false] When <code>true</code>, the geometry is expected to be closed so [[Appearance#renderState]] has backface culling enabled.
+    *   - {Material} [options.material=Material.ColorType] The material used to determine the fragment color.
+    *   - {String} [options.vertexShaderSource] Optional GLSL vertex shader source to override the default vertex shader.
+    *   - {String} [options.fragmentShaderSource] Optional GLSL fragment shader source to override the default fragment shader.
+    *   - {RenderState} [options.renderState] Optional render state to override the default render state.
     *
     * @see MaterialAppearance
     * @see EllipsoidSurfaceAppearance
@@ -8241,10 +8241,10 @@ package cesium {
     * alias ArcGisMapServerImageryProvider
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {String} options.url The URL of the ArcGIS MapServer service.
-    * - {String} [options.token] The ArcGIS token used to authenticate with the ArcGIS MapServer service.
-    * - {TileDiscardPolicy} [options.tileDiscardPolicy] The policy that determines if a tile
+    *   - {Object} options Object with the following properties:
+    *   - {String} options.url The URL of the ArcGIS MapServer service.
+    *   - {String} [options.token] The ArcGIS token used to authenticate with the ArcGIS MapServer service.
+    *   - {TileDiscardPolicy} [options.tileDiscardPolicy] The policy that determines if a tile
     * is invalid and should be discarded.  If this value is not specified, a default
     * [[DiscardMissingTileImagePolicy]] is used for tiled map servers, and a
     * [[NeverTileDiscardPolicy]] is used for non-tiled map servers.  In the former case,
@@ -8255,27 +8255,27 @@ package cesium {
     * these defaults should be correct tile discarding for a standard ArcGIS Server.  To ensure
     * that no tiles are discarded, construct and pass a [[NeverTileDiscardPolicy]] for this
     * parameter.
-    * - {Proxy} [options.proxy] A proxy to use for requests. This object is
+    *   - {Proxy} [options.proxy] A proxy to use for requests. This object is
     * expected to have a getURL function which returns the proxied URL, if needed.
-    * - {Boolean} [options.usePreCachedTilesIfAvailable=true] If true, the server's pre-cached
+    *   - {Boolean} [options.usePreCachedTilesIfAvailable=true] If true, the server's pre-cached
     * tiles are used if they are available.  If false, any pre-cached tiles are ignored and the
     * 'export' service is used.
-    * - {String} [options.layers] A comma-separated list of the layers to show, or undefined if all layers should be shown.
-    * - {Boolean} [options.enablePickFeatures=true] If true, [[ArcGisMapServerImageryProvider#pickFeatures]] will invoke
+    *   - {String} [options.layers] A comma-separated list of the layers to show, or undefined if all layers should be shown.
+    *   - {Boolean} [options.enablePickFeatures=true] If true, [[ArcGisMapServerImageryProvider#pickFeatures]] will invoke
     * the Identify service on the MapServer and return the features included in the response.  If false,
     * [[ArcGisMapServerImageryProvider#pickFeatures]] will immediately return undefined (indicating no pickable features)
     * without communicating with the server.  Set this property to false if you don't want this provider's features to
     * be pickable. Can be overridden by setting the [[ArcGisMapServerImageryProvider#enablePickFeatures]] property on the object.
-    * - {Rectangle} [options.rectangle=Rectangle.MAX_VALUE] The rectangle of the layer.  This parameter is ignored when accessing
+    *   - {Rectangle} [options.rectangle=Rectangle.MAX_VALUE] The rectangle of the layer.  This parameter is ignored when accessing
     * a tiled layer.
-    * - {TilingScheme} [options.tilingScheme=new GeographicTilingScheme()] The tiling scheme to use to divide the world into tiles.
+    *   - {TilingScheme} [options.tilingScheme=new GeographicTilingScheme()] The tiling scheme to use to divide the world into tiles.
     * This parameter is ignored when accessing a tiled server.
-    * - {Ellipsoid} [options.ellipsoid] The ellipsoid.  If the tilingScheme is specified and used,
+    *   - {Ellipsoid} [options.ellipsoid] The ellipsoid.  If the tilingScheme is specified and used,
     * this parameter is ignored and the tiling scheme's ellipsoid is used instead. If neither
     * parameter is specified, the WGS84 ellipsoid is used.
-    * - {Number} [options.tileWidth=256] The width of each tile in pixels.  This parameter is ignored when accessing a tiled server.
-    * - {Number} [options.tileHeight=256] The height of each tile in pixels.  This parameter is ignored when accessing a tiled server.
-    * - {Number} [options.maximumLevel] The maximum tile level to request, or undefined if there is no maximum.  This parameter is ignored when accessing
+    *   - {Number} [options.tileWidth=256] The width of each tile in pixels.  This parameter is ignored when accessing a tiled server.
+    *   - {Number} [options.tileHeight=256] The height of each tile in pixels.  This parameter is ignored when accessing a tiled server.
+    *   - {Number} [options.maximumLevel] The maximum tile level to request, or undefined if there is no maximum.  This parameter is ignored when accessing
     * a tiled server.
     *
     * @see BingMapsImageryProvider
@@ -8409,10 +8409,10 @@ package cesium {
     * alias BillboardCollection
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Matrix4} [options.modelMatrix=Matrix4.IDENTITY] The 4x4 transformation matrix that transforms each billboard from model to world coordinates.
-    * - {Boolean} [options.debugShowBoundingVolume=false] For debugging only. Determines if this primitive's commands' bounding spheres are shown.
-    * - {Scene} [options.scene] Must be passed in for billboards that use the height reference property or will be depth tested against the globe.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Matrix4} [options.modelMatrix=Matrix4.IDENTITY] The 4x4 transformation matrix that transforms each billboard from model to world coordinates.
+    *   - {Boolean} [options.debugShowBoundingVolume=false] For debugging only. Determines if this primitive's commands' bounding spheres are shown.
+    *   - {Scene} [options.scene] Must be passed in for billboards that use the height reference property or will be depth tested against the globe.
     *
     * performance For best performance, prefer a few collections, each with many billboards, to
     * many collections with only a few billboards each.  Organize collections so that billboards
@@ -8470,24 +8470,24 @@ package cesium {
     * alias BingMapsImageryProvider
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {String} options.url The url of the Bing Maps server hosting the imagery.
-    * - {String} [options.key] The Bing Maps key for your application, which can be
+    *   - {Object} options Object with the following properties:
+    *   - {String} options.url The url of the Bing Maps server hosting the imagery.
+    *   - {String} [options.key] The Bing Maps key for your application, which can be
     * created at [[https://www.bingmapsportal.com/]]
     * If this parameter is not provided, [[BingMapsApi.defaultKey]] is used.
     * If [[BingMapsApi.defaultKey]] is undefined as well, a message is
     * written to the console reminding you that you must create and supply a Bing Maps
     * key as soon as possible.  Please do not deploy an application that uses
     * Bing Maps imagery without creating a separate key for your application.
-    * - {String} [options.tileProtocol] The protocol to use when loading tiles, e.g. 'http:' or 'https:'.
+    *   - {String} [options.tileProtocol] The protocol to use when loading tiles, e.g. 'http:' or 'https:'.
     * By default, tiles are loaded using the same protocol as the page.
-    * - {String} [options.mapStyle=BingMapsStyle.AERIAL] The type of Bing Maps
+    *   - {String} [options.mapStyle=BingMapsStyle.AERIAL] The type of Bing Maps
     * imagery to load.
-    * - {String} [options.culture= ] The culture to use when requesting Bing Maps imagery. Not
+    *   - {String} [options.culture= ] The culture to use when requesting Bing Maps imagery. Not
     * all cultures are supported. See [[http://msdn.microsoft.com/en-us/library/hh441729.aspx}
     * for information on the supported cultures.
-    * - {Ellipsoid} [options.ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
-    * - {TileDiscardPolicy} [options.tileDiscardPolicy] The policy that determines if a tile
+    *   - {Ellipsoid} [options.ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
+    *   - {TileDiscardPolicy} [options.tileDiscardPolicy] The policy that determines if a tile
     * is invalid and should be discarded.  If this value is not specified, a default
     * [[DiscardMissingTileImagePolicy]] is used which requests
     * tile 0,0 at the maximum tile level and checks pixels (0,0), (120,140), (130,160),
@@ -8497,7 +8497,7 @@ package cesium {
     * these defaults should be correct tile discarding for a standard Bing Maps server.  To ensure
     * that no tiles are discarded, construct and pass a [[NeverTileDiscardPolicy]] for this
     * parameter.
-    * - {Proxy} [options.proxy] A proxy to use for requests. This object is
+    *   - {Proxy} [options.proxy] A proxy to use for requests. This object is
     * expected to have a getURL function which returns the proxied URL, if needed.
     *
     *
@@ -8571,7 +8571,7 @@ package cesium {
     *
     * constructor
     *
-    * - {Scene} scene The scene.
+    *   - {Scene} scene The scene.
     *
     * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Camera.html|Cesium Sandcastle Camera Demo]]
     * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Camera%20Tutorial.html">Sandcastle Example</a> from the <a href="http://cesiumjs.org/2013/02/13/Cesium-Camera-Tutorial/|Camera Tutorial]]
@@ -8720,7 +8720,7 @@ package cesium {
     * alias CameraEventAggregator
     * constructor
     *
-    * - {Canvas} [element=document] The element to handle events for.
+    *   - {Canvas} [element=document] The element to handle events for.
     *
     * @see ScreenSpaceEventHandler
     */
@@ -8756,8 +8756,8 @@ package cesium {
   /**
     * The credit display is responsible for displaying credits on screen.
     *
-    * - {HTMLElement} container The HTML element where credits will be displayed
-    * - {String} [delimiter= ' • '] The string to separate text credits
+    *   - {HTMLElement} container The HTML element where credits will be displayed
+    *   - {String} [delimiter= ' • '] The string to separate text credits
     *
     * alias CreditDisplay
     * constructor
@@ -8793,7 +8793,7 @@ package cesium {
     * alias CullingVolume
     * constructor
     *
-    * - {Cartesian4[]} [planes] An array of clipping planes.
+    *   - {Cartesian4[]} [planes] An array of clipping planes.
     */
   @js.native
   @JSName("Cesium.CullingVolume")
@@ -8822,12 +8822,12 @@ package cesium {
     * alias DebugAppearance
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {String} options.attributeName The name of the attribute to visualize.
-    * - {String} [options.glslDatatype='vec3'] The GLSL datatype of the attribute.  Supported datatypes are <code>float</code>, <code>vec2</code>, <code>vec3</code>, and <code>vec4</code>.
-    * - {String} [options.vertexShaderSource] Optional GLSL vertex shader source to override the default vertex shader.
-    * - {String} [options.fragmentShaderSource] Optional GLSL fragment shader source to override the default fragment shader.
-    * - {RenderState} [options.renderState] Optional render state to override the default render state.
+    *   - {Object} options Object with the following properties:
+    *   - {String} options.attributeName The name of the attribute to visualize.
+    *   - {String} [options.glslDatatype='vec3'] The GLSL datatype of the attribute.  Supported datatypes are <code>float</code>, <code>vec2</code>, <code>vec3</code>, and <code>vec4</code>.
+    *   - {String} [options.vertexShaderSource] Optional GLSL vertex shader source to override the default vertex shader.
+    *   - {String} [options.fragmentShaderSource] Optional GLSL fragment shader source to override the default fragment shader.
+    *   - {RenderState} [options.renderState] Optional render state to override the default render state.
     *
     * exception {DeveloperError} options.glslDatatype must be float, vec2, vec3, or vec4.
     *
@@ -8874,12 +8874,12 @@ package cesium {
     * alias DebugModelMatrixPrimitive
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Number} [options.length=10000000.0] The length of the axes in meters.
-    * - {Number} [options.width=2.0] The width of the axes in pixels.
-    * - {Matrix4} [options.modelMatrix=Matrix4.IDENTITY] The 4x4 matrix that defines the reference frame, i.e., origin plus axes, to visualize.
-    * - {Boolean} [options.show=true] Determines if this primitive will be shown.
-    * - {Object} [options.id] A user-defined object to return when the instance is picked with [[Scene#pick]]
+    *   - {Object} [options] Object with the following properties:
+    *   - {Number} [options.length=10000000.0] The length of the axes in meters.
+    *   - {Number} [options.width=2.0] The width of the axes in pixels.
+    *   - {Matrix4} [options.modelMatrix=Matrix4.IDENTITY] The 4x4 matrix that defines the reference frame, i.e., origin plus axes, to visualize.
+    *   - {Boolean} [options.show=true] Determines if this primitive will be shown.
+    *   - {Object} [options.id] A user-defined object to return when the instance is picked with [[Scene#pick]]
     *
     * @example
     * primitives.add(new Cesium.DebugModelMatrixPrimitive({
@@ -8911,11 +8911,11 @@ package cesium {
     * alias DiscardMissingTileImagePolicy
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {String} options.missingImageUrl The URL of the known missing image.
-    * - {Cartesian2[]} options.pixelsToCheck An array of [[Cartesian2]] pixel positions to
+    *   - {Object} options Object with the following properties:
+    *   - {String} options.missingImageUrl The URL of the known missing image.
+    *   - {Cartesian2[]} options.pixelsToCheck An array of [[Cartesian2]] pixel positions to
     * compare against the missing image.
-    * - {Boolean} [options.disableCheckIfAllPixelsAreTransparent=false] If true, the discard check will be disabled
+    *   - {Boolean} [options.disableCheckIfAllPixelsAreTransparent=false] If true, the discard check will be disabled
     * if all of the pixelsToCheck in the missingImageUrl have an alpha value of 0.  If false, the
     * discard check will proceed no matter the values of the pixelsToCheck.
     */
@@ -8939,15 +8939,15 @@ package cesium {
     * alias EllipsoidSurfaceAppearance
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Boolean} [options.flat=false] When <code>true</code>, flat shading is used in the fragment shader, which means lighting is not taking into account.
-    * - {Boolean} [options.faceForward=options.aboveGround] When <code>true</code>, the fragment shader flips the surface normal as needed to ensure that the normal faces the viewer to avoid dark spots.  This is useful when both sides of a geometry should be shaded like [[WallGeometry]]
-    * - {Boolean} [options.translucent=true] When <code>true</code>, the geometry is expected to appear translucent so [[EllipsoidSurfaceAppearance#renderState]] has alpha blending enabled.
-    * - {Boolean} [options.aboveGround=false] When <code>true</code>, the geometry is expected to be on the ellipsoid's surface - not at a constant height above it - so [[EllipsoidSurfaceAppearance#renderState]] has backface culling enabled.
-    * - {Material} [options.material=Material.ColorType] The material used to determine the fragment color.
-    * - {String} [options.vertexShaderSource] Optional GLSL vertex shader source to override the default vertex shader.
-    * - {String} [options.fragmentShaderSource] Optional GLSL fragment shader source to override the default fragment shader.
-    * - {RenderState} [options.renderState] Optional render state to override the default render state.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Boolean} [options.flat=false] When <code>true</code>, flat shading is used in the fragment shader, which means lighting is not taking into account.
+    *   - {Boolean} [options.faceForward=options.aboveGround] When <code>true</code>, the fragment shader flips the surface normal as needed to ensure that the normal faces the viewer to avoid dark spots.  This is useful when both sides of a geometry should be shaded like [[WallGeometry]]
+    *   - {Boolean} [options.translucent=true] When <code>true</code>, the geometry is expected to appear translucent so [[EllipsoidSurfaceAppearance#renderState]] has alpha blending enabled.
+    *   - {Boolean} [options.aboveGround=false] When <code>true</code>, the geometry is expected to be on the ellipsoid's surface - not at a constant height above it - so [[EllipsoidSurfaceAppearance#renderState]] has backface culling enabled.
+    *   - {Material} [options.material=Material.ColorType] The material used to determine the fragment color.
+    *   - {String} [options.vertexShaderSource] Optional GLSL vertex shader source to override the default vertex shader.
+    *   - {String} [options.fragmentShaderSource] Optional GLSL fragment shader source to override the default fragment shader.
+    *   - {RenderState} [options.renderState] Optional render state to override the default render state.
     *
     * @see [[https://github.com/AnalyticalGraphicsInc/cesium/wiki/Fabric|Fabric]]
     *
@@ -9017,17 +9017,17 @@ package cesium {
     * alias FrameRateMonitor
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Scene} options.scene The Scene instance for which to monitor performance.
-    * - {Number} [options.samplingWindow=5.0] The length of the sliding window over which to compute the average frame rate, in seconds.
-    * - {Number} [options.quietPeriod=2.0] The length of time to wait at startup and each time the page becomes visible (i.e. when the user
+    *   - {Object} [options] Object with the following properties:
+    *   - {Scene} options.scene The Scene instance for which to monitor performance.
+    *   - {Number} [options.samplingWindow=5.0] The length of the sliding window over which to compute the average frame rate, in seconds.
+    *   - {Number} [options.quietPeriod=2.0] The length of time to wait at startup and each time the page becomes visible (i.e. when the user
     * switches back to the tab) before starting to measure performance, in seconds.
-    * - {Number} [options.warmupPeriod=5.0] The length of the warmup period, in seconds.  During the warmup period, a separate
+    *   - {Number} [options.warmupPeriod=5.0] The length of the warmup period, in seconds.  During the warmup period, a separate
     * (usually lower) frame rate is required.
-    * - {Number} [options.minimumFrameRateDuringWarmup=4] The minimum frames-per-second that are required for acceptable performance during
+    *   - {Number} [options.minimumFrameRateDuringWarmup=4] The minimum frames-per-second that are required for acceptable performance during
     * the warmup period.  If the frame rate averages less than this during any samplingWindow during the warmupPeriod, the
     * lowFrameRate event will be raised and the page will redirect to the redirectOnLowFrameRateUrl, if any.
-    * - {Number} [options.minimumFrameRateAfterWarmup=8] The minimum frames-per-second that are required for acceptable performance after
+    *   - {Number} [options.minimumFrameRateAfterWarmup=8] The minimum frames-per-second that are required for acceptable performance after
     * the end of the warmup period.  If the frame rate averages less than this during any samplingWindow after the warmupPeriod, the
     * lowFrameRate event will be raised and the page will redirect to the redirectOnLowFrameRateUrl, if any.
     */
@@ -9069,12 +9069,12 @@ package cesium {
     * alias GetFeatureInfoFormat
     * constructor
     *
-    * - {String} type The type of response to expect from a GetFeatureInfo request.  Valid
+    *   - {String} type The type of response to expect from a GetFeatureInfo request.  Valid
     * values are 'json', 'xml', 'html', or 'text'.
-    * - {String} [format] The info format to request from the WMS server.  This is usually a
+    *   - {String} [format] The info format to request from the WMS server.  This is usually a
     * MIME type such as 'application/json' or text/xml'.  If this parameter is not specified, the provider will request 'json'
     * using 'application/json', 'xml' using 'text/xml', 'html' using 'text/html', and 'text' using 'text/plain'.
-    * - {Function} [callback] A function to invoke with the GetFeatureInfo response from the WMS server
+    *   - {Function} [callback] A function to invoke with the GetFeatureInfo response from the WMS server
     * in order to produce an array of picked [[ImageryLayerFeatureInfo]] instances.  If this parameter is not specified,
     * a default function for the type of response is used.
     */
@@ -9091,7 +9091,7 @@ package cesium {
     * alias Globe
     * constructor
     *
-    * - {Ellipsoid} [ellipsoid=Ellipsoid.WGS84] Determines the size and shape of the
+    *   - {Ellipsoid} [ellipsoid=Ellipsoid.WGS84] Determines the size and shape of the
     * globe.
     */
   @js.native
@@ -9138,9 +9138,9 @@ package cesium {
     * alias GoogleEarthImageryProvider
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {String} options.url The url of the Google Earth server hosting the imagery.
-    * - {Number} options.channel The channel (id) to be used when requesting data from the server.
+    *   - {Object} options Object with the following properties:
+    *   - {String} options.url The url of the Google Earth server hosting the imagery.
+    *   - {Number} options.channel The channel (id) to be used when requesting data from the server.
     * The channel number can be found by looking at the json file located at:
     * earth.localdomain/default_map/query?request=Json&vars=geeServerDefs The /default_map path may
     * differ depending on your Google Earth Enterprise server configuration. Look for the "id" that
@@ -9158,14 +9158,14 @@ package cesium {
     * }
     * ]
     * }
-    * - {String} [options.path="/default_map"] The path of the Google Earth server hosting the imagery.
-    * - {Number} [options.maximumLevel] The maximum level-of-detail supported by the Google Earth
+    *   - {String} [options.path="/default_map"] The path of the Google Earth server hosting the imagery.
+    *   - {Number} [options.maximumLevel] The maximum level-of-detail supported by the Google Earth
     * Enterprise server, or undefined if there is no limit.
-    * - {TileDiscardPolicy} [options.tileDiscardPolicy] The policy that determines if a tile
+    *   - {TileDiscardPolicy} [options.tileDiscardPolicy] The policy that determines if a tile
     * is invalid and should be discarded. To ensure that no tiles are discarded, construct and pass
     * a [[NeverTileDiscardPolicy]] for this parameter.
-    * - {Ellipsoid} [options.ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
-    * - {Proxy} [options.proxy] A proxy to use for requests. This object is
+    *   - {Ellipsoid} [options.ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
+    *   - {Proxy} [options.proxy] A proxy to use for requests. This object is
     * expected to have a getURL function which returns the proxied URL, if needed.
     *
     * exception {RuntimeError} Could not find layer with channel (id) of <code>options.channel</code>.
@@ -9226,19 +9226,19 @@ package cesium {
     * alias GridImageryProvider
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {TilingScheme} [options.tilingScheme=new GeographicTilingScheme()] The tiling scheme for which to draw tiles.
-    * - {Ellipsoid} [options.ellipsoid] The ellipsoid.  If the tilingScheme is specified,
+    *   - {Object} [options] Object with the following properties:
+    *   - {TilingScheme} [options.tilingScheme=new GeographicTilingScheme()] The tiling scheme for which to draw tiles.
+    *   - {Ellipsoid} [options.ellipsoid] The ellipsoid.  If the tilingScheme is specified,
     * this parameter is ignored and the tiling scheme's ellipsoid is used instead. If neither
     * parameter is specified, the WGS84 ellipsoid is used.
-    * - {Number} [options.cells=8] The number of grids cells.
-    * - {Color} [options.color=Color(1.0, 1.0, 1.0, 0.4)] The color to draw grid lines.
-    * - {Color} [options.glowColor=Color(0.0, 1.0, 0.0, 0.05)] The color to draw glow for grid lines.
-    * - {Number} [options.glowWidth=6] The width of lines used for rendering the line glow effect.
-    * - {Color} [backgroundColor=Color(0.0, 0.5, 0.0, 0.2)] Background fill color.
-    * - {Number} [options.tileWidth=256] The width of the tile for level-of-detail selection purposes.
-    * - {Number} [options.tileHeight=256] The height of the tile for level-of-detail selection purposes.
-    * - {Number} [options.canvasSize=256] The size of the canvas used for rendering.
+    *   - {Number} [options.cells=8] The number of grids cells.
+    *   - {Color} [options.color=Color(1.0, 1.0, 1.0, 0.4)] The color to draw grid lines.
+    *   - {Color} [options.glowColor=Color(0.0, 1.0, 0.0, 0.05)] The color to draw glow for grid lines.
+    *   - {Number} [options.glowWidth=6] The width of lines used for rendering the line glow effect.
+    *   - {Color} [backgroundColor=Color(0.0, 0.5, 0.0, 0.2)] Background fill color.
+    *   - {Number} [options.tileWidth=256] The width of the tile for level-of-detail selection purposes.
+    *   - {Number} [options.tileHeight=256] The height of the tile for level-of-detail selection purposes.
+    *   - {Number} [options.canvasSize=256] The size of the canvas used for rendering.
     */
   @js.native
   @JSName("Cesium.GridImageryProvider")
@@ -9289,17 +9289,17 @@ package cesium {
     * alias GroundPrimitive
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Array|GeometryInstance} [options.geometryInstances] The geometry instances to render.
-    * - {Boolean} [options.show=true] Determines if this primitive will be shown.
-    * - {Boolean} [options.vertexCacheOptimize=false] When <code>true</code>, geometry vertices are optimized for the pre and post-vertex-shader caches.
-    * - {Boolean} [options.interleave=false] When <code>true</code>, geometry vertex attributes are interleaved, which can slightly improve rendering performance but increases load time.
-    * - {Boolean} [options.compressVertices=true] When <code>true</code>, the geometry vertices are compressed, which will save memory.
-    * - {Boolean} [options.releaseGeometryInstances=true] When <code>true</code>, the primitive does not keep a reference to the input <code>geometryInstances</code> to save memory.
-    * - {Boolean} [options.allowPicking=true] When <code>true</code>, each geometry instance will only be pickable with [[Scene#pick]]   When <code>false</code>, GPU memory is saved.
-    * - {Boolean} [options.asynchronous=true] Determines if the primitive will be created asynchronously or block until ready.
-    * - {Boolean} [options.debugShowBoundingVolume=false] For debugging only. Determines if this primitive's commands' bounding spheres are shown.
-    * - {Boolean} [options.debugShowShadowVolume=false] For debugging only. Determines if the shadow volume for each geometry in the primitive is drawn. Must be <code>true</code> on
+    *   - {Object} [options] Object with the following properties:
+    *   - {Array|GeometryInstance} [options.geometryInstances] The geometry instances to render.
+    *   - {Boolean} [options.show=true] Determines if this primitive will be shown.
+    *   - {Boolean} [options.vertexCacheOptimize=false] When <code>true</code>, geometry vertices are optimized for the pre and post-vertex-shader caches.
+    *   - {Boolean} [options.interleave=false] When <code>true</code>, geometry vertex attributes are interleaved, which can slightly improve rendering performance but increases load time.
+    *   - {Boolean} [options.compressVertices=true] When <code>true</code>, the geometry vertices are compressed, which will save memory.
+    *   - {Boolean} [options.releaseGeometryInstances=true] When <code>true</code>, the primitive does not keep a reference to the input <code>geometryInstances</code> to save memory.
+    *   - {Boolean} [options.allowPicking=true] When <code>true</code>, each geometry instance will only be pickable with [[Scene#pick]]   When <code>false</code>, GPU memory is saved.
+    *   - {Boolean} [options.asynchronous=true] Determines if the primitive will be created asynchronously or block until ready.
+    *   - {Boolean} [options.debugShowBoundingVolume=false] For debugging only. Determines if this primitive's commands' bounding spheres are shown.
+    *   - {Boolean} [options.debugShowShadowVolume=false] For debugging only. Determines if the shadow volume for each geometry in the primitive is drawn. Must be <code>true</code> on
     * creation for the volumes to be created before the geometry is released or options.releaseGeometryInstance must be <code>false</code>.
     *
     * @example
@@ -9386,17 +9386,17 @@ package cesium {
     * alias ImageryLayer
     * constructor
     *
-    * - {ImageryProvider} imageryProvider The imagery provider to use.
-    * - {Object} [options] Object with the following properties:
-    * - {Rectangle} [options.rectangle=imageryProvider.rectangle] The rectangle of the layer.  This rectangle
+    *   - {ImageryProvider} imageryProvider The imagery provider to use.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Rectangle} [options.rectangle=imageryProvider.rectangle] The rectangle of the layer.  This rectangle
     * can limit the visible portion of the imagery provider.
-    * - {Number|Function} [options.alpha=1.0] The alpha blending value of this layer, from 0.0 to 1.0.
+    *   - {Number|Function} [options.alpha=1.0] The alpha blending value of this layer, from 0.0 to 1.0.
     * This can either be a simple number or a function with the signature
     * <code>function(frameState, layer, x, y, level)</code>.  The function is passed the
     * current frame state, this layer, and the x, y, and level coordinates of the
     * imagery tile for which the alpha is required, and it is expected to return
     * the alpha value to use for the tile.
-    * - {Number|Function} [options.brightness=1.0] The brightness of this layer.  1.0 uses the unmodified imagery
+    *   - {Number|Function} [options.brightness=1.0] The brightness of this layer.  1.0 uses the unmodified imagery
     * color.  Less than 1.0 makes the imagery darker while greater than 1.0 makes it brighter.
     * This can either be a simple number or a function with the signature
     * <code>function(frameState, layer, x, y, level)</code>.  The function is passed the
@@ -9404,7 +9404,7 @@ package cesium {
     * imagery tile for which the brightness is required, and it is expected to return
     * the brightness value to use for the tile.  The function is executed for every
     * frame and for every tile, so it must be fast.
-    * - {Number|Function} [options.contrast=1.0] The contrast of this layer.  1.0 uses the unmodified imagery color.
+    *   - {Number|Function} [options.contrast=1.0] The contrast of this layer.  1.0 uses the unmodified imagery color.
     * Less than 1.0 reduces the contrast while greater than 1.0 increases it.
     * This can either be a simple number or a function with the signature
     * <code>function(frameState, layer, x, y, level)</code>.  The function is passed the
@@ -9412,14 +9412,14 @@ package cesium {
     * imagery tile for which the contrast is required, and it is expected to return
     * the contrast value to use for the tile.  The function is executed for every
     * frame and for every tile, so it must be fast.
-    * - {Number|Function} [options.hue=0.0] The hue of this layer.  0.0 uses the unmodified imagery color.
+    *   - {Number|Function} [options.hue=0.0] The hue of this layer.  0.0 uses the unmodified imagery color.
     * This can either be a simple number or a function with the signature
     * <code>function(frameState, layer, x, y, level)</code>.  The function is passed the
     * current frame state, this layer, and the x, y, and level coordinates
     * of the imagery tile for which the hue is required, and it is expected to return
     * the contrast value to use for the tile.  The function is executed for every
     * frame and for every tile, so it must be fast.
-    * - {Number|Function} [options.saturation=1.0] The saturation of this layer.  1.0 uses the unmodified imagery color.
+    *   - {Number|Function} [options.saturation=1.0] The saturation of this layer.  1.0 uses the unmodified imagery color.
     * Less than 1.0 reduces the saturation while greater than 1.0 increases it.
     * This can either be a simple number or a function with the signature
     * <code>function(frameState, layer, x, y, level)</code>.  The function is passed the
@@ -9427,21 +9427,21 @@ package cesium {
     * of the imagery tile for which the saturation is required, and it is expected to return
     * the contrast value to use for the tile.  The function is executed for every
     * frame and for every tile, so it must be fast.
-    * - {Number|Function} [options.gamma=1.0] The gamma correction to apply to this layer.  1.0 uses the unmodified imagery color.
+    *   - {Number|Function} [options.gamma=1.0] The gamma correction to apply to this layer.  1.0 uses the unmodified imagery color.
     * This can either be a simple number or a function with the signature
     * <code>function(frameState, layer, x, y, level)</code>.  The function is passed the
     * current frame state, this layer, and the x, y, and level coordinates of the
     * imagery tile for which the gamma is required, and it is expected to return
     * the gamma value to use for the tile.  The function is executed for every
     * frame and for every tile, so it must be fast.
-    * - {Boolean} [options.show=true] True if the layer is shown; otherwise, false.
-    * - {Number} [options.maximumAnisotropy=maximum supported] The maximum anisotropy level to use
+    *   - {Boolean} [options.show=true] True if the layer is shown; otherwise, false.
+    *   - {Number} [options.maximumAnisotropy=maximum supported] The maximum anisotropy level to use
     * for texture filtering.  If this parameter is not specified, the maximum anisotropy supported
     * by the WebGL stack will be used.  Larger values make the imagery look better in horizon
     * views.
-    * - {Number} [options.minimumTerrainLevel] The minimum terrain level-of-detail at which to show this imagery layer,
+    *   - {Number} [options.minimumTerrainLevel] The minimum terrain level-of-detail at which to show this imagery layer,
     * or undefined to show it at all levels.  Level zero is the least-detailed level.
-    * - {Number} [options.maximumTerrainLevel] The maximum terrain level-of-detail at which to show this imagery layer,
+    *   - {Number} [options.maximumTerrainLevel] The maximum terrain level-of-detail at which to show this imagery layer,
     * or undefined to show it at all levels.  Level zero is the least-detailed level.
     */
   @js.native
@@ -9658,10 +9658,10 @@ package cesium {
     * alias LabelCollection
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Matrix4} [options.modelMatrix=Matrix4.IDENTITY] The 4x4 transformation matrix that transforms each label from model to world coordinates.
-    * - {Boolean} [options.debugShowBoundingVolume=false] For debugging only. Determines if this primitive's commands' bounding spheres are shown.
-    * - {Scene} [options.scene] Must be passed in for labels that use the height reference property or will be depth tested against the globe.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Matrix4} [options.modelMatrix=Matrix4.IDENTITY] The 4x4 transformation matrix that transforms each label from model to world coordinates.
+    *   - {Boolean} [options.debugShowBoundingVolume=false] For debugging only. Determines if this primitive's commands' bounding spheres are shown.
+    *   - {Scene} [options.scene] Must be passed in for labels that use the height reference property or will be depth tested against the globe.
     *
     * performance For best performance, prefer a few collections, each with many labels, to
     * many collections with only a few labels each.  Avoid having collections where some
@@ -9716,19 +9716,19 @@ package cesium {
     * alias MapboxImageryProvider
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {String} [options.url='https://api.mapbox.com/v4/'] The Mapbox server url.
-    * - {String} options.mapId The Mapbox Map ID.
-    * - {String} [options.accessToken] The public access token for the imagery.
-    * - {String} [options.format='png'] The format of the image request.
-    * - {Object} [options.proxy] A proxy to use for requests. This object is expected to have a getURL function which returns the proxied URL.
-    * - {Ellipsoid} [options.ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
-    * - {Number} [options.minimumLevel=0] The minimum level-of-detail supported by the imagery provider.  Take care when specifying
+    *   - {Object} [options] Object with the following properties:
+    *   - {String} [options.url='https://api.mapbox.com/v4/'] The Mapbox server url.
+    *   - {String} options.mapId The Mapbox Map ID.
+    *   - {String} [options.accessToken] The public access token for the imagery.
+    *   - {String} [options.format='png'] The format of the image request.
+    *   - {Object} [options.proxy] A proxy to use for requests. This object is expected to have a getURL function which returns the proxied URL.
+    *   - {Ellipsoid} [options.ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
+    *   - {Number} [options.minimumLevel=0] The minimum level-of-detail supported by the imagery provider.  Take care when specifying
     * this that the number of tiles at the minimum level is small, such as four or less.  A larger number is likely
     * to result in rendering problems.
-    * - {Number} [options.maximumLevel] The maximum level-of-detail supported by the imagery provider, or undefined if there is no limit.
-    * - {Rectangle} [options.rectangle=Rectangle.MAX_VALUE] The rectangle, in radians, covered by the image.
-    * - {Credit|String} [options.credit] A credit for the data source, which is displayed on the canvas.
+    *   - {Number} [options.maximumLevel] The maximum level-of-detail supported by the imagery provider, or undefined if there is no limit.
+    *   - {Rectangle} [options.rectangle=Rectangle.MAX_VALUE] The rectangle, in radians, covered by the image.
+    *   - {Credit|String} [options.credit] A credit for the data source, which is displayed on the canvas.
     *
     * @example
     * // Mapbox tile provider
@@ -9922,11 +9922,11 @@ package cesium {
     *
     * alias Material
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Boolean} [options.strict=false] Throws errors for issues that would normally be ignored, including unused uniforms or materials.
-    * - {Boolean|Function} [options.translucent=true] When <code>true</code> or a function that returns <code>true</code>, the geometry
+    *   - {Object} [options] Object with the following properties:
+    *   - {Boolean} [options.strict=false] Throws errors for issues that would normally be ignored, including unused uniforms or materials.
+    *   - {Boolean|Function} [options.translucent=true] When <code>true</code> or a function that returns <code>true</code>, the geometry
     * with this material is expected to appear translucent.
-    * - {Object} options.fabric The fabric JSON used to generate the material.
+    *   - {Object} options.fabric The fabric JSON used to generate the material.
     *
     * constructor
     *
@@ -10012,16 +10012,16 @@ package cesium {
     * alias MaterialAppearance
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Boolean} [options.flat=false] When <code>true</code>, flat shading is used in the fragment shader, which means lighting is not taking into account.
-    * - {Boolean} [options.faceForward=!options.closed] When <code>true</code>, the fragment shader flips the surface normal as needed to ensure that the normal faces the viewer to avoid dark spots.  This is useful when both sides of a geometry should be shaded like [[WallGeometry]]
-    * - {Boolean} [options.translucent=true] When <code>true</code>, the geometry is expected to appear translucent so [[MaterialAppearance#renderState]] has alpha blending enabled.
-    * - {Boolean} [options.closed=false] When <code>true</code>, the geometry is expected to be closed so [[MaterialAppearance#renderState]] has backface culling enabled.
-    * - {MaterialAppearance.MaterialSupport} [options.materialSupport=MaterialAppearance.MaterialSupport.TEXTURED] The type of materials that will be supported.
-    * - {Material} [options.material=Material.ColorType] The material used to determine the fragment color.
-    * - {String} [options.vertexShaderSource] Optional GLSL vertex shader source to override the default vertex shader.
-    * - {String} [options.fragmentShaderSource] Optional GLSL fragment shader source to override the default fragment shader.
-    * - {RenderState} [options.renderState] Optional render state to override the default render state.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Boolean} [options.flat=false] When <code>true</code>, flat shading is used in the fragment shader, which means lighting is not taking into account.
+    *   - {Boolean} [options.faceForward=!options.closed] When <code>true</code>, the fragment shader flips the surface normal as needed to ensure that the normal faces the viewer to avoid dark spots.  This is useful when both sides of a geometry should be shaded like [[WallGeometry]]
+    *   - {Boolean} [options.translucent=true] When <code>true</code>, the geometry is expected to appear translucent so [[MaterialAppearance#renderState]] has alpha blending enabled.
+    *   - {Boolean} [options.closed=false] When <code>true</code>, the geometry is expected to be closed so [[MaterialAppearance#renderState]] has backface culling enabled.
+    *   - {MaterialAppearance.MaterialSupport} [options.materialSupport=MaterialAppearance.MaterialSupport.TEXTURED] The type of materials that will be supported.
+    *   - {Material} [options.material=Material.ColorType] The material used to determine the fragment color.
+    *   - {String} [options.vertexShaderSource] Optional GLSL vertex shader source to override the default vertex shader.
+    *   - {String} [options.fragmentShaderSource] Optional GLSL fragment shader source to override the default fragment shader.
+    *   - {RenderState} [options.renderState] Optional render state to override the default render state.
     *
     * @see [[https://github.com/AnalyticalGraphicsInc/cesium/wiki/Fabric|Fabric]]
     *      demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Materials.html|Cesium Sandcastle Material Appearance Demo]]
@@ -10093,20 +10093,20 @@ package cesium {
     * alias Model
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Object|ArrayBuffer|Uint8Array} [options.gltf] The object for the glTF JSON or an arraybuffer of Binary glTF defined by the KHR_binary_glTF extension.
-    * - {String} [options.basePath= ] The base path that paths in the glTF JSON are relative to.
-    * - {Boolean} [options.show=true] Determines if the model primitive will be shown.
-    * - {Matrix4} [options.modelMatrix=Matrix4.IDENTITY] The 4x4 transformation matrix that transforms the model from model to world coordinates.
-    * - {Number} [options.scale=1.0] A uniform scale applied to this model.
-    * - {Number} [options.minimumPixelSize=0.0] The approximate minimum pixel size of the model regardless of zoom.
-    * - {Number} [options.maximumScale] The maximum scale size of a model. An upper limit for minimumPixelSize.
-    * - {Object} [options.id] A user-defined object to return when the model is picked with [[Scene#pick]]
-    * - {Boolean} [options.allowPicking=true] When <code>true</code>, each glTF mesh and primitive is pickable with [[Scene#pick]]
-    * - {Boolean} [options.incrementallyLoadTextures=true] Determine if textures may continue to stream in after the model is loaded.
-    * - {Boolean} [options.asynchronous=true] Determines if model WebGL resource creation will be spread out over several frames or block until completion once all glTF files are loaded.
-    * - {Boolean} [options.debugShowBoundingVolume=false] For debugging only. Draws the bounding sphere for each draw command in the model.
-    * - {Boolean} [options.debugWireframe=false] For debugging only. Draws the model in wireframe.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Object|ArrayBuffer|Uint8Array} [options.gltf] The object for the glTF JSON or an arraybuffer of Binary glTF defined by the KHR_binary_glTF extension.
+    *   - {String} [options.basePath= ] The base path that paths in the glTF JSON are relative to.
+    *   - {Boolean} [options.show=true] Determines if the model primitive will be shown.
+    *   - {Matrix4} [options.modelMatrix=Matrix4.IDENTITY] The 4x4 transformation matrix that transforms the model from model to world coordinates.
+    *   - {Number} [options.scale=1.0] A uniform scale applied to this model.
+    *   - {Number} [options.minimumPixelSize=0.0] The approximate minimum pixel size of the model regardless of zoom.
+    *   - {Number} [options.maximumScale] The maximum scale size of a model. An upper limit for minimumPixelSize.
+    *   - {Object} [options.id] A user-defined object to return when the model is picked with [[Scene#pick]]
+    *   - {Boolean} [options.allowPicking=true] When <code>true</code>, each glTF mesh and primitive is pickable with [[Scene#pick]]
+    *   - {Boolean} [options.incrementallyLoadTextures=true] Determine if textures may continue to stream in after the model is loaded.
+    *   - {Boolean} [options.asynchronous=true] Determines if model WebGL resource creation will be spread out over several frames or block until completion once all glTF files are loaded.
+    *   - {Boolean} [options.debugShowBoundingVolume=false] For debugging only. Draws the bounding sphere for each draw command in the model.
+    *   - {Boolean} [options.debugWireframe=false] For debugging only. Draws the model in wireframe.
     *
     * exception {DeveloperError} bgltf is not a valid Binary glTF file.
     * exception {DeveloperError} Only glTF Binary version 1 is supported.
@@ -10287,11 +10287,11 @@ package cesium {
     * alias Moon
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Boolean} [options.show=true] Determines whether the moon will be rendered.
-    * - {String} [options.textureUrl=buildModuleUrl('Assets/Textures/moonSmall.jpg')] The moon texture.
-    * - {Ellipsoid} [options.ellipsoid=Ellipsoid.MOON] The moon ellipsoid.
-    * - {Boolean} [options.onlySunLighting=true] Use the sun as the only light source.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Boolean} [options.show=true] Determines whether the moon will be rendered.
+    *   - {String} [options.textureUrl=buildModuleUrl('Assets/Textures/moonSmall.jpg')] The moon texture.
+    *   - {Ellipsoid} [options.ellipsoid=Ellipsoid.MOON] The moon ellipsoid.
+    *   - {Boolean} [options.onlySunLighting=true] Use the sun as the only light source.
     *
     * @example
     * scene.moon = new Cesium.Moon();
@@ -10376,14 +10376,14 @@ package cesium {
     * alias PerInstanceColorAppearance
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Boolean} [options.flat=false] When <code>true</code>, flat shading is used in the fragment shader, which means lighting is not taking into account.
-    * - {Boolean} [options.faceForward=!options.closed] When <code>true</code>, the fragment shader flips the surface normal as needed to ensure that the normal faces the viewer to avoid dark spots.  This is useful when both sides of a geometry should be shaded like [[WallGeometry]]
-    * - {Boolean} [options.translucent=true] When <code>true</code>, the geometry is expected to appear translucent so [[PerInstanceColorAppearance#renderState]] has alpha blending enabled.
-    * - {Boolean} [options.closed=false] When <code>true</code>, the geometry is expected to be closed so [[PerInstanceColorAppearance#renderState]] has backface culling enabled.
-    * - {String} [options.vertexShaderSource] Optional GLSL vertex shader source to override the default vertex shader.
-    * - {String} [options.fragmentShaderSource] Optional GLSL fragment shader source to override the default fragment shader.
-    * - {RenderState} [options.renderState] Optional render state to override the default render state.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Boolean} [options.flat=false] When <code>true</code>, flat shading is used in the fragment shader, which means lighting is not taking into account.
+    *   - {Boolean} [options.faceForward=!options.closed] When <code>true</code>, the fragment shader flips the surface normal as needed to ensure that the normal faces the viewer to avoid dark spots.  This is useful when both sides of a geometry should be shaded like [[WallGeometry]]
+    *   - {Boolean} [options.translucent=true] When <code>true</code>, the geometry is expected to appear translucent so [[PerInstanceColorAppearance#renderState]] has alpha blending enabled.
+    *   - {Boolean} [options.closed=false] When <code>true</code>, the geometry is expected to be closed so [[PerInstanceColorAppearance#renderState]] has backface culling enabled.
+    *   - {String} [options.vertexShaderSource] Optional GLSL vertex shader source to override the default vertex shader.
+    *   - {String} [options.fragmentShaderSource] Optional GLSL fragment shader source to override the default fragment shader.
+    *   - {RenderState} [options.renderState] Optional render state to override the default render state.
     *
     * @example
     * // A solid white line segment
@@ -10588,9 +10588,9 @@ package cesium {
     * alias PointPrimitiveCollection
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Matrix4} [options.modelMatrix=Matrix4.IDENTITY] The 4x4 transformation matrix that transforms each point from model to world coordinates.
-    * - {Boolean} [options.debugShowBoundingVolume=false] For debugging only. Determines if this primitive's commands' bounding spheres are shown.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Matrix4} [options.modelMatrix=Matrix4.IDENTITY] The 4x4 transformation matrix that transforms each point from model to world coordinates.
+    *   - {Boolean} [options.debugShowBoundingVolume=false] For debugging only. Determines if this primitive's commands' bounding spheres are shown.
     *
     * performance For best performance, prefer a few collections, each with many points, to
     * many collections with only a few points each.  Organize collections so that points
@@ -10643,13 +10643,13 @@ package cesium {
     * alias Polyline
     *
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Boolean} [options.show=true] <code>true</code> if this polyline will be shown; otherwise, <code>false</code>.
-    * - {Number} [options.width=1.0] The width of the polyline in pixels.
-    * - {Boolean} [options.loop=false] Whether a line segment will be added between the last and first line positions to make this line a loop.
-    * - {Material} [options.material=Material.ColorType] The material.
-    * - {Cartesian3[]} [options.positions] The positions.
-    * - {Object} [options.id] The user-defined object to be returned when this polyline is picked.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Boolean} [options.show=true] <code>true</code> if this polyline will be shown; otherwise, <code>false</code>.
+    *   - {Number} [options.width=1.0] The width of the polyline in pixels.
+    *   - {Boolean} [options.loop=false] Whether a line segment will be added between the last and first line positions to make this line a loop.
+    *   - {Material} [options.material=Material.ColorType] The material.
+    *   - {Cartesian3[]} [options.positions] The positions.
+    *   - {Object} [options.id] The user-defined object to be returned when this polyline is picked.
     *
     * @see PolylineCollection
     *
@@ -10681,9 +10681,9 @@ package cesium {
     * alias PolylineCollection
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Matrix4} [options.modelMatrix=Matrix4.IDENTITY] The 4x4 transformation matrix that transforms each polyline from model to world coordinates.
-    * - {Boolean} [options.debugShowBoundingVolume=false] For debugging only. Determines if this primitive's commands' bounding spheres are shown.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Matrix4} [options.modelMatrix=Matrix4.IDENTITY] The 4x4 transformation matrix that transforms each polyline from model to world coordinates.
+    *   - {Boolean} [options.debugShowBoundingVolume=false] For debugging only. Determines if this primitive's commands' bounding spheres are shown.
     *
     * performance For best performance, prefer a few collections, each with many polylines, to
     * many collections with only a few polylines each.  Organize collections so that polylines
@@ -10748,11 +10748,11 @@ package cesium {
     * alias PolylineColorAppearance
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Boolean} [options.translucent=true] When <code>true</code>, the geometry is expected to appear translucent so [[PolylineColorAppearance#renderState]] has alpha blending enabled.
-    * - {String} [options.vertexShaderSource] Optional GLSL vertex shader source to override the default vertex shader.
-    * - {String} [options.fragmentShaderSource] Optional GLSL fragment shader source to override the default fragment shader.
-    * - {RenderState} [options.renderState] Optional render state to override the default render state.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Boolean} [options.translucent=true] When <code>true</code>, the geometry is expected to appear translucent so [[PolylineColorAppearance#renderState]] has alpha blending enabled.
+    *   - {String} [options.vertexShaderSource] Optional GLSL vertex shader source to override the default vertex shader.
+    *   - {String} [options.fragmentShaderSource] Optional GLSL fragment shader source to override the default fragment shader.
+    *   - {RenderState} [options.renderState] Optional render state to override the default render state.
     *
     * @example
     * // A solid white line segment
@@ -10807,12 +10807,12 @@ package cesium {
     * alias PolylineMaterialAppearance
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Boolean} [options.translucent=true] When <code>true</code>, the geometry is expected to appear translucent so [[PolylineMaterialAppearance#renderState]] has alpha blending enabled.
-    * - {Material} [options.material=Material.ColorType] The material used to determine the fragment color.
-    * - {String} [options.vertexShaderSource] Optional GLSL vertex shader source to override the default vertex shader.
-    * - {String} [options.fragmentShaderSource] Optional GLSL fragment shader source to override the default fragment shader.
-    * - {RenderState} [options.renderState] Optional render state to override the default render state.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Boolean} [options.translucent=true] When <code>true</code>, the geometry is expected to appear translucent so [[PolylineMaterialAppearance#renderState]] has alpha blending enabled.
+    *   - {Material} [options.material=Material.ColorType] The material used to determine the fragment color.
+    *   - {String} [options.vertexShaderSource] Optional GLSL vertex shader source to override the default vertex shader.
+    *   - {String} [options.fragmentShaderSource] Optional GLSL fragment shader source to override the default fragment shader.
+    *   - {RenderState} [options.renderState] Optional render state to override the default render state.
     *
     * @see [[https://github.com/AnalyticalGraphicsInc/cesium/wiki/Fabric|Fabric]]
     * @example
@@ -10882,19 +10882,19 @@ package cesium {
     * alias Primitive
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {GeometryInstance[]|GeometryInstance} [options.geometryInstances] The geometry instances - or a single geometry instance - to render.
-    * - {Appearance} [options.appearance] The appearance used to render the primitive.
-    * - {Boolean} [options.show=true] Determines if this primitive will be shown.
-    * - {Matrix4} [options.modelMatrix=Matrix4.IDENTITY] The 4x4 transformation matrix that transforms the primitive (all geometry instances) from model to world coordinates.
-    * - {Boolean} [options.vertexCacheOptimize=false] When <code>true</code>, geometry vertices are optimized for the pre and post-vertex-shader caches.
-    * - {Boolean} [options.interleave=false] When <code>true</code>, geometry vertex attributes are interleaved, which can slightly improve rendering performance but increases load time.
-    * - {Boolean} [options.compressVertices=true] When <code>true</code>, the geometry vertices are compressed, which will save memory.
-    * - {Boolean} [options.releaseGeometryInstances=true] When <code>true</code>, the primitive does not keep a reference to the input <code>geometryInstances</code> to save memory.
-    * - {Boolean} [options.allowPicking=true] When <code>true</code>, each geometry instance will only be pickable with [[Scene#pick]]   When <code>false</code>, GPU memory is saved.
-    * - {Boolean} [options.cull=true] When <code>true</code>, the renderer frustum culls and horizon culls the primitive's commands based on their bounding volume.  Set this to <code>false</code> for a small performance gain if you are manually culling the primitive.
-    * - {Boolean} [options.asynchronous=true] Determines if the primitive will be created asynchronously or block until ready.
-    * - {Boolean} [options.debugShowBoundingVolume=false] For debugging only. Determines if this primitive's commands' bounding spheres are shown.
+    *   - {Object} [options] Object with the following properties:
+    *   - {GeometryInstance[]|GeometryInstance} [options.geometryInstances] The geometry instances - or a single geometry instance - to render.
+    *   - {Appearance} [options.appearance] The appearance used to render the primitive.
+    *   - {Boolean} [options.show=true] Determines if this primitive will be shown.
+    *   - {Matrix4} [options.modelMatrix=Matrix4.IDENTITY] The 4x4 transformation matrix that transforms the primitive (all geometry instances) from model to world coordinates.
+    *   - {Boolean} [options.vertexCacheOptimize=false] When <code>true</code>, geometry vertices are optimized for the pre and post-vertex-shader caches.
+    *   - {Boolean} [options.interleave=false] When <code>true</code>, geometry vertex attributes are interleaved, which can slightly improve rendering performance but increases load time.
+    *   - {Boolean} [options.compressVertices=true] When <code>true</code>, the geometry vertices are compressed, which will save memory.
+    *   - {Boolean} [options.releaseGeometryInstances=true] When <code>true</code>, the primitive does not keep a reference to the input <code>geometryInstances</code> to save memory.
+    *   - {Boolean} [options.allowPicking=true] When <code>true</code>, each geometry instance will only be pickable with [[Scene#pick]]   When <code>false</code>, GPU memory is saved.
+    *   - {Boolean} [options.cull=true] When <code>true</code>, the renderer frustum culls and horizon culls the primitive's commands based on their bounding volume.  Set this to <code>false</code> for a small performance gain if you are manually culling the primitive.
+    *   - {Boolean} [options.asynchronous=true] Determines if the primitive will be created asynchronously or block until ready.
+    *   - {Boolean} [options.debugShowBoundingVolume=false] For debugging only. Determines if this primitive's commands' bounding spheres are shown.
     *
     * @example
     * // 1. Draw a translucent ellipse on the surface with a checkerboard pattern
@@ -10999,9 +10999,9 @@ package cesium {
     * alias PrimitiveCollection
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Boolean} [options.show=true] Determines if the primitives in the collection will be shown.
-    * - {Boolean} [options.destroyPrimitives=true] Determines if primitives in the collection are destroyed when they are removed.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Boolean} [options.show=true] Determines if the primitives in the collection will be shown.
+    *   - {Boolean} [options.destroyPrimitives=true] Determines if primitives in the collection are destroyed when they are removed.
     *
     * @example
     * var billboards = new Cesium.BillboardCollection();
@@ -11088,14 +11088,14 @@ package cesium {
     * alias Scene
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Canvas} options.canvas The HTML canvas element to create the scene for.
-    * - {Object} [options.contextOptions] Context and WebGL creation properties.  See details above.
-    * - {Element} [options.creditContainer] The HTML element in which the credits will be displayed.
-    * - {MapProjection} [options.mapProjection=new GeographicProjection()] The map projection to use in 2D and Columbus View modes.
-    * - {Boolean} [options.orderIndependentTranslucency=true] If true and the configuration supports it, use order independent translucency.
-    * - {Boolean} [options.scene3DOnly=false] If true, optimizes memory use and performance for 3D mode but disables the ability to use 2D or Columbus View.
-    * - {Number} [options.terrainExaggeration=1.0] A scalar used to exaggerate the terrain. Note that terrain exaggeration will not modify any other primitive as they are positioned relative to the ellipsoid.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Canvas} options.canvas The HTML canvas element to create the scene for.
+    *   - {Object} [options.contextOptions] Context and WebGL creation properties.  See details above.
+    *   - {Element} [options.creditContainer] The HTML element in which the credits will be displayed.
+    *   - {MapProjection} [options.mapProjection=new GeographicProjection()] The map projection to use in 2D and Columbus View modes.
+    *   - {Boolean} [options.orderIndependentTranslucency=true] If true and the configuration supports it, use order independent translucency.
+    *   - {Boolean} [options.scene3DOnly=false] If true, optimizes memory use and performance for 3D mode but disables the ability to use 2D or Columbus View.
+    *   - {Number} [options.terrainExaggeration=1.0] A scalar used to exaggerate the terrain. Note that terrain exaggeration will not modify any other primitive as they are positioned relative to the ellipsoid.
     *
     * @see CesiumWidget
     * @see [[http://www.khronos.org/registry/webgl/specs/latest/#5.2|WebGLContextAttributes]]
@@ -11185,7 +11185,7 @@ package cesium {
     * alias ScreenSpaceCameraController
     * constructor
     *
-    * - {Scene} scene The scene.
+    *   - {Scene} scene The scene.
     */
   @js.native
   @JSName("Cesium.ScreenSpaceCameraController")
@@ -11227,12 +11227,12 @@ package cesium {
     * alias SingleTileImageryProvider
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {String} options.url The url for the tile.
-    * - {Rectangle} [options.rectangle=Rectangle.MAX_VALUE] The rectangle, in radians, covered by the image.
-    * - {Credit|String} [options.credit] A credit for the data source, which is displayed on the canvas.
-    * - {Ellipsoid} [options.ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
-    * - {Object} [options.proxy] A proxy to use for requests. This object is expected to have a getURL function which returns the proxied URL, if needed.
+    *   - {Object} options Object with the following properties:
+    *   - {String} options.url The url for the tile.
+    *   - {Rectangle} [options.rectangle=Rectangle.MAX_VALUE] The rectangle, in radians, covered by the image.
+    *   - {Credit|String} [options.credit] A credit for the data source, which is displayed on the canvas.
+    *   - {Ellipsoid} [options.ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
+    *   - {Object} [options.proxy] A proxy to use for requests. This object is expected to have a getURL function which returns the proxied URL, if needed.
     *
     * @see ArcGisMapServerImageryProvider
     * @see BingMapsImageryProvider
@@ -11281,7 +11281,7 @@ package cesium {
     * alias SkyAtmosphere
     * constructor
     *
-    * - {Ellipsoid} [ellipsoid=Ellipsoid.WGS84] The ellipsoid that the atmosphere is drawn around.
+    *   - {Ellipsoid} [ellipsoid=Ellipsoid.WGS84] The ellipsoid that the atmosphere is drawn around.
     *
     * @example
     * scene.skyAtmosphere = new Cesium.SkyAtmosphere();
@@ -11310,9 +11310,9 @@ package cesium {
     * alias SkyBox
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Object} [options.sources] The source URL or <code>Image</code> object for each of the six cube map faces.  See the example below.
-    * - {Boolean} [options.show=true] Determines if this primitive will be shown.
+    *   - {Object} options Object with the following properties:
+    *   - {Object} [options.sources] The source URL or <code>Image</code> object for each of the six cube map faces.  See the example below.
+    *   - {Boolean} [options.show=true] Determines if this primitive will be shown.
     *
     * @example
     * scene.skyBox = new Cesium.SkyBox({
@@ -11373,14 +11373,14 @@ package cesium {
     * alias TileCoordinatesImageryProvider
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {TilingScheme} [options.tilingScheme=new GeographicTilingScheme()] The tiling scheme for which to draw tiles.
-    * - {Ellipsoid} [options.ellipsoid] The ellipsoid.  If the tilingScheme is specified,
+    *   - {Object} [options] Object with the following properties:
+    *   - {TilingScheme} [options.tilingScheme=new GeographicTilingScheme()] The tiling scheme for which to draw tiles.
+    *   - {Ellipsoid} [options.ellipsoid] The ellipsoid.  If the tilingScheme is specified,
     * this parameter is ignored and the tiling scheme's ellipsoid is used instead. If neither
     * parameter is specified, the WGS84 ellipsoid is used.
-    * - {Color} [options.color=Color.YELLOW] The color to draw the tile box and label.
-    * - {Number} [options.tileWidth=256] The width of the tile for level-of-detail selection purposes.
-    * - {Number} [options.tileHeight=256] The height of the tile for level-of-detail selection purposes.
+    *   - {Color} [options.color=Color.YELLOW] The color to draw the tile box and label.
+    *   - {Number} [options.tileWidth=256] The width of the tile for level-of-detail selection purposes.
+    *   - {Number} [options.tileHeight=256] The height of the tile for level-of-detail selection purposes.
     */
   @js.native
   @JSName("Cesium.TileCoordinatesImageryProvider")
@@ -11432,8 +11432,8 @@ package cesium {
     * alias UrlTemplateImageryProvider
     * constructor
     *
-    * - {Promise.<Object>|Object} [options] Object with the following properties:
-    * - {String} options.url  The URL template to use to request tiles.  It has the following keywords:
+    *   - {Promise.<Object>|Object} [options] Object with the following properties:
+    *   - {String} options.url  The URL template to use to request tiles.  It has the following keywords:
     * <ul>
     * <li><code>{z}</code>: The level of the tile in the tiling scheme.  Level zero is the root of the quadtree pyramid.</li>
     * <li><code>{x}</code>: The tile X coordinate in the tiling scheme, where 0 is the Westernmost tile.</li>
@@ -11453,7 +11453,7 @@ package cesium {
     * <li><code>{width}</code>: The width of each tile in pixels.</li>
     * <li><code>{height}</code>: The height of each tile in pixels.</li>
     * </ul>
-    * - {String} [options.pickFeaturesUrl] The URL template to use to pick features.  If this property is not specified,
+    *   - {String} [options.pickFeaturesUrl] The URL template to use to pick features.  If this property is not specified,
     * [[UrlTemplateImageryProvider#pickFeatures]] will immediately returned undefined, indicating no
     * features picked.  The URL template supports all of the keywords supported by the <code>url</code>
     * parameter, plus the following:
@@ -11468,33 +11468,33 @@ package cesium {
     * <li><code>{latitudeProjected}</code>: The latitude of the picked position in the projected coordinates of the tiling scheme.</li>
     * <li><code>{format}</code>: The format in which to get feature information, as specified in the [[GetFeatureInfoFormat]] </li>
     * </ul>
-    * - {String|String[]} [options.subdomains='abc'] The subdomains to use for the <code>{s}</code> placeholder in the URL template.
+    *   - {String|String[]} [options.subdomains='abc'] The subdomains to use for the <code>{s}</code> placeholder in the URL template.
     * If this parameter is a single string, each character in the string is a subdomain.  If it is
     * an array, each element in the array is a subdomain.
-    * - {Object} [options.proxy] A proxy to use for requests. This object is expected to have a getURL function which returns the proxied URL.
-    * - {Credit|String} [options.credit= ] A credit for the data source, which is displayed on the canvas.
-    * - {Number} [options.minimumLevel=0] The minimum level-of-detail supported by the imagery provider.  Take care when specifying
+    *   - {Object} [options.proxy] A proxy to use for requests. This object is expected to have a getURL function which returns the proxied URL.
+    *   - {Credit|String} [options.credit= ] A credit for the data source, which is displayed on the canvas.
+    *   - {Number} [options.minimumLevel=0] The minimum level-of-detail supported by the imagery provider.  Take care when specifying
     * this that the number of tiles at the minimum level is small, such as four or less.  A larger number is likely
     * to result in rendering problems.
-    * - {Number} [options.maximumLevel] The maximum level-of-detail supported by the imagery provider, or undefined if there is no limit.
-    * - {Rectangle} [options.rectangle=Rectangle.MAX_VALUE] The rectangle, in radians, covered by the image.
-    * - {TilingScheme} [options.tilingScheme=WebMercatorTilingScheme] The tiling scheme specifying how the ellipsoidal
+    *   - {Number} [options.maximumLevel] The maximum level-of-detail supported by the imagery provider, or undefined if there is no limit.
+    *   - {Rectangle} [options.rectangle=Rectangle.MAX_VALUE] The rectangle, in radians, covered by the image.
+    *   - {TilingScheme} [options.tilingScheme=WebMercatorTilingScheme] The tiling scheme specifying how the ellipsoidal
     * surface is broken into tiles.  If this parameter is not provided, a [[WebMercatorTilingScheme]]
     * is used.
-    * - {Ellipsoid} [options.ellipsoid] The ellipsoid.  If the tilingScheme is specified,
+    *   - {Ellipsoid} [options.ellipsoid] The ellipsoid.  If the tilingScheme is specified,
     * this parameter is ignored and the tiling scheme's ellipsoid is used instead. If neither
     * parameter is specified, the WGS84 ellipsoid is used.
-    * - {Number} [options.tileWidth=256] Pixel width of image tiles.
-    * - {Number} [options.tileHeight=256] Pixel height of image tiles.
-    * - {Boolean} [options.hasAlphaChannel=true] true if the images provided by this imagery provider
+    *   - {Number} [options.tileWidth=256] Pixel width of image tiles.
+    *   - {Number} [options.tileHeight=256] Pixel height of image tiles.
+    *   - {Boolean} [options.hasAlphaChannel=true] true if the images provided by this imagery provider
     * include an alpha channel; otherwise, false.  If this property is false, an alpha channel, if
     * present, will be ignored.  If this property is true, any images without an alpha channel will
     * be treated as if their alpha is 1.0 everywhere.  When this property is false, memory usage
     * and texture upload time are potentially reduced.
-    * - {GetFeatureInfoFormat[]} [options.getFeatureInfoFormats] The formats in which to get feature information at a
+    *   - {GetFeatureInfoFormat[]} [options.getFeatureInfoFormats] The formats in which to get feature information at a
     * specific location when [[UrlTemplateImageryProvider#pickFeatures]] is invoked.  If this
     * parameter is not specified, feature picking is disabled.
-    * - {Boolean} [options.enablePickFeatures=true] If true, [[UrlTemplateImageryProvider#pickFeatures]] will
+    *   - {Boolean} [options.enablePickFeatures=true] If true, [[UrlTemplateImageryProvider#pickFeatures]] will
     * request the <code>options.pickFeaturesUrl</code> and attempt to interpret the features included in the response.  If false,
     * [[UrlTemplateImageryProvider#pickFeatures]] will immediately return undefined (indicating no pickable
     * features) without communicating with the server.  Set this property to false if you know your data
@@ -11572,8 +11572,8 @@ package cesium {
     * alias ViewportQuad
     * constructor
     *
-    * - {BoundingRectangle} [rectangle] The [[BoundingRectangle]] defining the quad's position within the viewport.
-    * - {Material} [material] The [[Material]] defining the surface appearance of the viewport quad.
+    *   - {BoundingRectangle} [rectangle] The [[BoundingRectangle]] defining the quad's position within the viewport.
+    *   - {Material} [material] The [[Material]] defining the surface appearance of the viewport quad.
     *
     * @example
     * var viewportQuad = new Cesium.ViewportQuad(new Cesium.BoundingRectangle(0, 0, 80, 40));
@@ -11601,37 +11601,37 @@ package cesium {
     * alias WebMapServiceImageryProvider
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {String} options.url The URL of the WMS service. The URL supports the same keywords as the [[UrlTemplateImageryProvider]]
-    * - {String} options.layers The layers to include, separated by commas.
-    * - {Object} [options.parameters=WebMapServiceImageryProvider.DefaultParameters] Additional parameters
+    *   - {Object} options Object with the following properties:
+    *   - {String} options.url The URL of the WMS service. The URL supports the same keywords as the [[UrlTemplateImageryProvider]]
+    *   - {String} options.layers The layers to include, separated by commas.
+    *   - {Object} [options.parameters=WebMapServiceImageryProvider.DefaultParameters] Additional parameters
     * to pass to the WMS server in the GetMap URL.
-    * - {Object} [options.getFeatureInfoParameters=WebMapServiceImageryProvider.GetFeatureInfoDefaultParameters] Additional
+    *   - {Object} [options.getFeatureInfoParameters=WebMapServiceImageryProvider.GetFeatureInfoDefaultParameters] Additional
     * parameters to pass to the WMS server in the GetFeatureInfo URL.
-    * - {Boolean} [options.enablePickFeatures=true] If true, [[WebMapServiceImageryProvider#pickFeatures]] will invoke
+    *   - {Boolean} [options.enablePickFeatures=true] If true, [[WebMapServiceImageryProvider#pickFeatures]] will invoke
     * the GetFeatureInfo operation on the WMS server and return the features included in the response.  If false,
     * [[WebMapServiceImageryProvider#pickFeatures]] will immediately return undefined (indicating no pickable features)
     * without communicating with the server.  Set this property to false if you know your WMS server does not support
     * GetFeatureInfo or if you don't want this provider's features to be pickable. Note that this can be dynamically
     * overridden by modifying the WebMapServiceImageryProvider#enablePickFeatures property.
-    * - {GetFeatureInfoFormat[]} [options.getFeatureInfoFormats=WebMapServiceImageryProvider.DefaultGetFeatureInfoFormats] The formats
+    *   - {GetFeatureInfoFormat[]} [options.getFeatureInfoFormats=WebMapServiceImageryProvider.DefaultGetFeatureInfoFormats] The formats
     * in which to try WMS GetFeatureInfo requests.
-    * - {Rectangle} [options.rectangle=Rectangle.MAX_VALUE] The rectangle of the layer.
-    * - {TilingScheme} [options.tilingScheme=new GeographicTilingScheme()] The tiling scheme to use to divide the world into tiles.
-    * - {Ellipsoid} [options.ellipsoid] The ellipsoid.  If the tilingScheme is specified,
+    *   - {Rectangle} [options.rectangle=Rectangle.MAX_VALUE] The rectangle of the layer.
+    *   - {TilingScheme} [options.tilingScheme=new GeographicTilingScheme()] The tiling scheme to use to divide the world into tiles.
+    *   - {Ellipsoid} [options.ellipsoid] The ellipsoid.  If the tilingScheme is specified,
     * this parameter is ignored and the tiling scheme's ellipsoid is used instead. If neither
     * parameter is specified, the WGS84 ellipsoid is used.
-    * - {Number} [options.tileWidth=256] The width of each tile in pixels.
-    * - {Number} [options.tileHeight=256] The height of each tile in pixels.
-    * - {Number} [options.minimumLevel=0] The minimum level-of-detail supported by the imagery provider.  Take care when
+    *   - {Number} [options.tileWidth=256] The width of each tile in pixels.
+    *   - {Number} [options.tileHeight=256] The height of each tile in pixels.
+    *   - {Number} [options.minimumLevel=0] The minimum level-of-detail supported by the imagery provider.  Take care when
     * specifying this that the number of tiles at the minimum level is small, such as four or less.  A larger number is
     * likely to result in rendering problems.
-    * - {Number} [options.maximumLevel] The maximum level-of-detail supported by the imagery provider, or undefined if there is no limit.
+    *   - {Number} [options.maximumLevel] The maximum level-of-detail supported by the imagery provider, or undefined if there is no limit.
     * If not specified, there is no limit.
-    * - {Credit|String} [options.credit] A credit for the data source, which is displayed on the canvas.
-    * - {Object} [options.proxy] A proxy to use for requests. This object is
+    *   - {Credit|String} [options.credit] A credit for the data source, which is displayed on the canvas.
+    *   - {Object} [options.proxy] A proxy to use for requests. This object is
     * expected to have a getURL function which returns the proxied URL, if needed.
-    * - {String|String[]} [options.subdomains='abc'] The subdomains to use for the <code>{s}</code> placeholder in the URL template.
+    *   - {String|String[]} [options.subdomains='abc'] The subdomains to use for the <code>{s}</code> placeholder in the URL template.
     * If this parameter is a single string, each character in the string is a subdomain.  If it is
     * an array, each element in the array is a subdomain.
     *
@@ -11696,23 +11696,23 @@ package cesium {
     * alias WebMapTileServiceImageryProvider
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {String} options.url The base URL for the WMTS GetTile operation (for KVP-encoded requests) or the tile-URL template (for RESTful requests). The tile-URL template should contain the following variables: &#123;style&#125;, &#123;TileMatrixSet&#125;, &#123;TileMatrix&#125;, &#123;TileRow&#125;, &#123;TileCol&#125;. The first two are optional if actual values are hardcoded or not required by the server. The &#123;s&#125; keyword may be used to specify subdomains.
-    * - {String} [options.format='image/jpeg'] The MIME type for images to retrieve from the server.
-    * - {String} options.layer The layer name for WMTS requests.
-    * - {String} options.style The style name for WMTS requests.
-    * - {String} options.tileMatrixSetID The identifier of the TileMatrixSet to use for WMTS requests.
-    * - {Array} [options.tileMatrixLabels] A list of identifiers in the TileMatrix to use for WMTS requests, one per TileMatrix level.
-    * - {Number} [options.tileWidth=256] The tile width in pixels.
-    * - {Number} [options.tileHeight=256] The tile height in pixels.
-    * - {TilingScheme} [options.tilingScheme] The tiling scheme corresponding to the organization of the tiles in the TileMatrixSet.
-    * - {Object} [options.proxy] A proxy to use for requests. This object is expected to have a getURL function which returns the proxied URL.
-    * - {Rectangle} [options.rectangle=Rectangle.MAX_VALUE] The rectangle covered by the layer.
-    * - {Number} [options.minimumLevel=0] The minimum level-of-detail supported by the imagery provider.
-    * - {Number} [options.maximumLevel] The maximum level-of-detail supported by the imagery provider, or undefined if there is no limit.
-    * - {Ellipsoid} [options.ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
-    * - {Credit|String} [options.credit] A credit for the data source, which is displayed on the canvas.
-    * - {String|String[]} [options.subdomains='abc'] The subdomains to use for the <code>{s}</code> placeholder in the URL template.
+    *   - {Object} options Object with the following properties:
+    *   - {String} options.url The base URL for the WMTS GetTile operation (for KVP-encoded requests) or the tile-URL template (for RESTful requests). The tile-URL template should contain the following variables: &#123;style&#125;, &#123;TileMatrixSet&#125;, &#123;TileMatrix&#125;, &#123;TileRow&#125;, &#123;TileCol&#125;. The first two are optional if actual values are hardcoded or not required by the server. The &#123;s&#125; keyword may be used to specify subdomains.
+    *   - {String} [options.format='image/jpeg'] The MIME type for images to retrieve from the server.
+    *   - {String} options.layer The layer name for WMTS requests.
+    *   - {String} options.style The style name for WMTS requests.
+    *   - {String} options.tileMatrixSetID The identifier of the TileMatrixSet to use for WMTS requests.
+    *   - {Array} [options.tileMatrixLabels] A list of identifiers in the TileMatrix to use for WMTS requests, one per TileMatrix level.
+    *   - {Number} [options.tileWidth=256] The tile width in pixels.
+    *   - {Number} [options.tileHeight=256] The tile height in pixels.
+    *   - {TilingScheme} [options.tilingScheme] The tiling scheme corresponding to the organization of the tiles in the TileMatrixSet.
+    *   - {Object} [options.proxy] A proxy to use for requests. This object is expected to have a getURL function which returns the proxied URL.
+    *   - {Rectangle} [options.rectangle=Rectangle.MAX_VALUE] The rectangle covered by the layer.
+    *   - {Number} [options.minimumLevel=0] The minimum level-of-detail supported by the imagery provider.
+    *   - {Number} [options.maximumLevel] The maximum level-of-detail supported by the imagery provider, or undefined if there is no limit.
+    *   - {Ellipsoid} [options.ellipsoid] The ellipsoid.  If not specified, the WGS84 ellipsoid is used.
+    *   - {Credit|String} [options.credit] A credit for the data source, which is displayed on the canvas.
+    *   - {String|String[]} [options.subdomains='abc'] The subdomains to use for the <code>{s}</code> placeholder in the URL template.
     * If this parameter is a single string, each character in the string is a subdomain.  If it is
     * an array, each element in the array is a subdomain.
     *
@@ -11804,8 +11804,8 @@ package cesium {
     * alias Animation
     * constructor
     *
-    * - {Element|String} container The DOM element or ID that will contain the widget.
-    * - {AnimationViewModel} viewModel The view model used by this widget.
+    *   - {Element|String} container The DOM element or ID that will contain the widget.
+    *   - {AnimationViewModel} viewModel The view model used by this widget.
     *
     * exception {DeveloperError} Element with id "container" does not exist in the document.
     *
@@ -11848,7 +11848,7 @@ package cesium {
     * alias AnimationViewModel
     * constructor
     *
-    * - {ClockViewModel} clockViewModel The ClockViewModel instance to use.
+    *   - {ClockViewModel} clockViewModel The ClockViewModel instance to use.
     *
     * @see Animation
     */
@@ -11891,9 +11891,8 @@ package cesium {
   /**
     * <span style="display: block; text-align: center;">
     * <img src="images/BaseLayerPicker.png" width="264" height="287" alt="" />
-    * <br />BaseLayerPicker with its drop-panel open.
+    * BaseLayerPicker with its drop-panel open.
     * </span>
-    * <br /><br />
     * The BaseLayerPicker is a single button widget that displays a panel of available imagery and
     * terrain providers.  When imagery is selected, the corresponding imagery layer is created and inserted
     * as the base layer of the imagery collection; removing the existing base.  When terrain is selected,
@@ -11904,13 +11903,13 @@ package cesium {
     * alias BaseLayerPicker
     * constructor
     *
-    * - {Element|String} container The parent HTML container node or ID for this widget.
-    * - {Object} options Object with the following properties:
-    * - {Globe} options.globe The Globe to use.
-    * - {ProviderViewModel[]} [options.imageryProviderViewModels=[]] The array of ProviderViewModel instances to use for imagery.
-    * - {ProviderViewModel} [options.selectedImageryProviderViewModel] The view model for the current base imagery layer, if not supplied the first available imagery layer is used.
-    * - {ProviderViewModel[]} [options.terrainProviderViewModels=[]] The array of ProviderViewModel instances to use for terrain.
-    * - {ProviderViewModel} [options.selectedTerrainProviderViewModel] The view model for the current base terrain layer, if not supplied the first available terrain layer is used.
+    *   - {Element|String} container The parent HTML container node or ID for this widget.
+    *   - {Object} options Object with the following properties:
+    *   - {Globe} options.globe The Globe to use.
+    *   - {ProviderViewModel[]} [options.imageryProviderViewModels=[]] The array of ProviderViewModel instances to use for imagery.
+    *   - {ProviderViewModel} [options.selectedImageryProviderViewModel] The view model for the current base imagery layer, if not supplied the first available imagery layer is used.
+    *   - {ProviderViewModel[]} [options.terrainProviderViewModels=[]] The array of ProviderViewModel instances to use for terrain.
+    *   - {ProviderViewModel} [options.selectedTerrainProviderViewModel] The view model for the current base terrain layer, if not supplied the first available terrain layer is used.
     *
     * exception {DeveloperError} Element with id "container" does not exist in the document.
     *
@@ -11990,12 +11989,12 @@ package cesium {
     * alias BaseLayerPickerViewModel
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Globe} options.globe The Globe to use.
-    * - {ProviderViewModel[]} [options.imageryProviderViewModels=[]] The array of ProviderViewModel instances to use for imagery.
-    * - {ProviderViewModel} [options.selectedImageryProviderViewModel] The view model for the current base imagery layer, if not supplied the first available imagery layer is used.
-    * - {ProviderViewModel[]} [options.terrainProviderViewModels=[]] The array of ProviderViewModel instances to use for terrain.
-    * - {ProviderViewModel} [options.selectedTerrainProviderViewModel] The view model for the current base terrain layer, if not supplied the first available terrain layer is used.
+    *   - {Object} options Object with the following properties:
+    *   - {Globe} options.globe The Globe to use.
+    *   - {ProviderViewModel[]} [options.imageryProviderViewModels=[]] The array of ProviderViewModel instances to use for imagery.
+    *   - {ProviderViewModel} [options.selectedImageryProviderViewModel] The view model for the current base imagery layer, if not supplied the first available imagery layer is used.
+    *   - {ProviderViewModel[]} [options.terrainProviderViewModels=[]] The array of ProviderViewModel instances to use for terrain.
+    *   - {ProviderViewModel} [options.selectedTerrainProviderViewModel] The view model for the current base terrain layer, if not supplied the first available terrain layer is used.
     *
     * exception {DeveloperError} imageryProviderViewModels must be an array.
     * exception {DeveloperError} terrainProviderViewModels must be an array.
@@ -12028,11 +12027,11 @@ package cesium {
     * alias ProviderViewModel
     * constructor
     *
-    * - {Object} options The object containing all parameters.
-    * - {String} options.name The name of the layer.
-    * - {String} options.tooltip The tooltip to show when the item is moused over.
-    * - {String} options.iconUrl An icon representing the layer.
-    * - {ProviderViewModel~CreationFunction|Command} options.creationFunction A function or Command
+    *   - {Object} options The object containing all parameters.
+    *   - {String} options.name The name of the layer.
+    *   - {String} options.tooltip The tooltip to show when the item is moused over.
+    *   - {String} options.iconUrl An icon representing the layer.
+    *   - {ProviderViewModel~CreationFunction|Command} options.creationFunction A function or Command
     * that creates one or more providers which will be added to the globe when this item is selected.
     *
     * @see BaseLayerPicker
@@ -12056,8 +12055,8 @@ package cesium {
     * alias CesiumInspector
     * constructor
     *
-    * - {Element|String} container The DOM element or ID that will contain the widget.
-    * - {Scene} scene The Scene instance to use.
+    *   - {Element|String} container The DOM element or ID that will contain the widget.
+    *   - {Scene} scene The Scene instance to use.
     *
     * exception {DeveloperError} container is required.
     * exception {DeveloperError} scene is required.
@@ -12082,7 +12081,7 @@ package cesium {
     * alias CesiumInspectorViewModel
     * constructor
     *
-    * - {Scene} scene The scene instance to use.
+    *   - {Scene} scene The scene instance to use.
     *
     * exception {DeveloperError} scene is required.
     */
@@ -12160,25 +12159,25 @@ package cesium {
     * alias CesiumWidget
     * constructor
     *
-    * - {Element|String} container The DOM element or ID that will contain the widget.
-    * - {Object} [options] Object with the following properties:
-    * - {Clock} [options.clock=new Clock()] The clock to use to control current time.
-    * - {ImageryProvider} [options.imageryProvider=new BingMapsImageryProvider()] The imagery provider to serve as the base layer. If set to <code>false</code>, no imagery provider will be added.
-    * - {TerrainProvider} [options.terrainProvider=new EllipsoidTerrainProvider] The terrain provider.
-    * - {SkyBox} [options.skyBox] The skybox used to render the stars.  When <code>undefined</code>, the default stars are used. If set to <code>false</code>, no skyBox, Sun, or Moon will be added.
-    * - {SkyAtmosphere} [options.skyAtmosphere] Blue sky, and the glow around the Earth's limb.  Set to <code>false</code> to turn it off.
-    * - {SceneMode} [options.sceneMode=SceneMode.SCENE3D] The initial scene mode.
-    * - {Boolean} [options.scene3DOnly=false] When <code>true</code>, each geometry instance will only be rendered in 3D to save GPU memory.
-    * - {Boolean} [options.orderIndependentTranslucency=true] If true and the configuration supports it, use order independent translucency.
-    * - {MapProjection} [options.mapProjection=new GeographicProjection()] The map projection to use in 2D and Columbus View modes.
-    * - {Globe} [options.globe=new Globe(mapProjection.ellipsoid)] The globe to use in the scene.  If set to <code>false</code>, no globe will be added.
-    * - {Boolean} [options.useDefaultRenderLoop=true] True if this widget should control the render loop, false otherwise.
-    * - {Number} [options.targetFrameRate] The target frame rate when using the default render loop.
-    * - {Boolean} [options.showRenderLoopErrors=true] If true, this widget will automatically display an HTML panel to the user containing the error, if a render loop error occurs.
-    * - {Object} [options.contextOptions] Context and WebGL creation properties corresponding to <code>options</code> passed to [[Scene]]
-    * - {Element|String} [options.creditContainer] The DOM element or ID that will contain the [[CreditDisplay]]   If not specified, the credits are added
+    *   - {Element|String} container The DOM element or ID that will contain the widget.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Clock} [options.clock=new Clock()] The clock to use to control current time.
+    *   - {ImageryProvider} [options.imageryProvider=new BingMapsImageryProvider()] The imagery provider to serve as the base layer. If set to <code>false</code>, no imagery provider will be added.
+    *   - {TerrainProvider} [options.terrainProvider=new EllipsoidTerrainProvider] The terrain provider.
+    *   - {SkyBox} [options.skyBox] The skybox used to render the stars.  When <code>undefined</code>, the default stars are used. If set to <code>false</code>, no skyBox, Sun, or Moon will be added.
+    *   - {SkyAtmosphere} [options.skyAtmosphere] Blue sky, and the glow around the Earth's limb.  Set to <code>false</code> to turn it off.
+    *   - {SceneMode} [options.sceneMode=SceneMode.SCENE3D] The initial scene mode.
+    *   - {Boolean} [options.scene3DOnly=false] When <code>true</code>, each geometry instance will only be rendered in 3D to save GPU memory.
+    *   - {Boolean} [options.orderIndependentTranslucency=true] If true and the configuration supports it, use order independent translucency.
+    *   - {MapProjection} [options.mapProjection=new GeographicProjection()] The map projection to use in 2D and Columbus View modes.
+    *   - {Globe} [options.globe=new Globe(mapProjection.ellipsoid)] The globe to use in the scene.  If set to <code>false</code>, no globe will be added.
+    *   - {Boolean} [options.useDefaultRenderLoop=true] True if this widget should control the render loop, false otherwise.
+    *   - {Number} [options.targetFrameRate] The target frame rate when using the default render loop.
+    *   - {Boolean} [options.showRenderLoopErrors=true] If true, this widget will automatically display an HTML panel to the user containing the error, if a render loop error occurs.
+    *   - {Object} [options.contextOptions] Context and WebGL creation properties corresponding to <code>options</code> passed to [[Scene]]
+    *   - {Element|String} [options.creditContainer] The DOM element or ID that will contain the [[CreditDisplay]]   If not specified, the credits are added
     * to the bottom of the widget itself.
-    * - {Number} [options.terrainExaggeration=1.0] A scalar used to exaggerate the terrain. Note that terrain exaggeration will not modify any other primitive as they are positioned relative to the ellipsoid.
+    *   - {Number} [options.terrainExaggeration=1.0] A scalar used to exaggerate the terrain. Note that terrain exaggeration will not modify any other primitive as they are positioned relative to the ellipsoid.
     *
     * exception {DeveloperError} Element with id "container" does not exist in the document.
     *
@@ -12247,7 +12246,7 @@ package cesium {
     * alias ClockViewModel
     * constructor
     *
-    * - {Clock} [clock] The clock object wrapped by this view model, if undefined a new instance will be created.
+    *   - {Clock} [clock] The clock object wrapped by this view model, if undefined a new instance will be created.
     *
     * @see Clock
     */
@@ -12299,8 +12298,8 @@ package cesium {
     * alias FullscreenButton
     * constructor
     *
-    * - {Element|String} container The DOM element or ID that will contain the widget.
-    * - {Element|String} [fullscreenElement=document.body] The element or id to be placed into fullscreen mode.
+    *   - {Element|String} container The DOM element or ID that will contain the widget.
+    *   - {Element|String} [fullscreenElement=document.body] The element or id to be placed into fullscreen mode.
     *
     * exception {DeveloperError} Element with id "container" does not exist in the document.
     *
@@ -12324,7 +12323,7 @@ package cesium {
     * alias FullscreenButtonViewModel
     * constructor
     *
-    * - {Element|String} [fullscreenElement=document.body] The element or id to be placed into fullscreen mode.
+    *   - {Element|String} [fullscreenElement=document.body] The element or id to be placed into fullscreen mode.
     */
   @js.native
   @JSName("Cesium.FullscreenButtonViewModel")
@@ -12349,18 +12348,18 @@ package cesium {
     * alias Geocoder
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Element|String} options.container The DOM element or ID that will contain the widget.
-    * - {Scene} options.scene The Scene instance to use.
-    * - {String} [options.url='https://dev.virtualearth.net'] The base URL of the Bing Maps API.
-    * - {String} [options.key] The Bing Maps key for your application, which can be
+    *   - {Object} options Object with the following properties:
+    *   - {Element|String} options.container The DOM element or ID that will contain the widget.
+    *   - {Scene} options.scene The Scene instance to use.
+    *   - {String} [options.url='https://dev.virtualearth.net'] The base URL of the Bing Maps API.
+    *   - {String} [options.key] The Bing Maps key for your application, which can be
     * created at [[https://www.bingmapsportal.com]]
     * If this parameter is not provided, [[BingMapsApi.defaultKey]] is used.
     * If [[BingMapsApi.defaultKey]] is undefined as well, a message is
     * written to the console reminding you that you must create and supply a Bing Maps
     * key as soon as possible.  Please do not deploy an application that uses
     * this widget without creating a separate key for your application.
-    * - {Number} [options.flightDuration=1.5] The duration of the camera flight to an entered location, in seconds.
+    *   - {Number} [options.flightDuration=1.5] The duration of the camera flight to an entered location, in seconds.
     */
   @js.native
   @JSName("Cesium.Geocoder")
@@ -12380,17 +12379,17 @@ package cesium {
     * alias GeocoderViewModel
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Scene} options.scene The Scene instance to use.
-    * - {String} [options.url='https://dev.virtualearth.net'] The base URL of the Bing Maps API.
-    * - {String} [options.key] The Bing Maps key for your application, which can be
+    *   - {Object} options Object with the following properties:
+    *   - {Scene} options.scene The Scene instance to use.
+    *   - {String} [options.url='https://dev.virtualearth.net'] The base URL of the Bing Maps API.
+    *   - {String} [options.key] The Bing Maps key for your application, which can be
     * created at [[https://www.bingmapsportal.com]]
     * If this parameter is not provided, [[BingMapsApi.defaultKey]] is used.
     * If [[BingMapsApi.defaultKey]] is undefined as well, a message is
     * written to the console reminding you that you must create and supply a Bing Maps
     * key as soon as possible.  Please do not deploy an application that uses
     * this widget without creating a separate key for your application.
-    * - {Number} [options.flightDuration] The duration of the camera flight to an entered location, in seconds.
+    *   - {Number} [options.flightDuration] The duration of the camera flight to an entered location, in seconds.
     */
   @js.native
   @JSName("Cesium.GeocoderViewModel")
@@ -12413,9 +12412,9 @@ package cesium {
     * alias HomeButton
     * constructor
     *
-    * - {Element|String} container The DOM element or ID that will contain the widget.
-    * - {Scene} scene The Scene instance to use.
-    * - {Number} [duration] The time, in seconds, it takes to complete the camera flight home.
+    *   - {Element|String} container The DOM element or ID that will contain the widget.
+    *   - {Scene} scene The Scene instance to use.
+    *   - {Number} [duration] The time, in seconds, it takes to complete the camera flight home.
     */
   @js.native
   @JSName("Cesium.HomeButton")
@@ -12435,8 +12434,8 @@ package cesium {
     * alias HomeButtonViewModel
     * constructor
     *
-    * - {Scene} scene The scene instance to use.
-    * - {Number} [duration] The duration of the camera flight in seconds.
+    *   - {Scene} scene The scene instance to use.
+    *   - {Number} [duration] The duration of the camera flight in seconds.
     */
   @js.native
   @JSName("Cesium.HomeButtonViewModel")
@@ -12455,7 +12454,7 @@ package cesium {
     * alias InfoBox
     * constructor
     *
-    * - {Element|String} container The DOM element or ID that will contain the widget.
+    *   - {Element|String} container The DOM element or ID that will contain the widget.
     *
     * exception {DeveloperError} Element with id "container" does not exist in the document.
     */
@@ -12501,9 +12500,9 @@ package cesium {
     * alias NavigationHelpButton
     * constructor
     *
-    * - {Object} options Object with the following properties:
-    * - {Element|String} options.container The DOM element or ID that will contain the widget.
-    * - {Boolean} [options.instructionsInitiallyVisible=false] True if the navigation instructions should initially be visible; otherwise, false.
+    *   - {Object} options Object with the following properties:
+    *   - {Element|String} options.container The DOM element or ID that will contain the widget.
+    *   - {Boolean} [options.instructionsInitiallyVisible=false] True if the navigation instructions should initially be visible; otherwise, false.
     *
     * exception {DeveloperError} Element with id "container" does not exist in the document.
     *
@@ -12549,10 +12548,10 @@ package cesium {
     * alias PerformanceWatchdog
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Element|String} options.container The DOM element or ID that will contain the widget.
-    * - {Scene} options.scene The [[Scene]] for which to monitor performance.
-    * - {String} [options.lowFrameRateMessage='This application appears to be performing poorly on your system.  Please try using a different web browser or updating your video drivers.'] The
+    *   - {Object} [options] Object with the following properties:
+    *   - {Element|String} options.container The DOM element or ID that will contain the widget.
+    *   - {Scene} options.scene The [[Scene]] for which to monitor performance.
+    *   - {String} [options.lowFrameRateMessage='This application appears to be performing poorly on your system.  Please try using a different web browser or updating your video drivers.'] The
     * message to display when a low frame rate is detected.  The message is interpeted as HTML, so make sure
     * it comes from a trusted source so that your application is not vulnerable to cross-site scripting attacks.
     */
@@ -12575,9 +12574,9 @@ package cesium {
     * alias PerformanceWatchdogViewModel
     * constructor
     *
-    * - {Object} [options] Object with the following properties:
-    * - {Scene} options.scene The Scene instance for which to monitor performance.
-    * - {String} [options.lowFrameRateMessage='This application appears to be performing poorly on your system.  Please try using a different web browser or updating your video drivers.'] The
+    *   - {Object} [options] Object with the following properties:
+    *   - {Scene} options.scene The Scene instance for which to monitor performance.
+    *   - {String} [options.lowFrameRateMessage='This application appears to be performing poorly on your system.  Please try using a different web browser or updating your video drivers.'] The
     * message to display when a low frame rate is detected.  The message is interpeted as HTML, so make sure
     * it comes from a trusted source so that your application is not vulnerable to cross-site scripting attacks.
     */
@@ -12603,9 +12602,9 @@ package cesium {
     * alias SceneModePicker
     * constructor
     *
-    * - {Element|String} container The DOM element or ID that will contain the widget.
-    * - {Scene} scene The Scene instance to use.
-    * - {Number} [duration=2.0] The time, in seconds, it takes for the scene to transition.
+    *   - {Element|String} container The DOM element or ID that will contain the widget.
+    *   - {Scene} scene The Scene instance to use.
+    *   - {Number} [duration=2.0] The time, in seconds, it takes for the scene to transition.
     *
     * exception {DeveloperError} Element with id "container" does not exist in the document.
     *
@@ -12634,8 +12633,8 @@ package cesium {
     * alias SceneModePickerViewModel
     * constructor
     *
-    * - {Scene} scene The Scene to morph
-    * - {Number} [duration=2.0] The duration of scene morph animations, in seconds
+    *   - {Scene} scene The Scene to morph
+    *   - {Number} [duration=2.0] The duration of scene morph animations, in seconds
     */
   @js.native
   @JSName("Cesium.SceneModePickerViewModel")
@@ -12666,8 +12665,8 @@ package cesium {
     * alias SelectionIndicator
     * constructor
     *
-    * - {Element|String} container The DOM element or ID that will contain the widget.
-    * - {Scene} scene The Scene instance to use.
+    *   - {Element|String} container The DOM element or ID that will contain the widget.
+    *   - {Scene} scene The Scene instance to use.
     *
     * exception {DeveloperError} Element with id "container" does not exist in the document.
     */
@@ -12695,9 +12694,9 @@ package cesium {
     * alias SelectionIndicatorViewModel
     * constructor
     *
-    * - {Scene} scene The scene instance to use for screen-space coordinate conversion.
-    * - {Element} selectionIndicatorElement The element containing all elements that make up the selection indicator.
-    * - {Element} container The DOM element that contains the widget.
+    *   - {Scene} scene The scene instance to use for screen-space coordinate conversion.
+    *   - {Element} selectionIndicatorElement The element containing all elements that make up the selection indicator.
+    *   - {Element} container The DOM element that contains the widget.
     */
   @js.native
   @JSName("Cesium.SelectionIndicatorViewModel")
@@ -12724,8 +12723,8 @@ package cesium {
     * alias Timeline
     * constructor
     *
-    * - {Element} container The parent HTML container node for this widget.
-    * - {Clock} clock The clock to use.
+    *   - {Element} container The parent HTML container node for this widget.
+    *   - {Clock} clock The clock to use.
     */
   @js.native
   @JSName("Cesium.Timeline")
@@ -12748,10 +12747,10 @@ package cesium {
     * alias ToggleButtonViewModel
     * constructor
     *
-    * - {Command} command The command which will be executed when the button is toggled.
-    * - {Object} [options] Object with the following properties:
-    * - {Boolean} [options.toggled=false] A boolean indicating whether the button should be initially toggled.
-    * - {String} [options.tooltip= ] A string containing the button's tooltip.
+    *   - {Command} command The command which will be executed when the button is toggled.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Boolean} [options.toggled=false] A boolean indicating whether the button should be initially toggled.
+    *   - {String} [options.tooltip= ] A string containing the button's tooltip.
     **/
   @js.native
   @JSName("Cesium.ToggleButtonViewModel")
@@ -12769,9 +12768,9 @@ package cesium {
     * alias VRButton
     * constructor
     *
-    * - {Element|String} container The DOM element or ID that will contain the widget.
-    * - {Scene} scene The scene.
-    * - {Element|String} [vrElement=document.body] The element or id to be placed into vr mode.
+    *   - {Element|String} container The DOM element or ID that will contain the widget.
+    *   - {Scene} scene The scene.
+    *   - {Element|String} [vrElement=document.body] The element or id to be placed into vr mode.
     *
     * exception {DeveloperError} Element with id "container" does not exist in the document.
     */
@@ -12793,8 +12792,8 @@ package cesium {
     * alias VRButtonViewModel
     * constructor
     *
-    * - {Scene} scene The scene.
-    * - {Element|String} [vrElement=document.body] The element or id to be placed into VR mode.
+    *   - {Scene} scene The scene.
+    *   - {Element|String} [vrElement=document.body] The element or id to be placed into VR mode.
     */
   @js.native
   @JSName("Cesium.VRButtonViewModel")
@@ -12825,44 +12824,44 @@ package cesium {
     * alias Viewer
     * constructor
     *
-    * - {Element|String} container The DOM element or ID that will contain the widget.
-    * - {Object} [options] Object with the following properties:
-    * - {Boolean} [options.animation=true] If set to false, the Animation widget will not be created.
-    * - {Boolean} [options.baseLayerPicker=true] If set to false, the BaseLayerPicker widget will not be created.
-    * - {Boolean} [options.fullscreenButton=true] If set to false, the FullscreenButton widget will not be created.
-    * - {Boolean} [options.vrButton=false] If set to true, the VRButton widget will be created.
-    * - {Boolean} [options.geocoder=true] If set to false, the Geocoder widget will not be created.
-    * - {Boolean} [options.homeButton=true] If set to false, the HomeButton widget will not be created.
-    * - {Boolean} [options.infoBox=true] If set to false, the InfoBox widget will not be created.
-    * - {Boolean} [options.sceneModePicker=true] If set to false, the SceneModePicker widget will not be created.
-    * - {Boolean} [options.selectionIndicator=true] If set to false, the SelectionIndicator widget will not be created.
-    * - {Boolean} [options.timeline=true] If set to false, the Timeline widget will not be created.
-    * - {Boolean} [options.navigationHelpButton=true] If set to false, the navigation help button will not be created.
-    * - {Boolean} [options.navigationInstructionsInitiallyVisible=true] True if the navigation instructions should initially be visible, or false if the should not be shown until the user explicitly clicks the button.
-    * - {Boolean} [options.scene3DOnly=false] When <code>true</code>, each geometry instance will only be rendered in 3D to save GPU memory.
-    * - {Clock} [options.clock=new Clock()] The clock to use to control current time.
-    * - {ProviderViewModel} [options.selectedImageryProviderViewModel] The view model for the current base imagery layer, if not supplied the first available base layer is used.  This value is only valid if options.baseLayerPicker is set to true.
-    * - {ProviderViewModel[]} [options.imageryProviderViewModels=createDefaultImageryProviderViewModels()] The array of ProviderViewModels to be selectable from the BaseLayerPicker.  This value is only valid if options.baseLayerPicker is set to true.
-    * - {ProviderViewModel} [options.selectedTerrainProviderViewModel] The view model for the current base terrain layer, if not supplied the first available base layer is used.  This value is only valid if options.baseLayerPicker is set to true.
-    * - {ProviderViewModel[]} [options.terrainProviderViewModels=createDefaultTerrainProviderViewModels()] The array of ProviderViewModels to be selectable from the BaseLayerPicker.  This value is only valid if options.baseLayerPicker is set to true.
-    * - {ImageryProvider} [options.imageryProvider=new BingMapsImageryProvider()] The imagery provider to use.  This value is only valid if options.baseLayerPicker is set to false.
-    * - {TerrainProvider} [options.terrainProvider=new EllipsoidTerrainProvider()] The terrain provider to use
-    * - {SkyBox} [options.skyBox] The skybox used to render the stars.  When <code>undefined</code>, the default stars are used.
-    * - {SkyAtmosphere} [options.skyAtmosphere] Blue sky, and the glow around the Earth's limb.  Set to <code>false</code> to turn it off.
-    * - {Element|String} [options.fullscreenElement=document.body] The element or id to be placed into fullscreen mode when the full screen button is pressed.
-    * - {Boolean} [options.useDefaultRenderLoop=true] True if this widget should control the render loop, false otherwise.
-    * - {Number} [options.targetFrameRate] The target frame rate when using the default render loop.
-    * - {Boolean} [options.showRenderLoopErrors=true] If true, this widget will automatically display an HTML panel to the user containing the error, if a render loop error occurs.
-    * - {Boolean} [options.automaticallyTrackDataSourceClocks=true] If true, this widget will automatically track the clock settings of newly added DataSources, updating if the DataSource's clock changes.  Set this to false if you want to configure the clock independently.
-    * - {Object} [options.contextOptions] Context and WebGL creation properties corresponding to <code>options</code> passed to [[Scene]]
-    * - {SceneMode} [options.sceneMode=SceneMode.SCENE3D] The initial scene mode.
-    * - {MapProjection} [options.mapProjection=new GeographicProjection()] The map projection to use in 2D and Columbus View modes.
-    * - {Globe} [options.globe=new Globe(mapProjection.ellipsoid)] The globe to use in the scene.  If set to <code>false</code>, no globe will be added.
-    * - {Boolean} [options.orderIndependentTranslucency=true] If true and the configuration supports it, use order independent translucency.
-    * - {Element|String} [options.creditContainer] The DOM element or ID that will contain the [[CreditDisplay]]   If not specified, the credits are added to the bottom of the widget itself.
-    * - {DataSourceCollection} [options.dataSources=new DataSourceCollection()] The collection of data sources visualized by the widget.  If this parameter is provided,
+    *   - {Element|String} container The DOM element or ID that will contain the widget.
+    *   - {Object} [options] Object with the following properties:
+    *   - {Boolean} [options.animation=true] If set to false, the Animation widget will not be created.
+    *   - {Boolean} [options.baseLayerPicker=true] If set to false, the BaseLayerPicker widget will not be created.
+    *   - {Boolean} [options.fullscreenButton=true] If set to false, the FullscreenButton widget will not be created.
+    *   - {Boolean} [options.vrButton=false] If set to true, the VRButton widget will be created.
+    *   - {Boolean} [options.geocoder=true] If set to false, the Geocoder widget will not be created.
+    *   - {Boolean} [options.homeButton=true] If set to false, the HomeButton widget will not be created.
+    *   - {Boolean} [options.infoBox=true] If set to false, the InfoBox widget will not be created.
+    *   - {Boolean} [options.sceneModePicker=true] If set to false, the SceneModePicker widget will not be created.
+    *   - {Boolean} [options.selectionIndicator=true] If set to false, the SelectionIndicator widget will not be created.
+    *   - {Boolean} [options.timeline=true] If set to false, the Timeline widget will not be created.
+    *   - {Boolean} [options.navigationHelpButton=true] If set to false, the navigation help button will not be created.
+    *   - {Boolean} [options.navigationInstructionsInitiallyVisible=true] True if the navigation instructions should initially be visible, or false if the should not be shown until the user explicitly clicks the button.
+    *   - {Boolean} [options.scene3DOnly=false] When <code>true</code>, each geometry instance will only be rendered in 3D to save GPU memory.
+    *   - {Clock} [options.clock=new Clock()] The clock to use to control current time.
+    *   - {ProviderViewModel} [options.selectedImageryProviderViewModel] The view model for the current base imagery layer, if not supplied the first available base layer is used.  This value is only valid if options.baseLayerPicker is set to true.
+    *   - {ProviderViewModel[]} [options.imageryProviderViewModels=createDefaultImageryProviderViewModels()] The array of ProviderViewModels to be selectable from the BaseLayerPicker.  This value is only valid if options.baseLayerPicker is set to true.
+    *   - {ProviderViewModel} [options.selectedTerrainProviderViewModel] The view model for the current base terrain layer, if not supplied the first available base layer is used.  This value is only valid if options.baseLayerPicker is set to true.
+    *   - {ProviderViewModel[]} [options.terrainProviderViewModels=createDefaultTerrainProviderViewModels()] The array of ProviderViewModels to be selectable from the BaseLayerPicker.  This value is only valid if options.baseLayerPicker is set to true.
+    *   - {ImageryProvider} [options.imageryProvider=new BingMapsImageryProvider()] The imagery provider to use.  This value is only valid if options.baseLayerPicker is set to false.
+    *   - {TerrainProvider} [options.terrainProvider=new EllipsoidTerrainProvider()] The terrain provider to use
+    *   - {SkyBox} [options.skyBox] The skybox used to render the stars.  When <code>undefined</code>, the default stars are used.
+    *   - {SkyAtmosphere} [options.skyAtmosphere] Blue sky, and the glow around the Earth's limb.  Set to <code>false</code> to turn it off.
+    *   - {Element|String} [options.fullscreenElement=document.body] The element or id to be placed into fullscreen mode when the full screen button is pressed.
+    *   - {Boolean} [options.useDefaultRenderLoop=true] True if this widget should control the render loop, false otherwise.
+    *   - {Number} [options.targetFrameRate] The target frame rate when using the default render loop.
+    *   - {Boolean} [options.showRenderLoopErrors=true] If true, this widget will automatically display an HTML panel to the user containing the error, if a render loop error occurs.
+    *   - {Boolean} [options.automaticallyTrackDataSourceClocks=true] If true, this widget will automatically track the clock settings of newly added DataSources, updating if the DataSource's clock changes.  Set this to false if you want to configure the clock independently.
+    *   - {Object} [options.contextOptions] Context and WebGL creation properties corresponding to <code>options</code> passed to [[Scene]]
+    *   - {SceneMode} [options.sceneMode=SceneMode.SCENE3D] The initial scene mode.
+    *   - {MapProjection} [options.mapProjection=new GeographicProjection()] The map projection to use in 2D and Columbus View modes.
+    *   - {Globe} [options.globe=new Globe(mapProjection.ellipsoid)] The globe to use in the scene.  If set to <code>false</code>, no globe will be added.
+    *   - {Boolean} [options.orderIndependentTranslucency=true] If true and the configuration supports it, use order independent translucency.
+    *   - {Element|String} [options.creditContainer] The DOM element or ID that will contain the [[CreditDisplay]]   If not specified, the credits are added to the bottom of the widget itself.
+    *   - {DataSourceCollection} [options.dataSources=new DataSourceCollection()] The collection of data sources visualized by the widget.  If this parameter is provided,
     * the instance is assumed to be owned by the caller and will not be destroyed when the viewer is destroyed.
-    * - {Number} [options.terrainExaggeration=1.0] A scalar used to exaggerate the terrain. Note that terrain exaggeration will not modify any other primitive as they are positioned relative to the ellipsoid.
+    *   - {Number} [options.terrainExaggeration=1.0] A scalar used to exaggerate the terrain. Note that terrain exaggeration will not modify any other primitive as they are positioned relative to the ellipsoid.
     *
     * exception {DeveloperError} Element with id "container" does not exist in the document.
     * exception {DeveloperError} options.imageryProvider is not available when using the BaseLayerPicker widget, specify options.selectedImageryProviderViewModel instead.
