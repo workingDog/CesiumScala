@@ -23,6 +23,8 @@ using [Scala.js](https://www.scala-js.org/).
 The code from [jsext](https://github.com/jducoeur/jsext) relating to JSOptionBuilder is used in **cesiumscala** and
 is included here rather than as an external dependency.
 
+**cesiumscala** depends on [scala-js-dom](https://github.com/scala-js/scala-js-dom), see also build.sbt.
+
 ## Usage
 
 **cesiumscala** makes extensive use of [jsext](https://github.com/jducoeur/jsext) JSOptionBuilder for
