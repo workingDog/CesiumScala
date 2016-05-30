@@ -34,12 +34,17 @@ object CesiumApp extends JSApp {
     def createModel(url: String, height: Double) = {
       val position = Cartesian3.fromDegrees(-123.0744619, 44.0503706, height)
       val orientation = Transforms.headingPitchRollQuaternion(position, Math.toRadians(135), 0, 0)
+      val modelOptions = ModelGraphicsOptions.
+        uri(new ConstantProperty(url)).
+        minimumPixelSize(new ConstantProperty(128)).
+        maximumScale(new ConstantProperty(20000))
+
       val entity = viewer.entities.add(new Entity(
-        EntityOptions.name(url).position(new ConstantPositionProperty(position)).
+        EntityOptions.
+          name(url).
+          position(new ConstantPositionProperty(position)).
           orientation(new ConstantProperty(orientation)).
-          model(new ModelGraphics(
-            ModelGraphicsOptions.uri(new ConstantProperty(url)).
-              minimumPixelSize(new ConstantProperty(128)).maximumScale(new ConstantProperty(20000)))))
+          model(new ModelGraphics(modelOptions)))
       )
       viewer.trackedEntity = entity
     }
