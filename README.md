@@ -70,7 +70,7 @@ Most of the [Cesium API reference](https://cesiumjs.org/refdoc.html) has been co
 
 ## Status
 
-work in progress, need testing
+ongoing work, need testing
 
 
 

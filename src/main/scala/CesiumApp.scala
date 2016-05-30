@@ -14,9 +14,9 @@ import scala.scalajs.js.{JSApp, JSON}
   * a basic example using CesiumScala.
   *
   * to compile and generate CesiumScala, type "sbt fastOptJS".
-  * This will generate "cesiumscala-fastopt.js" in the "./js directory".
+  * This will generate "cesiumscala-fastopt.js" in the "./target/scala-2.11" directory.
   * Put "CesiumScala.html" and "cesiumscala-fastopt.js" files in the "Cesium/Apps" directory and
-  * launch Cesium (node server.js).
+  * launch Cesium (typically node server.js).
   * Then point your browser to http://localhost:8080/Apps/CesiumScala.html
   *
   * P.S
