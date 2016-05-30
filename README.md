@@ -35,6 +35,10 @@ is included here rather than as an external dependency.
 
 ## Usage
 
+Add the following dependency to your build.sbt:
+
+    libraryDependencies += "com.github.workingDog" %%% "cesiumscala" % "1.0"
+
 **cesiumscala** makes extensive use of [jsext](https://github.com/jducoeur/jsext) JSOptionBuilder for
 defining "options" objects. Here these objects are named "class-name + Options". For example:
 
