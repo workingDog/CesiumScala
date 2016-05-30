@@ -6123,9 +6123,9 @@ package cesium {
     var loadingEvent: Event = js.native
     var show: Boolean = js.native
 
-    def process(czml: String | js.Any, options: String = ???): Promise[CzmlDataSource] = js.native
+    def process(czml: String | js.Any, options: CzmlDataSourceOptions = ???): Promise[CzmlDataSource] = js.native
 
-    def load(czml: String | js.Any, options: String = ???): Promise[CzmlDataSource] = js.native
+    def load(czml: String | js.Any, options: CzmlDataSourceOptions = ???): Promise[CzmlDataSource] = js.native
   }
 
   @js.native
@@ -6133,7 +6133,7 @@ package cesium {
   object CzmlDataSource extends js.Object {
     var updaters: js.Array[js.Any] = js.native
 
-    def load(data: String | js.Any, options: String = ???): Promise[CzmlDataSource] = js.native
+    def load(data: String | js.Any, options: CzmlDataSourceOptions = ???): Promise[CzmlDataSource] = js.native
 
     def processPacketData(`type`: js.Function, `object`: js.Any, propertyName: String, packetData: js.Any, interval: TimeInterval, sourceUri: String, entityCollection: EntityCollection): js.Dynamic = js.native
 
@@ -11973,7 +11973,7 @@ package cesium {
   @js.native
   @JSName("Cesium.BaseLayerPicker")
   class BaseLayerPicker protected() extends js.Object {
-    def this(container: Element | String, options: js.Any) = this()
+    def this(container: Element | String, options: BaseLayerPickerOptions) = this()
 
     var container: Element = js.native
     var viewModel: BaseLayerPickerViewModel = js.native

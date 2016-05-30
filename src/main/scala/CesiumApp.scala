@@ -11,7 +11,7 @@ import scala.scalajs.js.{JSApp, JSON}
 
 
 /**
-  * a basic example app using CesiumScala.
+  * a basic example using CesiumScala.
   *
   * to compile and generate CesiumScala, type "sbt fastOptJS".
   * This will generate "cesiumscala-fastopt.js" in the "./js directory".

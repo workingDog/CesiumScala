@@ -2506,9 +2506,9 @@ package cesiumOptions {
     def lowFrameRateMessage(v: String) = jsOpt("lowFrameRateMessage", v)
   }
 
-//------------------------------------------------------------------------
-//------------------------------------------------------------------------
-//------------------------------------------------------------------------
+  //------------------------------------------------------------------------
+  //------------------------------------------------------------------------
+  //------------------------------------------------------------------------
 
   /**
     * {String|Promise.<String>} options.url The URL of the data, or a promise for the URL.
@@ -2670,9 +2670,13 @@ package cesiumOptions {
     def positions(v: Array[Cartesian3]) = jsOpt("positions", v)
 
     def height(v: Double) = jsOpt("height", v)
+
     def extrudedHeight(v: Double) = jsOpt("extrudedHeight", v)
+
     def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+
     def granularity(v: Double) = jsOpt("granularity", v)
+
     def perPositionHeight(v: Boolean) = jsOpt("perPositionHeight", v)
 
   }
@@ -2687,10 +2691,15 @@ package cesiumOptions {
     def sourceUri(v: String) = jsOpt("sourceUri", v)
 
     def markerSize(v: Int) = jsOpt("markerSize", v)
+
     def markerSymbol(v: String) = jsOpt("markerSymbol", v)
+
     def markerColor(v: Color) = jsOpt("markerColor", v)
+
     def stroke(v: Color) = jsOpt("stroke", v)
+
     def strokeWidth(v: Double) = jsOpt("strokeWidth", v)
+
     def fill(v: Color) = jsOpt("fill", v)
   }
 
@@ -2704,7 +2713,9 @@ package cesiumOptions {
     def camera(v: Camera) = jsOpt("camera", v)
 
     def canvas(v: Canvas) = jsOpt("canvas", v)
+
     def proxy(v: Proxy) = jsOpt("proxy", v)
+
     def sourceUri(v: String) = jsOpt("sourceUri", v)
   }
 
@@ -2719,13 +2730,19 @@ package cesiumOptions {
     def destination(v: Cartesian3 | Rectangle) = jsOpt("destination", v)
 
     def orientation(v: Object) = jsOpt("orientation", v)
+
     def duration(v: Double) = jsOpt("duration", v)
+
     def complete(v: Camera.FlightCompleteCallback) = jsOpt("complete", v)
-    def cancel(v: 	Camera.FlightCancelledCallback) = jsOpt("cancel", v)
+
+    def cancel(v: Camera.FlightCancelledCallback) = jsOpt("cancel", v)
+
     def endTransform(v: Matrix4) = jsOpt("endTransform", v)
+
     def maximumHeight(v: Double) = jsOpt("maximumHeight", v)
+
     // todo
-  //  def easingFunction(v:	EasingFunction | EasingFunction.Callback) = jsOpt("easingFunction", v)
+    //  def easingFunction(v:	EasingFunction | EasingFunction.Callback) = jsOpt("easingFunction", v)
   }
 
   @JSName("Cesium.Options")
@@ -2736,8 +2753,11 @@ package cesiumOptions {
 
   class CameraSetViewOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[CameraSetViewOptions, CameraSetViewOptionsBuilder](new CameraSetViewOptionsBuilder(_)) {
     def destination(v: Cartesian3 | Rectangle) = jsOpt("destination", v)
+
     def orientation(v: Object) = jsOpt("orientation", v)
+
     def duration(v: Double) = jsOpt("duration", v)
+
     def endTransform(v: Matrix4) = jsOpt("endTransform", v)
   }
 
@@ -2749,11 +2769,17 @@ package cesiumOptions {
 
   class CameraFlyToBoundingSphereOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[CameraFlyToBoundingSphereOptions, CameraFlyToBoundingSphereOptionsBuilder](new CameraFlyToBoundingSphereOptionsBuilder(_)) {
     def duration(v: Double) = jsOpt("duration", v)
+
     def offset(v: HeadingPitchRange) = jsOpt("offset", v)
+
     def complete(v: Camera.FlightCompleteCallback) = jsOpt("complete", v)
-    def cancel(v: 	Camera.FlightCancelledCallback) = jsOpt("cancel", v)
+
+    def cancel(v: Camera.FlightCancelledCallback) = jsOpt("cancel", v)
+
     def endTransform(v: Matrix4) = jsOpt("endTransform", v)
+
     def maximumHeight(v: Double) = jsOpt("maximumHeight", v)
+
     // todo
     //  def easingFunction(v:	EasingFunction | EasingFunction.Callback) = jsOpt("easingFunction", v)
   }
@@ -2766,39 +2792,73 @@ package cesiumOptions {
 
   class ViewerOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ViewerOptions, ViewerOptionsBuilder](new ViewerOptionsBuilder(_)) {
     def animation(v: Boolean) = jsOpt("animation", v)
+
     def baseLayerPicker(v: Boolean) = jsOpt("baseLayerPicker", v)
+
     def fullscreenButton(v: Boolean) = jsOpt("fullscreenButton", v)
+
     def vrButton(v: Boolean) = jsOpt("vrButton", v)
+
     def geocoder(v: Boolean) = jsOpt("geocoder", v)
+
     def homeButton(v: Boolean) = jsOpt("homeButton", v)
+
     def infoBox(v: Boolean) = jsOpt("infoBox", v)
+
     def sceneModePicker(v: Boolean) = jsOpt("sceneModePicker", v)
+
     def selectionIndicator(v: Boolean) = jsOpt("selectionIndicator", v)
+
     def timeline(v: Boolean) = jsOpt("timeline", v)
+
     def navigationHelpButton(v: Boolean) = jsOpt("navigationHelpButton", v)
+
     def navigationInstructionsInitiallyVisible(v: Boolean) = jsOpt("navigationInstructionsInitiallyVisible", v)
+
     def scene3DOnly(v: Boolean) = jsOpt("scene3DOnly", v)
+
     def clock(v: Clock) = jsOpt("clock", v)
+
     def selectedImageryProviderViewModel(v: ProviderViewModel) = jsOpt("selectedImageryProviderViewModel", v)
+
     def imageryProviderViewModels(v: Array[ProviderViewModel]) = jsOpt("imageryProviderViewModels", v)
+
     def selectedTerrainProviderViewModel(v: ProviderViewModel) = jsOpt("selectedTerrainProviderViewModel", v)
+
     def terrainProviderViewModels(v: Array[ProviderViewModel]) = jsOpt("terrainProviderViewModels", v)
+
     def imageryProvider(v: ImageryProvider) = jsOpt("imageryProvider", v)
+
     def terrainProvider(v: TerrainProvider) = jsOpt("terrainProvider", v)
+
     def skyBox(v: SkyBox) = jsOpt("skyBox", v)
+
     def skyAtmosphere(v: SkyAtmosphere) = jsOpt("skyAtmosphere", v)
+
     def fullscreenElement(v: Element | String) = jsOpt("fullscreenElement", v)
+
     def useDefaultRenderLoop(v: Boolean) = jsOpt("useDefaultRenderLoop", v)
+
     def targetFrameRate(v: Int) = jsOpt("targetFrameRate", v)
+
     def showRenderLoopErrors(v: Boolean) = jsOpt("showRenderLoopErrors", v)
+
     def automaticallyTrackDataSourceClocks(v: Boolean) = jsOpt("automaticallyTrackDataSourceClocks", v)
+
     def contextOptions(v: Object) = jsOpt("contextOptions", v)
+
     def sceneMode(v: SceneMode) = jsOpt("sceneMode", v)
+
     def mapProjection(v: MapProjection) = jsOpt("mapProjection", v)
+
     def globe(v: Globe) = jsOpt("globe", v)
+
     def orderIndependentTranslucency(v: Boolean) = jsOpt("orderIndependentTranslucency", v)
-    def creditContainer(v: 	Element | String) = jsOpt("creditContainer", v)
-    def dataSources(v: 	DataSourceCollection) = jsOpt("dataSources", v)
+
+    def creditContainer(v: Element | String) = jsOpt("creditContainer", v)
+
+    def dataSources(v: DataSourceCollection) = jsOpt("dataSources", v)
+
     def terrainExaggeration(v: Double) = jsOpt("terrainExaggeration", v)
   }
 
@@ -2810,7 +2870,9 @@ package cesiumOptions {
 
   class ViewerFlyToOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ViewerFlyToOptions, ViewerFlyToOptionsBuilder](new ViewerFlyToOptionsBuilder(_)) {
     def duration(v: Double) = jsOpt("duration", v)
+
     def maximumHeight(v: Double) = jsOpt("maximumHeight", v)
+
     def offset(v: HeadingPitchRange) = jsOpt("offset", v)
   }
 
@@ -2822,15 +2884,25 @@ package cesiumOptions {
 
   class ImageryLayerOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ImageryLayerOptions, ImageryLayerOptionsBuilder](new ImageryLayerOptionsBuilder(_)) {
     def rectangle(v: Rectangle) = jsOpt("rectangle", v)
+
     def alpha(v: Double | Function) = jsOpt("alpha", v)
+
     def brightness(v: Double | Function) = jsOpt("brightness", v)
+
     def contrast(v: Double | Function) = jsOpt("contrast", v)
+
     def hue(v: Double | Function) = jsOpt("hue", v)
+
     def saturation(v: Double | Function) = jsOpt("saturation", v)
+
     def gamma(v: Double | Function) = jsOpt("gamma", v)
+
     def show(v: Boolean) = jsOpt("show", v)
+
     def maximumAnisotropy(v: Double) = jsOpt("maximumAnisotropy", v)
+
     def minimumTerrainLevel(v: Double) = jsOpt("minimumTerrainLevel", v)
+
     def maximumTerrainLevel(v: Double) = jsOpt("maximumTerrainLevel", v)
   }
 
@@ -2842,14 +2914,22 @@ package cesiumOptions {
 
   class ModelAnimationCollectionAddOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ModelAnimationCollectionAddOptions, ModelAnimationCollectionAddOptionsBuilder](new ModelAnimationCollectionAddOptionsBuilder(_)) {
     def name(v: String) = jsOpt("name", v)
+
     def startTime(v: JulianDate) = jsOpt("startTime", v)
+
     def delay(v: Double) = jsOpt("delay", v)
+
     def stopTime(v: JulianDate) = jsOpt("stopTime", v)
+
     def removeOnStop(v: Boolean) = jsOpt("removeOnStop", v)
+
     def speedup(v: Double) = jsOpt("speedup", v)
+
     def reverse(v: Boolean) = jsOpt("reverse", v)
+
     def show(v: Boolean) = jsOpt("show", v)
-    def loop(v: 	ModelAnimationLoop	) = jsOpt("loop", v)
+
+    def loop(v: ModelAnimationLoop) = jsOpt("loop", v)
   }
 
   @JSName("Cesium.Options")
@@ -2860,13 +2940,20 @@ package cesiumOptions {
 
   class ModelAnimationCollectionAddAllOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ModelAnimationCollectionAddAllOptions, ModelAnimationCollectionAddAllOptionsBuilder](new ModelAnimationCollectionAddAllOptionsBuilder(_)) {
     def startTime(v: JulianDate) = jsOpt("startTime", v)
+
     def delay(v: Double) = jsOpt("delay", v)
+
     def stopTime(v: JulianDate) = jsOpt("stopTime", v)
+
     def removeOnStop(v: Boolean) = jsOpt("removeOnStop", v)
+
     def speedup(v: Double) = jsOpt("speedup", v)
+
     def reverse(v: Boolean) = jsOpt("reverse", v)
+
     def show(v: Boolean) = jsOpt("show", v)
-    def loop(v: 	ModelAnimationLoop	) = jsOpt("loop", v)
+
+    def loop(v: ModelAnimationLoop) = jsOpt("loop", v)
   }
 
   @JSName("Cesium.Options")
@@ -2877,12 +2964,15 @@ package cesiumOptions {
 
   class BaseLayerPickerOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[BaseLayerPickerOptions, BaseLayerPickerOptionsBuilder](new BaseLayerPickerOptionsBuilder(_)) {
     def globe(v: Globe) = jsOpt("globe", v)
+
     def imageryProviderViewModels(v: Array[ProviderViewModel]) = jsOpt("imageryProviderViewModels", v)
+
     def selectedImageryProviderViewModel(v: ProviderViewModel) = jsOpt("selectedImageryProviderViewModel", v)
+
     def terrainProviderViewModels(v: Array[ProviderViewModel]) = jsOpt("terrainProviderViewModels", v)
+
     def selectedTerrainProviderViewModel(v: ProviderViewModel) = jsOpt("selectedTerrainProviderViewModel", v)
   }
-
 
   @JSName("Cesium.Options")
   @js.native
@@ -2916,17 +3006,17 @@ package cesiumOptions {
 
   }
 
+  @JSName("Cesium.Options")
+  @js.native
+  trait ToggleButtonViewModelOptions extends js.Object
 
-@JSName("Cesium.Options")
-@js.native
-trait ToggleButtonViewModelOptions extends js.Object
+  object ToggleButtonViewModelOptions extends ToggleButtonViewModelOptionsBuilder(noOpts)
 
-object ToggleButtonViewModelOptions extends ToggleButtonViewModelOptionsBuilder(noOpts)
+  class ToggleButtonViewModelOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ToggleButtonViewModelOptions, ToggleButtonViewModelOptionsBuilder](new ToggleButtonViewModelOptionsBuilder(_)) {
+    def toggled(v: Boolean) = jsOpt("toggled", v)
 
-class ToggleButtonViewModelOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ToggleButtonViewModelOptions, ToggleButtonViewModelOptionsBuilder](new ToggleButtonViewModelOptionsBuilder(_)) {
-  def toggled(v: Boolean) = jsOpt("toggled", v)
-  def tooltip(v: String) = jsOpt("tooltip", v)
-}
+    def tooltip(v: String) = jsOpt("tooltip", v)
+  }
 
   @JSName("Cesium.Options")
   @js.native
@@ -2936,6 +3026,7 @@ class ToggleButtonViewModelOptionsBuilder(val dict: OptMap) extends JSOptionBuil
 
   class VertexFormatOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[VertexFormatOptions, VertexFormatOptionsBuilder](new VertexFormatOptionsBuilder(_)) {
     def position(v: Cartesian3) = jsOpt("position", v)
+
     def st(v: Boolean) = jsOpt("st", v)
   }
 
@@ -2947,21 +3038,46 @@ class ToggleButtonViewModelOptionsBuilder(val dict: OptMap) extends JSOptionBuil
 
   class CesiumWidgetOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[CesiumWidgetOptions, CesiumWidgetOptionsBuilder](new CesiumWidgetOptionsBuilder(_)) {
     def clock(v: Clock) = jsOpt("clock", v)
+
     def imageryProvider(v: ImageryProvider) = jsOpt("imageryProvider", v)
+
     def terrainProvider(v: TerrainProvider) = jsOpt("terrainProvider", v)
+
     def skyBox(v: SkyBox) = jsOpt("skyBox", v)
+
     def skyAtmosphere(v: SkyAtmosphere) = jsOpt("skyAtmosphere", v)
+
     def sceneMode(v: SceneMode) = jsOpt("sceneMode", v)
+
     def scene3DOnly(v: Boolean) = jsOpt("scene3DOnly", v)
+
     def orderIndependentTranslucency(v: Boolean) = jsOpt("orderIndependentTranslucency", v)
+
     def mapProjection(v: MapProjection) = jsOpt("mapProjection", v)
+
     def globe(v: Globe) = jsOpt("globe", v)
+
     def useDefaultRenderLoop(v: Boolean) = jsOpt("useDefaultRenderLoop", v)
+
     def targetFrameRate(v: Int) = jsOpt("targetFrameRate", v)
+
     def showRenderLoopErrors(v: Boolean) = jsOpt("showRenderLoopErrors", v)
+
     def contextOptions(v: Object) = jsOpt("contextOptions", v)
-    def creditContainer(v: 	Element | String) = jsOpt("creditContainer", v)
+
+    def creditContainer(v: Element | String) = jsOpt("creditContainer", v)
+
     def terrainExaggeration(v: Double) = jsOpt("terrainExaggeration", v)
   }
+
+@JSName("Cesium.Options")
+@js.native
+trait CzmlDataSourceOptions extends js.Object
+
+object CzmlDataSourceOptions extends CzmlDataSourceOptionsBuilder(noOpts)
+
+class CzmlDataSourceOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[CzmlDataSourceOptions, CzmlDataSourceOptionsBuilder](new CzmlDataSourceOptionsBuilder(_)) {
+  def sourceUri(v: String) = jsOpt("sourceUri", v)
+}
 
 }
