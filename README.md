@@ -64,9 +64,6 @@ Most of the [Cesium API reference](https://cesiumjs.org/refdoc.html) has been co
 
     sbt doc
 
-To include the documentation images, you need to copy the [Cesium images](https://github.com/AnalyticalGraphicsInc/cesium/tree/master/Documentation/Images)
-to your "target/scala-2.11/api/cesium/images" directory.
-
 ## License
 
 **cesiumscala** is licensed under the terms of the [Apache v2.0 license](http://www.apache.org/licenses/LICENSE-2.0).

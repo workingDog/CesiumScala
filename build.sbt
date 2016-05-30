@@ -29,3 +29,14 @@ scalacOptions ++= Seq(
   "-unchecked", // Enable additional warnings where generated code depends on assumptions.
   "-Xlint" // Enable recommended additional warnings.
 )
+
+// to make the images available to the scaladocs
+lazy val copyDocAssetsTask = taskKey[Unit]("Copy doc images")
+
+copyDocAssetsTask := {
+  val sourceDir = file("./images")
+  val targetDir = (target in (Compile, doc) ).value / "cesium/images"
+  IO.copyDirectory(sourceDir, targetDir)
+}
+
+copyDocAssetsTask <<= copyDocAssetsTask triggeredBy (doc in Compile)
