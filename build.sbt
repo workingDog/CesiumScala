@@ -1,31 +1,31 @@
 
 enablePlugins(ScalaJSPlugin)
 
-name                       := "CesiumScala"
+name := "cesiumscala"
 
-scalaVersion               := "2.11.8"
+organization := "com.github.workingDog"
 
-scalaJSStage in Global := FastOptStage
+version := (version in ThisBuild).value
+
+scalaJSStage in Global := FullOptStage //FastOptStage
+
+scalaVersion := "2.11.8"
+
+crossScalaVersions := Seq("2.11.8")
 
 libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "0.9.0"
 
 jsDependencies += RuntimeDOM
 
-// creates single js resource file for easy integration in html page
 skip in packageJSDependencies := false
 
-// copy  javascript files to js folder, that are generated using fastOptJS/fullOptJS
+homepage := Some(url("https://github.com/workingDog/CesiumScala"))
 
-crossTarget in(Compile, fullOptJS) := file("js")
+licenses := Seq("Apache 2" -> url("http://www.apache.org/licenses/LICENSE-2.0"))
 
-crossTarget in(Compile, fastOptJS) := file("js")
-
-crossTarget in(Compile, packageJSDependencies) := file("js")
-
-crossTarget in(Compile, packageScalaJSLauncher) := file("js")
-
-crossTarget in(Compile, packageMinifiedJSDependencies) := file("js")
-
-scalacOptions += "-feature"
-
-scalaJSUseRhino in Global := false
+scalacOptions ++= Seq(
+  "-deprecation", // Emit warning and location for usages of deprecated APIs.
+  "-feature", // Emit warning and location for usages of features that should be imported explicitly.
+  "-unchecked", // Enable additional warnings where generated code depends on assumptions.
+  "-Xlint" // Enable recommended additional warnings.
+)

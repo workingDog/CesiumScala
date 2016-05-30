@@ -18,6 +18,14 @@ using [Scala.js](https://www.scala-js.org/).
 
 4) [JSDoc](http://usejsdoc.org/)
 
+## Installation
+
+To compile and generate a jar file from the source:
+
+    sbt package
+
+The jar file (cesiumscala_sjs0.6_2.11-1.0.jar) will be in the "./target/scala-2.11" directory.
+
 ## Dependencies code inclusions
 
 The code from [jsext](https://github.com/jducoeur/jsext) relating to JSOptionBuilder is used in **cesiumscala** and
@@ -42,7 +50,7 @@ See also the [Using the JSOptionBuilder](https://github.com/jducoeur/jsext#using
 
 ## Compiling and packaging
 
-    sbt fastOptJS
+    sbt fullOptJS
     sbt package
 
 ## Documentations
