@@ -230,7 +230,6 @@ package cesium {
     def apply(value: ExtrapolationType): Int = js.native
   }
 
-  // todo verify
   @js.native
   sealed trait InterpolationAlgorithm extends js.Object
 
@@ -370,7 +369,6 @@ package cesium {
   @js.native
   sealed trait MaterialAppearanceMaterialSupport extends js.Object
 
-  // todo
   @JSName("MaterialAppearance.MaterialSupport")
   @js.native
   object MaterialAppearanceMaterialSupport extends js.Object {
@@ -410,12 +408,6 @@ package cesium {
     def apply(value: SceneMode): Int = js.native
 
     def getMorphTime(value: SceneMode): Int = js.native
-  }
-
-  @JSName("Cesium.GeometryPipeline")
-  @js.native
-  object GeometryPipeline extends js.Object {
-    // todo
   }
 
   /**
@@ -5224,7 +5216,6 @@ package cesium {
   class VertexFormat protected() extends js.Object {
     def this(options: VertexFormatOptions = ???) = this()
 
-    //  todo options object
     var position: Boolean = js.native
     var normal: Boolean = js.native
     var st: Boolean = js.native
@@ -6661,7 +6652,6 @@ package cesium {
     var loadingEvent: Event = js.native
     var show: Boolean = js.native
 
-    // todo
     def load(data: String | js.Any, options: GeoJsonDataSourceOptions = ???): Promise[GeoJsonDataSource] = js.native
   }
 
@@ -13092,5 +13082,14 @@ package cesium {
 
     def createTaskProcessorWorker(workerFunction: CreateTaskProcessorWorker.WorkerFunction): CreateTaskProcessorWorker.TaskProcessorWorkerFunction = js.native
   }
+
+  @JSName("Cesium.GeometryPipeline")
+  @js.native
+  object GeometryPipeline extends js.Object {
+    // todo
+  }
+
+  // todo implement
+  // LagrangePolynomialApproximation, LinearApproximation and HermitePolynomialApproximation
 
 }

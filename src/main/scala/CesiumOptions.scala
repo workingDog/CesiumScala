@@ -112,7 +112,6 @@ package cesiumOptions {
     def credit(v: Credit | String) = jsOpt("credit", v)
   }
 
-
   @JSName("Cesium.Options")
   @js.native
   trait CircleGeometryOptions extends js.Object
@@ -488,7 +487,6 @@ package cesiumOptions {
 
     def height(v: Double) = jsOpt("height", v)
 
-    // todo
     def childTileMask(v: Int) = jsOpt("childTileMask", v)
 
     // todo
@@ -682,7 +680,6 @@ package cesiumOptions {
 
     def northSkirtHeight(v: Int) = jsOpt("northSkirtHeight", v)
 
-    // todo
     def childTileMask(v: Int) = jsOpt("childTileMask", v)
 
     def createdByUpsampling(v: Boolean) = jsOpt("createdByUpsampling", v)
@@ -1930,7 +1927,12 @@ package cesiumOptions {
   object MaterialOptions extends MaterialOptionsBuilder(noOpts)
 
   class MaterialOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[MaterialOptions, MaterialOptionsBuilder](new MaterialOptionsBuilder(_)) {
-    // todo
+    def strict(v: Boolean) = jsOpt("strict", v)
+
+    def translucent(v: Boolean | Function) = jsOpt("translucent", v)
+
+    def fabric(v: Object) = jsOpt("fabric", v)
+
   }
 
 
@@ -1949,8 +1951,8 @@ package cesiumOptions {
 
     def closed(v: Boolean) = jsOpt("closed", v)
 
-    // todo
-    //  def materialSupport(v: 	MaterialAppearance.MaterialSupport) = jsOpt("materialSupport", v)
+    def materialSupport(v: MaterialAppearanceMaterialSupport) = jsOpt("materialSupport", v)
+
     def material(v: Material) = jsOpt("material", v)
 
     def vertexShaderSource(v: String) = jsOpt("vertexShaderSource", v)
@@ -3070,14 +3072,14 @@ package cesiumOptions {
     def terrainExaggeration(v: Double) = jsOpt("terrainExaggeration", v)
   }
 
-@JSName("Cesium.Options")
-@js.native
-trait CzmlDataSourceOptions extends js.Object
+  @JSName("Cesium.Options")
+  @js.native
+  trait CzmlDataSourceOptions extends js.Object
 
-object CzmlDataSourceOptions extends CzmlDataSourceOptionsBuilder(noOpts)
+  object CzmlDataSourceOptions extends CzmlDataSourceOptionsBuilder(noOpts)
 
-class CzmlDataSourceOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[CzmlDataSourceOptions, CzmlDataSourceOptionsBuilder](new CzmlDataSourceOptionsBuilder(_)) {
-  def sourceUri(v: String) = jsOpt("sourceUri", v)
-}
+  class CzmlDataSourceOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[CzmlDataSourceOptions, CzmlDataSourceOptionsBuilder](new CzmlDataSourceOptionsBuilder(_)) {
+    def sourceUri(v: String) = jsOpt("sourceUri", v)
+  }
 
 }

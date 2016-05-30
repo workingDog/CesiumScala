@@ -61,7 +61,7 @@ to your "target/scala-2.11/api/cesium/images" directory.
 
 ## Status
 
-work in progress
+work in progress, need testing
 
 
 
