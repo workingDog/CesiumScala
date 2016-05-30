@@ -5222,7 +5222,7 @@ package cesium {
   @js.native
   @JSName("Cesium.VertexFormat")
   class VertexFormat protected() extends js.Object {
-    def this(options: js.Any = ???) = this()
+    def this(options: VertexFormatOptions = ???) = this()
 
     //  todo options object
     var position: Boolean = js.native
@@ -9694,7 +9694,7 @@ package cesium {
     var debugShowBoundingVolume: Boolean = js.native
     var length: Double = js.native
 
-    def add(options: js.Any = ???): Label = js.native
+    def add(options: LabelOptions = ???): Label = js.native
 
     def remove(label: Label): Boolean = js.native
 
@@ -10201,9 +10201,9 @@ package cesium {
     var animationRemoved: Event = js.native
     var length: Double = js.native
 
-    def add(options: js.Any): ModelAnimation = js.native
+    def add(options: ModelAnimationCollectionAddOptions): ModelAnimation = js.native
 
-    def addAll(options: js.Any = ???): js.Array[ModelAnimation] = js.native
+    def addAll(options: ModelAnimationCollectionAddAllOptions = ???): js.Array[ModelAnimation] = js.native
 
     def remove(animation: ModelAnimation): Boolean = js.native
 
@@ -12214,7 +12214,7 @@ package cesium {
   @js.native
   @JSName("Cesium.CesiumWidget")
   class CesiumWidget protected() extends js.Object {
-    def this(container: Element | String, options: js.Any = ???) = this()
+    def this(container: Element | String, options: CesiumWidgetOptions = ???) = this()
 
     var container: Element = js.native
     var canvas: HTMLCanvasElement = js.native
@@ -12754,7 +12754,7 @@ package cesium {
   @js.native
   @JSName("Cesium.ToggleButtonViewModel")
   class ToggleButtonViewModel protected() extends js.Object {
-    def this(command: Command, options: js.Any = ???) = this()
+    def this(command: Command, options: ToggleButtonViewModelOptions = ???) = this()
 
     var toggled: Boolean = js.native
     var tooltip: String = js.native

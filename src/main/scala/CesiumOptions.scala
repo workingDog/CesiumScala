@@ -2834,12 +2834,134 @@ package cesiumOptions {
     def maximumTerrainLevel(v: Double) = jsOpt("maximumTerrainLevel", v)
   }
 
-  // todo
-  // LabelCollection
-  // ModelAnimationCollection
-  // BaseLayerPicker
-  // CesiumWidget
-  // ToggleButtonViewModel
-  // VertexFormat
+  @JSName("Cesium.Options")
+  @js.native
+  trait ModelAnimationCollectionAddOptions extends js.Object
+
+  object ModelAnimationCollectionAddOptions extends ModelAnimationCollectionAddOptionsBuilder(noOpts)
+
+  class ModelAnimationCollectionAddOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ModelAnimationCollectionAddOptions, ModelAnimationCollectionAddOptionsBuilder](new ModelAnimationCollectionAddOptionsBuilder(_)) {
+    def name(v: String) = jsOpt("name", v)
+    def startTime(v: JulianDate) = jsOpt("startTime", v)
+    def delay(v: Double) = jsOpt("delay", v)
+    def stopTime(v: JulianDate) = jsOpt("stopTime", v)
+    def removeOnStop(v: Boolean) = jsOpt("removeOnStop", v)
+    def speedup(v: Double) = jsOpt("speedup", v)
+    def reverse(v: Boolean) = jsOpt("reverse", v)
+    def show(v: Boolean) = jsOpt("show", v)
+    def loop(v: 	ModelAnimationLoop	) = jsOpt("loop", v)
+  }
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait ModelAnimationCollectionAddAllOptions extends js.Object
+
+  object ModelAnimationCollectionAddAllOptions extends ModelAnimationCollectionAddAllOptionsBuilder(noOpts)
+
+  class ModelAnimationCollectionAddAllOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ModelAnimationCollectionAddAllOptions, ModelAnimationCollectionAddAllOptionsBuilder](new ModelAnimationCollectionAddAllOptionsBuilder(_)) {
+    def startTime(v: JulianDate) = jsOpt("startTime", v)
+    def delay(v: Double) = jsOpt("delay", v)
+    def stopTime(v: JulianDate) = jsOpt("stopTime", v)
+    def removeOnStop(v: Boolean) = jsOpt("removeOnStop", v)
+    def speedup(v: Double) = jsOpt("speedup", v)
+    def reverse(v: Boolean) = jsOpt("reverse", v)
+    def show(v: Boolean) = jsOpt("show", v)
+    def loop(v: 	ModelAnimationLoop	) = jsOpt("loop", v)
+  }
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait BaseLayerPickerOptions extends js.Object
+
+  object BaseLayerPickerOptions extends BaseLayerPickerOptionsBuilder(noOpts)
+
+  class BaseLayerPickerOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[BaseLayerPickerOptions, BaseLayerPickerOptionsBuilder](new BaseLayerPickerOptionsBuilder(_)) {
+    def globe(v: Globe) = jsOpt("globe", v)
+    def imageryProviderViewModels(v: Array[ProviderViewModel]) = jsOpt("imageryProviderViewModels", v)
+    def selectedImageryProviderViewModel(v: ProviderViewModel) = jsOpt("selectedImageryProviderViewModel", v)
+    def terrainProviderViewModels(v: Array[ProviderViewModel]) = jsOpt("terrainProviderViewModels", v)
+    def selectedTerrainProviderViewModel(v: ProviderViewModel) = jsOpt("selectedTerrainProviderViewModel", v)
+  }
+
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait LabelOptions extends js.Object
+
+  object LabelOptions extends LabelOptionsBuilder(noOpts)
+
+  class LabelOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[LabelOptions, LabelOptionsBuilder](new LabelOptionsBuilder(_)) {
+
+    def position(v: Cartesian3) = jsOpt("position", v)
+
+    def text(v: Property) = jsOpt("text", v)
+
+    def font(v: Property) = jsOpt("font", v)
+
+    def style(v: Property) = jsOpt("style", v)
+
+    def fillColor(v: Property) = jsOpt("fillColor", v)
+
+    def outlineColor(v: Property) = jsOpt("outlineColor", v)
+
+    def show(v: Property) = jsOpt("show", v)
+
+    def horizontalOrigin(v: Property) = jsOpt("horizontalOrigin", v)
+
+    def verticalOrigin(v: Property) = jsOpt("verticalOrigin", v)
+
+    def eyeOffset(v: Property) = jsOpt("eyeOffset", v)
+
+    def pixelOffset(v: Property) = jsOpt("pixelOffset", v)
+
+  }
+
+
+@JSName("Cesium.Options")
+@js.native
+trait ToggleButtonViewModelOptions extends js.Object
+
+object ToggleButtonViewModelOptions extends ToggleButtonViewModelOptionsBuilder(noOpts)
+
+class ToggleButtonViewModelOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ToggleButtonViewModelOptions, ToggleButtonViewModelOptionsBuilder](new ToggleButtonViewModelOptionsBuilder(_)) {
+  def toggled(v: Boolean) = jsOpt("toggled", v)
+  def tooltip(v: String) = jsOpt("tooltip", v)
+}
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait VertexFormatOptions extends js.Object
+
+  object VertexFormatOptions extends VertexFormatOptionsBuilder(noOpts)
+
+  class VertexFormatOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[VertexFormatOptions, VertexFormatOptionsBuilder](new VertexFormatOptionsBuilder(_)) {
+    def position(v: Cartesian3) = jsOpt("position", v)
+    def st(v: Boolean) = jsOpt("st", v)
+  }
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait CesiumWidgetOptions extends js.Object
+
+  object CesiumWidgetOptions extends CesiumWidgetOptionsBuilder(noOpts)
+
+  class CesiumWidgetOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[CesiumWidgetOptions, CesiumWidgetOptionsBuilder](new CesiumWidgetOptionsBuilder(_)) {
+    def clock(v: Clock) = jsOpt("clock", v)
+    def imageryProvider(v: ImageryProvider) = jsOpt("imageryProvider", v)
+    def terrainProvider(v: TerrainProvider) = jsOpt("terrainProvider", v)
+    def skyBox(v: SkyBox) = jsOpt("skyBox", v)
+    def skyAtmosphere(v: SkyAtmosphere) = jsOpt("skyAtmosphere", v)
+    def sceneMode(v: SceneMode) = jsOpt("sceneMode", v)
+    def scene3DOnly(v: Boolean) = jsOpt("scene3DOnly", v)
+    def orderIndependentTranslucency(v: Boolean) = jsOpt("orderIndependentTranslucency", v)
+    def mapProjection(v: MapProjection) = jsOpt("mapProjection", v)
+    def globe(v: Globe) = jsOpt("globe", v)
+    def useDefaultRenderLoop(v: Boolean) = jsOpt("useDefaultRenderLoop", v)
+    def targetFrameRate(v: Int) = jsOpt("targetFrameRate", v)
+    def showRenderLoopErrors(v: Boolean) = jsOpt("showRenderLoopErrors", v)
+    def contextOptions(v: Object) = jsOpt("contextOptions", v)
+    def creditContainer(v: 	Element | String) = jsOpt("creditContainer", v)
+    def terrainExaggeration(v: Double) = jsOpt("terrainExaggeration", v)
+  }
 
 }
