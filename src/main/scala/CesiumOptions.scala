@@ -161,7 +161,6 @@ package cesiumOptions {
     def numberOfVerticalLines(v: Double) = jsOpt("numberOfVerticalLines", v)
   }
 
-
   @JSName("Cesium.Options")
   @js.native
   trait ClockOptions extends js.Object

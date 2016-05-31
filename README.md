@@ -8,17 +8,6 @@ This library, **cesiumscala**, is a Scala.js façade to Cesium.js.
 Cesium client applications can now be written in [Scala](http://www.scala-lang.org/) and compiled into javascript
 using [Scala.js](https://www.scala-js.org/).
 
-## References
- 
-1) [Scala.js](https://www.scala-js.org/)
-
-2) [Cesium](https://cesiumjs.org/)
-
-3) [scala-js-ts-importer](https://github.com/sjrd/scala-js-ts-importer)
-
-4) [JSDoc](http://usejsdoc.org/)
-
-
 ## Usage
 
 Add the following dependency to your build.sbt:
@@ -29,16 +18,16 @@ To run the basic [CesiumApp](https://github.com/workingDog/CesiumScala/blob/mast
 you can install and run Cesium.js locally. Refer to [Cesium tutorial](https://cesiumjs.org/tutorials/cesium-up-and-running/) for how to
 install and launch Cesium.
 
-Typicall steps to run **CesiumApp**:
+Typical steps to run **CesiumApp**:
 
   - Download and install Cesium.
   - Compile and generate **cesiumscala**, using "sbt fullOptJS". This will generate "cesiumscala-opt.js" in the "./target/scala-2.11" directory.
   - Put "CesiumScala.html" and "cesiumscala-opt.js" files in the "Cesium/Apps" directory and
-  - launch Cesium (typically "node server.js").
+  - launch Cesium (e.g. "node server.js").
   - Then point your browser to http://localhost:8080/Apps/CesiumScala.html
 
 A 3D world globe with an aircraft should be displayed in your browser. If the globe is not showing, you may need
-to get a [Bing Map key](https://www.bingmapsportal.com/), and put it in the CesiumScala.html.
+to get a [Bing Map key](https://www.bingmapsportal.com/) and put it in the CesiumScala.html.
 
 This library makes extensive use of [jsext](https://github.com/jducoeur/jsext) JSOptionBuilder for
 defining "options" objects. Here these objects are named "class-name + Options". For example:
@@ -67,6 +56,16 @@ The code from [jsext](https://github.com/jducoeur/jsext) relating to JSOptionBui
 is included here (verbatim) rather than as an external dependency.
 
 **cesiumscala** also depends on [scala-js-dom](https://github.com/scala-js/scala-js-dom), see also build.sbt.
+
+## References
+
+1) [Scala.js](https://www.scala-js.org/)
+
+2) [Cesium](https://cesiumjs.org/)
+
+3) [scala-js-ts-importer](https://github.com/sjrd/scala-js-ts-importer)
+
+4) [JSDoc](http://usejsdoc.org/)
 
 ## Documentations
 
