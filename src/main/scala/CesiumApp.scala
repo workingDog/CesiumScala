@@ -1,5 +1,5 @@
 
-import cesium.{ModelGraphics,  _}
+import cesium.{ModelGraphics, _}
 import cesiumOptions._
 
 import scala.scalajs.js.JSApp
@@ -67,9 +67,50 @@ object CesiumApp extends JSApp {
             height(25.0)))))
     }
 
-  //  addBillboard()
+    def addShapes() = {
+
+      val stripeMaterial = new StripeMaterialProperty(StripeMaterialPropertyOptions.
+        evenColor(Color.WHITE.withAlpha(0.5)).
+        oddColor(Color.BLUE.withAlpha(0.5)).
+        repeat(5.0))
+
+      viewer.entities.add(new Entity(EntityOptions.
+        rectangle(new RectangleGraphics(RectangleGraphicsOptions.
+          coordinates(Rectangle.fromDegrees(-92.0, 20.0, -86.0, 27.0)).
+          outline(true).
+          outlineColor(Color.WHITE).
+          outlineWidth(4).
+          stRotation(Math.toRadians(45)).
+          material(stripeMaterial)))))
+
+      viewer.entities.add(new Entity(EntityOptions.
+        polygon(new PolygonGraphics(PolygonGraphicsOptions.
+          hierarchy(new PolygonHierarchy(Cartesian3.fromDegreesArray(js.Array(-107.0, 27.0, -107.0, 22.0, -102.0, 23.0, -97.0, 21.0, -97.0, 25.0)))).
+          outline(true).
+          outlineColor(Color.WHITE).
+          outlineWidth(4).
+          stRotation(Math.toRadians(45)).
+          material(stripeMaterial)))))
+
+      viewer.entities.add(new Entity(EntityOptions.
+        position(Cartesian3.fromDegrees(-80.0, 25.0)).
+        ellipse(new EllipseGraphics(EllipseGraphicsOptions.
+          semiMinorAxis(300000.0).
+          semiMajorAxis(500000.0).
+          outline(true).
+          outlineColor(Color.WHITE).
+          outlineWidth(4).
+          material(stripeMaterial)))))
+
+    }
+
+    addShapes()
+
+    addBillboard()
 
     createModel("./SampleData/models/CesiumAir/Cesium_Air.glb", 5000.0)
   }
+
 }
+
 

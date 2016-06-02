@@ -312,12 +312,15 @@ package cesiumOptions {
   object EllipseGeometryOptions extends EllipseGeometryOptionsBuilder(noOpts)
 
   class EllipseGeometryOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[EllipseGeometryOptions, EllipseGeometryOptionsBuilder](new EllipseGeometryOptionsBuilder(_)) {
-    def radii(v: Cartesian3) = jsOpt("radii", v)
-
-    def stackPartitions(v: Int) = jsOpt("stackPartitions", v)
-
-    def slicePartitions(v: Int) = jsOpt("slicePartitions", v)
-
+    def center(v: Cartesian3) = jsOpt("center", v)
+    def semiMajorAxis(v: Double) = jsOpt("semiMajorAxis", v)
+    def semiMinorAxis(v: Double) = jsOpt("semiMinorAxis", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+    def height(v: Double) = jsOpt("height", v)
+    def extrudedHeight(v: Double) = jsOpt("extrudedHeight", v)
+    def rotation(v: Double) = jsOpt("rotation", v)
+    def stRotation(v: Double) = jsOpt("stRotation", v)
+    def granularity(v: Double) = jsOpt("granularity", v)
     def vertexFormat(v: VertexFormat) = jsOpt("vertexFormat", v)
   }
 
@@ -329,13 +332,16 @@ package cesiumOptions {
   object EllipseOutlineGeometryOptions extends EllipseOutlineGeometryOptionsBuilder(noOpts)
 
   class EllipseOutlineGeometryOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[EllipseOutlineGeometryOptions, EllipseOutlineGeometryOptionsBuilder](new EllipseOutlineGeometryOptionsBuilder(_)) {
-    def radii(v: Cartesian3) = jsOpt("radii", v)
-
-    def stackPartitions(v: Int) = jsOpt("stackPartitions", v)
-
-    def slicePartitions(v: Int) = jsOpt("slicePartitions", v)
-
-    def subdivisions(v: Int) = jsOpt("subdivisions", v)
+    def center(v: Cartesian3) = jsOpt("center", v)
+    def semiMajorAxis(v: Double) = jsOpt("semiMajorAxis", v)
+    def semiMinorAxis(v: Double) = jsOpt("semiMinorAxis", v)
+    def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
+    def height(v: Double) = jsOpt("height", v)
+    def extrudedHeight(v: Double) = jsOpt("extrudedHeight", v)
+    def rotation(v: Double) = jsOpt("rotation", v)
+    def stRotation(v: Double) = jsOpt("stRotation", v)
+    def granularity(v: Double) = jsOpt("granularity", v)
+    def numberOfVerticalLines(v: Int) = jsOpt("numberOfVerticalLines", v)
   }
 
 
@@ -1146,27 +1152,23 @@ package cesiumOptions {
   object EllipseGraphicsOptions extends EllipseGraphicsOptionsBuilder(noOpts)
 
   class EllipseGraphicsOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[EllipseGraphicsOptions, EllipseGraphicsOptionsBuilder](new EllipseGraphicsOptionsBuilder(_)) {
-    def radii(v: Property) = jsOpt("radii", v)
 
-    def subdivisions(v: Property) = jsOpt("subdivisions", v)
-
-    def stackPartitions(v: Property) = jsOpt("stackPartitions", v)
-
+    def semiMajorAxis(v: Property) = jsOpt("semiMajorAxis", v)
+    def semiMinorAxis(v: Property) = jsOpt("semiMinorAxis", v)
+    def height(v: Property) = jsOpt("height", v)
+    def extrudedHeight(v: Property) = jsOpt("extrudedHeight", v)
     def show(v: Property) = jsOpt("show", v)
-
     def fill(v: Property) = jsOpt("fill", v)
-
     def material(v: MaterialProperty) = jsOpt("material", v)
-
     def outline(v: Property) = jsOpt("outline", v)
-
     def outlineColor(v: Property) = jsOpt("outlineColor", v)
-
     def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
+    def rotation(v: Property) = jsOpt("rotation", v)
+    def stRotation(v: Property) = jsOpt("stRotation", v)
+    def granularity(v: Property) = jsOpt("granularity", v)
+    def numberOfVerticalLines(v: Property) = jsOpt("numberOfVerticalLines", v)
 
-    def slicePartitions(v: Property) = jsOpt("slicePartitions", v)
   }
-
 
   @JSName("Cesium.Options")
   @js.native

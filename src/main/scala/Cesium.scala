@@ -2473,7 +2473,7 @@ package cesium {
     def this(options: GeometryOptions) = this()
 
     var attributes: GeometryAttributes = js.native
-    var indices: js.Array[js.Any] = js.native
+    var indices: Uint16Array | Uint32Array = js.native
     var primitiveType: PrimitiveType = js.native
     var boundingSphere: BoundingSphere = js.native
   }
