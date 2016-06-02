@@ -31,9 +31,12 @@ object CesiumApp extends JSApp {
     Console.println("---> hello from CesiumApp")
 
     // launch the Cesium viewer
-    val viewer = new Viewer("cesiumContainer")
+    val viewer = new Viewer("cesiumContainer", ViewerOptions.
+      infoBox(false).
+      selectionIndicator(false).
+      shadows(true).
+      terrainShadows(true))
 
-    // see Sandcastle example: https://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=3D%20Models.html&label=Showcases
     def createModel(url: String, height: Double) = {
       val position = Cartesian3.fromDegrees(-123.0744619, 44.0503706, height)
       val entity = viewer.entities.add(new Entity(

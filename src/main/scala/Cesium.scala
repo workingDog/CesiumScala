@@ -9093,7 +9093,7 @@ package cesium {
 
     var castShadows: Boolean = js.native
     var receiveShadows: Boolean = js.native
-    var readonlyterrainProviderChanged: Event = js.native
+    var terrainProviderChanged: Event = js.native
 
     def pick(ray: Ray, scene: Scene, result: Cartesian3 = ???): Cartesian3 | Unit = js.native
 
@@ -11142,7 +11142,7 @@ package cesium {
     var useWebVR: Boolean = js.native
 
     var shadowMap: ShadowMap = js.native
-    var readonlyterrainProviderChanged: Event = js.native
+    var terrainProviderChanged: Event = js.native
     var nearToFarDistance2D: Double = js.native
 
     def pick(windowPosition: Cartesian2): js.Dynamic = js.native
