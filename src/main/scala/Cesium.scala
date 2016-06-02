@@ -13,6 +13,7 @@
 package cesium {
 
   import cesiumOptions._
+  import org.scalajs.dom.html.Canvas
 
   import scala.concurrent._
   import scala.scalajs.js
@@ -21,6 +22,7 @@ package cesium {
   import org.scalajs.dom.{Blob, Document, Element}
   import org.scalajs.dom.raw.{HTMLCanvasElement, HTMLImageElement, HTMLVideoElement}
   import org.w3c.dom.html.{HTMLElement, HTMLIFrameElement}
+
   import scala.scalajs.js.typedarray.{ArrayBuffer, Float32Array, Float64Array, Int16Array, Int8Array, TypedArray, Uint16Array, Uint32Array, Uint8Array}
 
   // -------------------------------------------------------------------------------------
@@ -1750,7 +1752,6 @@ package cesium {
     *
     * alias Credit
     *
-    *
     * @example
     * //Create a credit with a tooltip, image and link
     * var credit = new Cesium.Credit('Cesium', '/images/cesium_logo.png', 'http://cesiumjs.org/');
@@ -2297,7 +2298,6 @@ package cesium {
     *
     * alias Event
     *
-    *
     * @example
     * MyObject.prototype.myListener = function(arg1, arg2) {
     * this.myArg1Copy = arg1;
@@ -2334,7 +2334,6 @@ package cesium {
     * a destroy method.
     *
     * alias EventHelper
-    *
     *
     * @example
     * var helper = new Cesium.EventHelper();
@@ -2652,7 +2651,6 @@ package cesium {
     * Represents a Gregorian date in a more precise format than the JavaScript Date object.
     * In addition to submillisecond precision, this object can also represent leap seconds.
     * alias GregorianDate
-    *
     *
     * @see JulianDate#toGregorianDate
     */
@@ -3018,7 +3016,6 @@ package cesium {
     *
     * alias MapProjection
     *
-    *
     * @see GeographicProjection
     * @see WebMercatorProjection
     */
@@ -3377,6 +3374,8 @@ package cesium {
 
     def computeViewportTransformation(viewport: js.Any, nearDepthRange: Double, farDepthRange: Double, result: Matrix4): Matrix4 = js.native
 
+    def computeView(position:Cartesian3, direction:Cartesian3, up:Cartesian3, right:Cartesian3, result:Matrix4): Matrix4 = js.native
+
     def toArray(matrix: Matrix4, result: js.Array[Double] = ???): js.Array[Double] = js.native
 
     def getElementIndex(row: Double, column: Double): Double = js.native
@@ -3488,8 +3487,6 @@ package cesium {
     *
     *  - {BoundingSphere} occluderBoundingSphere The bounding sphere surrounding the occluder.
     *  - {Cartesian3} cameraPosition The coordinate of the viewer/camera.
-    *
-    *
     *
     * @example
     * // Construct an occluder one unit away from the origin with a radius of one.
@@ -4809,7 +4806,6 @@ package cesium {
     *
     * alias Spline
     *
-    *
     * @see CatmullRomSpline
     * @see HermiteSpline
     * @see LinearSpline
@@ -4859,7 +4855,6 @@ package cesium {
     *
     * alias TerrainData
     *
-    *
     * @see HeightmapTerrainData
     * @see QuantizedMeshTerrainData
     */
@@ -4883,7 +4878,6 @@ package cesium {
     * interface and is not intended to be instantiated directly.
     *
     * alias TerrainProvider
-    *
     *
     * @see EllipsoidTerrainProvider
     * @see CesiumTerrainProvider
@@ -4968,7 +4962,6 @@ package cesium {
     * This continues for as many levels as are present in the geometry or imagery source.
     *
     * alias TilingScheme
-    *
     *
     * @see WebMercatorTilingScheme
     * @see GeographicTilingScheme
@@ -5200,7 +5193,6 @@ package cesium {
     *  - {Object} [options] An object with boolean properties corresponding to VertexFormat properties as shown in the code example.
     *
     * alias VertexFormat
-    *
     *
     * @example
     * // Create a vertex format with position and 2D texture coordinate attributes.
@@ -5799,7 +5791,6 @@ package cesium {
     *
     * alias CompositeProperty
     *
-    *
     * @example
     * var constantProperty = ...;
     * var sampledProperty = ...;
@@ -6138,7 +6129,6 @@ package cesium {
     * [[EntityCollection]] for generic consumption. This object is an interface
     * for documentation purposes and is not intended to be instantiated directly.
     * alias DataSource
-    *
     *
     * @see Entity
     * @see DataSourceDisplay
@@ -6835,7 +6825,9 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.KmlDataSource")
-  class KmlDataSource extends js.Object {
+  class KmlDataSource protected() extends js.Object {
+    def this(options: KmlDataSourceOptions) = this()
+
     var name: String = js.native
     var clock: DataSourceClock = js.native
     var entities: EntityCollection = js.native
@@ -6845,6 +6837,9 @@ package cesium {
     var loadingEvent: Event = js.native
     var refreshEvent: Event = js.native
     var show: Boolean = js.native
+
+    var camera: Camera = js.native
+    var canvas: Canvas = js.native
 
     def load(data: String | Document | Blob, options: KmlDataSourceOptions = ???): Promise[KmlDataSource] = js.native
 
@@ -6955,7 +6950,6 @@ package cesium {
     * This type defines an interface and cannot be instantiated directly.
     *
     * alias MaterialProperty
-    *
     *
     * @see ColorMaterialProperty
     * @see CompositeMaterialProperty
@@ -7520,7 +7514,6 @@ package cesium {
     *
     * alias PositionProperty
     *
-    *
     * @see CompositePositionProperty
     * @see ConstantPositionProperty
     * @see SampledPositionProperty
@@ -7573,7 +7566,6 @@ package cesium {
     * This type defines an interface and cannot be instantiated directly.
     *
     * alias Property
-    *
     *
     * @see CompositeProperty
     * @see ConstantProperty
@@ -7956,7 +7948,6 @@ package cesium {
     *
     * alias TimeIntervalCollectionProperty
     *
-    *
     * @example
     * //Create a Cartesian2 interval property which contains data on August 1st, 2012
     * //and uses a different value every 6 hours.
@@ -8068,7 +8059,6 @@ package cesium {
     * This object is an interface for documentation purposes and is not intended
     * to be instantiated directly.
     * alias Visualizer
-    *
     *
     * @see BillboardVisualizer
     * @see LabelVisualizer
@@ -8489,7 +8479,6 @@ package cesium {
     *  - {Proxy} [options.proxy] A proxy to use for requests. This object is
     * expected to have a getURL function which returns the proxied URL, if needed.
     *
-    *
     * @see ArcGisMapServerImageryProvider
     * @see GoogleEarthImageryProvider
     * @see createOpenStreetMapImageryProvider
@@ -8564,7 +8553,6 @@ package cesium {
     *
     * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Camera.html|Cesium Sandcastle Camera Demo]]
     * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Camera%20Tutorial.html">Sandcastle Example</a> from the <a href="http://cesiumjs.org/2013/02/13/Cesium-Camera-Tutorial/|Camera Tutorial]]
-    *
     *
     * @example
     * // Create a camera looking down the negative z-axis, positioned at the origin,
@@ -8750,7 +8738,6 @@ package cesium {
     *
     * alias CreditDisplay
     *
-    *
     * @example
     * var creditDisplay = new Cesium.CreditDisplay(creditContainer);
     */
@@ -8792,6 +8779,8 @@ package cesium {
     var planes: js.Array[Cartesian4] = js.native
 
     def computeVisibility(boundingVolume: js.Any): Intersect = js.native
+
+    def fromBoundingSphere(boundingSphere: BoundingSphere, result:CullingVolume = ???): CullingVolume = js.native
   }
 
   @js.native
@@ -8939,7 +8928,6 @@ package cesium {
     *  - {RenderState} [options.renderState] Optional render state to override the default render state.
     *
     * @see [[https://github.com/AnalyticalGraphicsInc/cesium/wiki/Fabric|Fabric]]
-    *
     * @example
     * var primitive = new Cesium.Primitive({
     * geometryInstances : new Cesium.GeometryInstance({
@@ -9102,6 +9090,10 @@ package cesium {
     var imageryLayers: ImageryLayerCollection = js.native
     var baseColor: Color = js.native
     var tileLoadProgressEvent: Event = js.native
+
+    var castShadows: Boolean = js.native
+    var receiveShadows: Boolean = js.native
+    var readonlyterrainProviderChanged: Event = js.native
 
     def pick(ray: Ray, scene: Scene, result: Cartesian3 = ???): Cartesian3 | Unit = js.native
 
@@ -9539,7 +9531,6 @@ package cesium {
     * interface and is not intended to be instantiated directly.
     *
     * alias ImageryProvider
-    *
     *
     * @see ArcGisMapServerImageryProvider
     * @see SingleTileImageryProvider
@@ -10014,7 +10005,6 @@ package cesium {
     *
     * @see [[https://github.com/AnalyticalGraphicsInc/cesium/wiki/Fabric|Fabric]]
     *      demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Materials.html|Cesium Sandcastle Material Appearance Demo]]
-    *
     * @example
     * var primitive = new Cesium.Primitive({
     * geometryInstances : new Cesium.GeometryInstance({
@@ -10127,6 +10117,8 @@ package cesium {
     var allowPicking: Boolean = js.native
     var incrementallyLoadTextures: Boolean = js.native
     var pendingTextureLoads: Double = js.native
+
+    var castShadows: Boolean = js.native
 
     def getNode(name: String): ModelNode = js.native
 
@@ -10306,7 +10298,6 @@ package cesium {
     *
     * alias NeverTileDiscardPolicy
     *
-    *
     * @see DiscardMissingTileImagePolicy
     */
   @js.native
@@ -10324,7 +10315,6 @@ package cesium {
     * plane from the origin/camera position.
     *
     * alias OrthographicFrustum
-    *
     *
     * @example
     * var maxRadii = ellipsoid.maximumRadius;
@@ -10455,7 +10445,6 @@ package cesium {
     *
     * alias PerspectiveFrustum
     *
-    *
     * @example
     * var frustum = new Cesium.PerspectiveFrustum();
     * frustum.aspectRatio = canvas.clientWidth / canvas.clientHeight;
@@ -10493,7 +10482,6 @@ package cesium {
     * plane from the origin/camera position.
     *
     * alias PerspectiveOffCenterFrustum
-    *
     *
     * @example
     * var frustum = new Cesium.PerspectiveOffCenterFrustum();
@@ -10971,6 +10959,9 @@ package cesium {
     var ready: Boolean = js.native
     var readyPromise: Promise[Primitive] = js.native
 
+    var castShadows: Boolean = js.native
+    var receiveShadows: Boolean = js.native
+
     def update(): js.Dynamic = js.native
 
     def getGeometryInstanceAttributes(id: js.Any): js.Dynamic = js.native
@@ -11150,6 +11141,10 @@ package cesium {
     var terrainExaggeration: Double = js.native
     var useWebVR: Boolean = js.native
 
+    var shadowMap: ShadowMap = js.native
+    var readonlyterrainProviderChanged: Event = js.native
+    var nearToFarDistance2D: Double = js.native
+
     def pick(windowPosition: Cartesian2): js.Dynamic = js.native
 
     def pickPosition(windowPosition: Cartesian2, result: Cartesian3 = ???): Cartesian3 = js.native
@@ -11283,6 +11278,9 @@ package cesium {
 
     var show: Boolean = js.native
     var ellipsoid: Ellipsoid = js.native
+    var brightnessShift: Double = js.native
+    var hueShift: Double = js.native
+    var saturationShift: Double = js.native
 
     def isDestroyed(): Boolean = js.native
 
@@ -11337,7 +11335,6 @@ package cesium {
     * <p>This is only supported in 3D and Columbus view.</p>
     *
     * alias Sun
-    *
     *
     * @example
     * scene.sun = new Cesium.Sun();
@@ -11402,7 +11399,6 @@ package cesium {
     * interface and is not intended to be instantiated directly.
     *
     * alias TileDiscardPolicy
-    *
     *
     * @see DiscardMissingTileImagePolicy
     * @see NeverTileDiscardPolicy
@@ -11491,7 +11487,6 @@ package cesium {
     * that this can be dynamically overridden by modifying the [[UrlTemplateImageryProvider]]
     * property.
     *
-    *
     * @example
     * // Access Natural Earth II imagery, which uses a TMS tiling scheme and Geographic (EPSG:4326) project
     * var tms = new Cesium.UrlTemplateImageryProvider({
@@ -11515,7 +11510,6 @@ package cesium {
     * 'width=256&height=256',
     * rectangle : Cesium.Rectangle.fromDegrees(96.799393, -43.598214999057824, 153.63925700000001, -9.2159219997013)
     * });
-    *
     * @see ArcGisMapServerImageryProvider
     * @see BingMapsImageryProvider
     * @see GoogleEarthImageryProvider
@@ -11730,7 +11724,6 @@ package cesium {
     * credit : new Cesium.Credit('U. S. Geological Survey')
     * });
     * viewer.imageryLayers.addImageryProvider(shadedRelief2);
-    *
     * @see ArcGisMapServerImageryProvider
     * @see BingMapsImageryProvider
     * @see GoogleEarthImageryProvider
@@ -12800,6 +12793,19 @@ package cesium {
     def destroy(): js.Dynamic = js.native
   }
 
+  @js.native
+  @JSName("Cesium.ShadowMap")
+  class ShadowMap protected() extends js.Object {
+    def this(options: ShadowMapOptions = ???) = this()
+
+    var darkness: Double = js.native
+    var enabled: Boolean = js.native
+    var maximumDistance: Double = js.native
+    var size: Double = js.native
+    var softShadows: Boolean = js.native
+
+  }
+
   @JSName("Cesium.Viewer")
   @js.native
   object Viewer extends js.Object {
@@ -12943,6 +12949,11 @@ package cesium {
     var allowDataSourcesToSuspendAnimation: Boolean = js.native
     var trackedEntity: Entity = js.native
     var selectedEntity: Entity = js.native
+    var shadows: Boolean = js.native
+    var terrainShadows: Boolean = js.native
+
+    var shadowMap: ShadowMap = js.native
+
 
     def extend(mixin: Viewer.ViewerMixin, options: js.Any = ???): js.Dynamic = js.native
 
@@ -13091,5 +13102,6 @@ package cesium {
 
   // todo implement
   // LagrangePolynomialApproximation, LinearApproximation and HermitePolynomialApproximation
+
 
 }

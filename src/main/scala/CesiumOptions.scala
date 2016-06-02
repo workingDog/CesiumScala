@@ -1349,6 +1349,9 @@ package cesiumOptions {
     def runAnimations(v: Property) = jsOpt("runAnimations", v)
 
     def nodeTransformations(v: Property) = jsOpt("nodeTransformations", v)
+
+    def castShadows(v: Property) = jsOpt("castShadows", v)
+    def receiveShadows(v: Property) = jsOpt("receiveShadows", v)
   }
 
 
@@ -1874,6 +1877,8 @@ package cesiumOptions {
     def asynchronous(v: Boolean) = jsOpt("asynchronous", v)
 
     def debugShowBoundingVolume(v: Boolean) = jsOpt("debugShowBoundingVolume", v)
+
+    def debugShowShadowVolume(v: Boolean) = jsOpt("debugShowShadowVolume", v)
   }
 
 
@@ -1996,6 +2001,11 @@ package cesiumOptions {
     def debugShowBoundingVolume(v: Boolean) = jsOpt("debugShowBoundingVolume", v)
 
     def debugWireframe(v: Boolean) = jsOpt("debugWireframe", v)
+
+    def heightReference(v: HeightReference) = jsOpt("heightReference", v)
+    def scene(v: Scene) = jsOpt("scene", v)
+    def castShadows(v: Boolean) = jsOpt("castShadows", v)
+    def receiveShadows(v: Boolean) = jsOpt("receiveShadows", v)
   }
 
   @JSName("Cesium.Options")
@@ -2030,6 +2040,9 @@ package cesiumOptions {
     def debugShowBoundingVolume(v: Boolean) = jsOpt("debugShowBoundingVolume", v)
 
     def debugWireframe(v: Boolean) = jsOpt("debugWireframe", v)
+
+    def castShadows(v: Boolean) = jsOpt("castShadows", v)
+    def receiveShadows(v: Boolean) = jsOpt("receiveShadows", v)
   }
 
 
@@ -2186,6 +2199,9 @@ package cesiumOptions {
     def asynchronous(v: Boolean) = jsOpt("asynchronous", v)
 
     def debugShowBoundingVolume(v: Boolean) = jsOpt("debugShowBoundingVolume", v)
+
+    def castShadows(v: Boolean) = jsOpt("castShadows", v)
+    def receiveShadows(v: Boolean) = jsOpt("receiveShadows", v)
   }
 
 
@@ -2222,6 +2238,8 @@ package cesiumOptions {
     def scene3DOnly(v: Boolean) = jsOpt("scene3DOnly", v)
 
     def terrainExaggeration(v: Double) = jsOpt("terrainExaggeration", v)
+
+    def shadows(v: Boolean) = jsOpt("shadows", v)
   }
 
 
@@ -2413,6 +2431,7 @@ package cesiumOptions {
     def terrainProviderViewModels(v: Array[ProviderViewModel]) = jsOpt("terrainProviderViewModels", v)
 
     def selectedTerrainProviderViewModel(v: ProviderViewModel) = jsOpt("selectedTerrainProviderViewModel", v)
+
   }
 
 
@@ -2722,7 +2741,6 @@ package cesiumOptions {
     def sourceUri(v: String) = jsOpt("sourceUri", v)
   }
 
-
   @JSName("Cesium.Options")
   @js.native
   trait CameraFlyToOptions extends js.Object
@@ -2863,6 +2881,10 @@ package cesiumOptions {
     def dataSources(v: DataSourceCollection) = jsOpt("dataSources", v)
 
     def terrainExaggeration(v: Double) = jsOpt("terrainExaggeration", v)
+
+    def shadows(v: Boolean) = jsOpt("shadows", v)
+
+    def terrainShadows(v: Boolean) = jsOpt("terrainShadows", v)
   }
 
   @JSName("Cesium.Options")
@@ -3081,6 +3103,38 @@ package cesiumOptions {
 
   class CzmlDataSourceOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[CzmlDataSourceOptions, CzmlDataSourceOptionsBuilder](new CzmlDataSourceOptionsBuilder(_)) {
     def sourceUri(v: String) = jsOpt("sourceUri", v)
+  }
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait ShadowMapOptions extends js.Object
+
+  object ShadowMapOptions extends ShadowMapOptionsBuilder(noOpts)
+
+  class ShadowMapOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ShadowMapOptions, ShadowMapOptionsBuilder](new ShadowMapOptionsBuilder(_)) {
+    // todo replace js.Any with Context
+    def context(v: js.Any) = jsOpt("context", v)
+
+    def lightCamera(v: Camera) = jsOpt("lightCamera", v)
+
+    def enabled(v: Boolean) = jsOpt("enabled", v)
+
+    def isPointLight(v: Boolean) = jsOpt("isPointLight", v)
+
+    def pointLightRadius(v: Boolean) = jsOpt("pointLightRadius", v)
+
+    def cascadesEnabled(v: Boolean) = jsOpt("cascadesEnabled", v)
+
+    def numberOfCascades(v: Int) = jsOpt("numberOfCascades", v)
+
+    def maximumDistance(v: Double) = jsOpt("maximumDistance", v)
+
+    def size(v: Int) = jsOpt("size", v)
+
+    def softShadows(v: Boolean) = jsOpt("softShadows", v)
+
+    def darkness(v: Double) = jsOpt("darkness", v)
+
   }
 
 }

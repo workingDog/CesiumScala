@@ -81,7 +81,7 @@ Refer to [Cesium API reference](https://cesiumjs.org/refdoc.html) for the origin
 
 ## Status
 
-need testing
+ongoing work, need testing
 
 
 
