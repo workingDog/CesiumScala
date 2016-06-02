@@ -26,7 +26,7 @@ Typical steps to run **CesiumApp**:
   - launch Cesium (e.g. "node server.js").
   - Then point your browser to http://localhost:8080/Apps/CesiumScala.html
 
-A 3D world globe with an aircraft should be displayed in your browser. If the globe is not showing, you may need
+A 3D world globe with an aircraft and various shapes should be displayed in your browser. If the globe is not showing, you may need
 to get a [Bing Map key](https://www.bingmapsportal.com/) and put it in the CesiumScala.html.
 
 This library makes extensive use of [jsext](https://github.com/jducoeur/jsext) JSOptionBuilder for
