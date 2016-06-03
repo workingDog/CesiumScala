@@ -3,13 +3,14 @@
   *
   * Reference:  http://cesiumjs.org/ and https://cesiumjs.org/refdoc.html
   * Specifically Cesium-1.21 documentation/code (May 2016)
+  * Updated to Cesium-1.22 (June 2016)
   *
   * This package implements the Cesium.Options objects using JSOptionBuilder
-  * see: [jsext](https://github.com/jducoeur/jsext)
+  * see: [[https://github.com/jducoeur/jsext]]
   *
   * @author Ringo Wathelet
   *         Date: 22/05/16
-  *         Version: 1
+  *         Version: 1.1
   */
 package cesiumOptions {
 

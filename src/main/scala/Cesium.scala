@@ -1,14 +1,15 @@
 /**
   * A Scala.js facade for Cesium.js "An open-source JavaScript library for world-class 3D globes and maps"
   *
-  * Reference:  http://cesiumjs.org/ and https://cesiumjs.org/refdoc.html
+  * Reference:  [[http://cesiumjs.org/ and https://cesiumjs.org/refdoc.html]]
   * Specifically Cesium-1.21 documentation/code (May 2016)
+  * Updated to Cesium-1.22 (June 2016)
   *
   * This package implements the core elements of Cesium.
   *
   * @author Ringo Wathelet
   *         Date: 22/05/16
-  *         Version: 1
+  *         Version: 1.1
   */
 package cesium {
 
