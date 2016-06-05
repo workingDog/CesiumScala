@@ -3138,4 +3138,15 @@ package cesiumOptions {
 
   }
 
+  @JSName("Cesium.Options")
+  @js.native
+  trait InterpolationOptions extends js.Object
+
+  object InterpolationOptions extends InterpolationOptionsBuilder(noOpts)
+
+  class InterpolationOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[InterpolationOptions, InterpolationOptionsBuilder](new InterpolationOptionsBuilder(_)) {
+    def interpolationAlgorithm(v: InterpolationAlgorithm) = jsOpt("interpolationAlgorithm", v)
+    def interpolationDegree(v: Int) = jsOpt("interpolationDegree", v)
+  }
+
 }

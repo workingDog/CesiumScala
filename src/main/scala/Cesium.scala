@@ -233,12 +233,9 @@ package cesium {
     def apply(value: ExtrapolationType): Int = js.native
   }
 
-  @js.native
-  sealed trait InterpolationAlgorithm extends js.Object
-
   @JSName("Cesium.InterpolationAlgorithm")
   @js.native
-  object InterpolationAlgorithm extends js.Object {
+  sealed trait InterpolationAlgorithm extends js.Object{
     var `type`: String = js.native
 
     def apply(value: InterpolationAlgorithm): Int = js.native
@@ -255,17 +252,14 @@ package cesium {
   @ScalaJSDefined
   sealed trait Frustum extends js.Object
 
-  @js.native
-  sealed trait Packable extends js.Object
-
   @JSName("Cesium.Packable")
   @js.native
-  object Packable extends js.Object {
+  sealed trait Packable extends js.Object {
     var packedLength: Int = js.native
 
-    def pack(value: js.Object, array: Array[Int], startingIndex: Int): Unit = js.native
+    def pack(value: js.Object | Double | Int, array: js.Array[Double], startingIndex: Int = ???): Unit = js.native
 
-    def unpack(array: Array[Int], startingIndex: Int, result: js.Object): Int = js.native
+    def unpack(array: js.Array[Double], startingIndex: Int = ???, result: js.Object = ???): js.Object = js.native
   }
 
   @js.native
@@ -603,7 +597,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.BoundingSphere")
-  class BoundingSphere protected() extends js.Object {
+  class BoundingSphere protected()extends js.Object {
     def this(center: Cartesian3 = ???, radius: Double = ???) = this()
 
     var center: Cartesian3 = js.native
@@ -700,7 +694,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.BoxGeometry")
-  class BoxGeometry protected() extends js.Object {
+  class BoxGeometry protected()extends js.Object {
     def this(options: BoxGeometryOptions) = this()
   }
 
@@ -742,7 +736,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.BoxOutlineGeometry")
-  class BoxOutlineGeometry protected() extends js.Object {
+  class BoxOutlineGeometry protected()extends js.Object {
     def this(options: BoxOutlineGeometryOptions) = this()
   }
 
@@ -793,8 +787,8 @@ package cesium {
 
   @js.native
   @JSName("Cesium.Cartesian2")
-  object Cartesian2 extends js.Object {
-    var packedLength: Double = js.native
+  object Cartesian2 extends js.Object  {
+    var packedLength: Int = js.native
     var ZERO: Cartesian2 = js.native
     var UNIT_X: Cartesian2 = js.native
     var UNIT_Y: Cartesian2 = js.native
@@ -873,7 +867,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.Cartesian3")
-  class Cartesian3 protected() extends js.Object {
+  class Cartesian3 protected()extends js.Object {
     def this(x: Double = ???, y: Double = ???, z: Double = ???) = this()
 
     var x: Double = js.native
@@ -987,7 +981,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.Cartesian4")
-  class Cartesian4 protected() extends js.Object {
+  class Cartesian4 protected()extends js.Object {
     def this(x: Double = ???, y: Double = ???, z: Double = ???, w: Double = ???) = this()
 
     var x: Double = js.native
@@ -1264,7 +1258,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.CircleGeometry")
-  class CircleGeometry protected() extends js.Object {
+  class CircleGeometry protected()extends js.Object {
     def this(options: CircleGeometryOptions) = this()
   }
 
@@ -1310,7 +1304,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.CircleOutlineGeometry")
-  class CircleOutlineGeometry protected() extends js.Object {
+  class CircleOutlineGeometry protected()extends js.Object {
     def this(options: CircleOutlineGeometryOptions) = this()
   }
 
@@ -1390,7 +1384,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.Color")
-  class Color protected() extends js.Object {
+  class Color protected()extends js.Object {
     def this(red: Double = ???, green: Double = ???, blue: Double = ???, alpha: Double = ???) = this()
 
     var red: Double = js.native
@@ -1688,10 +1682,8 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.CorridorGeometry")
-  class CorridorGeometry protected() extends js.Object {
+  class CorridorGeometry protected()extends js.Object {
     def this(options: CorridorGeometryOptions) = this()
-
-    var packedLength: Double = js.native
   }
 
   @js.native
@@ -3302,7 +3294,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.Matrix4")
-  class Matrix4 protected() extends js.Object {
+  class Matrix4 protected()extends js.Object {
     def this(column0Row0: Double = ???, column1Row0: Double = ???, column2Row0: Double = ???, column3Row0: Double = ???, column0Row1: Double = ???, column1Row1: Double = ???, column2Row1: Double = ???, column3Row1: Double = ???, column0Row2: Double = ???, column1Row2: Double = ???, column2Row2: Double = ???, column3Row2: Double = ???, column0Row3: Double = ???, column1Row3: Double = ???, column2Row3: Double = ???, column3Row3: Double = ???) = this()
 
     var length: Double = js.native
@@ -3452,7 +3444,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.NearFarScalar")
-  class NearFarScalar protected() extends js.Object {
+  class NearFarScalar protected()extends js.Object {
     def this(near: Double = ???, nearValue: Double = ???, far: Double = ???, farValue: Double = ???) = this()
 
     var near: Double = js.native
@@ -4146,7 +4138,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.Quaternion")
-  class Quaternion protected() extends js.Object {
+  class Quaternion protected()extends js.Object {
     def this(x: Double = ???, y: Double = ???, z: Double = ???, w: Double = ???) = this()
 
     var x: Double = js.native
@@ -4341,7 +4333,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.Rectangle")
-  class Rectangle protected() extends js.Object {
+  class Rectangle protected()extends js.Object {
     def this(west: Double = ???, south: Double = ???, east: Double = ???, north: Double = ???) = this()
 
     var west: Double = js.native
@@ -7830,7 +7822,7 @@ package cesium {
     var backwardExtrapolationDuration: Double = js.native
 
     // todo
-    def setInterpolationOptions(options: js.Any = ???): js.Dynamic = js.native
+    def setInterpolationOptions(options: InterpolationOptions = ???): js.Dynamic = js.native
 
     def addSample(time: JulianDate, position: Cartesian3, derivatives: js.Array[Cartesian3] = ???): js.Dynamic = js.native
 
@@ -7883,9 +7875,8 @@ package cesium {
   @js.native
   @JSName("Cesium.SampledProperty")
   class SampledProperty protected() extends Property {
-    def this(`type`: Double | Packable, derivativeTypes: js.Array[Packable] = ???) = this()
+    def this(`type`: Double.type | Int.type | Packable, derivativeTypes: js.Array[Packable] = ???) = this()
 
-    var `type`: js.Any = js.native
     var derivativeTypes: js.Array[Packable] = js.native
     var interpolationDegree: Double = js.native
     var interpolationAlgorithm: InterpolationAlgorithm = js.native
@@ -7894,7 +7885,7 @@ package cesium {
     var backwardExtrapolationType: ExtrapolationType = js.native
     var backwardExtrapolationDuration: Double = js.native
 
-    def setInterpolationOptions(options: js.Any = ???): js.Dynamic = js.native
+    def setInterpolationOptions(options: InterpolationOptions = ???): js.Dynamic = js.native
 
     def addSample(time: JulianDate, value: Packable, derivatives: js.Array[Packable] = ???): js.Dynamic = js.native
 
@@ -13098,11 +13089,42 @@ package cesium {
   @JSName("Cesium.GeometryPipeline")
   @js.native
   object GeometryPipeline extends js.Object {
-    // todo
+
+    def compressVertices(geometry: Geometry): Geometry = js.native
+    def computeBinormalAndTangent(geometry: Geometry): Geometry = js.native
+    def computeNormal(geometry: Geometry): Geometry = js.native
+    def createAttributeLocations(geometry: Geometry): js.Dynamic = js.native
+    def createLineSegmentsForVectors(geometry: Geometry,attributeName: String, length: Double): Geometry = js.native
+    def encodeAttribute(geometry: Geometry, attributeName: String, attributeHighName: String, attributeLowName: String): Geometry = js.native
+    def fitToUnsignedShortIndices(geometry: Geometry): Array[Geometry] = js.native
+    def projectTo2D(geometry: Geometry, attributeName: String, attributeName3D: String, attributeName2D: String, projection: js.Any): Geometry = js.native
+    def reorderForPostVertexCache(geometry: Geometry, cacheCapacity: Int): Geometry = js.native
+    def reorderForPreVertexCache(geometry: Geometry): Geometry = js.native
+    def toWireframe(geometry: Geometry): Geometry = js.native
+    def transformToWorldCoordinates(instance: GeometryInstance): GeometryInstance = js.native
+
   }
 
-  // todo implement
-  // LagrangePolynomialApproximation, LinearApproximation and HermitePolynomialApproximation
+  @JSName("Cesium.LinearApproximation")
+  @js.native
+  object LinearApproximation extends InterpolationAlgorithm
 
+  @JSName("Cesium.LagrangePolynomialApproximation")
+  @js.native
+  object LagrangePolynomialApproximation extends InterpolationAlgorithm
+
+  @JSName("Cesium.HermitePolynomialApproximation")
+  @js.native
+  object HermitePolynomialApproximation extends InterpolationAlgorithm
+
+  @JSName("Cesium.PackableForInterpolation")
+  @js.native
+  trait PackableForInterpolation extends js.Object {
+    var packedInterpolationLength: Int = js.native
+
+    def convertPackedArrayForInterpolation(packedArray: Array[Double], startingIndex: Int = ???, lastIndex: Int = ???, result: js.Object = ???): Unit = js.native
+
+    def unpackInterpolationResult(array: Array[Double], sourceArray: Array[Double], startingIndex: Int = ???, lastIndex: Int = ???, result: js.Object = ???): Unit = js.native
+  }
 
 }
