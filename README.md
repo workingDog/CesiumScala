@@ -48,7 +48,7 @@ To compile and generate a jar file from the source code:
 
     sbt package
 
-The jar file (cesiumscala_sjs0.6_2.11-1.0.jar) will be in the "./target/scala-2.11" directory.
+The jar file (cesiumscala_sjs0.6_2.11-1.1-SNAPSHOT.jar) will be in the "./target/scala-2.11" directory.
 
 ## Dependencies code inclusions
 
