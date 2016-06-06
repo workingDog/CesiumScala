@@ -7877,9 +7877,9 @@ package cesium {
   @js.native
   @JSName("Cesium.SampledProperty")
   class SampledProperty protected() extends Property {
-    def this(`type`: js.Dynamic | Packable, derivativeTypes: js.Array[Double] | js.Array[Packable] = ???) = this()
+    def this(`type`: js.Dynamic | Packable, derivativeTypes: js.Array[js.Dynamic] | js.Array[Packable] = ???) = this()
 
-    var derivativeTypes: js.Array[Double] | js.Array[Packable] = js.native
+    var derivativeTypes: js.Array[js.Dynamic] | js.Array[Packable] = js.native
     var interpolationDegree: Double = js.native
     var interpolationAlgorithm: InterpolationAlgorithm = js.native
     var forwardExtrapolationType: ExtrapolationType = js.native
