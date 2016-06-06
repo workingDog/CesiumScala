@@ -495,12 +495,31 @@ package cesiumOptions {
 
     def childTileMask(v: Int) = jsOpt("childTileMask", v)
 
-    // todo
-    def structure(v: Object) = jsOpt("structure", v)
+    def structure(v: HeightmapTerrainDataStructureOptions) = jsOpt("structure", v)
 
     def createdByUpsampling(v: Boolean) = jsOpt("createdByUpsampling", v)
   }
 
+  @JSName("Cesium.Options")
+  @js.native
+  trait HeightmapTerrainDataStructureOptions extends js.Object
+
+  object HeightmapTerrainDataStructureOptions extends HeightmapTerrainDataStructureOptionsBuilder(noOpts)
+
+  class HeightmapTerrainDataStructureOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[HeightmapTerrainDataStructureOptions, HeightmapTerrainDataStructureOptionsBuilder](new HeightmapTerrainDataStructureOptionsBuilder(_)) {
+    def heightScale(v: Double) = jsOpt("heightScale", v)
+
+    def heightOffset(v: Double) = jsOpt("heightOffset", v)
+
+    def elementsPerHeight(v: Int) = jsOpt("elementsPerHeight", v)
+
+    def stride(v: Double) = jsOpt("stride", v)
+
+    def elementMultiplier(v: Double) = jsOpt("elementMultiplier", v)
+
+    def isBigEndian(v: Boolean) = jsOpt("isBigEndian", v)
+
+  }
 
   @JSName("Cesium.Options")
   @js.native
@@ -2763,8 +2782,7 @@ package cesiumOptions {
 
     def maximumHeight(v: Double) = jsOpt("maximumHeight", v)
 
-    // todo
-    //  def easingFunction(v:	EasingFunction | EasingFunction.Callback) = jsOpt("easingFunction", v)
+    def easingFunction(v:	EasingFunction | EasingFunction.Callback) = jsOpt("easingFunction", v)
   }
 
   @JSName("Cesium.Options")
@@ -2802,8 +2820,7 @@ package cesiumOptions {
 
     def maximumHeight(v: Double) = jsOpt("maximumHeight", v)
 
-    // todo
-    //  def easingFunction(v:	EasingFunction | EasingFunction.Callback) = jsOpt("easingFunction", v)
+    def easingFunction(v:	EasingFunction | EasingFunction.Callback) = jsOpt("easingFunction", v)
   }
 
   @JSName("Cesium.Options")

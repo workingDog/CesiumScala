@@ -67,19 +67,6 @@ package cesium {
   }
 
   @js.native
-  sealed trait WindingOrder extends js.Object
-
-  @JSName("Cesium.WindingOrder")
-  @js.native
-  object WindingOrder extends js.Object {
-    val CLOCKWISE: Int = js.native
-    val COUNTER_CLOCKWISE: Int = js.native
-
-    @JSBracketAccess
-    def apply(value: WindingOrder): Int = js.native
-  }
-
-  @js.native
   sealed trait CornerType extends js.Object
 
   @JSName("Cesium.CornerType")
@@ -418,6 +405,20 @@ package cesium {
     var defaultKey : String = js.native
     def getKey(): String = js.native
   }
+
+  @js.native
+  sealed trait WindingOrder extends js.Object
+
+  @JSName("Cesium.WindingOrder")
+  @js.native
+  object WindingOrder extends js.Object {
+    val CLOCKWISE: Int = js.native
+    val COUNTER_CLOCKWISE: Int = js.native
+
+    @JSBracketAccess
+    def apply(value: WindingOrder): Int = js.native
+  }
+
 
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
@@ -7823,7 +7824,6 @@ package cesium {
     var backwardExtrapolationType: ExtrapolationType = js.native
     var backwardExtrapolationDuration: Double = js.native
 
-    // todo
     def setInterpolationOptions(options: InterpolationOptions = ???): js.Dynamic = js.native
 
     def addSample(time: JulianDate, position: Cartesian3, derivatives: js.Array[Cartesian3] = ???): js.Dynamic = js.native
@@ -13128,5 +13128,50 @@ package cesium {
 
     def unpackInterpolationResult(array: Array[Double], sourceArray: Array[Double], startingIndex: Int = ???, lastIndex: Int = ???, result: js.Object = ???): Unit = js.native
   }
+
+  /**
+    * Easing functions for use with TweenCollection. These function are from Tween.js and Robert Penner.
+    * See the Tween.js graphs for each function.
+    */
+  @js.native
+  @JSName("Cesium.EasingFunction")
+  class EasingFunction protected() extends js.Object {
+    val BACK_IN: EasingFunction.Callback = js.native
+    val BACK_IN_OUT: EasingFunction.Callback = js.native
+    val BACK_OUT: EasingFunction.Callback = js.native
+    val BOUNCE_IN: EasingFunction.Callback = js.native
+    val BOUNCE_IN_OUT: EasingFunction.Callback = js.native
+    val BOUNCE_OUT: EasingFunction.Callback = js.native
+    val CIRCULAR_IN: EasingFunction.Callback = js.native
+    val CIRCULAR_IN_OUT: EasingFunction.Callback = js.native
+    val CIRCULAR_OUT: EasingFunction.Callback = js.native
+    val CUBIC_IN: EasingFunction.Callback = js.native
+    val CUBIC_IN_OUT: EasingFunction.Callback = js.native
+    val CUBIC_OUT: EasingFunction.Callback = js.native
+    val ELASTIC_IN: EasingFunction.Callback = js.native
+    val ELASTIC_IN_OUT: EasingFunction.Callback = js.native
+    val ELASTIC_OUT: EasingFunction.Callback = js.native
+    val EXPONENTIAL_IN: EasingFunction.Callback = js.native
+    val EXPONENTIAL_IN_OUT: EasingFunction.Callback = js.native
+    val EXPONENTIAL_OUT: EasingFunction.Callback = js.native
+    val LINEAR_NONE: EasingFunction.Callback = js.native
+    val QUADRACTIC_IN: EasingFunction.Callback = js.native
+    val QUADRACTIC_IN_OUT: EasingFunction.Callback = js.native
+    val QUADRACTIC_OUT: EasingFunction.Callback = js.native
+    val QUINTIC_IN: EasingFunction.Callback = js.native
+    val QUINTIC_IN_OUT: EasingFunction.Callback = js.native
+    val QUINTIC_OUT: EasingFunction.Callback = js.native
+    val SINUSOIDAL_IN: EasingFunction.Callback = js.native
+    val SINUSOIDAL_IN_OUT: EasingFunction.Callback = js.native
+    val SINUSOIDAL_OUT: EasingFunction.Callback = js.native
+
+  }
+
+  @JSName("Cesium.EasingFunction")
+  @js.native
+  object EasingFunction extends js.Object {
+    type Callback = js.Function1[Double, Double]
+  }
+
 
 }
