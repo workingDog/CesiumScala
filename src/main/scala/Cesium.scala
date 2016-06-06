@@ -26,6 +26,8 @@ package cesium {
 
   import scala.scalajs.js.typedarray.{ArrayBuffer, Float32Array, Float64Array, Int16Array, Int8Array, TypedArray, Uint16Array, Uint32Array, Uint8Array}
 
+  import scala.language.implicitConversions
+
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
@@ -257,7 +259,7 @@ package cesium {
   sealed trait Packable extends js.Object {
     var packedLength: Int = js.native
 
-    def pack(value: js.Object | Double | Int, array: js.Array[Double], startingIndex: Int = ???): Unit = js.native
+    def pack(value: js.Object, array: js.Array[Double], startingIndex: Int = ???): Unit = js.native
 
     def unpack(array: js.Array[Double], startingIndex: Int = ???, result: js.Object = ???): js.Object = js.native
   }
@@ -7875,9 +7877,9 @@ package cesium {
   @js.native
   @JSName("Cesium.SampledProperty")
   class SampledProperty protected() extends Property {
-    def this(`type`: Double.type | Int.type | Packable, derivativeTypes: js.Array[Packable] = ???) = this()
+    def this(`type`: js.Dynamic | Packable, derivativeTypes: js.Array[Double] | js.Array[Packable] = ???) = this()
 
-    var derivativeTypes: js.Array[Packable] = js.native
+    var derivativeTypes: js.Array[Double] | js.Array[Packable] = js.native
     var interpolationDegree: Double = js.native
     var interpolationAlgorithm: InterpolationAlgorithm = js.native
     var forwardExtrapolationType: ExtrapolationType = js.native
@@ -7887,9 +7889,9 @@ package cesium {
 
     def setInterpolationOptions(options: InterpolationOptions = ???): js.Dynamic = js.native
 
-    def addSample(time: JulianDate, value: Packable, derivatives: js.Array[Packable] = ???): js.Dynamic = js.native
+    def addSample(time: JulianDate, value: Double | Packable, derivatives: js.Array[Double] | js.Array[Packable] = ???): js.Dynamic = js.native
 
-    def addSamples(times: js.Array[JulianDate], values: js.Array[Packable], derivativeValues: js.Array[js.Array[js.Any]] = ???): js.Dynamic = js.native
+    def addSamples(times: js.Array[JulianDate], values: js.Array[Double] | js.Array[Packable], derivativeValues: js.Array[js.Array[js.Any]] = ???): js.Dynamic = js.native
 
     def addSamplesPackedArray(packedSamples: js.Array[Double], epoch: JulianDate = ???): js.Dynamic = js.native
   }
