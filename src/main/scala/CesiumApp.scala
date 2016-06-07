@@ -1,4 +1,3 @@
-
 import cesium.{ModelGraphics, _}
 import cesiumOptions._
 
@@ -115,5 +114,4 @@ object CesiumApp extends JSApp {
   }
 
 }
-
 

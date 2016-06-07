@@ -236,8 +236,7 @@ package cesium {
     def interpolateOrderZero(x: Double, xTable: Array[Double], yTable: Array[Double], yStride: Array[Int], result: Array[Double]): Array[Double] = js.native
   }
 
-  // todo not yet implemented in Cesium.js
-  //@js.native
+  // todo
   @ScalaJSDefined
   sealed trait Frustum extends js.Object
 
@@ -600,7 +599,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.BoundingSphere")
-  class BoundingSphere protected()extends js.Object {
+  class BoundingSphere protected() extends js.Object {
     def this(center: Cartesian3 = ???, radius: Double = ???) = this()
 
     var center: Cartesian3 = js.native
@@ -697,7 +696,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.BoxGeometry")
-  class BoxGeometry protected()extends js.Object {
+  class BoxGeometry protected() extends js.Object {
     def this(options: BoxGeometryOptions) = this()
   }
 
@@ -739,7 +738,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.BoxOutlineGeometry")
-  class BoxOutlineGeometry protected()extends js.Object {
+  class BoxOutlineGeometry protected() extends js.Object {
     def this(options: BoxOutlineGeometryOptions) = this()
   }
 
@@ -870,7 +869,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.Cartesian3")
-  class Cartesian3 protected()extends js.Object {
+  class Cartesian3 protected() extends js.Object {
     def this(x: Double = ???, y: Double = ???, z: Double = ???) = this()
 
     var x: Double = js.native
@@ -984,7 +983,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.Cartesian4")
-  class Cartesian4 protected()extends js.Object {
+  class Cartesian4 protected() extends js.Object {
     def this(x: Double = ???, y: Double = ???, z: Double = ???, w: Double = ???) = this()
 
     var x: Double = js.native
@@ -1261,7 +1260,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.CircleGeometry")
-  class CircleGeometry protected()extends js.Object {
+  class CircleGeometry protected() extends js.Object {
     def this(options: CircleGeometryOptions) = this()
   }
 
@@ -1307,7 +1306,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.CircleOutlineGeometry")
-  class CircleOutlineGeometry protected()extends js.Object {
+  class CircleOutlineGeometry protected() extends js.Object {
     def this(options: CircleOutlineGeometryOptions) = this()
   }
 
@@ -1387,7 +1386,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.Color")
-  class Color protected()extends js.Object {
+  class Color protected() extends js.Object {
     def this(red: Double = ???, green: Double = ???, blue: Double = ???, alpha: Double = ???) = this()
 
     var red: Double = js.native
@@ -1685,7 +1684,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.CorridorGeometry")
-  class CorridorGeometry protected()extends js.Object {
+  class CorridorGeometry protected() extends js.Object {
     def this(options: CorridorGeometryOptions) = this()
   }
 
@@ -3297,7 +3296,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.Matrix4")
-  class Matrix4 protected()extends js.Object {
+  class Matrix4 protected() extends js.Object {
     def this(column0Row0: Double = ???, column1Row0: Double = ???, column2Row0: Double = ???, column3Row0: Double = ???, column0Row1: Double = ???, column1Row1: Double = ???, column2Row1: Double = ???, column3Row1: Double = ???, column0Row2: Double = ???, column1Row2: Double = ???, column2Row2: Double = ???, column3Row2: Double = ???, column0Row3: Double = ???, column1Row3: Double = ???, column2Row3: Double = ???, column3Row3: Double = ???) = this()
 
     var length: Double = js.native
@@ -3447,7 +3446,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.NearFarScalar")
-  class NearFarScalar protected()extends js.Object {
+  class NearFarScalar protected() extends js.Object {
     def this(near: Double = ???, nearValue: Double = ???, far: Double = ???, farValue: Double = ???) = this()
 
     var near: Double = js.native
@@ -4141,7 +4140,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.Quaternion")
-  class Quaternion protected()extends js.Object {
+  class Quaternion protected() extends js.Object {
     def this(x: Double = ???, y: Double = ???, z: Double = ???, w: Double = ???) = this()
 
     var x: Double = js.native
@@ -4336,7 +4335,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.Rectangle")
-  class Rectangle protected()extends js.Object {
+  class Rectangle protected() extends js.Object {
     def this(west: Double = ???, south: Double = ???, east: Double = ???, north: Double = ???) = this()
 
     var west: Double = js.native
@@ -12948,7 +12947,6 @@ package cesium {
 
     var shadowMap: ShadowMap = js.native
 
-
     def extend(mixin: Viewer.ViewerMixin, options: js.Any = ???): js.Dynamic = js.native
 
     def resize(): js.Dynamic = js.native
@@ -12966,30 +12964,50 @@ package cesium {
     def flyTo(target: Entity | js.Array[Entity] | EntityCollection | DataSource | ImageryLayer | Promise[Entity | js.Array[Entity] | EntityCollection | DataSource | ImageryLayer], options: ViewerFlyToOptions = ???): Promise[Boolean] = js.native
   }
 
+  /**
+    * Finds an item in a sorted array.
+    */
   @JSName("Cesium.binarySearch")
   @js.native
   object BinarySearch extends js.Object {
     type Comparator = js.Function2[js.Any, js.Any, Double]
   }
 
+  /**
+    * A stable merge sort.
+    */
   @JSName("Cesium.mergeSort")
   @js.native
   object MergeSort extends js.Object {
     type Comparator = js.Function3[js.Any, js.Any, js.Any, Double]
   }
 
+  /**
+    * A browser-independent function to request a new animation frame.
+    * This is used to create an application's draw loop as shown in the example below.
+    */
   @JSName("Cesium.requestAnimationFrame")
   @js.native
   object RequestAnimationFrame extends js.Object {
     type Callback = js.Function1[Double, Unit]
   }
 
+  /**
+    * Because browsers throttle the number of parallel requests allowed to each server, this function tracks
+    * the number of active requests in progress to each server, and returns undefined immediately
+    * if the request would exceed the maximum, allowing the caller to retry later,
+    * instead of queueing indefinitely under the browser's control.
+    */
   @JSName("Cesium.throttleRequestByServer")
   @js.native
   object ThrottleRequestByServer extends js.Object {
     type RequestFunction = js.Function1[String, Promise[js.Any]]
   }
 
+  /**
+    * Creates an adapter function to allow a calculation function to operate as a Web Worker,
+    * paired with TaskProcessor, to receive tasks and return results.
+    */
   @JSName("Cesium.createTaskProcessorWorker")
   @js.native
   object CreateTaskProcessorWorker extends js.Object {
@@ -12997,6 +13015,12 @@ package cesium {
     type TaskProcessorWorkerFunction = js.Function1[js.Any, Unit]
   }
 
+  /**
+    * Cesium is an open-source JavaScript library for world-class 3D globes and maps
+    *
+    * see: [[http://cesiumjs.org/index.html]]
+    *
+    */
   @JSName("Cesium")
   @js.native
   object Cesium extends js.Object {
@@ -13088,6 +13112,9 @@ package cesium {
     def createTaskProcessorWorker(workerFunction: CreateTaskProcessorWorker.WorkerFunction): CreateTaskProcessorWorker.TaskProcessorWorkerFunction = js.native
   }
 
+  /**
+    * Content pipeline functions for geometries.
+    */
   @JSName("Cesium.GeometryPipeline")
   @js.native
   object GeometryPipeline extends js.Object {
@@ -13107,6 +13134,9 @@ package cesium {
 
   }
 
+  /**
+    * An InterpolationAlgorithm for performing linear interpolation.
+    */
   @JSName("Cesium.LinearApproximation")
   @js.native
   object LinearApproximation extends InterpolationAlgorithm

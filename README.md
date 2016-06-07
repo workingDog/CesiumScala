@@ -12,7 +12,7 @@ using [Scala.js](https://www.scala-js.org/).
 
 Add the following dependency to your build.sbt:
 
-    libraryDependencies += "com.github.workingDog" %%% "cesiumscala" % "1.0"
+    libraryDependencies += "com.github.workingDog" %%% "cesiumscala" % "1.1"
 
 To run the basic [CesiumApp](https://github.com/workingDog/CesiumScala/blob/master/src/main/scala/CesiumApp.scala)
 you can install and run Cesium.js locally. Refer to [Cesium tutorial](https://cesiumjs.org/tutorials/cesium-up-and-running/) for how to
