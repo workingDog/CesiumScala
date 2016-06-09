@@ -7,12 +7,12 @@ Change Log
 
 * changed Packable to be a simple trait that extends js.Object
 
-* added trait PackableObj that extends Packable, so that derived classes extends Packable and
-their companion object extends PackableObj which has the required static methods.
+* added trait PackableStatic that extends Packable, so that derived classes extends Packable and
+their companion object extends PackableStatic which has the required static methods.
 
 * changed BoundingSphere, BoxGeometry, BoxOutlineGeometry, Cartesian2, Cartesian3, Cartesian4, CircleGeometry,
 CircleOutlineGeometry, Color, CorridorGeometry, Matrix4, NearFarScalar, Rectangle,
-VertexFormat to extends Packable and their corresponding object extends PackableObj
+VertexFormat to extends Packable and their corresponding object extends PackableStatic
 
 * changed Quaternion to extends PackableForInterpolation
 
@@ -29,11 +29,11 @@ to extends TerrainProvider
 
 * changed class GeometryUpdater to trait GeometryUpdater
 
-* changed object GeometryUpdater to trait GeometryUpdaterObj
+* changed object GeometryUpdater to trait GeometryUpdaterStatic
 
 * changed EllipseGeometryUpdater, EllipsoidGeometryUpdater, PolygonGeometryUpdater,
 PolylineGeometryUpdater, RectangleGeometryUpdater, WallGeometryUpdater to extends GeometryUpdater
-also their corresponding object to extends GeometryUpdaterObj
+also their corresponding object to extends GeometryUpdaterStatic
 
 * changed class MaterialProperty to trait MaterialProperty
 
@@ -46,11 +46,11 @@ to extends Visualizer
 
 * changed class ImageryProvider to trait ImageryProvider
 
-* changed object ImageryProvider to trait ImageryProviderObj
+* changed object ImageryProvider to trait ImageryProviderStatic
 
 * changed ArcGisMapServerImageryProvider, SingleTileImageryProvider,BingMapsImageryProvider, UrlTemplateImageryProvider,
 GoogleEarthImageryProvider,MapboxImageryProvider,WebMapTileServiceImageryProvider,WebMapServiceImageryProvider
-to extends ImageryProvider, also add a corresponding object for each to extends ImageryProviderObj
+to extends ImageryProvider, also add a corresponding object for each to extends ImageryProviderStatic
 
 * changed class Label to trait Label
 
