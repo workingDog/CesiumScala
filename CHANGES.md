@@ -50,7 +50,7 @@ to extends Visualizer
 
 * changed ArcGisMapServerImageryProvider, SingleTileImageryProvider,BingMapsImageryProvider, UrlTemplateImageryProvider,
 GoogleEarthImageryProvider,MapboxImageryProvider,WebMapTileServiceImageryProvider,WebMapServiceImageryProvider
-to extends ImageryProvider, also add a corresponding object for each to extends ImageryProviderStatic
+to extends ImageryProvider, also add a corresponding object to all that extends ImageryProviderStatic
 
 * changed class Label to trait Label
 
