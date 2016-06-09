@@ -42,13 +42,21 @@ Example of ModelGraphicsOptions:
 
 See also the [Using the JSOptionBuilder](https://github.com/jducoeur/jsext#using-the-jsoptionbuilder) documentation.
 
-## Compiling and packaging
+## Compiling, packaging and publishing
 
 To compile and generate a jar file from the source code:
 
     sbt package
 
 The jar file (cesiumscala_sjs0.6_2.11-1.2-SNAPSHOT.jar) will be in the "./target/scala-2.11" directory.
+
+To publish **cesiumscala** to your local (Ivy) repository, simply type:
+
+    sbt publishLocal
+
+Then put this in your build.sbt
+
+ libraryDependencies += "com.github.workingDog" %%% "cesiumscala" % "1.2-SNAPSHOT"
 
 ## Dependencies code inclusions
 
