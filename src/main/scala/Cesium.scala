@@ -457,22 +457,8 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.ArcGisImageServerTerrainProvider")
-  class ArcGisImageServerTerrainProvider protected() extends js.Object {
+  class ArcGisImageServerTerrainProvider protected() extends TerrainProvider {
     def this(options: ArcGisImageServerTerrainProviderOptions) = this()
-
-    var errorEvent: Event = js.native
-    var credit: Credit = js.native
-    var tilingScheme: GeographicTilingScheme = js.native
-    var ready: Boolean = js.native
-    var readyPromise: Promise[Boolean] = js.native
-    var hasWaterMask: Boolean = js.native
-    var hasVertexNormals: Boolean = js.native
-
-    def requestTileGeometry(x: Double, y: Double, level: Double): Promise[TerrainData] | Unit = js.native
-
-    def getLevelMaximumGeometricError(level: Double): Double = js.native
-
-    def getTileDataAvailable(x: Double, y: Double, level: Double): Boolean = js.native
   }
 
   /**
@@ -620,8 +606,7 @@ package cesium {
 
   @js.native
   @JSName("Cesium.BoundingSphere")
-  object BoundingSphere extends js.Object {
-    var packedLength: Double = js.native
+  object BoundingSphere extends Packable{
 
     def fromPoints(positions: js.Array[Cartesian3], result: BoundingSphere = ???): BoundingSphere = js.native
 
@@ -644,10 +629,6 @@ package cesium {
     def fromOrientedBoundingBox(orientedBoundingBox: OrientedBoundingBox, result: BoundingSphere = ???): BoundingSphere = js.native
 
     def clone(sphere: BoundingSphere, result: BoundingSphere = ???): BoundingSphere = js.native
-
-    def pack(value: BoundingSphere, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
-
-    def unpack(array: js.Array[Double], startingIndex: Double = ???, result: BoundingSphere = ???): BoundingSphere = js.native
 
     def union(left: BoundingSphere, right: BoundingSphere, result: BoundingSphere = ???): BoundingSphere = js.native
 
@@ -702,16 +683,11 @@ package cesium {
 
   @js.native
   @JSName("Cesium.BoxGeometry")
-  object BoxGeometry extends js.Object {
-    var packedLength: Double = js.native
+  object BoxGeometry extends Packable {
 
     def fromDimensions(options: DimensionsOptions): BoxGeometry = js.native
 
     def fromAxisAlignedBoundingBox(boundingBox: AxisAlignedBoundingBox): BoxGeometry = js.native
-
-    def pack(value: BoxGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
-
-    def unpack(array: js.Array[Double], startingIndex: Double = ???, result: BoxGeometry = ???): BoxGeometry = js.native
 
     def createGeometry(boxGeometry: BoxGeometry): Geometry | Unit = js.native
   }
@@ -744,16 +720,11 @@ package cesium {
 
   @js.native
   @JSName("Cesium.BoxOutlineGeometry")
-  object BoxOutlineGeometry extends js.Object {
-    var packedLength: Double = js.native
+  object BoxOutlineGeometry extends Packable {
 
     def fromDimensions(dimensions: Option[Cartesian3]): BoxOutlineGeometry = js.native
 
     def fromAxisAlignedBoundingBox(boundingBox: AxisAlignedBoundingBox): BoxOutlineGeometry = js.native
-
-    def pack(value: BoxOutlineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
-
-    def unpack(array: js.Array[Double], startingIndex: Double = ???, result: BoxOutlineGeometry = ???): BoxOutlineGeometry = js.native
 
     def createGeometry(boxGeometry: BoxOutlineGeometry): Geometry | Unit = js.native
   }
@@ -789,8 +760,8 @@ package cesium {
 
   @js.native
   @JSName("Cesium.Cartesian2")
-  object Cartesian2 extends js.Object  {
-    var packedLength: Int = js.native
+  object Cartesian2 extends Packable  {
+
     var ZERO: Cartesian2 = js.native
     var UNIT_X: Cartesian2 = js.native
     var UNIT_Y: Cartesian2 = js.native
@@ -802,10 +773,6 @@ package cesium {
     def fromCartesian3(cartesian: Cartesian3, result: Cartesian2 = ???): Cartesian2 = js.native
 
     def fromCartesian4(cartesian: Cartesian4, result: Cartesian2 = ???): Cartesian2 = js.native
-
-    def pack(value: Cartesian2, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
-
-    def unpack(array: js.Array[Double], startingIndex: Double = ???, result: Cartesian2 = ???): Cartesian2 = js.native
 
     def fromArray(array: js.Array[Double], startingIndex: Double = ???, result: Cartesian2 = ???): Cartesian2 = js.native
 
@@ -887,8 +854,8 @@ package cesium {
 
   @js.native
   @JSName("Cesium.Cartesian3")
-  object Cartesian3 extends js.Object {
-    var packedLength: Double = js.native
+  object Cartesian3 extends Packable {
+
     var ZERO: Cartesian3 = js.native
     var UNIT_X: Cartesian3 = js.native
     var UNIT_Y: Cartesian3 = js.native
@@ -901,10 +868,6 @@ package cesium {
     def clone(cartesian: Cartesian3, result: Cartesian3 = ???): Cartesian3 = js.native
 
     def fromCartesian4(cartesian: Cartesian4, result: Cartesian3 = ???): Cartesian3 = js.native
-
-    def pack(value: Cartesian3, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
-
-    def unpack(array: js.Array[Double], startingIndex: Double = ???, result: Cartesian3 = ???): Cartesian3 = js.native
 
     def fromArray(array: js.Array[Double], startingIndex: Double = ???, result: Cartesian3 = ???): Cartesian3 = js.native
 
@@ -1002,8 +965,8 @@ package cesium {
 
   @js.native
   @JSName("Cesium.Cartesian4")
-  object Cartesian4 extends js.Object {
-    var packedLength: Double = js.native
+  object Cartesian4 extends Packable {
+
     var ZERO: Cartesian4 = js.native
     var UNIT_X: Cartesian4 = js.native
     var UNIT_Y: Cartesian4 = js.native
@@ -1015,10 +978,6 @@ package cesium {
     def fromColor(color: Color, result: Cartesian4 = ???): Cartesian4 = js.native
 
     def clone(cartesian: Cartesian4, result: Cartesian4 = ???): Cartesian4 = js.native
-
-    def pack(value: Cartesian4, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
-
-    def unpack(array: js.Array[Double], startingIndex: Double = ???, result: Cartesian4 = ???): Cartesian4 = js.native
 
     def fromArray(array: js.Array[Double], startingIndex: Double = ???, result: Cartesian4 = ???): Cartesian4 = js.native
 
@@ -1209,24 +1168,11 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.CesiumTerrainProvider")
-  class CesiumTerrainProvider protected() extends js.Object {
+  class CesiumTerrainProvider protected() extends TerrainProvider {
     def this(options: CesiumTerrainProviderOptions) = this()
 
-    var errorEvent: Event = js.native
-    var credit: Credit = js.native
-    var tilingScheme: GeographicTilingScheme = js.native
-    var ready: Boolean = js.native
-    var readyPromise: Promise[Boolean] = js.native
-    var hasWaterMask: Boolean = js.native
-    var hasVertexNormals: Boolean = js.native
     var requestVertexNormals: Boolean = js.native
     var requestWaterMask: Boolean = js.native
-
-    def requestTileGeometry(x: Double, y: Double, level: Double, throttleRequests: Boolean = ???): Promise[TerrainData] | Unit = js.native
-
-    def getLevelMaximumGeometricError(level: Double): Double = js.native
-
-    def getTileDataAvailable(x: Double, y: Double, level: Double): Boolean = js.native
   }
 
   /**
@@ -1266,13 +1212,7 @@ package cesium {
 
   @js.native
   @JSName("Cesium.CircleGeometry")
-  object CircleGeometry extends js.Object {
-    var packedLength: Double = js.native
-
-    def pack(value: CircleGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
-
-    def unpack(array: js.Array[Double], startingIndex: Double = ???, result: CircleGeometry = ???): CircleGeometry = js.native
-
+  object CircleGeometry extends Packable {
     def createGeometry(circleGeometry: CircleGeometry): Geometry | Unit = js.native
   }
 
@@ -1312,13 +1252,7 @@ package cesium {
 
   @js.native
   @JSName("Cesium.CircleOutlineGeometry")
-  object CircleOutlineGeometry extends js.Object {
-    var packedLength: Double = js.native
-
-    def pack(value: CircleOutlineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
-
-    def unpack(array: js.Array[Double], startingIndex: Double = ???, result: CircleOutlineGeometry = ???): CircleOutlineGeometry = js.native
-
+  object CircleOutlineGeometry extends Packable {
     def createGeometry(circleGeometry: CircleOutlineGeometry): Geometry | Unit = js.native
   }
 
@@ -1417,8 +1351,8 @@ package cesium {
 
   @js.native
   @JSName("Cesium.Color")
-  object Color extends js.Object {
-    var packedLength: Double = js.native
+  object Color extends Packable {
+
     var ALICEBLUE: Color = js.native
     var ANTIQUEWHITE: Color = js.native
     var AQUA: Color = js.native
@@ -1581,10 +1515,6 @@ package cesium {
 
     def fromCssColorString(color: String, result: Color = ???): Color = js.native
 
-    def pack(value: Color, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
-
-    def unpack(array: js.Array[Double], startingIndex: Double = ???, result: Color = ???): Color = js.native
-
     def byteToFloat(number: Double): Double = js.native
 
     def floatToByte(number: Double): Double = js.native
@@ -1690,11 +1620,7 @@ package cesium {
 
   @js.native
   @JSName("Cesium.CorridorGeometry")
-  object CorridorGeometry extends js.Object {
-    def pack(value: CorridorGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
-
-    def unpack(array: js.Array[Double], startingIndex: Double = ???, result: CorridorGeometry = ???): CorridorGeometry = js.native
-
+  object CorridorGeometry extends Packable {
     def createGeometry(corridorGeometry: CorridorGeometry): Geometry | Unit = js.native
   }
 
@@ -2262,22 +2188,8 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.EllipsoidTerrainProvider")
-  class EllipsoidTerrainProvider protected() extends js.Object {
+  class EllipsoidTerrainProvider protected() extends TerrainProvider {
     def this(options: EllipsoidTerrainProviderOptions) = this()
-
-    var errorEvent: Event = js.native
-    var credit: Credit = js.native
-    var tilingScheme: GeographicTilingScheme = js.native
-    var ready: Boolean = js.native
-    var readyPromise: Promise[Boolean] = js.native
-    var hasWaterMask: Boolean = js.native
-    var hasVertexNormals: Boolean = js.native
-
-    def requestTileGeometry(x: Double, y: Double, level: Double, throttleRequests: Boolean = ???): Promise[TerrainData] | Unit = js.native
-
-    def getLevelMaximumGeometricError(level: Double): Double = js.native
-
-    def getTileDataAvailable(x: Double, y: Double, level: Double): Boolean = js.native
   }
 
   @JSName("Cesium.Event")
@@ -2754,18 +2666,8 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.HeightmapTerrainData")
-  class HeightmapTerrainData protected() extends js.Object {
+  class HeightmapTerrainData protected() extends TerrainData {
     def this(options: HeightmapTerrainDataOptions) = this()
-
-    var waterMask: Uint8Array | HTMLImageElement | HTMLCanvasElement = js.native
-
-    def interpolateHeight(rectangle: Rectangle, longitude: Double, latitude: Double): Double = js.native
-
-    def upsample(tilingScheme: TilingScheme, thisX: Double, thisY: Double, thisLevel: Double, descendantX: Double, descendantY: Double, descendantLevel: Double): Promise[HeightmapTerrainData] | Unit = js.native
-
-    def isChildAvailable(thisX: Double, thisY: Double, childX: Double, childY: Double): Boolean = js.native
-
-    def wasCreatedByUpsampling(): Boolean = js.native
   }
 
   /**
@@ -3312,8 +3214,8 @@ package cesium {
 
   @js.native
   @JSName("Cesium.Matrix4")
-  object Matrix4 extends js.Object {
-    var packedLength: Double = js.native
+  object Matrix4 extends Packable {
+
     var IDENTITY: Matrix4 = js.native
     var ZERO: Matrix4 = js.native
     var COLUMN0ROW0: Double = js.native
@@ -3332,10 +3234,6 @@ package cesium {
     var COLUMN3ROW1: Double = js.native
     var COLUMN3ROW2: Double = js.native
     var COLUMN3ROW3: Double = js.native
-
-    def pack(value: Matrix4, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
-
-    def unpack(array: js.Array[Double], startingIndex: Double = ???, result: Matrix4 = ???): Matrix4 = js.native
 
     def clone(matrix: Matrix4, result: Matrix4 = ???): Matrix4 = js.native
 
@@ -3432,6 +3330,66 @@ package cesium {
     def inverseTransformation(matrix: Matrix4, result: Matrix4): Matrix4 = js.native
   }
 
+
+  /**
+    * Defines the interface for a geometry updater.  A GeometryUpdater maps
+    * geometry defined as part of a [[Entity]] into [[Geometry]]
+    * instances.  These instances are then visualized by [[GeometryVisualizer]]
+    *
+    * This type defines an interface and cannot be instantiated directly.
+    *
+    * alias GeometryUpdater
+    *
+    *
+    *  - {Entity} entity The entity containing the geometry to be visualized.
+    *  - {Scene} scene The scene where visualization is taking place.
+    *
+    * @see EllipseGeometryUpdater
+    * @see EllipsoidGeometryUpdater
+    * @see PolygonGeometryUpdater
+    * @see PolylineGeometryUpdater
+    * @see RectangleGeometryUpdater
+    * @see WallGeometryUpdater
+    */
+  @js.native
+  @JSName("Cesium.GeometryUpdater")
+  trait GeometryUpdater extends js.Object {
+
+    var entity: Entity = js.native
+    var fillEnabled: Boolean = js.native
+    var hasConstantFill: Boolean = js.native
+    var fillMaterialProperty: MaterialProperty = js.native
+    var outlineEnabled: Boolean = js.native
+    var hasConstantOutline: Boolean = js.native
+    var outlineColorProperty: Property = js.native
+    var outlineWidth: Double = js.native
+    var isDynamic: Boolean = js.native
+    var isClosed: Boolean = js.native
+    var geometryChanged: Boolean = js.native
+
+    def isOutlineVisible(time: JulianDate): Boolean = js.native
+
+    def isFilled(time: JulianDate): Boolean = js.native
+
+    def createFillGeometryInstance(time: JulianDate): GeometryInstance = js.native
+
+    def createOutlineGeometryInstance(time: JulianDate): GeometryInstance = js.native
+
+    def isDestroyed(): Boolean = js.native
+
+    def destroy(): js.Dynamic = js.native
+
+    def createDynamicUpdater(primitives: PrimitiveCollection): DynamicGeometryUpdater = js.native
+
+  }
+
+  @js.native
+  @JSName("Cesium.GeometryUpdater")
+  trait GeometryUpdaterObj extends js.Object {
+    var perInstanceColorAppearanceType: Appearance = js.native
+    var materialAppearanceType: Appearance = js.native
+  }
+
   /**
     * Represents a scalar value's lower and upper bound at a near distance and far distance in eye space.
     * alias NearFarScalar
@@ -3461,14 +3419,9 @@ package cesium {
 
   @js.native
   @JSName("Cesium.NearFarScalar")
-  object NearFarScalar extends js.Object {
-    var packedLength: Double = js.native
+  object NearFarScalar extends Packable {
 
     def clone(nearFarScalar: NearFarScalar, result: NearFarScalar = ???): NearFarScalar = js.native
-
-    def pack(value: NearFarScalar, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
-
-    def unpack(array: js.Array[Double], startingIndex: Double = ???, result: NearFarScalar = ???): NearFarScalar = js.native
 
     def equals(left: NearFarScalar = ???, right: NearFarScalar = ???): Boolean = js.native
   }
@@ -4112,18 +4065,8 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.QuantizedMeshTerrainData")
-  class QuantizedMeshTerrainData protected() extends js.Object {
+  class QuantizedMeshTerrainData protected() extends TerrainData {
     def this(options: QuantizedMeshTerrainDataOptions) = this()
-
-    var waterMask: Uint8Array | HTMLImageElement | HTMLCanvasElement = js.native
-
-    def upsample(tilingScheme: TilingScheme, thisX: Double, thisY: Double, thisLevel: Double, descendantX: Double, descendantY: Double, descendantLevel: Double): Promise[QuantizedMeshTerrainData] | Unit = js.native
-
-    def interpolateHeight(rectangle: Rectangle, longitude: Double, latitude: Double): Double = js.native
-
-    def isChildAvailable(thisX: Double, thisY: Double, childX: Double, childY: Double): Boolean = js.native
-
-    def wasCreatedByUpsampling(): Boolean = js.native
   }
 
   /**
@@ -4159,9 +4102,8 @@ package cesium {
 
   @js.native
   @JSName("Cesium.Quaternion")
-  object Quaternion extends js.Object {
-    var packedLength: Double = js.native
-    var packedInterpolationLength: Double = js.native
+  object Quaternion extends PackableForInterpolation {
+
     var ZERO: Quaternion = js.native
     var IDENTITY: Quaternion = js.native
 
@@ -4170,14 +4112,6 @@ package cesium {
     def fromRotationMatrix(matrix: Matrix3, result: Quaternion = ???): Quaternion = js.native
 
     def fromHeadingPitchRoll(heading: Double, pitch: Double, roll: Double, result: Quaternion = ???): Quaternion = js.native
-
-    def pack(value: Quaternion, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
-
-    def unpack(array: js.Array[Double], startingIndex: Double = ???, result: Quaternion = ???): Quaternion = js.native
-
-    def convertPackedArrayForInterpolation(packedArray: js.Array[Double], startingIndex: Double, lastIndex: Double, result: js.Array[Double]): js.Dynamic = js.native
-
-    def unpackInterpolationResult(array: js.Array[Double], sourceArray: js.Array[Double], startingIndex: Double = ???, lastIndex: Double = ???, result: Quaternion = ???): Quaternion = js.native
 
     def clone(quaternion: Quaternion, result: Quaternion = ???): Quaternion = js.native
 
@@ -4354,13 +4288,9 @@ package cesium {
 
   @js.native
   @JSName("Cesium.Rectangle")
-  object Rectangle extends js.Object {
-    var packedLength: Double = js.native
+  object Rectangle extends Packable {
+
     var MAX_VALUE: Rectangle = js.native
-
-    def pack(value: Rectangle, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
-
-    def unpack(array: js.Array[Double], startingIndex: Double = ???, result: Rectangle = ???): Rectangle = js.native
 
     def computeWidth(rectangle: Rectangle): Double = js.native
 
@@ -4556,6 +4486,30 @@ package cesium {
     var name: String = js.native
     var message: String = js.native
     var stack: String = js.native
+  }
+
+  /**
+    * Defines the interface for data sources, which turn arbitrary data into a
+    * [[EntityCollection]] for generic consumption. This object is an interface
+    * for documentation purposes and is not intended to be instantiated directly.
+    * alias DataSource
+    *
+    * @see Entity
+    * @see DataSourceDisplay
+    */
+  @js.native
+  @JSName("Cesium.DataSource")
+  trait DataSource extends js.Object {
+    var name: String = js.native
+    var clock: DataSourceClock = js.native
+    var entities: EntityCollection = js.native
+    var isLoading: Boolean = js.native
+    var changedEvent: Event = js.native
+    var errorEvent: Event = js.native
+    var loadingEvent: Event = js.native
+    var show: Boolean = js.native
+
+    def update(time: JulianDate): Boolean = js.native
   }
 
   /**
@@ -4855,7 +4809,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.TerrainData")
-  class TerrainData extends js.Object {
+  trait TerrainData extends js.Object {
     var waterMask: Uint8Array | HTMLImageElement | HTMLCanvasElement = js.native
 
     def interpolateHeight(rectangle: Rectangle, longitude: Double, latitude: Double): Double = js.native
@@ -4880,7 +4834,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.TerrainProvider")
-  class TerrainProvider extends js.Object {
+  trait TerrainProvider extends js.Object {
     var errorEvent: Event = js.native
     var credit: Credit = js.native
     var tilingScheme: TilingScheme = js.native
@@ -4894,16 +4848,15 @@ package cesium {
     def getLevelMaximumGeometricError(level: Double): Double = js.native
 
     def getTileDataAvailable(x: Double, y: Double, level: Double): Boolean = js.native
-  }
 
-  @js.native
-  @JSName("Cesium.TerrainProvider")
-  object TerrainProvider extends js.Object {
+    // todo check this is correct, should these be in an object?
+    // static methods
     var heightmapTerrainQuality: Double = js.native
 
     def getRegularGridIndices(width: Double, height: Double): Uint16Array = js.native
 
     def getEstimatedLevelZeroGeometricErrorForAHeightmap(ellipsoid: Ellipsoid, tileImageWidth: Double, numberOfTilesAtLevelZero: Double): Double = js.native
+
   }
 
   /**
@@ -5162,22 +5115,8 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.VRTheWorldTerrainProvider")
-  class VRTheWorldTerrainProvider protected() extends js.Object {
+  class VRTheWorldTerrainProvider protected() extends TerrainProvider {
     def this(options: VRTheWorldTerrainProviderOptions) = this()
-
-    var errorEvent: Event = js.native
-    var credit: Credit = js.native
-    var tilingScheme: GeographicTilingScheme = js.native
-    var ready: Boolean = js.native
-    var readyPromise: Promise[Boolean] = js.native
-    var hasWaterMask: Boolean = js.native
-    var hasVertexNormals: Boolean = js.native
-
-    def requestTileGeometry(x: Double, y: Double, level: Double, throttleRequests: Boolean = ???): Promise[TerrainData] | Unit = js.native
-
-    def getLevelMaximumGeometricError(level: Double): Double = js.native
-
-    def getTileDataAvailable(x: Double, y: Double, level: Double): Boolean = js.native
   }
 
   /**
@@ -5213,7 +5152,7 @@ package cesium {
 
   @js.native
   @JSName("Cesium.VertexFormat")
-  object VertexFormat extends js.Object {
+  object VertexFormat extends Packable {
     var POSITION_ONLY: VertexFormat = js.native
     var POSITION_AND_NORMAL: VertexFormat = js.native
     var POSITION_NORMAL_AND_ST: VertexFormat = js.native
@@ -5221,11 +5160,6 @@ package cesium {
     var POSITION_AND_COLOR: VertexFormat = js.native
     var ALL: VertexFormat = js.native
     var DEFAULT: VertexFormat = js.native
-    var packedLength: Double = js.native
-
-    def pack(value: VertexFormat, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
-
-    def unpack(array: js.Array[Double], startingIndex: Double = ???, result: VertexFormat = ???): VertexFormat = js.native
 
     def clone(cartesian: VertexFormat, result: VertexFormat = ???): VertexFormat = js.native
   }
@@ -5526,14 +5460,8 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.BillboardVisualizer")
-  class BillboardVisualizer protected() extends js.Object {
+  class BillboardVisualizer protected() extends Visualizer {
     def this(scene: Scene, entityCollection: EntityCollection) = this()
-
-    def update(time: JulianDate): Boolean = js.native
-
-    def isDestroyed(): Boolean = js.native
-
-    def destroy(): js.Dynamic = js.native
   }
 
   /**
@@ -5972,17 +5900,8 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.CustomDataSource")
-  class CustomDataSource protected() extends js.Object {
+  class CustomDataSource protected() extends DataSource {
     def this(name: String = ???) = this()
-
-    var name: String = js.native
-    var clock: DataSourceClock = js.native
-    var entities: EntityCollection = js.native
-    var isLoading: Boolean = js.native
-    var changedEvent: Event = js.native
-    var errorEvent: Event = js.native
-    var loadingEvent: Event = js.native
-    var show: Boolean = js.native
   }
 
   /**
@@ -6088,17 +6007,8 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.CzmlDataSource")
-  class CzmlDataSource protected() extends js.Object {
+  class CzmlDataSource protected() extends DataSource {
     def this(name: String = ???) = this()
-
-    var name: String = js.native
-    var clock: DataSourceClock = js.native
-    var entities: EntityCollection = js.native
-    var isLoading: Boolean = js.native
-    var changedEvent: Event = js.native
-    var errorEvent: Event = js.native
-    var loadingEvent: Event = js.native
-    var show: Boolean = js.native
 
     def process(czml: String | js.Any, options: CzmlDataSourceOptions = ???): Promise[CzmlDataSource] = js.native
 
@@ -6117,30 +6027,6 @@ package cesium {
     def processPositionPacketData(`object`: js.Any, propertyName: String, packetData: js.Any, interval: TimeInterval, sourceUri: String, entityCollection: EntityCollection): js.Dynamic = js.native
 
     def processMaterialPacketData(`object`: js.Any, propertyName: String, packetData: js.Any, interval: TimeInterval, sourceUri: String, entityCollection: EntityCollection): js.Dynamic = js.native
-  }
-
-  /**
-    * Defines the interface for data sources, which turn arbitrary data into a
-    * [[EntityCollection]] for generic consumption. This object is an interface
-    * for documentation purposes and is not intended to be instantiated directly.
-    * alias DataSource
-    *
-    * @see Entity
-    * @see DataSourceDisplay
-    */
-  @js.native
-  @JSName("Cesium.DataSource")
-  class DataSource extends js.Object {
-    var name: String = js.native
-    var clock: DataSourceClock = js.native
-    var entities: EntityCollection = js.native
-    var isLoading: Boolean = js.native
-    var changedEvent: Event = js.native
-    var errorEvent: Event = js.native
-    var loadingEvent: Event = js.native
-    var show: Boolean = js.native
-
-    def update(time: JulianDate): Boolean = js.native
   }
 
   /**
@@ -6267,42 +6153,13 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.EllipseGeometryUpdater")
-  class EllipseGeometryUpdater protected() extends js.Object {
+  class EllipseGeometryUpdater protected() extends GeometryUpdater {
     def this(entity: Entity, scene: Scene) = this()
-
-    var entity: Entity = js.native
-    var fillEnabled: Boolean = js.native
-    var hasConstantFill: Boolean = js.native
-    var fillMaterialProperty: MaterialProperty = js.native
-    var outlineEnabled: Boolean = js.native
-    var hasConstantOutline: Boolean = js.native
-    var outlineColorProperty: Property = js.native
-    var outlineWidth: Double = js.native
-    var isDynamic: Boolean = js.native
-    var isClosed: Boolean = js.native
-    var geometryChanged: Boolean = js.native
-
-    def isOutlineVisible(time: JulianDate): Boolean = js.native
-
-    def isFilled(time: JulianDate): Boolean = js.native
-
-    def createFillGeometryInstance(time: JulianDate): GeometryInstance = js.native
-
-    def createOutlineGeometryInstance(time: JulianDate): GeometryInstance = js.native
-
-    def isDestroyed(): Boolean = js.native
-
-    def destroy(): js.Dynamic = js.native
-
-    def createDynamicUpdater(primitives: PrimitiveCollection): DynamicGeometryUpdater = js.native
   }
 
   @js.native
   @JSName("Cesium.EllipseGeometryUpdater")
-  object EllipseGeometryUpdater extends js.Object {
-    var perInstanceColorAppearanceType: Appearance = js.native
-    var materialAppearanceType: Appearance = js.native
-  }
+  object EllipseGeometryUpdater extends GeometryUpdaterObj
 
   /**
     * Describes an ellipse defined by a center point and semi-major and semi-minor axes.
@@ -6368,42 +6225,13 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.EllipsoidGeometryUpdater")
-  class EllipsoidGeometryUpdater protected() extends js.Object {
+  class EllipsoidGeometryUpdater protected() extends GeometryUpdater {
     def this(entity: Entity, scene: Scene) = this()
-
-    var entity: Entity = js.native
-    var fillEnabled: Boolean = js.native
-    var hasConstantFill: Boolean = js.native
-    var fillMaterialProperty: MaterialProperty = js.native
-    var outlineEnabled: Boolean = js.native
-    var hasConstantOutline: Boolean = js.native
-    var outlineColorProperty: Property = js.native
-    var outlineWidth: Double = js.native
-    var isDynamic: Boolean = js.native
-    var isClosed: Boolean = js.native
-    var geometryChanged: Boolean = js.native
-
-    def isOutlineVisible(time: JulianDate): Boolean = js.native
-
-    def isFilled(time: JulianDate): Boolean = js.native
-
-    def createFillGeometryInstance(time: JulianDate): GeometryInstance = js.native
-
-    def createOutlineGeometryInstance(time: JulianDate): GeometryInstance = js.native
-
-    def isDestroyed(): Boolean = js.native
-
-    def destroy(): js.Dynamic = js.native
-
-    def createDynamicUpdater(primitives: PrimitiveCollection): DynamicGeometryUpdater = js.native
   }
 
   @js.native
   @JSName("Cesium.EllipsoidGeometryUpdater")
-  object EllipsoidGeometryUpdater extends js.Object {
-    var perInstanceColorAppearanceType: Appearance = js.native
-    var materialAppearanceType: Appearance = js.native
-  }
+  object EllipsoidGeometryUpdater extends GeometryUpdaterObj
 
   /**
     * Describe an ellipsoid or sphere.  The center position and orientation are determined by the containing [[Entity]]
@@ -6625,19 +6453,10 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.GeoJsonDataSource")
-  class GeoJsonDataSource protected() extends js.Object {
+  class GeoJsonDataSource protected() extends DataSource {
     def this(name: String = ???) = this()
 
-    var name: String = js.native
-    var clock: DataSourceClock = js.native
-    var entities: EntityCollection = js.native
-    var isLoading: Boolean = js.native
-    var changedEvent: Event = js.native
-    var errorEvent: Event = js.native
-    var loadingEvent: Event = js.native
-    var show: Boolean = js.native
-
-    def load(data: String | js.Any, options: GeoJsonDataSourceOptions = ???): Promise[GeoJsonDataSource] = js.native
+    def load(data: String | js.Object, options: GeoJsonDataSourceOptions = ???): Promise[GeoJsonDataSource] = js.native
   }
 
   @js.native
@@ -6654,66 +6473,7 @@ package cesium {
     var crsLinkHrefs: js.Any = js.native
     var crsLinkTypes: js.Any = js.native
 
-    def load(data: String | js.Any, options: GeoJsonDataSourceOptions = ???): Promise[GeoJsonDataSource] = js.native
-  }
-
-  /**
-    * Defines the interface for a geometry updater.  A GeometryUpdater maps
-    * geometry defined as part of a [[Entity]] into [[Geometry]]
-    * instances.  These instances are then visualized by [[GeometryVisualizer]]
-    *
-    * This type defines an interface and cannot be instantiated directly.
-    *
-    * alias GeometryUpdater
-    *
-    *
-    *  - {Entity} entity The entity containing the geometry to be visualized.
-    *  - {Scene} scene The scene where visualization is taking place.
-    *
-    * @see EllipseGeometryUpdater
-    * @see EllipsoidGeometryUpdater
-    * @see PolygonGeometryUpdater
-    * @see PolylineGeometryUpdater
-    * @see RectangleGeometryUpdater
-    * @see WallGeometryUpdater
-    */
-  @js.native
-  @JSName("Cesium.GeometryUpdater")
-  class GeometryUpdater protected() extends js.Object {
-    def this(entity: Entity, scene: Scene) = this()
-
-    var entity: Entity = js.native
-    var fillEnabled: Boolean = js.native
-    var hasConstantFill: Boolean = js.native
-    var fillMaterialProperty: MaterialProperty = js.native
-    var outlineEnabled: Boolean = js.native
-    var hasConstantOutline: Boolean = js.native
-    var outlineColorProperty: Property = js.native
-    var outlineWidth: Double = js.native
-    var isDynamic: Boolean = js.native
-    var isClosed: Boolean = js.native
-    var geometryChanged: Boolean = js.native
-
-    def isOutlineVisible(time: JulianDate): Boolean = js.native
-
-    def isFilled(time: JulianDate): Boolean = js.native
-
-    def createFillGeometryInstance(time: JulianDate): GeometryInstance = js.native
-
-    def createOutlineGeometryInstance(time: JulianDate): GeometryInstance = js.native
-
-    def isDestroyed(): Boolean = js.native
-
-    def destroy(): js.Dynamic = js.native
-
-    def createDynamicUpdater(primitives: PrimitiveCollection): DynamicGeometryUpdater = js.native
-  }
-
-  @js.native
-  @JSName("Cesium.GeometryUpdater")
-  object GeometryUpdater extends js.Object {
-    var perInstanceColorAppearanceType: Appearance = js.native
-    var materialAppearanceType: Appearance = js.native
+    def load(data: String | js.Object, options: GeoJsonDataSourceOptions = ???): Promise[GeoJsonDataSource] = js.native
   }
 
   /**
@@ -6727,14 +6487,8 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.GeometryVisualizer")
-  class GeometryVisualizer protected() extends js.Object {
+  class GeometryVisualizer protected() extends Visualizer {
     def this(`type`: GeometryUpdater, scene: Scene, entityCollection: EntityCollection) = this()
-
-    def update(time: JulianDate): Boolean = js.native
-
-    def isDestroyed(): Boolean = js.native
-
-    def destroy(): js.Dynamic = js.native
   }
 
   /**
@@ -6820,25 +6574,15 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.KmlDataSource")
-  class KmlDataSource protected() extends js.Object {
+  class KmlDataSource protected() extends DataSource {
     def this(options: KmlDataSourceOptions) = this()
 
-    var name: String = js.native
-    var clock: DataSourceClock = js.native
-    var entities: EntityCollection = js.native
-    var isLoading: Boolean = js.native
-    var changedEvent: Event = js.native
-    var errorEvent: Event = js.native
-    var loadingEvent: Event = js.native
     var refreshEvent: Event = js.native
-    var show: Boolean = js.native
 
     var camera: Camera = js.native
     var canvas: Canvas = js.native
 
     def load(data: String | Document | Blob, options: KmlDataSourceOptions = ???): Promise[KmlDataSource] = js.native
-
-    def update(time: JulianDate): Boolean = js.native
   }
 
   @js.native
@@ -6930,14 +6674,8 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.LabelVisualizer")
-  class LabelVisualizer protected() extends js.Object {
+  class LabelVisualizer protected() extends Visualizer {
     def this(scene: Scene, entityCollection: EntityCollection) = this()
-
-    def update(time: JulianDate): Boolean = js.native
-
-    def isDestroyed(): Boolean = js.native
-
-    def destroy(): js.Dynamic = js.native
   }
 
   /**
@@ -6956,7 +6694,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.MaterialProperty")
-  class MaterialProperty extends js.Object {
+  trait MaterialProperty extends js.Object {
     var isConstant: Boolean = js.native
     var definitionChanged: Event = js.native
 
@@ -7021,14 +6759,8 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.ModelVisualizer")
-  class ModelVisualizer protected() extends js.Object {
+  class ModelVisualizer protected() extends Visualizer {
     def this(scene: Scene, entityCollection: EntityCollection) = this()
-
-    def update(time: JulianDate): Boolean = js.native
-
-    def isDestroyed(): Boolean = js.native
-
-    def destroy(): js.Dynamic = js.native
   }
 
   /**
@@ -7099,14 +6831,8 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.PathVisualizer")
-  class PathVisualizer protected() extends js.Object {
+  class PathVisualizer protected() extends Visualizer {
     def this(scene: Scene, entityCollection: EntityCollection) = this()
-
-    def update(time: JulianDate): Boolean = js.native
-
-    def isDestroyed(): Boolean = js.native
-
-    def destroy(): js.Dynamic = js.native
   }
 
   /**
@@ -7153,14 +6879,8 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.PointVisualizer")
-  class PointVisualizer protected() extends js.Object {
+  class PointVisualizer protected() extends Visualizer {
     def this(scene: Scene, entityCollection: EntityCollection) = this()
-
-    def update(time: JulianDate): Boolean = js.native
-
-    def isDestroyed(): Boolean = js.native
-
-    def destroy(): js.Dynamic = js.native
   }
 
   /**
@@ -7174,42 +6894,13 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.PolygonGeometryUpdater")
-  class PolygonGeometryUpdater protected() extends js.Object {
+  class PolygonGeometryUpdater protected() extends GeometryUpdater {
     def this(entity: Entity, scene: Scene) = this()
-
-    var entity: Entity = js.native
-    var fillEnabled: Boolean = js.native
-    var hasConstantFill: Boolean = js.native
-    var fillMaterialProperty: MaterialProperty = js.native
-    var outlineEnabled: Boolean = js.native
-    var hasConstantOutline: Boolean = js.native
-    var outlineColorProperty: Property = js.native
-    var outlineWidth: Double = js.native
-    var isDynamic: Boolean = js.native
-    var isClosed: Boolean = js.native
-    var geometryChanged: Boolean = js.native
-
-    def isOutlineVisible(time: JulianDate): Boolean = js.native
-
-    def isFilled(time: JulianDate): Boolean = js.native
-
-    def createFillGeometryInstance(time: JulianDate): GeometryInstance = js.native
-
-    def createOutlineGeometryInstance(time: JulianDate): GeometryInstance = js.native
-
-    def isDestroyed(): Boolean = js.native
-
-    def destroy(): js.Dynamic = js.native
-
-    def createDynamicUpdater(primitives: PrimitiveCollection): DynamicGeometryUpdater = js.native
   }
 
   @js.native
   @JSName("Cesium.PolygonGeometryUpdater")
-  object PolygonGeometryUpdater extends js.Object {
-    var perInstanceColorAppearanceType: Appearance = js.native
-    var materialAppearanceType: Appearance = js.native
-  }
+  object PolygonGeometryUpdater extends GeometryUpdaterObj
 
   /**
     * Describes a polygon defined by an hierarchy of linear rings which make up the outer shape and any nested holes.
@@ -7299,41 +6990,13 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.PolylineGeometryUpdater")
-  class PolylineGeometryUpdater protected() extends js.Object {
+  class PolylineGeometryUpdater protected() extends GeometryUpdater {
     def this(entity: Entity, scene: Scene) = this()
-
-    var entity: Entity = js.native
-    var fillEnabled: Boolean = js.native
-    var hasConstantFill: Boolean = js.native
-    var fillMaterialProperty: MaterialProperty = js.native
-    var outlineEnabled: Boolean = js.native
-    var hasConstantOutline: Boolean = js.native
-    var outlineColorProperty: Property = js.native
-    var isDynamic: Boolean = js.native
-    var isClosed: Boolean = js.native
-    var geometryChanged: Boolean = js.native
-
-    def isOutlineVisible(time: JulianDate): Boolean = js.native
-
-    def isFilled(time: JulianDate): Boolean = js.native
-
-    def createFillGeometryInstance(time: JulianDate): GeometryInstance = js.native
-
-    def createOutlineGeometryInstance(time: JulianDate): GeometryInstance = js.native
-
-    def isDestroyed(): Boolean = js.native
-
-    def destroy(): js.Dynamic = js.native
-
-    def createDynamicUpdater(primitives: PrimitiveCollection): DynamicGeometryUpdater = js.native
-  }
+ }
 
   @js.native
   @JSName("Cesium.PolylineGeometryUpdater")
-  object PolylineGeometryUpdater extends js.Object {
-    var perInstanceColorAppearanceType: Appearance = js.native
-    var materialAppearanceType: Appearance = js.native
-  }
+  object PolylineGeometryUpdater extends GeometryUpdaterObj
 
   /**
     * A [[MaterialProperty]] that maps to polyline glow [[Material]] uniforms.
@@ -7516,7 +7179,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.PositionProperty")
-  class PositionProperty extends js.Object {
+  trait PositionProperty extends js.Object {
     var isConstant: Boolean = js.native
     var definitionChanged: Event = js.native
     var referenceFrame: ReferenceFrame = js.native
@@ -7647,42 +7310,13 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.RectangleGeometryUpdater")
-  class RectangleGeometryUpdater protected() extends js.Object {
+  class RectangleGeometryUpdater protected() extends GeometryUpdater {
     def this(entity: Entity, scene: Scene) = this()
-
-    var entity: Entity = js.native
-    var fillEnabled: Boolean = js.native
-    var hasConstantFill: Boolean = js.native
-    var fillMaterialProperty: MaterialProperty = js.native
-    var outlineEnabled: Boolean = js.native
-    var hasConstantOutline: Boolean = js.native
-    var outlineColorProperty: Property = js.native
-    var outlineWidth: Double = js.native
-    var isDynamic: Boolean = js.native
-    var isClosed: Boolean = js.native
-    var geometryChanged: Boolean = js.native
-
-    def isOutlineVisible(time: JulianDate): Boolean = js.native
-
-    def isFilled(time: JulianDate): Boolean = js.native
-
-    def createFillGeometryInstance(time: JulianDate): GeometryInstance = js.native
-
-    def createOutlineGeometryInstance(time: JulianDate): GeometryInstance = js.native
-
-    def isDestroyed(): Boolean = js.native
-
-    def destroy(): js.Dynamic = js.native
-
-    def createDynamicUpdater(primitives: PrimitiveCollection): DynamicGeometryUpdater = js.native
   }
 
   @js.native
   @JSName("Cesium.RectangleGeometryUpdater")
-  object RectangleGeometryUpdater extends js.Object {
-    var perInstanceColorAppearanceType: Appearance = js.native
-    var materialAppearanceType: Appearance = js.native
-  }
+  object RectangleGeometryUpdater extends GeometryUpdaterObj
 
   /**
     * Describes graphics for a [[Rectangle]]
@@ -8062,7 +7696,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.Visualizer")
-  class Visualizer extends js.Object {
+  trait Visualizer extends js.Object {
     def update(time: JulianDate): Boolean = js.native
 
     def isDestroyed(): Boolean = js.native
@@ -8081,42 +7715,13 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.WallGeometryUpdater")
-  class WallGeometryUpdater protected() extends js.Object {
+  class WallGeometryUpdater protected() extends GeometryUpdater {
     def this(entity: Entity, scene: Scene) = this()
-
-    var entity: Entity = js.native
-    var fillEnabled: Boolean = js.native
-    var hasConstantFill: Boolean = js.native
-    var fillMaterialProperty: MaterialProperty = js.native
-    var outlineEnabled: Boolean = js.native
-    var hasConstantOutline: Boolean = js.native
-    var outlineColorProperty: Property = js.native
-    var outlineWidth: Double = js.native
-    var isDynamic: Boolean = js.native
-    var isClosed: Boolean = js.native
-    var geometryChanged: Boolean = js.native
-
-    def isOutlineVisible(time: JulianDate): Boolean = js.native
-
-    def isFilled(time: JulianDate): Boolean = js.native
-
-    def createFillGeometryInstance(time: JulianDate): GeometryInstance = js.native
-
-    def createOutlineGeometryInstance(time: JulianDate): GeometryInstance = js.native
-
-    def isDestroyed(): Boolean = js.native
-
-    def destroy(): js.Dynamic = js.native
-
-    def createDynamicUpdater(primitives: PrimitiveCollection): DynamicGeometryUpdater = js.native
   }
 
   @js.native
   @JSName("Cesium.WallGeometryUpdater")
-  object WallGeometryUpdater extends js.Object {
-    var perInstanceColorAppearanceType: Appearance = js.native
-    var materialAppearanceType: Appearance = js.native
-  }
+  object WallGeometryUpdater extends GeometryUpdaterObj
 
   /**
     * Describes a two dimensional wall defined as a line strip and optional maximum and minimum heights.
@@ -8267,33 +7872,18 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.ArcGisMapServerImageryProvider")
-  class ArcGisMapServerImageryProvider protected() extends js.Object {
+  class ArcGisMapServerImageryProvider protected() extends ImageryProvider {
     def this(options: ArcGisMapServerImageryProviderOptions) = this()
 
     var enablePickFeatures: Boolean = js.native
     var url: String = js.native
     var token: String = js.native
-    var proxy: Proxy = js.native
-    var tileWidth: Double = js.native
-    var tileHeight: Double = js.native
-    var maximumLevel: Double = js.native
-    var minimumLevel: Double = js.native
-    var tilingScheme: TilingScheme = js.native
-    var rectangle: Rectangle = js.native
-    var tileDiscardPolicy: TileDiscardPolicy = js.native
-    var errorEvent: Event = js.native
-    var ready: Boolean = js.native
-    var readyPromise: Promise[Boolean] = js.native
-    var credit: Credit = js.native
     var usingPrecachedTiles: Boolean = js.native
-    var hasAlphaChannel: Boolean = js.native
-
-    def getTileCredits(x: Double, y: Double, level: Double): js.Array[Credit] = js.native
-
-    def requestImage(x: Double, y: Double, level: Double): Promise[HTMLImageElement | HTMLCanvasElement] | Unit = js.native
-
-    def pickFeatures(x: Double, y: Double, level: Double, longitude: Double, latitude: Double): Promise[js.Array[ImageryLayerFeatureInfo]] | Unit = js.native
   }
+
+  @js.native
+  @JSName("Cesium.ArcGisMapServerImageryProvider")
+  object ArcGisMapServerImageryProvider extends ImageryProviderObj
 
   @JSName("Cesium.Billboard")
   @js.native
@@ -8491,38 +8081,18 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.BingMapsImageryProvider")
-  class BingMapsImageryProvider protected() extends js.Object {
+  class BingMapsImageryProvider protected() extends ImageryProvider {
     def this(options: BingMapsImageryProviderOptions) = this()
 
-    var defaultGamma: Double = js.native
     var url: String = js.native
-    var proxy: Proxy = js.native
     var key: String = js.native
     var mapStyle: BingMapsStyle = js.native
     var culture: String = js.native
-    var tileWidth: Double = js.native
-    var tileHeight: Double = js.native
-    var maximumLevel: Double = js.native
-    var minimumLevel: Double = js.native
-    var tilingScheme: TilingScheme = js.native
-    var rectangle: Rectangle = js.native
-    var tileDiscardPolicy: TileDiscardPolicy = js.native
-    var errorEvent: Event = js.native
-    var ready: Boolean = js.native
-    var readyPromise: Promise[Boolean] = js.native
-    var credit: Credit = js.native
-    var hasAlphaChannel: Boolean = js.native
-
-    def getTileCredits(x: Double, y: Double, level: Double): js.Array[Credit] = js.native
-
-    def requestImage(x: Double, y: Double, level: Double): Promise[HTMLImageElement | HTMLCanvasElement] | Unit = js.native
-
-    def pickFeatures(x: Double, y: Double, level: Double, longitude: Double, latitude: Double): Promise[js.Array[ImageryLayerFeatureInfo]] | Unit = js.native
   }
 
   @js.native
   @JSName("Cesium.BingMapsImageryProvider")
-  object BingMapsImageryProvider extends js.Object {
+  object BingMapsImageryProvider extends ImageryProviderObj {
     def tileXYToQuadKey(x: Double, y: Double, level: Double): js.Dynamic = js.native
 
     def quadKeyToTileXY(quadkey: String): js.Dynamic = js.native
@@ -8892,12 +8462,8 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.DiscardMissingTileImagePolicy")
-  class DiscardMissingTileImagePolicy protected() extends js.Object {
+  class DiscardMissingTileImagePolicy protected() extends TileDiscardPolicy {
     def this(options: DiscardMissingTileImagePolicyOptions) = this()
-
-    def isReady(): Boolean = js.native
-
-    def shouldDiscardImage(image: HTMLImageElement): Boolean = js.native
   }
 
   /**
@@ -9163,35 +8729,19 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.GoogleEarthImageryProvider")
-  class GoogleEarthImageryProvider protected() extends js.Object {
+  class GoogleEarthImageryProvider protected() extends ImageryProvider {
     def this(options: GoogleEarthImageryProviderOptions) = this()
 
-    var defaultGamma: Double = js.native
     var url: String = js.native
     var path: String = js.native
-    var proxy: Proxy = js.native
     var channel: Double = js.native
-    var tileWidth: Double = js.native
-    var tileHeight: Double = js.native
-    var maximumLevel: Double = js.native
-    var minimumLevel: Double = js.native
-    var tilingScheme: TilingScheme = js.native
     var version: Double = js.native
     var requestType: String = js.native
-    var rectangle: Rectangle = js.native
-    var tileDiscardPolicy: TileDiscardPolicy = js.native
-    var errorEvent: Event = js.native
-    var ready: Boolean = js.native
-    var readyPromise: Promise[Boolean] = js.native
-    var credit: Credit = js.native
-    var hasAlphaChannel: Boolean = js.native
-
-    def getTileCredits(x: Double, y: Double, level: Double): js.Array[Credit] = js.native
-
-    def requestImage(x: Double, y: Double, level: Double): Promise[HTMLImageElement | HTMLCanvasElement] | Unit = js.native
-
-    def pickFeatures(x: Double, y: Double, level: Double, longitude: Double, latitude: Double): Promise[js.Array[ImageryLayerFeatureInfo]] | Unit = js.native
   }
+
+  @js.native
+  @JSName("Cesium.GoogleEarthImageryProvider")
+  object GoogleEarthImageryProvider extends ImageryProviderObj
 
   /**
     * An [[ImageryProvider]] that draws a wireframe grid on every tile with controllable background and glow.
@@ -9539,7 +9089,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.ImageryProvider")
-  class ImageryProvider extends js.Object {
+  trait ImageryProvider extends js.Object {
     var defaultAlpha: Double = js.native
     var defaultBrightness: Double = js.native
     var defaultContrast: Double = js.native
@@ -9569,7 +9119,7 @@ package cesium {
 
   @js.native
   @JSName("Cesium.ImageryProvider")
-  object ImageryProvider extends js.Object {
+  trait ImageryProviderObj extends js.Object {
     def loadImage(url: String): Promise[HTMLImageElement | HTMLCanvasElement] | Unit = js.native
   }
 
@@ -9590,7 +9140,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.Label")
-  class Label extends js.Object {
+  trait Label extends js.Object {
     var show: Boolean = js.native
     var position: Cartesian3 = js.native
     var heightReference: HeightReference = js.native
@@ -9714,30 +9264,16 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.MapboxImageryProvider")
-  class MapboxImageryProvider protected() extends js.Object {
+  class MapboxImageryProvider protected() extends ImageryProvider {
     def this(options: MapboxImageryProviderOptions) = this()
 
     var url: String = js.native
-    var ready: Boolean = js.native
-    var readyPromise: Promise[Boolean] = js.native
-    var rectangle: Rectangle = js.native
-    var tileWidth: Double = js.native
-    var tileHeight: Double = js.native
-    var maximumLevel: Double = js.native
-    var minimumLevel: Double = js.native
-    var tilingScheme: TilingScheme = js.native
-    var tileDiscardPolicy: TileDiscardPolicy = js.native
-    var errorEvent: Event = js.native
-    var credit: Credit = js.native
-    var proxy: Proxy = js.native
-    var hasAlphaChannel: Boolean = js.native
-
-    def getTileCredits(x: Double, y: Double, level: Double): js.Array[Credit] = js.native
-
-    def requestImage(x: Double, y: Double, level: Double): Promise[HTMLImageElement | HTMLCanvasElement] | Unit = js.native
-
-    def pickFeatures(x: Double, y: Double, level: Double, longitude: Double, latitude: Double): Promise[js.Array[ImageryLayerFeatureInfo]] | Unit = js.native
   }
+
+  @js.native
+  @JSName("Cesium.MapboxImageryProvider")
+  object MapboxImageryProvider extends ImageryProviderObj
+
 
   /**
     * A Material defines surface appearance through a combination of diffuse, specular,
@@ -10148,7 +9684,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.ModelAnimation")
-  class ModelAnimation extends js.Object {
+  trait ModelAnimation extends js.Object {
     var removeOnStop: Boolean = js.native
     var start: Event = js.native
     var update: Event = js.native
@@ -10171,7 +9707,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.ModelAnimationCollection")
-  class ModelAnimationCollection extends js.Object {
+  trait ModelAnimationCollection extends js.Object {
     var animationAdded: Event = js.native
     var animationRemoved: Event = js.native
     var length: Double = js.native
@@ -10204,7 +9740,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.ModelMaterial")
-  class ModelMaterial extends js.Object {
+  trait ModelMaterial extends js.Object {
     var name: String = js.native
     var id: String = js.native
 
@@ -10225,7 +9761,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.ModelMesh")
-  class ModelMesh extends js.Object {
+  trait ModelMesh extends js.Object {
     var name: String = js.native
     var id: String = js.native
     var materials: js.Array[ModelMaterial] = js.native
@@ -10249,7 +9785,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.ModelNode")
-  class ModelNode extends js.Object {
+  trait ModelNode extends js.Object {
     var name: String = js.native
     var id: String = js.native
     var show: Boolean = js.native
@@ -10295,11 +9831,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.NeverTileDiscardPolicy")
-  class NeverTileDiscardPolicy extends js.Object {
-    def isReady(): Boolean = js.native
-
-    def shouldDiscardImage(image: HTMLImageElement): Boolean = js.native
-  }
+  class NeverTileDiscardPolicy extends TileDiscardPolicy
 
   /**
     * The viewing frustum is defined by 6 planes.
@@ -10533,7 +10065,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.PointPrimitive")
-  class PointPrimitive extends js.Object {
+  trait PointPrimitive extends js.Object {
     var show: Boolean = js.native
     var position: Cartesian3 = js.native
     var scaleByDistance: NearFarScalar = js.native
@@ -11222,30 +10754,15 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.SingleTileImageryProvider")
-  class SingleTileImageryProvider protected() extends js.Object {
+  class SingleTileImageryProvider protected() extends ImageryProvider {
     def this(options: SingleTileImageryProviderOptions) = this()
 
     var url: String = js.native
-    var proxy: Proxy = js.native
-    var tileWidth: Double = js.native
-    var tileHeight: Double = js.native
-    var maximumLevel: Double = js.native
-    var minimumLevel: Double = js.native
-    var tilingScheme: TilingScheme = js.native
-    var rectangle: Rectangle = js.native
-    var tileDiscardPolicy: TileDiscardPolicy = js.native
-    var errorEvent: Event = js.native
-    var ready: Boolean = js.native
-    var readyPromise: Promise[Boolean] = js.native
-    var credit: Credit = js.native
-    var hasAlphaChannel: Boolean = js.native
-
-    def getTileCredits(x: Double, y: Double, level: Double): js.Array[Credit] = js.native
-
-    def requestImage(x: Double, y: Double, level: Double): Promise[HTMLImageElement | HTMLCanvasElement] | Unit = js.native
-
-    def pickFeatures(x: Double, y: Double, level: Double, longitude: Double, latitude: Double): Promise[js.Array[ImageryLayerFeatureInfo]] | Unit = js.native
   }
+
+  @js.native
+  @JSName("Cesium.SingleTileImageryProvider")
+  object SingleTileImageryProvider extends ImageryProviderObj
 
   /**
     * An atmosphere drawn around the limb of the provided ellipsoid.  Based on
@@ -11398,7 +10915,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.TileDiscardPolicy")
-  class TileDiscardPolicy extends js.Object {
+  trait TileDiscardPolicy extends js.Object {
     def isReady(): Boolean = js.native
 
     def shouldDiscardImage(image: HTMLImageElement): Boolean = js.native
@@ -11514,33 +11031,18 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.UrlTemplateImageryProvider")
-  class UrlTemplateImageryProvider protected() extends js.Object {
+  class UrlTemplateImageryProvider protected() extends ImageryProvider {
     def this(options: UrlTemplateImageryProviderOptions) = this()
 
     var enablePickFeatures: Boolean = js.native
     var url: String = js.native
-    var proxy: Proxy = js.native
-    var tileWidth: Double = js.native
-    var tileHeight: Double = js.native
-    var maximumLevel: Double = js.native
-    var minimumLevel: Double = js.native
-    var tilingScheme: TilingScheme = js.native
-    var rectangle: Rectangle = js.native
-    var tileDiscardPolicy: TileDiscardPolicy = js.native
-    var errorEvent: Event = js.native
-    var ready: Boolean = js.native
-    var readyPromise: Promise[Boolean] = js.native
-    var credit: Credit = js.native
-    var hasAlphaChannel: Boolean = js.native
 
     def reinitialize(options: Promise[js.Any] | js.Any): js.Dynamic = js.native
-
-    def getTileCredits(x: Double, y: Double, level: Double): js.Array[Credit] = js.native
-
-    def requestImage(x: Double, y: Double, level: Double): Promise[HTMLImageElement | HTMLCanvasElement] | Unit = js.native
-
-    def pickFeatures(x: Double, y: Double, level: Double, longitude: Double, latitude: Double): Promise[js.Array[ImageryLayerFeatureInfo]] | Unit = js.native
   }
+
+  @js.native
+  @JSName("Cesium.UrlTemplateImageryProvider")
+  object UrlTemplateImageryProvider extends ImageryProviderObj
 
   /**
     * A viewport aligned quad.
@@ -11632,35 +11134,16 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.WebMapServiceImageryProvider")
-  class WebMapServiceImageryProvider protected() extends js.Object {
+  class WebMapServiceImageryProvider protected() extends ImageryProvider {
     def this(options: WebMapServiceImageryProviderOptions) = this()
 
     var url: String = js.native
-    var proxy: Proxy = js.native
     var layers: String = js.native
-    var tileWidth: Double = js.native
-    var tileHeight: Double = js.native
-    var maximumLevel: Double = js.native
-    var minimumLevel: Double = js.native
-    var tilingScheme: TilingScheme = js.native
-    var rectangle: Rectangle = js.native
-    var tileDiscardPolicy: TileDiscardPolicy = js.native
-    var errorEvent: Event = js.native
-    var ready: Boolean = js.native
-    var readyPromise: Promise[Boolean] = js.native
-    var credit: Credit = js.native
-    var hasAlphaChannel: Boolean = js.native
-
-    def getTileCredits(x: Double, y: Double, level: Double): js.Array[Credit] = js.native
-
-    def requestImage(x: Double, y: Double, level: Double): Promise[HTMLImageElement | HTMLCanvasElement] | Unit = js.native
-
-    def pickFeatures(x: Double, y: Double, level: Double, longitude: Double, latitude: Double): Promise[js.Array[ImageryLayerFeatureInfo]] | Unit = js.native
   }
 
   @js.native
   @JSName("Cesium.WebMapServiceImageryProvider")
-  object WebMapServiceImageryProvider extends js.Object {
+  object WebMapServiceImageryProvider extends ImageryProviderObj {
     var DefaultParameters: js.Any = js.native
     var GetFeatureInfoDefaultParameters: js.Any = js.native
   }
@@ -11728,31 +11211,16 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.WebMapTileServiceImageryProvider")
-  class WebMapTileServiceImageryProvider protected() extends js.Object {
+  class WebMapTileServiceImageryProvider protected() extends ImageryProvider {
     def this(options: WebMapTileServiceImageryProviderOptions) = this()
 
     var url: String = js.native
-    var proxy: Proxy = js.native
-    var tileWidth: Double = js.native
-    var tileHeight: Double = js.native
-    var maximumLevel: Double = js.native
-    var minimumLevel: Double = js.native
-    var tilingScheme: TilingScheme = js.native
-    var rectangle: Rectangle = js.native
-    var tileDiscardPolicy: TileDiscardPolicy = js.native
-    var errorEvent: Event = js.native
     var format: String = js.native
-    var ready: Boolean = js.native
-    var readyPromise: Promise[Boolean] = js.native
-    var credit: Credit = js.native
-    var hasAlphaChannel: Boolean = js.native
+ }
 
-    def getTileCredits(x: Double, y: Double, level: Double): js.Array[Credit] = js.native
-
-    def requestImage(x: Double, y: Double, level: Double): Promise[HTMLImageElement | HTMLCanvasElement] | Unit = js.native
-
-    def pickFeatures(x: Double, y: Double, level: Double, longitude: Double, latitude: Double): Promise[js.Array[ImageryLayerFeatureInfo]] | Unit = js.native
-  }
+  @js.native
+  @JSName("Cesium.WebMapTileServiceImageryProvider")
+  object WebMapTileServiceImageryProvider extends ImageryProviderObj
 
   /**
     *
@@ -13151,7 +12619,7 @@ package cesium {
 
   @JSName("Cesium.PackableForInterpolation")
   @js.native
-  trait PackableForInterpolation extends js.Object {
+  trait PackableForInterpolation extends Packable {
     var packedInterpolationLength: Int = js.native
 
     def convertPackedArrayForInterpolation(packedArray: Array[Double], startingIndex: Int = ???, lastIndex: Int = ???, result: js.Object = ???): Unit = js.native
