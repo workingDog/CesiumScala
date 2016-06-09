@@ -242,7 +242,11 @@ package cesium {
 
   @JSName("Cesium.Packable")
   @js.native
-  sealed trait Packable extends js.Object {
+  sealed trait Packable extends js.Object
+
+  @JSName("Cesium.Packable")
+  @js.native
+  trait PackableObj extends Packable {
     var packedLength: Int = js.native
 
     def pack(value: js.Object, array: js.Array[Double], startingIndex: Int = ???): Unit = js.native
@@ -585,7 +589,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.BoundingSphere")
-  class BoundingSphere protected() extends js.Object {
+  class BoundingSphere protected() extends Packable {
     def this(center: Cartesian3 = ???, radius: Double = ???) = this()
 
     var center: Cartesian3 = js.native
@@ -606,7 +610,7 @@ package cesium {
 
   @js.native
   @JSName("Cesium.BoundingSphere")
-  object BoundingSphere extends Packable{
+  object BoundingSphere extends PackableObj {
 
     def fromPoints(positions: js.Array[Cartesian3], result: BoundingSphere = ???): BoundingSphere = js.native
 
@@ -677,13 +681,13 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.BoxGeometry")
-  class BoxGeometry protected() extends js.Object {
+  class BoxGeometry protected() extends Packable {
     def this(options: BoxGeometryOptions) = this()
   }
 
   @js.native
   @JSName("Cesium.BoxGeometry")
-  object BoxGeometry extends Packable {
+  object BoxGeometry extends PackableObj  {
 
     def fromDimensions(options: DimensionsOptions): BoxGeometry = js.native
 
@@ -714,13 +718,13 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.BoxOutlineGeometry")
-  class BoxOutlineGeometry protected() extends js.Object {
+  class BoxOutlineGeometry protected() extends Packable {
     def this(options: BoxOutlineGeometryOptions) = this()
   }
 
   @js.native
   @JSName("Cesium.BoxOutlineGeometry")
-  object BoxOutlineGeometry extends Packable {
+  object BoxOutlineGeometry extends PackableObj  {
 
     def fromDimensions(dimensions: Option[Cartesian3]): BoxOutlineGeometry = js.native
 
@@ -743,7 +747,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.Cartesian2")
-  class Cartesian2 protected() extends js.Object {
+  class Cartesian2 protected() extends Packable {
     def this(x: Double = ???, y: Double = ???) = this()
 
     var x: Double = js.native
@@ -760,7 +764,7 @@ package cesium {
 
   @js.native
   @JSName("Cesium.Cartesian2")
-  object Cartesian2 extends Packable  {
+  object Cartesian2 extends PackableObj   {
 
     var ZERO: Cartesian2 = js.native
     var UNIT_X: Cartesian2 = js.native
@@ -836,7 +840,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.Cartesian3")
-  class Cartesian3 protected() extends js.Object {
+  class Cartesian3 protected() extends Packable {
     def this(x: Double = ???, y: Double = ???, z: Double = ???) = this()
 
     var x: Double = js.native
@@ -854,7 +858,7 @@ package cesium {
 
   @js.native
   @JSName("Cesium.Cartesian3")
-  object Cartesian3 extends Packable {
+  object Cartesian3 extends PackableObj  {
 
     var ZERO: Cartesian3 = js.native
     var UNIT_X: Cartesian3 = js.native
@@ -946,7 +950,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.Cartesian4")
-  class Cartesian4 protected() extends js.Object {
+  class Cartesian4 protected() extends Packable {
     def this(x: Double = ???, y: Double = ???, z: Double = ???, w: Double = ???) = this()
 
     var x: Double = js.native
@@ -965,7 +969,7 @@ package cesium {
 
   @js.native
   @JSName("Cesium.Cartesian4")
-  object Cartesian4 extends Packable {
+  object Cartesian4 extends PackableObj  {
 
     var ZERO: Cartesian4 = js.native
     var UNIT_X: Cartesian4 = js.native
@@ -1206,13 +1210,13 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.CircleGeometry")
-  class CircleGeometry protected() extends js.Object {
+  class CircleGeometry protected() extends Packable {
     def this(options: CircleGeometryOptions) = this()
   }
 
   @js.native
   @JSName("Cesium.CircleGeometry")
-  object CircleGeometry extends Packable {
+  object CircleGeometry extends PackableObj  {
     def createGeometry(circleGeometry: CircleGeometry): Geometry | Unit = js.native
   }
 
@@ -1246,13 +1250,13 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.CircleOutlineGeometry")
-  class CircleOutlineGeometry protected() extends js.Object {
+  class CircleOutlineGeometry protected() extends Packable {
     def this(options: CircleOutlineGeometryOptions) = this()
   }
 
   @js.native
   @JSName("Cesium.CircleOutlineGeometry")
-  object CircleOutlineGeometry extends Packable {
+  object CircleOutlineGeometry extends PackableObj  {
     def createGeometry(circleGeometry: CircleOutlineGeometry): Geometry | Unit = js.native
   }
 
@@ -1320,7 +1324,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.Color")
-  class Color protected() extends js.Object {
+  class Color protected() extends Packable {
     def this(red: Double = ???, green: Double = ???, blue: Double = ???, alpha: Double = ???) = this()
 
     var red: Double = js.native
@@ -1351,7 +1355,7 @@ package cesium {
 
   @js.native
   @JSName("Cesium.Color")
-  object Color extends Packable {
+  object Color extends PackableObj  {
 
     var ALICEBLUE: Color = js.native
     var ANTIQUEWHITE: Color = js.native
@@ -1614,13 +1618,13 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.CorridorGeometry")
-  class CorridorGeometry protected() extends js.Object {
+  class CorridorGeometry protected() extends Packable {
     def this(options: CorridorGeometryOptions) = this()
   }
 
   @js.native
   @JSName("Cesium.CorridorGeometry")
-  object CorridorGeometry extends Packable {
+  object CorridorGeometry extends PackableObj  {
     def createGeometry(corridorGeometry: CorridorGeometry): Geometry | Unit = js.native
   }
 
@@ -3198,7 +3202,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.Matrix4")
-  class Matrix4 protected() extends js.Object {
+  class Matrix4 protected() extends Packable {
     def this(column0Row0: Double = ???, column1Row0: Double = ???, column2Row0: Double = ???, column3Row0: Double = ???, column0Row1: Double = ???, column1Row1: Double = ???, column2Row1: Double = ???, column3Row1: Double = ???, column0Row2: Double = ???, column1Row2: Double = ???, column2Row2: Double = ???, column3Row2: Double = ???, column0Row3: Double = ???, column1Row3: Double = ???, column2Row3: Double = ???, column3Row3: Double = ???) = this()
 
     var length: Double = js.native
@@ -3214,7 +3218,7 @@ package cesium {
 
   @js.native
   @JSName("Cesium.Matrix4")
-  object Matrix4 extends Packable {
+  object Matrix4 extends PackableObj  {
 
     var IDENTITY: Matrix4 = js.native
     var ZERO: Matrix4 = js.native
@@ -3404,7 +3408,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.NearFarScalar")
-  class NearFarScalar protected() extends js.Object {
+  class NearFarScalar protected() extends Packable {
     def this(near: Double = ???, nearValue: Double = ???, far: Double = ???, farValue: Double = ???) = this()
 
     var near: Double = js.native
@@ -3419,7 +3423,7 @@ package cesium {
 
   @js.native
   @JSName("Cesium.NearFarScalar")
-  object NearFarScalar extends Packable {
+  object NearFarScalar extends PackableObj  {
 
     def clone(nearFarScalar: NearFarScalar, result: NearFarScalar = ???): NearFarScalar = js.native
 
@@ -4269,7 +4273,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.Rectangle")
-  class Rectangle protected() extends js.Object {
+  class Rectangle protected() extends Packable {
     def this(west: Double = ???, south: Double = ???, east: Double = ???, north: Double = ???) = this()
 
     var west: Double = js.native
@@ -4288,7 +4292,7 @@ package cesium {
 
   @js.native
   @JSName("Cesium.Rectangle")
-  object Rectangle extends Packable {
+  object Rectangle extends PackableObj  {
 
     var MAX_VALUE: Rectangle = js.native
 
@@ -5139,7 +5143,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.VertexFormat")
-  class VertexFormat protected() extends js.Object {
+  class VertexFormat protected() extends Packable {
     def this(options: VertexFormatOptions = ???) = this()
 
     var position: Boolean = js.native
@@ -5152,7 +5156,7 @@ package cesium {
 
   @js.native
   @JSName("Cesium.VertexFormat")
-  object VertexFormat extends Packable {
+  object VertexFormat extends PackableObj  {
     var POSITION_ONLY: VertexFormat = js.native
     var POSITION_AND_NORMAL: VertexFormat = js.native
     var POSITION_NORMAL_AND_ST: VertexFormat = js.native

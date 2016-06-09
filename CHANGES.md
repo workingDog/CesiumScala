@@ -5,9 +5,14 @@ Change Log
 
 * changed CustomDataSource, CzmlDataSource, GeoJsonDataSource and KmlDataSource to extends DataSource
 
+* changed Packable to be a simple trait that extends js.Object
+
+* added trait PackableObj that extends Packable, so that derived classes extends Packable and
+their companion object extends PackableObj which has the required static methods.
+
 * changed BoundingSphere, BoxGeometry, BoxOutlineGeometry, Cartesian2, Cartesian3, Cartesian4, CircleGeometry,
 CircleOutlineGeometry, Color, CorridorGeometry, Matrix4, NearFarScalar, Rectangle,
-VertexFormat to extends Packable
+VertexFormat to extends Packable and their corresponding object extends PackableObj
 
 * changed Quaternion to extends PackableForInterpolation
 
