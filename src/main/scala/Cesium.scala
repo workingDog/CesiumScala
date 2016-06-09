@@ -1118,17 +1118,11 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.CatmullRomSpline")
-  class CatmullRomSpline protected() extends js.Object {
+  class CatmullRomSpline protected() extends Spline {
     def this(options: CatmullRomSplineOptions) = this()
 
-    var times: js.Array[Double] = js.native
-    var points: js.Array[Cartesian3] = js.native
     var firstTangent: Cartesian3 = js.native
     var lastTangent: Cartesian3 = js.native
-
-    def findTimeInterval(time: Double): Double = js.native
-
-    def evaluate(time: Double, result: Cartesian3 = ???): Cartesian3 = js.native
   }
 
   /**
@@ -2310,24 +2304,8 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.GeographicTilingScheme")
-  class GeographicTilingScheme protected() extends js.Object {
+  class GeographicTilingScheme protected() extends TilingScheme {
     def this(options: GeographicTilingSchemeOptions) = this()
-
-    var ellipsoid: Ellipsoid = js.native
-    var rectangle: Rectangle = js.native
-    var projection: MapProjection = js.native
-
-    def getNumberOfXTilesAtLevel(level: Double): Double = js.native
-
-    def getNumberOfYTilesAtLevel(level: Double): Double = js.native
-
-    def rectangleToNativeRectangle(rectangle: Rectangle, result: Rectangle = ???): Rectangle = js.native
-
-    def tileXYToNativeRectangle(x: Double, y: Double, level: Double, result: js.Any = ???): Rectangle = js.native
-
-    def tileXYToRectangle(x: Double, y: Double, level: Double, result: js.Any = ???): Rectangle = js.native
-
-    def positionToTileXY(position: Cartographic, level: Double, result: Cartesian2 = ???): Cartesian2 = js.native
   }
 
   /**
@@ -2730,17 +2708,11 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.HermiteSpline")
-  class HermiteSpline protected() extends js.Object {
+  class HermiteSpline protected() extends Spline {
     def this(options: HermiteSplineOptions) = this()
 
-    var times: js.Array[Double] = js.native
-    var points: js.Array[Cartesian3] = js.native
     var inTangents: js.Array[Cartesian3] = js.native
     var outTangents: js.Array[Cartesian3] = js.native
-
-    def findTimeInterval(time: Double): Double = js.native
-
-    def evaluate(time: Double, result: Cartesian3 = ???): Cartesian3 = js.native
   }
 
   @js.native
@@ -2902,15 +2874,8 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.LinearSpline")
-  class LinearSpline protected() extends js.Object {
+  class LinearSpline protected() extends Spline {
     def this(options: LinearSplineOptions) = this()
-
-    var times: js.Array[Double] = js.native
-    var points: js.Array[Cartesian3] = js.native
-
-    def findTimeInterval(time: Double): Double = js.native
-
-    def evaluate(time: Double, result: Cartesian3 = ???): Cartesian3 = js.native
   }
 
   /**
@@ -4195,16 +4160,10 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.QuaternionSpline")
-  class QuaternionSpline protected() extends js.Object {
+  class QuaternionSpline protected() extends Spline {
     def this(options: QuaternionSplineOptions) = this()
 
-    var times: js.Array[Double] = js.native
-    var points: js.Array[Quaternion] = js.native
     var innerQuadrangles: js.Array[Quaternion] = js.native
-
-    def findTimeInterval(time: Double): Double = js.native
-
-    def evaluate(time: Double, result: Quaternion = ???): Quaternion = js.native
   }
 
   @JSName("Cesium.Queue")
@@ -4768,7 +4727,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.Spline")
-  class Spline extends js.Object {
+  trait Spline extends js.Object {
     var times: js.Array[Double] = js.native
     var points: js.Array[Cartesian3] | js.Array[Quaternion] = js.native
 
@@ -4922,7 +4881,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.TilingScheme")
-  class TilingScheme extends js.Object {
+  trait TilingScheme extends js.Object {
     var ellipsoid: Ellipsoid = js.native
     var rectangle: Rectangle = js.native
     var projection: MapProjection = js.native
@@ -5371,24 +5330,8 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.WebMercatorTilingScheme")
-  class WebMercatorTilingScheme protected() extends js.Object {
+  class WebMercatorTilingScheme protected() extends TilingScheme {
     def this(options: WebMercatorTilingSchemeOptions) = this()
-
-    var ellipsoid: Ellipsoid = js.native
-    var rectangle: Rectangle = js.native
-    var projection: MapProjection = js.native
-
-    def getNumberOfXTilesAtLevel(level: Double): Double = js.native
-
-    def getNumberOfYTilesAtLevel(level: Double): Double = js.native
-
-    def rectangleToNativeRectangle(rectangle: Rectangle, result: Rectangle = ???): Rectangle = js.native
-
-    def tileXYToNativeRectangle(x: Double, y: Double, level: Double, result: js.Any = ???): Rectangle = js.native
-
-    def tileXYToRectangle(x: Double, y: Double, level: Double, result: js.Any = ???): Rectangle = js.native
-
-    def positionToTileXY(position: Cartographic, level: Double, result: Cartesian2 = ???): Cartesian2 = js.native
   }
 
   //------------------------------------------------------------------------------------
@@ -6140,7 +6083,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.DynamicGeometryUpdater")
-  class DynamicGeometryUpdater extends js.Object {
+  trait DynamicGeometryUpdater extends js.Object {
     def update(time: JulianDate): js.Dynamic = js.native
 
     def isDestroyed(): Boolean = js.native
@@ -7798,6 +7741,7 @@ package cesium {
     *
     *      demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Geometry%20and%20Appearances.html|Geometry and Appearances Demo]]
     */
+  // todo this should be a trait?
   @js.native
   @JSName("Cesium.Appearance")
   class Appearance protected() extends js.Object {
@@ -7930,7 +7874,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.Billboard")
-  class Billboard extends js.Object {
+  trait Billboard extends js.Object {
     var show: Boolean = js.native
     var position: Cartesian3 = js.native
     var heightReference: HeightReference = js.native

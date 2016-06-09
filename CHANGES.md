@@ -68,4 +68,18 @@ to extends ImageryProvider, also add a corresponding object to all that extends 
 
 * changed class PointPrimitive to trait PointPrimitive
 
+* changed class Billboard to trait Billboard
+
+* changed class Spline to trait Spline
+
+* changed CatmullRomSpline, LinearSpline, QuaternionSpline and HermiteSpline to extends Spline
+
+* changed class TilingScheme to trait TilingScheme
+
+* changed WebMercatorTilingScheme and GeographicTilingScheme to extends TilingScheme
+
+* changed class DynamicGeometryUpdater to trait DynamicGeometryUpdater
+
+
+
 
