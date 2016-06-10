@@ -10,10 +10,10 @@ using [Scala.js](https://www.scala-js.org/).
 
 ## Usage
 
-I recommend using the latest SNAPSHOT version as it includes bug fixes and improvements. To do this
-use "sbt publishLocal" see below.
+I recommend using the latest SNAPSHOT version as it includes bug fixes and improvements. To do that
+you can use "sbt publishLocal" see below.
 
-To use the latest release add the following dependency to your build.sbt:
+To use the last release add the following dependency to your build.sbt:
 
     libraryDependencies += "com.github.workingDog" %%% "cesiumscala" % "1.1"
 
@@ -37,13 +37,8 @@ defining "options" objects. Here these objects are named "class-name + Options".
 
     class ModelGraphics(options: ModelGraphicsOptions)
 
-Example of ModelGraphicsOptions:
-
-    new ModelGraphics(
-            ModelGraphicsOptions.uri(new ConstantProperty(url)).
-            minimumPixelSize(new ConstantProperty(128)).maximumScale(new ConstantProperty(20000)))
-
-See also the [Using the JSOptionBuilder](https://github.com/jducoeur/jsext#using-the-jsoptionbuilder) documentation.
+See the example **CesiumApp** and [Using the JSOptionBuilder](https://github.com/jducoeur/jsext#using-the-jsoptionbuilder) documentation
+to learn how to define these "options" objects using **jsext**.
 
 ## Compiling, packaging and publishing
 
