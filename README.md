@@ -10,7 +10,10 @@ using [Scala.js](https://www.scala-js.org/).
 
 ## Usage
 
-Add the following dependency to your build.sbt:
+I recomend using the latest SNAPSHOT version as it includes bug fixes and improvements. To do this
+use "sbt publishLocal" see below.
+
+To use the latest release add the following dependency to your build.sbt:
 
     libraryDependencies += "com.github.workingDog" %%% "cesiumscala" % "1.1"
 
