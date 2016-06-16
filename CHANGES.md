@@ -46,7 +46,8 @@ to extends ImageryProvider, also add a corresponding object to all that extends 
 * changed class TilingScheme to trait TilingScheme
 * changed WebMercatorTilingScheme and GeographicTilingScheme to extends TilingScheme
 * changed class DynamicGeometryUpdater to trait DynamicGeometryUpdater
-
+* added rotatable2D to Viewer, Scene, CesiumWidget, ViewerOptions, SceneOptions, CesiumWidgetOptions
+* added packArray and unpackArray to Cartesian2, Cartesian3, and Cartesian4 objects
 
 
 

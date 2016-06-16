@@ -2260,6 +2260,8 @@ package cesiumOptions {
     def terrainExaggeration(v: Double) = jsOpt("terrainExaggeration", v)
 
     def shadows(v: Boolean) = jsOpt("shadows", v)
+
+    def rotatable2D(v: Boolean) = jsOpt("rotatable2D", v)
   }
 
 
@@ -2903,6 +2905,8 @@ package cesiumOptions {
     def shadows(v: Boolean) = jsOpt("shadows", v)
 
     def terrainShadows(v: Boolean) = jsOpt("terrainShadows", v)
+
+    def rotatable2D(v: Boolean) = jsOpt("rotatable2D", v)
   }
 
   @JSName("Cesium.Options")
@@ -3111,6 +3115,8 @@ package cesiumOptions {
     def creditContainer(v: Element | String) = jsOpt("creditContainer", v)
 
     def terrainExaggeration(v: Double) = jsOpt("terrainExaggeration", v)
+
+    def rotatable2D(v: Boolean) = jsOpt("rotatable2D", v)
   }
 
   @JSName("Cesium.Options")

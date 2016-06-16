@@ -772,6 +772,10 @@ package cesium {
     var UNIT_X: Cartesian2 = js.native
     var UNIT_Y: Cartesian2 = js.native
 
+    def packArray(array: js.Array[Cartesian2], result: js.Array[Number] = ???): js.Array[Number] = js.native
+
+    def unpackArray(array: js.Array[Number], result: js.Array[Cartesian2] = ???): js.Array[Cartesian2] = js.native
+
     def fromElements(x: Double, y: Double, result: Cartesian2 = ???): Cartesian2 = js.native
 
     def clone(cartesian: Cartesian2, result: Cartesian2 = ???): Cartesian2 = js.native
@@ -866,6 +870,10 @@ package cesium {
     var UNIT_X: Cartesian3 = js.native
     var UNIT_Y: Cartesian3 = js.native
     var UNIT_Z: Cartesian3 = js.native
+
+    def packArray(array: js.Array[Cartesian3], result: js.Array[Number] = ???): js.Array[Number] = js.native
+
+    def unpackArray(array: js.Array[Number], result: js.Array[Cartesian3] = ???): js.Array[Cartesian3] = js.native
 
     def fromSpherical(spherical: Spherical, result: Cartesian3 = ???): Cartesian3 = js.native
 
@@ -978,6 +986,10 @@ package cesium {
     var UNIT_Y: Cartesian4 = js.native
     var UNIT_Z: Cartesian4 = js.native
     var UNIT_W: Cartesian4 = js.native
+
+    def packArray(array: js.Array[Cartesian4], result: js.Array[Number] = ???): js.Array[Number] = js.native
+
+    def unpackArray(array: js.Array[Number], result: js.Array[Cartesian4] = ???): js.Array[Cartesian4] = js.native
 
     def fromElements(x: Double, y: Double, z: Double, w: Double, result: Cartesian4 = ???): Cartesian4 = js.native
 
@@ -10620,6 +10632,8 @@ package cesium {
     var terrainProviderChanged: Event = js.native
     var nearToFarDistance2D: Double = js.native
 
+    var rotatable2D: Boolean = js.native
+
     def pick(windowPosition: Cartesian2): js.Dynamic = js.native
 
     def pickPosition(windowPosition: Cartesian2, result: Cartesian3 = ???): Cartesian3 = js.native
@@ -11623,6 +11637,8 @@ package cesium {
     var useDefaultRenderLoop: Boolean = js.native
     var resolutionScale: Double = js.native
 
+    var rotatable2D: Boolean = js.native
+
     def showErrorPanel(title: String, message: String, error: String = ???): js.Dynamic = js.native
 
     def isDestroyed(): Boolean = js.native
@@ -12362,7 +12378,7 @@ package cesium {
     var selectedEntity: Entity = js.native
     var shadows: Boolean = js.native
     var terrainShadows: Boolean = js.native
-
+    var rotatable2D: Boolean = js.native
     var shadowMap: ShadowMap = js.native
 
     def extend(mixin: Viewer.ViewerMixin, options: js.Any = ???): js.Dynamic = js.native
