@@ -55,7 +55,7 @@ package cesium {
                                    roll: Double, ellipsoid: Option[Ellipsoid] = None,
                                    result: Option[Quaternion] = None): Quaternion = js.native
 
-    def headingPitchRollMatrix4(origin: Cartesian3, heading: Double, pitch: Double,
+    def headingPitchRollToFixedFrame(origin: Cartesian3, heading: Double, pitch: Double,
                                 roll: Double, ellipsoid: Option[Ellipsoid] = None,
                                 result: Option[Matrix4] = None): Matrix4 = js.native
 
@@ -64,6 +64,17 @@ package cesium {
                                  point: Cartesian3, result: Option[Cartesian2] = None): Cartesian2 = js.native
 
     def preloadIcrfFixed(timeInterval: TimeInterval): Promise[Unit] = js.native
+
+    def aircraftHeadingPitchRollToFixedFrame(origin: Cartesian3,
+                                             heading: Double, pitch: Double, roll: Double,
+                                             ellipsoid: Option[Ellipsoid] = None,
+                                             result: Option[Matrix4] = None): Matrix4 = js.native
+
+    def aircraftHeadingPitchRollQuaternion(origin: Cartesian3,
+                                           heading: Double, pitch: Double, roll: Double,
+                                           ellipsoid: Option[Ellipsoid] = None,
+                                           result: Option[Quaternion] = None): Quaternion = js.native
+
   }
 
   @js.native
@@ -12648,5 +12659,18 @@ package cesium {
     type Callback = js.Function1[Double, Double]
   }
 
+  // todo
+  @JSName("Cesium.IntersectionTests")
+  @js.native
+  trait IntersectionTests extends js.Object {
+
+  }
+
+  // todo
+  @JSName("Cesium.Intersection2D")
+  @js.native
+  trait Intersection2D extends js.Object {
+
+  }
 
 }
