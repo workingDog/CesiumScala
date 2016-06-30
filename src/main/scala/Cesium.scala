@@ -6550,6 +6550,7 @@ package cesium {
     def this(options: KmlDataSourceOptions) = this()
 
     var refreshEvent: Event = js.native
+    var unsupportedNodeEvent: Event = js.native
 
     var camera: Camera = js.native
     var canvas: Canvas = js.native
@@ -6835,6 +6836,8 @@ package cesium {
     var show: Property = js.native
     var scaleByDistance: Property = js.native
     var translucencyByDistance: Property = js.native
+
+    var heightReference: HeightReference = js.native
 
     def clone(result: PointGraphics = ???): PointGraphics = js.native
 
@@ -9621,6 +9624,8 @@ package cesium {
     var pendingTextureLoads: Double = js.native
 
     var castShadows: Boolean = js.native
+
+    var heightReference: HeightReference = js.native
 
     def getNode(name: String): ModelNode = js.native
 

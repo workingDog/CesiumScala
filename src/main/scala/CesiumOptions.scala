@@ -2745,6 +2745,8 @@ package cesiumOptions {
     def strokeWidth(v: Double) = jsOpt("strokeWidth", v)
 
     def fill(v: Color) = jsOpt("fill", v)
+
+    def clampToGround(v: Boolean) = jsOpt("clampToGround", v)
   }
 
   @JSName("Cesium.Options")
@@ -2761,6 +2763,8 @@ package cesiumOptions {
     def proxy(v: Proxy) = jsOpt("proxy", v)
 
     def sourceUri(v: String) = jsOpt("sourceUri", v)
+
+    def clampToGround(v: Boolean) = jsOpt("clampToGround", v)
   }
 
   @JSName("Cesium.Options")

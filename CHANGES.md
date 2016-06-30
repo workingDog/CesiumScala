@@ -50,5 +50,6 @@ to extends ImageryProvider, also add a corresponding object to all that extends 
 * added packArray and unpackArray to Cartesian2, Cartesian3, and Cartesian4 objects
 * added aircraftHeadingPitchRollToFixedFrame, aircraftHeadingPitchRollQuaternion to Transforms
 * renamed headingPitchRollMatrix4 to headingPitchRollToFixedFrame in Transforms
-
-
+* added heightReference to PointGraphics and Model (Billboard already has it)
+* added clampToGround to KMLDataSource and GeoJsonDataSource in CesiumOptions
+* added unsupportedNodeEvent to KMLDataSource in Cesium
