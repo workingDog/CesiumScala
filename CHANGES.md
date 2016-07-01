@@ -1,7 +1,10 @@
 Change Log
 ==========
 
-## changes in 1.2-SNAPSHOT
+## changes in 1.3-SNAPSHOT
+
+
+## changes in 1.2
 
 * changed CustomDataSource, CzmlDataSource, GeoJsonDataSource and KmlDataSource to extends DataSource
 * changed Packable to be a simple trait that extends js.Object
