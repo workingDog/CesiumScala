@@ -8,7 +8,7 @@ This library, **cesiumscala**, is a Scala.js façade to Cesium.js for client sid
 Cesium client applications can now be written in [Scala](http://www.scala-lang.org/) and compiled into javascript
 using [Scala.js](https://www.scala-js.org/).
 
-There is also the CZML library in Scala, [ScalaCZML](https://github.com/workingDog/scalaczml) for server side development.
+There are also the Scala libraries; [ScalaCZML](https://github.com/workingDog/scalaczml) and [ScalaKml](https://github.com/workingDog/scalakml) for server side development. 
 
 ## Usage
 
