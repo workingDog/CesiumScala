@@ -4,9 +4,11 @@
 It uses WebGL for hardware-accelerated graphics, and is cross-platform, cross-browser, 
 and tuned for dynamic-data visualization. 
 
-This library, **cesiumscala**, is a Scala.js façade to Cesium.js.
+This library, **cesiumscala**, is a Scala.js façade to Cesium.js for client side development.
 Cesium client applications can now be written in [Scala](http://www.scala-lang.org/) and compiled into javascript
 using [Scala.js](https://www.scala-js.org/).
+
+There is also the CZML library in Scala, [ScalaCZML](https://github.com/workingDog/scalaczml) for server side development.
 
 ## Usage
 
