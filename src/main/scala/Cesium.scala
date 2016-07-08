@@ -6444,6 +6444,7 @@ package cesium {
     var crsNames: js.Any = js.native
     var crsLinkHrefs: js.Any = js.native
     var crsLinkTypes: js.Any = js.native
+    var clampToGround: Boolean = js.native
 
     def load(data: String | js.Object, options: GeoJsonDataSourceOptions = ???): Promise[GeoJsonDataSource] = js.native
   }
