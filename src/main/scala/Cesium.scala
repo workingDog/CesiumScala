@@ -11018,6 +11018,8 @@ package cesium {
     var enablePickFeatures: Boolean = js.native
     var url: String = js.native
 
+    def urlSchemeZeroPadding: js.Object = js.native
+
     def reinitialize(options: Promise[js.Any] | js.Any): js.Dynamic = js.native
   }
 

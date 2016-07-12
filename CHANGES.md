@@ -3,7 +3,9 @@ Change Log
 
 ## changes in 1.3-SNAPSHOT
 
-* added clampToGround to GeoJsonDataSource 
+* added clampToGround to GeoJsonDataSource
+* added urlSchemeZeroPadding to UrlTemplateImageryProviderOptions
+* added urlSchemeZeroPadding to UrlTemplateImageryProvider
 
 
 ## changes in 1.2

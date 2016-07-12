@@ -2352,6 +2352,8 @@ package cesiumOptions {
     def getFeatureInfoFormats(v: Array[GetFeatureInfoFormat]) = jsOpt("getFeatureInfoFormats", v)
 
     def enablePickFeatures(v: Boolean) = jsOpt("enablePickFeatures", v)
+
+    def urlSchemeZeroPadding(v: Object) = jsOpt("urlSchemeZeroPadding", v)
   }
 
 
