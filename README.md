@@ -44,11 +44,11 @@ to learn how to define these "options" objects using **jsext**.
 
 ## Compiling, packaging and publishing
 
-To compile and generate a jar file from the source code:
+To compile and generate a javascript file from the source code:
 
-    sbt package
+    sbt fullOptJS 
 
-The jar file (cesiumscala_sjs0.6_2.11-1.3-SNAPSHOT.jar) will be in the "./target/scala-2.11" directory.
+The javascript file (cesiumscala-opt.js) will be in the "./target/scala-2.11" directory.
 
 To publish **cesiumscala** to your local (Ivy) repository, simply type:
 
@@ -89,7 +89,7 @@ Refer to [Cesium API reference](https://cesiumjs.org/refdoc.html) for the origin
 
 ## Status
 
-ongoing work, need testing
+ongoing work
 
 
 
