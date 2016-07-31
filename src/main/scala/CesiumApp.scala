@@ -1,5 +1,6 @@
 import cesium.{ModelGraphics, _}
 import cesiumOptions._
+import CesiumImplicits._
 
 import scala.scalajs.js.JSApp
 import scala.scalajs.js
@@ -20,11 +21,6 @@ import scala.language.implicitConversions
   * and put it in the CesiumScala.html.
   */
 object CesiumApp extends JSApp {
-
-  implicit def Cartesian3ToConstPosProp(value: Cartesian3): ConstantPositionProperty = new ConstantPositionProperty(value)
-
-  implicit def ValueToConstProp(value: Any): ConstantProperty = new ConstantProperty(value.asInstanceOf[js.Any])
-
 
   def main(): Unit = {
     Console.println("---> hello from CesiumApp")
@@ -114,4 +110,3 @@ object CesiumApp extends JSApp {
   }
 
 }
-

@@ -11,7 +11,7 @@ Change Log
 * changed ClockRange and ClockStep apply() param to take Int
 * added a set of implicits in CesiumImplicits
 * modified JulianDate, methods with result: JulianDate = ???
-
+* changed all methods that had result: ... to results: ... = ???
 
 
 ## changes in 1.2
