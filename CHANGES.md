@@ -5,13 +5,11 @@ Change Log
 
 * added clampToGround to GeoJsonDataSource
 * added urlSchemeZeroPadding to UrlTemplateImageryProviderOptions and UrlTemplateImageryProvider
-
 * removed protected constructor from JulianDate
-
 * changed ClockRange and ClockStep apply() param to take Int
 * added a set of implicits in CesiumImplicits
-* modified JulianDate, methods with result: JulianDate = ???
-* changed all methods that had result: ... to results: ... = ???
+* changed dayNumber and secondsOfDay in JulianDate to be Int
+
 
 
 ## changes in 1.2

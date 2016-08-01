@@ -1362,9 +1362,9 @@ package cesium {
 
     def toRgba(): Double = js.native
 
-    def brighten(magnitude: Double, result: Color = ???): Color = js.native
+    def brighten(magnitude: Double, result: Color): Color = js.native
 
-    def darken(magnitude: Double, result: Color = ???): Color = js.native
+    def darken(magnitude: Double, result: Color): Color = js.native
 
     def withAlpha(alpha: Double, result: Color = ???): Color = js.native
   }
@@ -1543,17 +1543,17 @@ package cesium {
 
     def equals(left: Color, right: Color): Boolean = js.native
 
-    def add(left: Color, right: Color, result: Color = ???): Color = js.native
+    def add(left: Color, right: Color, result: Color): Color = js.native
 
-    def subtract(left: Color, right: Color, result: Color = ???): Color = js.native
+    def subtract(left: Color, right: Color, result: Color): Color = js.native
 
-    def multiply(left: Color, right: Color, result: Color = ???): Color = js.native
+    def multiply(left: Color, right: Color, result: Color): Color = js.native
 
-    def divide(left: Color, right: Color, result: Color = ???): Color = js.native
+    def divide(left: Color, right: Color, result: Color): Color = js.native
 
-    def mod(left: Color, right: Color, result: Color = ???): Color = js.native
+    def mod(left: Color, right: Color, result: Color): Color = js.native
 
-    def multiplyByScalar(color: Color, scalar: Double, result: Color = ???): Color = js.native
+    def multiplyByScalar(color: Color, scalar: Double, result: Color): Color = js.native
 
     def divideByScalar(color: Color, scalar: Double, result: Color = ???): Color = js.native
   }
@@ -2780,8 +2780,8 @@ package cesium {
   class JulianDate() extends js.Object {
     def this(julianDayNumber: Double, secondsOfDay: Double, timeStandard: TimeStandard = ???) = this()
 
-    var dayNumber: Double = js.native
-    var secondsOfDay: Double = js.native
+    var dayNumber: Int = js.native
+    var secondsOfDay: Int = js.native
 
     def clone(result: JulianDate = ???): JulianDate = js.native
 
@@ -2825,13 +2825,13 @@ package cesium {
 
     def computeTaiMinusUtc(julianDate: JulianDate): Double = js.native
 
-    def addSeconds(julianDate: JulianDate, seconds: Double, result: JulianDate = ???): JulianDate = js.native
+    def addSeconds(julianDate: JulianDate, seconds: Double, result: JulianDate): JulianDate = js.native
 
-    def addMinutes(julianDate: JulianDate, minutes: Double, result: JulianDate = ???): JulianDate = js.native
+    def addMinutes(julianDate: JulianDate, minutes: Double, result: JulianDate): JulianDate = js.native
 
-    def addHours(julianDate: JulianDate, hours: Double, result: JulianDate = ???): JulianDate = js.native
+    def addHours(julianDate: JulianDate, hours: Double, result: JulianDate): JulianDate = js.native
 
-    def addDays(julianDate: JulianDate, days: Double, result: JulianDate = ???): JulianDate = js.native
+    def addDays(julianDate: JulianDate, days: Double, result: JulianDate): JulianDate = js.native
 
     def lessThan(left: JulianDate, right: JulianDate): Boolean = js.native
 
@@ -2980,39 +2980,39 @@ package cesium {
 
     def fromRotation(angle: Double, result: Matrix2 = ???): Matrix2 = js.native
 
-    def toArray(matrix: Matrix2, result: js.Array[Double] = ???): js.Array[Double] = js.native
+    def toArray(matrix: Matrix2, result: js.Array[Double]): js.Array[Double] = js.native
 
     def getElementIndex(row: Double, column: Double): Double = js.native
 
-    def getColumn(matrix: Matrix2, index: Double, result: Cartesian2 = ???): Cartesian2 = js.native
+    def getColumn(matrix: Matrix2, index: Double, result: Cartesian2): Cartesian2 = js.native
 
-    def setColumn(matrix: Matrix2, index: Double, cartesian: Cartesian2, result: Cartesian2 = ???): Matrix2 = js.native
+    def setColumn(matrix: Matrix2, index: Double, cartesian: Cartesian2, result: Cartesian2): Matrix2 = js.native
 
-    def getRow(matrix: Matrix2, index: Double, result: Cartesian2 = ???): Cartesian2 = js.native
+    def getRow(matrix: Matrix2, index: Double, result: Cartesian2): Cartesian2 = js.native
 
-    def setRow(matrix: Matrix2, index: Double, cartesian: Cartesian2, result: Matrix2 = ???): Matrix2 = js.native
+    def setRow(matrix: Matrix2, index: Double, cartesian: Cartesian2, result: Matrix2): Matrix2 = js.native
 
-    def getScale(matrix: Matrix2, result: Cartesian2 = ???): Cartesian2 = js.native
+    def getScale(matrix: Matrix2, result: Cartesian2): Cartesian2 = js.native
 
     def getMaximumScale(matrix: Matrix2): Double = js.native
 
-    def multiply(left: Matrix2, right: Matrix2, result: Matrix2 = ???): Matrix2 = js.native
+    def multiply(left: Matrix2, right: Matrix2, result: Matrix2): Matrix2 = js.native
 
-    def add(left: Matrix2, right: Matrix2, result: Matrix2 = ???): Matrix2 = js.native
+    def add(left: Matrix2, right: Matrix2, result: Matrix2): Matrix2 = js.native
 
-    def subtract(left: Matrix2, right: Matrix2, result: Matrix2 = ???): Matrix2 = js.native
+    def subtract(left: Matrix2, right: Matrix2, result: Matrix2): Matrix2 = js.native
 
-    def multiplyByVector(matrix: Matrix2, cartesian: Cartesian2, result: Cartesian2 = ???): Cartesian2 = js.native
+    def multiplyByVector(matrix: Matrix2, cartesian: Cartesian2, result: Cartesian2): Cartesian2 = js.native
 
-    def multiplyByScalar(matrix: Matrix2, scalar: Double, result: Matrix2 = ???): Matrix2 = js.native
+    def multiplyByScalar(matrix: Matrix2, scalar: Double, result: Matrix2): Matrix2 = js.native
 
-    def multiplyByScale(matrix: Matrix2, scale: Cartesian2, result: Matrix2 = ???): Matrix2 = js.native
+    def multiplyByScale(matrix: Matrix2, scale: Cartesian2, result: Matrix2): Matrix2 = js.native
 
-    def negate(matrix: Matrix2, result: Matrix2 = ???): Matrix2 = js.native
+    def negate(matrix: Matrix2, result: Matrix2): Matrix2 = js.native
 
     def transpose(matrix: Matrix2, result: Matrix2 = ???): Matrix2 = js.native
 
-    def abs(matrix: Matrix2, result: Matrix2 = ???): Matrix2 = js.native
+    def abs(matrix: Matrix2, result: Matrix2): Matrix2 = js.native
 
     def equals(left: Matrix2 = ???, right: Matrix2 = ???): Boolean = js.native
 
@@ -3105,41 +3105,41 @@ package cesium {
 
     def getElementIndex(row: Double, column: Double): Double = js.native
 
-    def getColumn(matrix: Matrix3, index: Double, result: Cartesian3 = ???): Cartesian3 = js.native
+    def getColumn(matrix: Matrix3, index: Double, result: Cartesian3): Cartesian3 = js.native
 
-    def setColumn(matrix: Matrix3, index: Double, cartesian: Cartesian3, result: Matrix3 = ???): Matrix3 = js.native
+    def setColumn(matrix: Matrix3, index: Double, cartesian: Cartesian3, result: Matrix3): Matrix3 = js.native
 
-    def getRow(matrix: Matrix3, index: Double, result: Cartesian3 = ???): Cartesian3 = js.native
+    def getRow(matrix: Matrix3, index: Double, result: Cartesian3): Cartesian3 = js.native
 
-    def setRow(matrix: Matrix3, index: Double, cartesian: Cartesian3, result: Matrix3 = ???): Matrix3 = js.native
+    def setRow(matrix: Matrix3, index: Double, cartesian: Cartesian3, result: Matrix3): Matrix3 = js.native
 
-    def getScale(matrix: Matrix3, result: Cartesian3 = ???): Cartesian3 = js.native
+    def getScale(matrix: Matrix3, result: Cartesian3): Cartesian3 = js.native
 
     def getMaximumScale(matrix: Matrix3): Double = js.native
 
-    def multiply(left: Matrix3, right: Matrix3, result: Matrix3 = ???): Matrix3 = js.native
+    def multiply(left: Matrix3, right: Matrix3, result: Matrix3): Matrix3 = js.native
 
-    def add(left: Matrix3, right: Matrix3, result: Matrix3 = ???): Matrix3 = js.native
+    def add(left: Matrix3, right: Matrix3, result: Matrix3): Matrix3 = js.native
 
-    def subtract(left: Matrix3, right: Matrix3, result: Matrix3 = ???): Matrix3 = js.native
+    def subtract(left: Matrix3, right: Matrix3, result: Matrix3): Matrix3 = js.native
 
-    def multiplyByVector(matrix: Matrix3, cartesian: Cartesian3, result: Cartesian3 = ???): Cartesian3 = js.native
+    def multiplyByVector(matrix: Matrix3, cartesian: Cartesian3, result: Cartesian3): Cartesian3 = js.native
 
-    def multiplyByScalar(matrix: Matrix3, scalar: Double, result: Matrix3 = ???): Matrix3 = js.native
+    def multiplyByScalar(matrix: Matrix3, scalar: Double, result: Matrix3): Matrix3 = js.native
 
-    def multiplyByScale(matrix: Matrix3, scale: Cartesian3, result: Matrix3 = ???): Matrix3 = js.native
+    def multiplyByScale(matrix: Matrix3, scale: Cartesian3, result: Matrix3): Matrix3 = js.native
 
-    def negate(matrix: Matrix3, result: Matrix3 = ???): Matrix3 = js.native
+    def negate(matrix: Matrix3, result: Matrix3): Matrix3 = js.native
 
-    def transpose(matrix: Matrix3, result: Matrix3 = ???): Matrix3 = js.native
+    def transpose(matrix: Matrix3, result: Matrix3): Matrix3 = js.native
 
     def computeEigenDecomposition(matrix: Matrix3, result: js.Any = ???): js.Dynamic = js.native
 
-    def abs(matrix: Matrix3, result: Matrix3 = ???): Matrix3 = js.native
+    def abs(matrix: Matrix3, result: Matrix3): Matrix3 = js.native
 
     def determinant(matrix: Matrix3): Double = js.native
 
-    def inverse(matrix: Matrix3, result: Matrix3 = ???): Matrix3 = js.native
+    def inverse(matrix: Matrix3, result: Matrix3): Matrix3 = js.native
 
     def equals(left: Matrix3 = ???, right: Matrix3 = ???): Boolean = js.native
 
@@ -3226,7 +3226,7 @@ package cesium {
     var COLUMN3ROW2: Double = js.native
     var COLUMN3ROW3: Double = js.native
 
-    def clone(matrix: Matrix4, result: Matrix4 = ???): Matrix4 = js.native
+    def clone(matrix: Matrix4, result: Matrix4): Matrix4 = js.native
 
     def fromArray(array: js.Array[Double], startingIndex: Double = ???, result: Matrix4 = ???): Matrix4 = js.native
 
@@ -3250,77 +3250,76 @@ package cesium {
 
     def computePerspectiveFieldOfView(fovY: Double, aspectRatio: Double, near: Double, far: Double, result: Matrix4 = ???): Matrix4 = js.native
 
-    def computeOrthographicOffCenter(left: Double, right: Double, bottom: Double, top: Double, near: Double, far: Double, result: Matrix4 = ???): Matrix4 = js.native
+    def computeOrthographicOffCenter(left: Double, right: Double, bottom: Double, top: Double, near: Double, far: Double, result: Matrix4): Matrix4 = js.native
 
-    def computePerspectiveOffCenter(left: Double, right: Double, bottom: Double, top: Double, near: Double, far: Double, result: Matrix4 = ???): Matrix4 = js.native
+    def computePerspectiveOffCenter(left: Double, right: Double, bottom: Double, top: Double, near: Double, far: Double, result: Matrix4): Matrix4 = js.native
 
-    def computeInfinitePerspectiveOffCenter(left: Double, right: Double, bottom: Double, top: Double, near: Double, result: Matrix4 = ???): Matrix4 = js.native
+    def computeInfinitePerspectiveOffCenter(left: Double, right: Double, bottom: Double, top: Double, near: Double, result: Matrix4): Matrix4 = js.native
 
-    def computeViewportTransformation(viewport: js.Any, nearDepthRange: Double, farDepthRange: Double, result: Matrix4 = ???): Matrix4 = js.native
+    def computeViewportTransformation(viewport: js.Any, nearDepthRange: Double, farDepthRange: Double, result: Matrix4): Matrix4 = js.native
 
-    def computeView(position: Cartesian3, direction: Cartesian3, up: Cartesian3, right: Cartesian3, result: Matrix4 = ???): Matrix4 = js.native
+    def computeView(position: Cartesian3, direction: Cartesian3, up: Cartesian3, right: Cartesian3, result: Matrix4): Matrix4 = js.native
 
     def toArray(matrix: Matrix4, result: js.Array[Double] = ???): js.Array[Double] = js.native
 
     def getElementIndex(row: Double, column: Double): Double = js.native
 
-    def getColumn(matrix: Matrix4, index: Double, result: Cartesian4 = ???): Cartesian4 = js.native
+    def getColumn(matrix: Matrix4, index: Double, result: Cartesian4): Cartesian4 = js.native
 
-    def setColumn(matrix: Matrix4, index: Double, cartesian: Cartesian4, result: Matrix4 = ???): Matrix4 = js.native
+    def setColumn(matrix: Matrix4, index: Double, cartesian: Cartesian4, result: Matrix4): Matrix4 = js.native
 
-    def setTranslation(matrix: Matrix4, translation: Cartesian3, result: Cartesian4 = ???): Matrix4 = js.native
+    def setTranslation(matrix: Matrix4, translation: Cartesian3, result: Cartesian4): Matrix4 = js.native
 
-    def getRow(matrix: Matrix4, index: Double, result: Cartesian4 = ???): Cartesian4 = js.native
+    def getRow(matrix: Matrix4, index: Double, result: Cartesian4): Cartesian4 = js.native
 
-    def setRow(matrix: Matrix4, index: Double, cartesian: Cartesian4, result: Matrix4 = ???): Matrix4 = js.native
+    def setRow(matrix: Matrix4, index: Double, cartesian: Cartesian4, result: Matrix4): Matrix4 = js.native
 
-    def getScale(matrix: Matrix4, result: Cartesian3 = ???): Cartesian3 = js.native
+    def getScale(matrix: Matrix4, result: Cartesian3): Cartesian3 = js.native
 
     def getMaximumScale(matrix: Matrix4): Double = js.native
 
-    def multiply(left: Matrix4, right: Matrix4, result: Matrix4 = ???): Matrix4 = js.native
+    def multiply(left: Matrix4, right: Matrix4, result: Matrix4): Matrix4 = js.native
 
-    def add(left: Matrix4, right: Matrix4, result: Matrix4 = ???): Matrix4 = js.native
+    def add(left: Matrix4, right: Matrix4, result: Matrix4): Matrix4 = js.native
 
-    def subtract(left: Matrix4, right: Matrix4, result: Matrix4 = ???): Matrix4 = js.native
+    def subtract(left: Matrix4, right: Matrix4, result: Matrix4): Matrix4 = js.native
 
-    def multiplyTransformation(left: Matrix4, right: Matrix4, result: Matrix4 = ???): Matrix4 = js.native
+    def multiplyTransformation(left: Matrix4, right: Matrix4, result: Matrix4): Matrix4 = js.native
 
-    def multiplyByMatrix3(matrix: Matrix4, rotation: Matrix3, result: Matrix4 = ???): Matrix4 = js.native
+    def multiplyByMatrix3(matrix: Matrix4, rotation: Matrix3, result: Matrix4): Matrix4 = js.native
 
-    def multiplyByTranslation(matrix: Matrix4, translation: Cartesian3, result: Matrix4 = ???): Matrix4 = js.native
+    def multiplyByTranslation(matrix: Matrix4, translation: Cartesian3, result: Matrix4): Matrix4 = js.native
 
-    def multiplyByUniformScale(matrix: Matrix4, scale: Double, result: Matrix4 = ???): Matrix4 = js.native
+    def multiplyByUniformScale(matrix: Matrix4, scale: Double, result: Matrix4): Matrix4 = js.native
 
-    def multiplyByScale(matrix: Matrix4, scale: Cartesian3, result: Matrix4 = ???): Matrix4 = js.native
+    def multiplyByScale(matrix: Matrix4, scale: Cartesian3, result: Matrix4): Matrix4 = js.native
 
-    def multiplyByVector(matrix: Matrix4, cartesian: Cartesian4, result: Cartesian4 = ???): Cartesian4 = js.native
+    def multiplyByVector(matrix: Matrix4, cartesian: Cartesian4, result: Cartesian4): Cartesian4 = js.native
 
-    def multiplyByPointAsVector(matrix: Matrix4, cartesian: Cartesian3, result: Cartesian3 = ???): Cartesian3 = js.native
+    def multiplyByPointAsVector(matrix: Matrix4, cartesian: Cartesian3, result: Cartesian3): Cartesian3 = js.native
 
-    def multiplyByPoint(matrix: Matrix4, cartesian: Cartesian3, result: Cartesian3 = ???): Cartesian3 = js.native
+    def multiplyByPoint(matrix: Matrix4, cartesian: Cartesian3, result: Cartesian3): Cartesian3 = js.native
 
-    def multiplyByScalar(matrix: Matrix4, scalar: Double, result: Matrix4 = ???): Matrix4 = js.native
+    def multiplyByScalar(matrix: Matrix4, scalar: Double, result: Matrix4): Matrix4 = js.native
 
-    def negate(matrix: Matrix4, result: Matrix4 = ???): Matrix4 = js.native
+    def negate(matrix: Matrix4, result: Matrix4): Matrix4 = js.native
 
-    def transpose(matrix: Matrix4, result: Matrix4 = ???): Matrix4 = js.native
+    def transpose(matrix: Matrix4, result: Matrix4): Matrix4 = js.native
 
-    def abs(matrix: Matrix4, result: Matrix4 = ???): Matrix4 = js.native
+    def abs(matrix: Matrix4, result: Matrix4): Matrix4 = js.native
 
     def equals(left: Matrix4 = ???, right: Matrix4 = ???): Boolean = js.native
 
     def equalsEpsilon(left: Matrix4, right: Matrix4, epsilon: Double): Boolean = js.native
 
-    def getTranslation(matrix: Matrix4, result: Cartesian3 = ???): Cartesian3 = js.native
+    def getTranslation(matrix: Matrix4, result: Cartesian3): Cartesian3 = js.native
 
-    def getRotation(matrix: Matrix4, result: Matrix3 = ???): Matrix3 = js.native
+    def getRotation(matrix: Matrix4, result: Matrix3): Matrix3 = js.native
 
     def inverse(matrix: Matrix4, result: Matrix4 = ???): Matrix4 = js.native
 
-    def inverseTransformation(matrix: Matrix4, result: Matrix4 = ???): Matrix4 = js.native
+    def inverseTransformation(matrix: Matrix4, result: Matrix4): Matrix4 = js.native
   }
-
 
   /**
     * Defines the interface for a geometry updater.  A GeometryUpdater maps
@@ -4106,49 +4105,49 @@ package cesium {
 
     def clone(quaternion: Quaternion, result: Quaternion = ???): Quaternion = js.native
 
-    def conjugate(quaternion: Quaternion, result: Quaternion = ???): Quaternion = js.native
+    def conjugate(quaternion: Quaternion, result: Quaternion): Quaternion = js.native
 
     def magnitudeSquared(quaternion: Quaternion): Double = js.native
 
     def magnitude(quaternion: Quaternion): Double = js.native
 
-    def normalize(quaternion: Quaternion, result: Quaternion = ???): Quaternion = js.native
+    def normalize(quaternion: Quaternion, result: Quaternion): Quaternion = js.native
 
-    def inverse(quaternion: Quaternion, result: Quaternion = ???): Quaternion = js.native
+    def inverse(quaternion: Quaternion, result: Quaternion): Quaternion = js.native
 
-    def add(left: Quaternion, right: Quaternion, result: Quaternion = ???): Quaternion = js.native
+    def add(left: Quaternion, right: Quaternion, result: Quaternion): Quaternion = js.native
 
-    def subtract(left: Quaternion, right: Quaternion, result: Quaternion = ???): Quaternion = js.native
+    def subtract(left: Quaternion, right: Quaternion, result: Quaternion): Quaternion = js.native
 
-    def negate(quaternion: Quaternion, result: Quaternion = ???): Quaternion = js.native
+    def negate(quaternion: Quaternion, result: Quaternion): Quaternion = js.native
 
     def dot(left: Quaternion, right: Quaternion): Double = js.native
 
-    def multiply(left: Quaternion, right: Quaternion, result: Quaternion = ???): Quaternion = js.native
+    def multiply(left: Quaternion, right: Quaternion, result: Quaternion): Quaternion = js.native
 
-    def multiplyByScalar(quaternion: Quaternion, scalar: Double, result: Quaternion = ???): Quaternion = js.native
+    def multiplyByScalar(quaternion: Quaternion, scalar: Double, result: Quaternion): Quaternion = js.native
 
-    def divideByScalar(quaternion: Quaternion, scalar: Double, result: Quaternion = ???): Quaternion = js.native
+    def divideByScalar(quaternion: Quaternion, scalar: Double, result: Quaternion): Quaternion = js.native
 
-    def computeAxis(quaternion: Quaternion, result: Cartesian3 = ???): Cartesian3 = js.native
+    def computeAxis(quaternion: Quaternion, result: Cartesian3): Cartesian3 = js.native
 
     def computeAngle(quaternion: Quaternion): Double = js.native
 
-    def lerp(start: Quaternion, end: Quaternion, t: Double, result: Quaternion = ???): Quaternion = js.native
+    def lerp(start: Quaternion, end: Quaternion, t: Double, result: Quaternion): Quaternion = js.native
 
-    def slerp(start: Quaternion, end: Quaternion, t: Double, result: Quaternion = ???): Quaternion = js.native
+    def slerp(start: Quaternion, end: Quaternion, t: Double, result: Quaternion): Quaternion = js.native
 
-    def log(quaternion: Quaternion, result: Cartesian3 = ???): Cartesian3 = js.native
+    def log(quaternion: Quaternion, result: Cartesian3): Cartesian3 = js.native
 
-    def exp(cartesian: Cartesian3, result: Quaternion = ???): Quaternion = js.native
+    def exp(cartesian: Cartesian3, result: Quaternion): Quaternion = js.native
 
-    def computeInnerQuadrangle(q0: Quaternion, q1: Quaternion, q2: Quaternion, result: Quaternion = ???): Quaternion = js.native
+    def computeInnerQuadrangle(q0: Quaternion, q1: Quaternion, q2: Quaternion, result: Quaternion): Quaternion = js.native
 
-    def squad(q0: Quaternion, q1: Quaternion, s0: Quaternion, s1: Quaternion, t: Double, result: Quaternion = ???): Quaternion = js.native
+    def squad(q0: Quaternion, q1: Quaternion, s0: Quaternion, s1: Quaternion, t: Double, result: Quaternion): Quaternion = js.native
 
-    def fastSlerp(start: Quaternion, end: Quaternion, t: Double, result: Quaternion = ???): Quaternion = js.native
+    def fastSlerp(start: Quaternion, end: Quaternion, t: Double, result: Quaternion): Quaternion = js.native
 
-    def fastSquad(q0: Quaternion, q1: Quaternion, s0: Quaternion, s1: Quaternion, t: Double, result: Quaternion = ???): Quaternion = js.native
+    def fastSquad(q0: Quaternion, q1: Quaternion, s0: Quaternion, s1: Quaternion, t: Double, result: Quaternion): Quaternion = js.native
 
     def equals(left: Quaternion = ???, right: Quaternion = ???): Boolean = js.native
 
@@ -5008,7 +5007,7 @@ package cesium {
 
     def equalsEpsilon(left: TimeInterval, right: TimeInterval, epsilon: Double, dataComparer: TimeInterval.DataComparer = ???): Boolean = js.native
 
-    def intersect(left: TimeInterval, right: TimeInterval, result: TimeInterval = ???, mergeCallback: TimeInterval.MergeCallback = ???): TimeInterval = js.native
+    def intersect(left: TimeInterval, right: TimeInterval, result: TimeInterval, mergeCallback: TimeInterval.MergeCallback = ???): TimeInterval = js.native
 
     def contains(timeInterval: TimeInterval, julianDate: JulianDate): Boolean = js.native
   }
