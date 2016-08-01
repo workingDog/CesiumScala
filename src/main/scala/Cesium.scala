@@ -258,7 +258,7 @@ package cesium {
   trait PackableStatic extends Packable {
     var packedLength: Int = js.native
 
-    def pack(value: js.Object, array: js.Array[Double], startingIndex: Int = ???): Unit = js.native
+    def pack(value: js.Object, array: js.Array[Double], startingIndex: Int = ???): js.Array[Double] = js.native
 
     def unpack(array: js.Array[Double], startingIndex: Int = ???, result: js.Object = ???): js.Object = js.native
   }
@@ -1677,7 +1677,7 @@ package cesium {
   @js.native
   @JSName("Cesium.CorridorOutlineGeometry")
   object CorridorOutlineGeometry extends js.Object {
-    def pack(value: CorridorOutlineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
+    def pack(value: CorridorOutlineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
     def unpack(array: js.Array[Double], startingIndex: Double = ???, result: CorridorOutlineGeometry = ???): CorridorOutlineGeometry = js.native
 
@@ -1759,7 +1759,7 @@ package cesium {
   object CylinderGeometry extends js.Object {
     var packedLength: Double = js.native
 
-    def pack(value: CylinderGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
+    def pack(value: CylinderGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
     def unpack(array: js.Array[Double], startingIndex: Double = ???, result: CylinderGeometry = ???): CylinderGeometry = js.native
 
@@ -1806,7 +1806,7 @@ package cesium {
   object CylinderOutlineGeometry extends js.Object {
     var packedLength: Double = js.native
 
-    def pack(value: CylinderOutlineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
+    def pack(value: CylinderOutlineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
     def unpack(array: js.Array[Double], startingIndex: Double = ???, result: CylinderOutlineGeometry = ???): CylinderOutlineGeometry = js.native
 
@@ -1902,7 +1902,7 @@ package cesium {
   object EllipseGeometry extends js.Object {
     var packedLength: Double = js.native
 
-    def pack(value: EllipseGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
+    def pack(value: EllipseGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
     def unpack(array: js.Array[Double], startingIndex: Double = ???, result: EllipseGeometry = ???): EllipseGeometry = js.native
 
@@ -1951,7 +1951,7 @@ package cesium {
   object EllipseOutlineGeometry extends js.Object {
     var packedLength: Double = js.native
 
-    def pack(value: EllipseOutlineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
+    def pack(value: EllipseOutlineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
     def unpack(array: js.Array[Double], startingIndex: Double = ???, result: EllipseOutlineGeometry = ???): EllipseOutlineGeometry = js.native
 
@@ -1960,7 +1960,7 @@ package cesium {
 
   /**
     * A quadratic surface defined in Cartesian coordinates by the equation
-    * <code>(x / a)^2 + (y / b)^2 + (z / c)^2 = 1</code>.  Primarily used
+    * <code>(x / a)^2 + (y / b)^2 + (z / c) 2 = 1</code>.  Primarily used
     * by Cesium to represent the shape of planetary bodies.
     *
     * Rather than constructing this object directly, one of the provided
@@ -2032,7 +2032,7 @@ package cesium {
 
     def fromCartesian3(radii: Cartesian3 = ???): Ellipsoid = js.native
 
-    def pack(value: Ellipsoid, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
+    def pack(value: Ellipsoid, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
     def unpack(array: js.Array[Double], startingIndex: Double = ???, result: Ellipsoid = ???): Ellipsoid = js.native
   }
@@ -2100,7 +2100,7 @@ package cesium {
   object EllipsoidGeometry extends js.Object {
     var packedLength: Double = js.native
 
-    def pack(value: EllipsoidGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
+    def pack(value: EllipsoidGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
     def unpack(array: js.Array[Double], startingIndex: Double = ???, result: EllipsoidGeometry = ???): EllipsoidGeometry = js.native
 
@@ -2142,7 +2142,7 @@ package cesium {
   object EllipsoidOutlineGeometry extends js.Object {
     var packedLength: Double = js.native
 
-    def pack(value: EllipsoidOutlineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
+    def pack(value: EllipsoidOutlineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
     def unpack(array: js.Array[Double], startingIndex: Double = ???, result: EllipsoidOutlineGeometry = ???): EllipsoidOutlineGeometry = js.native
 
@@ -2962,7 +2962,7 @@ package cesium {
     var COLUMN1ROW0: Double = js.native
     var COLUMN1ROW1: Double = js.native
 
-    def pack(value: Matrix2, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
+    def pack(value: Matrix2, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
     def unpack(array: js.Array[Double], startingIndex: Double = ???, result: Matrix2 = ???): Matrix2 = js.native
 
@@ -3075,7 +3075,7 @@ package cesium {
     var COLUMN2ROW1: Double = js.native
     var COLUMN2ROW2: Double = js.native
 
-    def pack(value: Matrix3, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
+    def pack(value: Matrix3, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
     def unpack(array: js.Array[Double], startingIndex: Double = ???, result: Matrix3 = ???): Matrix3 = js.native
 
@@ -3692,7 +3692,7 @@ package cesium {
   object PolygonGeometry extends js.Object {
     def fromPositions(options: PolygonGeometryOptions): PolygonGeometry = js.native
 
-    def pack(value: PolygonGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
+    def pack(value: PolygonGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
     def unpack(array: js.Array[Double], startingIndex: Double = ???, result: PolygonGeometry = ???): js.Dynamic = js.native
 
@@ -3812,7 +3812,7 @@ package cesium {
   @js.native
   @JSName("Cesium.PolygonOutlineGeometry")
   object PolygonOutlineGeometry extends js.Object {
-    def pack(value: PolygonOutlineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
+    def pack(value: PolygonOutlineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
     def unpack(array: js.Array[Double], startingIndex: Double = ???, result: PolygonOutlineGeometry = ???): PolygonOutlineGeometry = js.native
 
@@ -3869,7 +3869,7 @@ package cesium {
   @js.native
   @JSName("Cesium.PolylineGeometry")
   object PolylineGeometry extends js.Object {
-    def pack(value: PolylineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
+    def pack(value: PolylineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
     def unpack(array: js.Array[Double], startingIndex: Double = ???, result: PolylineGeometry = ???): PolylineGeometry = js.native
 
@@ -3923,7 +3923,7 @@ package cesium {
   @js.native
   @JSName("Cesium.PolylineVolumeGeometry")
   object PolylineVolumeGeometry extends js.Object {
-    def pack(value: PolylineVolumeGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
+    def pack(value: PolylineVolumeGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
     def unpack(array: js.Array[Double], startingIndex: Double = ???, result: PolylineVolumeGeometry = ???): PolylineVolumeGeometry = js.native
 
@@ -3973,7 +3973,7 @@ package cesium {
   @js.native
   @JSName("Cesium.PolylineVolumeOutlineGeometry")
   object PolylineVolumeOutlineGeometry extends js.Object {
-    def pack(value: PolylineVolumeOutlineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
+    def pack(value: PolylineVolumeOutlineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
     def unpack(array: js.Array[Double], startingIndex: Double = ???, result: PolylineVolumeOutlineGeometry = ???): PolylineVolumeOutlineGeometry = js.native
 
@@ -4368,7 +4368,7 @@ package cesium {
   object RectangleGeometry extends js.Object {
     var packedLength: Double = js.native
 
-    def pack(value: RectangleGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
+    def pack(value: RectangleGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
     def unpack(array: js.Array[Double], startingIndex: Double = ???, result: RectangleGeometry = ???): RectangleGeometry = js.native
 
@@ -4415,7 +4415,7 @@ package cesium {
   object RectangleOutlineGeometry extends js.Object {
     var packedLength: Double = js.native
 
-    def pack(value: RectangleOutlineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
+    def pack(value: RectangleOutlineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
     def unpack(array: js.Array[Double], startingIndex: Double = ???, result: RectangleOutlineGeometry = ???): RectangleOutlineGeometry = js.native
 
@@ -4605,7 +4605,7 @@ package cesium {
   @js.native
   @JSName("Cesium.SimplePolylineGeometry")
   object SimplePolylineGeometry extends js.Object {
-    def pack(value: SimplePolylineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
+    def pack(value: SimplePolylineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
     def unpack(array: js.Array[Double], startingIndex: Double = ???, result: SimplePolylineGeometry = ???): SimplePolylineGeometry = js.native
 
@@ -4646,7 +4646,7 @@ package cesium {
   object SphereGeometry extends js.Object {
     var packedLength: Double = js.native
 
-    def pack(value: SphereGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
+    def pack(value: SphereGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
     def unpack(array: js.Array[Double], startingIndex: Double = ???, result: SphereGeometry = ???): SphereGeometry = js.native
 
@@ -4688,7 +4688,7 @@ package cesium {
   object SphereOutlineGeometry extends js.Object {
     var packedLength: Double = js.native
 
-    def pack(value: SphereOutlineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
+    def pack(value: SphereOutlineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
     def unpack(array: js.Array[Double], startingIndex: Double = ???, result: SphereOutlineGeometry = ???): SphereOutlineGeometry = js.native
 
@@ -5226,7 +5226,7 @@ package cesium {
   @js.native
   @JSName("Cesium.WallGeometry")
   object WallGeometry extends js.Object {
-    def pack(value: WallGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
+    def pack(value: WallGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
     def unpack(array: js.Array[Double], startingIndex: Double = ???, result: WallGeometry = ???): WallGeometry = js.native
 
@@ -5281,7 +5281,7 @@ package cesium {
   @js.native
   @JSName("Cesium.WallOutlineGeometry")
   object WallOutlineGeometry extends js.Object {
-    def pack(value: WallOutlineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Dynamic = js.native
+    def pack(value: WallOutlineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
     def unpack(array: js.Array[Double], startingIndex: Double = ???, result: WallOutlineGeometry = ???): WallOutlineGeometry = js.native
 

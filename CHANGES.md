@@ -9,7 +9,7 @@ Change Log
 * changed ClockRange and ClockStep apply() param to take Int
 * added a set of implicits in CesiumImplicits
 * changed dayNumber and secondsOfDay in JulianDate to be Int
-
+* changed all pack() methods to return a js.Array[Double]  
 
 
 ## changes in 1.2
