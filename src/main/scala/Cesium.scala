@@ -11710,7 +11710,7 @@ package cesium {
     */
   @js.native
   @JSName("Cesium.Command")
-  class Command extends js.Object {
+  trait Command extends js.Object {
     var canExecute: Boolean = js.native
     var beforeExecute: Event = js.native
     var afterExecute: Event = js.native

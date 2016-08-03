@@ -10,6 +10,7 @@ Change Log
 * added a set of implicits in CesiumImplicits
 * changed dayNumber and secondsOfDay in JulianDate to be Int
 * changed all pack() methods to return a js.Array[Double]  
+* changed class Command to trait Command
 
 
 ## changes in 1.2
