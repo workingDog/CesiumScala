@@ -241,7 +241,7 @@ package cesiumOptions {
 
     def vertexFormat(v: VertexFormat) = jsOpt("vertexFormat", v)
 
-    def cornerType(v: CornerType) = jsOpt("cornerType", v)
+    def cornerType(v: Int) = jsOpt("cornerType", v)
   }
 
 
@@ -264,7 +264,7 @@ package cesiumOptions {
 
     def extrudedHeight(v: Double) = jsOpt("extrudedHeight", v)
 
-    def cornerType(v: CornerType) = jsOpt("cornerType", v)
+    def cornerType(v: Int) = jsOpt("cornerType", v)
   }
 
 
@@ -639,7 +639,7 @@ package cesiumOptions {
 
     def shapePositions(v: Array[Cartesian3]) = jsOpt("shapePositions", v)
 
-    def cornerType(v: CornerType) = jsOpt("cornerType", v)
+    def cornerType(v: Int) = jsOpt("cornerType", v)
 
     def granularity(v: Double) = jsOpt("granularity", v)
 
@@ -660,7 +660,7 @@ package cesiumOptions {
 
     def shapePositions(v: Array[Cartesian3]) = jsOpt("shapePositions", v)
 
-    def cornerType(v: CornerType) = jsOpt("cornerType", v)
+    def cornerType(v: Int) = jsOpt("cornerType", v)
 
     def granularity(v: Double) = jsOpt("granularity", v)
 
@@ -1068,6 +1068,8 @@ package cesiumOptions {
     def outlineColor(v: Property) = jsOpt("outlineColor", v)
 
     def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
+
+    def shadows(v: Property) = jsOpt("shadows", v)
   }
 
 
@@ -1116,6 +1118,8 @@ package cesiumOptions {
     def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
 
     def granularity(v: Property) = jsOpt("granularity", v)
+
+    def shadows(v: Property) = jsOpt("shadows", v)
   }
 
 
@@ -1147,6 +1151,8 @@ package cesiumOptions {
     def numberOfVerticalLines(v: Property) = jsOpt("numberOfVerticalLines", v)
 
     def slices(v: Property) = jsOpt("slices", v)
+
+    def shadows(v: Property) = jsOpt("shadows", v)
   }
 
 
@@ -1216,6 +1222,8 @@ package cesiumOptions {
     def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
 
     def slicePartitions(v: Property) = jsOpt("slicePartitions", v)
+
+    def shadows(v: Property) = jsOpt("shadows", v)
   }
 
 
@@ -1370,8 +1378,11 @@ package cesiumOptions {
 
     def nodeTransformations(v: Property) = jsOpt("nodeTransformations", v)
 
-    def castShadows(v: Property) = jsOpt("castShadows", v)
-    def receiveShadows(v: Property) = jsOpt("receiveShadows", v)
+  //  def castShadows(v: Property) = jsOpt("castShadows", v)
+  //  def receiveShadows(v: Property) = jsOpt("receiveShadows", v)
+
+    def shadows(v: Property) = jsOpt("shadows", v)
+
   }
 
 
@@ -1468,6 +1479,8 @@ package cesiumOptions {
     def closeTop(v: Boolean) = jsOpt("closeTop", v)
 
     def closeBottom(v: Boolean) = jsOpt("closeBottom", v)
+
+    def shadows(v: Property) = jsOpt("shadows", v)
   }
 
 
@@ -1502,6 +1515,8 @@ package cesiumOptions {
     def material(v: MaterialProperty) = jsOpt("material", v)
 
     def granularity(v: Property) = jsOpt("granularity", v)
+
+    def shadows(v: Property) = jsOpt("shadows", v)
   }
 
 
@@ -1546,6 +1561,8 @@ package cesiumOptions {
     def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
 
     def granularity(v: Property) = jsOpt("granularity", v)
+
+    def shadows(v: Property) = jsOpt("shadows", v)
   }
 
 
@@ -1583,6 +1600,8 @@ package cesiumOptions {
     def rotation(v: Property) = jsOpt("rotation", v)
 
     def stRotation(v: Property) = jsOpt("stRotation", v)
+
+    def shadows(v: Property) = jsOpt("shadows", v)
   }
 
 
@@ -1631,6 +1650,8 @@ package cesiumOptions {
     def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
 
     def granularity(v: Property) = jsOpt("granularity", v)
+
+    def shadows(v: Property) = jsOpt("shadows", v)
   }
 
 
@@ -2910,9 +2931,10 @@ package cesiumOptions {
 
     def shadows(v: Boolean) = jsOpt("shadows", v)
 
-    def terrainShadows(v: Boolean) = jsOpt("terrainShadows", v)
+    def terrainShadows(v: Int) = jsOpt("terrainShadows", v)
 
     def rotatable2D(v: Boolean) = jsOpt("rotatable2D", v)
+
   }
 
   @JSName("Cesium.Options")

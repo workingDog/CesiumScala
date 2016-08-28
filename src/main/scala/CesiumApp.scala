@@ -29,8 +29,7 @@ object CesiumApp extends JSApp {
     val viewer = new Viewer("cesiumContainer", ViewerOptions.
       infoBox(false).
       selectionIndicator(false).
-      shadows(true).
-      terrainShadows(true))
+      terrainShadows(ShadowMode.ENABLED))
 
     def createModel(url: String, height: Double) = {
       val position = Cartesian3.fromDegrees(-123.0744619, 44.0503706, height)

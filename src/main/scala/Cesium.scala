@@ -29,6 +29,23 @@ package cesium {
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
 
+  @js.native
+  sealed trait ShadowMode extends js.Object
+
+  @JSName("Cesium.ShadowMode")
+  @js.native
+  object ShadowMode extends js.Object {
+    val DISABLED: Int = js.native
+    val ENABLED: Int = js.native
+    val CAST_ONLY: Int = js.native
+    val RECEIVE_ONLY: Int = js.native
+    val NUMBER_OF_SHADOW_MODES: Int = js.native
+
+    @JSBracketAccess
+    def apply(value: ShadowMode): Int = js.native
+  }
+
+
   @JSName("Cesium.Transforms")
   @js.native
   object Transforms extends js.Object {
@@ -167,6 +184,8 @@ package cesium {
     def getSizeInBytes(componentDatatype: ComponentDatatype): Int = js.native
 
     def validate(componentDatatype: ComponentDatatype): Boolean = js.native
+
+    def fromName(name: String): ComponentDatatype = js.native
   }
 
   @js.native
@@ -6713,6 +6732,7 @@ package cesium {
     var uri: Property = js.native
     var runAnimations: Property = js.native
     var nodeTransformations: PropertyBag = js.native
+    var shadows: Int = js.native
 
     def clone(result: ModelGraphics = ???): ModelGraphics = js.native
 
@@ -8133,6 +8153,8 @@ package cesium {
     var moveStart: Event = js.native
     var moveEnd: Event = js.native
 
+    def cancelFlight(): Unit = js.native
+
     def setView(options: CameraSetViewOptions): js.Dynamic = js.native
 
     def flyHome(duration: Double = ???): js.Dynamic = js.native
@@ -8622,9 +8644,9 @@ package cesium {
     var imageryLayers: ImageryLayerCollection = js.native
     var baseColor: Color = js.native
     var tileLoadProgressEvent: Event = js.native
-
-    var castShadows: Boolean = js.native
-    var receiveShadows: Boolean = js.native
+    var shadows: Int = js.native
+  //  var castShadows: Boolean = js.native
+  //  var receiveShadows: Boolean = js.native
     var terrainProviderChanged: Event = js.native
 
     def pick(ray: Ray, scene: Scene, result: Cartesian3 = ???): Cartesian3 | Unit = js.native
@@ -10458,9 +10480,10 @@ package cesium {
     var compressVertices: Boolean = js.native
     var ready: Boolean = js.native
     var readyPromise: Promise[Primitive] = js.native
+    var shadows: Int = js.native
 
-    var castShadows: Boolean = js.native
-    var receiveShadows: Boolean = js.native
+  //  var castShadows: Boolean = js.native
+  //  var receiveShadows: Boolean = js.native
 
     def update(): js.Dynamic = js.native
 
@@ -11792,6 +11815,7 @@ package cesium {
 
     var container: Element = js.native
     var viewModel: GeocoderViewModel = js.native
+    var keepExpanded: Boolean = js.native
 
     def isDestroyed(): Boolean = js.native
 
@@ -12392,7 +12416,7 @@ package cesium {
     var trackedEntity: Entity = js.native
     var selectedEntity: Entity = js.native
     var shadows: Boolean = js.native
-    var terrainShadows: Boolean = js.native
+    var terrainShadows: Int = js.native
     var rotatable2D: Boolean = js.native
     var shadowMap: ShadowMap = js.native
 

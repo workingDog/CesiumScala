@@ -12,6 +12,20 @@ Change Log
 * changed all pack() methods to return a js.Array[Double]  
 * changed class Command to trait Command
 
+* added shadows Property to BoxGraphics, CorridorGraphics, CylinderGraphics, EllipseGraphics, 
+EllipsoidGraphics, PolygonGraphics, PolylineGraphics, 
+PoylineVolumeGraphics, RectangleGraphics, and WallGraphics
+
+* removed castShadows and receiveShadows from ModelGraphicsOptions, Primitive, Globe
+* added ShadowMode enum to Cesium
+* added shadows of type Int to ModelGraphics and ModelGraphicsOptions, Primitive, Globe
+* changed Viewer.terrainShadows to be of type Int (ShadowMode) instead of Boolean
+* added cancelFlight() to Camera
+* added keepExpanded to Geocoder
+* added fromName(name: String) to ComponentDatatype
+
+* changed all def cornerType(v: CornerType) to def cornerType(v: Int) in CesiumOptions
+
 
 ## changes in 1.2
 
