@@ -1,7 +1,11 @@
 Change Log
 ==========
 
-## changes in 1.3-SNAPSHOT
+## changes in 1.4-SNAPSHOT
+
+
+## changes in 1.3
+* for compatibility with Cesium 1.25, released on 03/08/2016
 
 * added clampToGround to GeoJsonDataSource
 * added urlSchemeZeroPadding to UrlTemplateImageryProviderOptions and UrlTemplateImageryProvider
@@ -23,7 +27,6 @@ PoylineVolumeGraphics, RectangleGraphics, and WallGraphics
 * added cancelFlight() to Camera
 * added keepExpanded to Geocoder
 * added fromName(name: String) to ComponentDatatype
-
 * changed all def cornerType(v: CornerType) to def cornerType(v: Int) in CesiumOptions
 
 
