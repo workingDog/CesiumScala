@@ -56,7 +56,7 @@ To publish **cesiumscala** to your local (Ivy) repository, simply type:
 
 Then put this in your build.sbt
 
- libraryDependencies += "com.github.workingDog" %%% "cesiumscala" % "1.3-SNAPSHOT"
+ libraryDependencies += "com.github.workingDog" %%% "cesiumscala" % "1.4-SNAPSHOT"
 
 ## Dependencies code inclusions
 
