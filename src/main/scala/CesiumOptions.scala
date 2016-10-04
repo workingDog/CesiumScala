@@ -26,6 +26,33 @@ package cesiumOptions {
   import org.scalajs.dom.raw.{HTMLCanvasElement, HTMLImageElement, HTMLVideoElement}
   import scala.scalajs.js.typedarray.{ArrayBuffer, Float32Array, Float64Array, Int16Array, Int8Array, TypedArray, Uint16Array, Uint32Array, Uint8Array}
 
+  @JSName("Cesium.Options")
+  @js.native
+  trait DebugCameraPrimitiveOptions extends js.Object
+
+  object DebugCameraPrimitiveOptions extends DebugCameraPrimitiveOptionsBuilder(noOpts)
+
+  class DebugCameraPrimitiveOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[DebugCameraPrimitiveOptions, DebugCameraPrimitiveOptionsBuilder](new DebugCameraPrimitiveOptionsBuilder(_)) {
+    def camera(v: Camera) = jsOpt("camera", v)
+    def color(v: Color) = jsOpt("color", v)
+    def updateOnChange(v: Boolean) = jsOpt("updateOnChange", v)
+    def show(v: Boolean) = jsOpt("show", v)
+    def id(v: Object) = jsOpt("id", v)
+  }
+
+  @JSName("Cesium.Options")
+  @js.native
+  trait EntityClusterOptions extends js.Object
+
+  object EntityClusterOptions extends EntityClusterOptionsBuilder(noOpts)
+
+  class EntityClusterOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[EntityClusterOptions, EntityClusterOptionsBuilder](new EntityClusterOptionsBuilder(_)) {
+    def enabled(v: Boolean) = jsOpt("enabled", v)
+
+    def pixelRange(v: Int) = jsOpt("pixelRange", v)
+
+    def minimumClusterSize(v: Int) = jsOpt("minimumClusterSize", v)
+  }
 
   @JSName("Cesium.Options")
   @js.native

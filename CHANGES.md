@@ -3,6 +3,10 @@ Change Log
 
 ## changes in 1.4-SNAPSHOT
 
+* added EntityCluster and EntityClusterOptions
+* added DistanceDisplayConditions to  all primitives  --> todo
+* added DebugCameraPrimitive and DebugCameraPrimitiveOptions
+
 
 ## changes in 1.3
 * for compatibility with Cesium 1.25, released on 03/08/2016

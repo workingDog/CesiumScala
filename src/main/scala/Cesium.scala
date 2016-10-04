@@ -455,6 +455,45 @@ package cesium {
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
+
+  /**
+    * Defines how screen space objects (billboards, points, labels) are clustered.
+    */
+  @js.native
+  @JSName("Cesium.EntityCluster")
+  class EntityCluster protected() extends js.Object {
+    def this(options: EntityClusterOptions) = this()
+
+    var clusterEvent: Event = js.native
+    var enabled : Boolean = js.native
+    var minimumClusterSize : Int = js.native
+    var pixelRange : Int = js.native
+
+    def destroy() : Unit = js.native
+  }
+
+  @js.native
+  @JSName("Cesium.EntityCluster")
+  object EntityCluster extends js.Object {
+    /** A event listener function used to style clusters. */
+    type newClusterCallback = js.Function1[js.Array[Entity], js.Object]
+  }
+
+  /**
+    * Draws the outline of the camera's view frustum.
+    */
+  @js.native
+  @JSName("Cesium.DebugCameraPrimitive")
+  class DebugCameraPrimitive protected() extends js.Object {
+    def this(options: DebugCameraPrimitiveOptions) = this()
+
+    var id : Object = js.native
+    var show : Boolean = js.native
+
+    def destroy() : Unit = js.native
+    def isDestroy() : Boolean = js.native
+  }
+
   @js.native
   trait Proxy extends js.Object {
     def getURL(resource: String): String = js.native
