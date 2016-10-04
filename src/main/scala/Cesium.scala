@@ -4550,6 +4550,7 @@ package cesium {
     var errorEvent: Event = js.native
     var loadingEvent: Event = js.native
     var show: Boolean = js.native
+    var clustering: EntityCluster = js.native
 
     def update(time: JulianDate): Boolean = js.native
   }

@@ -4,8 +4,11 @@ Change Log
 ## changes in 1.4-SNAPSHOT
 
 * added EntityCluster and EntityClusterOptions
-* added DistanceDisplayConditions to  all primitives  --> todo
 * added DebugCameraPrimitive and DebugCameraPrimitiveOptions
+* added clustering to DataSource
+
+* added DistanceDisplayConditions to all primitives  --> todo
+
 
 
 ## changes in 1.3
