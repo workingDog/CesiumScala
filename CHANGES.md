@@ -6,8 +6,11 @@ Change Log
 * added EntityCluster and EntityClusterOptions
 * added DebugCameraPrimitive and DebugCameraPrimitiveOptions
 * added clustering to DataSource
-
-* added DistanceDisplayConditions to all primitives  --> todo
+* added DistanceDisplayConditions to all primitives: BillboardGraphicsOptions, BoxGraphicsOptions, CorridorGraphicsOptions, 
+CylinderGraphicsOptions, EllipsoidGraphicsOptions, EllipseGraphicsOptions, LabelGraphicsOptions,
+ModelGraphicsOptions, PathGraphicsOptions, PointGraphicsOptions, PolygonGraphicsOptions,
+PolylineGraphicsOptions, PolylineVolumeGraphicsOptions, RectangleGraphicsOptions, WallGraphicsOptions and
+their respective primitive.
 
 
 

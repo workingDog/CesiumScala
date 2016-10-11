@@ -1072,6 +1072,8 @@ package cesiumOptions {
     def imageSubRegion(v: Property) = jsOpt("imageSubRegion", v)
 
     def sizeInMeters(v: Property) = jsOpt("sizeInMeters", v)
+
+    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
   }
 
 
@@ -1097,6 +1099,8 @@ package cesiumOptions {
     def outlineWidth(v: Property) = jsOpt("outlineWidth", v)
 
     def shadows(v: Property) = jsOpt("shadows", v)
+
+    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
   }
 
 
@@ -1147,6 +1151,8 @@ package cesiumOptions {
     def granularity(v: Property) = jsOpt("granularity", v)
 
     def shadows(v: Property) = jsOpt("shadows", v)
+
+    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
   }
 
 
@@ -1180,6 +1186,8 @@ package cesiumOptions {
     def slices(v: Property) = jsOpt("slices", v)
 
     def shadows(v: Property) = jsOpt("shadows", v)
+
+    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
   }
 
 
@@ -1220,7 +1228,7 @@ package cesiumOptions {
     def stRotation(v: Property) = jsOpt("stRotation", v)
     def granularity(v: Property) = jsOpt("granularity", v)
     def numberOfVerticalLines(v: Property) = jsOpt("numberOfVerticalLines", v)
-
+    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
   }
 
   @JSName("Cesium.Options")
@@ -1251,6 +1259,8 @@ package cesiumOptions {
     def slicePartitions(v: Property) = jsOpt("slicePartitions", v)
 
     def shadows(v: Property) = jsOpt("shadows", v)
+
+    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
   }
 
 
@@ -1379,6 +1389,8 @@ package cesiumOptions {
     def translucencyByDistance(v: Property) = jsOpt("translucencyByDistance", v)
 
     def pixelOffsetScaleByDistance(v: Property) = jsOpt("pixelOffsetScaleByDistance", v)
+
+    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
   }
 
 
@@ -1409,6 +1421,8 @@ package cesiumOptions {
   //  def receiveShadows(v: Property) = jsOpt("receiveShadows", v)
 
     def shadows(v: Property) = jsOpt("shadows", v)
+
+    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
 
   }
 
@@ -1446,6 +1460,8 @@ package cesiumOptions {
     def material(v: MaterialProperty) = jsOpt("material", v)
 
     def resolution(v: Property) = jsOpt("resolution", v)
+
+    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
   }
 
 
@@ -1469,6 +1485,8 @@ package cesiumOptions {
     def scaleByDistance(v: Property) = jsOpt("scaleByDistance", v)
 
     def translucencyByDistance(v: Property) = jsOpt("translucencyByDistance", v)
+
+    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
   }
 
 
@@ -1508,6 +1526,8 @@ package cesiumOptions {
     def closeBottom(v: Boolean) = jsOpt("closeBottom", v)
 
     def shadows(v: Property) = jsOpt("shadows", v)
+
+    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
   }
 
 
@@ -1544,6 +1564,8 @@ package cesiumOptions {
     def granularity(v: Property) = jsOpt("granularity", v)
 
     def shadows(v: Property) = jsOpt("shadows", v)
+
+    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
   }
 
 
@@ -1590,6 +1612,8 @@ package cesiumOptions {
     def granularity(v: Property) = jsOpt("granularity", v)
 
     def shadows(v: Property) = jsOpt("shadows", v)
+
+    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
   }
 
 
@@ -1629,6 +1653,8 @@ package cesiumOptions {
     def stRotation(v: Property) = jsOpt("stRotation", v)
 
     def shadows(v: Property) = jsOpt("shadows", v)
+
+    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
   }
 
 
@@ -1679,6 +1705,8 @@ package cesiumOptions {
     def granularity(v: Property) = jsOpt("granularity", v)
 
     def shadows(v: Property) = jsOpt("shadows", v)
+
+    def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
   }
 
 

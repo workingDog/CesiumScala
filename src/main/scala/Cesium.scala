@@ -5471,6 +5471,7 @@ package cesium {
     var translucencyByDistance: Property = js.native
     var pixelOffsetScaleByDistance: Property = js.native
     var sizeInMeters: Property = js.native
+    var distanceDisplayCondition: Property = js.native
 
     def clone(result: BillboardGraphics = ???): BillboardGraphics = js.native
 
@@ -5569,6 +5570,7 @@ package cesium {
     var outline: Property = js.native
     var outlineColor: Property = js.native
     var outlineWidth: Property = js.native
+    var distanceDisplayCondition: Property = js.native
 
     def clone(result: BoxGraphics = ???): BoxGraphics = js.native
 
@@ -5899,6 +5901,7 @@ package cesium {
     var outlineColor: Property = js.native
     var outlineWidth: Property = js.native
     var cornerType: Property = js.native
+    var distanceDisplayCondition: Property = js.native
 
     def clone(result: CorridorGraphics = ???): CorridorGraphics = js.native
 
@@ -6017,6 +6020,7 @@ package cesium {
     var outline: Property = js.native
     var outlineColor: Property = js.native
     var outlineWidth: Property = js.native
+    var distanceDisplayCondition: Property = js.native
 
     def clone(result: CylinderGraphics = ???): CylinderGraphics = js.native
 
@@ -6235,6 +6239,7 @@ package cesium {
     var outlineColor: Property = js.native
     var outlineWidth: Property = js.native
     var numberOfVerticalLines: Property = js.native
+    var distanceDisplayCondition: Property = js.native
 
     def clone(result: EllipseGraphics = ???): EllipseGraphics = js.native
 
@@ -6296,6 +6301,7 @@ package cesium {
     var stackPartitions: Property = js.native
     var slicePartitions: Property = js.native
     var subdivisions: Property = js.native
+    var distanceDisplayCondition: Property = js.native
 
     def clone(result: EllipsoidGraphics = ???): EllipsoidGraphics = js.native
 
@@ -6686,6 +6692,7 @@ package cesium {
     var show: Property = js.native
     var translucencyByDistance: Property = js.native
     var pixelOffsetScaleByDistance: Property = js.native
+    var distanceDisplayCondition: Property = js.native
 
     def clone(result: LabelGraphics = ???): LabelGraphics = js.native
 
@@ -6773,6 +6780,7 @@ package cesium {
     var runAnimations: Property = js.native
     var nodeTransformations: PropertyBag = js.native
     var shadows: Int = js.native
+    var distanceDisplayCondition: Property = js.native
 
     def clone(result: ModelGraphics = ???): ModelGraphics = js.native
 
@@ -6845,6 +6853,7 @@ package cesium {
     var resolution: Property = js.native
     var leadTime: Property = js.native
     var trailTime: Property = js.native
+    var distanceDisplayCondition: Property = js.native
 
     def clone(result: PathGraphics = ???): PathGraphics = js.native
 
@@ -6895,6 +6904,7 @@ package cesium {
     var translucencyByDistance: Property = js.native
 
     var heightReference: HeightReference = js.native
+    var distanceDisplayCondition: Property = js.native
 
     def clone(result: PointGraphics = ???): PointGraphics = js.native
 
@@ -6981,6 +6991,7 @@ package cesium {
     var perPositionHeight: Property = js.native
     var closeTop: Property = js.native
     var closeBottom: Property = js.native
+    var distanceDisplayCondition: Property = js.native
 
     def clone(result: PolygonGraphics = ???): PolygonGraphics = js.native
 
@@ -7079,6 +7090,7 @@ package cesium {
     var width: Property = js.native
     var followSurface: Property = js.native
     var granularity: Property = js.native
+    var distanceDisplayCondition: Property = js.native
 
     def clone(result: PolylineGraphics = ???): PolylineGraphics = js.native
 
@@ -7191,6 +7203,7 @@ package cesium {
     var outlineColor: Property = js.native
     var outlineWidth: Property = js.native
     var cornerType: Property = js.native
+    var distanceDisplayCondition: Property = js.native
 
     def clone(result: PolylineVolumeGraphics = ???): PolylineVolumeGraphics = js.native
 
@@ -7397,6 +7410,7 @@ package cesium {
     var outlineWidth: Property = js.native
     var closeTop: Property = js.native
     var closeBottom: Property = js.native
+    var distanceDisplayCondition: Property = js.native
 
     def clone(result: RectangleGraphics = ???): RectangleGraphics = js.native
 
@@ -7793,6 +7807,7 @@ package cesium {
     var outline: Property = js.native
     var outlineColor: Property = js.native
     var outlineWidth: Property = js.native
+    var distanceDisplayCondition: Property = js.native
 
     def clone(result: WallGraphics = ???): WallGraphics = js.native
 
