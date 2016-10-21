@@ -12,6 +12,16 @@ ModelGraphicsOptions, PathGraphicsOptions, PointGraphicsOptions, PolygonGraphics
 PolylineGraphicsOptions, PolylineVolumeGraphicsOptions, RectangleGraphicsOptions, WallGraphicsOptions and
 their respective primitive.
 
+* added simpleIntersection to Rectangle
+* Added HeadingPitchRoll :
+  HeadingPitchRoll.fromQuaternion function for retrieving heading-pitch-roll angles from a quaternion.
+  HeadingPitchRoll.fromDegrees function that returns a new HeadingPitchRoll instance from angles given in degrees.
+  HeadingPitchRoll.clone function to duplicate HeadingPitchRoll instance.
+  HeadingPitchRoll.equals and HeadingPitchRoll.equalsEpsilon functions for comparing two instances.
+  
+* added Matrix3.fromHeadingPitchRoll Computes a 3x3 rotation matrix from the provided headingPitchRoll.  
+  
+  
 
 
 ## changes in 1.3

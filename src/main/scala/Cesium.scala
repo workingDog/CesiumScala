@@ -456,6 +456,23 @@ package cesium {
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
 
+@js.native
+@JSName("Cesium.HeadingPitchRoll")
+class HeadingPitchRoll protected() extends js.Object {
+  def this(heading: Double = 0, pitch: Double = 0, roll: Double = 0) = this()
+
+  def fromQuaternion(quaternion: Quaternion, result: Quaternion) : HeadingPitchRoll = js.native
+  def fromDegrees(heading: Double, pitch: Double, roll: Double, result: Quaternion) : Quaternion = js.native
+//  def clone(headingPitchRoll: HeadingPitchRoll, result: HeadingPitchRoll) : HeadingPitchRoll = js.native
+  def clone(result: HeadingPitchRoll = ???) : HeadingPitchRoll = js.native
+//  def equals(left: HeadingPitchRoll = ???, right: HeadingPitchRoll = ???): Boolean = js.native
+  def equals(right: HeadingPitchRoll): Boolean = js.native
+//  def equalsEpsilon(left: HeadingPitchRoll, right: HeadingPitchRoll, relativeEpsilon: Double, absoluteEpsilon: Double = ???): Boolean = js.native
+  def equalsEpsilon(right: HeadingPitchRoll, relativeEpsilon: Double, absoluteEpsilon: Double = ???): Boolean = js.native
+
+}
+
+
   /**
     * Defines how screen space objects (billboards, points, labels) are clustered.
     */
@@ -3159,6 +3176,8 @@ package cesium {
 
     def fromRotationZ(angle: Double, result: Matrix3 = ???): Matrix3 = js.native
 
+    def fromHeadingPitchRoll(headingPitchRoll: HeadingPitchRoll, result: Matrix3 = ???): Matrix3 = js.native
+
     def toArray(matrix: Matrix3, result: js.Array[Double] = ???): js.Array[Double] = js.native
 
     def getElementIndex(row: Double, column: Double): Double = js.native
@@ -4359,6 +4378,8 @@ package cesium {
     def center(rectangle: Rectangle, result: Cartographic = ???): Cartographic = js.native
 
     def intersection(rectangle: Rectangle, otherRectangle: Rectangle, result: Rectangle = ???): Rectangle | Unit = js.native
+
+    def simpleIntersection(rectangle: Rectangle, otherRectangle: Rectangle, result: Rectangle = ???): Rectangle | Unit = js.native
 
     def union(rectangle: Rectangle, otherRectangle: Rectangle, result: Rectangle = ???): Rectangle = js.native
 
