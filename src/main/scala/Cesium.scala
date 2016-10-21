@@ -81,14 +81,23 @@ package cesium {
 
     def aircraftHeadingPitchRollToFixedFrame(origin: Cartesian3,
                                              heading: Double, pitch: Double, roll: Double,
-                                             ellipsoid: Option[Ellipsoid] = None,
-                                             result: Option[Matrix4] = None): Matrix4 = js.native
+                                             ellipsoid: Option[Ellipsoid] ,
+                                             result: Option[Matrix4]): Matrix4 = js.native
+
+    def aircraftHeadingPitchRollToFixedFrame(origin: Cartesian3,
+                                             headingPitchRoll: HeadingPitchRoll,
+                                             ellipsoid: Option[Ellipsoid] ,
+                                             result: Option[Matrix4]): Matrix4 = js.native
 
     def aircraftHeadingPitchRollQuaternion(origin: Cartesian3,
                                            heading: Double, pitch: Double, roll: Double,
-                                           ellipsoid: Option[Ellipsoid] = None,
-                                           result: Option[Quaternion] = None): Quaternion = js.native
+                                           ellipsoid: Option[Ellipsoid],
+                                           result: Option[Quaternion]): Quaternion = js.native
 
+    def aircraftHeadingPitchRollQuaternion(origin: Cartesian3,
+                                           headingPitchRoll: HeadingPitchRoll,
+                                           ellipsoid: Option[Ellipsoid],
+                                           result: Option[Quaternion]): Quaternion = js.native
   }
 
   @js.native
@@ -463,12 +472,12 @@ class HeadingPitchRoll protected() extends js.Object {
 
   def fromQuaternion(quaternion: Quaternion, result: Quaternion) : HeadingPitchRoll = js.native
   def fromDegrees(heading: Double, pitch: Double, roll: Double, result: Quaternion) : Quaternion = js.native
-//  def clone(headingPitchRoll: HeadingPitchRoll, result: HeadingPitchRoll) : HeadingPitchRoll = js.native
-  def clone(result: HeadingPitchRoll = ???) : HeadingPitchRoll = js.native
-//  def equals(left: HeadingPitchRoll = ???, right: HeadingPitchRoll = ???): Boolean = js.native
+  def clone(headingPitchRoll: HeadingPitchRoll, result: HeadingPitchRoll) : HeadingPitchRoll = js.native
+  def clone(result: HeadingPitchRoll) : HeadingPitchRoll = js.native
+  def equals(left: HeadingPitchRoll, right: HeadingPitchRoll): Boolean = js.native
   def equals(right: HeadingPitchRoll): Boolean = js.native
-//  def equalsEpsilon(left: HeadingPitchRoll, right: HeadingPitchRoll, relativeEpsilon: Double, absoluteEpsilon: Double = ???): Boolean = js.native
-  def equalsEpsilon(right: HeadingPitchRoll, relativeEpsilon: Double, absoluteEpsilon: Double = ???): Boolean = js.native
+  def equalsEpsilon(left: HeadingPitchRoll, right: HeadingPitchRoll, relativeEpsilon: Double, absoluteEpsilon: Double): Boolean = js.native
+  def equalsEpsilon(right: HeadingPitchRoll, relativeEpsilon: Double, absoluteEpsilon: Double): Boolean = js.native
 
 }
 

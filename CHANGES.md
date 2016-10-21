@@ -21,6 +21,8 @@ their respective primitive.
   
 * added Matrix3.fromHeadingPitchRoll Computes a 3x3 rotation matrix from the provided headingPitchRoll.  
   
+* added Transforms.aircraftHeadingPitchRollToFixedFrame to create a local frame from a position and heading/pitch/roll angles. The local frame is north-west-up axed.
+* added Transforms.aircraftHeadingPitchRollQuaternion which is the quaternion rotation from Transforms.aircraftHeadingPitchRollToFixedFrame.
   
 
 
