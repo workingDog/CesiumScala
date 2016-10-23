@@ -12,9 +12,6 @@ There are also the Scala libraries; [ScalaCZML](https://github.com/workingDog/sc
 
 ## Usage
 
-I recommend using the latest SNAPSHOT version as it includes bug fixes and improvements. To do that
-you can use "sbt publishLocal" see below.
-
 To use the last release add the following dependency to your build.sbt:
 
     libraryDependencies += "com.github.workingDog" %%% "cesiumscala" % "1.3"
@@ -89,7 +86,7 @@ Refer to [Cesium API reference](https://cesiumjs.org/refdoc.html) for the origin
 
 ## Status
 
-ongoing work
+usable, ongoing work
 
 
 
