@@ -52,6 +52,10 @@ package cesiumOptions {
     def pixelRange(v: Int) = jsOpt("pixelRange", v)
 
     def minimumClusterSize(v: Int) = jsOpt("minimumClusterSize", v)
+
+    def clusterBillboards(v: Boolean) = jsOpt("clusterBillboards", v)
+    def clusterLabels(v: Boolean) = jsOpt("clusterLabels", v)
+    def clusterPoints(v: Boolean) = jsOpt("clusterPoints", v)
   }
 
   @JSName("Cesium.Options")

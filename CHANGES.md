@@ -3,6 +3,8 @@ Change Log
 
 ## changes in 1.4-SNAPSHOT
 
+* changed the scene parameter for creating BillboardVisualizer, LabelVisualizer, and PointVisualizer has been removed. Instead, pass an instance of EntityCluster.
+* added clusterBillboards, clusterLabels, and cluserPoints properties to EntityCluster to selectively cluster screen space entities.
 * added EntityCluster and EntityClusterOptions
 * added DebugCameraPrimitive and DebugCameraPrimitiveOptions
 * added clustering to DataSource
@@ -20,7 +22,7 @@ their respective primitive.
   HeadingPitchRoll.equals and HeadingPitchRoll.equalsEpsilon functions for comparing two instances.
   
 * added Matrix3.fromHeadingPitchRoll Computes a 3x3 rotation matrix from the provided headingPitchRoll.  
-  
+ 
 * added Transforms.aircraftHeadingPitchRollToFixedFrame to create a local frame from a position and heading/pitch/roll angles. The local frame is north-west-up axed.
 * added Transforms.aircraftHeadingPitchRollQuaternion which is the quaternion rotation from Transforms.aircraftHeadingPitchRollToFixedFrame.
   

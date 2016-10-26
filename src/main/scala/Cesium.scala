@@ -5519,7 +5519,7 @@ class HeadingPitchRoll protected() extends js.Object {
   @js.native
   @JSName("Cesium.BillboardVisualizer")
   class BillboardVisualizer protected() extends Visualizer {
-    def this(scene: Scene, entityCollection: EntityCollection) = this()
+    def this(entityCluster: EntityCluster, entityCollection: EntityCollection) = this()
   }
 
   /**
@@ -6741,7 +6741,7 @@ class HeadingPitchRoll protected() extends js.Object {
   @js.native
   @JSName("Cesium.LabelVisualizer")
   class LabelVisualizer protected() extends Visualizer {
-    def this(scene: Scene, entityCollection: EntityCollection) = this()
+    def this(entityCluster: EntityCluster, entityCollection: EntityCollection) = this()
   }
 
   /**
@@ -6952,7 +6952,7 @@ class HeadingPitchRoll protected() extends js.Object {
   @js.native
   @JSName("Cesium.PointVisualizer")
   class PointVisualizer protected() extends Visualizer {
-    def this(scene: Scene, entityCollection: EntityCollection) = this()
+    def this(entityCluster: EntityCluster, entityCollection: EntityCollection) = this()
   }
 
   /**
