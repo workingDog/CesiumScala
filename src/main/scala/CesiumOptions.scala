@@ -26,7 +26,7 @@ package cesiumOptions {
   import org.scalajs.dom.raw.{HTMLCanvasElement, HTMLImageElement, HTMLVideoElement}
   import scala.scalajs.js.typedarray.{ArrayBuffer, Float32Array, Float64Array, Int16Array, Int8Array, TypedArray, Uint16Array, Uint32Array, Uint8Array}
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait DebugCameraPrimitiveOptions extends js.Object
 
@@ -39,8 +39,7 @@ package cesiumOptions {
     def show(v: Boolean) = jsOpt("show", v)
     def id(v: Object) = jsOpt("id", v)
   }
-
-  @JSName("Cesium.Options")
+  
   @js.native
   trait EntityClusterOptions extends js.Object
 
@@ -57,8 +56,7 @@ package cesiumOptions {
     def clusterLabels(v: Boolean) = jsOpt("clusterLabels", v)
     def clusterPoints(v: Boolean) = jsOpt("clusterPoints", v)
   }
-
-  @JSName("Cesium.Options")
+  
   @js.native
   trait ArcGisImageServerTerrainProviderOptions extends js.Object
 
@@ -77,9 +75,7 @@ package cesiumOptions {
 
     def credit(v: Credit | String) = jsOpt("credit", v)
   }
-
-
-  @JSName("Cesium.Options")
+  
   @js.native
   trait BoxGeometryOptions extends js.Object
 
@@ -92,9 +88,7 @@ package cesiumOptions {
 
     def vertexFormat(v: VertexFormat) = jsOpt("vertexFormat", v)
   }
-
-
-  @JSName("Cesium.Options")
+  
   @js.native
   trait BoxOutlineGeometryOptions extends js.Object
 
@@ -106,8 +100,6 @@ package cesiumOptions {
     def maximum(v: Cartesian3) = jsOpt("maximum", v)
   }
 
-
-  @JSName("Cesium.Options")
   @js.native
   trait CatmullRomSplineOptions extends js.Object
 
@@ -123,8 +115,6 @@ package cesiumOptions {
     def lastTangent(v: Cartesian3) = jsOpt("lastTangent", v)
   }
 
-
-  @JSName("Cesium.Options")
   @js.native
   trait CesiumTerrainProviderOptions extends js.Object
 
@@ -144,7 +134,6 @@ package cesiumOptions {
     def credit(v: Credit | String) = jsOpt("credit", v)
   }
 
-  @JSName("Cesium.Options")
   @js.native
   trait CircleGeometryOptions extends js.Object
 
@@ -167,9 +156,7 @@ package cesiumOptions {
 
     def stRotation(v: Double) = jsOpt("stRotation", v)
   }
-
-
-  @JSName("Cesium.Options")
+  
   @js.native
   trait CircleOutlineGeometryOptions extends js.Object
 
@@ -193,7 +180,6 @@ package cesiumOptions {
     def numberOfVerticalLines(v: Double) = jsOpt("numberOfVerticalLines", v)
   }
 
-  @JSName("Cesium.Options")
   @js.native
   trait ClockOptions extends js.Object
 
@@ -216,9 +202,7 @@ package cesiumOptions {
 
     def shouldAnimate(v: Boolean) = jsOpt("shouldAnimate", v)
   }
-
-
-  @JSName("Cesium.Options")
+  
   @js.native
   trait RandomColorOptions extends js.Object
 
@@ -249,9 +233,7 @@ package cesiumOptions {
 
     def maximumAlpha(v: Double) = jsOpt("maximumAlpha", v)
   }
-
-
-  @JSName("Cesium.Options")
+  
   @js.native
   trait CorridorGeometryOptions extends js.Object
 
@@ -274,9 +256,7 @@ package cesiumOptions {
 
     def cornerType(v: Int) = jsOpt("cornerType", v)
   }
-
-
-  @JSName("Cesium.Options")
+  
   @js.native
   trait CorridorOutlineGeometryOptions extends js.Object
 
@@ -297,9 +277,7 @@ package cesiumOptions {
 
     def cornerType(v: Int) = jsOpt("cornerType", v)
   }
-
-
-  @JSName("Cesium.Options")
+  
   @js.native
   trait CylinderGeometryOptions extends js.Object
 
@@ -316,9 +294,7 @@ package cesiumOptions {
 
     def vertexFormat(v: VertexFormat) = jsOpt("vertexFormat", v)
   }
-
-
-  @JSName("Cesium.Options")
+  
   @js.native
   trait CylinderOutlineGeometryOptions extends js.Object
 
@@ -335,9 +311,7 @@ package cesiumOptions {
 
     def numberOfVerticalLines(v: Int) = jsOpt("numberOfVerticalLines", v)
   }
-
-
-  @JSName("Cesium.Options")
+  
   @js.native
   trait EllipseGeometryOptions extends js.Object
 
@@ -357,7 +331,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait EllipseOutlineGeometryOptions extends js.Object
 
@@ -377,7 +351,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait EllipsoidGeometryOptions extends js.Object
 
@@ -394,7 +368,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait EllipsoidOutlineGeometryOptions extends js.Object
 
@@ -411,7 +385,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait EllipsoidTerrainProviderOptions extends js.Object
 
@@ -424,7 +398,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait GeographicTilingSchemeOptions extends js.Object
 
@@ -441,7 +415,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait GeometryOptions extends js.Object
 
@@ -458,7 +432,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait GeometryAttributeOptions extends js.Object
 
@@ -475,7 +449,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait GeometryInstanceOptions extends js.Object
 
@@ -492,7 +466,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait GeometryInstanceAttributeOptions extends js.Object
 
@@ -509,7 +483,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait HeightmapTerrainDataOptions extends js.Object
 
@@ -531,7 +505,7 @@ package cesiumOptions {
     def createdByUpsampling(v: Boolean) = jsOpt("createdByUpsampling", v)
   }
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait HeightmapTerrainDataStructureOptions extends js.Object
 
@@ -552,7 +526,7 @@ package cesiumOptions {
 
   }
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait HermiteSplineOptions extends js.Object
 
@@ -569,7 +543,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait LinearSplineOptions extends js.Object
 
@@ -582,7 +556,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait PolygonGeometryOptions extends js.Object
 
@@ -611,7 +585,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait PolygonOutlineGeometryOptions extends js.Object
 
@@ -634,7 +608,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait PolylineGeometryOptions extends js.Object
 
@@ -659,7 +633,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait PolylineVolumeGeometryOptions extends js.Object
 
@@ -680,7 +654,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait PolylineVolumeOutlineGeometryOptions extends js.Object
 
@@ -699,7 +673,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait QuantizedMeshTerrainDataOptions extends js.Object
 
@@ -746,7 +720,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait QuaternionSplineOptions extends js.Object
 
@@ -763,7 +737,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait RectangleGeometryOptions extends js.Object
 
@@ -792,7 +766,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait RectangleOutlineGeometryOptions extends js.Object
 
@@ -815,7 +789,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait SimplePolylineGeometryOptions extends js.Object
 
@@ -836,7 +810,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait SphereGeometryOptions extends js.Object
 
@@ -853,7 +827,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait SphereOutlineGeometryOptions extends js.Object
 
@@ -870,7 +844,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait TimeIntervalOptions extends js.Object
 
@@ -890,7 +864,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait Iso8601Options extends js.Object
 
@@ -907,7 +881,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait FindIntervalOptions extends js.Object
 
@@ -924,7 +898,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait VRTheWorldTerrainProviderOptions extends js.Object
 
@@ -941,7 +915,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait VideoSynchronizerOptions extends js.Object
 
@@ -958,7 +932,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait WallGeometryOptions extends js.Object
 
@@ -979,7 +953,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait ConstantHeightsOptions extends js.Object
 
@@ -998,7 +972,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait WallOutlineGeometryOptions extends js.Object
 
@@ -1017,7 +991,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait WebMercatorTilingSchemeOptions extends js.Object
 
@@ -1036,7 +1010,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait BillboardGraphicsOptions extends js.Object
 
@@ -1081,7 +1055,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait BoxGraphicsOptions extends js.Object
 
@@ -1108,7 +1082,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait CheckerboardMaterialPropertyOptions extends js.Object
 
@@ -1123,7 +1097,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait CorridorGraphicsOptions extends js.Object
 
@@ -1160,7 +1134,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait CylinderGraphicsOptions extends js.Object
 
@@ -1195,7 +1169,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait DataSourceDisplayOptions extends js.Object
 
@@ -1210,7 +1184,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait EllipseGraphicsOptions extends js.Object
 
@@ -1235,7 +1209,7 @@ package cesiumOptions {
     def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
   }
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait EllipsoidGraphicsOptions extends js.Object
 
@@ -1268,7 +1242,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait EntityOptions extends js.Object
 
@@ -1325,7 +1299,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait GridMaterialPropertyOptions extends js.Object
 
@@ -1344,7 +1318,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait ImageMaterialPropertyOptions extends js.Object
 
@@ -1361,7 +1335,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait LabelGraphicsOptions extends js.Object
 
@@ -1398,7 +1372,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait ModelGraphicsOptions extends js.Object
 
@@ -1431,7 +1405,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait NodeTransformationPropertyOptions extends js.Object
 
@@ -1446,7 +1420,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait PathGraphicsOptions extends js.Object
 
@@ -1469,7 +1443,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait PointGraphicsOptions extends js.Object
 
@@ -1494,7 +1468,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait PolygonGraphicsOptions extends js.Object
 
@@ -1535,7 +1509,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait PolylineGlowMaterialPropertyOptions extends js.Object
 
@@ -1548,7 +1522,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait PolylineGraphicsOptions extends js.Object
 
@@ -1573,7 +1547,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait PolylineOutlineMaterialPropertyOptions extends js.Object
 
@@ -1588,7 +1562,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait PolylineVolumeGraphicsOptions extends js.Object
 
@@ -1621,7 +1595,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait RectangleGraphicsOptions extends js.Object
 
@@ -1662,7 +1636,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait StripeMaterialPropertyOptions extends js.Object
 
@@ -1681,7 +1655,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait WallGraphicsOptions extends js.Object
 
@@ -1714,7 +1688,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait AppearanceOptions extends js.Object
 
@@ -1735,7 +1709,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait ArcGisMapServerImageryProviderOptions extends js.Object
 
@@ -1770,7 +1744,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait BillboardCollectionOptions extends js.Object
 
@@ -1785,7 +1759,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait BingMapsImageryProviderOptions extends js.Object
 
@@ -1810,7 +1784,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait DebugAppearanceOptions extends js.Object
 
@@ -1829,7 +1803,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait DebugModelMatrixPrimitiveOptions extends js.Object
 
@@ -1848,7 +1822,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait DiscardMissingTileImagePolicyOptions extends js.Object
 
@@ -1863,7 +1837,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait EllipsoidSurfaceAppearanceOptions extends js.Object
 
@@ -1888,7 +1862,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait FrameRateMonitorOptions extends js.Object
 
@@ -1909,7 +1883,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait GoogleEarthImageryProviderOptions extends js.Object
 
@@ -1932,7 +1906,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait GridImageryProviderOptions extends js.Object
 
@@ -1953,7 +1927,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait GroundPrimitiveOptions extends js.Object
 
@@ -1982,7 +1956,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait LabelCollectionOptions extends js.Object
 
@@ -1997,7 +1971,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait MapboxImageryProviderOptions extends js.Object
 
@@ -2026,7 +2000,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait MaterialOptions extends js.Object
 
@@ -2042,7 +2016,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait MaterialAppearanceOptions extends js.Object
 
@@ -2069,7 +2043,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait ModelOptions extends js.Object
 
@@ -2108,7 +2082,7 @@ package cesiumOptions {
     def receiveShadows(v: Boolean) = jsOpt("receiveShadows", v)
   }
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait ModelFromGltfOptions extends js.Object
 
@@ -2146,7 +2120,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait MoonOptions extends js.Object
 
@@ -2163,7 +2137,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait PerInstanceColorAppearanceOptions extends js.Object
 
@@ -2186,7 +2160,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait PointPrimitiveCollectionOptions extends js.Object
 
@@ -2199,7 +2173,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait PolylineOptions extends js.Object
 
@@ -2220,7 +2194,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait PolylineCollectionOptions extends js.Object
 
@@ -2233,7 +2207,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait PolylineColorAppearanceOptions extends js.Object
 
@@ -2250,7 +2224,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait PolylineMaterialAppearanceOptions extends js.Object
 
@@ -2269,7 +2243,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait PrimitiveOptions extends js.Object
 
@@ -2305,7 +2279,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait PrimitiveCollectionOptions extends js.Object
 
@@ -2318,7 +2292,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait SceneOptions extends js.Object
 
@@ -2345,7 +2319,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait SingleTileImageryProviderOptions extends js.Object
 
@@ -2364,7 +2338,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait SkyBoxOptions extends js.Object
 
@@ -2377,7 +2351,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait TileCoordinatesImageryProviderOptions extends js.Object
 
@@ -2396,7 +2370,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait UrlTemplateImageryProviderOptions extends js.Object
 
@@ -2437,7 +2411,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait WebMapServiceImageryProviderOptions extends js.Object
 
@@ -2478,7 +2452,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait WebMapTileServiceImageryProviderOptions extends js.Object
 
@@ -2519,7 +2493,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait BaseLayerPickerViewModelOptions extends js.Object
 
@@ -2539,7 +2513,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait ProviderViewModelOptions extends js.Object
 
@@ -2556,7 +2530,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait GeocoderOptions extends js.Object
 
@@ -2575,7 +2549,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait GeocoderViewModelOptions extends js.Object
 
@@ -2592,7 +2566,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait NavigationHelpButtonOptions extends js.Object
 
@@ -2605,7 +2579,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait PerformanceWatchdogOptions extends js.Object
 
@@ -2620,7 +2594,7 @@ package cesiumOptions {
   }
 
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait PerformanceWatchdogViewModelOptions extends js.Object
 
@@ -2644,7 +2618,7 @@ package cesiumOptions {
     * {Object} [options.headers] HTTP headers to send with the request, if any.
     * {String} [options.overrideMimeType] Overrides the MIME type returned by the server.
     */
-  @JSName("Cesium.Options")
+   
   @js.native
   trait WithXhrOptions extends js.Object
 
@@ -2669,7 +2643,7 @@ package cesiumOptions {
     * {String} [options.callbackParameterName='callback'] The callback parameter name that the server expects.
     * {Proxy} [options.proxy] A proxy to use for the request. This object is expected to have a getURL function which returns the proxied URL, if needed.
     */
-  @JSName("Cesium.Options")
+   
   @js.native
   trait JsonpOptions extends js.Object
 
@@ -2684,7 +2658,7 @@ package cesiumOptions {
 
   }
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait OpenStreetMapImageryProviderOptions extends js.Object
 
@@ -2708,7 +2682,7 @@ package cesiumOptions {
     def credit(v: Credit | String) = jsOpt("credit", v)
   }
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait TangentSpaceDebugPrimitiveOptions extends js.Object
 
@@ -2723,7 +2697,7 @@ package cesiumOptions {
 
   }
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait TileMapServiceImageryProviderOptions extends js.Object
 
@@ -2757,7 +2731,7 @@ package cesiumOptions {
 
   }
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait DragDropMixinOptions extends js.Object
 
@@ -2773,7 +2747,7 @@ package cesiumOptions {
     def proxy(v: Proxy) = jsOpt("proxy", v)
   }
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait DimensionsOptions extends js.Object
 
@@ -2786,7 +2760,7 @@ package cesiumOptions {
 
   }
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait PositionsOptions extends js.Object
 
@@ -2807,7 +2781,7 @@ package cesiumOptions {
 
   }
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait GeoJsonDataSourceOptions extends js.Object
 
@@ -2831,7 +2805,7 @@ package cesiumOptions {
     def clampToGround(v: Boolean) = jsOpt("clampToGround", v)
   }
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait KmlDataSourceOptions extends js.Object
 
@@ -2849,7 +2823,7 @@ package cesiumOptions {
     def clampToGround(v: Boolean) = jsOpt("clampToGround", v)
   }
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait CameraFlyToOptions extends js.Object
 
@@ -2873,7 +2847,7 @@ package cesiumOptions {
     def easingFunction(v:	EasingFunction | EasingFunction.Callback) = jsOpt("easingFunction", v)
   }
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait CameraSetViewOptions extends js.Object
 
@@ -2889,7 +2863,7 @@ package cesiumOptions {
     def endTransform(v: Matrix4) = jsOpt("endTransform", v)
   }
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait CameraFlyToBoundingSphereOptions extends js.Object
 
@@ -2911,7 +2885,7 @@ package cesiumOptions {
     def easingFunction(v:	EasingFunction | EasingFunction.Callback) = jsOpt("easingFunction", v)
   }
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait ViewerOptions extends js.Object
 
@@ -2996,7 +2970,7 @@ package cesiumOptions {
 
   }
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait ViewerFlyToOptions extends js.Object
 
@@ -3010,7 +2984,7 @@ package cesiumOptions {
     def offset(v: HeadingPitchRange) = jsOpt("offset", v)
   }
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait ImageryLayerOptions extends js.Object
 
@@ -3040,7 +3014,7 @@ package cesiumOptions {
     def maximumTerrainLevel(v: Double) = jsOpt("maximumTerrainLevel", v)
   }
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait ModelAnimationCollectionAddOptions extends js.Object
 
@@ -3066,7 +3040,7 @@ package cesiumOptions {
     def loop(v: ModelAnimationLoop) = jsOpt("loop", v)
   }
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait ModelAnimationCollectionAddAllOptions extends js.Object
 
@@ -3090,7 +3064,7 @@ package cesiumOptions {
     def loop(v: ModelAnimationLoop) = jsOpt("loop", v)
   }
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait BaseLayerPickerOptions extends js.Object
 
@@ -3108,7 +3082,7 @@ package cesiumOptions {
     def selectedTerrainProviderViewModel(v: ProviderViewModel) = jsOpt("selectedTerrainProviderViewModel", v)
   }
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait LabelOptions extends js.Object
 
@@ -3140,7 +3114,7 @@ package cesiumOptions {
 
   }
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait ToggleButtonViewModelOptions extends js.Object
 
@@ -3152,7 +3126,7 @@ package cesiumOptions {
     def tooltip(v: String) = jsOpt("tooltip", v)
   }
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait VertexFormatOptions extends js.Object
 
@@ -3164,7 +3138,7 @@ package cesiumOptions {
     def st(v: Boolean) = jsOpt("st", v)
   }
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait CesiumWidgetOptions extends js.Object
 
@@ -3206,7 +3180,7 @@ package cesiumOptions {
     def rotatable2D(v: Boolean) = jsOpt("rotatable2D", v)
   }
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait CzmlDataSourceOptions extends js.Object
 
@@ -3216,7 +3190,7 @@ package cesiumOptions {
     def sourceUri(v: String) = jsOpt("sourceUri", v)
   }
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait ShadowMapOptions extends js.Object
 
@@ -3248,7 +3222,7 @@ package cesiumOptions {
 
   }
 
-  @JSName("Cesium.Options")
+   
   @js.native
   trait InterpolationOptions extends js.Object
 

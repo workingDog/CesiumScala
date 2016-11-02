@@ -14,7 +14,7 @@ There are also the Scala libraries; [ScalaCZML](https://github.com/workingDog/sc
 
 To use the last release add the following dependency to your build.sbt:
 
-    libraryDependencies += "com.github.workingDog" %%% "cesiumscala" % "1.3"
+    libraryDependencies += "com.github.workingDog" %%% "cesiumscala" % "1.4"
 
 To run the basic [CesiumApp](https://github.com/workingDog/CesiumScala/blob/master/src/main/scala/CesiumApp.scala)
 you can install and run Cesium.js locally. Refer to [Cesium tutorial](https://cesiumjs.org/tutorials/cesium-up-and-running/) for how to
@@ -53,7 +53,7 @@ To publish **cesiumscala** to your local (Ivy) repository, simply type:
 
 Then put this in your build.sbt
 
- libraryDependencies += "com.github.workingDog" %%% "cesiumscala" % "1.4-SNAPSHOT"
+ libraryDependencies += "com.github.workingDog" %%% "cesiumscala" % "1.5-SNAPSHOT"
 
 ## Dependencies code inclusions
 

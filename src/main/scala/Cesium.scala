@@ -259,7 +259,6 @@ package cesium {
     def apply(value: ExtrapolationType): Int = js.native
   }
 
-  @JSName("Cesium.InterpolationAlgorithm")
   @js.native
   sealed trait InterpolationAlgorithm extends js.Object {
     var `type`: String = js.native
@@ -277,11 +276,9 @@ package cesium {
   @ScalaJSDefined
   sealed trait Frustum extends js.Object
 
-  @JSName("Cesium.Packable")
   @js.native
   sealed trait Packable extends js.Object
 
-  @JSName("Cesium.Packable")
   @js.native
   trait PackableStatic extends Packable {
     var packedLength: Int = js.native
@@ -3428,7 +3425,6 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see WallGeometryUpdater
     */
   @js.native
-  @JSName("Cesium.GeometryUpdater")
   trait GeometryUpdater extends js.Object {
 
     var entity: Entity = js.native
@@ -3460,7 +3456,6 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.GeometryUpdater")
   trait GeometryUpdaterStatic extends js.Object {
     var perInstanceColorAppearanceType: Appearance = js.native
     var materialAppearanceType: Appearance = js.native
@@ -4570,7 +4565,6 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see DataSourceDisplay
     */
   @js.native
-  @JSName("Cesium.DataSource")
   trait DataSource extends js.Object {
     var name: String = js.native
     var clock: DataSourceClock = js.native
@@ -4834,7 +4828,6 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see QuaternionSpline
     */
   @js.native
-  @JSName("Cesium.Spline")
   trait Spline extends js.Object {
     var times: js.Array[Double] = js.native
     var points: js.Array[Cartesian3] | js.Array[Quaternion] = js.native
@@ -4881,7 +4874,6 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see QuantizedMeshTerrainData
     */
   @js.native
-  @JSName("Cesium.TerrainData")
   trait TerrainData extends js.Object {
     var waterMask: Uint8Array | HTMLImageElement | HTMLCanvasElement = js.native
 
@@ -4906,7 +4898,6 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see ArcGisImageServerTerrainProvider
     */
   @js.native
-  @JSName("Cesium.TerrainProvider")
   trait TerrainProvider extends js.Object {
     var errorEvent: Event = js.native
     var credit: Credit = js.native
@@ -4988,7 +4979,6 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see GeographicTilingScheme
     */
   @js.native
-  @JSName("Cesium.TilingScheme")
   trait TilingScheme extends js.Object {
     var ellipsoid: Ellipsoid = js.native
     var rectangle: Rectangle = js.native
@@ -6194,7 +6184,6 @@ class HeadingPitchRoll protected() extends js.Object {
     *
     */
   @js.native
-  @JSName("Cesium.DynamicGeometryUpdater")
   trait DynamicGeometryUpdater extends js.Object {
     def update(time: JulianDate): js.Dynamic = js.native
 
@@ -6759,7 +6748,6 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see StripeMaterialProperty
     */
   @js.native
-  @JSName("Cesium.MaterialProperty")
   trait MaterialProperty extends js.Object {
     var isConstant: Boolean = js.native
     var definitionChanged: Event = js.native
@@ -7253,7 +7241,6 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see TimeIntervalCollectionPositionProperty
     */
   @js.native
-  @JSName("Cesium.PositionProperty")
   trait PositionProperty extends js.Object {
     var isConstant: Boolean = js.native
     var definitionChanged: Event = js.native
@@ -7309,7 +7296,6 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see ReferenceProperty
     */
   @js.native
-  @JSName("Cesium.Property")
   trait Property extends js.Object {
     var isConstant: Boolean = js.native
     var definitionChanged: Event = js.native
@@ -7771,7 +7757,6 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see GeometryVisualizer
     */
   @js.native
-  @JSName("Cesium.Visualizer")
   trait Visualizer extends js.Object {
     def update(time: JulianDate): Boolean = js.native
 
@@ -7871,7 +7856,6 @@ class HeadingPitchRoll protected() extends js.Object {
     */
   // todo this should be a trait?
   @js.native
-  @JSName("Cesium.Appearance")
   class Appearance protected() extends js.Object {
     def this(options: AppearanceOptions) = this()
 
@@ -8001,7 +7985,6 @@ class HeadingPitchRoll protected() extends js.Object {
     *      demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Billboards.html|Cesium Sandcastle Billboard Demo]]
     */
   @js.native
-  @JSName("Cesium.Billboard")
   trait Billboard extends js.Object {
     var show: Boolean = js.native
     var position: Cartesian3 = js.native
@@ -9168,7 +9151,6 @@ class HeadingPitchRoll protected() extends js.Object {
     *      demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Imagery%20Layers%20Manipulation.html|Cesium Sandcastle Imagery Manipulation Demo]]
     */
   @js.native
-  @JSName("Cesium.ImageryProvider")
   trait ImageryProvider extends js.Object {
     var defaultAlpha: Double = js.native
     var defaultBrightness: Double = js.native
@@ -9198,7 +9180,6 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.ImageryProvider")
   trait ImageryProviderStatic extends js.Object {
     def loadImage(url: String): Promise[HTMLImageElement | HTMLCanvasElement] | Unit = js.native
   }
@@ -9219,7 +9200,6 @@ class HeadingPitchRoll protected() extends js.Object {
     *      demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Labels.html|Cesium Sandcastle Labels Demo]]
     */
   @js.native
-  @JSName("Cesium.Label")
   trait Label extends js.Object {
     var show: Boolean = js.native
     var position: Cartesian3 = js.native
@@ -9765,7 +9745,6 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see ModelAnimationCollection#add
     */
   @js.native
-  @JSName("Cesium.ModelAnimation")
   trait ModelAnimation extends js.Object {
     var removeOnStop: Boolean = js.native
     var start: Event = js.native
@@ -9788,7 +9767,6 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Model#activeAnimations
     */
   @js.native
-  @JSName("Cesium.ModelAnimationCollection")
   trait ModelAnimationCollection extends js.Object {
     var animationAdded: Event = js.native
     var animationRemoved: Event = js.native
@@ -9821,7 +9799,6 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Model#getMaterial
     */
   @js.native
-  @JSName("Cesium.ModelMaterial")
   trait ModelMaterial extends js.Object {
     var name: String = js.native
     var id: String = js.native
@@ -9842,7 +9819,6 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Model#getMesh
     */
   @js.native
-  @JSName("Cesium.ModelMesh")
   trait ModelMesh extends js.Object {
     var name: String = js.native
     var id: String = js.native
@@ -9866,7 +9842,6 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Model#getNode
     */
   @js.native
-  @JSName("Cesium.ModelNode")
   trait ModelNode extends js.Object {
     var name: String = js.native
     var id: String = js.native
@@ -10146,7 +10121,6 @@ class HeadingPitchRoll protected() extends js.Object {
     *      demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Points.html|Cesium Sandcastle Points Demo]]
     */
   @js.native
-  @JSName("Cesium.PointPrimitive")
   trait PointPrimitive extends js.Object {
     var show: Boolean = js.native
     var position: Cartesian3 = js.native
@@ -10999,7 +10973,6 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see NeverTileDiscardPolicy
     */
   @js.native
-  @JSName("Cesium.TileDiscardPolicy")
   trait TileDiscardPolicy extends js.Object {
     def isReady(): Boolean = js.native
 
@@ -11817,7 +11790,6 @@ class HeadingPitchRoll protected() extends js.Object {
     *
     */
   @js.native
-  @JSName("Cesium.Command")
   trait Command extends js.Object {
     var canExecute: Boolean = js.native
     var beforeExecute: Event = js.native
@@ -12718,7 +12690,6 @@ class HeadingPitchRoll protected() extends js.Object {
   @js.native
   object HermitePolynomialApproximation extends InterpolationAlgorithm
 
-  @JSName("Cesium.PackableForInterpolation")
   @js.native
   trait PackableForInterpolation extends Packable {
     var packedInterpolationLength: Int = js.native
@@ -12773,14 +12744,12 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   // todo
-  @JSName("Cesium.IntersectionTests")
   @js.native
   trait IntersectionTests extends js.Object {
 
   }
 
   // todo
-  @JSName("Cesium.Intersection2D")
   @js.native
   trait Intersection2D extends js.Object {
 

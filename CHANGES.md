@@ -1,7 +1,11 @@
 Change Log
 ==========
 
-## changes in 1.4-SNAPSHOT
+## changes in 1.5-SNAPSHOT
+
+
+## changes in 1.4
+* for compatibility with Cesium 1.27
 
 * changed the scene parameter for creating BillboardVisualizer, LabelVisualizer, and PointVisualizer has been removed. Instead, pass an instance of EntityCluster.
 * added clusterBillboards, clusterLabels, and cluserPoints properties to EntityCluster to selectively cluster screen space entities.
@@ -21,13 +25,13 @@ their respective primitive.
   HeadingPitchRoll.clone function to duplicate HeadingPitchRoll instance.
   HeadingPitchRoll.equals and HeadingPitchRoll.equalsEpsilon functions for comparing two instances.
   
-* added Matrix3.fromHeadingPitchRoll Computes a 3x3 rotation matrix from the provided headingPitchRoll.  
- 
+* added Matrix3.fromHeadingPitchRoll Computes a 3x3 rotation matrix from the provided headingPitchRoll. 
 * added Transforms.aircraftHeadingPitchRollToFixedFrame to create a local frame from a position and heading/pitch/roll angles. The local frame is north-west-up axed.
 * added Transforms.aircraftHeadingPitchRollQuaternion which is the quaternion rotation from Transforms.aircraftHeadingPitchRollToFixedFrame.
   
-
-
+* removed @JSName("xxx") for all traits
+  
+  
 ## changes in 1.3
 * for compatibility with Cesium 1.25, released on 03/08/2016
 
