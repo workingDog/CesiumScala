@@ -65,13 +65,15 @@ package cesium {
                                 ellipsoid: Option[Ellipsoid] = None,
                                 result: Option[Matrix4] = None): Matrix4 = js.native
 
-    def headingPitchRollQuaternion(origin: Cartesian3, heading: Double, pitch: Double,
-                                   roll: Double, ellipsoid: Option[Ellipsoid] = None,
+    def headingPitchRollQuaternion(origin: Cartesian3,
+                                   headingPitchRoll: HeadingPitchRoll,
+                                   ellipsoid: Option[Ellipsoid] = None,
                                    result: Option[Quaternion] = None): Quaternion = js.native
 
-    def headingPitchRollToFixedFrame(origin: Cartesian3, heading: Double, pitch: Double,
-                                roll: Double, ellipsoid: Option[Ellipsoid] = None,
-                                result: Option[Matrix4] = None): Matrix4 = js.native
+    def headingPitchRollToFixedFrame(origin: Cartesian3,
+                                     headingPitchRoll: HeadingPitchRoll,
+                                     ellipsoid: Option[Ellipsoid] = None,
+                                     result: Option[Matrix4] = None): Matrix4 = js.native
 
     def pointToWindowCoordinates(modelViewProjectionMatrix: Matrix4,
                                  viewportTransformation: Matrix4,
@@ -80,19 +82,9 @@ package cesium {
     def preloadIcrfFixed(timeInterval: TimeInterval): Promise[Unit] = js.native
 
     def aircraftHeadingPitchRollToFixedFrame(origin: Cartesian3,
-                                             heading: Double, pitch: Double, roll: Double,
-                                             ellipsoid: Option[Ellipsoid] ,
-                                             result: Option[Matrix4]): Matrix4 = js.native
-
-    def aircraftHeadingPitchRollToFixedFrame(origin: Cartesian3,
                                              headingPitchRoll: HeadingPitchRoll,
                                              ellipsoid: Option[Ellipsoid] ,
                                              result: Option[Matrix4]): Matrix4 = js.native
-
-    def aircraftHeadingPitchRollQuaternion(origin: Cartesian3,
-                                           heading: Double, pitch: Double, roll: Double,
-                                           ellipsoid: Option[Ellipsoid],
-                                           result: Option[Quaternion]): Quaternion = js.native
 
     def aircraftHeadingPitchRollQuaternion(origin: Cartesian3,
                                            headingPitchRoll: HeadingPitchRoll,

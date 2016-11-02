@@ -3,6 +3,10 @@ Change Log
 
 ## changes in 1.5-SNAPSHOT
 
+* changed headingPitchRollToFixedFrame and headingPitchRollQuaternion to take headingPitchRoll: HeadingPitchRoll 
+* removed headingPitchRollToFixedFrame and aircraftHeadingPitchRollQuaternion 
+that did not take headingPitchRoll: HeadingPitchRoll 
+
 
 ## changes in 1.4
 * for compatibility with Cesium 1.27
