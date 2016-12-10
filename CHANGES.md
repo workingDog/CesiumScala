@@ -6,6 +6,12 @@ Change Log
 * changed headingPitchRollToFixedFrame and headingPitchRollQuaternion to take headingPitchRoll: HeadingPitchRoll 
 * removed headingPitchRollToFixedFrame and aircraftHeadingPitchRollQuaternion 
 that did not take headingPitchRoll: HeadingPitchRoll 
+* added () to class PinBuilder(), AssociativeArray(), Event(), EventHelper(), 
+GeometryAttributes(), GregorianDate(), MapProjection(), Queue(), CompositeMaterialProperty(),
+DataSourceClock(), DataSourceCollection(), KmlFeatureData(), TimeIntervalCollectionProperty(),
+Fog(), ImageryLayerCollection(), ImageryLayerFeatureInfo(), NeverTileDiscardPolicy(),
+OrthographicFrustum(), PerspectiveFrustum(), PerspectiveOffCenterFrustum(),
+Sun(), InfoBoxViewModel(), NavigationHelpButtonViewModel(), 
 
 
 ## changes in 1.4

@@ -556,7 +556,7 @@ class HeadingPitchRoll protected() extends js.Object {
     */
   @js.native
   @JSName("Cesium.AssociativeArray")
-  class AssociativeArray extends js.Object {
+  class AssociativeArray() extends js.Object {
     var length: Double = js.native
     var values: js.Array[js.Any] = js.native
 
@@ -2312,7 +2312,7 @@ class HeadingPitchRoll protected() extends js.Object {
     */
   @js.native
   @JSName("Cesium.Event")
-  class Event extends js.Object {
+  class Event() extends js.Object {
     var numberOfListeners: Double = js.native
 
     def addEventListener(listener: js.Function, scope: js.Any = ???): Event.RemoveCallback = js.native
@@ -2347,7 +2347,7 @@ class HeadingPitchRoll protected() extends js.Object {
     */
   @js.native
   @JSName("Cesium.EventHelper")
-  class EventHelper extends js.Object {
+  class EventHelper() extends js.Object {
     def add(event: Event, listener: js.Function, scope: js.Any = ???): EventHelper.RemoveCallback = js.native
 
     def removeAll(): js.Dynamic = js.native
@@ -2523,7 +2523,7 @@ class HeadingPitchRoll protected() extends js.Object {
     */
   @js.native
   @JSName("Cesium.GeometryAttributes")
-  class GeometryAttributes extends js.Object {
+  class GeometryAttributes() extends js.Object {
     var position: GeometryAttribute = js.native
     var normal: GeometryAttribute = js.native
     var st: GeometryAttribute = js.native
@@ -2640,7 +2640,7 @@ class HeadingPitchRoll protected() extends js.Object {
     */
   @js.native
   @JSName("Cesium.GregorianDate")
-  class GregorianDate extends js.Object {
+  class GregorianDate() extends js.Object {
     var year: Double = js.native
     var month: Double = js.native
     var day: Double = js.native
@@ -2982,7 +2982,7 @@ class HeadingPitchRoll protected() extends js.Object {
     */
   @js.native
   @JSName("Cesium.MapProjection")
-  class MapProjection extends js.Object {
+  class MapProjection() extends js.Object {
     var ellipsoid: Ellipsoid = js.native
 
     def project(cartographic: Cartographic, result: Cartesian3 = ???): Cartesian3 = js.native
@@ -3607,7 +3607,7 @@ class HeadingPitchRoll protected() extends js.Object {
     */
   @js.native
   @JSName("Cesium.PinBuilder")
-  class PinBuilder extends js.Object {
+  class PinBuilder() extends js.Object {
     def fromColor(color: Color, size: Double): HTMLCanvasElement = js.native
 
     def fromUrl(url: String, color: Color, size: Double): HTMLCanvasElement | Promise[HTMLCanvasElement] = js.native
@@ -4272,7 +4272,7 @@ class HeadingPitchRoll protected() extends js.Object {
     */
   @js.native
   @JSName("Cesium.Queue")
-  class Queue extends js.Object {
+  class Queue() extends js.Object {
     var length: Double = js.native
 
     def enqueue(item: js.Any): js.Dynamic = js.native
@@ -5728,7 +5728,7 @@ class HeadingPitchRoll protected() extends js.Object {
     */
   @js.native
   @JSName("Cesium.CompositeMaterialProperty")
-  class CompositeMaterialProperty extends MaterialProperty {
+  class CompositeMaterialProperty() extends MaterialProperty {
     var intervals: TimeIntervalCollection = js.native
   }
 
@@ -6080,7 +6080,7 @@ class HeadingPitchRoll protected() extends js.Object {
     */
   @js.native
   @JSName("Cesium.DataSourceClock")
-  class DataSourceClock extends js.Object {
+  class DataSourceClock() extends js.Object {
     var definitionChanged: Event = js.native
     var startTime: JulianDate = js.native
     var stopTime: JulianDate = js.native
@@ -6105,7 +6105,7 @@ class HeadingPitchRoll protected() extends js.Object {
     */
   @js.native
   @JSName("Cesium.DataSourceCollection")
-  class DataSourceCollection extends js.Object {
+  class DataSourceCollection() extends js.Object {
     var length: Double = js.native
     var dataSourceAdded: Event = js.native
     var dataSourceRemoved: Event = js.native
@@ -6644,7 +6644,7 @@ class HeadingPitchRoll protected() extends js.Object {
     */
   @js.native
   @JSName("Cesium.KmlFeatureData")
-  class KmlFeatureData extends js.Object {
+  class KmlFeatureData() extends js.Object {
     var author: js.Any = js.native
     var link: js.Any = js.native
     var address: String = js.native
@@ -7660,7 +7660,7 @@ class HeadingPitchRoll protected() extends js.Object {
     */
   @js.native
   @JSName("Cesium.TimeIntervalCollectionProperty")
-  class TimeIntervalCollectionProperty extends Property {
+  class TimeIntervalCollectionProperty() extends Property {
     var intervals: TimeIntervalCollection = js.native
   }
 
@@ -8593,7 +8593,7 @@ class HeadingPitchRoll protected() extends js.Object {
     */
   @js.native
   @JSName("Cesium.Fog")
-  class Fog extends js.Object {
+  class Fog() extends js.Object {
     var enabled: Boolean = js.native
     var density: Double = js.native
     var screenSpaceErrorFactor: Double = js.native
@@ -9068,7 +9068,7 @@ class HeadingPitchRoll protected() extends js.Object {
     */
   @js.native
   @JSName("Cesium.ImageryLayerCollection")
-  class ImageryLayerCollection extends js.Object {
+  class ImageryLayerCollection() extends js.Object {
     var layerAdded: Event = js.native
     var layerRemoved: Event = js.native
     var layerMoved: Event = js.native
@@ -9112,7 +9112,7 @@ class HeadingPitchRoll protected() extends js.Object {
     */
   @js.native
   @JSName("Cesium.ImageryLayerFeatureInfo")
-  class ImageryLayerFeatureInfo extends js.Object {
+  class ImageryLayerFeatureInfo() extends js.Object {
     var name: String = js.native
     var description: String = js.native
     var position: Cartographic = js.native
@@ -9880,7 +9880,7 @@ class HeadingPitchRoll protected() extends js.Object {
     */
   @js.native
   @JSName("Cesium.NeverTileDiscardPolicy")
-  class NeverTileDiscardPolicy extends TileDiscardPolicy
+  class NeverTileDiscardPolicy() extends TileDiscardPolicy
 
   /**
     * The viewing frustum is defined by 6 planes.
@@ -9903,7 +9903,7 @@ class HeadingPitchRoll protected() extends js.Object {
     */
   @js.native
   @JSName("Cesium.OrthographicFrustum")
-  class OrthographicFrustum extends Frustum {
+  class OrthographicFrustum() extends Frustum {
     var left: Double = js.native
     var right: Double = js.native
     var top: Double = js.native
@@ -10029,7 +10029,7 @@ class HeadingPitchRoll protected() extends js.Object {
     */
   @js.native
   @JSName("Cesium.PerspectiveFrustum")
-  class PerspectiveFrustum extends Frustum {
+  class PerspectiveFrustum() extends Frustum {
     var fov: Double = js.native
     var aspectRatio: Double = js.native
     var near: Double = js.native
@@ -10069,7 +10069,7 @@ class HeadingPitchRoll protected() extends js.Object {
     */
   @js.native
   @JSName("Cesium.PerspectiveOffCenterFrustum")
-  class PerspectiveOffCenterFrustum extends Frustum {
+  class PerspectiveOffCenterFrustum() extends Frustum {
     var left: Double = js.native
     var right: Double = js.native
     var top: Double = js.native
@@ -10903,7 +10903,7 @@ class HeadingPitchRoll protected() extends js.Object {
     */
   @js.native
   @JSName("Cesium.Sun")
-  class Sun extends js.Object {
+  class Sun() extends js.Object {
     var show: Boolean = js.native
     var glowFactor: Double = js.native
 
@@ -11976,7 +11976,7 @@ class HeadingPitchRoll protected() extends js.Object {
     */
   @js.native
   @JSName("Cesium.InfoBoxViewModel")
-  class InfoBoxViewModel extends js.Object {
+  class InfoBoxViewModel() extends js.Object {
     var maxHeight: Double = js.native
     var enableCamera: Boolean = js.native
     var isCameraTracking: Boolean = js.native
@@ -12031,7 +12031,7 @@ class HeadingPitchRoll protected() extends js.Object {
     */
   @js.native
   @JSName("Cesium.NavigationHelpButtonViewModel")
-  class NavigationHelpButtonViewModel extends js.Object {
+  class NavigationHelpButtonViewModel() extends js.Object {
     var showInstructions: Boolean = js.native
     var tooltip: String = js.native
     var command: Command = js.native
