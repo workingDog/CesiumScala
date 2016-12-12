@@ -1335,7 +1335,6 @@ package cesiumOptions {
   }
 
 
-   
   @js.native
   trait LabelGraphicsOptions extends js.Object
 
@@ -1369,6 +1368,11 @@ package cesiumOptions {
     def pixelOffsetScaleByDistance(v: Property) = jsOpt("pixelOffsetScaleByDistance", v)
 
     def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
+
+    def showBackground(v: Property) = jsOpt("showBackground", v)
+    def backgroundColor(v: Property) = jsOpt("backgroundColor", v)
+    def backgroundPadding(v: Property) = jsOpt("backgroundPadding", v)
+
   }
 
 
@@ -1402,10 +1406,13 @@ package cesiumOptions {
 
     def distanceDisplayCondition(v: Property) = jsOpt("distanceDisplayCondition", v)
 
+    def color(v: Property) = jsOpt("color", v)
+
+    def colorBlendMode(v: Property) = jsOpt("colorBlendMode", v)
+
+    def colorBlendAmount(v: Property) = jsOpt("colorBlendAmount", v)
   }
 
-
-   
   @js.native
   trait NodeTransformationPropertyOptions extends js.Object
 
@@ -2080,6 +2087,10 @@ package cesiumOptions {
     def scene(v: Scene) = jsOpt("scene", v)
     def castShadows(v: Boolean) = jsOpt("castShadows", v)
     def receiveShadows(v: Boolean) = jsOpt("receiveShadows", v)
+
+    def color(v: Color) = jsOpt("color", v)
+    def colorBlendMode(v: ColorBlendMode) = jsOpt("colorBlendMode", v)
+    def colorBlendAmount(v: Double) = jsOpt("colorBlendAmount", v)
   }
 
    
@@ -2276,6 +2287,7 @@ package cesiumOptions {
 
     def castShadows(v: Boolean) = jsOpt("castShadows", v)
     def receiveShadows(v: Boolean) = jsOpt("receiveShadows", v)
+
   }
 
 
@@ -3111,6 +3123,10 @@ package cesiumOptions {
     def eyeOffset(v: Property) = jsOpt("eyeOffset", v)
 
     def pixelOffset(v: Property) = jsOpt("pixelOffset", v)
+
+    def showBackground(v: Property) = jsOpt("showBackground", v)
+    def backgroundColor(v: Property) = jsOpt("backgroundColor", v)
+    def backgroundPadding(v: Property) = jsOpt("backgroundPadding", v)
 
   }
 

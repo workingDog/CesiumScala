@@ -2,6 +2,7 @@ Change Log
 ==========
 
 ## changes in 1.5-SNAPSHOT
+* for compatibility with Cesium 1.29
 
 * changed headingPitchRollToFixedFrame and headingPitchRollQuaternion to take headingPitchRoll: HeadingPitchRoll 
 * removed headingPitchRollToFixedFrame and aircraftHeadingPitchRollQuaternion 
@@ -11,7 +12,12 @@ GeometryAttributes(), GregorianDate(), MapProjection(), Queue(), CompositeMateri
 DataSourceClock(), DataSourceCollection(), KmlFeatureData(), TimeIntervalCollectionProperty(),
 Fog(), ImageryLayerCollection(), ImageryLayerFeatureInfo(), NeverTileDiscardPolicy(),
 OrthographicFrustum(), PerspectiveFrustum(), PerspectiveOffCenterFrustum(),
-Sun(), InfoBoxViewModel(), NavigationHelpButtonViewModel(), 
+Sun(), InfoBoxViewModel(), NavigationHelpButtonViewModel()
+* added ColorBlendMode 
+* added color, colorBlendMode, and colorBlendAmount properties to Model and ModelGraphics 
+* added new Label properties showBackground, backgroundColor and backgroundPadding 
+* added new LabelGraphicsOptions showBackground, backgroundColor and backgroundPadding also to LabelGraphics
+* added new enum VerticalOrigin.BASELINE
 
 
 ## changes in 1.4

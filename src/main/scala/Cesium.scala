@@ -45,6 +45,19 @@ package cesium {
     def apply(value: ShadowMode): Int = js.native
   }
 
+  @js.native
+  sealed trait ColorBlendMode extends js.Object
+
+  @JSName("Cesium.ColorBlendMode")
+  @js.native
+  object ColorBlendMode extends js.Object {
+    val HIGHLIGHT: Int = js.native
+    val REPLACE: Int = js.native
+    val MIX: Int = js.native
+
+    @JSBracketAccess
+    def apply(value: ColorBlendMode): Int = js.native
+  }
 
   @JSName("Cesium.Transforms")
   @js.native
@@ -303,6 +316,7 @@ package cesium {
     val BOTTOM: Int = js.native
     val CENTER: Int = js.native
     val TOP: Int = js.native
+    val BASELINE: Int = js.native
 
     @JSBracketAccess
     def apply(value: VerticalOrigin): Int = js.native
@@ -6705,6 +6719,10 @@ class HeadingPitchRoll protected() extends js.Object {
     var pixelOffsetScaleByDistance: Property = js.native
     var distanceDisplayCondition: Property = js.native
 
+    var showBackground: Property = js.native
+    var backgroundColor: Property = js.native
+    var backgroundPadding: Property = js.native
+
     def clone(result: LabelGraphics = ???): LabelGraphics = js.native
 
     def merge(source: LabelGraphics): js.Dynamic = js.native
@@ -6791,6 +6809,10 @@ class HeadingPitchRoll protected() extends js.Object {
     var nodeTransformations: PropertyBag = js.native
     var shadows: Int = js.native
     var distanceDisplayCondition: Property = js.native
+
+    var color: Color = js.native
+    var colorBlendMode: ColorBlendMode = js.native
+    var colorBlendAmount: Double = js.native
 
     def clone(result: ModelGraphics = ???): ModelGraphics = js.native
 
@@ -9211,6 +9233,10 @@ class HeadingPitchRoll protected() extends js.Object {
     var scale: Double = js.native
     var id: js.Any = js.native
 
+    var showBackground: Boolean = js.native
+    var backgroundColor: Color = js.native
+    var backgroundPadding: Cartesian2 = js.native
+
     def computeScreenSpacePosition(scene: Scene, result: Cartesian2 = ???): Cartesian2 = js.native
 
     def equals(other: Label): Boolean = js.native
@@ -9698,6 +9724,10 @@ class HeadingPitchRoll protected() extends js.Object {
     var allowPicking: Boolean = js.native
     var incrementallyLoadTextures: Boolean = js.native
     var pendingTextureLoads: Double = js.native
+
+    var color: Color = js.native
+    var colorBlendMode: ColorBlendMode = js.native
+    var colorBlendAmount: Double = js.native
 
     var castShadows: Boolean = js.native
 
