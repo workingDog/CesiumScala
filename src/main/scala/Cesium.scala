@@ -857,6 +857,7 @@ class HeadingPitchRoll protected() extends js.Object {
     def equalsEpsilon(right: Cartesian2, relativeEpsilon: Double, absoluteEpsilon: Double = ???): Boolean = js.native
 
     override def toString(): String = js.native
+
   }
 
   @js.native
@@ -924,6 +925,9 @@ class HeadingPitchRoll protected() extends js.Object {
     def equals(left: Cartesian2 = ???, right: Cartesian2 = ???): Boolean = js.native
 
     def equalsEpsilon(left: Cartesian2, right: Cartesian2, relativeEpsilon: Double, absoluteEpsilon: Double = ???): Boolean = js.native
+
+    def divideComponents(left:Cartesian2, right:Cartesian2, result:Cartesian2 = ???): Cartesian2 = js.native
+
   }
 
   /**
@@ -1037,6 +1041,9 @@ class HeadingPitchRoll protected() extends js.Object {
     def fromDegreesArrayHeights(coordinates: js.Array[Double], ellipsoid: Ellipsoid = ???, result: js.Array[Cartesian3] = ???): js.Array[Cartesian3] = js.native
 
     def fromRadiansArrayHeights(coordinates: js.Array[Double], ellipsoid: Ellipsoid = ???, result: js.Array[Cartesian3] = ???): js.Array[Cartesian3] = js.native
+
+    def divideComponents(left:Cartesian3, right:Cartesian3, result:Cartesian3 = ???): Cartesian3 = js.native
+
   }
 
   /**
@@ -1135,6 +1142,9 @@ class HeadingPitchRoll protected() extends js.Object {
     def equals(left: Cartesian4 = ???, right: Cartesian4 = ???): Boolean = js.native
 
     def equalsEpsilon(left: Cartesian4, right: Cartesian4, relativeEpsilon: Double, absoluteEpsilon: Double = ???): Boolean = js.native
+
+    def divideComponents(left:Cartesian4, right:Cartesian4, result:Cartesian4 = ???): Cartesian4 = js.native
+
   }
 
   /**

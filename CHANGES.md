@@ -18,6 +18,7 @@ Sun(), InfoBoxViewModel(), NavigationHelpButtonViewModel()
 * added new Label properties showBackground, backgroundColor and backgroundPadding 
 * added new LabelGraphicsOptions showBackground, backgroundColor and backgroundPadding also to LabelGraphics
 * added new enum VerticalOrigin.BASELINE
+* added def divideComponents to Cartesian2, Cartesian3 and Cartesian4
 
 
 ## changes in 1.4
