@@ -19,7 +19,7 @@ Sun(), InfoBoxViewModel(), NavigationHelpButtonViewModel()
 * added new LabelGraphicsOptions showBackground, backgroundColor and backgroundPadding also to LabelGraphics
 * added new enum VerticalOrigin.BASELINE
 * added def divideComponents to Cartesian2, Cartesian3 and Cartesian4
-
+* added WebGLConstants
 
 ## changes in 1.4
 * for compatibility with Cesium 1.27
