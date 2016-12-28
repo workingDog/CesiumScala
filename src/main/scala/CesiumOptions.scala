@@ -1411,6 +1411,10 @@ package cesiumOptions {
     def colorBlendMode(v: Property) = jsOpt("colorBlendMode", v)
 
     def colorBlendAmount(v: Property) = jsOpt("colorBlendAmount", v)
+
+    def silhouetteColor(v: Property) = jsOpt("silhouetteColor", v)
+
+    def silhouetteSize(v: Property) = jsOpt("silhouetteSize", v)
   }
 
   @js.native
@@ -2091,6 +2095,10 @@ package cesiumOptions {
     def color(v: Color) = jsOpt("color", v)
     def colorBlendMode(v: ColorBlendMode) = jsOpt("colorBlendMode", v)
     def colorBlendAmount(v: Double) = jsOpt("colorBlendAmount", v)
+
+    def silhouetteColor(v: Property) = jsOpt("silhouetteColor", v)
+
+    def silhouetteSize(v: Property) = jsOpt("silhouetteSize", v)
   }
 
    

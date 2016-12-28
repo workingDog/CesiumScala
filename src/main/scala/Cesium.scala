@@ -6824,6 +6824,9 @@ class HeadingPitchRoll protected() extends js.Object {
     var colorBlendMode: ColorBlendMode = js.native
     var colorBlendAmount: Double = js.native
 
+    var silhouetteColor: Color = js.native
+    var silhouetteSize: Double = js.native
+
     def clone(result: ModelGraphics = ???): ModelGraphics = js.native
 
     def merge(source: ModelGraphics): js.Dynamic = js.native
@@ -9738,6 +9741,9 @@ class HeadingPitchRoll protected() extends js.Object {
     var color: Color = js.native
     var colorBlendMode: ColorBlendMode = js.native
     var colorBlendAmount: Double = js.native
+
+    var silhouetteColor: Color = js.native
+    var silhouetteSize: Double = js.native
 
     var castShadows: Boolean = js.native
 

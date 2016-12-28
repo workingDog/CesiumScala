@@ -20,6 +20,8 @@ Sun(), InfoBoxViewModel(), NavigationHelpButtonViewModel()
 * added new enum VerticalOrigin.BASELINE
 * added def divideComponents to Cartesian2, Cartesian3 and Cartesian4
 * added WebGLConstants
+* added silhouetteSize and silhouetteColor to ModelOptions and ModelGraphicsOptions
+
 
 ## changes in 1.4
 * for compatibility with Cesium 1.27
