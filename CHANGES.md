@@ -1,7 +1,10 @@
 Change Log
 ==========
 
-## changes in 1.5-SNAPSHOT
+## changes in 1.6-SNAPSHOT
+
+
+## changes in 1.5
 * for compatibility with Cesium 1.29
 
 * changed headingPitchRollToFixedFrame and headingPitchRollQuaternion to take headingPitchRoll: HeadingPitchRoll 
@@ -21,7 +24,6 @@ Sun(), InfoBoxViewModel(), NavigationHelpButtonViewModel()
 * added def divideComponents to Cartesian2, Cartesian3 and Cartesian4
 * added WebGLConstants
 * added silhouetteSize and silhouetteColor to ModelOptions and ModelGraphicsOptions
-
 
 ## changes in 1.4
 * for compatibility with Cesium 1.27
@@ -75,7 +77,6 @@ PoylineVolumeGraphics, RectangleGraphics, and WallGraphics
 * added keepExpanded to Geocoder
 * added fromName(name: String) to ComponentDatatype
 * changed all def cornerType(v: CornerType) to def cornerType(v: Int) in CesiumOptions
-
 
 ## changes in 1.2
 
