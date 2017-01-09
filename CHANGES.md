@@ -2,6 +2,12 @@ Change Log
 ==========
 
 ## changes in 1.6-SNAPSHOT
+* for compatibility with Cesium 1.30
+
+* added GeocoderService interface
+* added BingMapsGeocoderService and BingMapsGeocoderServiceOptions
+* added CartographicGeocoderService
+* added GeocoderResult
 
 
 ## changes in 1.5

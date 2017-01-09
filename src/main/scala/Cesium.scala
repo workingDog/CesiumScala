@@ -13387,4 +13387,29 @@ class HeadingPitchRoll protected() extends js.Object {
 
   }
 
+  @js.native
+  trait GeocoderResult extends js.Object {
+    val displayName: String = js.native
+    val destination: Rectangle | Cartesian3 = js.native
+  }
+
+  @js.native
+  trait GeocoderService extends js.Object {
+    def geocode(query: String): Promise[GeocoderResult] = js.native
+  }
+
+  @js.native
+  @JSName("Cesium.BingMapsGeocoderService")
+  class BingMapsGeocoderService protected() extends GeocoderService {
+    def this(options: BingMapsGeocoderServiceOptions) = this()
+    val url: String = js.native
+    val key: String = js.native
+    val autoComplete: Boolean = js.native
+  }
+
+  @js.native
+  @JSName("Cesium.CartographicGeocoderService")
+  class CartographicGeocoderService protected() extends GeocoderService
+
+
 }

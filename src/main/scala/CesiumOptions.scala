@@ -3257,4 +3257,16 @@ package cesiumOptions {
     def interpolationDegree(v: Int) = jsOpt("interpolationDegree", v)
   }
 
+
+  @js.native
+  trait BingMapsGeocoderServiceOptions extends js.Object
+
+  object BingMapsGeocoderServiceOptions extends BingMapsGeocoderServiceOptionsBuilder(noOpts)
+
+  class BingMapsGeocoderServiceOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[BingMapsGeocoderServiceOptions, BingMapsGeocoderServiceOptionsBuilder](new BingMapsGeocoderServiceOptionsBuilder(_)) {
+    def autoComplete(v: Boolean) = jsOpt("autoComplete", v)
+    def key(v: String) = jsOpt("key", v)
+  }
+
+
 }
