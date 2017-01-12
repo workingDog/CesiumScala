@@ -1804,6 +1804,8 @@ package cesiumOptions {
   class DebugAppearanceOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[DebugAppearanceOptions, DebugAppearanceOptionsBuilder](new DebugAppearanceOptionsBuilder(_)) {
     def attributeName(v: String) = jsOpt("attributeName", v)
 
+    def perInstanceAttribute(v: Boolean) = jsOpt("perInstanceAttribute", v)
+
     def glslDatatype(v: String) = jsOpt("glslDatatype", v)
 
     def vertexShaderSource(v: String) = jsOpt("vertexShaderSource", v)

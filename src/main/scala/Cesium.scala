@@ -2551,7 +2551,7 @@ class HeadingPitchRoll protected() extends js.Object {
     var position: GeometryAttribute = js.native
     var normal: GeometryAttribute = js.native
     var st: GeometryAttribute = js.native
-    var binormal: GeometryAttribute = js.native
+    var bitangent: GeometryAttribute = js.native
     var tangent: GeometryAttribute = js.native
     var color: GeometryAttribute = js.native
   }
@@ -5224,7 +5224,7 @@ class HeadingPitchRoll protected() extends js.Object {
     var position: Boolean = js.native
     var normal: Boolean = js.native
     var st: Boolean = js.native
-    var binormal: Boolean = js.native
+    var bitangent: Boolean = js.native
     var tangent: Boolean = js.native
     var color: Boolean = js.native
   }

@@ -8,6 +8,11 @@ Change Log
 * added BingMapsGeocoderService and BingMapsGeocoderServiceOptions
 * added CartographicGeocoderService
 * added GeocoderResult
+* added perInstanceAttribute to DebugAppearanceOptions
+* renamed binormal to bitangent in VertexFormat and GeometryAttributes
+
+* added cross building and publishing for scala 2.11.8 and 2.12.1
+
 
 
 ## changes in 1.5
