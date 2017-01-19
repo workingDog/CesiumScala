@@ -10,7 +10,8 @@ Change Log
 * added GeocoderResult
 * added perInstanceAttribute to DebugAppearanceOptions
 * renamed binormal to bitangent in VertexFormat and GeometryAttributes
-
+* added GeometryPipeline.createTangentAndBitangent 
+* deprecate GeometryPipeline.computeBinormalAndTangent
 * added cross building and publishing for scala 2.11.8 and 2.12.1
 
 

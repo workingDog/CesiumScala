@@ -12689,7 +12689,10 @@ class HeadingPitchRoll protected() extends js.Object {
 
     def compressVertices(geometry: Geometry): Geometry = js.native
 
+    /** deprecated use GeometryPipeline.createTangentAndBitangent */
     def computeBinormalAndTangent(geometry: Geometry): Geometry = js.native
+
+    def createTangentAndBitangent(geometry: Geometry): Geometry = js.native
 
     def computeNormal(geometry: Geometry): Geometry = js.native
 
