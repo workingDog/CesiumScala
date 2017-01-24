@@ -13,7 +13,10 @@ Change Log
 * added GeometryPipeline.createTangentAndBitangent 
 * deprecate GeometryPipeline.computeBinormalAndTangent
 * added cross building and publishing for scala 2.11.8 and 2.12.1
-
+* added Rectangle.fromRadians
+* exposed availability property of TerrainProvider 
+* added sampleTerrainMostDetailed to Cesium object
+* 
 
 
 ## changes in 1.5

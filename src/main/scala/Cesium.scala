@@ -4379,6 +4379,8 @@ class HeadingPitchRoll protected() extends js.Object {
 
     def fromDegrees(west: Double = ???, south: Double = ???, east: Double = ???, north: Double = ???, result: Rectangle = ???): Rectangle = js.native
 
+    def fromRadians(west: Double = ???, south: Double = ???, east: Double = ???, north: Double = ???, result: Rectangle = ???): Rectangle = js.native
+
     def fromCartographicArray(cartographics: js.Array[Cartographic], result: Rectangle = ???): Rectangle = js.native
 
     def clone(rectangle: Rectangle, result: Rectangle = ???): Rectangle = js.native
@@ -4915,6 +4917,7 @@ class HeadingPitchRoll protected() extends js.Object {
     */
   @js.native
   trait TerrainProvider extends js.Object {
+    var availability: Boolean = js.native
     var errorEvent: Event = js.native
     var credit: Credit = js.native
     var tilingScheme: TilingScheme = js.native
@@ -12678,6 +12681,9 @@ class HeadingPitchRoll protected() extends js.Object {
     def createCommand(func: js.Function, canExecute: Boolean = ???): js.Dynamic = js.native
 
     def createTaskProcessorWorker(workerFunction: CreateTaskProcessorWorker.WorkerFunction): CreateTaskProcessorWorker.TaskProcessorWorkerFunction = js.native
+
+    def sampleTerrainMostDetailed(terrainProvider: TerrainProvider, positions: Array[Cartographic] = ???): Promise[Array[Cartographic]]  = js.native
+
   }
 
   /**
