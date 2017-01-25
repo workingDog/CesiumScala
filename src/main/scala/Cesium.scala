@@ -30,6 +30,20 @@ package cesium {
   // -------------------------------------------------------------------------------------
 
   @js.native
+  sealed trait ImagerySplitDirection extends js.Object
+
+  @JSName("Cesium.ImagerySplitDirection")
+  @js.native
+  object ImagerySplitDirection extends js.Object {
+    val LEFT: Int = js.native
+    val NONE: Int = js.native
+    val RIGHT: Int = js.native
+
+    @JSBracketAccess
+    def apply(value: ImagerySplitDirection): Int = js.native
+  }
+
+  @js.native
   sealed trait ShadowMode extends js.Object
 
   @JSName("Cesium.ShadowMode")
@@ -10769,6 +10783,8 @@ class HeadingPitchRoll protected() extends js.Object {
     var nearToFarDistance2D: Double = js.native
 
     var rotatable2D: Boolean = js.native
+
+    var imagerySplitPosition: ImagerySplitDirection = js.native
 
     def pick(windowPosition: Cartesian2): js.Dynamic = js.native
 

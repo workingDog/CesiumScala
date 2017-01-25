@@ -1937,6 +1937,7 @@ package cesiumOptions {
     def glowColor(v: Color) = jsOpt("glowColor", v)
 
     def glowWidth(v: Int) = jsOpt("glowWidth", v)
+
   }
 
 
@@ -3034,6 +3035,8 @@ package cesiumOptions {
     def minimumTerrainLevel(v: Double) = jsOpt("minimumTerrainLevel", v)
 
     def maximumTerrainLevel(v: Double) = jsOpt("maximumTerrainLevel", v)
+
+    def splitDirection(v: ImagerySplitDirection) = jsOpt("ImagerySplitDirection", v)
   }
 
    

@@ -16,7 +16,11 @@ Change Log
 * added Rectangle.fromRadians
 * exposed availability property of TerrainProvider 
 * added sampleTerrainMostDetailed to Cesium object
-* 
+* added ImagerySplitDirection enum
+* added splitDirection to ImageryLayerOptions
+* added imagerySplitPosition to Scene properties
+
+sampleTerrainMostDetailed ???
 
 
 ## changes in 1.5
