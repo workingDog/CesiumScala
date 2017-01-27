@@ -1767,6 +1767,8 @@ package cesiumOptions {
     def debugShowBoundingVolume(v: Boolean) = jsOpt("debugShowBoundingVolume", v)
 
     def scene(v: Scene) = jsOpt("scene", v)
+
+    def blendOption(v: Int) = jsOpt("blendOption", v)
   }
 
 
@@ -1982,6 +1984,8 @@ package cesiumOptions {
     def debugShowBoundingVolume(v: Boolean) = jsOpt("debugShowBoundingVolume", v)
 
     def scene(v: Scene) = jsOpt("scene", v)
+
+    def blendOption(v: Int) = jsOpt("blendOption", v)
   }
 
 
@@ -2181,8 +2185,6 @@ package cesiumOptions {
     def renderState(v: RenderState) = jsOpt("renderState", v)
   }
 
-
-   
   @js.native
   trait PointPrimitiveCollectionOptions extends js.Object
 
@@ -2192,9 +2194,9 @@ package cesiumOptions {
     def modelMatrix(v: Matrix4) = jsOpt("modelMatrix", v)
 
     def debugShowBoundingVolume(v: Boolean) = jsOpt("debugShowBoundingVolume", v)
+
+    def blendOption(v: Int) = jsOpt("blendOption", v)
   }
-
-
    
   @js.native
   trait PolylineOptions extends js.Object

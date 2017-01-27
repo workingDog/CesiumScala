@@ -19,6 +19,8 @@ Change Log
 * added ImagerySplitDirection enum
 * added splitDirection to ImageryLayerOptions
 * added imagerySplitPosition to Scene properties
+* added blendOption to BillboardCollection, LabelCollection, and PointPrimitiveCollection
+* added BlendOption enum
 
 sampleTerrainMostDetailed ???
 

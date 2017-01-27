@@ -28,6 +28,19 @@ package cesium {
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
+  @js.native
+  sealed trait BlendOption extends js.Object
+
+  @JSName("Cesium.BlendOption")
+  @js.native
+  object BlendOption extends js.Object {
+    val OPAQUE: Int = js.native
+    val TRANSLUCENT: Int = js.native
+    val OPAQUE_AND_TRANSLUCENT: Int = js.native
+
+    @JSBracketAccess
+    def apply(value: BlendOption): Int = js.native
+  }
 
   @js.native
   sealed trait ImagerySplitDirection extends js.Object
