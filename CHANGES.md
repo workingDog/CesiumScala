@@ -22,8 +22,6 @@ Change Log
 * added blendOption to BillboardCollection, LabelCollection, and PointPrimitiveCollection
 * added BlendOption enum
 
-sampleTerrainMostDetailed ???
-
 
 ## changes in 1.5
 * for compatibility with Cesium 1.29

@@ -495,7 +495,7 @@ package cesium {
   // -------------------------------------------------------------------------------------
   // -------------------------------------------------------------------------------------
 
-@js.native
+  @js.native
 @JSName("Cesium.HeadingPitchRoll")
 class HeadingPitchRoll protected() extends js.Object {
   def this(heading: Double = 0, pitch: Double = 0, roll: Double = 0) = this()
