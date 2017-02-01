@@ -1,7 +1,11 @@
 Change Log
 ==========
 
-## changes in 1.6-SNAPSHOT
+## changes in 1.7-SNAPSHOT
+* for compatibility with Cesium 1.31
+
+
+## changes in 1.6
 * for compatibility with Cesium 1.30
 
 * added GeocoderService interface
