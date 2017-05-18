@@ -58,18 +58,16 @@ package cesiumOptions {
   }
   
   @js.native
-  trait ArcGisImageServerTerrainProviderOptions extends js.Object
+  trait GoogleEarthEnterpriseTerrainProviderOptions extends js.Object
 
-  object ArcGisImageServerTerrainProviderOptions extends ArcGisImageServerTerrainProviderOptionsBuilder(noOpts)
+  object GoogleEarthEnterpriseTerrainProviderOptions extends GoogleEarthEnterpriseTerrainProviderOptionsBuilder(noOpts)
 
-  class ArcGisImageServerTerrainProviderOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[ArcGisImageServerTerrainProviderOptions, ArcGisImageServerTerrainProviderOptionsBuilder](new ArcGisImageServerTerrainProviderOptionsBuilder(_)) {
+  class GoogleEarthEnterpriseTerrainProviderOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[GoogleEarthEnterpriseTerrainProviderOptions, GoogleEarthEnterpriseTerrainProviderOptionsBuilder](new GoogleEarthEnterpriseTerrainProviderOptionsBuilder(_)) {
     def url(v: String) = jsOpt("url", v)
-
-    def token(v: String) = jsOpt("token", v)
 
     def proxy(v: Object) = jsOpt("proxy", v)
 
-    def tilingScheme(v: TilingScheme) = jsOpt("tilingScheme", v)
+    def metadata(v: Object) = jsOpt("metadata", v)
 
     def ellipsoid(v: Ellipsoid) = jsOpt("ellipsoid", v)
 
@@ -2585,9 +2583,6 @@ package cesiumOptions {
 
     def scene(v: Scene) = jsOpt("scene", v)
 
-    def url(v: String) = jsOpt("url", v)
-
-    def key(v: String) = jsOpt("key", v)
   }
 
 
@@ -3271,7 +3266,8 @@ package cesiumOptions {
   object BingMapsGeocoderServiceOptions extends BingMapsGeocoderServiceOptionsBuilder(noOpts)
 
   class BingMapsGeocoderServiceOptionsBuilder(val dict: OptMap) extends JSOptionBuilder[BingMapsGeocoderServiceOptions, BingMapsGeocoderServiceOptionsBuilder](new BingMapsGeocoderServiceOptionsBuilder(_)) {
-    def autoComplete(v: Boolean) = jsOpt("autoComplete", v)
+  //  def autoComplete(v: Boolean) = jsOpt("autoComplete", v)
+    def scene(v: Scene) = jsOpt("scene", v)
     def key(v: String) = jsOpt("key", v)
   }
 

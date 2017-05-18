@@ -1,8 +1,32 @@
 Change Log
 ==========
 
+
+
 ## changes in 1.7-SNAPSHOT
-* for compatibility with Cesium 1.31
+* for compatibility with Cesium 1.34
+* removed GeometryPipeline.computeBinormalAndTangent
+* removed the url and key properties from GeocoderViewModel and GeocoderViewModelOptions
+* added CompressedTextureBuffer
+* added scene to BingMapsGeocoderServiceOptions
+* added fixedFrameTransform to Transforms.headingPitchRollToFixedFrame
+* added fixedFrameTransform to Transforms.headingPitchRollQuaternion
+* added localFrameToFixedFrameGenerator to Transforms
+* added scaleByDistance to Label
+* added var selectedEntityChanged: Event and trackedEntityChanged: Event, to Viewer
+* removed ArcGisImageServerTerrainProvider and corresponding options
+* added  disableDepthTestDistance to Billboard, Label, PointGraphics
+* added DEFAULT_OFFSET to Camera object
+* added GoogleEarthEnterpriseTerrainProvider and options
+* removed fromHeadingPitchRoll(heading,pitch,roll,result)
+
+* upgraded to Scala.js-0.6.16 and changed @JSName to  @JSGlobal
+
+// todo 
+// Add new flight parameters to Camera.flyTo and 
+// Camera.flyToBoundingSphere: flyOverLongitude, flyOverLongitudeWeight, and pitchAdjustHeight.
+// remove left, right, bottom, and top from OrthographicFrustum 
+// add OrthographicOffCenterFrustum
 
 
 ## changes in 1.6

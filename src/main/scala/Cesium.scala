@@ -31,7 +31,7 @@ package cesium {
   @js.native
   sealed trait BlendOption extends js.Object
 
-  @JSName("Cesium.BlendOption")
+  @JSGlobal("Cesium.BlendOption")
   @js.native
   object BlendOption extends js.Object {
     val OPAQUE: Int = js.native
@@ -45,7 +45,7 @@ package cesium {
   @js.native
   sealed trait ImagerySplitDirection extends js.Object
 
-  @JSName("Cesium.ImagerySplitDirection")
+  @JSGlobal("Cesium.ImagerySplitDirection")
   @js.native
   object ImagerySplitDirection extends js.Object {
     val LEFT: Int = js.native
@@ -59,7 +59,7 @@ package cesium {
   @js.native
   sealed trait ShadowMode extends js.Object
 
-  @JSName("Cesium.ShadowMode")
+  @JSGlobal("Cesium.ShadowMode")
   @js.native
   object ShadowMode extends js.Object {
     val DISABLED: Int = js.native
@@ -75,7 +75,7 @@ package cesium {
   @js.native
   sealed trait ColorBlendMode extends js.Object
 
-  @JSName("Cesium.ColorBlendMode")
+  @JSGlobal("Cesium.ColorBlendMode")
   @js.native
   object ColorBlendMode extends js.Object {
     val HIGHLIGHT: Int = js.native
@@ -86,7 +86,7 @@ package cesium {
     def apply(value: ColorBlendMode): Int = js.native
   }
 
-  @JSName("Cesium.Transforms")
+  @JSGlobal("Cesium.Transforms")
   @js.native
   object Transforms extends js.Object {
     def computeFixedToIcrfMatrix(date: JulianDate, result: Option[Matrix3] = None): Matrix3 = js.native
@@ -108,11 +108,13 @@ package cesium {
     def headingPitchRollQuaternion(origin: Cartesian3,
                                    headingPitchRoll: HeadingPitchRoll,
                                    ellipsoid: Option[Ellipsoid] = None,
+                                   fixedFrameTransform: Option[Matrix4] = None,
                                    result: Option[Quaternion] = None): Quaternion = js.native
 
     def headingPitchRollToFixedFrame(origin: Cartesian3,
                                      headingPitchRoll: HeadingPitchRoll,
                                      ellipsoid: Option[Ellipsoid] = None,
+                                     fixedFrameTransform: Option[Matrix4] = None,
                                      result: Option[Matrix4] = None): Matrix4 = js.native
 
     def pointToWindowCoordinates(modelViewProjectionMatrix: Matrix4,
@@ -130,12 +132,15 @@ package cesium {
                                            headingPitchRoll: HeadingPitchRoll,
                                            ellipsoid: Option[Ellipsoid],
                                            result: Option[Quaternion]): Quaternion = js.native
+
+  def localFrameToFixedFrameGenerator(firstAxis: String, secondAxis: String): js.Function = js.native
+
   }
 
   @js.native
   sealed trait CornerType extends js.Object
 
-  @JSName("Cesium.CornerType")
+  @JSGlobal("Cesium.CornerType")
   @js.native
   object CornerType extends js.Object {
     val BEVELED: Int = js.native
@@ -149,7 +154,7 @@ package cesium {
   @js.native
   sealed trait Intersect extends js.Object
 
-  @JSName("Cesium.Intersect")
+  @JSGlobal("Cesium.Intersect")
   @js.native
   object Intersect extends js.Object {
     // 1
@@ -166,7 +171,7 @@ package cesium {
   @js.native
   sealed trait ClockStep extends js.Object
 
-  @JSName("Cesium.ClockStep")
+  @JSGlobal("Cesium.ClockStep")
   @js.native
   object ClockStep extends js.Object {
     // 2
@@ -183,7 +188,7 @@ package cesium {
   @js.native
   sealed trait ClockRange extends js.Object
 
-  @JSName("Cesium.ClockRange")
+  @JSGlobal("Cesium.ClockRange")
   @js.native
   object ClockRange extends js.Object {
     // 1
@@ -200,7 +205,7 @@ package cesium {
   @js.native
   sealed trait ComponentDatatype extends js.Object
 
-  @JSName("Cesium.ComponentDatatype")
+  @JSGlobal("Cesium.ComponentDatatype")
   @js.native
   object ComponentDatatype extends js.Object {
     val DOUBLE: Int = js.native
@@ -232,7 +237,7 @@ package cesium {
   @js.native
   sealed trait PrimitiveType extends js.Object
 
-  @JSName("Cesium.PrimitiveType")
+  @JSGlobal("Cesium.PrimitiveType")
   @js.native
   object PrimitiveType extends js.Object {
     val LINE_LOOP: Int = js.native
@@ -250,7 +255,7 @@ package cesium {
   @js.native
   sealed trait TimeStandard extends js.Object
 
-  @JSName("Cesium.TimeStandard")
+  @JSGlobal("Cesium.TimeStandard")
   @js.native
   object TimeStandard extends js.Object {
     // 0
@@ -265,7 +270,7 @@ package cesium {
   @js.native
   sealed trait ReferenceFrame extends js.Object
 
-  @JSName("Cesium.ReferenceFrame")
+  @JSGlobal("Cesium.ReferenceFrame")
   @js.native
   object ReferenceFrame extends js.Object {
     // 0
@@ -280,7 +285,7 @@ package cesium {
   @js.native
   sealed trait ExtrapolationType extends js.Object
 
-  @JSName("Cesium.ExtrapolationType")
+  @JSGlobal("Cesium.ExtrapolationType")
   @js.native
   object ExtrapolationType extends js.Object {
     val EXTRAPOLATE: Int = js.native
@@ -323,7 +328,7 @@ package cesium {
   @js.native
   sealed trait HeightReference extends js.Object
 
-  @JSName("Cesium.HeightReference")
+  @JSGlobal("Cesium.HeightReference")
   @js.native
   object HeightReference extends js.Object {
     val CLAMP_TO_GROUND: Int = js.native
@@ -337,7 +342,7 @@ package cesium {
   @js.native
   sealed trait VerticalOrigin extends js.Object
 
-  @JSName("Cesium.VerticalOrigin")
+  @JSGlobal("Cesium.VerticalOrigin")
   @js.native
   object VerticalOrigin extends js.Object {
     val BOTTOM: Int = js.native
@@ -352,7 +357,7 @@ package cesium {
   @js.native
   sealed trait HorizontalOrigin extends js.Object
 
-  @JSName("Cesium.HorizontalOrigin")
+  @JSGlobal("Cesium.HorizontalOrigin")
   @js.native
   object HorizontalOrigin extends js.Object {
     val CENTER: Int = js.native
@@ -366,7 +371,7 @@ package cesium {
   @js.native
   sealed trait BingMapsStyle extends js.Object
 
-  @JSName("Cesium.BingMapsStyle")
+  @JSGlobal("Cesium.BingMapsStyle")
   @js.native
   object BingMapsStyle extends js.Object {
     val AERIAL: String = js.native
@@ -381,7 +386,7 @@ package cesium {
   @js.native
   sealed trait CameraEventType extends js.Object
 
-  @JSName("Cesium.CameraEventType")
+  @JSGlobal("Cesium.CameraEventType")
   @js.native
   object CameraEventType extends js.Object {
     val LEFT_DRAG: Int = js.native
@@ -397,7 +402,7 @@ package cesium {
   @js.native
   sealed trait KeyboardEventModifier extends js.Object
 
-  @JSName("Cesium.KeyboardEventModifier")
+  @JSGlobal("Cesium.KeyboardEventModifier")
   @js.native
   object KeyboardEventModifier extends js.Object {
     val ALT: Int = js.native
@@ -411,7 +416,7 @@ package cesium {
   @js.native
   sealed trait LabelStyle extends js.Object
 
-  @JSName("Cesium.LabelStyle")
+  @JSGlobal("Cesium.LabelStyle")
   @js.native
   object LabelStyle extends js.Object {
     val FILL: Int = js.native
@@ -425,7 +430,7 @@ package cesium {
   @js.native
   sealed trait MaterialAppearanceMaterialSupport extends js.Object
 
-  @JSName("MaterialAppearance.MaterialSupport")
+  @JSGlobal("MaterialAppearance.MaterialSupport")
   @js.native
   object MaterialAppearanceMaterialSupport extends js.Object {
     val BASIC: js.Object = js.native
@@ -438,7 +443,7 @@ package cesium {
   @js.native
   sealed trait ModelAnimationLoop extends js.Object
 
-  @JSName("Cesium.ModelAnimationLoop")
+  @JSGlobal("Cesium.ModelAnimationLoop")
   @js.native
   object ModelAnimationLoop extends js.Object {
     val MIRRORED_REPEAT: Int = js.native
@@ -452,7 +457,7 @@ package cesium {
   @js.native
   sealed trait SceneMode extends js.Object
 
-  @JSName("Cesium.SceneMode")
+  @JSGlobal("Cesium.SceneMode")
   @js.native
   object SceneMode extends js.Object {
     val COLUMBUS_VIEW: Int = js.native
@@ -470,7 +475,7 @@ package cesium {
     * Object for setting and retrieving the default BingMaps API key
     */
   @js.native
-  @JSName("Cesium.BingMapsApi")
+  @JSGlobal("Cesium.BingMapsApi")
   object BingMapsApi extends js.Object {
     var defaultKey: String = js.native
 
@@ -480,7 +485,7 @@ package cesium {
   @js.native
   sealed trait WindingOrder extends js.Object
 
-  @JSName("Cesium.WindingOrder")
+  @JSGlobal("Cesium.WindingOrder")
   @js.native
   object WindingOrder extends js.Object {
     val CLOCKWISE: Int = js.native
@@ -496,7 +501,7 @@ package cesium {
   // -------------------------------------------------------------------------------------
 
   @js.native
-@JSName("Cesium.HeadingPitchRoll")
+@JSGlobal("Cesium.HeadingPitchRoll")
 class HeadingPitchRoll protected() extends js.Object {
   def this(heading: Double = 0, pitch: Double = 0, roll: Double = 0) = this()
 
@@ -516,7 +521,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * Defines how screen space objects (billboards, points, labels) are clustered.
     */
   @js.native
-  @JSName("Cesium.EntityCluster")
+  @JSGlobal("Cesium.EntityCluster")
   class EntityCluster protected() extends js.Object {
     def this(options: EntityClusterOptions) = this()
 
@@ -529,7 +534,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.EntityCluster")
+  @JSGlobal("Cesium.EntityCluster")
   object EntityCluster extends js.Object {
     /** A event listener function used to style clusters. */
     type newClusterCallback = js.Function1[js.Array[Entity], js.Object]
@@ -539,7 +544,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * Draws the outline of the camera's view frustum.
     */
   @js.native
-  @JSName("Cesium.DebugCameraPrimitive")
+  @JSGlobal("Cesium.DebugCameraPrimitive")
   class DebugCameraPrimitive protected() extends js.Object {
     def this(options: DebugCameraPrimitiveOptions) = this()
 
@@ -583,11 +588,17 @@ class HeadingPitchRoll protected() extends js.Object {
     * viewer.terrainProvider = terrainProvider;
     * @see TerrainProvider
     */
-  @js.native
-  @JSName("Cesium.ArcGisImageServerTerrainProvider")
-  class ArcGisImageServerTerrainProvider protected() extends TerrainProvider {
-    def this(options: ArcGisImageServerTerrainProviderOptions) = this()
-  }
+//  @js.native
+//  @JSGlobal("Cesium.ArcGisImageServerTerrainProvider")
+//  class ArcGisImageServerTerrainProvider protected() extends TerrainProvider {
+//    def this(options: ArcGisImageServerTerrainProviderOptions) = this()
+//  }
+
+    @js.native
+    @JSGlobal("Cesium.GoogleEarthEnterpriseTerrainProvider")
+    class GoogleEarthEnterpriseTerrainProvider protected() extends TerrainProvider {
+      def this(options: GoogleEarthEnterpriseTerrainProviderOptions) = this()
+    }
 
   /**
     * A collection of key-value pairs that is stored as a hash for easy
@@ -596,7 +607,7 @@ class HeadingPitchRoll protected() extends js.Object {
     *
     */
   @js.native
-  @JSName("Cesium.AssociativeArray")
+  @JSGlobal("Cesium.AssociativeArray")
   class AssociativeArray() extends js.Object {
     var length: Double = js.native
     var values: js.Array[js.Any] = js.native
@@ -625,7 +636,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see BoundingRectangle
     */
   @js.native
-  @JSName("Cesium.AxisAlignedBoundingBox")
+  @JSGlobal("Cesium.AxisAlignedBoundingBox")
   class AxisAlignedBoundingBox protected() extends js.Object {
     def this(minimum: Cartesian3 = ???, maximum: Cartesian3 = ???, center: Cartesian3 = ???) = this()
 
@@ -641,7 +652,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.AxisAlignedBoundingBox")
+  @JSGlobal("Cesium.AxisAlignedBoundingBox")
   object AxisAlignedBoundingBox extends js.Object {
     def fromPoints(positions: js.Array[Cartesian3], result: AxisAlignedBoundingBox = ???): AxisAlignedBoundingBox = js.native
 
@@ -665,7 +676,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see BoundingSphere
     */
   @js.native
-  @JSName("Cesium.BoundingRectangle")
+  @JSGlobal("Cesium.BoundingRectangle")
   class BoundingRectangle protected() extends js.Object {
     def this(x: Double = ???, y: Double = ???, width: Double = ???, height: Double = ???) = this()
 
@@ -682,7 +693,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.BoundingRectangle")
+  @JSGlobal("Cesium.BoundingRectangle")
   object BoundingRectangle extends js.Object {
     def fromPoints(positions: js.Array[Cartesian2], result: BoundingRectangle = ???): BoundingRectangle = js.native
 
@@ -712,7 +723,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Packable
     */
   @js.native
-  @JSName("Cesium.BoundingSphere")
+  @JSGlobal("Cesium.BoundingSphere")
   class BoundingSphere protected() extends Packable {
     def this(center: Cartesian3 = ???, radius: Double = ???) = this()
 
@@ -733,7 +744,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.BoundingSphere")
+  @JSGlobal("Cesium.BoundingSphere")
   object BoundingSphere extends PackableStatic {
 
     def fromPoints(positions: js.Array[Cartesian3], result: BoundingSphere = ???): BoundingSphere = js.native
@@ -804,13 +815,13 @@ class HeadingPitchRoll protected() extends js.Object {
     * var geometry = Cesium.BoxGeometry.createGeometry(box);
     */
   @js.native
-  @JSName("Cesium.BoxGeometry")
+  @JSGlobal("Cesium.BoxGeometry")
   class BoxGeometry protected() extends Packable {
     def this(options: BoxGeometryOptions) = this()
   }
 
   @js.native
-  @JSName("Cesium.BoxGeometry")
+  @JSGlobal("Cesium.BoxGeometry")
   object BoxGeometry extends PackableStatic {
 
     def fromDimensions(options: DimensionsOptions): BoxGeometry = js.native
@@ -841,13 +852,13 @@ class HeadingPitchRoll protected() extends js.Object {
     * var geometry = Cesium.BoxOutlineGeometry.createGeometry(box);
     */
   @js.native
-  @JSName("Cesium.BoxOutlineGeometry")
+  @JSGlobal("Cesium.BoxOutlineGeometry")
   class BoxOutlineGeometry protected() extends Packable {
     def this(options: BoxOutlineGeometryOptions) = this()
   }
 
   @js.native
-  @JSName("Cesium.BoxOutlineGeometry")
+  @JSGlobal("Cesium.BoxOutlineGeometry")
   object BoxOutlineGeometry extends PackableStatic {
 
     def fromDimensions(dimensions: Option[Cartesian3]): BoxOutlineGeometry = js.native
@@ -870,7 +881,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Packable
     */
   @js.native
-  @JSName("Cesium.Cartesian2")
+  @JSGlobal("Cesium.Cartesian2")
   class Cartesian2 protected() extends Packable {
     def this(x: Double = ???, y: Double = ???) = this()
 
@@ -888,7 +899,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.Cartesian2")
+  @JSGlobal("Cesium.Cartesian2")
   object Cartesian2 extends PackableStatic {
 
     var ZERO: Cartesian2 = js.native
@@ -971,7 +982,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Packable
     */
   @js.native
-  @JSName("Cesium.Cartesian3")
+  @JSGlobal("Cesium.Cartesian3")
   class Cartesian3 protected() extends Packable {
     def this(x: Double = ???, y: Double = ???, z: Double = ???) = this()
 
@@ -989,7 +1000,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.Cartesian3")
+  @JSGlobal("Cesium.Cartesian3")
   object Cartesian3 extends PackableStatic {
 
     var ZERO: Cartesian3 = js.native
@@ -1088,7 +1099,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Packable
     */
   @js.native
-  @JSName("Cesium.Cartesian4")
+  @JSGlobal("Cesium.Cartesian4")
   class Cartesian4 protected() extends Packable {
     def this(x: Double = ???, y: Double = ???, z: Double = ???, w: Double = ???) = this()
 
@@ -1107,7 +1118,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.Cartesian4")
+  @JSGlobal("Cesium.Cartesian4")
   object Cartesian4 extends PackableStatic {
 
     var ZERO: Cartesian4 = js.native
@@ -1186,7 +1197,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Ellipsoid
     */
   @js.native
-  @JSName("Cesium.Cartographic")
+  @JSGlobal("Cesium.Cartographic")
   class Cartographic protected() extends js.Object {
     def this(longitude: Double = ???, latitude: Double = ???, height: Double = ???) = this()
 
@@ -1204,7 +1215,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.Cartographic")
+  @JSGlobal("Cesium.Cartographic")
   object Cartographic extends js.Object {
     var ZERO: Cartographic = js.native
 
@@ -1261,7 +1272,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see QuaternionSpline
     */
   @js.native
-  @JSName("Cesium.CatmullRomSpline")
+  @JSGlobal("Cesium.CatmullRomSpline")
   class CatmullRomSpline protected() extends Spline {
     def this(options: CatmullRomSplineOptions) = this()
 
@@ -1311,7 +1322,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see TerrainProvider
     */
   @js.native
-  @JSName("Cesium.CesiumTerrainProvider")
+  @JSGlobal("Cesium.CesiumTerrainProvider")
   class CesiumTerrainProvider protected() extends TerrainProvider {
     def this(options: CesiumTerrainProviderOptions) = this()
 
@@ -1349,13 +1360,13 @@ class HeadingPitchRoll protected() extends js.Object {
     * var geometry = Cesium.CircleGeometry.createGeometry(circle);
     */
   @js.native
-  @JSName("Cesium.CircleGeometry")
+  @JSGlobal("Cesium.CircleGeometry")
   class CircleGeometry protected() extends Packable {
     def this(options: CircleGeometryOptions) = this()
   }
 
   @js.native
-  @JSName("Cesium.CircleGeometry")
+  @JSGlobal("Cesium.CircleGeometry")
   object CircleGeometry extends PackableStatic {
     def createGeometry(circleGeometry: CircleGeometry): Geometry | Unit = js.native
   }
@@ -1389,13 +1400,13 @@ class HeadingPitchRoll protected() extends js.Object {
     * var geometry = Cesium.CircleOutlineGeometry.createGeometry(circle);
     */
   @js.native
-  @JSName("Cesium.CircleOutlineGeometry")
+  @JSGlobal("Cesium.CircleOutlineGeometry")
   class CircleOutlineGeometry protected() extends Packable {
     def this(options: CircleOutlineGeometryOptions) = this()
   }
 
   @js.native
-  @JSName("Cesium.CircleOutlineGeometry")
+  @JSGlobal("Cesium.CircleOutlineGeometry")
   object CircleOutlineGeometry extends PackableStatic {
     def createGeometry(circleGeometry: CircleOutlineGeometry): Geometry | Unit = js.native
   }
@@ -1432,7 +1443,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see JulianDate
     */
   @js.native
-  @JSName("Cesium.Clock")
+  @JSGlobal("Cesium.Clock")
   class Clock protected() extends js.Object {
     def this(options: ClockOptions) = this()
 
@@ -1463,7 +1474,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Packable
     */
   @js.native
-  @JSName("Cesium.Color")
+  @JSGlobal("Cesium.Color")
   class Color protected() extends Packable {
     def this(red: Double = ???, green: Double = ???, blue: Double = ???, alpha: Double = ???) = this()
 
@@ -1494,7 +1505,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.Color")
+  @JSGlobal("Cesium.Color")
   object Color extends PackableStatic {
 
     var ALICEBLUE: Color = js.native
@@ -1709,7 +1720,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see GeometryInstanceAttribute
     */
   @js.native
-  @JSName("Cesium.ColorGeometryInstanceAttribute")
+  @JSGlobal("Cesium.ColorGeometryInstanceAttribute")
   class ColorGeometryInstanceAttribute protected() extends js.Object {
     def this(red: Double = ???, green: Double = ???, blue: Double = ???, alpha: Double = ???) = this()
 
@@ -1720,7 +1731,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.ColorGeometryInstanceAttribute")
+  @JSGlobal("Cesium.ColorGeometryInstanceAttribute")
   object ColorGeometryInstanceAttribute extends js.Object {
     def fromColor(color: Color): ColorGeometryInstanceAttribute = js.native
 
@@ -1757,13 +1768,13 @@ class HeadingPitchRoll protected() extends js.Object {
     * });
     */
   @js.native
-  @JSName("Cesium.CorridorGeometry")
+  @JSGlobal("Cesium.CorridorGeometry")
   class CorridorGeometry protected() extends Packable {
     def this(options: CorridorGeometryOptions) = this()
   }
 
   @js.native
-  @JSName("Cesium.CorridorGeometry")
+  @JSGlobal("Cesium.CorridorGeometry")
   object CorridorGeometry extends PackableStatic {
     def createGeometry(corridorGeometry: CorridorGeometry): Geometry | Unit = js.native
   }
@@ -1791,7 +1802,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * });
     */
   @js.native
-  @JSName("Cesium.CorridorOutlineGeometry")
+  @JSGlobal("Cesium.CorridorOutlineGeometry")
   class CorridorOutlineGeometry protected() extends js.Object {
     def this(options: CorridorOutlineGeometryOptions) = this()
 
@@ -1799,7 +1810,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.CorridorOutlineGeometry")
+  @JSGlobal("Cesium.CorridorOutlineGeometry")
   object CorridorOutlineGeometry extends js.Object {
     def pack(value: CorridorOutlineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
@@ -1822,7 +1833,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * var credit = new Cesium.Credit('Cesium', '/images/cesium_logo.png', 'http://cesiumjs.org/');
     */
   @js.native
-  @JSName("Cesium.Credit")
+  @JSGlobal("Cesium.Credit")
   class Credit protected() extends js.Object {
     def this(text: String = ???, imageUrl: String = ???, link: String = ???) = this()
 
@@ -1838,7 +1849,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.Credit")
+  @JSGlobal("Cesium.Credit")
   object Credit extends js.Object {
     def equals(left: Credit, right: Credit): Boolean = js.native
   }
@@ -1873,13 +1884,13 @@ class HeadingPitchRoll protected() extends js.Object {
     * var geometry = Cesium.CylinderGeometry.createGeometry(cylinder);
     */
   @js.native
-  @JSName("Cesium.CylinderGeometry")
+  @JSGlobal("Cesium.CylinderGeometry")
   class CylinderGeometry protected() extends js.Object {
     def this(options: CylinderGeometryOptions) = this()
   }
 
   @js.native
-  @JSName("Cesium.CylinderGeometry")
+  @JSGlobal("Cesium.CylinderGeometry")
   object CylinderGeometry extends js.Object {
     var packedLength: Double = js.native
 
@@ -1920,13 +1931,13 @@ class HeadingPitchRoll protected() extends js.Object {
     * var geometry = Cesium.CylinderOutlineGeometry.createGeometry(cylinder);
     */
   @js.native
-  @JSName("Cesium.CylinderOutlineGeometry")
+  @JSGlobal("Cesium.CylinderOutlineGeometry")
   class CylinderOutlineGeometry protected() extends js.Object {
     def this(options: CylinderOutlineGeometryOptions) = this()
   }
 
   @js.native
-  @JSName("Cesium.CylinderOutlineGeometry")
+  @JSGlobal("Cesium.CylinderOutlineGeometry")
   object CylinderOutlineGeometry extends js.Object {
     var packedLength: Double = js.native
 
@@ -1947,7 +1958,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {String} proxy The proxy URL that will be used to requests all resources.
     */
   @js.native
-  @JSName("Cesium.DefaultProxy")
+  @JSGlobal("Cesium.DefaultProxy")
   class DefaultProxy protected() extends js.Object {
     def this(proxy: String) = this()
 
@@ -1973,7 +1984,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see RuntimeError
     */
   @js.native
-  @JSName("Cesium.DeveloperError")
+  @JSGlobal("Cesium.DeveloperError")
   class DeveloperError protected() extends js.Object {
     def this(message: String = ???) = this()
 
@@ -2016,13 +2027,13 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see EllipseGeometry.createGeometry
     */
   @js.native
-  @JSName("Cesium.EllipseGeometry")
+  @JSGlobal("Cesium.EllipseGeometry")
   class EllipseGeometry protected() extends js.Object {
     def this(options: EllipseGeometryOptions) = this()
   }
 
   @js.native
-  @JSName("Cesium.EllipseGeometry")
+  @JSGlobal("Cesium.EllipseGeometry")
   object EllipseGeometry extends js.Object {
     var packedLength: Double = js.native
 
@@ -2065,13 +2076,13 @@ class HeadingPitchRoll protected() extends js.Object {
     * var geometry = Cesium.EllipseOutlineGeometry.createGeometry(ellipse);
     */
   @js.native
-  @JSName("Cesium.EllipseOutlineGeometry")
+  @JSGlobal("Cesium.EllipseOutlineGeometry")
   class EllipseOutlineGeometry protected() extends js.Object {
     def this(options: EllipseOutlineGeometryOptions) = this()
   }
 
   @js.native
-  @JSName("Cesium.EllipseOutlineGeometry")
+  @JSGlobal("Cesium.EllipseOutlineGeometry")
   object EllipseOutlineGeometry extends js.Object {
     var packedLength: Double = js.native
 
@@ -2103,7 +2114,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Ellipsoid.UNIT_SPHERE
     */
   @js.native
-  @JSName("Cesium.Ellipsoid")
+  @JSGlobal("Cesium.Ellipsoid")
   class Ellipsoid protected() extends js.Object {
     def this(x: Double = ???, y: Double = ???, z: Double = ???) = this()
 
@@ -2145,7 +2156,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.Ellipsoid")
+  @JSGlobal("Cesium.Ellipsoid")
   object Ellipsoid extends js.Object {
     var WGS84: Ellipsoid = js.native
     var UNIT_SPHERE: Ellipsoid = js.native
@@ -2172,7 +2183,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Ellipsoid} [ellipsoid=Ellipsoid.WGS84] The ellipsoid on which the geodesic lies.
     */
   @js.native
-  @JSName("Cesium.EllipsoidGeodesic")
+  @JSGlobal("Cesium.EllipsoidGeodesic")
   class EllipsoidGeodesic protected() extends js.Object {
     def this(start: Cartographic = ???, end: Cartographic = ???, ellipsoid: Ellipsoid = ???) = this()
 
@@ -2214,13 +2225,13 @@ class HeadingPitchRoll protected() extends js.Object {
     * var geometry = Cesium.EllipsoidGeometry.createGeometry(ellipsoid);
     */
   @js.native
-  @JSName("Cesium.EllipsoidGeometry")
+  @JSGlobal("Cesium.EllipsoidGeometry")
   class EllipsoidGeometry protected() extends js.Object {
     def this(options: EllipsoidGeometryOptions) = this()
   }
 
   @js.native
-  @JSName("Cesium.EllipsoidGeometry")
+  @JSGlobal("Cesium.EllipsoidGeometry")
   object EllipsoidGeometry extends js.Object {
     var packedLength: Double = js.native
 
@@ -2256,13 +2267,13 @@ class HeadingPitchRoll protected() extends js.Object {
     * var geometry = Cesium.EllipsoidOutlineGeometry.createGeometry(ellipsoid);
     */
   @js.native
-  @JSName("Cesium.EllipsoidOutlineGeometry")
+  @JSGlobal("Cesium.EllipsoidOutlineGeometry")
   class EllipsoidOutlineGeometry protected() extends js.Object {
     def this(options: EllipsoidOutlineGeometryOptions) = this()
   }
 
   @js.native
-  @JSName("Cesium.EllipsoidOutlineGeometry")
+  @JSGlobal("Cesium.EllipsoidOutlineGeometry")
   object EllipsoidOutlineGeometry extends js.Object {
     var packedLength: Double = js.native
 
@@ -2286,7 +2297,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * exception {DeveloperError} origin must not be at the center of the ellipsoid.
     */
   @js.native
-  @JSName("Cesium.EllipsoidTangentPlane")
+  @JSGlobal("Cesium.EllipsoidTangentPlane")
   class EllipsoidTangentPlane protected() extends js.Object {
     def this(origin: Cartesian3, ellipsoid: Ellipsoid = ???) = this()
 
@@ -2308,7 +2319,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.EllipsoidTangentPlane")
+  @JSGlobal("Cesium.EllipsoidTangentPlane")
   object EllipsoidTangentPlane extends js.Object {
     def fromPoints(ellipsoid: Ellipsoid, cartesians: Cartesian3): js.Dynamic = js.native
   }
@@ -2331,12 +2342,12 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see TerrainProvider
     */
   @js.native
-  @JSName("Cesium.EllipsoidTerrainProvider")
+  @JSGlobal("Cesium.EllipsoidTerrainProvider")
   class EllipsoidTerrainProvider protected() extends TerrainProvider {
     def this(options: EllipsoidTerrainProviderOptions) = this()
   }
 
-  @JSName("Cesium.Event")
+  @JSGlobal("Cesium.Event")
   @js.native
   object Event extends js.Object {
     type RemoveCallback = js.Function0[Unit]
@@ -2362,7 +2373,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * evt.removeEventListener(MyObject.prototype.myListener);
     */
   @js.native
-  @JSName("Cesium.Event")
+  @JSGlobal("Cesium.Event")
   class Event() extends js.Object {
     var numberOfListeners: Double = js.native
 
@@ -2373,7 +2384,7 @@ class HeadingPitchRoll protected() extends js.Object {
     def raiseEvent(args: js.Any*): js.Dynamic = js.native
   }
 
-  @JSName("Cesium.EventHelper")
+  @JSGlobal("Cesium.EventHelper")
   @js.native
   object EventHelper extends js.Object {
     type RemoveCallback = js.Function0[Unit]
@@ -2397,7 +2408,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Event
     */
   @js.native
-  @JSName("Cesium.EventHelper")
+  @JSGlobal("Cesium.EventHelper")
   class EventHelper() extends js.Object {
     def add(event: Event, listener: js.Function, scope: js.Any = ???): EventHelper.RemoveCallback = js.native
 
@@ -2418,7 +2429,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see WebMercatorProjection
     */
   @js.native
-  @JSName("Cesium.GeographicProjection")
+  @JSGlobal("Cesium.GeographicProjection")
   class GeographicProjection protected() extends js.Object {
     def this(ellipsoid: Ellipsoid = ???) = this()
 
@@ -2447,7 +2458,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * the tile tree.
     */
   @js.native
-  @JSName("Cesium.GeographicTilingScheme")
+  @JSGlobal("Cesium.GeographicTilingScheme")
   class GeographicTilingScheme protected() extends TilingScheme {
     def this(options: GeographicTilingSchemeOptions) = this()
   }
@@ -2502,7 +2513,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * });
     */
   @js.native
-  @JSName("Cesium.Geometry")
+  @JSGlobal("Cesium.Geometry")
   class Geometry protected() extends js.Object {
     def this(options: GeometryOptions) = this()
 
@@ -2513,7 +2524,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.Geometry")
+  @JSGlobal("Cesium.Geometry")
   object Geometry extends js.Object {
     def computeNumberOfVertices(geometry: Geometry): Double = js.native
   }
@@ -2552,7 +2563,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Geometry
     */
   @js.native
-  @JSName("Cesium.GeometryAttribute")
+  @JSGlobal("Cesium.GeometryAttribute")
   class GeometryAttribute protected() extends js.Object {
     def this(options: GeometryAttributeOptions) = this()
 
@@ -2573,7 +2584,7 @@ class HeadingPitchRoll protected() extends js.Object {
     *
     */
   @js.native
-  @JSName("Cesium.GeometryAttributes")
+  @JSGlobal("Cesium.GeometryAttributes")
   class GeometryAttributes() extends js.Object {
     var position: GeometryAttribute = js.native
     var normal: GeometryAttribute = js.native
@@ -2627,7 +2638,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Geometry
     */
   @js.native
-  @JSName("Cesium.GeometryInstance")
+  @JSGlobal("Cesium.GeometryInstance")
   class GeometryInstance protected() extends js.Object {
     def this(options: GeometryInstanceOptions) = this()
 
@@ -2672,7 +2683,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see ShowGeometryInstanceAttribute
     */
   @js.native
-  @JSName("Cesium.GeometryInstanceAttribute")
+  @JSGlobal("Cesium.GeometryInstanceAttribute")
   class GeometryInstanceAttribute protected() extends js.Object {
     def this(options: GeometryInstanceAttributeOptions) = this()
 
@@ -2690,7 +2701,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see JulianDate#toGregorianDate
     */
   @js.native
-  @JSName("Cesium.GregorianDate")
+  @JSGlobal("Cesium.GregorianDate")
   class GregorianDate() extends js.Object {
     var year: Double = js.native
     var month: Double = js.native
@@ -2715,7 +2726,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Number} [range=0.0] The distance from the center in meters.
     */
   @js.native
-  @JSName("Cesium.HeadingPitchRange")
+  @JSGlobal("Cesium.HeadingPitchRange")
   class HeadingPitchRange protected() extends js.Object {
     def this(heading: Double = ???, pitch: Double = ???, range: Double = ???) = this()
 
@@ -2725,7 +2736,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.HeadingPitchRange")
+  @JSGlobal("Cesium.HeadingPitchRange")
   object HeadingPitchRange extends js.Object {
     def clone(hpr: HeadingPitchRange, result: HeadingPitchRange = ???): HeadingPitchRange = js.native
   }
@@ -2793,7 +2804,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see QuantizedMeshTerrainData
     */
   @js.native
-  @JSName("Cesium.HeightmapTerrainData")
+  @JSGlobal("Cesium.HeightmapTerrainData")
   class HeightmapTerrainData protected() extends TerrainData {
     def this(options: HeightmapTerrainDataOptions) = this()
   }
@@ -2851,7 +2862,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see QuaternionSpline
     */
   @js.native
-  @JSName("Cesium.HermiteSpline")
+  @JSGlobal("Cesium.HermiteSpline")
   class HermiteSpline protected() extends Spline {
     def this(options: HermiteSplineOptions) = this()
 
@@ -2860,7 +2871,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.HermiteSpline")
+  @JSGlobal("Cesium.HermiteSpline")
   object HermiteSpline extends js.Object {
     def createC1(options: HermiteSplineOptions): HermiteSpline = js.native
 
@@ -2878,7 +2889,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Number} [stop=0.0] The end of the interval.
     */
   @js.native
-  @JSName("Cesium.Interval")
+  @JSGlobal("Cesium.Interval")
   class Interval protected() extends js.Object {
     def this(start: Double = ???, stop: Double = ???) = this()
 
@@ -2900,7 +2911,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {TimeStandard} [timeStandard=TimeStandard.UTC] The time standard in which the first two parameters are defined.
     */
   @js.native
-  @JSName("Cesium.JulianDate")
+  @JSGlobal("Cesium.JulianDate")
   class JulianDate() extends js.Object {
     def this(julianDayNumber: Double, secondsOfDay: Double, timeStandard: TimeStandard = ???) = this()
 
@@ -2917,7 +2928,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.JulianDate")
+  @JSGlobal("Cesium.JulianDate")
   object JulianDate extends js.Object {
     var leapSeconds: js.Array[LeapSecond] = js.native
 
@@ -2976,7 +2987,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Number} [offset] The cumulative number of seconds that TAI is ahead of UTC at the provided date.
     */
   @js.native
-  @JSName("Cesium.LeapSecond")
+  @JSGlobal("Cesium.LeapSecond")
   class LeapSecond protected() extends js.Object {
     def this(date: JulianDate = ???, offset: Double = ???) = this()
 
@@ -3017,7 +3028,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see QuaternionSpline
     */
   @js.native
-  @JSName("Cesium.LinearSpline")
+  @JSGlobal("Cesium.LinearSpline")
   class LinearSpline protected() extends Spline {
     def this(options: LinearSplineOptions) = this()
   }
@@ -3032,7 +3043,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see WebMercatorProjection
     */
   @js.native
-  @JSName("Cesium.MapProjection")
+  @JSGlobal("Cesium.MapProjection")
   class MapProjection() extends js.Object {
     var ellipsoid: Ellipsoid = js.native
 
@@ -3060,7 +3071,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Matrix4
     */
   @js.native
-  @JSName("Cesium.Matrix2")
+  @JSGlobal("Cesium.Matrix2")
   class Matrix2 protected() extends js.Object {
     def this(column0Row0: Double = ???, column1Row0: Double = ???, column0Row1: Double = ???, column1Row1: Double = ???) = this()
 
@@ -3076,7 +3087,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.Matrix2")
+  @JSGlobal("Cesium.Matrix2")
   object Matrix2 extends js.Object {
     var packedLength: Double = js.native
     var IDENTITY: Matrix2 = js.native
@@ -3168,7 +3179,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Matrix4
     */
   @js.native
-  @JSName("Cesium.Matrix3")
+  @JSGlobal("Cesium.Matrix3")
   class Matrix3 protected() extends js.Object {
     def this(column0Row0: Double = ???, column1Row0: Double = ???, column2Row0: Double = ???, column0Row1: Double = ???, column1Row1: Double = ???, column2Row1: Double = ???, column0Row2: Double = ???, column1Row2: Double = ???, column2Row2: Double = ???) = this()
 
@@ -3184,7 +3195,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.Matrix3")
+  @JSGlobal("Cesium.Matrix3")
   object Matrix3 extends js.Object {
     var packedLength: Double = js.native
     var IDENTITY: Matrix3 = js.native
@@ -3314,7 +3325,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Packable
     */
   @js.native
-  @JSName("Cesium.Matrix4")
+  @JSGlobal("Cesium.Matrix4")
   class Matrix4 protected() extends Packable {
     def this(column0Row0: Double = ???, column1Row0: Double = ???, column2Row0: Double = ???, column3Row0: Double = ???, column0Row1: Double = ???, column1Row1: Double = ???, column2Row1: Double = ???, column3Row1: Double = ???, column0Row2: Double = ???, column1Row2: Double = ???, column2Row2: Double = ???, column3Row2: Double = ???, column0Row3: Double = ???, column1Row3: Double = ???, column2Row3: Double = ???, column3Row3: Double = ???) = this()
 
@@ -3330,7 +3341,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.Matrix4")
+  @JSGlobal("Cesium.Matrix4")
   object Matrix4 extends PackableStatic {
 
     var IDENTITY: Matrix4 = js.native
@@ -3517,7 +3528,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Packable
     */
   @js.native
-  @JSName("Cesium.NearFarScalar")
+  @JSGlobal("Cesium.NearFarScalar")
   class NearFarScalar protected() extends Packable {
     def this(near: Double = ???, nearValue: Double = ???, far: Double = ???, farValue: Double = ???) = this()
 
@@ -3532,7 +3543,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.NearFarScalar")
+  @JSGlobal("Cesium.NearFarScalar")
   object NearFarScalar extends PackableStatic {
 
     def clone(nearFarScalar: NearFarScalar, result: NearFarScalar = ???): NearFarScalar = js.native
@@ -3557,7 +3568,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * var occluder = new Cesium.Occluder(occluderBoundingSphere, cameraPosition);
     */
   @js.native
-  @JSName("Cesium.Occluder")
+  @JSGlobal("Cesium.Occluder")
   class Occluder protected() extends js.Object {
     def this(occluderBoundingSphere: BoundingSphere, cameraPosition: Cartesian3) = this()
 
@@ -3573,7 +3584,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.Occluder")
+  @JSGlobal("Cesium.Occluder")
   object Occluder extends js.Object {
     def fromBoundingSphere(occluderBoundingSphere: BoundingSphere, cameraPosition: Cartesian3, result: Occluder = ???): Occluder = js.native
 
@@ -3603,7 +3614,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see BoundingRectangle
     */
   @js.native
-  @JSName("Cesium.OrientedBoundingBox")
+  @JSGlobal("Cesium.OrientedBoundingBox")
   class OrientedBoundingBox protected() extends js.Object {
     def this(center: Cartesian3 = ???, halfAxes: Matrix3 = ???) = this()
 
@@ -3624,7 +3635,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.OrientedBoundingBox")
+  @JSGlobal("Cesium.OrientedBoundingBox")
   object OrientedBoundingBox extends js.Object {
     def fromPoints(positions: js.Array[Cartesian3], result: OrientedBoundingBox = ???): OrientedBoundingBox = js.native
 
@@ -3657,7 +3668,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Map%20Pins.html|Cesium Sandcastle PinBuilder Demo]]
     */
   @js.native
-  @JSName("Cesium.PinBuilder")
+  @JSGlobal("Cesium.PinBuilder")
   class PinBuilder() extends js.Object {
     def fromColor(color: Color, size: Double): HTMLCanvasElement = js.native
 
@@ -3692,7 +3703,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * var plane = new Cesium.Plane(Cesium.Cartesian3.UNIT_X, 0.0);
     */
   @js.native
-  @JSName("Cesium.Plane")
+  @JSGlobal("Cesium.Plane")
   class Plane protected() extends js.Object {
     def this(normal: Cartesian3, distance: Double) = this()
 
@@ -3701,7 +3712,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.Plane")
+  @JSGlobal("Cesium.Plane")
   object Plane extends js.Object {
     var ORIGIN_XY_PLANE: Plane = js.native
     var ORIGIN_YZ_PLANE: Plane = js.native
@@ -3804,7 +3815,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * var geometry = Cesium.PolygonGeometry.createGeometry(extrudedPolygon);
     */
   @js.native
-  @JSName("Cesium.PolygonGeometry")
+  @JSGlobal("Cesium.PolygonGeometry")
   class PolygonGeometry protected() extends js.Object {
     def this(options: PolygonGeometryOptions) = this()
 
@@ -3812,7 +3823,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.PolygonGeometry")
+  @JSGlobal("Cesium.PolygonGeometry")
   object PolygonGeometry extends js.Object {
     def fromPositions(options: PolygonGeometryOptions): PolygonGeometry = js.native
 
@@ -3833,7 +3844,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {PolygonHierarchy[]} [holes] An array of polygon hierarchies defining holes in the polygon.
     */
   @js.native
-  @JSName("Cesium.PolygonHierarchy")
+  @JSGlobal("Cesium.PolygonHierarchy")
   class PolygonHierarchy protected() extends js.Object {
     def this(positions: js.Array[Cartesian3] = ???, holes: js.Array[PolygonHierarchy] = ???) = this()
 
@@ -3926,7 +3937,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * var geometry = Cesium.PolygonOutlineGeometry.createGeometry(extrudedPolygon);
     */
   @js.native
-  @JSName("Cesium.PolygonOutlineGeometry")
+  @JSGlobal("Cesium.PolygonOutlineGeometry")
   class PolygonOutlineGeometry protected() extends js.Object {
     def this(options: PolygonOutlineGeometryOptions) = this()
 
@@ -3934,7 +3945,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.PolygonOutlineGeometry")
+  @JSGlobal("Cesium.PolygonOutlineGeometry")
   object PolygonOutlineGeometry extends js.Object {
     def pack(value: PolygonOutlineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
@@ -3983,7 +3994,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * var geometry = Cesium.PolylineGeometry.createGeometry(polyline);
     */
   @js.native
-  @JSName("Cesium.PolylineGeometry")
+  @JSGlobal("Cesium.PolylineGeometry")
   class PolylineGeometry protected() extends js.Object {
     def this(options: PolylineGeometryOptions) = this()
 
@@ -3991,7 +4002,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.PolylineGeometry")
+  @JSGlobal("Cesium.PolylineGeometry")
   object PolylineGeometry extends js.Object {
     def pack(value: PolylineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
@@ -4037,7 +4048,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * });
     */
   @js.native
-  @JSName("Cesium.PolylineVolumeGeometry")
+  @JSGlobal("Cesium.PolylineVolumeGeometry")
   class PolylineVolumeGeometry protected() extends js.Object {
     def this(options: PolylineVolumeGeometryOptions) = this()
 
@@ -4045,7 +4056,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.PolylineVolumeGeometry")
+  @JSGlobal("Cesium.PolylineVolumeGeometry")
   object PolylineVolumeGeometry extends js.Object {
     def pack(value: PolylineVolumeGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
@@ -4087,7 +4098,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * });
     */
   @js.native
-  @JSName("Cesium.PolylineVolumeOutlineGeometry")
+  @JSGlobal("Cesium.PolylineVolumeOutlineGeometry")
   class PolylineVolumeOutlineGeometry protected() extends js.Object {
     def this(options: PolylineVolumeOutlineGeometryOptions) = this()
 
@@ -4095,7 +4106,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.PolylineVolumeOutlineGeometry")
+  @JSGlobal("Cesium.PolylineVolumeOutlineGeometry")
   object PolylineVolumeOutlineGeometry extends js.Object {
     def pack(value: PolylineVolumeOutlineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
@@ -4178,7 +4189,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see HeightmapTerrainData
     */
   @js.native
-  @JSName("Cesium.QuantizedMeshTerrainData")
+  @JSGlobal("Cesium.QuantizedMeshTerrainData")
   class QuantizedMeshTerrainData protected() extends TerrainData {
     def this(options: QuantizedMeshTerrainDataOptions) = this()
   }
@@ -4196,7 +4207,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see PackableForInterpolation
     */
   @js.native
-  @JSName("Cesium.Quaternion")
+  @JSGlobal("Cesium.Quaternion")
   class Quaternion protected() extends js.Object {
     def this(x: Double = ???, y: Double = ???, z: Double = ???, w: Double = ???) = this()
 
@@ -4215,7 +4226,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.Quaternion")
+  @JSGlobal("Cesium.Quaternion")
   object Quaternion extends PackableForInterpolation {
 
     var ZERO: Quaternion = js.native
@@ -4302,14 +4313,14 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see LinearSpline
     */
   @js.native
-  @JSName("Cesium.QuaternionSpline")
+  @JSGlobal("Cesium.QuaternionSpline")
   class QuaternionSpline protected() extends Spline {
     def this(options: QuaternionSplineOptions) = this()
 
     var innerQuadrangles: js.Array[Quaternion] = js.native
   }
 
-  @JSName("Cesium.Queue")
+  @JSGlobal("Cesium.Queue")
   @js.native
   object Queue extends js.Object {
     type Comparator = js.Function2[js.Any, js.Any, Double]
@@ -4322,7 +4333,7 @@ class HeadingPitchRoll protected() extends js.Object {
     *
     */
   @js.native
-  @JSName("Cesium.Queue")
+  @JSGlobal("Cesium.Queue")
   class Queue() extends js.Object {
     var length: Double = js.native
 
@@ -4348,7 +4359,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Cartesian3} [direction=Cartesian3.ZERO] The direction of the ray.
     */
   @js.native
-  @JSName("Cesium.Ray")
+  @JSGlobal("Cesium.Ray")
   class Ray protected() extends js.Object {
     def this(origin: Cartesian3 = ???, direction: Cartesian3 = ???) = this()
 
@@ -4357,7 +4368,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.Ray")
+  @JSGlobal("Cesium.Ray")
   object Ray extends js.Object {
     def getPoint(ray: Ray, t: Double, result: Cartesian3 = ???): Cartesian3 = js.native
   }
@@ -4376,7 +4387,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Packable
     */
   @js.native
-  @JSName("Cesium.Rectangle")
+  @JSGlobal("Cesium.Rectangle")
   class Rectangle protected() extends Packable {
     def this(west: Double = ???, south: Double = ???, east: Double = ???, north: Double = ???) = this()
 
@@ -4395,7 +4406,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.Rectangle")
+  @JSGlobal("Cesium.Rectangle")
   object Rectangle extends PackableStatic {
 
     var MAX_VALUE: Rectangle = js.native
@@ -4486,13 +4497,13 @@ class HeadingPitchRoll protected() extends js.Object {
     * var geometry = Cesium.RectangleGeometry.createGeometry(rectangle);
     */
   @js.native
-  @JSName("Cesium.RectangleGeometry")
+  @JSGlobal("Cesium.RectangleGeometry")
   class RectangleGeometry protected() extends js.Object {
     def this(options: RectangleGeometryOptions) = this()
   }
 
   @js.native
-  @JSName("Cesium.RectangleGeometry")
+  @JSGlobal("Cesium.RectangleGeometry")
   object RectangleGeometry extends js.Object {
     var packedLength: Double = js.native
 
@@ -4533,13 +4544,13 @@ class HeadingPitchRoll protected() extends js.Object {
     * var geometry = Cesium.RectangleOutlineGeometry.createGeometry(rectangle);
     */
   @js.native
-  @JSName("Cesium.RectangleOutlineGeometry")
+  @JSGlobal("Cesium.RectangleOutlineGeometry")
   class RectangleOutlineGeometry protected() extends js.Object {
     def this(options: RectangleOutlineGeometryOptions) = this()
   }
 
   @js.native
-  @JSName("Cesium.RectangleOutlineGeometry")
+  @JSGlobal("Cesium.RectangleOutlineGeometry")
   object RectangleOutlineGeometry extends js.Object {
     var packedLength: Double = js.native
 
@@ -4562,7 +4573,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * string in the format returned by XMLHttpRequest's getAllResponseHeaders() function.
     */
   @js.native
-  @JSName("Cesium.RequestErrorEvent")
+  @JSGlobal("Cesium.RequestErrorEvent")
   class RequestErrorEvent protected() extends js.Object {
     def this(statusCode: Double = ???, response: js.Any = ???, responseHeaders: String | js.Any = ???) = this()
 
@@ -4591,7 +4602,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see DeveloperError
     */
   @js.native
-  @JSName("Cesium.RuntimeError")
+  @JSGlobal("Cesium.RuntimeError")
   class RuntimeError protected() extends js.Object {
     def this(message: String = ???) = this()
 
@@ -4635,7 +4646,7 @@ class HeadingPitchRoll protected() extends js.Object {
     *
     */
   @js.native
-  @JSName("Cesium.ScreenSpaceEventHandler")
+  @JSGlobal("Cesium.ScreenSpaceEventHandler")
   class ScreenSpaceEventHandler protected() extends js.Object {
     def this(element: HTMLCanvasElement = ???) = this()
 
@@ -4676,7 +4687,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see GeometryInstanceAttribute
     */
   @js.native
-  @JSName("Cesium.ShowGeometryInstanceAttribute")
+  @JSGlobal("Cesium.ShowGeometryInstanceAttribute")
   class ShowGeometryInstanceAttribute protected() extends js.Object {
     def this(show: Boolean = ???) = this()
 
@@ -4687,7 +4698,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.ShowGeometryInstanceAttribute")
+  @JSGlobal("Cesium.ShowGeometryInstanceAttribute")
   object ShowGeometryInstanceAttribute extends js.Object {
     def toValue(show: Boolean, result: Uint8Array = ???): Uint8Array = js.native
   }
@@ -4723,7 +4734,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * var geometry = Cesium.SimplePolylineGeometry.createGeometry(polyline);
     */
   @js.native
-  @JSName("Cesium.SimplePolylineGeometry")
+  @JSGlobal("Cesium.SimplePolylineGeometry")
   class SimplePolylineGeometry protected() extends js.Object {
     def this(options: SimplePolylineGeometryOptions) = this()
 
@@ -4731,7 +4742,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.SimplePolylineGeometry")
+  @JSGlobal("Cesium.SimplePolylineGeometry")
   object SimplePolylineGeometry extends js.Object {
     def pack(value: SimplePolylineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
@@ -4764,13 +4775,13 @@ class HeadingPitchRoll protected() extends js.Object {
     * var geometry = Cesium.SphereGeometry.createGeometry(sphere);
     */
   @js.native
-  @JSName("Cesium.SphereGeometry")
+  @JSGlobal("Cesium.SphereGeometry")
   class SphereGeometry protected() extends js.Object {
     def this(options: SphereGeometryOptions) = this()
   }
 
   @js.native
-  @JSName("Cesium.SphereGeometry")
+  @JSGlobal("Cesium.SphereGeometry")
   object SphereGeometry extends js.Object {
     var packedLength: Double = js.native
 
@@ -4806,13 +4817,13 @@ class HeadingPitchRoll protected() extends js.Object {
     * var geometry = Cesium.SphereOutlineGeometry.createGeometry(sphere);
     */
   @js.native
-  @JSName("Cesium.SphereOutlineGeometry")
+  @JSGlobal("Cesium.SphereOutlineGeometry")
   class SphereOutlineGeometry protected() extends js.Object {
     def this(options: SphereOutlineGeometryOptions) = this()
   }
 
   @js.native
-  @JSName("Cesium.SphereOutlineGeometry")
+  @JSGlobal("Cesium.SphereOutlineGeometry")
   object SphereOutlineGeometry extends js.Object {
     var packedLength: Double = js.native
 
@@ -4834,7 +4845,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Number} [magnitude=1.0] The linear coordinate measured from the origin.
     */
   @js.native
-  @JSName("Cesium.Spherical")
+  @JSGlobal("Cesium.Spherical")
   class Spherical protected() extends js.Object {
     def this(clock: Double = ???, cone: Double = ???, magnitude: Double = ???) = this()
 
@@ -4848,7 +4859,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.Spherical")
+  @JSGlobal("Cesium.Spherical")
   object Spherical extends js.Object {
     def fromCartesian3(cartesian3: Cartesian3, spherical: Spherical = ???): Spherical = js.native
 
@@ -4898,7 +4909,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * work to be rescheduled in future frames.
     */
   @js.native
-  @JSName("Cesium.TaskProcessor")
+  @JSGlobal("Cesium.TaskProcessor")
   class TaskProcessor protected() extends js.Object {
     def this(workerName: String, maximumActiveTasks: Double = ???) = this()
 
@@ -4987,7 +4998,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Error} [error] The error or exception that occurred, if any.
     */
   @js.native
-  @JSName("Cesium.TileProviderError")
+  @JSGlobal("Cesium.TileProviderError")
   class TileProviderError protected() extends js.Object {
     def this(provider: ImageryProvider | TerrainProvider, message: String, x: Double = ???, y: Double = ???, level: Double = ???, timesRetried: Double = ???, error: Error = ???) = this()
 
@@ -5002,7 +5013,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.TileProviderError")
+  @JSGlobal("Cesium.TileProviderError")
   object TileProviderError extends js.Object {
     type RetryFunction = js.Function0[Unit]
 
@@ -5095,7 +5106,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * var containsDate = Cesium.TimeInterval.contains(timeInterval, dateToCheck);
     */
   @js.native
-  @JSName("Cesium.TimeInterval")
+  @JSGlobal("Cesium.TimeInterval")
   class TimeInterval protected() extends js.Object {
     def this(options: TimeIntervalOptions) = this()
 
@@ -5116,7 +5127,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.TimeInterval")
+  @JSGlobal("Cesium.TimeInterval")
   object TimeInterval extends js.Object {
     type MergeCallback = js.Function2[js.Any, js.Any, Any]
     type DataComparer = js.Function2[js.Any, js.Any, Boolean]
@@ -5145,7 +5156,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {TimeInterval[]} [intervals] An array of intervals to add to the collection.
     */
   @js.native
-  @JSName("Cesium.TimeIntervalCollection")
+  @JSGlobal("Cesium.TimeIntervalCollection")
   class TimeIntervalCollection protected() extends js.Object {
     def this(intervals: js.Array[TimeInterval] = ???) = this()
 
@@ -5190,7 +5201,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Cartesian3} [scale=new Cartesian3(1.0, 1.0, 1.0)] A [[Cartesian3]] specifying the (x, y, z) scaling to apply to the node.
     */
   @js.native
-  @JSName("Cesium.TranslationRotationScale")
+  @JSGlobal("Cesium.TranslationRotationScale")
   class TranslationRotationScale protected() extends js.Object {
     def this(translation: Cartesian3 = ???, rotation: Quaternion = ???, scale: Cartesian3 = ???) = this()
 
@@ -5223,7 +5234,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see TerrainProvider
     */
   @js.native
-  @JSName("Cesium.VRTheWorldTerrainProvider")
+  @JSGlobal("Cesium.VRTheWorldTerrainProvider")
   class VRTheWorldTerrainProvider protected() extends TerrainProvider {
     def this(options: VRTheWorldTerrainProviderOptions) = this()
   }
@@ -5247,7 +5258,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Packable
     */
   @js.native
-  @JSName("Cesium.VertexFormat")
+  @JSGlobal("Cesium.VertexFormat")
   class VertexFormat protected() extends Packable {
     def this(options: VertexFormatOptions = ???) = this()
 
@@ -5260,7 +5271,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.VertexFormat")
+  @JSGlobal("Cesium.VertexFormat")
   object VertexFormat extends PackableStatic {
     var POSITION_ONLY: VertexFormat = js.native
     var POSITION_AND_NORMAL: VertexFormat = js.native
@@ -5288,7 +5299,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Video.html|Video Material Demo]]
     */
   @js.native
-  @JSName("Cesium.VideoSynchronizer")
+  @JSGlobal("Cesium.VideoSynchronizer")
   class VideoSynchronizer protected() extends js.Object {
     def this(options: VideoSynchronizerOptions) = this()
 
@@ -5341,7 +5352,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * var geometry = Cesium.WallGeometry.createGeometry(wall);
     */
   @js.native
-  @JSName("Cesium.WallGeometry")
+  @JSGlobal("Cesium.WallGeometry")
   class WallGeometry protected() extends js.Object {
     def this(options: WallGeometryOptions) = this()
 
@@ -5349,7 +5360,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.WallGeometry")
+  @JSGlobal("Cesium.WallGeometry")
   object WallGeometry extends js.Object {
     def pack(value: WallGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
@@ -5396,7 +5407,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * var geometry = Cesium.WallOutlineGeometry.createGeometry(wall);
     */
   @js.native
-  @JSName("Cesium.WallOutlineGeometry")
+  @JSGlobal("Cesium.WallOutlineGeometry")
   class WallOutlineGeometry protected() extends js.Object {
     def this(options: WallOutlineGeometryOptions) = this()
 
@@ -5404,7 +5415,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.WallOutlineGeometry")
+  @JSGlobal("Cesium.WallOutlineGeometry")
   object WallOutlineGeometry extends js.Object {
     def pack(value: WallOutlineGeometry, array: js.Array[Double], startingIndex: Double = ???): js.Array[Double] = js.native
 
@@ -5428,7 +5439,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see GeographicProjection
     */
   @js.native
-  @JSName("Cesium.WebMercatorProjection")
+  @JSGlobal("Cesium.WebMercatorProjection")
   class WebMercatorProjection protected() extends js.Object {
     def this(ellipsoid: Ellipsoid = ???) = this()
 
@@ -5440,7 +5451,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.WebMercatorProjection")
+  @JSGlobal("Cesium.WebMercatorProjection")
   object WebMercatorProjection extends js.Object {
     var MaximumLatitude: Double = js.native
 
@@ -5473,7 +5484,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * direction, resulting in a square projection.
     */
   @js.native
-  @JSName("Cesium.WebMercatorTilingScheme")
+  @JSGlobal("Cesium.WebMercatorTilingScheme")
   class WebMercatorTilingScheme protected() extends TilingScheme {
     def this(options: WebMercatorTilingSchemeOptions) = this()
   }
@@ -5515,7 +5526,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Billboards.html|Cesium Sandcastle Billboard Demo]]
     */
   @js.native
-  @JSName("Cesium.BillboardGraphics")
+  @JSGlobal("Cesium.BillboardGraphics")
   class BillboardGraphics protected() extends js.Object {
     def this(options: BillboardGraphicsOptions) = this()
 
@@ -5539,6 +5550,8 @@ class HeadingPitchRoll protected() extends js.Object {
     var sizeInMeters: Property = js.native
     var distanceDisplayCondition: Property = js.native
 
+    var disableDepthTestDistance: Double = js.native
+
     def clone(result: BillboardGraphics = ???): BillboardGraphics = js.native
 
     def merge(source: BillboardGraphics): js.Dynamic = js.native
@@ -5553,7 +5566,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {EntityCollection} entityCollection The entityCollection to visualize.
     */
   @js.native
-  @JSName("Cesium.BillboardVisualizer")
+  @JSGlobal("Cesium.BillboardVisualizer")
   class BillboardVisualizer protected() extends Visualizer {
     def this(entityCluster: EntityCluster, entityCollection: EntityCollection) = this()
   }
@@ -5568,7 +5581,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Scene} scene The scene where visualization is taking place.
     */
   @js.native
-  @JSName("Cesium.BoxGeometryUpdater")
+  @JSGlobal("Cesium.BoxGeometryUpdater")
   class BoxGeometryUpdater protected() extends js.Object {
     def this(entity: Entity, scene: Scene) = this()
 
@@ -5600,7 +5613,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.BoxGeometryUpdater")
+  @JSGlobal("Cesium.BoxGeometryUpdater")
   object BoxGeometryUpdater extends js.Object {
     var perInstanceColorAppearanceType: Appearance = js.native
     var materialAppearanceType: Appearance = js.native
@@ -5624,7 +5637,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Box.html|Cesium Sandcastle Box Demo]]
     */
   @js.native
-  @JSName("Cesium.BoxGraphics")
+  @JSGlobal("Cesium.BoxGraphics")
   class BoxGraphics protected() extends js.Object {
     def this(options: BoxGraphicsOptions) = this()
 
@@ -5643,7 +5656,7 @@ class HeadingPitchRoll protected() extends js.Object {
     def merge(source: BoxGraphics): js.Dynamic = js.native
   }
 
-  @JSName("Cesium.CallbackProperty")
+  @JSGlobal("Cesium.CallbackProperty")
   @js.native
   object CallbackProperty extends js.Object {
     type Callback = js.Function2[JulianDate, js.Any, Any]
@@ -5659,7 +5672,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Boolean]] isConstant <code>true</code> when the callback function returns the same value every time, <code>false</code> if the value will change.
     */
   @js.native
-  @JSName("Cesium.CallbackProperty")
+  @JSGlobal("Cesium.CallbackProperty")
   class CallbackProperty protected() extends js.Object {
     def this(callback: CallbackProperty.Callback, isConstant: Boolean) = this()
 
@@ -5684,7 +5697,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Property} [options.repeat=new Cartesian2(2.0, 2.0)] A [[Cartesian2]] Property specifying how many times the tiles repeat in each direction.
     */
   @js.native
-  @JSName("Cesium.CheckerboardMaterialProperty")
+  @JSGlobal("Cesium.CheckerboardMaterialProperty")
   class CheckerboardMaterialProperty protected() extends js.Object {
     def this(options: CheckerboardMaterialPropertyOptions) = this()
 
@@ -5710,7 +5723,7 @@ class HeadingPitchRoll protected() extends js.Object {
     *
     */
   @js.native
-  @JSName("Cesium.ColorMaterialProperty")
+  @JSGlobal("Cesium.ColorMaterialProperty")
   class ColorMaterialProperty protected() extends MaterialProperty {
     def this(color: Property = ???) = this()
 
@@ -5732,7 +5745,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {DataSource|CompositeEntityCollection} [owner] The data source (or composite entity collection) which created this collection.
     */
   @js.native
-  @JSName("Cesium.CompositeEntityCollection")
+  @JSGlobal("Cesium.CompositeEntityCollection")
   class CompositeEntityCollection protected() extends js.Object {
     def this(collections: js.Array[EntityCollection] = ???, owner: DataSource | CompositeEntityCollection = ???) = this()
 
@@ -5781,7 +5794,7 @@ class HeadingPitchRoll protected() extends js.Object {
     *
     */
   @js.native
-  @JSName("Cesium.CompositeMaterialProperty")
+  @JSGlobal("Cesium.CompositeMaterialProperty")
   class CompositeMaterialProperty() extends MaterialProperty {
     var intervals: TimeIntervalCollection = js.native
   }
@@ -5795,7 +5808,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {ReferenceFrame} [referenceFrame=ReferenceFrame.FIXED] The reference frame in which the position is defined.
     */
   @js.native
-  @JSName("Cesium.CompositePositionProperty")
+  @JSGlobal("Cesium.CompositePositionProperty")
   class CompositePositionProperty protected() extends PositionProperty {
     def this(referenceFrame: ReferenceFrame = ???) = this()
 
@@ -5832,7 +5845,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see CompositePositionProperty
     */
   @js.native
-  @JSName("Cesium.CompositeProperty")
+  @JSGlobal("Cesium.CompositeProperty")
   class CompositeProperty extends Property {
     var intervals: TimeIntervalCollection = js.native
   }
@@ -5848,7 +5861,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {ReferenceFrame} [referenceFrame=ReferenceFrame.FIXED] The reference frame in which the position is defined.
     */
   @js.native
-  @JSName("Cesium.ConstantPositionProperty")
+  @JSGlobal("Cesium.ConstantPositionProperty")
   class ConstantPositionProperty protected() extends PositionProperty {
     def this(value: Cartesian3 = ???, referenceFrame: ReferenceFrame = ???) = this()
 
@@ -5869,7 +5882,7 @@ class HeadingPitchRoll protected() extends js.Object {
     *      exception {DeveloperError} value.equals is a required function.
     */
   @js.native
-  @JSName("Cesium.ConstantProperty")
+  @JSGlobal("Cesium.ConstantProperty")
   class ConstantProperty protected() extends Property {
     def this(value: js.Any = ???) = this()
 
@@ -5886,7 +5899,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Scene} scene The scene where visualization is taking place.
     */
   @js.native
-  @JSName("Cesium.CorridorGeometryUpdater")
+  @JSGlobal("Cesium.CorridorGeometryUpdater")
   class CorridorGeometryUpdater protected() extends js.Object {
     def this(entity: Entity, scene: Scene) = this()
 
@@ -5918,7 +5931,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.CorridorGeometryUpdater")
+  @JSGlobal("Cesium.CorridorGeometryUpdater")
   object CorridorGeometryUpdater extends js.Object {
     var perInstanceColorAppearanceType: Appearance = js.native
     var materialAppearanceType: Appearance = js.native
@@ -5950,7 +5963,7 @@ class HeadingPitchRoll protected() extends js.Object {
     *      demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Corridor.html|Cesium Sandcastle Corridor Demo]]
     */
   @js.native
-  @JSName("Cesium.CorridorGraphics")
+  @JSGlobal("Cesium.CorridorGraphics")
   class CorridorGraphics protected() extends js.Object {
     def this(options: CorridorGraphicsOptions) = this()
 
@@ -5995,7 +6008,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * viewer.dataSources.add(dataSource);
     */
   @js.native
-  @JSName("Cesium.CustomDataSource")
+  @JSGlobal("Cesium.CustomDataSource")
   class CustomDataSource protected() extends DataSource {
     def this(name: String = ???) = this()
   }
@@ -6010,7 +6023,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Scene} scene The scene where visualization is taking place.
     */
   @js.native
-  @JSName("Cesium.CylinderGeometryUpdater")
+  @JSGlobal("Cesium.CylinderGeometryUpdater")
   class CylinderGeometryUpdater protected() extends js.Object {
     def this(entity: Entity, scene: Scene) = this()
 
@@ -6042,7 +6055,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.CylinderGeometryUpdater")
+  @JSGlobal("Cesium.CylinderGeometryUpdater")
   object CylinderGeometryUpdater extends js.Object {
     var perInstanceColorAppearanceType: Appearance = js.native
     var materialAppearanceType: Appearance = js.native
@@ -6070,7 +6083,7 @@ class HeadingPitchRoll protected() extends js.Object {
     *
     */
   @js.native
-  @JSName("Cesium.CylinderGraphics")
+  @JSGlobal("Cesium.CylinderGraphics")
   class CylinderGraphics protected() extends js.Object {
     def this(options: CylinderGraphicsOptions) = this()
 
@@ -6103,7 +6116,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=CZML.html|Cesium Sandcastle CZML Demo]]
     */
   @js.native
-  @JSName("Cesium.CzmlDataSource")
+  @JSGlobal("Cesium.CzmlDataSource")
   class CzmlDataSource protected() extends DataSource {
     def this(name: String = ???) = this()
 
@@ -6113,7 +6126,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.CzmlDataSource")
+  @JSGlobal("Cesium.CzmlDataSource")
   object CzmlDataSource extends js.Object {
     var updaters: js.Array[js.Any] = js.native
 
@@ -6133,7 +6146,7 @@ class HeadingPitchRoll protected() extends js.Object {
     *
     */
   @js.native
-  @JSName("Cesium.DataSourceClock")
+  @JSGlobal("Cesium.DataSourceClock")
   class DataSourceClock() extends js.Object {
     var definitionChanged: Event = js.native
     var startTime: JulianDate = js.native
@@ -6158,7 +6171,7 @@ class HeadingPitchRoll protected() extends js.Object {
     *
     */
   @js.native
-  @JSName("Cesium.DataSourceCollection")
+  @JSGlobal("Cesium.DataSourceCollection")
   class DataSourceCollection() extends js.Object {
     var length: Double = js.native
     var dataSourceAdded: Event = js.native
@@ -6182,7 +6195,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.DataSourceDisplay")
+  @JSGlobal("Cesium.DataSourceDisplay")
   object DataSourceDisplay extends js.Object {
     type VisualizersCallback = js.Function2[Scene, DataSource, js.Array[Visualizer]]
     var defaultVisualizersCallback: DataSourceDisplay.VisualizersCallback = js.native
@@ -6201,7 +6214,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * If undefined, all standard visualizers are used.
     */
   @js.native
-  @JSName("Cesium.DataSourceDisplay")
+  @JSGlobal("Cesium.DataSourceDisplay")
   class DataSourceDisplay protected() extends js.Object {
     def this(options: DataSourceDisplayOptions) = this()
 
@@ -6248,13 +6261,13 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Scene} scene The scene where visualization is taking place.
     */
   @js.native
-  @JSName("Cesium.EllipseGeometryUpdater")
+  @JSGlobal("Cesium.EllipseGeometryUpdater")
   class EllipseGeometryUpdater protected() extends GeometryUpdater {
     def this(entity: Entity, scene: Scene) = this()
   }
 
   @js.native
-  @JSName("Cesium.EllipseGeometryUpdater")
+  @JSGlobal("Cesium.EllipseGeometryUpdater")
   object EllipseGeometryUpdater extends GeometryUpdaterStatic
 
   /**
@@ -6285,7 +6298,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Circles and Ellipses.html|Cesium Sandcastle Circles and Ellipses Demo]]
     */
   @js.native
-  @JSName("Cesium.EllipseGraphics")
+  @JSGlobal("Cesium.EllipseGraphics")
   class EllipseGraphics protected() extends js.Object {
     def this(options: EllipseGraphicsOptions) = this()
 
@@ -6321,13 +6334,13 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Scene} scene The scene where visualization is taking place.
     */
   @js.native
-  @JSName("Cesium.EllipsoidGeometryUpdater")
+  @JSGlobal("Cesium.EllipsoidGeometryUpdater")
   class EllipsoidGeometryUpdater protected() extends GeometryUpdater {
     def this(entity: Entity, scene: Scene) = this()
   }
 
   @js.native
-  @JSName("Cesium.EllipsoidGeometryUpdater")
+  @JSGlobal("Cesium.EllipsoidGeometryUpdater")
   object EllipsoidGeometryUpdater extends GeometryUpdaterStatic
 
   /**
@@ -6351,7 +6364,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Spheres%20and%20Ellipsoids.html|Cesium Sandcastle Spheres and Ellipsoids Demo]]
     */
   @js.native
-  @JSName("Cesium.EllipsoidGraphics")
+  @JSGlobal("Cesium.EllipsoidGraphics")
   class EllipsoidGraphics protected() extends js.Object {
     def this(options: EllipsoidGraphicsOptions) = this()
 
@@ -6409,7 +6422,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see [[http://cesiumjs.org/2015/02/02/Visualizing-Spatial-Data/|Visualizing Spatial Data]]
     */
   @js.native
-  @JSName("Cesium.Entity")
+  @JSGlobal("Cesium.Entity")
   class Entity protected() extends js.Object {
     def this(options: EntityOptions) = this()
 
@@ -6459,7 +6472,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {DataSource|CompositeEntityCollection} [owner] The data source (or composite entity collection) which created this collection.
     */
   @js.native
-  @JSName("Cesium.EntityCollection")
+  @JSGlobal("Cesium.EntityCollection")
   class EntityCollection protected() extends js.Object {
     def this(owner: DataSource | CompositeEntityCollection = ???) = this()
 
@@ -6491,7 +6504,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.EntityCollection")
+  @JSGlobal("Cesium.EntityCollection")
   object EntityCollection extends js.Object {
     def collectionChangedEventCallback(collection: EntityCollection, added: js.Array[Entity], removed: js.Array[Entity], changed: js.Array[Entity]): js.Dynamic = js.native
   }
@@ -6507,7 +6520,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {BoundingSphere} [boundingSphere] An initial bounding sphere for setting the default view.
     */
   @js.native
-  @JSName("Cesium.EntityView")
+  @JSGlobal("Cesium.EntityView")
   class EntityView protected() extends js.Object {
     def this(entity: Entity, scene: Scene, ellipsoid: Ellipsoid = ???, boundingSphere: BoundingSphere = ???) = this()
 
@@ -6520,7 +6533,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.EntityView")
+  @JSGlobal("Cesium.EntityView")
   object EntityView extends js.Object {
     var defaultOffset3D: Cartesian3 = js.native
   }
@@ -6550,7 +6563,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * }));
     */
   @js.native
-  @JSName("Cesium.GeoJsonDataSource")
+  @JSGlobal("Cesium.GeoJsonDataSource")
   class GeoJsonDataSource protected() extends DataSource {
     def this(name: String = ???) = this()
 
@@ -6558,7 +6571,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.GeoJsonDataSource")
+  @JSGlobal("Cesium.GeoJsonDataSource")
   object GeoJsonDataSource extends js.Object {
     type describe = js.Function2[js.Any, String, Unit]
     var markerSize: Double = js.native
@@ -6585,7 +6598,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {EntityCollection} entityCollection The entityCollection to visualize.
     */
   @js.native
-  @JSName("Cesium.GeometryVisualizer")
+  @JSGlobal("Cesium.GeometryVisualizer")
   class GeometryVisualizer protected() extends Visualizer {
     def this(`type`: GeometryUpdater, scene: Scene, entityCollection: EntityCollection) = this()
   }
@@ -6604,7 +6617,7 @@ class HeadingPitchRoll protected() extends js.Object {
     *
     */
   @js.native
-  @JSName("Cesium.GridMaterialProperty")
+  @JSGlobal("Cesium.GridMaterialProperty")
   class GridMaterialProperty protected() extends MaterialProperty {
     def this(options: GridMaterialPropertyOptions) = this()
 
@@ -6627,7 +6640,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Property} [options.transparent=false] Set to true when the image has transparency (for example, when a png has transparent sections)
     */
   @js.native
-  @JSName("Cesium.ImageMaterialProperty")
+  @JSGlobal("Cesium.ImageMaterialProperty")
   class ImageMaterialProperty protected() extends MaterialProperty {
     def this(options: ImageMaterialPropertyOptions) = this()
 
@@ -6672,7 +6685,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * });
     */
   @js.native
-  @JSName("Cesium.KmlDataSource")
+  @JSGlobal("Cesium.KmlDataSource")
   class KmlDataSource protected() extends DataSource {
     def this(options: KmlDataSourceOptions) = this()
 
@@ -6686,7 +6699,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.KmlDataSource")
+  @JSGlobal("Cesium.KmlDataSource")
   object KmlDataSource extends js.Object {
     def load(data: String | Document | Blob, options: KmlDataSourceOptions = ???): Promise[KmlDataSource] = js.native
   }
@@ -6697,7 +6710,7 @@ class HeadingPitchRoll protected() extends js.Object {
     *
     */
   @js.native
-  @JSName("Cesium.KmlFeatureData")
+  @JSGlobal("Cesium.KmlFeatureData")
   class KmlFeatureData() extends js.Object {
     var author: js.Any = js.native
     var link: js.Any = js.native
@@ -6738,7 +6751,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Labels.html|Cesium Sandcastle Labels Demo]]
     */
   @js.native
-  @JSName("Cesium.LabelGraphics")
+  @JSGlobal("Cesium.LabelGraphics")
   class LabelGraphics protected() extends js.Object {
     def this(options: LabelGraphicsOptions) = this()
 
@@ -6758,6 +6771,7 @@ class HeadingPitchRoll protected() extends js.Object {
     var translucencyByDistance: Property = js.native
     var pixelOffsetScaleByDistance: Property = js.native
     var distanceDisplayCondition: Property = js.native
+    var disableDepthTestDistance: Double = js.native
 
     var showBackground: Property = js.native
     var backgroundColor: Property = js.native
@@ -6778,7 +6792,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {EntityCollection} entityCollection The entityCollection to visualize.
     */
   @js.native
-  @JSName("Cesium.LabelVisualizer")
+  @JSGlobal("Cesium.LabelVisualizer")
   class LabelVisualizer protected() extends Visualizer {
     def this(entityCluster: EntityCluster, entityCollection: EntityCollection) = this()
   }
@@ -6834,7 +6848,7 @@ class HeadingPitchRoll protected() extends js.Object {
     *      demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=3D%20Models.html|Cesium Sandcastle 3D Models Demo]]
     */
   @js.native
-  @JSName("Cesium.ModelGraphics")
+  @JSGlobal("Cesium.ModelGraphics")
   class ModelGraphics protected() extends js.Object {
     def this(options: ModelGraphicsOptions) = this()
 
@@ -6871,7 +6885,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {EntityCollection} entityCollection The entityCollection to visualize.
     */
   @js.native
-  @JSName("Cesium.ModelVisualizer")
+  @JSGlobal("Cesium.ModelVisualizer")
   class ModelVisualizer protected() extends Visualizer {
     def this(scene: Scene, entityCollection: EntityCollection) = this()
   }
@@ -6887,7 +6901,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Property} [options.scale=new Cartesian3(1.0, 1.0, 1.0)] A [[Cartesian3]] Property specifying the (x, y, z) scaling to apply to the node.
     */
   @js.native
-  @JSName("Cesium.NodeTransformationProperty")
+  @JSGlobal("Cesium.NodeTransformationProperty")
   class NodeTransformationProperty protected() extends js.Object {
     def this(options: NodeTransformationPropertyOptions) = this()
 
@@ -6917,7 +6931,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Property} [options.resolution=60] A numeric Property specifying the width in pixels.
     */
   @js.native
-  @JSName("Cesium.PathGraphics")
+  @JSGlobal("Cesium.PathGraphics")
   class PathGraphics protected() extends js.Object {
     def this(options: PathGraphicsOptions) = this()
 
@@ -6944,7 +6958,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {EntityCollection} entityCollection The entityCollection to visualize.
     */
   @js.native
-  @JSName("Cesium.PathVisualizer")
+  @JSGlobal("Cesium.PathVisualizer")
   class PathVisualizer protected() extends Visualizer {
     def this(scene: Scene, entityCollection: EntityCollection) = this()
   }
@@ -6965,7 +6979,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Property} [options.translucencyByDistance] A [[NearFarScalar]] Property used to set translucency based on distance from the camera.
     */
   @js.native
-  @JSName("Cesium.PointGraphics")
+  @JSGlobal("Cesium.PointGraphics")
   class PointGraphics protected() extends js.Object {
     def this(options: PointGraphicsOptions) = this()
 
@@ -6980,6 +6994,7 @@ class HeadingPitchRoll protected() extends js.Object {
 
     var heightReference: HeightReference = js.native
     var distanceDisplayCondition: Property = js.native
+    var disableDepthTestDistance: Double = js.native
 
     def clone(result: PointGraphics = ???): PointGraphics = js.native
 
@@ -6995,7 +7010,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {EntityCollection} entityCollection The entityCollection to visualize.
     */
   @js.native
-  @JSName("Cesium.PointVisualizer")
+  @JSGlobal("Cesium.PointVisualizer")
   class PointVisualizer protected() extends Visualizer {
     def this(entityCluster: EntityCluster, entityCollection: EntityCollection) = this()
   }
@@ -7010,13 +7025,13 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Scene} scene The scene where visualization is taking place.
     */
   @js.native
-  @JSName("Cesium.PolygonGeometryUpdater")
+  @JSGlobal("Cesium.PolygonGeometryUpdater")
   class PolygonGeometryUpdater protected() extends GeometryUpdater {
     def this(entity: Entity, scene: Scene) = this()
   }
 
   @js.native
-  @JSName("Cesium.PolygonGeometryUpdater")
+  @JSGlobal("Cesium.PolygonGeometryUpdater")
   object PolygonGeometryUpdater extends GeometryUpdaterStatic
 
   /**
@@ -7047,7 +7062,7 @@ class HeadingPitchRoll protected() extends js.Object {
     *      demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Polygon.html|Cesium Sandcastle Polygon Demo]]
     */
   @js.native
-  @JSName("Cesium.PolygonGraphics")
+  @JSGlobal("Cesium.PolygonGraphics")
   class PolygonGraphics protected() extends js.Object {
     def this(options: PolygonGraphicsOptions) = this()
 
@@ -7082,7 +7097,7 @@ class HeadingPitchRoll protected() extends js.Object {
     *
     */
   @js.native
-  @JSName("Cesium.PolylineArrowMaterialProperty")
+  @JSGlobal("Cesium.PolylineArrowMaterialProperty")
   class PolylineArrowMaterialProperty protected() extends js.Object {
     def this(color: Property = ???) = this()
 
@@ -7107,13 +7122,13 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Scene} scene The scene where visualization is taking place.
     */
   @js.native
-  @JSName("Cesium.PolylineGeometryUpdater")
+  @JSGlobal("Cesium.PolylineGeometryUpdater")
   class PolylineGeometryUpdater protected() extends GeometryUpdater {
     def this(entity: Entity, scene: Scene) = this()
   }
 
   @js.native
-  @JSName("Cesium.PolylineGeometryUpdater")
+  @JSGlobal("Cesium.PolylineGeometryUpdater")
   object PolylineGeometryUpdater extends GeometryUpdaterStatic
 
   /**
@@ -7126,7 +7141,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Property} [options.glowPower=0.25] A numeric Property specifying the strength of the glow, as a percentage of the total line width.
     */
   @js.native
-  @JSName("Cesium.PolylineGlowMaterialProperty")
+  @JSGlobal("Cesium.PolylineGlowMaterialProperty")
   class PolylineGlowMaterialProperty protected() extends MaterialProperty {
     def this(options: PolylineGlowMaterialPropertyOptions) = this()
 
@@ -7154,7 +7169,7 @@ class HeadingPitchRoll protected() extends js.Object {
     *      demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Polyline.html|Cesium Sandcastle Polyline Demo]]
     */
   @js.native
-  @JSName("Cesium.PolylineGraphics")
+  @JSGlobal("Cesium.PolylineGraphics")
   class PolylineGraphics protected() extends js.Object {
     def this(options: PolylineGraphicsOptions) = this()
 
@@ -7183,7 +7198,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Property} [options.outlineWidth=1.0] A numeric Property specifying the width of the outline, in pixels.
     */
   @js.native
-  @JSName("Cesium.PolylineOutlineMaterialProperty")
+  @JSGlobal("Cesium.PolylineOutlineMaterialProperty")
   class PolylineOutlineMaterialProperty protected() extends MaterialProperty {
     def this(options: PolylineOutlineMaterialPropertyOptions) = this()
 
@@ -7202,7 +7217,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Scene} scene The scene where visualization is taking place.
     */
   @js.native
-  @JSName("Cesium.PolylineVolumeGeometryUpdater")
+  @JSGlobal("Cesium.PolylineVolumeGeometryUpdater")
   class PolylineVolumeGeometryUpdater protected() extends js.Object {
     def this(entity: Entity, scene: Scene) = this()
 
@@ -7234,7 +7249,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.PolylineVolumeGeometryUpdater")
+  @JSGlobal("Cesium.PolylineVolumeGeometryUpdater")
   object PolylineVolumeGeometryUpdater extends js.Object {
     var perInstanceColorAppearanceType: Appearance = js.native
     var materialAppearanceType: Appearance = js.native
@@ -7263,7 +7278,7 @@ class HeadingPitchRoll protected() extends js.Object {
     *      demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Polyline%20Volume.html|Cesium Sandcastle Polyline Volume Demo]]
     */
   @js.native
-  @JSName("Cesium.PolylineVolumeGraphics")
+  @JSGlobal("Cesium.PolylineVolumeGraphics")
   class PolylineVolumeGraphics protected() extends js.Object {
     def this(options: PolylineVolumeGraphicsOptions) = this()
 
@@ -7321,7 +7336,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {ReferenceFrame} [referenceFrame=ReferenceFrame.FIXED] The reference frame in which the position is defined.
     */
   @js.native
-  @JSName("Cesium.PositionPropertyArray")
+  @JSGlobal("Cesium.PositionPropertyArray")
   class PositionPropertyArray protected() extends js.Object {
     def this(value: js.Array[Property] = ???, referenceFrame: ReferenceFrame = ???) = this()
 
@@ -7372,7 +7387,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Property[]} [value] An array of Property instances.
     */
   @js.native
-  @JSName("Cesium.PropertyArray")
+  @JSGlobal("Cesium.PropertyArray")
   class PropertyArray protected() extends js.Object {
     def this(value: js.Array[Property] = ???) = this()
 
@@ -7396,7 +7411,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Function} [createPropertyCallback] A function that will be called when the value of any of the properties in value are not a Property.
     */
   @js.native
-  @JSName("Cesium.PropertyBag")
+  @JSGlobal("Cesium.PropertyBag")
   class PropertyBag protected() extends js.Object {
     def this(value: js.Any = ???, createPropertyCallback: js.Function = ???) = this()
 
@@ -7427,13 +7442,13 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Scene} scene The scene where visualization is taking place.
     */
   @js.native
-  @JSName("Cesium.RectangleGeometryUpdater")
+  @JSGlobal("Cesium.RectangleGeometryUpdater")
   class RectangleGeometryUpdater protected() extends GeometryUpdater {
     def this(entity: Entity, scene: Scene) = this()
   }
 
   @js.native
-  @JSName("Cesium.RectangleGeometryUpdater")
+  @JSGlobal("Cesium.RectangleGeometryUpdater")
   object RectangleGeometryUpdater extends GeometryUpdaterStatic
 
   /**
@@ -7464,7 +7479,7 @@ class HeadingPitchRoll protected() extends js.Object {
     *      demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Rectangle.html|Cesium Sandcastle Rectangle Demo]]
     */
   @js.native
-  @JSName("Cesium.RectangleGraphics")
+  @JSGlobal("Cesium.RectangleGraphics")
   class RectangleGraphics protected() extends js.Object {
     def this(options: RectangleGraphicsOptions) = this()
 
@@ -7533,7 +7548,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * collection.add(object5);
     */
   @js.native
-  @JSName("Cesium.ReferenceProperty")
+  @JSGlobal("Cesium.ReferenceProperty")
   class ReferenceProperty protected() extends Property {
     def this(targetCollection: EntityCollection, targetId: String, targetPropertyNames: js.Array[String]) = this()
 
@@ -7549,7 +7564,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.ReferenceProperty")
+  @JSGlobal("Cesium.ReferenceProperty")
   object ReferenceProperty extends js.Object {
     def fromString(targetCollection: EntityCollection, referenceString: String): ReferenceProperty = js.native
   }
@@ -7564,7 +7579,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Number} [numberOfDerivatives=0] The number of derivatives that accompany each position; i.e. velocity, acceleration, etc...
     */
   @js.native
-  @JSName("Cesium.SampledPositionProperty")
+  @JSGlobal("Cesium.SampledPositionProperty")
   class SampledPositionProperty protected() extends PositionProperty {
     def this(referenceFrame: ReferenceFrame = ???, numberOfDerivatives: Double = ???) = this()
 
@@ -7627,7 +7642,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see SampledPositionProperty
     */
   @js.native
-  @JSName("Cesium.SampledProperty")
+  @JSGlobal("Cesium.SampledProperty")
   class SampledProperty protected() extends Property {
     def this(`type`: js.Dynamic | Packable, derivativeTypes: js.Array[js.Dynamic] | js.Array[Packable] = ???) = this()
 
@@ -7661,7 +7676,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Property} [options.orientation=StripeOrientation.HORIZONTAL] A Property specifying the StripeOrientation
     */
   @js.native
-  @JSName("Cesium.StripeMaterialProperty")
+  @JSGlobal("Cesium.StripeMaterialProperty")
   class StripeMaterialProperty protected() extends MaterialProperty {
     def this(options: StripeMaterialPropertyOptions) = this()
 
@@ -7681,7 +7696,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {ReferenceFrame} [referenceFrame=ReferenceFrame.FIXED] The reference frame in which the position is defined.
     */
   @js.native
-  @JSName("Cesium.TimeIntervalCollectionPositionProperty")
+  @JSGlobal("Cesium.TimeIntervalCollectionPositionProperty")
   class TimeIntervalCollectionPositionProperty protected() extends PositionProperty {
     def this(referenceFrame: ReferenceFrame = ???) = this()
 
@@ -7724,7 +7739,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * }));
     */
   @js.native
-  @JSName("Cesium.TimeIntervalCollectionProperty")
+  @JSGlobal("Cesium.TimeIntervalCollectionProperty")
   class TimeIntervalCollectionProperty() extends Property {
     var intervals: TimeIntervalCollection = js.native
   }
@@ -7749,7 +7764,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * }));
     */
   @js.native
-  @JSName("Cesium.VelocityOrientationProperty")
+  @JSGlobal("Cesium.VelocityOrientationProperty")
   class VelocityOrientationProperty protected() extends js.Object {
     def this(position: Property = ???, ellipsoid: Ellipsoid = ???) = this()
 
@@ -7785,7 +7800,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * }));
     */
   @js.native
-  @JSName("Cesium.VelocityVectorProperty")
+  @JSGlobal("Cesium.VelocityVectorProperty")
   class VelocityVectorProperty protected() extends js.Object {
     def this(position: Property = ???) = this()
 
@@ -7832,13 +7847,13 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Scene} scene The scene where visualization is taking place.
     */
   @js.native
-  @JSName("Cesium.WallGeometryUpdater")
+  @JSGlobal("Cesium.WallGeometryUpdater")
   class WallGeometryUpdater protected() extends GeometryUpdater {
     def this(entity: Entity, scene: Scene) = this()
   }
 
   @js.native
-  @JSName("Cesium.WallGeometryUpdater")
+  @JSGlobal("Cesium.WallGeometryUpdater")
   object WallGeometryUpdater extends GeometryUpdaterStatic
 
   /**
@@ -7864,7 +7879,7 @@ class HeadingPitchRoll protected() extends js.Object {
     *      demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Wall.html|Cesium Sandcastle Wall Demo]]
     */
   @js.native
-  @JSName("Cesium.WallGraphics")
+  @JSGlobal("Cesium.WallGraphics")
   class WallGraphics protected() extends js.Object {
     def this(options: WallGraphicsOptions) = this()
 
@@ -7913,6 +7928,7 @@ class HeadingPitchRoll protected() extends js.Object {
     */
   // todo this should be a trait?
   @js.native
+  @JSGlobal("Cesium.Appearance")
   class Appearance protected() extends js.Object {
     def this(options: AppearanceOptions) = this()
 
@@ -7990,7 +8006,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see [[http://www.w3.org/TR/cors/|Cross-Origin Resource Sharing]]
     */
   @js.native
-  @JSName("Cesium.ArcGisMapServerImageryProvider")
+  @JSGlobal("Cesium.ArcGisMapServerImageryProvider")
   class ArcGisMapServerImageryProvider protected() extends ImageryProvider {
     def this(options: ArcGisMapServerImageryProviderOptions) = this()
 
@@ -8001,10 +8017,10 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.ArcGisMapServerImageryProvider")
+  @JSGlobal("Cesium.ArcGisMapServerImageryProvider")
   object ArcGisMapServerImageryProvider extends ImageryProviderStatic
 
-  @JSName("Cesium.Billboard")
+  @JSGlobal("Cesium.Billboard")
   @js.native
   object Billboard extends js.Object {
     type CreateImageCallback = js.Function1[String, HTMLImageElement | HTMLCanvasElement | Promise[HTMLImageElement | HTMLCanvasElement]]
@@ -8119,7 +8135,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * });
     */
   @js.native
-  @JSName("Cesium.BillboardCollection")
+  @JSGlobal("Cesium.BillboardCollection")
   class BillboardCollection protected() extends js.Object {
     def this(options: BillboardCollectionOptions) = this()
 
@@ -8198,7 +8214,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see [[http://www.w3.org/TR/cors/|Cross-Origin Resource Sharing]]
     */
   @js.native
-  @JSName("Cesium.BingMapsImageryProvider")
+  @JSGlobal("Cesium.BingMapsImageryProvider")
   class BingMapsImageryProvider protected() extends ImageryProvider {
     def this(options: BingMapsImageryProviderOptions) = this()
 
@@ -8209,7 +8225,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.BingMapsImageryProvider")
+  @JSGlobal("Cesium.BingMapsImageryProvider")
   object BingMapsImageryProvider extends ImageryProviderStatic {
     def tileXYToQuadKey(x: Double, y: Double, level: Double): js.Dynamic = js.native
 
@@ -8247,7 +8263,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * camera.frustum.far = 2.0;
     */
   @js.native
-  @JSName("Cesium.Camera")
+  @JSGlobal("Cesium.Camera")
   class Camera protected() extends js.Object {
     def this(scene: Scene) = this()
 
@@ -8364,12 +8380,13 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.Camera")
+  @JSGlobal("Cesium.Camera")
   object Camera extends js.Object {
     type FlightCompleteCallback = js.Function0[Unit]
     type FlightCancelledCallback = js.Function0[Unit]
     var DEFAULT_VIEW_RECTANGLE: Rectangle = js.native
     var DEFAULT_VIEW_FACTOR: Double = js.native
+    var DEFAULT_OFFSET: Double = js.native
   }
 
   /**
@@ -8385,7 +8402,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see ScreenSpaceEventHandler
     */
   @js.native
-  @JSName("Cesium.CameraEventAggregator")
+  @JSGlobal("Cesium.CameraEventAggregator")
   class CameraEventAggregator protected() extends js.Object {
     def this(element: HTMLCanvasElement = ???) = this()
 
@@ -8425,7 +8442,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * var creditDisplay = new Cesium.CreditDisplay(creditContainer);
     */
   @js.native
-  @JSName("Cesium.CreditDisplay")
+  @JSGlobal("Cesium.CreditDisplay")
   class CreditDisplay protected() extends js.Object {
     def this(container: HTMLElement, delimiter: String = ???) = this()
 
@@ -8455,7 +8472,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Cartesian4[]} [planes] An array of clipping planes.
     */
   @js.native
-  @JSName("Cesium.CullingVolume")
+  @JSGlobal("Cesium.CullingVolume")
   class CullingVolume protected() extends js.Object {
     def this(planes: js.Array[Cartesian4] = ???) = this()
 
@@ -8467,7 +8484,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.CullingVolume")
+  @JSGlobal("Cesium.CullingVolume")
   object CullingVolume extends js.Object {
     def fromBoundingSphere(boundingSphere: BoundingSphere, result: CullingVolume = ???): CullingVolume = js.native
   }
@@ -8501,7 +8518,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * });
     */
   @js.native
-  @JSName("Cesium.DebugAppearance")
+  @JSGlobal("Cesium.DebugAppearance")
   class DebugAppearance protected() extends js.Object {
     def this(options: DebugAppearanceOptions) = this()
 
@@ -8550,7 +8567,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * }));
     */
   @js.native
-  @JSName("Cesium.DebugModelMatrixPrimitive")
+  @JSGlobal("Cesium.DebugModelMatrixPrimitive")
   class DebugModelMatrixPrimitive protected() extends js.Object {
     def this(options: DebugModelMatrixPrimitiveOptions) = this()
 
@@ -8581,7 +8598,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * discard check will proceed no matter the values of the pixelsToCheck.
     */
   @js.native
-  @JSName("Cesium.DiscardMissingTileImagePolicy")
+  @JSGlobal("Cesium.DiscardMissingTileImagePolicy")
   class DiscardMissingTileImagePolicy protected() extends TileDiscardPolicy {
     def this(options: DiscardMissingTileImagePolicyOptions) = this()
   }
@@ -8621,7 +8638,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * });
     */
   @js.native
-  @JSName("Cesium.EllipsoidSurfaceAppearance")
+  @JSGlobal("Cesium.EllipsoidSurfaceAppearance")
   class EllipsoidSurfaceAppearance protected() extends js.Object {
     def this(options: EllipsoidSurfaceAppearanceOptions) = this()
 
@@ -8644,7 +8661,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.EllipsoidSurfaceAppearance")
+  @JSGlobal("Cesium.EllipsoidSurfaceAppearance")
   object EllipsoidSurfaceAppearance extends js.Object {
     var VERTEX_FORMAT: VertexFormat = js.native
   }
@@ -8657,7 +8674,7 @@ class HeadingPitchRoll protected() extends js.Object {
     *
     */
   @js.native
-  @JSName("Cesium.Fog")
+  @JSGlobal("Cesium.Fog")
   class Fog() extends js.Object {
     var enabled: Boolean = js.native
     var density: Double = js.native
@@ -8688,7 +8705,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * lowFrameRate event will be raised and the page will redirect to the redirectOnLowFrameRateUrl, if any.
     */
   @js.native
-  @JSName("Cesium.FrameRateMonitor")
+  @JSGlobal("Cesium.FrameRateMonitor")
   class FrameRateMonitor protected() extends js.Object {
     def this(options: FrameRateMonitorOptions) = this()
 
@@ -8712,7 +8729,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.FrameRateMonitor")
+  @JSGlobal("Cesium.FrameRateMonitor")
   object FrameRateMonitor extends js.Object {
     var defaultSettings: js.Any = js.native
 
@@ -8735,7 +8752,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * a default function for the type of response is used.
     */
   @js.native
-  @JSName("Cesium.GetFeatureInfoFormat")
+  @JSGlobal("Cesium.GetFeatureInfoFormat")
   class GetFeatureInfoFormat protected() extends js.Object {
     def this(`type`: String, format: String = ???, callback: js.Function = ???) = this()
   }
@@ -8751,7 +8768,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * globe.
     */
   @js.native
-  @JSName("Cesium.Globe")
+  @JSGlobal("Cesium.Globe")
   class Globe protected() extends js.Object {
     def this(ellipsoid: Ellipsoid = ???) = this()
 
@@ -8848,7 +8865,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see [[http://www.w3.org/TR/cors/|Cross-Origin Resource Sharing]]
     */
   @js.native
-  @JSName("Cesium.GoogleEarthImageryProvider")
+  @JSGlobal("Cesium.GoogleEarthImageryProvider")
   class GoogleEarthImageryProvider protected() extends ImageryProvider {
     def this(options: GoogleEarthImageryProviderOptions) = this()
 
@@ -8860,7 +8877,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.GoogleEarthImageryProvider")
+  @JSGlobal("Cesium.GoogleEarthImageryProvider")
   object GoogleEarthImageryProvider extends ImageryProviderStatic
 
   /**
@@ -8885,7 +8902,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Number} [options.canvasSize=256] The size of the canvas used for rendering.
     */
   @js.native
-  @JSName("Cesium.GridImageryProvider")
+  @JSGlobal("Cesium.GridImageryProvider")
   class GridImageryProvider protected() extends js.Object {
     def this(options: GridImageryProviderOptions) = this()
 
@@ -8991,7 +9008,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Appearance
     */
   @js.native
-  @JSName("Cesium.GroundPrimitive")
+  @JSGlobal("Cesium.GroundPrimitive")
   class GroundPrimitive protected() extends js.Object {
     def this(options: GroundPrimitiveOptions) = this()
 
@@ -9018,7 +9035,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.GroundPrimitive")
+  @JSGlobal("Cesium.GroundPrimitive")
   object GroundPrimitive extends js.Object {
     def isSupported(scene: Scene): Boolean = js.native
   }
@@ -9089,7 +9106,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * or undefined to show it at all levels.  Level zero is the least-detailed level.
     */
   @js.native
-  @JSName("Cesium.ImageryLayer")
+  @JSGlobal("Cesium.ImageryLayer")
   class ImageryLayer protected() extends js.Object {
     def this(imageryProvider: ImageryProvider, options: ImageryLayerOptions = ???) = this()
 
@@ -9113,7 +9130,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.ImageryLayer")
+  @JSGlobal("Cesium.ImageryLayer")
   object ImageryLayer extends js.Object {
     var DEFAULT_BRIGHTNESS: Double = js.native
     var DEFAULT_CONTRAST: Double = js.native
@@ -9132,7 +9149,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Imagery%20Layers%20Manipulation.html|Cesium Sandcastle Imagery Manipulation Demo]]
     */
   @js.native
-  @JSName("Cesium.ImageryLayerCollection")
+  @JSGlobal("Cesium.ImageryLayerCollection")
   class ImageryLayerCollection() extends js.Object {
     var layerAdded: Event = js.native
     var layerRemoved: Event = js.native
@@ -9176,7 +9193,7 @@ class HeadingPitchRoll protected() extends js.Object {
     *
     */
   @js.native
-  @JSName("Cesium.ImageryLayerFeatureInfo")
+  @JSGlobal("Cesium.ImageryLayerFeatureInfo")
   class ImageryLayerFeatureInfo() extends js.Object {
     var name: String = js.native
     var description: String = js.native
@@ -9285,6 +9302,8 @@ class HeadingPitchRoll protected() extends js.Object {
     def equals(other: Label): Boolean = js.native
 
     def isDestroyed(): Boolean = js.native
+
+    def scaleByDistance(): NearFarScalar = js.native
   }
 
   /**
@@ -9331,7 +9350,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * });
     */
   @js.native
-  @JSName("Cesium.LabelCollection")
+  @JSGlobal("Cesium.LabelCollection")
   class LabelCollection protected() extends js.Object {
     def this(options: LabelCollectionOptions) = this()
 
@@ -9384,7 +9403,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see [[https://www.mapbox.com/developers/api/#access-tokens]]
     */
   @js.native
-  @JSName("Cesium.MapboxImageryProvider")
+  @JSGlobal("Cesium.MapboxImageryProvider")
   class MapboxImageryProvider protected() extends ImageryProvider {
     def this(options: MapboxImageryProviderOptions) = this()
 
@@ -9392,7 +9411,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.MapboxImageryProvider")
+  @JSGlobal("Cesium.MapboxImageryProvider")
   object MapboxImageryProvider extends ImageryProviderStatic
 
 
@@ -9591,7 +9610,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * });
     */
   @js.native
-  @JSName("Cesium.Material")
+  @JSGlobal("Cesium.Material")
   class Material protected() extends js.Object {
     def this(options: MaterialOptions) = this()
 
@@ -9609,7 +9628,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.Material")
+  @JSGlobal("Cesium.Material")
   object Material extends js.Object {
     var DefaultImageId: String = js.native
     var DefaultCubeMapId: String = js.native
@@ -9671,7 +9690,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * });
     */
   @js.native
-  @JSName("Cesium.MaterialAppearance")
+  @JSGlobal("Cesium.MaterialAppearance")
   class MaterialAppearance protected() extends js.Object {
     def this(options: MaterialAppearanceOptions) = this()
 
@@ -9694,7 +9713,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.MaterialAppearance")
+  @JSGlobal("Cesium.MaterialAppearance")
   object MaterialAppearance extends js.Object {
     var MaterialSupport: MaterialAppearanceMaterialSupport = js.native
   }
@@ -9745,7 +9764,7 @@ class HeadingPitchRoll protected() extends js.Object {
     *      demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=3D%20Models.html|Cesium Sandcastle Models Demo]]
     */
   @js.native
-  @JSName("Cesium.Model")
+  @JSGlobal("Cesium.Model")
   class Model protected() extends js.Object {
     def this(options: ModelOptions) = this()
 
@@ -9793,7 +9812,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.Model")
+  @JSGlobal("Cesium.Model")
   object Model extends js.Object {
     def fromGltf(options: ModelFromGltfOptions): Model = js.native
   }
@@ -9933,7 +9952,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Scene#moon
     */
   @js.native
-  @JSName("Cesium.Moon")
+  @JSGlobal("Cesium.Moon")
   class Moon protected() extends js.Object {
     def this(options: MoonOptions) = this()
 
@@ -9955,7 +9974,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see DiscardMissingTileImagePolicy
     */
   @js.native
-  @JSName("Cesium.NeverTileDiscardPolicy")
+  @JSGlobal("Cesium.NeverTileDiscardPolicy")
   class NeverTileDiscardPolicy() extends TileDiscardPolicy
 
   /**
@@ -9978,7 +9997,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * frustum.far = 50.0 * maxRadii;
     */
   @js.native
-  @JSName("Cesium.OrthographicFrustum")
+  @JSGlobal("Cesium.OrthographicFrustum")
   class OrthographicFrustum() extends Frustum {
     var left: Double = js.native
     var right: Double = js.native
@@ -10059,7 +10078,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * });
     */
   @js.native
-  @JSName("Cesium.PerInstanceColorAppearance")
+  @JSGlobal("Cesium.PerInstanceColorAppearance")
   class PerInstanceColorAppearance protected() extends js.Object {
     def this(options: PerInstanceColorAppearanceOptions) = this()
 
@@ -10081,7 +10100,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.PerInstanceColorAppearance")
+  @JSGlobal("Cesium.PerInstanceColorAppearance")
   object PerInstanceColorAppearance extends js.Object {
     var VERTEX_FORMAT: VertexFormat = js.native
     var FLAT_VERTEX_FORMAT: VertexFormat = js.native
@@ -10104,7 +10123,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see PerspectiveOffCenterFrustum
     */
   @js.native
-  @JSName("Cesium.PerspectiveFrustum")
+  @JSGlobal("Cesium.PerspectiveFrustum")
   class PerspectiveFrustum() extends Frustum {
     var fov: Double = js.native
     var aspectRatio: Double = js.native
@@ -10144,7 +10163,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see PerspectiveFrustum
     */
   @js.native
-  @JSName("Cesium.PerspectiveOffCenterFrustum")
+  @JSGlobal("Cesium.PerspectiveOffCenterFrustum")
   class PerspectiveOffCenterFrustum() extends Frustum {
     var left: Double = js.native
     var right: Double = js.native
@@ -10240,7 +10259,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see PointPrimitive
     */
   @js.native
-  @JSName("Cesium.PointPrimitiveCollection")
+  @JSGlobal("Cesium.PointPrimitiveCollection")
   class PointPrimitiveCollection protected() extends js.Object {
     def this(options: PointPrimitiveCollectionOptions) = this()
 
@@ -10281,7 +10300,7 @@ class HeadingPitchRoll protected() extends js.Object {
     *
     */
   @js.native
-  @JSName("Cesium.Polyline")
+  @JSGlobal("Cesium.Polyline")
   class Polyline protected() extends js.Object {
     def this(options: PolylineOptions) = this()
 
@@ -10343,7 +10362,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * });
     */
   @js.native
-  @JSName("Cesium.PolylineCollection")
+  @JSGlobal("Cesium.PolylineCollection")
   class PolylineCollection protected() extends js.Object {
     def this(options: PolylineCollectionOptions) = this()
 
@@ -10402,7 +10421,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * });
     */
   @js.native
-  @JSName("Cesium.PolylineColorAppearance")
+  @JSGlobal("Cesium.PolylineColorAppearance")
   class PolylineColorAppearance protected() extends js.Object {
     def this(options: PolylineColorAppearanceOptions) = this()
 
@@ -10422,7 +10441,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.PolylineColorAppearance")
+  @JSGlobal("Cesium.PolylineColorAppearance")
   object PolylineColorAppearance extends js.Object {
     var VERTEX_FORMAT: VertexFormat = js.native
   }
@@ -10459,7 +10478,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * });
     */
   @js.native
-  @JSName("Cesium.PolylineMaterialAppearance")
+  @JSGlobal("Cesium.PolylineMaterialAppearance")
   class PolylineMaterialAppearance protected() extends js.Object {
     def this(options: PolylineMaterialAppearanceOptions) = this()
 
@@ -10479,7 +10498,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.PolylineMaterialAppearance")
+  @JSGlobal("Cesium.PolylineMaterialAppearance")
   object PolylineMaterialAppearance extends js.Object {
     var VERTEX_FORMAT: VertexFormat = js.native
   }
@@ -10589,7 +10608,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Appearance
     */
   @js.native
-  @JSName("Cesium.Primitive")
+  @JSGlobal("Cesium.Primitive")
   class Primitive protected() extends js.Object {
     def this(options: PrimitiveOptions) = this()
 
@@ -10644,7 +10663,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * scene.primitives.add(labels);      // Add regular primitive
     */
   @js.native
-  @JSName("Cesium.PrimitiveCollection")
+  @JSGlobal("Cesium.PrimitiveCollection")
   class PrimitiveCollection protected() extends js.Object {
     def this(options: PrimitiveCollectionOptions) = this()
 
@@ -10741,7 +10760,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * });
     */
   @js.native
-  @JSName("Cesium.Scene")
+  @JSGlobal("Cesium.Scene")
   class Scene protected() extends js.Object {
     def this(options: SceneOptions) = this()
 
@@ -10826,7 +10845,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Scene} scene The scene.
     */
   @js.native
-  @JSName("Cesium.ScreenSpaceCameraController")
+  @JSGlobal("Cesium.ScreenSpaceCameraController")
   class ScreenSpaceCameraController protected() extends js.Object {
     def this(scene: Scene) = this()
 
@@ -10882,7 +10901,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see UrlTemplateImageryProvider
     */
   @js.native
-  @JSName("Cesium.SingleTileImageryProvider")
+  @JSGlobal("Cesium.SingleTileImageryProvider")
   class SingleTileImageryProvider protected() extends ImageryProvider {
     def this(options: SingleTileImageryProviderOptions) = this()
 
@@ -10890,7 +10909,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.SingleTileImageryProvider")
+  @JSGlobal("Cesium.SingleTileImageryProvider")
   object SingleTileImageryProvider extends ImageryProviderStatic
 
   /**
@@ -10911,7 +10930,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Scene.skyAtmosphere
     */
   @js.native
-  @JSName("Cesium.SkyAtmosphere")
+  @JSGlobal("Cesium.SkyAtmosphere")
   class SkyAtmosphere protected() extends js.Object {
     def this(ellipsoid: Ellipsoid = ???) = this()
 
@@ -10955,7 +10974,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Transforms.computeTemeToPseudoFixedMatrix
     */
   @js.native
-  @JSName("Cesium.SkyBox")
+  @JSGlobal("Cesium.SkyBox")
   class SkyBox protected() extends js.Object {
     def this(options: SkyBoxOptions) = this()
 
@@ -10980,7 +10999,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Scene#sun
     */
   @js.native
-  @JSName("Cesium.Sun")
+  @JSGlobal("Cesium.Sun")
   class Sun() extends js.Object {
     var show: Boolean = js.native
     var glowFactor: Double = js.native
@@ -11008,7 +11027,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Number} [options.tileHeight=256] The height of the tile for level-of-detail selection purposes.
     */
   @js.native
-  @JSName("Cesium.TileCoordinatesImageryProvider")
+  @JSGlobal("Cesium.TileCoordinatesImageryProvider")
   class TileCoordinatesImageryProvider protected() extends js.Object {
     def this(options: TileCoordinatesImageryProviderOptions) = this()
 
@@ -11158,7 +11177,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see WebMapTileServiceImageryProvider
     */
   @js.native
-  @JSName("Cesium.UrlTemplateImageryProvider")
+  @JSGlobal("Cesium.UrlTemplateImageryProvider")
   class UrlTemplateImageryProvider protected() extends ImageryProvider {
     def this(options: UrlTemplateImageryProviderOptions) = this()
 
@@ -11171,7 +11190,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.UrlTemplateImageryProvider")
+  @JSGlobal("Cesium.UrlTemplateImageryProvider")
   object UrlTemplateImageryProvider extends ImageryProviderStatic
 
   /**
@@ -11188,7 +11207,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * viewportQuad.material.uniforms.color = new Cesium.Color(1.0, 0.0, 0.0, 1.0);
     */
   @js.native
-  @JSName("Cesium.ViewportQuad")
+  @JSGlobal("Cesium.ViewportQuad")
   class ViewportQuad protected() extends js.Object {
     def this(rectangle: BoundingRectangle = ???, material: Material = ???) = this()
 
@@ -11263,7 +11282,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * viewer.imageryLayers.addImageryProvider(provider);
     */
   @js.native
-  @JSName("Cesium.WebMapServiceImageryProvider")
+  @JSGlobal("Cesium.WebMapServiceImageryProvider")
   class WebMapServiceImageryProvider protected() extends ImageryProvider {
     def this(options: WebMapServiceImageryProviderOptions) = this()
 
@@ -11272,7 +11291,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.WebMapServiceImageryProvider")
+  @JSGlobal("Cesium.WebMapServiceImageryProvider")
   object WebMapServiceImageryProvider extends ImageryProviderStatic {
     var DefaultParameters: js.Any = js.native
     var GetFeatureInfoDefaultParameters: js.Any = js.native
@@ -11340,7 +11359,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see UrlTemplateImageryProvider
     */
   @js.native
-  @JSName("Cesium.WebMapTileServiceImageryProvider")
+  @JSGlobal("Cesium.WebMapTileServiceImageryProvider")
   class WebMapTileServiceImageryProvider protected() extends ImageryProvider {
     def this(options: WebMapTileServiceImageryProviderOptions) = this()
 
@@ -11349,7 +11368,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.WebMapTileServiceImageryProvider")
+  @JSGlobal("Cesium.WebMapTileServiceImageryProvider")
   object WebMapTileServiceImageryProvider extends ImageryProviderStatic
 
   /**
@@ -11400,7 +11419,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Clock
     */
   @js.native
-  @JSName("Cesium.Animation")
+  @JSGlobal("Cesium.Animation")
   class Animation protected() extends js.Object {
     def this(container: Element | String, viewModel: AnimationViewModel) = this()
 
@@ -11426,7 +11445,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Animation
     */
   @js.native
-  @JSName("Cesium.AnimationViewModel")
+  @JSGlobal("Cesium.AnimationViewModel")
   class AnimationViewModel protected() extends js.Object {
     def this(clockViewModel: ClockViewModel) = this()
 
@@ -11452,7 +11471,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.AnimationViewModel")
+  @JSGlobal("Cesium.AnimationViewModel")
   object AnimationViewModel extends js.Object {
     type DateFormatter = js.Function2[JulianDate, AnimationViewModel, String]
     type TimeFormatter = js.Function2[JulianDate, AnimationViewModel, String]
@@ -11545,7 +11564,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see ImageryLayerCollection
     */
   @js.native
-  @JSName("Cesium.BaseLayerPicker")
+  @JSGlobal("Cesium.BaseLayerPicker")
   class BaseLayerPicker protected() extends js.Object {
     def this(container: Element | String, options: BaseLayerPickerOptions) = this()
 
@@ -11573,7 +11592,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * exception {DeveloperError} terrainProviderViewModels must be an array.
     */
   @js.native
-  @JSName("Cesium.BaseLayerPickerViewModel")
+  @JSGlobal("Cesium.BaseLayerPickerViewModel")
   class BaseLayerPickerViewModel protected() extends js.Object {
     def this(options: BaseLayerPickerViewModelOptions) = this()
 
@@ -11588,7 +11607,7 @@ class HeadingPitchRoll protected() extends js.Object {
     var globe: Globe = js.native
   }
 
-  @JSName("Cesium.ProviderViewModel")
+  @JSGlobal("Cesium.ProviderViewModel")
   @js.native
   object ProviderViewModel extends js.Object {
     type CreationFunction = js.Function0[ImageryProvider | TerrainProvider | js.Array[ImageryProvider] | js.Array[TerrainProvider]]
@@ -11612,7 +11631,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see TerrainProvider
     */
   @js.native
-  @JSName("Cesium.ProviderViewModel")
+  @JSGlobal("Cesium.ProviderViewModel")
   class ProviderViewModel protected() extends js.Object {
     def this(options: ProviderViewModelOptions) = this()
 
@@ -11637,7 +11656,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * demo [[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html?src=Cesium%20Inspector.html|Cesium Sandcastle Cesium Inspector Demo]]
     */
   @js.native
-  @JSName("Cesium.CesiumInspector")
+  @JSGlobal("Cesium.CesiumInspector")
   class CesiumInspector protected() extends js.Object {
     def this(container: Element | String, scene: Scene) = this()
 
@@ -11659,7 +11678,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * exception {DeveloperError} scene is required.
     */
   @js.native
-  @JSName("Cesium.CesiumInspectorViewModel")
+  @JSGlobal("Cesium.CesiumInspectorViewModel")
   class CesiumInspectorViewModel protected() extends js.Object {
     def this(scene: Scene) = this()
 
@@ -11786,7 +11805,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * });
     */
   @js.native
-  @JSName("Cesium.CesiumWidget")
+  @JSGlobal("Cesium.CesiumWidget")
   class CesiumWidget protected() extends js.Object {
     def this(container: Element | String, options: CesiumWidgetOptions = ???) = this()
 
@@ -11826,7 +11845,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Clock
     */
   @js.native
-  @JSName("Cesium.ClockViewModel")
+  @JSGlobal("Cesium.ClockViewModel")
   class ClockViewModel protected() extends js.Object {
     def this(clock: Clock = ???) = this()
 
@@ -11880,7 +11899,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * @see Fullscreen
     */
   @js.native
-  @JSName("Cesium.FullscreenButton")
+  @JSGlobal("Cesium.FullscreenButton")
   class FullscreenButton protected() extends js.Object {
     def this(container: Element | String, fullscreenElement: Element | String = ???) = this()
 
@@ -11900,7 +11919,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Element|String} [fullscreenElement=document.body] The element or id to be placed into fullscreen mode.
     */
   @js.native
-  @JSName("Cesium.FullscreenButtonViewModel")
+  @JSGlobal("Cesium.FullscreenButtonViewModel")
   class FullscreenButtonViewModel protected() extends js.Object {
     def this(fullscreenElement: Element | String = ???) = this()
 
@@ -11936,7 +11955,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Number} [options.flightDuration=1.5] The duration of the camera flight to an entered location, in seconds.
     */
   @js.native
-  @JSName("Cesium.Geocoder")
+  @JSGlobal("Cesium.Geocoder")
   class Geocoder protected() extends js.Object {
     def this(options: GeocoderOptions) = this()
 
@@ -11967,15 +11986,13 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Number} [options.flightDuration] The duration of the camera flight to an entered location, in seconds.
     */
   @js.native
-  @JSName("Cesium.GeocoderViewModel")
+  @JSGlobal("Cesium.GeocoderViewModel")
   class GeocoderViewModel protected() extends js.Object {
     def this(options: GeocoderViewModelOptions) = this()
 
     var isSearchInProgress: Boolean = js.native
     var searchText: String = js.native
     var flightDuration: Double | Unit = js.native
-    var url: String = js.native
-    var key: String = js.native
     var complete: Event = js.native
     var scene: Scene = js.native
     var search: Command = js.native
@@ -11992,7 +12009,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Number} [duration] The time, in seconds, it takes to complete the camera flight home.
     */
   @js.native
-  @JSName("Cesium.HomeButton")
+  @JSGlobal("Cesium.HomeButton")
   class HomeButton protected() extends js.Object {
     def this(container: Element | String, scene: Scene, duration: Double = ???) = this()
 
@@ -12013,7 +12030,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Number} [duration] The duration of the camera flight in seconds.
     */
   @js.native
-  @JSName("Cesium.HomeButtonViewModel")
+  @JSGlobal("Cesium.HomeButtonViewModel")
   class HomeButtonViewModel protected() extends js.Object {
     def this(scene: Scene, duration: Double = ???) = this()
 
@@ -12034,7 +12051,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * exception {DeveloperError} Element with id "container" does not exist in the document.
     */
   @js.native
-  @JSName("Cesium.InfoBox")
+  @JSGlobal("Cesium.InfoBox")
   class InfoBox protected() extends js.Object {
     def this(container: Element | String) = this()
 
@@ -12053,7 +12070,7 @@ class HeadingPitchRoll protected() extends js.Object {
     *
     */
   @js.native
-  @JSName("Cesium.InfoBoxViewModel")
+  @JSGlobal("Cesium.InfoBoxViewModel")
   class InfoBoxViewModel() extends js.Object {
     var maxHeight: Double = js.native
     var enableCamera: Boolean = js.native
@@ -12090,7 +12107,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * });
     */
   @js.native
-  @JSName("Cesium.NavigationHelpButton")
+  @JSGlobal("Cesium.NavigationHelpButton")
   class NavigationHelpButton protected() extends js.Object {
     def this(options: NavigationHelpButtonOptions) = this()
 
@@ -12108,7 +12125,7 @@ class HeadingPitchRoll protected() extends js.Object {
     *
     */
   @js.native
-  @JSName("Cesium.NavigationHelpButtonViewModel")
+  @JSGlobal("Cesium.NavigationHelpButtonViewModel")
   class NavigationHelpButtonViewModel() extends js.Object {
     var showInstructions: Boolean = js.native
     var tooltip: String = js.native
@@ -12131,7 +12148,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * it comes from a trusted source so that your application is not vulnerable to cross-site scripting attacks.
     */
   @js.native
-  @JSName("Cesium.PerformanceWatchdog")
+  @JSGlobal("Cesium.PerformanceWatchdog")
   class PerformanceWatchdog protected() extends js.Object {
     def this(options: PerformanceWatchdogOptions) = this()
 
@@ -12156,7 +12173,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * it comes from a trusted source so that your application is not vulnerable to cross-site scripting attacks.
     */
   @js.native
-  @JSName("Cesium.PerformanceWatchdogViewModel")
+  @JSGlobal("Cesium.PerformanceWatchdogViewModel")
   class PerformanceWatchdogViewModel protected() extends js.Object {
     def this(options: PerformanceWatchdogViewModelOptions) = this()
 
@@ -12191,7 +12208,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * var sceneModePicker = new Cesium.SceneModePicker('sceneModePickerContainer', scene);
     */
   @js.native
-  @JSName("Cesium.SceneModePicker")
+  @JSGlobal("Cesium.SceneModePicker")
   class SceneModePicker protected() extends js.Object {
     def this(container: Element | String, scene: Scene, duration: Double = ???) = this()
 
@@ -12212,7 +12229,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Number} [duration=2.0] The duration of scene morph animations, in seconds
     */
   @js.native
-  @JSName("Cesium.SceneModePickerViewModel")
+  @JSGlobal("Cesium.SceneModePickerViewModel")
   class SceneModePickerViewModel protected() extends js.Object {
     def this(scene: Scene, duration: Double = ???) = this()
 
@@ -12246,7 +12263,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * exception {DeveloperError} Element with id "container" does not exist in the document.
     */
   @js.native
-  @JSName("Cesium.SelectionIndicator")
+  @JSGlobal("Cesium.SelectionIndicator")
   class SelectionIndicator protected() extends js.Object {
     def this(container: Element | String, scene: Scene) = this()
 
@@ -12258,7 +12275,7 @@ class HeadingPitchRoll protected() extends js.Object {
     def destroy(): js.Dynamic = js.native
   }
 
-  @JSName("Cesium.SelectionIndicatorViewModel")
+  @JSGlobal("Cesium.SelectionIndicatorViewModel")
   @js.native
   object SelectionIndicatorViewModel extends js.Object {
     type ComputeScreenSpacePosition = js.Function2[Cartesian3, Cartesian2, Cartesian2]
@@ -12274,7 +12291,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Element} container The DOM element that contains the widget.
     */
   @js.native
-  @JSName("Cesium.SelectionIndicatorViewModel")
+  @JSGlobal("Cesium.SelectionIndicatorViewModel")
   class SelectionIndicatorViewModel protected() extends js.Object {
     def this(scene: Scene, selectionIndicatorElement: Element, container: Element) = this()
 
@@ -12302,7 +12319,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Clock} clock The clock to use.
     */
   @js.native
-  @JSName("Cesium.Timeline")
+  @JSGlobal("Cesium.Timeline")
   class Timeline protected() extends js.Object {
     def this(container: Element, clock: Clock) = this()
 
@@ -12328,7 +12345,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {String} [options.tooltip= ] A string containing the button's tooltip.
     **/
   @js.native
-  @JSName("Cesium.ToggleButtonViewModel")
+  @JSGlobal("Cesium.ToggleButtonViewModel")
   class ToggleButtonViewModel protected() extends js.Object {
     def this(command: Command, options: ToggleButtonViewModelOptions = ???) = this()
 
@@ -12350,7 +12367,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * exception {DeveloperError} Element with id "container" does not exist in the document.
     */
   @js.native
-  @JSName("Cesium.VRButton")
+  @JSGlobal("Cesium.VRButton")
   class VRButton protected() extends js.Object {
     def this(container: Element | String, scene: Scene, vrElement: Element | String = ???) = this()
 
@@ -12371,7 +12388,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * - {Element|String} [vrElement=document.body] The element or id to be placed into VR mode.
     */
   @js.native
-  @JSName("Cesium.VRButtonViewModel")
+  @JSGlobal("Cesium.VRButtonViewModel")
   class VRButtonViewModel protected() extends js.Object {
     def this(scene: Scene, vrElement: Element | String = ???) = this()
 
@@ -12387,7 +12404,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.ShadowMap")
+  @JSGlobal("Cesium.ShadowMap")
   class ShadowMap protected() extends js.Object {
     def this(options: ShadowMapOptions = ???) = this()
 
@@ -12399,7 +12416,7 @@ class HeadingPitchRoll protected() extends js.Object {
 
   }
 
-  @JSName("Cesium.Viewer")
+  @JSGlobal("Cesium.Viewer")
   @js.native
   object Viewer extends js.Object {
     type ViewerMixin = js.Function2[Viewer, js.Any, Unit]
@@ -12507,7 +12524,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * });
     */
   @js.native
-  @JSName("Cesium.Viewer")
+  @JSGlobal("Cesium.Viewer")
   class Viewer protected() extends js.Object {
     def this(container: Element | String, options: ViewerOptions = ???) = this()
 
@@ -12547,6 +12564,10 @@ class HeadingPitchRoll protected() extends js.Object {
     var rotatable2D: Boolean = js.native
     var shadowMap: ShadowMap = js.native
 
+    var selectedEntityChanged: Event = js.native
+
+    var trackedEntityChanged: Event = js.native
+
     def extend(mixin: Viewer.ViewerMixin, options: js.Any = ???): js.Dynamic = js.native
 
     def resize(): js.Dynamic = js.native
@@ -12562,12 +12583,16 @@ class HeadingPitchRoll protected() extends js.Object {
     def zoomTo(target: Entity | js.Array[Entity] | EntityCollection | DataSource | ImageryLayer | Promise[Entity | js.Array[Entity] | EntityCollection | DataSource | ImageryLayer], offset: HeadingPitchRange = ???): Promise[Boolean] = js.native
 
     def flyTo(target: Entity | js.Array[Entity] | EntityCollection | DataSource | ImageryLayer | Promise[Entity | js.Array[Entity] | EntityCollection | DataSource | ImageryLayer], options: ViewerFlyToOptions = ???): Promise[Boolean] = js.native
+
+
+  //  def flyTo(FlyToOptions): Promise[Boolean] = js.native
+
   }
 
   /**
     * Finds an item in a sorted array.
     */
-  @JSName("Cesium.binarySearch")
+  @JSGlobal("Cesium.binarySearch")
   @js.native
   object BinarySearch extends js.Object {
     type Comparator = js.Function2[js.Any, js.Any, Double]
@@ -12576,7 +12601,7 @@ class HeadingPitchRoll protected() extends js.Object {
   /**
     * A stable merge sort.
     */
-  @JSName("Cesium.mergeSort")
+  @JSGlobal("Cesium.mergeSort")
   @js.native
   object MergeSort extends js.Object {
     type Comparator = js.Function3[js.Any, js.Any, js.Any, Double]
@@ -12586,7 +12611,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * A browser-independent function to request a new animation frame.
     * This is used to create an application's draw loop as shown in the example below.
     */
-  @JSName("Cesium.requestAnimationFrame")
+  @JSGlobal("Cesium.requestAnimationFrame")
   @js.native
   object RequestAnimationFrame extends js.Object {
     type Callback = js.Function1[Double, Unit]
@@ -12598,7 +12623,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * if the request would exceed the maximum, allowing the caller to retry later,
     * instead of queueing indefinitely under the browser's control.
     */
-  @JSName("Cesium.throttleRequestByServer")
+  @JSGlobal("Cesium.throttleRequestByServer")
   @js.native
   object ThrottleRequestByServer extends js.Object {
     type RequestFunction = js.Function1[String, Promise[js.Any]]
@@ -12608,7 +12633,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * Creates an adapter function to allow a calculation function to operate as a Web Worker,
     * paired with TaskProcessor, to receive tasks and return results.
     */
-  @JSName("Cesium.createTaskProcessorWorker")
+  @JSGlobal("Cesium.createTaskProcessorWorker")
   @js.native
   object CreateTaskProcessorWorker extends js.Object {
     type WorkerFunction = js.Function2[js.Any, js.Array[js.Any], Any]
@@ -12621,7 +12646,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * see: [[http://cesiumjs.org/index.html]]
     *
     */
-  @JSName("Cesium")
+  @JSGlobal("Cesium")
   @js.native
   object Cesium extends js.Object {
     type RenderState = js.Any
@@ -12718,14 +12743,11 @@ class HeadingPitchRoll protected() extends js.Object {
   /**
     * Content pipeline functions for geometries.
     */
-  @JSName("Cesium.GeometryPipeline")
+  @JSGlobal("Cesium.GeometryPipeline")
   @js.native
   object GeometryPipeline extends js.Object {
 
     def compressVertices(geometry: Geometry): Geometry = js.native
-
-    /** deprecated use GeometryPipeline.createTangentAndBitangent */
-    def computeBinormalAndTangent(geometry: Geometry): Geometry = js.native
 
     def createTangentAndBitangent(geometry: Geometry): Geometry = js.native
 
@@ -12754,15 +12776,15 @@ class HeadingPitchRoll protected() extends js.Object {
   /**
     * An InterpolationAlgorithm for performing linear interpolation.
     */
-  @JSName("Cesium.LinearApproximation")
+  @JSGlobal("Cesium.LinearApproximation")
   @js.native
   object LinearApproximation extends InterpolationAlgorithm
 
-  @JSName("Cesium.LagrangePolynomialApproximation")
+  @JSGlobal("Cesium.LagrangePolynomialApproximation")
   @js.native
   object LagrangePolynomialApproximation extends InterpolationAlgorithm
 
-  @JSName("Cesium.HermitePolynomialApproximation")
+  @JSGlobal("Cesium.HermitePolynomialApproximation")
   @js.native
   object HermitePolynomialApproximation extends InterpolationAlgorithm
 
@@ -12780,7 +12802,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * See the Tween.js graphs for each function.
     */
   @js.native
-  @JSName("Cesium.EasingFunction")
+  @JSGlobal("Cesium.EasingFunction")
   class EasingFunction protected() extends js.Object {
     val BACK_IN: EasingFunction.Callback = js.native
     val BACK_IN_OUT: EasingFunction.Callback = js.native
@@ -12813,7 +12835,7 @@ class HeadingPitchRoll protected() extends js.Object {
 
   }
 
-  @JSName("Cesium.EasingFunction")
+  @JSGlobal("Cesium.EasingFunction")
   @js.native
   object EasingFunction extends js.Object {
     type Callback = js.Function1[Double, Double]
@@ -12843,7 +12865,7 @@ class HeadingPitchRoll protected() extends js.Object {
     * see: https://github.com/AnalyticalGraphicsInc/cesium/blob/8328880c6a50e4fb735f68f8b87338eb477efb1f/Source/Core/WebGLConstants.js
     *
     */
-  @JSName("Cesium.WebGLConstants")
+  @JSGlobal("Cesium.WebGLConstants")
   @js.native
   object WebGLConstants extends js.Object {
 
@@ -13437,7 +13459,7 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.BingMapsGeocoderService")
+  @JSGlobal("Cesium.BingMapsGeocoderService")
   class BingMapsGeocoderService protected() extends GeocoderService {
     def this(options: BingMapsGeocoderServiceOptions) = this()
     val url: String = js.native
@@ -13446,8 +13468,18 @@ class HeadingPitchRoll protected() extends js.Object {
   }
 
   @js.native
-  @JSName("Cesium.CartographicGeocoderService")
+  @JSGlobal("Cesium.CartographicGeocoderService")
   class CartographicGeocoderService protected() extends GeocoderService
+
+
+  /**
+    * Describes a compressed texture and contains a compressed texture buffer.
+    */
+//  @js.native
+//  @JSGlobal("Cesium.CompressedTextureBuffer")
+//  class CompressedTextureBuffer protected() {
+//    def this(internalFormat: PixelFormat, width: Double, height: Double, buffer: Array[Int]) = this()
+//  }
 
 
 }
